@@ -43,7 +43,7 @@ function StoriesDetailComponent(props: any) {
                     quality={100}
                 ></BaseImage>
 
-                <div className="w-747px text-center text-[#E6E7E8] absolute z-10 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-48px">Bring the drinking occasion to life in a way</div>
+                <div className="uppercase font-AlbertusNova-Regular w-747px text-center text-[#E6E7E8] absolute z-10 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-48px">Bring the drinking occasion to life in a way</div>
 
             </div>
 
@@ -51,10 +51,10 @@ function StoriesDetailComponent(props: any) {
 
 
 
-            <div className="container mx-auto overflow-hidden">
+            <div className="container mx-auto ">
 
                 <div className="hidden mobile:block">
-                    <div className="pl-30px pr-30px text-center pt-22px pb-40px text-20px">Bring the drinking occasion to life in a way</div>
+                    <div className="uppercase pl-30px pr-30px text-center pt-22px pb-40px text-20px font-AlbertusNova-Regular">Bring the drinking occasion to life in a way</div>
 
                     <div className="h-303px relative w-full">
                         <BaseImage
@@ -69,7 +69,7 @@ function StoriesDetailComponent(props: any) {
 
 
                 <div className="pt-31px relative pb-128px mobile:pt-65px mobile:pb-21px">
-                    <div className="z-40 w-190px h-190px absolute left-13px top-0 mobile:w-90px mobile:h-90px mobile:top-[-45px]">
+                    <div className="z-40 w-190px h-190px absolute left-13px top-[-50px] mobile:w-90px mobile:h-90px mobile:top-[-45px]">
                         <BaseImage
                             defaultImg={require("../../../public/assets/storiesDetail/avatar.png")}
                             alt={""}
@@ -79,7 +79,7 @@ function StoriesDetailComponent(props: any) {
                     </div>
 
                     <div className="pl-235px pb-10px color-dark-grey text-28px font-bold font-Grotesque-Regular mobile:pl-25px mobile:text-14px">Name of KOL </div>
-                    <div className="pl-235px color-[#969797] font-Grotesque-Regular font-medium text-28px mobile:pl-25px mobile:text-14px">Sailor | Professional traveler</div>
+                    <div className="pl-235px text-[#969797] font-Grotesque-Regular font-medium text-28px mobile:pl-25px mobile:text-14px">Sailor | Professional traveler</div>
                 </div>
 
                 <div className="text-dark-grey pl-64px pr-64px pb-80px text-26px color-dark-grey font-normal leading-[45px] font-Grotesque-Regular mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:pb-20px mobile:leading-[22px] mobile:flex mobile:flex-wrap">

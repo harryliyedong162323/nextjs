@@ -54,8 +54,8 @@ function HowToBuyDetailComponent(props: any) {
                ></BaseImage>
 
                <div className="absolute z-10 bottom-[178px] left-1/2 w-full translate-x-[-50%] mobile:bottom-[106px]">
-                   <div className="font-AlbertusNova-Regular font-normal text-center text-26px pb-50px text-[#E6E7E8] mobile:text-14px mobile:pb-25px">Wildmoor house</div>
-                   <div className="font-AlbertusNova-Regular font-normal text-center text-[#E6E7E8] text-48px mobile:text-24px">Shenzhen Nanjing Road</div>
+                   <div className="font-AlbertusNova-Regular font-normal text-center text-26px pb-50px text-[#E6E7E8] mobile:text-14px mobile:pb-25px uppercase">Wildmoor house</div>
+                   <div className="font-AlbertusNova-Regular font-normal text-center text-[#E6E7E8] text-48px mobile:text-24px uppercase">Shenzhen Nanjing Road</div>
                </div>
 
 
@@ -72,7 +72,7 @@ function HowToBuyDetailComponent(props: any) {
 
            <section>
               <div className="w-full container pb-80px mx-auto">
-                  <div className="text-40px font-normal font-AlbertusNova-Regular pb-77px text-center pt-81px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px">Servicing</div>
+                  <div className="text-40px font-normal font-AlbertusNova-Regular pb-77px text-center pt-81px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px uppercase">Servicing</div>
                   <div className="font-normal font-Grotesque-Regular text-26px text-center text-dark-grey leading-[40px] mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:leading-[20px]">The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and maintained over 6 decades by the Grant family. It includes casks from every region of Scotland, including some notable ghost distillery stocks.</div>
               </div>
 
@@ -153,8 +153,8 @@ function HowToBuyDetailComponent(props: any) {
 
                    <div className="absolute top-0 left-0 z-20 h-900px w-526px bg-white flex flex-wrap mobile:static mobile:w-full mobile:h-auto mobile:order-1">
                        <div className="w-full font-AlbertusNova-Regular font-normal h-293px pt-43px pl-50px pr-24px border-b-4 border-[#CACACA] border-solid mobile:pt-89px mobile:pl-25 mobile:pr-25 mobile:h-auto mobile:border-b-2 mobile:pb-34px mobile:pl-25px mobile:pr-25px">
-                           <div className="text-26px text-dark-grey mobile:text-14px">WILDMOOR house</div>
-                           <div className="text-40px text-dark-grey mobile:text-24px">Shenzhen Nanjing Road</div>
+                           <div className="text-26px text-dark-grey mobile:text-14px uppercase">WILDMOOR house</div>
+                           <div className="text-40px text-dark-grey mobile:text-24px uppercase">Shenzhen Nanjing Road</div>
                        </div>
                        <div className="w-full h-162px border-b-2 border-[#CACACA] border-solid pt-55px pl-50px pr-95px text-26px mobile:text-14px  mobile:h-auto  mobile:border-b-1 mobile:pb-26px mobile:pl-25px mobile:pr-25px mobile:pt-23px">
                            <div className="text-dark-grey ">4325 Glenwood</div>
