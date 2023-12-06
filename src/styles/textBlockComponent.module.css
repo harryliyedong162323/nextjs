@@ -1,0 +1,387 @@
+.textBlockComponent {
+  span {
+    color: blue;
+  }
+}
+
+.more_container {
+  position: relative;
+  width: 1600px;
+  height: 1080px;
+  background: url(../../public/assets/more_bgc.png) no-repeat;
+  z-index: -1;
+  margin: 0 auto;
+
+}
+
+
+
+.more_container .more_nav {
+  position: relative;
+  width: 100%;
+  height: 103px;
+}
+
+.more_nav .morer_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+
+
+}
+
+
+
+
+.more_nav .more_menu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 40px;
+  height: 40px;
+
+}
+
+/* 了解更多 */
+.explore_more {
+  position: absolute;
+  top: 176px;
+  left: 100px;
+  width: 602px;
+  height: 904px;
+  background: url(../../public/assets/more_learn.png) no-repeat;
+  z-index: 1;
+}
+
+.explore_more .exlore_more_introduce {
+  width: 478px;
+  height: 211px;
+  margin: 100px auto 0 auto;
+}
+
+.exlore_more_introduce .introduce_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 97px;
+
+
+}
+
+.introduce_top .left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.introduce_top .left p:first-of-type {
+  font-size: 80px;
+}
+
+.introduce_top .left div {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #696969;
+  font-weight: bold;
+
+}
+
+.introduce_top .left div p:first-of-type {
+  font-size: 20px;
+  color: #696969;
+  font-weight: bold;
+}
+
+.introduce_top .bar {
+  height: 76px;
+  width: 2px;
+  margin: 0 20px;
+  background-color: #696969;
+}
+
+.introduce_top .right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  color: #262627;
+  font-size: 32px;
+}
+
+
+.introduce_middle {
+  font-size: 14px;
+  color: #696969;
+
+}
+
+.introduce_middle p {
+  font-weight: bold;
+}
+
+.introduce_middle p:first-of-type {
+  margin-bottom: 10px;
+}
+
+.learn_buy {
+  width: 200px;
+  height: 60px;
+  font-size: 16px;
+  color: #262627;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
+  margin-left: 63px;
+  margin-top: 20px;
+  border: 1px solid #262627;
+}
+
+.explore_more .more_product {
+  position: absolute;
+  top: 413px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 556px;
+  height: 451px;
+}
+
+.more_bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 381px;
+  background: #eceaea url(../../public/assets/more_bottom.png) no-repeat;
+}
+
+.more_bottom .more_list {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: 836px;
+  height: 266px;
+
+}
+
+.more_list .list_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 109px;
+  height: 266px;
+
+  margin-right: 72px;
+}
+
+.list_item .code {
+  font-size: 33px;
+}
+
+.list_item .img {
+  width: 80px;
+  height: 165px;
+}
+
+.list_item .prod {
+  text-align: center;
+  font-size: 16px;
+  color: #262627;
+}
+
+.more_list .list_item:last-of-type {
+  margin: 0;
+}
+
+.more_bottom .arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  width: 87px;
+  height: 40px;
+}
+
+.arrow .arrow_prev {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../../public//assets/prev.png) no-repeat;
+}
+
+.arrow .arrow_next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../../public//assets/next.png) no-repeat;
+}
+
+
+@media screen and (min-width: 768px) {
+  .more_container {
+    display: block;
+  }
+
+  .info_small {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .more_container {
+    display: none;
+  }
+
+  .info_small {
+    display: block;
+    width: 100%;
+
+    .info_small_bgc {
+      position: relative;
+      width: 100%;
+
+      .info_small_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 118px;
+
+        .info_log {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 58px;
+          height: 58px;
+          background: url(../../public/assets/info_logo.png) no-repeat;
+        }
+
+        .info_menu {
+          position: absolute;
+          top: 50%;
+          right: 4%;
+          transform: translateY(-50%);
+          width: 42px;
+          height: 30px;
+          background: url(../../public/assets/info_menu.png) no-repeat;
+        }
+      }
+
+      .info_drink {
+        position: absolute;
+        left: 50%;
+        bottom: -45px;
+        transform: translateX(-50%);
+        width: 320px;
+        height: 320px;
+      }
+
+
+    }
+
+    .info_title {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+      height: 87px;
+      justify-content: center;
+
+      .info_left {
+        display: flex;
+        align-items: center;
+
+        .num {
+          font-size: 38px;
+          color: #000000;
+          margin: 0;
+          padding: 0;
+        }
+
+        div {
+          font-size: 12px;
+        }
+      }
+
+      .info_line {
+        width: 1px;
+        height: 52px;
+        margin: 0 20px;
+        background-color: #969797;
+      }
+
+      .info_right {
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        justify-content: center;
+      }
+    }
+
+    .info_produce {
+      text-align: center;
+      color: #969797;
+      font-weight: 700;
+      font-size: 15px;
+      margin: 0 5px;
+    }
+
+    .info_img {
+      margin: 50px 0;
+      display: flex;
+      overflow: hidden;
+
+      .img_item {
+        margin-right: 77px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .img {
+          width: 80px;
+
+        }
+
+        .in {
+          text-align: center;
+          font-size: 12px;
+        }
+
+      }
+    }
+
+    .info_more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+
+      .btn {
+        width: 200px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-weight: 700;
+        border: 1px solid #000000;
+      }
+    }
+
+    .info_next {
+      .next {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        margin: 40px auto 20px auto;
+      }
+    }
+  }
+}

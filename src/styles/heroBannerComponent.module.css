@@ -1,0 +1,142 @@
+.heroBannerComponent {
+  /*span {*/
+  /*  color: blue;*/
+  /*}*/
+}
+
+.video_container {
+  position: relative;
+  width: 1600px;
+  /* height: 20px; */
+  height: 1080px;
+  margin: 0 auto;
+  background: url(../../public/assets/video_bgc.png) no-repeat;
+
+  .video_title {
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .video_play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: url(../../public/assets/paly.png) no-repeat;
+  }
+}
+
+.video_nav {
+  position: relative;
+  width: 100%;
+  height: 103px;
+}
+
+.video_nav .video_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+}
+
+.video_nav .video_menu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .video_container {
+    display: block;
+  }
+
+  .video_small {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video_container {
+    display: none;
+  }
+
+  .video_small {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1121px;
+    background: url(../../public/assets/small_video_bgc.png) no-repeat;
+    background-size: cover;
+
+    .small_video_nav {
+      position: relative;
+      height: 118px;
+
+      .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 58px;
+        height: 58px;
+      }
+
+      .menu {
+        position: absolute;
+        top: 50%;
+        right: 4%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 30px;
+      }
+    }
+
+    .small_video_title {
+      font-size: 32px;
+      color: #ffffff;
+      font-weight: 500;
+      margin: 0 1%;
+      text-align: center;
+    }
+
+    .small_video_play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: url(../../public/assets/small_play.png) no-repeat;
+      background-size: cover;
+    }
+
+    .small_video_p {
+      position: absolute;
+      bottom: 10%;
+      left: 0;
+      text-align: center;
+      font-size: 24px;
+      color: #FFFFFF;
+    }
+
+    .small_video_next {
+      position: absolute;
+      bottom: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 56px;
+      background: url(../../public/assets/small_video_next.png) no-repeat;
+      background-size: contain;
+    }
+  }
+}
