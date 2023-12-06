@@ -1,17 +1,27 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
+/** @type {import('next').NextConfig} */
+const path = require('path')
 
-module.exports = withBundleAnalyzer({
-  eslint: {
-    dirs: ['.'],
+const nextConfig = {
+  reactStrictMode: false,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
-  poweredByHeader: false,
-  trailingSlash: true,
-  basePath: '',
-  // The starter code load resources from `public` folder with `router.basePath` in React components.
-  // So, the source code is "basePath-ready".
-  // You can remove `basePath` if you don't need it.
-  reactStrictMode: true,
-});
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https', // 协议，例如 https 或 http
+        hostname: 'bpic.51yuansu.com', // 主机名
+        port: '', // 端口号，如果没有则留空字符串
+        pathname: '/pic3/cover/01/20/78/59058720af449_610.jpg', // 路径名
+      },
+      {
+        protocol: 'https', // 协议，例如 https 或 http
+        hostname: 'images.ctfassets.net', // 主机名
+        // port: '', // 端口号，如果没有则留空字符串
+        // pathname: '', // 路径名
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;
