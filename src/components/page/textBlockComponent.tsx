@@ -8,7 +8,7 @@ function TextBlockComponent(props: any) {
   useEffect(() => {
 
   }, []);
-
+  console.log(props)
   return (
     // <section className={props.data.name}>
     //   {props.data.name}:<span className="text-ellipsis">{JSON.stringify(props)}</span>

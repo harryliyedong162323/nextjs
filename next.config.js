@@ -7,6 +7,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https', // 协议，例如 https 或 http
@@ -18,6 +19,12 @@ const nextConfig = {
         protocol: 'https', // 协议，例如 https 或 http
         hostname: 'images.ctfassets.net', // 主机名
         // port: '', // 端口号，如果没有则留空字符串
+        // pathname: '', // 路径名
+      },
+      {
+        protocol: 'https', // 协议，例如 https 或 http
+        hostname: 'yumen-ali.oss-cn-beijing.aliyuncs.com', // 主机名
+        port: '', // 端口号，如果没有则留空字符串
         // pathname: '', // 路径名
       },
     ],

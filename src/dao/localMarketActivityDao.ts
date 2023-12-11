@@ -3,7 +3,7 @@ import RangeModel from "../model/rangeModel";
 const HOME_URL =
     "https://cdn.contentful.com/spaces/zedtwknbsk02/entries?content_type=landingPage&fields.slug=test1&locale=en-US&include=4&access_token=5mGkIgazQQqwe9NykxKqitB0zopjFOvVHotuSM8GZvg";
 
-class HowToBuyDetailDao {
+class LocalMarketActivityDao {
     static async fetch<RangeModel>() {
         // const response = await fetch(HOME_URL)
         // const result = await response.json()
@@ -15,12 +15,22 @@ class HowToBuyDetailDao {
                 entry: {},
             },
             {
-                type: "howToBuyDetailComponent",
-                name: "howToBuyDetailComponent",
+                type: "introduceCampaignComponent",
+                name: "introduceCampaignComponent",
+                entry: {},
+            },
+            {
+                type: "interactiveVideoComponent",
+                name: "interactiveVideoComponent",
+                entry: {},
+            },
+            {
+                type: "talesFromTheWildComponent",
+                name: "talesFromTheWildComponent",
                 entry: {},
             },
         ];
     }
 }
 
-export default HowToBuyDetailDao;
+export default LocalMarketActivityDao;

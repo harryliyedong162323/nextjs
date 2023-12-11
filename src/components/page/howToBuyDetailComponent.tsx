@@ -44,32 +44,6 @@ function HowToBuyDetailComponent(props: any) {
 
     return (
        <div className="w-full">
-           <div className="w-full h-screen overflow-hidden relative">
-               <BaseImage
-                   defaultImg={require("../../../public/assets/howToBuyDetail/bg.png")}
-                   alt={""}
-                   layout="fill"
-                   objectFit="cover"
-                   quality={100}
-               ></BaseImage>
-
-               <div className="absolute z-10 bottom-[178px] left-1/2 w-full translate-x-[-50%] mobile:bottom-[106px]">
-                   <div className="font-AlbertusNova-Regular font-normal text-center text-26px pb-50px text-[#E6E7E8] mobile:text-14px mobile:pb-25px uppercase">Wildmoor house</div>
-                   <div className="font-AlbertusNova-Regular font-normal text-center text-[#E6E7E8] text-48px mobile:text-24px uppercase">Shenzhen Nanjing Road</div>
-               </div>
-
-
-               <div className="absolute bottom-24px w-full flex flex-col items-center justify-center mobile:hidden">
-                   <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scroll"></div>
-                   <div className="text-12px leading-tight text-white font-Grotesque-Regular">
-                       Scroll to explore more
-                   </div>
-               </div>
-
-
-           </div>
-
-
            <section>
               <div className="w-full container pb-80px mx-auto">
                   <div className="text-40px font-normal font-AlbertusNova-Regular pb-77px text-center pt-81px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px uppercase">Servicing</div>

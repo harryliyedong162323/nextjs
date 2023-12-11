@@ -31,9 +31,9 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       screens: {
-        mobile: {'max': '768px'},
-        paid:{'min': '769px', 'max': '1280px'},  // 1.2
-        // pc: {'max': '1536px'},  //1.2
+        mobile: {'max': '768px'}, // size / 2
+        paid:{'min': '769px', 'max': '1536px'},  // pc(size / 1.2) / 1.4
+        // pc: {'max': '1600px'},  // size / 1.2
       },
       colors: {
         'dark-grey': '#262627'
@@ -50,8 +50,10 @@ const config: Config = {
       },
       animation: {
         scroll: 'scroll 1s infinite',
+        'move-top': 'moveTop 0.5s 1 forwards',
       },
       keyframes: {
+
         scroll: {
           '0%': {
             transform: 'translate(0, 0)',
@@ -66,6 +68,11 @@ const config: Config = {
           },
           '100%': {
             opacity: '0'
+          },
+        },
+        moveTop: {
+          '100%': {
+            top: '0px'
           },
         }
       }

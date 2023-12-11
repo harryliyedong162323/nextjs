@@ -40,6 +40,27 @@ class HomeDao{
                 name: "productFamilyComponent",
                 entry: {},
             },
+            {
+                type: "interactiveVideoComponent",
+                name: "interactiveVideoComponent",
+                entry: {},
+            },
+            {
+                type: "introduceCampaignComponent",
+                name: "introduceCampaignComponent",
+                entry: {},
+            },
+            {
+                type: "nearYouComponent",
+                name: "nearYouComponent",
+                entry: {},
+            },
+
+            {
+                type: "VIPClubComponent",
+                name: "VIPClubComponent",
+                entry: {},
+            },
         ];
 
     }

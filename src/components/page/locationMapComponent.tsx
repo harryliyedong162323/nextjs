@@ -75,7 +75,7 @@ function LocationMapComponent(props: any) {
     });
 
 
-    const [selectLocation, setSelectLocation] = useState(false);
+    const [selectLocation, setSelectLocation] = useState(0);
 
     let [selectZoom, setSelectZoom] = useState(10);
 
@@ -91,8 +91,8 @@ function LocationMapComponent(props: any) {
         setOpenSelected(flag);
     };
 
-    const handleLocation = (flag:boolean):void => {
-        setSelectLocation(flag);
+    const handleLocation = ():void => {
+        setSelectLocation(selectLocation+1);
     };
 
 
@@ -130,7 +130,7 @@ function LocationMapComponent(props: any) {
                 <div className="absolute z-20 top-[37px] right-[50px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
                     <div className="bg-[url('/assets/add.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectAdd()}></div>
                     <div className="bg-[url('/assets/reduce.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectReduce()}></div>
-                    <div className="bg-[url('/assets/positioning.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleLocation(true)}></div>
+                    <div className="bg-[url('/assets/positioning.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleLocation()}></div>
                 </div>
 
                 <div className="absolute z-20 left-[50px] bottom-[100px] select-none font-Grotesque-Medium font-medium text-black mobile:hidden">

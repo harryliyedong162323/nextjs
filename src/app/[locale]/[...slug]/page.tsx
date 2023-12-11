@@ -5,6 +5,7 @@ import storiesDetailDao from "@/dao/storiesDetailDao";
 import RangeDao from "@/dao/rangeDao";
 import HowToBuyDao from "@/dao/howToBuyDao";
 import HowToBuyDetailDao from "@/dao/howToBuyDetailDao";
+import LocalMarketActivityDao from "@/dao/localMarketActivityDao";
 
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
@@ -13,8 +14,15 @@ import dynamic from "next/dynamic";
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
+//public
+import GlobalCampaigns from "@/components/page/globalCampaignsComponent"
+import InteractiveVideo from "@/components/page/interactiveVideoComponent"
+import IntroduceCampaign from "@/components/page/introduceCampaignComponent"
+
 import HeroBanner from "@/components/page/heroBannerComponent"
 import KVAnimation from "@/components/page/KVAnimationComponent"
+import NearYou from "@/components/page/nearYouComponent"
+import VIPClub from "@/components/page/VIPClubComponent"
 import ProductFamily from "@/components/page/productFamilyComponent"
 import Quote from "@/components/page/quoteComponent"
 import TextBlock from "@/components/page/textBlockComponent"
@@ -41,15 +49,26 @@ import IRLExperiences from "@/components/page/IRLExperiencesComponent"
 import DigitalExperience from "@/components/page/digitalExperienceComponent"
 
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent"
+import InteractiveVideoComponent from "@/components/page/interactiveVideoComponent";
 
 function getComponent(data: any, k:number) {
 
   const props = { data : data }
 
   switch(data.name) {
+    /** public components **/
+
+    case "globalCampaignsComponent":  return <GlobalCampaigns key={k} {...props} />;
+    case "interactiveVideoComponent":  return <InteractiveVideo key={k} {...props} />;
+    case "introduceCampaignComponent":  return <IntroduceCampaign key={k} {...props} />;
+
+
+    /** page components  **/
 
     case "heroBannerComponent":  return <HeroBanner key={k} {...props} />;
     case "KVAnimationComponent":   return <KVAnimation key={k} {...props} />;
+    case "nearYouComponent":   return <NearYou key={k} {...props} />;
+    case "VIPClubComponent":   return <VIPClub key={k} {...props} />;
     case "productFamilyComponent":   return <ProductFamily key={k} {...props} />;
     case "quoteComponent":       return <Quote key={k} {...props} />;
     case "textBlockComponent":   return <TextBlock key={k} {...props} />;
@@ -119,6 +138,9 @@ async function getPageData(params: any) {
       break;
     case "howToBuyDetail":
       result = await HowToBuyDetailDao.fetch();
+      break;
+    case "localMarketActivity":
+      result = await LocalMarketActivityDao.fetch();
       break;
     default:
       result = await HomeDao.fetch();
