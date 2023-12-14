@@ -109,10 +109,21 @@ class BaseImage extends Component<propsContent,State>{
     }
 
 
+    componentDidUpdate(prevProps:propsContent){
+
+        if (this.props.pImg !== prevProps.pImg || this.props.mImg !== prevProps.mImg) {
+            // 在 props 变化时执行操作
+            // 比如更新组件内部的状态
+            this.handleResize();
+            console.log(prevProps)
+        }
+    }
+
     computedClassName():string{
         let className:string[] = [
             this.state.name,
             this.props.className ?? '',
+
         ];
         return className.filter(Boolean).join(' ');
 

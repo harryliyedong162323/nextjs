@@ -11,8 +11,8 @@ class StoriesDetailDao {
         return [
 
             {
-                type: "StoriesDetailComponent",
-                name: "StoriesDetailComponent",
+                type: "storiesDetailComponent",
+                name: "storiesDetailComponent",
                 entry: {},
             },
         ];

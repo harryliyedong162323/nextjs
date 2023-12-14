@@ -13,7 +13,7 @@ function BottleConceptComponent(props: any) {
   const [startPlaying, setStartPlaying] = useState(false);
   const [startVideoEnd, setStartVideoEnd] = useState(false);
   const [bottlePlaying, setBottlePlaying] = useState(false);
-  const bottlePlayingRef = useRef(null)
+  const bottlePlayingRef = useRef<ReactPlayer>(null)
 
   const [positionX, setPositionX] = useState(0)
 

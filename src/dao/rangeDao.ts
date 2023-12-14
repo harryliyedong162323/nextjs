@@ -9,69 +9,80 @@ class RangeDao {
     // const result = await response.json()
     // return HomeModel.fromJson(result);
     return [
+
       {
-        type: "productFamilyComponent",
-        name: "productFamilyComponent",
-        entry: {},
-      },
-      {
-        type: "talesFromTheWildComponent",
-        name: "talesFromTheWildComponent",
+        type: "fullPage",
+        name: "fullPage",
         entry: {
-          kols: [
+          children:[
             {
-              id: "10086",
-              name: "NAME of KOL",
-              avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-              banner:  `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_01.png?w=1000&h=1000`,
-              description: "Bring the drinking occasion to life in a way",
+              type: "productFamilyComponent",
+              name: "productFamilyComponent",
+              entry: {},
             },
             {
-              id: "10087",
-              name: "NAME of KOL",
-              avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-              banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_02.png?w=1000&h=1000`,
-              description: "Bring the drinking occasion to life in a way",
+              type: "talesFromTheWildComponent",
+              name: "talesFromTheWildComponent",
+              entry: {
+                kols: [
+                  {
+                    id: "10086",
+                    name: "NAME of KOL",
+                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
+                    banner:  `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_01.png?w=1000&h=1000`,
+                    description: "Bring the drinking occasion to life in a way",
+                  },
+                  {
+                    id: "10087",
+                    name: "NAME of KOL",
+                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
+                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_02.png?w=1000&h=1000`,
+                    description: "Bring the drinking occasion to life in a way",
+                  },
+                  {
+                    id: "10088",
+                    name: "NAME of KOL",
+                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
+                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_03.png?w=1000&h=1000`,
+                    description: "Bring the drinking occasion to life in a way",
+                  },
+                  {
+                    id: "10089",
+                    name: "NAME of KOL",
+                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
+                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_04.png?w=1000&h=1000`,
+                    description: "Bring the drinking occasion to life in a way",
+                  },
+                  {
+                    id: "10090",
+                    name: "NAME of KOL",
+                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
+                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_05.png?w=1000&h=1000`,
+                    description: "Bring the drinking occasion to life in a way",
+                  },
+                ],
+              },
             },
             {
-              id: "10088",
-              name: "NAME of KOL",
-              avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-              banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_03.png?w=1000&h=1000`,
-              description: "Bring the drinking occasion to life in a way",
+              type: "servingSuggestionComponent",
+              name: "servingSuggestionComponent",
+              entry: {},
             },
             {
-              id: "10089",
-              name: "NAME of KOL",
-              avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-              banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_04.png?w=1000&h=1000`,
-              description: "Bring the drinking occasion to life in a way",
+              type: "bottleConceptComponent",
+              name: "bottleConceptComponent",
+              entry: {},
             },
             {
-              id: "10090",
-              name: "NAME of KOL",
-              avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-              banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_05.png?w=1000&h=1000`,
-              description: "Bring the drinking occasion to life in a way",
+              type: "flavourFinderComponent",
+              name: "flavourFinderComponent",
+              entry: {},
             },
-          ],
-        },
+          ]
+        }
       },
-      {
-        type: "servingSuggestionComponent",
-        name: "servingSuggestionComponent",
-        entry: {},
-      },
-      {
-        type: "bottleConceptComponent",
-        name: "bottleConceptComponent",
-        entry: {},
-      },
-      {
-        type: "flavourFinderComponent",
-        name: "flavourFinderComponent",
-        entry: {},
-      },
+
+
     ];
   }
 }

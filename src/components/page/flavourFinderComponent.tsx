@@ -3,9 +3,23 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
+import Script from 'next/script'
+import axios from 'axios';
+declare const grecaptcha: any;
+
+
+
+const key:string = '6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj';
+
+
+
+
+
+
+
 
 function FlavourFinderComponent(props: any) {
-  
+
   const [showQuiz, setShowQuiz] = useState<boolean>(false);
   // QUIZ step:  0,1,2,3,4 => Q1,Q2,Q3,Q4,Q5  5 => Result
   const [quizIndex, setQuizIndex] = useState<number>(0);
@@ -34,6 +48,32 @@ function FlavourFinderComponent(props: any) {
     [emblaApi]
   );
 
+
+  const submit = ()=>{
+    grecaptcha.ready(function() {
+      grecaptcha.execute(key, {action: 'submit'}).then(async function(token:string) {
+        // Add your logic to submit to your backend server here.
+
+        console.log(token)
+        axios.post('/api/recaptcha', {
+          token:token,
+          cs:'cs'
+        },{
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }).then(function (response) {
+              console.log(response);
+        }).catch(function (error) {
+              console.log(error);
+        });
+
+
+      });
+    });
+  }
+
+
   useEffect(() => {
     emblaApi?.on("select", onChangeScroll);
   }, [emblaApi, onChangeScroll]);
@@ -45,6 +85,16 @@ function FlavourFinderComponent(props: any) {
 
   return (
     <div className="relative overflow-hidden">
+
+      {
+        <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${key}`}
+            async
+            defer
+        />
+      }
+
+
       { !showQuiz && <>
         <div className="flex h-980px">
           <Image
@@ -507,7 +557,7 @@ function FlavourFinderComponent(props: any) {
               </div>
               <div className="text-center mx-auto flex items-center justify-center mt-10px">
                 <i className="inline-block bg-[url('/assets/range/icon_redo.png')] bg-cover w-30px h-30px mr-5px"></i>
-                <span className="font-Grotesque-Regular text-26px text-black cursor-pointer" 
+                <span className="font-Grotesque-Regular text-26px text-black cursor-pointer"
                   onClick={() => {
                     setQuizIndex(0)
                   }}>Redo</span>
@@ -549,7 +599,7 @@ function FlavourFinderComponent(props: any) {
                     </div>
                     <div className="w-1px h-68px bg-black mx-20px"></div>
                     <div className="inline-flex justify-center items-baseline px-15px">
-                      <div className="cursor-pointer font-AlbertusNova-Regular text-22px uppercase ml-100px">SUBMIT</div>
+                      <div id="flavourFinderSubmit" className="cursor-pointer font-AlbertusNova-Regular text-22px uppercase ml-100px" onClick={()=>{submit()}}>SUBMIT</div>
                     </div>
                   </div>
                 </div>

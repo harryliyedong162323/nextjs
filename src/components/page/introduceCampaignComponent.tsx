@@ -46,8 +46,8 @@ function IntroduceCampaignComponent(props: any) {
 
     const carouselRefs = useRef([]);
 
-    // Autoplay()
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, []);
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [Autoplay()]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [alignment, setAlignment] = useState<'start' | 'center' | 'end' | 'justify' | undefined>('start');
     // const [alignment, setAlignment] = useState('center'); // 初始对齐方式为 'start'
@@ -68,6 +68,8 @@ function IntroduceCampaignComponent(props: any) {
         }
         // @ts-ignore
         currentDom.style.height = '150px';
+
+
     }
 
 
@@ -90,6 +92,16 @@ function IntroduceCampaignComponent(props: any) {
         [emblaApi]
     );
 
+    const scrollNext = ()=>{
+
+        emblaApi?.scrollNext();
+
+    }
+    const scrollPrev = ()=>{
+
+        emblaApi?.scrollPrev();
+
+    }
 
 
 
@@ -131,11 +143,11 @@ function IntroduceCampaignComponent(props: any) {
 
             <div className="absolute top-1/2 translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[75%] h-600px bg-no-repeat  paid:h-428px paid:w-[75%] paid:top-[35%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%]"></div>
 
-            <div className="pt-154px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global Campaigns</div>
+            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global Campaigns</div>
 
 
 
-            <div className="relative overflow-hidden pt-75px  paid:pt-53px mobile:pt-113px " ref={emblaRef}>
+            <div className="relative overflow-hidden pt-75px h-685px paid:h-489px  paid:pt-53px mobile:pt-113px " ref={emblaRef}>
                 <div className="flex text-dark-grey">
 
                     {
@@ -168,12 +180,14 @@ function IntroduceCampaignComponent(props: any) {
                             );
                         })
                     }
-
-
-
                 </div>
+            </div>
 
-
+            <div className="flex justify-end pr-10">
+                <div>
+                    <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px paid:w-31px paid:h-31px paid:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
+                    <span className={`cursor-pointer bg-contain ${currentIndex == campaigns.length-1 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle paid:w-31px paid:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+                </div>
             </div>
 
         </section>

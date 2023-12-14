@@ -6,108 +6,27 @@ import RangeDao from "@/dao/rangeDao";
 import HowToBuyDao from "@/dao/howToBuyDao";
 import HowToBuyDetailDao from "@/dao/howToBuyDetailDao";
 import LocalMarketActivityDao from "@/dao/localMarketActivityDao";
-
-import { Suspense } from "react";
+import PrivacyPolicyDao from '@/dao/privacyPolicyDao'
+import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 
-
+//layout
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
-//public
-import GlobalCampaigns from "@/components/page/globalCampaignsComponent"
-import InteractiveVideo from "@/components/page/interactiveVideoComponent"
-import IntroduceCampaign from "@/components/page/introduceCampaignComponent"
 
-import HeroBanner from "@/components/page/heroBannerComponent"
-import KVAnimation from "@/components/page/KVAnimationComponent"
-import NearYou from "@/components/page/nearYouComponent"
-import VIPClub from "@/components/page/VIPClubComponent"
-import ProductFamily from "@/components/page/productFamilyComponent"
-import Quote from "@/components/page/quoteComponent"
-import TextBlock from "@/components/page/textBlockComponent"
-
-import StoryOpening from "@/components/page/storyOpeningComponent"
-import StoryChapterOne from "@/components/page/storyChapterOneComponent"
-import StoryChapterTwo from "@/components/page/storyChapterTwoComponent"
-import StoryChapterThree from "@/components/page/storyChapterThreeComponent"
-import StoryChapterFour from "@/components/page/storyChapterFourComponent"
-import StoryChapterFive from "@/components/page/storyChapterFiveComponent"
-import StoryChapterSix from "@/components/page/storyChapterSixComponent"
-import StoryChapterEnd from "@/components/page/storyChapterEndComponent"
-
-import ActivityDetail from "@/components/page/activityDetailComponent"
-import StoriesDetail from "@/components/page/storiesDetailComponent"
-
-import TalesFromTheWild from "@/components/page/talesFromTheWildComponent"
-import ServingSuggestion from "@/components/page/servingSuggestionComponent"
-import FlavourFinder from "@/components/page/flavourFinderComponent"
-import BottleConcept from "@/components/page/bottleConceptComponent"
-
-import LocationMap from "@/components/page/locationMapComponent"
-import IRLExperiences from "@/components/page/IRLExperiencesComponent"
-import DigitalExperience from "@/components/page/digitalExperienceComponent"
-
-import HowToBuyDetail from "@/components/page/howToBuyDetailComponent"
-import InteractiveVideoComponent from "@/components/page/interactiveVideoComponent";
-
-function getComponent(data: any, k:number) {
-
-  const props = { data : data }
-
-  switch(data.name) {
-    /** public components **/
-
-    case "globalCampaignsComponent":  return <GlobalCampaigns key={k} {...props} />;
-    case "interactiveVideoComponent":  return <InteractiveVideo key={k} {...props} />;
-    case "introduceCampaignComponent":  return <IntroduceCampaign key={k} {...props} />;
-
-
-    /** page components  **/
-
-    case "heroBannerComponent":  return <HeroBanner key={k} {...props} />;
-    case "KVAnimationComponent":   return <KVAnimation key={k} {...props} />;
-    case "nearYouComponent":   return <NearYou key={k} {...props} />;
-    case "VIPClubComponent":   return <VIPClub key={k} {...props} />;
-    case "productFamilyComponent":   return <ProductFamily key={k} {...props} />;
-    case "quoteComponent":       return <Quote key={k} {...props} />;
-    case "textBlockComponent":   return <TextBlock key={k} {...props} />;
-
-    case "storyOpeningComponent":   return <StoryOpening key={k} {...props} />;
-    case "storyChapterOneComponent":   return <StoryChapterOne key={k} {...props} />;
-    case "storyChapterTwoComponent":   return <StoryChapterTwo key={k} {...props} />;
-    case "storyChapterThreeComponent":   return <StoryChapterThree key={k} {...props} />;
-    case "storyChapterFourComponent":   return <StoryChapterFour key={k} {...props} />;
-    case "storyChapterFiveComponent":   return <StoryChapterFive key={k} {...props} />;
-    case "storyChapterSixComponent":   return <StoryChapterSix key={k} {...props} />;
-    case "storyChapterEndComponent":   return <StoryChapterEnd key={k} {...props} />;
-
-    case "ActivityDetailComponent":   return <ActivityDetail key={k} {...props} />;
-    case "StoriesDetailComponent":   return <StoriesDetail key={k} {...props} />;
-
-    case "talesFromTheWildComponent":   return <TalesFromTheWild key={k} {...props} />;
-    case "servingSuggestionComponent":   return <ServingSuggestion key={k} {...props} />;
-    case "flavourFinderComponent":   return <FlavourFinder key={k} {...props} />;
-    case "bottleConceptComponent":   return <BottleConcept key={k} {...props} />;
-
-    case "locationMapComponent":   return <LocationMap key={k} {...props} />;
-    case "IRLExperiencesComponent":   return <IRLExperiences key={k} {...props} />;
-    case "digitalExperienceComponent":   return <DigitalExperience key={k} {...props} />;
-
-    case "howToBuyDetailComponent":   return <HowToBuyDetail key={k} {...props} />;
-    default:      return <div></div>
-  }
-}
 
 function getDynamicComponent(data: any, k:number) {
+  const props = { data : data };
 
   const Component = dynamic(() => import(`@/components/page/${data.name}`), {
     suspense: true,
-  })
+  });
+  const FullPage = dynamic(() => import(`@/components/layout/${data.name}`), {
+    suspense: true,
+  });
 
-  const props = { data : data }
-
-  return <Component key={k} {...props} />;
+  return data.name == 'fullPage' ? <FullPage key={k} {...props} /> : <Component key={k} {...props} />;
 }
 
 
@@ -142,6 +61,9 @@ async function getPageData(params: any) {
     case "localMarketActivity":
       result = await LocalMarketActivityDao.fetch();
       break;
+    case "privacyPolicy":
+      result = await PrivacyPolicyDao.fetch();
+      break;
     default:
       result = await HomeDao.fetch();
       break;
@@ -175,13 +97,12 @@ export default async function Page({
   return (
 
     <div>
-      {/*<Header></Header>*/}
+      <Header></Header>
       <main>
+
         <Suspense fallback={<div>Loading...</div>}>
           {componentsData.map((data, k) => (
-
-              getComponent(data, k)
-
+              getDynamicComponent(data, k)
           ))}
         </Suspense>
       </main>

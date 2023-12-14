@@ -127,26 +127,26 @@ function LocationMapComponent(props: any) {
                 }
 
 
-                <div className="absolute z-20 top-[37px] right-[50px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
-                    <div className="bg-[url('/assets/add.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectAdd()}></div>
-                    <div className="bg-[url('/assets/reduce.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectReduce()}></div>
-                    <div className="bg-[url('/assets/positioning.png')] bg-contain w-48px h-48px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleLocation()}></div>
+                <div className="absolute z-20 top-[31px] right-[42px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
+                    <div className="bg-[url('/assets/add.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectAdd()}></div>
+                    <div className="bg-[url('/assets/reduce.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectReduce()}></div>
+                    <div className="bg-[url('/assets/positioning.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleLocation()}></div>
                 </div>
 
-                <div className="absolute z-20 left-[50px] bottom-[100px] select-none font-Grotesque-Medium font-medium text-black mobile:hidden">
-                    <span className="bg-[url('/assets/location_black.png')] bg-contain w-13px h-17px inline-block align-middle mr-14px"></span>
-                    <span className="text-14px inline-block align-middle">Select your location</span>
+                <div className="absolute z-20 left-[31px] bottom-[83px] select-none font-Grotesque-Medium font-medium text-black mobile:hidden">
+                    <span className="bg-[url('/assets/location_black.png')] bg-contain w-11px h-14px inline-block align-middle mr-12px"></span>
+                    <span className="text-12px inline-block align-middle">Select your location</span>
                 </div>
 
                 <div className="absolute left-0 bottom-0 z-20 w-full overflow-hidden">
-                    <div className="hidden flex justify-between pr-25px pl-25px h-57px bg-[rgba(0,0,0,.4)] backdrop-opacity-10 text-white select-none font-Grotesque-Regular font-medium mobile:flex active:bg-[rgba(0,0,0,.6)]"  onClick={()=>handleOpenSelected(!openSelected)}>
-                        <div className="text-center leading-[53px]">
-                            <span className="bg-[url('/assets/location.png')] bg-contain w-7px h-9px inline-block align-middle mr-7px"></span>
+                    <div className="hidden flex justify-between pr-21px pl-21px h-47.5px bg-[rgba(0,0,0,.4)] backdrop-opacity-10 text-white select-none font-Grotesque-Regular font-medium mobile:flex active:bg-[rgba(0,0,0,.6)]"  onClick={()=>handleOpenSelected(!openSelected)}>
+                        <div className="text-center leading-[44px]">
+                            <span className="bg-[url('/assets/location.png')] bg-contain w-6px h-8px inline-block align-middle mr-6px"></span>
                             <span className="inline-block align-middle">{selectedItem.name}</span>
                             {/*<span className="inline-block align-middle">UNited Kingdom</span>*/}
                         </div>
-                        <div className="text-center leading-[53px]">
-                            <span className=" bg-[url('/assets/arrow.png')] bg-contain w-15px h-7px bg-no-repeat inline-block"></span>
+                        <div className="text-center leading-[44px]">
+                            <span className=" bg-[url('/assets/arrow.png')] bg-contain w-13px h-6px bg-no-repeat inline-block"></span>
                         </div>
                     </div>
                     <div className={`transition font-Grotesque-Regular font-medium grid grid-cols-5 divide-x-2 bg-[rgba(0,0,0,.4)] backdrop-opacity-10 text-white select-none mobile:grid-rows-5 mobile:grid-cols-none ${openSelected ? 'mobile:h-auto' : 'mobile:h-0'}`}>

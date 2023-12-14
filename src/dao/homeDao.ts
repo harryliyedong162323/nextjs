@@ -29,38 +29,48 @@ class HomeDao{
 
 
         return [
+            {
+                type: "fullPage",
+                name: "fullPage",
+                entry: {
+                    children:[
+                        {
+                            type: "KVAnimationComponent",
+                            name: "KVAnimationComponent",
+                            entry: {},
+                        },
+                        {
+                            type: "productFamilyComponent",
+                            name: "productFamilyComponent",
+                            entry: {
 
-            {
-                type: "KVAnimationComponent",
-                name: "KVAnimationComponent",
-                entry: {},
-            },
-            {
-                type: "productFamilyComponent",
-                name: "productFamilyComponent",
-                entry: {},
-            },
-            {
-                type: "interactiveVideoComponent",
-                name: "interactiveVideoComponent",
-                entry: {},
-            },
-            {
-                type: "introduceCampaignComponent",
-                name: "introduceCampaignComponent",
-                entry: {},
-            },
-            {
-                type: "nearYouComponent",
-                name: "nearYouComponent",
-                entry: {},
+                            },
+                        },
+                        {
+                            type: "interactiveVideoComponent",
+                            name: "interactiveVideoComponent",
+                            entry: {},
+                        },
+                        {
+                            type: "introduceCampaignComponent",
+                            name: "introduceCampaignComponent",
+                            entry: {},
+                        },
+                        {
+                            type: "nearYouComponent",
+                            name: "nearYouComponent",
+                            entry: {},
+                        },
+
+                        {
+                            type: "VIPClubComponent",
+                            name: "VIPClubComponent",
+                            entry: {},
+                        },
+                    ]
+                },
             },
 
-            {
-                type: "VIPClubComponent",
-                name: "VIPClubComponent",
-                entry: {},
-            },
         ];
 
     }

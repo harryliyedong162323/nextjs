@@ -9,26 +9,37 @@ class LocalMarketActivityDao {
         // const result = await response.json()
         // return HomeModel.fromJson(result);
         return [
+
             {
-                type: "globalCampaignsComponent",
-                name: "globalCampaignsComponent",
-                entry: {},
+                type: "fullPage",
+                name: "fullPage",
+                entry: {
+                    children:[
+                        {
+                            type: "globalCampaignsComponent",
+                            name: "globalCampaignsComponent",
+                            entry: {},
+                        },
+                        {
+                            type: "introduceCampaignComponent",
+                            name: "introduceCampaignComponent",
+                            entry: {},
+                        },
+                        {
+                            type: "interactiveVideoComponent",
+                            name: "interactiveVideoComponent",
+                            entry: {},
+                        },
+                        {
+                            type: "talesFromTheWildComponent",
+                            name: "talesFromTheWildComponent",
+                            entry: {},
+                        },
+                    ]
+                }
             },
-            {
-                type: "introduceCampaignComponent",
-                name: "introduceCampaignComponent",
-                entry: {},
-            },
-            {
-                type: "interactiveVideoComponent",
-                name: "interactiveVideoComponent",
-                entry: {},
-            },
-            {
-                type: "talesFromTheWildComponent",
-                name: "talesFromTheWildComponent",
-                entry: {},
-            },
+
+
         ];
     }
 }

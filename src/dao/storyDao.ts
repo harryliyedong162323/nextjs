@@ -9,46 +9,57 @@ class StoryDao {
     // const result = await response.json()
     // return HomeModel.fromJson(result);
     return [
+
       {
-        type: "storyOpeningComponent",
-        name: "storyOpeningComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterOneComponent",
-        name: "storyChapterOneComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterTwoComponent",
-        name: "storyChapterTwoComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterThreeComponent",
-        name: "storyChapterThreeComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterFourComponent",
-        name: "storyChapterFourComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterFiveComponent",
-        name: "storyChapterFiveComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterSixComponent",
-        name: "storyChapterSixComponent",
-        entry: {},
-      },
-      {
-        type: "storyChapterEndComponent",
-        name: "storyChapterEndComponent",
-        entry: {},
-      },
+        type: "fullPage",
+        name: "fullPage",
+        entry: {
+          children:[
+            {
+              type: "storyOpeningComponent",
+              name: "storyOpeningComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterOneComponent",
+              name: "storyChapterOneComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterTwoComponent",
+              name: "storyChapterTwoComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterThreeComponent",
+              name: "storyChapterThreeComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterFourComponent",
+              name: "storyChapterFourComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterFiveComponent",
+              name: "storyChapterFiveComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterSixComponent",
+              name: "storyChapterSixComponent",
+              entry: {},
+            },
+            {
+              type: "storyChapterEndComponent",
+              name: "storyChapterEndComponent",
+              entry: {},
+            },
+          ]
+        }
+        },
+
+
     ];
   }
 }
