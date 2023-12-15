@@ -11,8 +11,8 @@ class ActivityDetailDao {
         return [
 
             {
-                type: "ActivityDetailComponent",
-                name: "ActivityDetailComponent",
+                type: "activityDetailComponent",
+                name: "activityDetailComponent",
                 entry: {},
             },
         ];
