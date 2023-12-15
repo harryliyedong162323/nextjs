@@ -125,23 +125,23 @@ function FullPage(props: any) {
     const handleSlideChange = (e:number)=>{
         // console.log(e)
         // console.log(slides.length)
-        const nav:any = document.getElementById('nav');
-
-        if(e == slides.length-1){
-            // setSliderFlag(false);
-            nav.style.display = 'none';
-
-        }else{
-            // setSliderFlag(true);
-            nav.style.display = 'block';
-        }
+        // const nav:any = document.getElementById('nav');
+        //
+        // if(e == slides.length-1){
+        //     // setSliderFlag(false);
+        //     nav.style.display = 'none';
+        //
+        // }else{
+        //     // setSliderFlag(true);
+        //     nav.style.display = 'block';
+        // }
     }
 
 
 
     return (
         <div>
-            {/*好用但要收费 fuck*/}
+            {/*好用但要收费*/}
             {/*<ReactFullpage*/}
             {/*    //fullpage options*/}
             {/*    credits={{*/}
