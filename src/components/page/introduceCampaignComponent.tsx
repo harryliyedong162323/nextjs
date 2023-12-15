@@ -141,9 +141,9 @@ function IntroduceCampaignComponent(props: any) {
     return (
         <section className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative">
 
-            <div className="absolute top-1/2 translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[75%] h-600px bg-no-repeat  paid:h-428px paid:w-[75%] paid:top-[35%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%]"></div>
+            <div className="absolute top-[40%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[75%] h-600px bg-no-repeat  paid:h-428px paid:w-[75%] paid:top-[35%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%]"></div>
 
-            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global Campaigns</div>
+            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
 
 
 
