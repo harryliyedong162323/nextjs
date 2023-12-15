@@ -106,7 +106,9 @@ export default async function Page({
           ))}
         </Suspense>
       </main>
-      <Footer></Footer>
+      {
+        componentsData[0].type != 'fullPage' ?  <Footer></Footer> : null
+      }
     </div>
 
 

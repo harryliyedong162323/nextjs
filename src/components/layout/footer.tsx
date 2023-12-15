@@ -15,7 +15,8 @@ function Footer(props: any) {
     }
     return (
         <footer className="relative overflow-hidden">
-            <div className="w-full bg-[#E6E7E8] h-900px pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-auto mobile:bg-[url('/assets/mask_footer_2.png')]">
+            {/*h-900px*/}
+            <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-auto mobile:bg-[url('/assets/mask_footer_2.png')]">
                 <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-40px">
                     {/*mobile:w-274px mobile:h-44px*/}
                     <div className="mobile:w-full mobile:order-2">

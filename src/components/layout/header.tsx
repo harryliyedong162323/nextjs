@@ -11,26 +11,137 @@ function Header(props: any) {
     const [menu, setMenu] = useState(false)
     const handleMenu = () => {
         setMenu(!menu)
-      
+
     }
     const handleClose = () => {
         setMenu(false)
     }
-    const [language,setLanguage] = useState(false)
-    const hanleLanguage = ()=>{
+    const [language, setLanguage] = useState(false)
+    const hanleLanguage = () => {
         setLanguage(!language)
     }
-    const handlePrev = ()=>{
+    const handlePrev = () => {
         setLanguage(false)
         setMenu(true)
     }
-    const handlePop = () =>{
+    const handlePop = () => {
         setLanguage(false)
         setMenu(false)
     }
+
+    const [panels, setPanels] = useState([
+        {
+            id: 1,
+            isExpanded: false,
+            title: [
+                {
+                    id: 10,
+                    name: 'OUR STORY',
+                }
+            ],
+            list: [
+                {
+                    id: 20,
+                    content: 'A Drop Of Wildness'
+                },
+                {
+                    id: 21,
+                    content: 'What Others Say'
+                },
+                {
+                    id: 22,
+                    content: 'View All'
+                },
+            ]
+        },
+        {
+            id: 4,
+            isExpanded: false,
+            title: [
+                {
+                    id: 11,
+                    name: 'THE WILDMOOR RANGE',
+                }
+            ],
+            list: [
+                {
+                    id: 22,
+                    content: 'A Drop Of Wildness'
+                },
+                {
+                    id: 23,
+                    content: 'What Others Say'
+                },
+                {
+                    id: 2,
+                    content: 'View All'
+                },
+            ]
+        },
+        {
+            id: 5,
+            isExpanded: false,
+            title: [
+                {
+                    id: 11,
+                    name: 'THE WILD ESCAPE',
+                }
+            ],
+            list: [
+                {
+                    id: 22,
+                    content: 'A Drop Of Wildness'
+                },
+                {
+                    id: 23,
+                    content: 'What Others Say'
+                },
+                {
+                    id: 2,
+                    content: 'View All'
+                },
+            ]
+        },
+        {
+            id: 3,
+            isExpanded: false,
+            title: [
+                {
+                    id: 11,
+                    name: 'FIND A DROP OF WILDERNESS',
+                }
+            ],
+            list: [
+                {
+                    id: 22,
+                    content: 'A Drop Of Wildness'
+                },
+                {
+                    id: 23,
+                    content: 'What Others Say'
+                },
+                {
+                    id: 2,
+                    content: 'View All'
+                },
+            ]
+        },
+
+
+    ]);
+
+    const togglePanel = (id: any) => {
+        const newPanels = panels.map((panel) => {
+            if (panel.id === id) {
+                return { ...panel, isExpanded: !panel.isExpanded };
+            }
+            return panel;
+        });
+        setPanels(newPanels);
+    };
     return (
 
-        <nav className="h-118px w-full fixed left-0 top-0 z-30">
+        <nav id="nav" className="h-118px w-full fixed left-0 top-0 z-30">
             <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
             <div className="bg-[url('/assets/more_menu.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={handleMenu}></div>
             {menu && <div className="absolute w-full h-screen">
@@ -61,71 +172,48 @@ function Header(props: any) {
                             <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
                                 <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque">HOME</div>
                             </div>
-                            <div className="flex flex-col mb-81px paid:mb-55 px mobile:mb-45px">
-                                <div className="flex justify-between mb-33px paid:mb-27 px mobile:mb31-px">
-                                    <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">OUR STORY</div>
-                                    <div className="w-17px paid:w-12px mobile:w-20px h-18px paid:h-13px mobile:h-22px relative">
-                                        <BaseImage
-                                            mImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            pImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            alt={""}
-                                            objectFit="contain"
-                                            quality={100}
-                                        ></BaseImage>
+
+                            {panels.map((panel) => (
+                                <div className="flex flex-col mb-40px paid:mb-25 px mobile:mb-15px" key={panel.id}>
+                                    <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer" onClick={() => togglePanel(panel.id)}>
+                                        <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">{panel.title[0].name}</div>
+                                        {!panel.isExpanded ?
+                                            <div className="w-17px paid:w-12px mobile:w-20px h-18px paid:h-13px mobile:h-22px relative">
+                                                <BaseImage
+                                                    mImg={require("../../../public/assets/KVAnimation/add.png")}
+                                                    pImg={require("../../../public/assets/KVAnimation/add.png")}
+                                                    alt={""}
+                                                    objectFit="contain"
+                                                    quality={100}
+                                                ></BaseImage>
+                                            </div>
+                                            :
+                                            <div className="text-28px paid:text-20px mobile:text-33px font-GalanoGrotesque">—</div>}
                                     </div>
+                                    {panel.isExpanded && (
+                                        <div className="flex flex-col mt-10px paid:mt-8px mobile:mt-15px">
+                                            {panel.list.map((item) => (
+                                                <div className="flex justify-between items-center mb-30px paid:mb-23px mobile:mb-20px" key={item.id}>
+                                                    <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">{item.content}</div>
+                                                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                                                        <BaseImage
+                                                            mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                                                            pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                                                            alt={""}
+                                                            objectFit="contain"
+                                                            quality={100}
+                                                        ></BaseImage>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
-
-                            </div>
-                            <div className="flex flex-col mb-81px paid:mb-55 px mobile:mb-45px">
-                                <div className="flex justify-between mb-33px paid:mb-27 px mobile:mb31-px">
-                                    <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">THE WILDMOOR RANGE</div>
-                                    <div className="w-17px paid:w-12px mobile:w-20px h-18px paid:h-13px mobile:h-22px relative">
-                                        <BaseImage
-                                            mImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            pImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            alt={""}
-                                            objectFit="contain"
-                                            quality={100}
-                                        ></BaseImage>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div className="flex flex-col mb-81px paid:mb-55 px mobile:mb-45px">
-                                <div className="flex justify-between mb-33px paid:mb-27 px mobile:mb31-px">
-                                    <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">THE WILD ESCAPE</div>
-                                    <div className="w-17px paid:w-12px mobile:w-20px h-18px paid:h-13px mobile:h-22px relative">
-                                        <BaseImage
-                                            mImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            pImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            alt={""}
-                                            objectFit="contain"
-                                            quality={100}
-                                        ></BaseImage>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div className="flex flex-col mb-81px paid:mb-55 px mobile:mb-45px">
-                                <div className="flex justify-between mb-33px paid:mb-27 px mobile:mb31-px">
-                                    <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">FIND A DROP OF WILDERNESS NEAR YOU</div>
-                                    <div className="w-17px paid:w-12px mobile:w-20px h-18px paid:h-13px mobile:h-22px relative">
-                                        <BaseImage
-                                            mImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            pImg={require("../../../public/assets/KVAnimation/add.png")}
-                                            alt={""}
-                                            objectFit="contain"
-                                            quality={100}
-                                        ></BaseImage>
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="absolute bottom-40px  paid:bottom-28px mobile:bottom-13px ">
                             <div className="flex items-center">
-                                <div className="w-17px paid:w-14px mobile:w-24px h-17px paid:h-14px mobile:h-24px  cursor-pointer relative"  onClick={hanleLanguage}>
+                                <div className="w-17px paid:w-14px mobile:w-24px h-17px paid:h-14px mobile:h-24px  cursor-pointer relative" onClick={hanleLanguage}>
                                     <BaseImage
                                         mImg={require("../../../public/assets/language.png")}
                                         pImg={require("../../../public/assets/language.png")}
@@ -140,7 +228,7 @@ function Header(props: any) {
                     </div>
                 </div>
             </div>}
-           {language &&  <div className="absolute w-full h-screen">
+            {language && <div className="absolute w-full h-screen">
                 <div className="flex w-full justify-between h-screen">
                     <div className="flex  flex-1"></div>
                     <div className="w-381px relative pl-33px  overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">

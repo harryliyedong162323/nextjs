@@ -5,6 +5,8 @@ import React, {useEffect, useState, useCallback, Suspense} from "react";
 import {ISlideConfig, PageSlides, SlideParallaxType} from 'react-page-slides';
 
 
+import Footer from '@/components/layout/footer';
+
 import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
 import InteractiveVideo from "@/components/page/interactiveVideoComponent";
 import IntroduceCampaign from "@/components/page/introduceCampaignComponent";
@@ -88,6 +90,7 @@ function FullPage(props: any) {
 
     console.log(props)
     const [isBrowser, setIsBrowser] = useState(false);
+    const [slideFlag,setSliderFlag] = useState(true);
 
 
     useEffect(() => {
@@ -96,16 +99,43 @@ function FullPage(props: any) {
 
     const pageComponents = props.data.entry.children;
 
-    const slides: ISlideConfig[] = pageComponents.map((data:any, k:number)=>{
-        return(
 
-            {
-                content: getComponent(data, k),
-                style: {}
-            }
 
-        )
-    })
+
+    const slides: ISlideConfig[] = [
+
+        ...pageComponents.map((data:any, k:number)=>{
+            return(
+
+                {
+                    content: getComponent(data, k),
+                    style: {}
+                }
+
+            )
+        }),
+        {
+            content: <Footer></Footer>,
+            style: {}
+        },
+    ];
+
+
+
+    const handleSlideChange = (e:number)=>{
+        // console.log(e)
+        // console.log(slides.length)
+        const nav:any = document.getElementById('nav');
+
+        if(e == slides.length-1){
+            // setSliderFlag(false);
+            nav.style.display = 'none';
+
+        }else{
+            // setSliderFlag(true);
+            nav.style.display = 'block';
+        }
+    }
 
 
 
@@ -144,13 +174,14 @@ function FullPage(props: any) {
 
             {
                 isBrowser == true ? <PageSlides
-                    enableAutoScroll={true}
-                    transitionSpeed={1000}
+                    enableAutoScroll={slideFlag}
+                    transitionSpeed={1500}
                     slides={slides}
                     parallax={{
-                        offset: 0.6,
+                        offset: 0.60,    //0.6
                         type: SlideParallaxType.reveal
                     }}
+                    onChange={(e)=>{handleSlideChange(e)}}
                 /> : null
             }
 
