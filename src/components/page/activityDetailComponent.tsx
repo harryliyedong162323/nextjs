@@ -108,8 +108,8 @@ function ActivityDetailComponent(props: any) {
                 </div>
                 <div>
                     <div className="color-dark-grey text-27px font-normal pb-33px font-AlbertusNova-Regular mobile:text-center mobile:text-16px mobile:pb-20px mobile:pt-20px">Bring the drinking occasion</div>
-                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal pb-50px leading-[38] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[22px]">Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. </p>
-                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[38] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[22px]">Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. </p>
+                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal pb-50px leading-[38px] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[22px]">Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. </p>
+                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[38px] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[22px]">Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. </p>
                 </div>
             </section>
 
