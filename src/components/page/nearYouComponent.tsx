@@ -325,7 +325,7 @@ function MobileCarousel(props: any) {
 
 function NearYouComponent(props: any) {
 
-
+    const headStyle = props.data.entry.headStyle;
 
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ align:'start',loop: true,watchDrag:false }, [Autoplay()]);
@@ -398,6 +398,8 @@ function NearYouComponent(props: any) {
 
     return (
         <section className="w-full h-screen overflow-hidden bg-while relative">
+
+            <input type="hidden" value={headStyle}/>
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:text-23px mobile:text-20px mobile:pt-77px">Wildmoor near you</div>
 
 

@@ -5,16 +5,22 @@ import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 function Footer(props: any) {
-
+    const headStyle = 'none';
     // useEffect(() => {
     //
     // }, []);
     const [language, setLanguage] = useState(false)
     const hanleLanguage = () => {
-        setLanguage(!language)
+        setLanguage(true)
+        document.body.style.overflow = 'hidden';
+    }
+    const hanleCloseLanguage = () => {
+        setLanguage(false)
+        document.body.style.overflow = 'auto';
     }
     return (
         <footer className="relative overflow-hidden">
+            <input type="hidden" value={headStyle}/>
             {/*h-900px*/}
             <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-auto mobile:bg-[url('/assets/mask_footer_2.png')]">
                 <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-40px">
@@ -156,8 +162,8 @@ function Footer(props: any) {
                 </div>
 
             </div>
-            {language && <div className="w-385px h-full bg-[#FFFFFF] z-30 absolute top-0 right-0 pl-33x pr-33px paid:pl-24px paid:pr-24px paid:w-278px mobile:w-full mobile:pl-20px mobile:pr-20px ">
-                <div className="flex items-center  mt-27px paid:mt-19px mobile:mt-15px mobile:reactive ">
+            {language && <div className="w-385px h-full bg-[#FFFFFF] z-30 absolute top-0 right-0 pl-33px pr-33px paid:pl-24px paid:pr-24px paid:w-278px mobile:w-full mobile:pl-20px mobile:pr-20px ">
+                <div className="flex items-center  mt-27px paid:mt-19px mobile:mt-44px mobile:reactive ">
                     <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
                         <BaseImage
                             mImg={require("../../../public/assets/logo.png")}
@@ -167,7 +173,7 @@ function Footer(props: any) {
                             quality={100}
                         ></BaseImage>
                     </div>
-                    <div className="w-20px h-19px absolute right-33px paid:right-24px   paid:w-14px  paid:h-13px mobile:right-20px mobile:w-20px mobile:h-19px reactive cursor-pointer" onClick={hanleLanguage}>
+                    <div className="w-20px h-19px absolute right-33px paid:right-24px   paid:w-14px  paid:h-13px mobile:right-20px mobile:w-20px mobile:h-19px reactive cursor-pointer" onClick={hanleCloseLanguage}>
                         <BaseImage
                             mImg={require("../../../public/assets/KVAnimation/close.png")}
                             pImg={require("../../../public/assets/KVAnimation/close.png")}
@@ -181,7 +187,7 @@ function Footer(props: any) {
 
                     <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
                         <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">CHINA MAINLAND-SIMPLIFIED CHINESE</div>
-                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-21px mobile:h-23px reactive cursor-pointer">
                             <BaseImage
                                 mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
                                 pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
@@ -193,7 +199,7 @@ function Footer(props: any) {
                     </div>
                     <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
                         <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">CHINA MAINLAND-SIMPLIFIED CHINESE</div>
-                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-21px mobile:h-23px reactive cursor-pointer">
                             <BaseImage
                                 mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
                                 pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
@@ -205,7 +211,7 @@ function Footer(props: any) {
                     </div>
                     <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
                         <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">CHINA MAINLAND-SIMPLIFIED CHINESE</div>
-                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-21px mobile:h-23px reactive cursor-pointer">
                             <BaseImage
                                 mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
                                 pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
@@ -217,7 +223,7 @@ function Footer(props: any) {
                     </div>
                     <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
                         <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">CHINA MAINLAND-SIMPLIFIED CHINESE</div>
-                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                        <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-21px mobile:h-23px reactive cursor-pointer">
                             <BaseImage
                                 mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
                                 pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}

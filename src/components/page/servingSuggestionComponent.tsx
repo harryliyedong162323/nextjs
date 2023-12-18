@@ -4,10 +4,12 @@ import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
 function ServingSuggestionComponent(props: any) {
+  const headStyle = props.data.entry.headStyle;
   useEffect(() => {}, []);
 
   return (
     <div id="ServingSuggestion" className="relative overflow-hidden bg-[#E6E7E8]">
+      <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px paid:text-27px paid:pt-124px mobile:text-20px mobile:pt-82px">
           SERVING SUGGESTION

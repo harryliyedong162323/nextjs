@@ -9,13 +9,73 @@ function Header(props: any) {
     //
     // }, []);
     const [menu, setMenu] = useState(false)
-    const handleMenu = () => {
-        setMenu(!menu)
 
-    }
+    const handleMenuChange = (menu:boolean) => {
+        setMenu(menu);
+    };
+
+    const handleMenu = () => {
+        setMenu(true);
+        // document.body.style.overflow = 'hidden';
+
+    };
+    return (
+        <div>
+            <nav id="nav-white" className="h-118px w-full fixed left-0 top-0 z-30 opacity-0  animate-fadeIn">
+                <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
+                <div className="bg-[url('/assets/more_menu.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={()=>{handleMenu()}}></div>
+                {
+                    <Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>
+                }
+            </nav>
+
+            <nav id="nav-black" className="h-118px w-full fixed left-0 top-0 z-30 opacity-0 hidden animate-fadeIn">
+                <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
+                <div className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={()=>{handleMenu()}}></div>
+                {
+                    <Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>
+                }
+            </nav>
+
+            <nav id="nav-large" className="h-118px w-full fixed left-0 top-0 z-30 opacity-0 hidden animate-fadeIn paid:h-118px mobile:h-85px">
+                <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
+                <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] paid:w-17px paid:h-16px mobile:w-20px mobile:h-20px mobile:right-25px" onClick={()=>{handleMenu()}}></div>
+
+                {
+                    <Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>
+                }
+            </nav>
+        </div>
+
+
+
+
+    );
+}
+
+function Panel({ menuFlag, onMenuChange }:any){
+
+    const [menu, setMenu] = useState(false)
+
+    useEffect(() => {
+        setMenu(menuFlag)
+        console.log(menuFlag)
+    }, [menuFlag]);
+
+
+
+    const handleMenu = () => {
+        setMenu(true);
+        // document.body.style.overflow = 'hidden';
+
+    };
+
     const handleClose = () => {
-        setMenu(false)
-    }
+        // setMenu(false);
+        onMenuChange(false);
+        // document.body.style.overflow = 'auto';
+    };
+
     const [language, setLanguage] = useState(false)
     const hanleLanguage = () => {
         setLanguage(!language)
@@ -134,16 +194,18 @@ function Header(props: any) {
         const newPanels = panels.map((panel) => {
             if (panel.id === id) {
                 return { ...panel, isExpanded: !panel.isExpanded };
+            } else {
+                return { ...panel, isExpanded: false }; // 关闭其他面板
             }
-            return panel;
+
+
         });
         setPanels(newPanels);
     };
-    return (
 
-        <nav id="nav" className="h-118px w-full fixed left-0 top-0 z-30">
-            <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
-            <div className="bg-[url('/assets/more_menu.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={handleMenu}></div>
+
+    return (
+        <div>
             {menu && <div className="absolute w-full h-screen">
                 <div className="flex w-full justify-between h-screen">
                     <div className="flex  flex-1"></div>
@@ -178,7 +240,7 @@ function Header(props: any) {
                                     <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer" onClick={() => togglePanel(panel.id)}>
                                         <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">{panel.title[0].name}</div>
                                         {!panel.isExpanded ?
-                                            <div className="w-17px paid:w-12px mobile:w-20px h-18px paid:h-13px mobile:h-22px relative">
+                                            <div className="w-17px paid:w-15px mobile:w-20px h-18px paid:h-16px mobile:h-22px relative">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/KVAnimation/add.png")}
                                                     pImg={require("../../../public/assets/KVAnimation/add.png")}
@@ -188,14 +250,14 @@ function Header(props: any) {
                                                 ></BaseImage>
                                             </div>
                                             :
-                                            <div className="text-28px paid:text-20px mobile:text-33px font-GalanoGrotesque">—</div>}
+                                            <div className="text-21px paid:text-17px mobile:text-21px font-GalanoGrotesque">—</div>}
                                     </div>
                                     {panel.isExpanded && (
                                         <div className="flex flex-col mt-10px paid:mt-8px mobile:mt-15px">
                                             {panel.list.map((item) => (
                                                 <div className="flex justify-between items-center mb-30px paid:mb-23px mobile:mb-20px" key={item.id}>
                                                     <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">{item.content}</div>
-                                                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                                                    <div className="w-19px h-23px  paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive cursor-pointer">
                                                         <BaseImage
                                                             mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
                                                             pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
@@ -317,12 +379,11 @@ function Header(props: any) {
                     </div>
                 </div>
             </div>}
-
-        </nav>
-
-
-
-    );
+        </div>
+    )
 }
+
+
+
 
 export default Header;

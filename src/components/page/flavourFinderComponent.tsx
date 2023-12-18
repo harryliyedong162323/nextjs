@@ -3,22 +3,288 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
-import Script from 'next/script'
-import axios from 'axios';
+import Script from "next/script";
+import axios from "axios";
+import BaseImage from "../base/image";
 declare const grecaptcha: any;
 
+const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
 
+interface ComponentData {
+  id: number;
+  bg: {
+    mImg: string;
+    pImg: string;
+  };
+  quizs: {
+    q1: {
+      id: number;
+      question: string;
+      answers: Array<{
+        id: number;
+        mImg: string;
+        pImg: string;
+        value: string;
+        label: string;
+      }>;
+    };
+    q2: {
+      id: number;
+      question: string;
+      description: string;
+      answers: Array<{
+        id: number;
+        mImg: string;
+        pImg: string;
+        value: string;
+        label: string;
+        audio: string;
+      }>;
+    };
+    q3: {
+      id: number;
+      question: string;
+      step1: {
+        id: number;
+        title: string;
+        answers: Array<{
+          id: number;
+          value: string;
+          label: string;
+        }>;
+      };
+      step2: {
+        id: number;
+        title: string;
+        answers: Array<{
+          id: number;
+          mImg: string;
+          pImg: string;
+          value: string;
+          label: string;
+        }>;
+      };
+    };
+    q4: {
+      id: number;
+      question: string;
+      answers: Array<{
+        id: number;
+        mImg: string;
+        pImg: string;
+        value: string;
+        label: string;
+      }>;
+    };
+    q5: {
+      id: number;
+      question: string;
+      answers: Array<{
+        id: number;
+        value: string;
+        label: string;
+      }>;
+    };
+  };
+}
 
-const key:string = '6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj';
-
-
-
-
-
-
-
+const componentData: ComponentData = {
+  id: 1,
+  bg: {
+    pImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
+    mImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
+  },
+  quizs: {
+    q1: {
+      id: 0,
+      question: "Q1. Which food is your favorite？",
+      answers: [
+        {
+          id: 0,
+          mImg: require("../../../public/assets/range/q1_pic_01_m.png"),
+          pImg: require("../../../public/assets/range/q1_pic_01.png"),
+          label: "Rich and Spicy",
+          value: "A",
+        },
+        {
+          id: 1,
+          mImg: require("../../../public/assets/range/q1_pic_02_m.png"),
+          pImg: require("../../../public/assets/range/q1_pic_02.png"),
+          label: "Light and Sweet",
+          value: "B",
+        },
+        {
+          id: 2,
+          mImg: require("../../../public/assets/range/q1_pic_03_m.png"),
+          pImg: require("../../../public/assets/range/q1_pic_03.png"),
+          label: "Smoky and Mellow",
+          value: "C",
+        },
+      ],
+    },
+    q2: {
+      id: 0,
+      question: "Q2. NOW LISTEN VERY CAREFULLY...",
+      description:
+        "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
+      answers: [
+        {
+          id: 0,
+          mImg: require("../../../public/assets/range/q2_pic_01.png"),
+          pImg: require("../../../public/assets/range/q2_pic_01.png"),
+          label: "Play",
+          value: "A",
+          audio: "",
+        },
+        {
+          id: 0,
+          mImg: require("../../../public/assets/range/q2_pic_02.png"),
+          pImg: require("../../../public/assets/range/q2_pic_02.png"),
+          label: "Play",
+          value: "B",
+          audio: "",
+        },
+        {
+          id: 0,
+          mImg: require("../../../public/assets/range/q2_pic_03.png"),
+          pImg: require("../../../public/assets/range/q2_pic_03.png"),
+          label: "Play",
+          value: "C",
+          audio: "",
+        },
+      ],
+    },
+    q3: {
+      id: 0,
+      question: "Q3. When it comes to whisky？",
+      step1: {
+        id: 0,
+        title: "Where would you commonly enjoy your whisky?",
+        answers: [
+          {
+            id: 0,
+            label: "Friendly Gathering At Home",
+            value: "A",
+          },
+          {
+            id: 0,
+            label: "Business Meal",
+            value: "B",
+          },
+          {
+            id: 0,
+            label: "At Home Alone",
+            value: "C",
+          },
+          {
+            id: 0,
+            label: "Working At The Office",
+            value: "D",
+          },
+          {
+            id: 0,
+            label: "Camping/Picnic Outdoors",
+            value: "E",
+          },
+          {
+            id: 0,
+            label: "Special Occasions & Celebrations",
+            value: "F",
+          },
+        ],
+      },
+      step2: {
+        id: 0,
+        title: "Where would you most like to enjoy your whiskey?",
+        answers: [
+          {
+            id: 0,
+            mImg: require("../../../public/assets/range/q3_pic_01.png"),
+            pImg: require("../../../public/assets/range/q3_pic_01.png"),
+            label: "Top Of Mountain",
+            value: "A",
+          },
+          {
+            id: 0,
+            mImg: require("../../../public/assets/range/q3_pic_02.png"),
+            pImg: require("../../../public/assets/range/q3_pic_02.png"),
+            label: "Sunny Beach",
+            value: "B",
+          },
+          {
+            id: 0,
+            mImg: require("../../../public/assets/range/q3_pic_03.png"),
+            pImg: require("../../../public/assets/range/q3_pic_03.png"),
+            label: "Windy Coastline",
+            value: "C",
+          },
+          {
+            id: 0,
+            mImg: require("../../../public/assets/range/q3_pic_04.png"),
+            pImg: require("../../../public/assets/range/q3_pic_04.png"),
+            label: "Hiking Through A Valley",
+            value: "D",
+          },
+        ],
+      },
+    },
+    q4: {
+      id: 0,
+      question: "Q4. Which one is yours ?",
+      answers: [
+        {
+          id: 0,
+          mImg: require("../../../public/assets/range/q4_pic_01_m.png"),
+          pImg: require("../../../public/assets/range/q4_pic_01.png"),
+          label: "A",
+          value: "A",
+        },
+        {
+          id: 1,
+          mImg: require("../../../public/assets/range/q4_pic_02_m.png"),
+          pImg: require("../../../public/assets/range/q4_pic_02.png"),
+          label: "B",
+          value: "B",
+        },
+        {
+          id: 2,
+          mImg: require("../../../public/assets/range/q4_pic_03_m.png"),
+          pImg: require("../../../public/assets/range/q4_pic_03.png"),
+          label: "C",
+          value: "C",
+        },
+      ],
+    },
+    q5: {
+      id: 0,
+      question: "Q5. Which best describes you？",
+      answers: [
+        {
+          id: 0,
+          label: "The Purist",
+          value: "A",
+        },
+        {
+          id: 0,
+          label: "The Rule Breaker",
+          value: "B",
+        },
+        {
+          id: 0,
+          label: "The Open-Minded Traditionalist",
+          value: "C",
+        },
+      ],
+    },
+  },
+};
 
 function FlavourFinderComponent(props: any) {
+  const headStyle = props.data.entry.headStyle;
+  const [data, setData] = useState<ComponentData>(componentData);
+
+  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
 
   const [showQuiz, setShowQuiz] = useState<boolean>(false);
   // QUIZ step:  0,1,2,3,4 => Q1,Q2,Q3,Q4,Q5  5 => Result
@@ -48,566 +314,644 @@ function FlavourFinderComponent(props: any) {
     [emblaApi]
   );
 
+  const submit = () => {
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(key, { action: "submit" })
+        .then(async function (token: string) {
+          // Add your logic to submit to your backend server here.
 
-  const submit = ()=>{
-    grecaptcha.ready(function() {
-      grecaptcha.execute(key, {action: 'submit'}).then(async function(token:string) {
-        // Add your logic to submit to your backend server here.
-
-        console.log(token)
-        axios.post('/api/recaptcha', {
-          token:token,
-          cs:'cs'
-        },{
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }).then(function (response) {
+          console.log(token);
+          axios
+            .post(
+              "/api/recaptcha",
+              {
+                token: token,
+                cs: "cs",
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            )
+            .then(function (response) {
               console.log(response);
-        }).catch(function (error) {
+            })
+            .catch(function (error) {
               console.log(error);
+            });
         });
-
-
-      });
     });
-  }
-
+  };
 
   useEffect(() => {
     emblaApi?.on("select", onChangeScroll);
   }, [emblaApi, onChangeScroll]);
 
   useEffect(() => {
-    console.log('showQuiz', showQuiz)
-    console.log('quizIndex', quizIndex)
+    console.log("showQuiz", showQuiz);
+    console.log("quizIndex", quizIndex);
   }, [showQuiz, quizIndex]);
 
   return (
     <div className="relative overflow-hidden">
+      <input type="hidden" value={headStyle}/>
 
       {
         <Script
-            src={`https://www.google.com/recaptcha/api.js?render=${key}`}
-            async
-            defer
+          src={`https://www.google.com/recaptcha/api.js?render=${key}`}
+          async
+          defer
         />
       }
 
-
-      { !showQuiz && <>
-        <div className="flex h-980px">
-          <Image
-            className="object-cover"
-            src={require("../../../public/assets/range/favour_finder_bg.png")}
-            alt={""}
-            quality="100"
-          ></Image>
-        </div>
-        <div className="absolute right-0 top-1/2 -mt-[calc(18.4vw)] bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover w-[calc(42vw)] h-[calc(36.7vw)] mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px">
-          <div className="font-AlbertusNova-Regular text-[calc(2.5vw)] uppercase text-center mt-[calc(7.5vw)] mobile:text-24px">
-            flavour finder
+      {!showQuiz && (
+        <>
+          <div className="flex h-screen">
+            <Image
+              className="object-cover"
+              src={require("../../../public/assets/range/favour_finder_bg.png")}
+              alt={""}
+              quality="100"
+            ></Image>
           </div>
-          <div className="text-[calc(1.5vw)] font-Grotesque-Regular text-[#696969] px-20px m-20px mobile:text-14px">
-            <div className="text-center">
-              The whisky you choose to drink, and how you drink it, can reveal a
-              lot about your character.
+          <div className="absolute right-0 bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover top-1/2 w-560px h-490px -mt-245px paid:w-448 paid:h-391px paid:-mt-196px mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
+            <div className="leading-6 font-AlbertusNova-Regular uppercase text-center text-28px mt-100px paid:text-24px paid:mt-80px mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
+              Discover your Wild Flavour
             </div>
-            <div className="text-center mt-20px">
-              Let&apos;s find out which one is your &ldquo;Glass of
-              Wildmoor&rdquo; and what is special in YOU.
+            <div className="font-Grotesque-Regular text-[#696969] px-20px m-20px text-18px paid:text-16px mobile:text-14px">
+              <div className="text-center">
+                The whisky you choose to drink, and how you drink it, can reveal
+                a lot about your character.
+              </div>
+              <div className="text-center mt-10px">
+                Let&apos;s find out which one is your &ldquo;Glass of
+                Wildmoor&rdquo; and what is special in YOU.
+              </div>
+            </div>
+            <div
+              className="absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-50px w-225px h-55px leading-[55px] -ml-112px paid:w-180px paid:-ml-90px paid:bottom-40px paid:h-44px paid:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-30px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
+              onClick={() => setShowQuiz(true)}
+            >
+              Start
             </div>
           </div>
-          <div onClick={() => setShowQuiz(true)} className="bg-[url('/assets/range/start_btn.png')] bg-cover w-[calc(17vw)] h-[calc(4.15vw)] uppercase leading-[calc(4.5vw)] text-center mx-auto mt-20px mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:h-44px mobile:leading-[50px] mobile:text-13px">Start</div>
-        </div>
-      </>}
-      { showQuiz && <>
-        <div className={`relative bg-[url('/assets/range/bg_quiz.png')] bg-cover h-980px bg-[#E6E7E8]`}>
-          { quizIndex === 0 && <>
-            <div className="font-AlbertusNova-Regular text-40px text-black mx-auto text-center pt-150px uppercase">Q1. Which food is your favorite？</div>
-            <div className="flex justify-center mt-100px">
-              <div className={`px-15px pt-25px pb-15px ${quizOneSelected === 1 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                <div>
-                  <Image
-                    className="object-cover w-410px h-350px"
-                    src={require("../../../public/assets/range/q1_pic_01.png")}
-                    alt={""}
-                    quality="100"
-                    ></Image>
-                </div>
-                <div className="px-28px flex justify-between items-center mt-10px">
-                  <div className="font-Grotesque-Regular text-26px text-[#262627]">Rich and Smoky</div>
-                  <i className={`${quizOneSelected === 1 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                    setQuizOneSelected(1)
-                    setQuizIndex(1)
-                  }}></i>
-                </div>
-              </div>
-              <div className={`px-15px pt-25px pb-15px ml-10px ${quizOneSelected === 2 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                <div>
-                  <Image
-                    className="object-cover w-410px h-350px"
-                    src={require("../../../public/assets/range/q1_pic_02.png")}
-                    alt={""}
-                    quality="100"
-                    ></Image>
-                </div>
-                <div className="px-28px flex justify-between items-center mt-10px">
-                  <div className="font-Grotesque-Regular text-26px text-[#262627]">Light and Sweet</div>
-                  <i className={`${quizOneSelected === 2 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                    setQuizOneSelected(2)
-                    setQuizIndex(1)
-                  }}></i>
-                </div>
-              </div>
-              <div className={`px-15px pt-25px pb-15px ml-10px ${quizOneSelected === 3 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                <div>
-                  <Image
-                    className="object-cover w-410px h-350px"
-                    src={require("../../../public/assets/range/q1_pic_03.png")}
-                    alt={""}
-                    quality="100"
-                    ></Image>
-                </div>
-                <div className="px-28px flex justify-between items-center mt-10px">
-                  <div className="font-Grotesque-Regular text-26px text-[#262627]">Tropical</div>
-                  <i className={`${quizOneSelected === 3 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                    setQuizOneSelected(3)
-                    setQuizIndex(1)
-                  }}></i>
-                </div>
-              </div>
+          <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
+            <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
+              <a href="#ProductsFamily" className="inline-block mobile:w-64px">
+                products family
+              </a>
+              <a href="#TalesFromTheWild" className="inline-block mobile:w-64px">
+                Tales From The Wild
+              </a>
+              <a
+                href="#ServingSuggestion" className="inline-block mobile:w-64px"
+              >
+                Serving Suggestion
+              </a>
+              <a href="#BottleConcept" className="inline-block mobile:w-64px">
+                Bottle Concept
+              </a>
+              <a href="#FlavourFinder"
+                className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white">
+                <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+                Flavour Finder
+              </a>
             </div>
-          </>}
-          { quizIndex === 1 && <>
-            <div className="">
-              <div className="font-AlbertusNova-Regular text-40px text-black mx-auto text-center pt-150px uppercase">Q2. Now listen very carefully...<br></br>
-                Imagine you are retired from work now,<br></br>
-                where do you want to visit most?
-              </div>
-              <div className="flex justify-center mt-50px">
-                <div className={`px-40px pt-25px pb-15px ${quizTwoSelected === 1 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                  <div>
-                    <Image
-                      className="object-cover w-350px h-350px"
-                      src={require("../../../public/assets/range/q2_pic_01.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                  </div>
-                  <div className="flex justify-between items-center mt-10px">
-                    <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">
-                      <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover w-40px h-40px mr-5px"></i>
-                      Play
-                    </div>
-                    <i className={`${quizTwoSelected === 1 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                      setQuizTwoSelected(1)
-                      setQuizIndex(2)
-                    }}></i>
-                  </div>
+          </div>
+        </>
+      )}
+      {showQuiz && (
+        <>
+          <div
+            className={`relative bg-[url('/assets/range/bg_quiz.png')] bg-cover h-screen bg-[#E6E7E8]`}
+          >
+            {quizIndex === 0 && (
+              <>
+                <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px paid:text-28px paid:pt-100px mobile:text-15px mobile:pt-78px">
+                  {data.quizs.q1.question}
                 </div>
-                <div className={`px-40px pt-25px pb-15px ml-10px ${quizTwoSelected === 2 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                  <div>
-                    <Image
-                      className="object-cover w-350px h-350px"
-                      src={require("../../../public/assets/range/q2_pic_02.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                  </div>
-                  <div className="flex justify-between items-center mt-10px">
-                    <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">
-                      <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover w-40px h-40px mr-5px"></i>
-                      Play
-                    </div>
-                    <i className={`${quizTwoSelected === 2 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                      setQuizTwoSelected(2)
-                      setQuizIndex(2)
-                    }}></i>
-                  </div>
-                </div>
-                <div className={`px-40px pt-25px pb-15px ml-10px ${quizTwoSelected === 3 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                  <div>
-                    <Image
-                      className="object-cover w-350px h-350px"
-                      src={require("../../../public/assets/range/q2_pic_03.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                  </div>
-                  <div className="flex justify-between items-center mt-10px">
-                    <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">
-                      <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover w-40px h-40px mr-5px"></i>
-                      Play
-                    </div>
-                    <i className={`${quizTwoSelected === 3 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                      setQuizTwoSelected(3)
-                      setQuizIndex(2)
-                    }}></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>}
-          { quizIndex === 2 && <>
-            <div className="">
-              <div className="font-AlbertusNova-Regular text-40px text-black mx-auto text-center pt-150px uppercase">Q3. When it comes to whisky？</div>
-                <div className="flex justify-between w-[1400px] mt-50px mx-auto">
-                  <div className="w-600px">
-                    <div className="font-Grotesque-Medium text-24px text-[#696969] mx-auto text-center">Where would you commonly enjoy your whisky?</div>
-                    <div className={`px-45px py-20px flex justify-between items-center mt-20px ${quizThreeSelected1 === 1 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                      <div className="font-Grotesque-Regular text-28px text-[#262627]">Friendly gathering</div>
-                      <i className={`${quizThreeSelected1 === 1 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                        setQuizThreeSelected1(1)
-                        if (quizThreeSelected2 !== 0) {
-                          setQuizIndex(3)
-                        }
-                      }}></i>
-                    </div>
-                    <div className={`px-45px py-20px flex justify-between items-center mt-10px ${quizThreeSelected1 === 2 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                      <div className="font-Grotesque-Regular text-28px text-[#262627]">Business meal</div>
-                      <i className={`${quizThreeSelected1 === 2 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                        setQuizThreeSelected1(2)
-                        if (quizThreeSelected2 !== 0) {
-                          setQuizIndex(3)
-                        }
-                      }}></i>
-                    </div>
-                    <div className={`px-45px py-20px flex justify-between items-center mt-10px ${quizThreeSelected1 === 3 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                      <div className="font-Grotesque-Regular text-28px text-[#262627]">Home Sweet Home</div>
-                      <i className={`${quizThreeSelected1 === 3 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                        setQuizThreeSelected1(3)
-                        if (quizThreeSelected2 !== 0) {
-                          setQuizIndex(3)
-                        }
-                      }}></i>
-                    </div>
-                    <div className={`px-45px py-20px flex justify-between items-center mt-10px ${quizThreeSelected1 === 4 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                      <div className="font-Grotesque-Regular text-28px text-[#262627]">Working</div>
-                      <i className={`${quizThreeSelected1 === 4 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                        setQuizThreeSelected1(4)
-                        if (quizThreeSelected2 !== 0) {
-                          setQuizIndex(3)
-                        }
-                      }}></i>
-                    </div>
-                    <div className={`px-45px py-20px flex justify-between items-center mt-10px ${quizThreeSelected1 === 5 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                      <div className="font-Grotesque-Regular text-28px text-[#262627]">Camping/Picnic</div>
-                      <i className={`${quizThreeSelected1 === 5 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                        setQuizThreeSelected1(5)
-                        if (quizThreeSelected2 !== 0) {
-                          setQuizIndex(3)
-                        }
-                      }}></i>
-                    </div>
-                    <div className={`px-45px py-20px flex justify-between items-center mt-10px ${quizThreeSelected1 === 6 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                      <div className="font-Grotesque-Regular text-28px text-[#262627]">Celebrations</div>
-                      <i className={`${quizFiveSelected === 6 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                        setQuizThreeSelected1(6)
-                        if (quizThreeSelected2 !== 0) {
-                          setQuizIndex(3)
-                        }
-                      }}></i>
-                    </div>
-                  </div>
-                  <div className="w-600px">
-                    <div className="font-Grotesque-Medium text-24px text-[#696969] mx-auto text-center">Where  would you most like to enjoy your whiskey?</div>
-                    <div className="relative overflow-hidden mt-20px" ref={emblaRef}>
-                      <div className="flex">
-                        <div className="flex-grow-0 flex-shrink-0 basis-full relative">
-                          <div className={`px-40px pt-25px pb-15px ${quizThreeSelected2 === 1 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                            <div>
-                              <Image
-                                className="object-cover w-500px h-300px"
-                                src={require("../../../public/assets/range/q2_pic_01.png")}
-                                alt={""}
-                                quality="100"
-                                ></Image>
-                            </div>
-                            <div className="flex justify-between items-center mt-10px">
-                              <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">Top of mountain</div>
-                              <i className={`${quizThreeSelected2 === 1 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                                setQuizThreeSelected2(1)
-                                if (quizThreeSelected1 !== 0) {
-                                  setQuizIndex(3)
-                                }
-                              }}></i>
-                            </div>
-                          </div>
+                <div className="flex justify-center mt-84px paid:mt-68px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                  {data.quizs.q1.answers.map((answer, index) => {
+                    return (
+                      <div
+                        className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                          quizOneSelected === index + 1
+                            ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
+                            : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                        }`}
+                      >
+                        <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-250px mobile:h-125px">
+                          <BaseImage
+                            mImg={answer.mImg}
+                            pImg={answer.pImg}
+                            alt={""}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
                         </div>
-                        <div className="flex-grow-0 flex-shrink-0 basis-full relative">
-                          <div className={`px-40px pt-25px pb-15px ${quizThreeSelected2 === 2 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                            <div>
-                              <Image
-                                className="object-cover w-500px h-300px"
-                                src={require("../../../public/assets/range/q2_pic_02.png")}
-                                alt={""}
-                                quality="100"
-                                ></Image>
-                            </div>
-                            <div className="flex justify-between items-center mt-10px">
-                              <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">Sunny beach</div>
-                              <i className={`${quizThreeSelected2 === 2 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                                setQuizThreeSelected2(2)
-                                if (quizThreeSelected1 !== 0) {
-                                  setQuizIndex(3)
-                                }
-                              }}></i>
-                            </div>
+                        <div className="flex justify-between items-center mt-10px mobile:px-20px">
+                          <div className="font-Grotesque-Regular text-[#262627] text-22px paid:text-18px mobile:text-13px">
+                            {answer.label}
                           </div>
-                        </div>
-                        <div className="flex-grow-0 flex-shrink-0 basis-full relative">
-                          <div className={`px-40px pt-25px pb-15px ${quizThreeSelected2 === 3 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                            <div>
-                              <Image
-                                className="object-cover w-500px h-300px"
-                                src={require("../../../public/assets/range/q2_pic_03.png")}
-                                alt={""}
-                                quality="100"
-                                ></Image>
-                            </div>
-                            <div className="flex justify-between items-center mt-10px">
-                              <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">Windy coastline</div>
-                              <i className={`${quizThreeSelected2 === 3 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                                setQuizThreeSelected2(3)
-                                if (quizThreeSelected1 !== 0) {
-                                  setQuizIndex(3)
-                                }
-                              }}></i>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex-grow-0 flex-shrink-0 basis-full relative">
-                          <div className={`px-40px pt-25px pb-15px ${quizThreeSelected2 === 4 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                            <div>
-                              <Image
-                                className="object-cover w-500px h-300px"
-                                src={require("../../../public/assets/range/q2_pic_03.png")}
-                                alt={""}
-                                quality="100"
-                                ></Image>
-                            </div>
-                            <div className="flex justify-between items-center mt-10px">
-                              <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">Hiking through a valley</div>
-                              <i className={`${quizThreeSelected2 === 4 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                                setQuizThreeSelected2(4)
-                                if (quizThreeSelected1 !== 0) {
-                                  setQuizIndex(3)
-                                }
-                              }}></i>
-                            </div>
-                          </div>
+                          <i
+                            className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                              quizOneSelected === index + 1
+                                ? "bg-[url('/assets/range/icon_checked.png')]"
+                                : "bg-[url('/assets/range/icon_check.png')]"
+                            } `}
+                            onClick={() => {
+                              setQuizOneSelected(index);
+                              setQuizIndex(1);
+                            }}
+                          ></i>
                         </div>
                       </div>
-                    </div>
-                    <div className="w-full flex items-center justify-center mt-20px">
-                      {[0, 1, 2, 3].map((item, index) => {
+                    );
+                  })}
+                </div>
+              </>
+            )}
+            {quizIndex === 1 && (
+              <>
+                <div className="">
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px paid:w-720px paid:text-28px paid:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
+                    {data.quizs.q2.question}
+                  </div>
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-860px text-34px paid:w-720px paid:text-28px mobile:w-325px mobile:text-15px">
+                    {data.quizs.q2.description}
+                  </div>
+                  <div className="flex justify-center mt-84px paid:mt-68px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                    {data.quizs.q2.answers.map((answer, index) => {
+                      return (
+                        <div
+                          className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:p-20px mobile:mx-0 mobile:my-5px mobile:flex ${
+                            quizTwoSelected === index + 1
+                              ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
+                              : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                          }`}
+                        >
+                          <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-150px mobile:h-150px">
+                            <BaseImage
+                              mImg={answer.mImg}
+                              pImg={answer.pImg}
+                              alt={""}
+                              layout="fill"
+                              objectFit="cover"
+                              quality={100}
+                            ></BaseImage>
+                          </div>
+                          <div className="flex justify-between items-center mt-10px mobile:w-90px mobile:ml-20px">
+                            <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px paid:text-18px mobile:text-13px mobile:flex-col">
+                              <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover mr-5px w-34px h-34px paid:w-27px paid:h-27px mobile:w-20px mobile:h-20px"></i>
+                              <span>{answer.label}</span>
+                            </div>
+                            <i
+                              className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                quizTwoSelected === index + 1
+                                  ? "bg-[url('/assets/range/icon_checked.png')]"
+                                  : "bg-[url('/assets/range/icon_check.png')]"
+                              } `}
+                              onClick={() => {
+                                setQuizTwoSelected(index + 1);
+                                setQuizIndex(2);
+                              }}
+                            ></i>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </>
+            )}
+            {quizIndex === 2 && (
+              <>
+                <div className="">
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px paid:w-720px paid:text-28px paid:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
+                    {data.quizs.q3.question}
+                  </div>
+                  <div className="flex justify-between mt-50px mx-auto w-[1166px] paid:w-933px mobile:w-300px mobile:flex-col mobile:mt-21px">
+                    <div className="w-500px paid:w-400px mobile:w-300px">
+                      <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
+                        {data.quizs.q3.step1.title}
+                      </div>
+                      {data.quizs.q3.step1.answers.map((answer, index) => {
                         return (
                           <div
-                            key={index}
-                            className={`h-5px mx-5px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
-                              currentIndex === index
-                                ? "bg-white w-50px"
-                                : "bg-gray-300 w-20px"
+                            className={`flex justify-between items-center px-40px py-18px mt-20px paid:px-30px paid:py-14px paid:mt-16px mobile:px-20px mobile:py-17px mobile:mt-5px ${
+                              quizThreeSelected1 === index + 1
+                                ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
+                                : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                             }`}
-                            onClick={() => scrollTo(index)}
-                          ></div>
+                          >
+                            <div className="font-Grotesque-Regular text-[#262627] text-24px paid:text-18px mobile:text-12px">
+                              {answer.label}
+                            </div>
+                            <i
+                              className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                quizThreeSelected1 === index + 1
+                                  ? "bg-[url('/assets/range/icon_checked.png')]"
+                                  : "bg-[url('/assets/range/icon_check.png')]"
+                              } `}
+                              onClick={() => {
+                                setQuizThreeSelected1(index + 1);
+                                if (quizThreeSelected2 !== 0) {
+                                  setQuizIndex(3);
+                                }
+                              }}
+                            ></i>
+                          </div>
                         );
                       })}
                     </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          }
-          { quizIndex === 3 && <>
-            <div className="">
-              <div className="font-AlbertusNova-Regular text-40px text-black mx-auto text-center pt-150px uppercase">Q4. Which one is yours ?</div>
-              <div className="flex justify-center mt-50px">
-                <div className={`px-40px pt-25px pb-15px ${quizFourSelected === 1 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                  <div>
-                    <Image
-                      className="object-cover w-350px h-350px"
-                      src={require("../../../public/assets/range/q4_pic_01.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                  </div>
-                  <div className="flex justify-between items-center mt-10px">
-                    <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">A</div>
-                    <i className={`${quizFourSelected === 1 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                      setQuizFourSelected(1)
-                      setQuizIndex(4)
-                    }}></i>
-                  </div>
-                </div>
-                <div className={`px-40px pt-25px pb-15px ml-10px ${quizFourSelected === 2 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                  <div>
-                    <Image
-                      className="object-cover w-350px h-350px"
-                      src={require("../../../public/assets/range/q4_pic_02.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                  </div>
-                  <div className="flex justify-between items-center mt-10px">
-                    <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">B</div>
-                    <i className={`${quizFourSelected === 2 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                      setQuizFourSelected(2)
-                      setQuizIndex(4)
-                    }}></i>
-                  </div>
-                </div>
-                <div className={`px-40px pt-25px pb-15px ml-10px ${quizFourSelected === 3 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid" : "border-[5px] border-[#C6C6C6] border-solid"}`}>
-                  <div>
-                    <Image
-                      className="object-cover w-350px h-350px"
-                      src={require("../../../public/assets/range/q2_pic_03.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                  </div>
-                  <div className="flex justify-between items-center mt-10px">
-                    <div className="font-Grotesque-Regular text-26px text-[#262627] flex items-center">C</div>
-                    <i className={`${quizFourSelected === 3 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                      setQuizFourSelected(3)
-                      setQuizIndex(4)
-                    }}></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>}
-          { quizIndex === 4 && <>
-            <div className="">
-              <div className="font-AlbertusNova-Regular text-40px text-black mx-auto text-center pt-150px uppercase">Q5. Which best describes you？</div>
-              <div className="w-724px mx-auto">
-                <div className={`px-50px py-40px flex justify-between items-center mt-80px ${quizFiveSelected === 1 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                  <div className="font-Grotesque-Regular text-28px text-[#262627]">The Purist</div>
-                  <i className={`${quizFiveSelected === 1 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                    setQuizFiveSelected(1)
-                  }}></i>
-                </div>
-                <div className={`px-50px py-40px flex justify-between items-center mt-10px ${quizFiveSelected === 2 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                  <div className="font-Grotesque-Regular text-28px text-[#262627]">The rule breaker</div>
-                  <i className={`${quizFiveSelected === 2 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                    setQuizFiveSelected(2)
-                  }}></i>
-                </div>
-                <div className={`px-50px py-40px flex justify-between items-center mt-10px ${quizFiveSelected === 3 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid" : "border-[3px] border-[#C6C6C6] border-solid"}`}>
-                  <div className="font-Grotesque-Regular text-28px text-[#262627]">The open-minded traditionalist</div>
-                  <i className={`${quizFiveSelected === 3 ? "bg-[url('/assets/range/icon_checked.png')]" : "bg-[url('/assets/range/icon_check.png')]"} cursor-pointer bg-cover w-26px h-26px`} onClick={() => {
-                    setQuizFiveSelected(3)
-                  }}></i>
-                </div>
-              </div>
-              <div className="cursor-pointer font-AlbertusNova-Regular text-20px bg-[url('/assets/range/start_btn.png')] bg-cover w-376px h-92px uppercase leading-[90px] text-center mx-auto mt-50px mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
-                onClick={() => {
-                  setQuizIndex(5)
-                }}>see your flavor profile</div>
-            </div>
-          </>}
-          { quizIndex !== 5 && <>
-            <div className="absolute w-full bottom-50px">
-              <div className="flex w-[1370px] mx-auto justify-center">
-                <div className={`${quizIndex === 0 ? "font-Grotesque-Medium border-[#696969]" : "font-Grotesque-Regular border-[#AEAEAE]" } relative text-20px w-280px text-center  border-b-2 border-solid pb-10px`}
-                  onClick={() => {
-                    setQuizIndex(0)
-                  }}>
-                  Q1
-                  <div className={`${quizIndex === 0 ? "bg-[url('/assets/range/icon_arrow_line.png')]" : ""} absolute w-122px h-9px bg-cover z-10 top-40px left-1/2 -ml-61px`}></div>
-                </div>
-                <div className={`${quizIndex === 1 ? "font-Grotesque-Medium border-[#696969]" : "font-Grotesque-Regular border-[#AEAEAE]" } relative text-20px w-280px text-center  border-b-2 border-solid pb-10px`}
-                  onClick={() => {
-                    setQuizIndex(1)
-                  }}>
-                  Q2
-                  <div className={`${quizIndex === 1 ? "bg-[url('/assets/range/icon_arrow_line.png')]" : ""} absolute w-122px h-9px bg-cover z-10 top-40px left-1/2 -ml-61px`}></div>
-                </div>
-                <div className={`${quizIndex === 2 ? "font-Grotesque-Medium border-[#696969]" : "font-Grotesque-Regular border-[#AEAEAE]" } relative text-20px w-280px text-center  border-b-2 border-solid pb-10px`}
-                  onClick={() => {
-                    setQuizIndex(2)
-                  }}>
-                  Q3
-                  <div className={`${quizIndex === 2 ? "bg-[url('/assets/range/icon_arrow_line.png')]" : ""} absolute w-122px h-9px bg-cover z-10 top-40px left-1/2 -ml-61px`}></div>
-                </div>
-                <div className={`${quizIndex === 3 ? "font-Grotesque-Medium border-[#696969]" : "font-Grotesque-Regular border-[#AEAEAE]" } relative text-20px w-280px text-center  border-b-2 border-solid pb-10px`}
-                  onClick={() => {
-                    setQuizIndex(3)
-                  }}>
-                  Q4
-                  <div className={`${quizIndex === 3 ? "bg-[url('/assets/range/icon_arrow_line.png')]" : ""} absolute w-122px h-9px bg-cover z-10 top-40px left-1/2 -ml-61px`}></div>
-                </div>
-                <div className={`${quizIndex === 4 ? "font-Grotesque-Medium border-[#696969]" : "font-Grotesque-Regular border-[#AEAEAE]" } relative text-20px w-280px text-center  border-b-2 border-solid pb-10px`}
-                  onClick={() => {
-                    setQuizIndex(4)
-                  }}>
-                  Q5
-                  <div className={`${quizIndex === 4 ? "bg-[url('/assets/range/icon_arrow_line.png')]" : ""} absolute w-122px h-9px bg-cover z-10 top-40px left-1/2 -ml-61px`}></div>
-                </div>
-              </div>
-            </div>
-          </> }
-          {
-            quizIndex === 5 && <>
-            <div className="">
-              <div className="font-AlbertusNova-Regular text-40px text-black mx-auto text-center pt-150px uppercase">
-                You have an absolute adherence<br></br>
-                to traditional rules of Whisky</div>
-              </div>
-              <div className="text-center mx-auto flex items-center justify-center mt-10px">
-                <i className="inline-block bg-[url('/assets/range/icon_redo.png')] bg-cover w-30px h-30px mr-5px"></i>
-                <span className="font-Grotesque-Regular text-26px text-black cursor-pointer"
-                  onClick={() => {
-                    setQuizIndex(0)
-                  }}>Redo</span>
-              </div>
-              <div className="w-[1251px] mx-auto mt-10px">
-                <div className="bg-[url('/assets/range/bg_result.png')] bg-cover w-[1251px] h-400px flex px-125px pt-50px">
-                  <div className="inline-flex flex-col items-center w-300px">
-                    <Image
-                      className="object-cover w-215px h-210px"
-                      src={require("../../../public/assets/range/product.png")}
-                      alt={""}
-                      quality="100"
-                      ></Image>
-                      <div className="font-AlbertusNova-Regular text-24px text-black uppercase mt-20px">ancient moorland</div>
-                  </div>
-                  <div className="inline-flex flex-col w-600px ml-50px">
-                    <div className="inline-flex items-center">
-                        <i className="inline-block bg-[url('/assets/range/icon_business_meal.png')] bg-cover w-80px h-80px mr-10px"></i>
-                        <div className="font-AlbertusNova-Regular text-40px text-black uppercase">business meal</div>
-                    </div>
-                    <div className="font-Grotesque-Regular text-18px text-black uppercase mt-10px">gifting occasion suggestion</div>
-                    <div className="font-Grotesque-Regular text-26px leading-[40px] text-black uppercase mt-20px">Business is best served with a glass of untamed pleasure.</div>
-                    <div className="inline-block bg-[url('/assets/range/bg_explore_btn.png')] bg-cover w-200px h-66px leading-[70px] font-AlbertusNova-Regular text-20px text-black text-center uppercase mt-20px">explore</div>
-                  </div>
-                </div>
-                <div className="w-[1250px] border border-solid border-black">
-                  <div className="bg-[url('/assets/range/bg_result_02.png')] bg-cover w-[1248px] h-113px">
-                      <div className="font-Grotesque-Regular text-24px text-[#E6E7E8] text-center pt-20px">I’d like to have a personal copy of the results!</div>
-                  </div>
-                  <div className="inline-flex items-center pb-20px">
-                    <div className="inline-flex items-baseline px-15px">
-                      <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover w-22px h-22px mr-10px"></i>
-                      <input type="text" className="font-Grotesque-Regular w-270px bg-transparent focus-visible:border-0 outline-none text-black text-24px placeholder:text-[#969797] placeholder:text-24px placeholder:font-Grotesque-Regular placeholder:leading-[24px] placeholder:uppercase"  placeholder="Enter first Name"/>
-                    </div>
-                    <div className="w-1px h-68px bg-black mx-20px"></div>
-                    <div className="inline-flex items-baseline px-15px">
-                      <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover w-29px h-22px mr-10px"></i>
-                      <input type="text" className="font-Grotesque-Regular w-410px bg-transparent focus-visible:border-0 outline-none text-black text-24px placeholder:text-[#969797] placeholder:text-24px placeholder:font-Grotesque-Regular placeholder:leading-[24px] placeholder:uppercase"  placeholder="Enter your email address"/>
-                    </div>
-                    <div className="w-1px h-68px bg-black mx-20px"></div>
-                    <div className="inline-flex justify-center items-baseline px-15px">
-                      <div id="flavourFinderSubmit" className="cursor-pointer font-AlbertusNova-Regular text-22px uppercase ml-100px" onClick={()=>{submit()}}>SUBMIT</div>
+                    <div className="w-500px paid:w-400px mobile:w-310px mobile:mt-30px">
+                      <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
+                        {data.quizs.q3.step2.title}
+                      </div>
+                      <div
+                        className="relative overflow-hidden mt-20px mobile:mt-10px"
+                        ref={emblaRef}
+                      >
+                        <div className="flex">
+                          {data.quizs.q3.step2.answers.map((answer, index) => {
+                            return (
+                              <div className="flex-grow-0 flex-shrink-0 basis-full relative mobile:p-5px">
+                                <div
+                                  className={`mx-4px px-34px pt-21px pb-12px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
+                                    quizThreeSelected2 === index + 1
+                                      ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid paid:border-[3px] mobile:border-[2px]"
+                                      : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
+                                  }`}
+                                >
+                                  <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
+                                    <BaseImage
+                                      mImg={answer.mImg}
+                                      pImg={answer.pImg}
+                                      alt={""}
+                                      layout="fill"
+                                      objectFit="cover"
+                                      quality={100}
+                                    ></BaseImage>
+                                  </div>
+                                  <div className="flex justify-between items-center mt-10px">
+                                    <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px paid:text-16px mobile:text-12px">
+                                      {answer.label}
+                                    </div>
+                                    <i
+                                      className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                        quizThreeSelected2 === index + 1
+                                          ? "bg-[url('/assets/range/icon_checked.png')]"
+                                          : "bg-[url('/assets/range/icon_check.png')]"
+                                      }`}
+                                      onClick={() => {
+                                        setQuizThreeSelected2(index + 1);
+                                        if (quizThreeSelected1 !== 0) {
+                                          setQuizIndex(3);
+                                        }
+                                      }}
+                                    ></i>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      <div className="w-full flex items-center justify-center mt-20px">
+                        {[0, 1, 2, 3].map((item, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={`h-5px mx-5px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
+                                currentIndex === index
+                                  ? "bg-white w-50px"
+                                  : "bg-gray-300 w-20px"
+                              }`}
+                              onClick={() => scrollTo(index)}
+                            ></div>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </>
-          }
-        </div>
-      </>}
+              </>
+            )}
+            {quizIndex === 3 && (
+              <>
+                <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px paid:text-28px paid:pt-100px mobile:text-15px mobile:pt-78px">
+                  {data.quizs.q4.question}
+                </div>
+                <div className="flex justify-center mt-84px paid:mt-68px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                  {data.quizs.q4.answers.map((answer, index) => {
+                    return (
+                      <div
+                        className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                          quizFourSelected === index + 1
+                            ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
+                            : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                        }`}
+                      >
+                        <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-250px mobile:h-125px">
+                          <BaseImage
+                            mImg={answer.mImg}
+                            pImg={answer.pImg}
+                            alt={""}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
+                        </div>
+                        <div className="flex justify-between items-center mt-10px mobile:px-20px">
+                          <div className="font-Grotesque-Regular text-[#262627] text-22px paid:text-18px mobile:text-13px">
+                            {answer.label}
+                          </div>
+                          <i
+                            className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                              quizFourSelected === index + 1
+                                ? "bg-[url('/assets/range/icon_checked.png')]"
+                                : "bg-[url('/assets/range/icon_check.png')]"
+                            } `}
+                            onClick={() => {
+                              setQuizFourSelected(index + 1);
+                              setQuizIndex(4);
+                            }}
+                          ></i>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+            {quizIndex === 4 && (
+              <>
+                <div className="">
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px paid:w-720px paid:text-28px paid:pt-100px mobile:w-325px mobile:text-15px mobile:pt-195px">
+                    {data.quizs.q5.question}
+                  </div>
+                  <div className="w-724px mx-auto mt-120px paid:mt-96px mobile:mt-42px mobile:w-305px">
+                    {data.quizs.q5.answers.map((answer, index) => {
+                      return (
+                        <div
+                          className={`flex justify-between items-center px-40px py-18px mt-20px paid:px-30px paid:py-14px paid:mt-16px mobile:px-20px mobile:py-17px mobile:mt-5px ${
+                            quizFiveSelected === index + 1
+                              ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
+                              : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                          }`}
+                        >
+                          <div className="font-Grotesque-Regular text-[#262627] text-24px paid:text-18px mobile:text-12px">
+                            {answer.label}
+                          </div>
+                          <i
+                            className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                              quizFiveSelected === index + 1
+                                ? "bg-[url('/assets/range/icon_checked.png')]"
+                                : "bg-[url('/assets/range/icon_check.png')]"
+                            } `}
+                            onClick={() => {
+                              setQuizFiveSelected(index + 1);
+                            }}
+                          ></i>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div
+                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-50px w-313px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
+                    onClick={() => {
+                      setQuizIndex(5);
+                    }}
+                  >
+                    see your flavor profile
+                  </div>
+                </div>
+              </>
+            )}
+            {quizIndex !== 5 && (
+              <>
+                <div className="absolute w-full bottom-50px">
+                  <div className="flex mx-auto justify-center w-[1141px] paid:w-913px">
+                    <div
+                      className={`${
+                        quizIndex === 0
+                          ? "font-Grotesque-Medium border-[#696969]"
+                          : "font-Grotesque-Regular border-[#AEAEAE]"
+                      } relative text-20px w-233px paid:w-187px text-center border-b-2 border-solid pb-10px`}
+                      onClick={() => {
+                        setQuizIndex(0);
+                      }}
+                    >
+                      Q1
+                      <div
+                        className={`${
+                          quizIndex === 0
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            : ""
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                      ></div>
+                    </div>
+                    <div
+                      className={`${
+                        quizIndex === 1
+                          ? "font-Grotesque-Medium border-[#696969]"
+                          : "font-Grotesque-Regular border-[#AEAEAE]"
+                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      onClick={() => {
+                        setQuizIndex(1);
+                      }}
+                    >
+                      Q2
+                      <div
+                        className={`${
+                          quizIndex === 1
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            : ""
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                      ></div>
+                    </div>
+                    <div
+                      className={`${
+                        quizIndex === 2
+                          ? "font-Grotesque-Medium border-[#696969]"
+                          : "font-Grotesque-Regular border-[#AEAEAE]"
+                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      onClick={() => {
+                        setQuizIndex(2);
+                      }}
+                    >
+                      Q3
+                      <div
+                        className={`${
+                          quizIndex === 2
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            : ""
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                      ></div>
+                    </div>
+                    <div
+                      className={`${
+                        quizIndex === 3
+                          ? "font-Grotesque-Medium border-[#696969]"
+                          : "font-Grotesque-Regular border-[#AEAEAE]"
+                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      onClick={() => {
+                        setQuizIndex(3);
+                      }}
+                    >
+                      Q4
+                      <div
+                        className={`${
+                          quizIndex === 3
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            : ""
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                      ></div>
+                    </div>
+                    <div
+                      className={`${
+                        quizIndex === 4
+                          ? "font-Grotesque-Medium border-[#696969]"
+                          : "font-Grotesque-Regular border-[#AEAEAE]"
+                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      onClick={() => {
+                        setQuizIndex(4);
+                      }}
+                    >
+                      Q5
+                      <div
+                        className={`${
+                          quizIndex === 4
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            : ""
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+            {quizIndex === 5 && (
+              <>
+                <div className="">
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase pt-135px w-590x text-30px paid:top-100px paid:w-472px paid:text-24px mobile:w-320px mobile:text-15px mobile:pt-85px">
+                    You have an absolute adherence<br></br>
+                    to traditional rules of Whisky
+                  </div>
+                </div>
+                <div className="text-center mx-auto flex items-center justify-center mt-10px">
+                  <i className="inline-block bg-[url('/assets/range/icon_redo.png')] bg-cover mr-5px w-25px h-25px paid:w-20px paid:h-20px mobile:w-15px mobile:h-15px"></i>
+                  <span
+                    className="font-Grotesque-Regular text-black cursor-pointer text-22px paid:text-18px mobile:text-13px"
+                    onClick={() => {
+                      setQuizIndex(0);
+                    }}
+                  >
+                    Redo
+                  </span>
+                </div>
+                <div className="mx-auto mt-10px w-[1042px] paid:w-834px mobile:w-330px">
+                  <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-113px pt-42px w-[1042px] h-334px paid:px-90px paid:pt-34px paid:w-834px paid:h-267px mobile:w-330px mobile:h-461px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                    <div className="inline-flex flex-col items-center w-234px paid:w-188px mobile:w-241px">
+                      <Image
+                        className="object-cover w-180px h-175px paid:w-144px paid:h-120px mobile:w-148px mobile:h-145px"
+                        src={require("../../../public/assets/range/product.png")}
+                        alt={""}
+                        quality="100"
+                      ></Image>
+                      <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px paid:text-16px mobile:text-14px">
+                        ancient moorland
+                      </div>
+                    </div>
+                    <div className="inline-flex flex-col ml-50px w-515px paid:w-412px mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
+                      <div className="inline-flex items-center">
+                        <i className="inline-block bg-[url('/assets/range/icon_business_meal.png')] bg-cover mr-10px w-68px h-68px paid:w-54px paid:h-54px mobile:w-36px mobile:h-36px"></i>
+                        <div className="font-AlbertusNova-Regular text-black uppercase text-34px paid:text-27px mobile:text-16px">
+                          business meal
+                        </div>
+                      </div>
+                      <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px paid:text-12px mobile:text-10px">
+                        gifting occasion suggestion
+                      </div>
+                      <div className="font-Grotesque-Regular text-black uppercase mt-20px leading-normal text-22px paid:text-18px mobile:text-14px mobile:text-center">
+                        Business is best served with a glass of untamed
+                        pleasure.
+                      </div>
+                      <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px paid:w-134px paid:h-44px paid:leading-[50px] paid:text-14px">
+                        explore
+                      </div>
+                    </div>
+                  </div>
+                  <div className="border border-solid border-black w-[1042px] paid:w-834px mobile:w-330px">
+                    <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] bg-cover w-[1042px] h-94px paid:w-834px paid:h-75px mobile:w-330px mobile:h-56px">
+                      <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-17px text-20px paid:pt-14px paid:text-16px mobile:pt-10px mobile:text-12px">
+                        I’d like to have a personal copy of the results!
+                      </div>
+                    </div>
+                    <div className="inline-flex items-center pb-17px paid:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
+                      <div className="inline-flex items-center px-25px mobile:pt-10px mobile:pb-20px">
+                        <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px paid:w-15px paid:h-15px mobile:w-12px mobile:h-11px"></i>
+                        <input
+                          type="text"
+                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-208px paid:w-164px paid:text-16px paid:placeholder:text-16px paid:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                          placeholder="Enter first Name"
+                        />
+                      </div>
+                      <div className="w-1px bg-black h-57px paid:h-45px mobile:h-1px mobile:w-330px"></div>
+                      <div className="inline-flex items-center px-25px mobile:py-20px">
+                        <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px paid:w-20px paid:h-15px mobile:w-15px mobile:h-11px"></i>
+                        <input
+                          type="text"
+                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-315px paid:w-250px paid:text-16px paid:placeholder:text-16px paid:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                          placeholder="Enter your email address"
+                        />
+                      </div>
+                      <div className="w-1px bg-black h-57px paid:h-45px mobile:h-1px mobile:w-330px"></div>
+                      <div className="inline-flex justify-center items-center px-15px w-325px paid:w-260px mobile:w-330px mobile:h-60px">
+                        <div
+                          id="flavourFinderSubmit"
+                          className="inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase "
+                          onClick={() => {
+                            submit();
+                          }}
+                        >
+                          SUBMIT
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
+                  <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
+                    <a href="#ProductsFamily" className="inline-block mobile:w-64px">
+                      products family
+                    </a>
+                    <a href="#TalesFromTheWild" className="inline-block mobile:w-64px">
+                      Tales From The Wild
+                    </a>
+                    <a
+                      href="#ServingSuggestion" className="inline-block mobile:w-64px"
+                    >
+                      Serving Suggestion
+                    </a>
+                    <a href="#BottleConcept" className="inline-block mobile:w-64px">
+                      Bottle Concept
+                    </a>
+                    <a href="#FlavourFinder"
+                      className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white">
+                      <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+                      Flavour Finder
+                    </a>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

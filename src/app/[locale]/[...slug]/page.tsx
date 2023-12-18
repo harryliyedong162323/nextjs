@@ -31,7 +31,6 @@ function getDynamicComponent(data: any, k:number) {
 
 
 
-
 async function getPageData(params: any) {
   // params should be paased to fetch()
   console.log(params)
@@ -97,7 +96,7 @@ export default async function Page({
   return (
 
     <div>
-      {/*<Header></Header>*/}
+      <Header></Header>
       <main>
 
         <Suspense fallback={<div>Loading...</div>}>

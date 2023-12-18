@@ -7,7 +7,7 @@ import Draggable from "react-draggable";
 // const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
 function BottleConceptComponent(props: any) {
-
+  const headStyle = props.data.entry.headStyle;
   const [hasWindow, setHasWindow] = useState(false);
 
   const [startPlaying, setStartPlaying] = useState(false);
@@ -29,6 +29,7 @@ function BottleConceptComponent(props: any) {
 
   return (
     <div id="BottleConcept" className="relative overflow-hidden">
+      <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px paid:top-84px mobile:top-82px">
           <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px paid:text-27px mobile:text-20px">

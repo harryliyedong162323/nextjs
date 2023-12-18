@@ -144,7 +144,7 @@ const bottle:bottleContent[] = [
 
 ];
 function ProductFamilyComponent(props: any) {
-
+    const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
     const [currentBottleIndex,setCurrentBottleIndex] = useState(0);
 
@@ -164,6 +164,7 @@ function ProductFamilyComponent(props: any) {
 
 
         <div id="ProductsFamily" className="h-screen overflow-hidden">
+            <input type="hidden" value={headStyle}/>
             <div className="h-[70vh] overflow-hidden">
                 <div className="relative h-full w-full">
                     <BaseImage

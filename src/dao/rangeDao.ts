@@ -18,12 +18,16 @@ class RangeDao {
             {
               type: "productFamilyComponent",
               name: "productFamilyComponent",
-              entry: {},
+              entry: {
+                headStyle:'white',
+              },
             },
             {
               type: "talesFromTheWildComponent",
               name: "talesFromTheWildComponent",
               entry: {
+                headStyle:'black',
+                hasNavigation: true,
                 kols: [
                   {
                     id: "10086",
@@ -66,17 +70,23 @@ class RangeDao {
             {
               type: "servingSuggestionComponent",
               name: "servingSuggestionComponent",
-              entry: {},
+              entry: {
+                headStyle:'black',
+              },
             },
             {
               type: "bottleConceptComponent",
               name: "bottleConceptComponent",
-              entry: {},
+              entry: {
+                headStyle:'white',
+              },
             },
             {
               type: "flavourFinderComponent",
               name: "flavourFinderComponent",
-              entry: {},
+              entry: {
+                headStyle:'white',
+              },
             },
           ]
         }

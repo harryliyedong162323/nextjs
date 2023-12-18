@@ -23,12 +23,12 @@ const config: Config = {
       spacing: generatePreset(1,1200,'px'),
       margin: generatePreset(1,1200,'px'),
       padding: generatePreset(1,1200,'px'),
-      fontSize: generatePreset(1,64,'px'),
+      fontSize: generatePreset(1,90,'px'),
       borderRadius: generatePreset(1,200,'px'),
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       screens: {
         mobile: {'max': '768px'}, // size / 2
@@ -49,12 +49,30 @@ const config: Config = {
         'Grotesque-Medium':['GalanoGrotesque-Medium'],
       },
       animation: {
-        scroll: 'scroll 1s infinite',
+        fadeIn:'fadeIn 1s ease-in-out 1s forwards',
+        scrollMore: 'scrollMore 1s infinite',
         'move-top': 'moveTop 0.5s 1 forwards',
+      },
+      rotate: {
+        '26': '26deg',
+        '37': '37deg',
       },
       keyframes: {
 
-        scroll: {
+
+        fadeIn:{
+          '0%':{
+            opacity: '0'
+          },
+          '50%':{
+            opacity: '.5'
+          },
+          '100%':{
+            opacity: '1'
+          }
+        },
+
+        scrollMore: {
           '0%': {
             transform: 'translate(0, 0)',
             opacity: '0'
@@ -63,8 +81,8 @@ const config: Config = {
             opacity: '1'
           },
           '80%': {
-              transform: 'translate(0, 6px)',
-              opacity: '0'
+            transform: 'translate(0, 6px)',
+            opacity: '0'
           },
           '100%': {
             opacity: '0'

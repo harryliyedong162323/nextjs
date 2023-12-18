@@ -37,35 +37,45 @@ class HomeDao{
                         {
                             type: "KVAnimationComponent",
                             name: "KVAnimationComponent",
-                            entry: {},
+                            entry: {
+                                headStyle:'large',   //large white black none
+                            },
                         },
                         {
                             type: "productFamilyComponent",
                             name: "productFamilyComponent",
                             entry: {
-
+                                headStyle:'white',
                             },
                         },
                         {
                             type: "interactiveVideoComponent",
                             name: "interactiveVideoComponent",
-                            entry: {},
+                            entry: {
+                                headStyle:'white',
+                            },
                         },
                         {
                             type: "introduceCampaignComponent",
                             name: "introduceCampaignComponent",
-                            entry: {},
+                            entry: {
+                                headStyle:'black',
+                            },
                         },
                         {
                             type: "nearYouComponent",
                             name: "nearYouComponent",
-                            entry: {},
+                            entry: {
+                                headStyle:'black',
+                            },
                         },
 
                         {
                             type: "VIPClubComponent",
                             name: "VIPClubComponent",
-                            entry: {},
+                            entry: {
+                                headStyle:'white',
+                            },
                         },
                     ]
                 },

@@ -6,10 +6,10 @@ import BaseVideo from "@/components/base/video";
 
 function InteractiveVideoComponent(props: any) {
 
-
+    const headStyle = props.data.entry.headStyle;
     return (
-       <div className="w-full h-screen relative overflow-hidden">
-
+       <div className="w-full h-screen relative overflow-hidden bg-black">
+           <input type="hidden" value={headStyle}/>
            {/*<BaseImage*/}
            {/*    defaultImg={require("../../../public/assets/interactiveVideo/bg.png")}*/}
            {/*    alt={""}*/}
@@ -17,6 +17,7 @@ function InteractiveVideoComponent(props: any) {
            {/*    objectFit="cover"*/}
            {/*    quality={100}*/}
            {/*></BaseImage>*/}
+           {/*src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.mp4"*/}
 
            <BaseVideo
                src="https://video.699pic.com/videos/67/96/85/a_6502c28512eef16946796850794.mp4"

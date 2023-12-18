@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useEffect, useState, useCallback, Suspense} from "react";
+import React, {useEffect, useState, useCallback, Suspense, useRef} from "react";
 // import ReactFullpage from '@fullpage/react-fullpage';
 import {ISlideConfig, PageSlides, SlideParallaxType} from 'react-page-slides';
 
@@ -38,7 +38,6 @@ import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
 
 function getComponent(data: any, k:number) {
-
     const props = { data : data }
 
     switch(data.name) {
@@ -91,20 +90,28 @@ function FullPage(props: any) {
     console.log(props)
     const [isBrowser, setIsBrowser] = useState(false);
     const [slideFlag,setSliderFlag] = useState(true);
-
+    const [currentPageNumber, setCurrentPageNumber] = useState<number>(0);
 
     useEffect(() => {
-        setTimeout(()=>{setIsBrowser(true)},50);
+
+        setTimeout(()=>{setIsBrowser(true);},50);
     }, []);
 
+    useEffect(() => {
+        if(isBrowser){
+            setHeadStyle(0);
+        }
+    }, [isBrowser]);
+
     const pageComponents = props.data.entry.children;
-
-
 
 
     const slides: ISlideConfig[] = [
 
         ...pageComponents.map((data:any, k:number)=>{
+            data.entry.isFullPage = true
+            data.entry.pageNumber = k;
+            data.entry.currentPageNumber = currentPageNumber;
             return(
 
                 {
@@ -122,19 +129,46 @@ function FullPage(props: any) {
 
 
 
-    const handleSlideChange = (e:number)=>{
-        // console.log(e)
-        // console.log(slides.length)
-        // const nav:any = document.getElementById('nav');
-        //
-        // if(e == slides.length-1){
-        //     // setSliderFlag(false);
-        //     nav.style.display = 'none';
-        //
-        // }else{
-        //     // setSliderFlag(true);
-        //     nav.style.display = 'block';
-        // }
+
+    const setHeadStyle = (index:number):void => {
+        const slide = document.querySelectorAll('.rps-slide');
+        const currentHead = slide[index].querySelector('input[type="hidden"]') as HTMLInputElement;
+        const value:string = currentHead?.value || 'white';
+
+        const nav = document.getElementsByTagName('nav');
+        for(let i=0;i<nav.length;i++){
+            nav[i].style.display = 'none';
+        }
+         console.log('nav-'+value)
+
+         let currentNav = document.getElementById('nav-'+value) as HTMLInputElement;
+
+         currentNav&&(currentNav.style.display = 'block');
+
+    }
+
+
+
+
+    const handleSlideChange = (e:number):void=>{
+        // Used to monitor and determine whether to flip to the current page, to achieve animation effects
+        setCurrentPageNumber(e)
+        pageComponents.map((item: any) => item.entry.currentPageNumber = e)
+        // console.log(slides)
+        // console.log((slides as ISlideConfig[])[e].content)
+        const nav:any = document.getElementById('nav');
+
+        // console.log(setHeadStyle(e))
+        setHeadStyle(e);
+
+        if(e == slides.length-1){
+            // setSliderFlag(false);
+            nav&&(nav.style.display = 'none');
+
+        }else{
+            // setSliderFlag(true);
+            nav&&(nav.style.display = 'block');
+        }
     }
 
 

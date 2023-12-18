@@ -5,11 +5,14 @@ import Image from "next/image";
 import BaseImage from "@/components/base/image";
 
 function VIPClubComponent(props: any) {
+
+    const headStyle = props.data.entry.headStyle;
+
     useEffect(() => {}, []);
 
     return (
         <section className="relative h-screen bg-cover bg-[url('/assets/VIPClub/bg.png')] bg-black overflow-hidden">
-
+            <input type="hidden" value={headStyle}/>
             <div className="relative container mx-auto">
                 <div className="pt-154px uppercase font-AlbertusNova-Regular font-normal text-33px text-center w-625px mx-auto text-white pb-114px paid:pt-110px paid:text-23px paid:w-446px paid:pb-81px mobile:text-20px mobile:leading-[30px] mobile:w-325px mobile:pt-90px mobile:pb-67px">Join us in our next adventures,be the first to know.</div>
 

@@ -127,7 +127,7 @@ function LocationMapComponent(props: any) {
                 }
 
 
-                <div className="absolute z-20 top-[31px] right-[42px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
+                <div className="absolute z-20 top-[118px] right-[42px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
                     <div className="bg-[url('/assets/add.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectAdd()}></div>
                     <div className="bg-[url('/assets/reduce.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectReduce()}></div>
                     <div className="bg-[url('/assets/positioning.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleLocation()}></div>
