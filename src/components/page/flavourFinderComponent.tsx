@@ -6,6 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Script from "next/script";
 import axios from "axios";
 import BaseImage from "../base/image";
+import ReactPlayer from "react-player";
 declare const grecaptcha: any;
 
 const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
@@ -134,7 +135,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_01.png"),
           label: "Play",
           value: "A",
-          audio: "",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/01.mp3",
         },
         {
           id: 0,
@@ -142,7 +143,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_02.png"),
           label: "Play",
           value: "B",
-          audio: "",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/02.mp3",
         },
         {
           id: 0,
@@ -150,7 +151,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_03.png"),
           label: "Play",
           value: "C",
-          audio: "",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/03.mp3",
         },
       ],
     },
@@ -295,6 +296,10 @@ function FlavourFinderComponent(props: any) {
   const [quizThreeSelected2, setQuizThreeSelected2] = useState<number>(0);
   const [quizFourSelected, setQuizFourSelected] = useState<number>(0);
   const [quizFiveSelected, setQuizFiveSelected] = useState<number>(0);
+
+  const [videoPlay1, setVideoPlay1] = useState<boolean>(false);
+  const [videoPlay2, setVideoPlay2] = useState<boolean>(false);
+  const [videoPlay3, setVideoPlay3] = useState<boolean>(false);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -505,8 +510,36 @@ function FlavourFinderComponent(props: any) {
                           </div>
                           <div className="flex justify-between items-center mt-10px mobile:w-90px mobile:ml-20px">
                             <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px paid:text-18px mobile:text-13px mobile:flex-col">
-                              <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover mr-5px w-34px h-34px paid:w-27px paid:h-27px mobile:w-20px mobile:h-20px"></i>
+                              <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover mr-5px w-34px h-34px paid:w-27px paid:h-27px mobile:w-20px mobile:h-20px"
+                              onClick={() => {
+                                if (index === 0) {
+                                  setVideoPlay1(!videoPlay1)
+                                  setVideoPlay2(false)
+                                  setVideoPlay3(false)
+                                } else if (index === 1) {
+                                  setVideoPlay1(false)
+                                  setVideoPlay2(!videoPlay2)
+                                  setVideoPlay3(false)
+                                } else if (index === 2) {
+                                  setVideoPlay1(false)
+                                  setVideoPlay2(false)
+                                  setVideoPlay3(!videoPlay3)
+                                }
+                                  
+                              }}></i>
                               <span>{answer.label}</span>
+                              <ReactPlayer
+                                className="hidden"
+                                playing={index === 0 ? videoPlay1 : index === 1 ? videoPlay2 : videoPlay3}
+                                loop={true}
+                                muted={false}
+                                controls={false}
+                                controlsList="nodownload"
+                                onEnded={() => {}}
+                                width="1%"
+                                height="1%"
+                                url={answer.audio}
+                              ></ReactPlayer>
                             </div>
                             <i
                               className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
