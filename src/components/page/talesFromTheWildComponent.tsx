@@ -102,7 +102,7 @@ function TalesFromTheWildComponent(props: any) {
     setToKol(toKol)
     setTimeout(() => {
       setCurrentKol(toKol)
-    }, 2000)
+    }, 1000)
   }
 
   return (
@@ -123,7 +123,7 @@ function TalesFromTheWildComponent(props: any) {
                   {currentKol === index && (
                     <>
                       <div 
-                        className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-[2000ms] ${ currentKol !== toKol ? 'w-139px paid:w-111px h-452px paid:h-362px mobile:h-94px mt-77px paid:mt-52px' : 'w-615px h-516px paid:w-492px paid:h-414px mobile:h-360px'}`}
+                        className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${ currentKol !== toKol ? 'w-139px paid:w-111px h-452px paid:h-362px mobile:h-94px mt-77px paid:mt-52px' : 'w-615px h-516px paid:w-492px paid:h-414px mobile:h-360px'}`}
                         >
                         <BaseImage
                           mImg={item.banner.mImg}
@@ -161,9 +161,9 @@ function TalesFromTheWildComponent(props: any) {
                     <>
                       <div
                         key={index}
-                        className={`relative grayscale hover:grayscale-0 hover:text-white hover:animate-move-top w-139px h-full pt-77px paid:w-111px paid:pt-52px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-[2000ms] ${ toKol === index ? 'w-615px paid:w-492px mobile:h-360px' : 'w-139px paid:w-111px mobile:h-94px'}`}
+                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-77px paid:w-111px paid:pt-52px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${ toKol === index ? 'w-615px paid:w-492px mobile:h-360px' : 'w-139px paid:w-111px mobile:h-94px'}`}
                       >
-                        <div className={`absolute w-full transition-all ease-in-out duration-[2000ms] ${ toKol === index ? 'h-516px paid:h-414px mobile:h-360px' : 'h-452px paid:h-362px mobile:h-94px'}`}>
+                        <div className={`absolute w-full transition-all hover:text-white  ease-in-out duration-1000 ${ toKol === index ? 'h-516px paid:h-414px mobile:h-360px' : 'h-452px paid:h-362px mobile:h-94px'}`}>
                           <div className={`${ toKol === index ? 'hidden' : '' } absolute z-10 font-AlbertusNova-Regular text-16px rotate-90 top-60px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}>
                             {item.name}
                           </div>
@@ -173,7 +173,7 @@ function TalesFromTheWildComponent(props: any) {
                             }}
                             className="absolute cursor-pointer z-10 bottom-20px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-15px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-30px paid:w-24px paid:h-24px paid:-mt-12px paid:hover:w-48px paid:hover:h-48px paid:hover:-ml-24px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:-mt-20px"
                           ></div>
-                          <div className={`relative inline-block object-cover mobile:w-full transition-all ease-in-out duration-[2000ms] ${ toKol === index ? 'w-615px h-516px paid:w-492px paid:h-414px mobile:h-360px' : 'w-139px h-452px paid:w-111px paid:h-362px mobile:h-94px'}`}>
+                          <div className={`relative inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${ toKol === index ? 'w-615px h-516px paid:w-492px paid:h-414px mobile:h-360px' : 'w-139px h-452px paid:w-111px paid:h-362px mobile:h-94px'}`}>
                             <BaseImage
                                 mImg={item.banner.mImg}
                                 pImg={item.banner.pImg}

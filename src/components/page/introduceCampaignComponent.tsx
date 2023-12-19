@@ -129,7 +129,7 @@ function IntroduceCampaignComponent(props: any) {
             }
         })
 
-        console.log(styles)
+        // console.log(styles)
 
         setTweenValues(styles)
     }, [emblaApi, setTweenValues])

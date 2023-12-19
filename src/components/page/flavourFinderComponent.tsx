@@ -87,6 +87,20 @@ interface ComponentData {
       }>;
     };
   };
+  recommendResults: Array<{
+    img: {
+      pImg: string
+      mImg: string
+    },
+    name: string
+    icon: {
+      pImg: string
+      mImg: string
+    },
+    type: string
+    tips: string
+    description: string
+  }>
 }
 
 const componentData: ComponentData = {
@@ -126,8 +140,7 @@ const componentData: ComponentData = {
     q2: {
       id: 0,
       question: "Q2. NOW LISTEN VERY CAREFULLY...",
-      description:
-        "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
+      description: "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
       answers: [
         {
           id: 0,
@@ -278,6 +291,33 @@ const componentData: ComponentData = {
       ],
     },
   },
+  recommendResults: [{
+    img: {
+      pImg: require("../../../public/assets/range/product.png"),
+      mImg: require("../../../public/assets/range/product.png"),
+    },
+    name: "ancient moorland",
+    icon: {
+      pImg: require("../../../public/assets/range/icon_business_meal.png"),
+      mImg: require("../../../public/assets/range/icon_business_meal.png"),
+    },
+    type: "business meal",
+    tips: "gifting occasion suggestion",
+    description: "Business is best served with a glass of untamed pleasure."
+  }, {
+    img: {
+      pImg: require("../../../public/assets/range/product_40.png"),
+      mImg: require("../../../public/assets/range/product_40.png"),
+    },
+    name: "Tropical Coast",
+    icon: {
+      pImg: require("../../../public/assets/range/icon_home_sweet.png"),
+      mImg: require("../../../public/assets/range/icon_home_sweet.png"),
+    },
+    type: "At home alone",
+    tips: "gifting occasion suggestion",
+    description: "Nothing beats a night cap after another fine day."
+  }]
 };
 
 function FlavourFinderComponent(props: any) {
@@ -303,6 +343,8 @@ function FlavourFinderComponent(props: any) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [currentRecommend, setCurrentRecommend] = useState<number>(0);
 
   const onChangeScroll = useCallback(
     (emblaApi: { selectedScrollSnap: () => any }) => {
@@ -891,27 +933,39 @@ function FlavourFinderComponent(props: any) {
                     <div className="inline-flex flex-col items-center w-234px paid:w-188px mobile:w-241px">
                       <Image
                         className="object-cover w-180px h-175px paid:w-144px paid:h-120px mobile:w-148px mobile:h-145px"
-                        src={require("../../../public/assets/range/product.png")}
+                        src={data.recommendResults[currentRecommend].img.pImg}
                         alt={""}
                         quality="100"
                       ></Image>
                       <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px paid:text-16px mobile:text-14px">
-                        ancient moorland
+                      {data.recommendResults[currentRecommend].name}
+                      </div>
+                      <div className="flex mt-10px">
+                        {data.recommendResults.map((item, index) => {
+                          return (
+                            <div
+                              key={key}
+                              className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
+                                currentRecommend === index ? "bg-[#969797] w-50px" : "bg-[#E6E7E8] w-20px"
+                              }`}
+                              onClick={() => setCurrentRecommend(index)}
+                            ></div>
+                          );
+                        })}
                       </div>
                     </div>
                     <div className="inline-flex flex-col ml-50px w-515px paid:w-412px mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
                       <div className="inline-flex items-center">
                         <i className="inline-block bg-[url('/assets/range/icon_business_meal.png')] bg-cover mr-10px w-68px h-68px paid:w-54px paid:h-54px mobile:w-36px mobile:h-36px"></i>
                         <div className="font-AlbertusNova-Regular text-black uppercase text-34px paid:text-27px mobile:text-16px">
-                          business meal
+                        {data.recommendResults[currentRecommend].type}
                         </div>
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px paid:text-12px mobile:text-10px">
-                        gifting occasion suggestion
+                        {data.recommendResults[currentRecommend].tips}
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-20px leading-normal text-22px paid:text-18px mobile:text-14px mobile:text-center">
-                        Business is best served with a glass of untamed
-                        pleasure.
+                      {data.recommendResults[currentRecommend].description}
                       </div>
                       <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px paid:w-134px paid:h-44px paid:leading-[50px] paid:text-14px">
                         explore

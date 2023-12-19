@@ -143,6 +143,15 @@ function FullPage(props: any) {
 
          let currentNav = document.getElementById('nav-'+value) as HTMLInputElement;
 
+
+        if(index != 0){
+            let navChildren = document.getElementById('nav-large-content');
+            navChildren&&(navChildren.style.transform = 'translateY(100%)');
+        }else{
+            let navChildren = document.getElementById('nav-large-content');
+            setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},250)
+        }
+
          currentNav&&(currentNav.style.display = 'block');
 
     }
