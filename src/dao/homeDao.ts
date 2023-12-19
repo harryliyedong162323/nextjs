@@ -38,7 +38,7 @@ class HomeDao{
                             type: "KVAnimationComponent",
                             name: "KVAnimationComponent",
                             entry: {
-                                headStyle:'large',   //large white black none
+                                headStyle:'large',   //large white black bg-white none
                             },
                         },
                         {

@@ -96,7 +96,7 @@ export default async function Page({
   return (
 
     <div>
-      <Header></Header>
+      <Header headStyle={componentsData[0].type != 'fullPage' ? componentsData[0].entry.headStyle : ''}></Header>
       <main>
 
         <Suspense fallback={<div>Loading...</div>}>

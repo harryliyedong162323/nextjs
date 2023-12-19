@@ -12,11 +12,11 @@ function Footer(props: any) {
     const [language, setLanguage] = useState(false)
     const hanleLanguage = () => {
         setLanguage(true)
-        document.body.style.overflow = 'hidden';
+        // document.body.style.overflow = 'hidden';
     }
     const hanleCloseLanguage = () => {
         setLanguage(false)
-        document.body.style.overflow = 'auto';
+        // document.body.style.overflow = 'auto';
     }
     const screenTop = () => {
         window.scrollTo(0, 0); // 将页面滚动到顶部
@@ -182,13 +182,13 @@ function Footer(props: any) {
                                         panel.list.map((item) => (
                                             <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular  pb-17px mobile:block " key={item.id}>
                                                 <div className="flex  justify-between">
-                                                   
+
                                                         <div className="w-11/12">
                                                         <BaseLink hover="text-black-500">
                                                             {item.content}
                                                             </BaseLink>
                                                         </div>
-                                                
+
                                                     <div className="mobile:w-15px mobile:h-17px reactive cursor-pointer">
                                                         <BaseImage
                                                             mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}

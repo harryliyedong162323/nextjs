@@ -34,8 +34,8 @@ const campaigns:campaignsContent[] = [
             },
             {
                 id:1,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
+                mImg:require("../../../public/assets/nearYou/kv-2.png"),
+                pImg:require("../../../public/assets/nearYou/kv-2.png"),
             },
             {
                 id:2,
@@ -52,19 +52,10 @@ const campaigns:campaignsContent[] = [
         children:[
             {
                 id:0,
-                mImg:require("../../../public/assets/nearYou/kv-1.png"),
-                pImg:require("../../../public/assets/nearYou/kv-1.png"),
+                mImg:require("../../../public/assets/nearYou/kv-2.png"),
+                pImg:require("../../../public/assets/nearYou/kv-2.png"),
             },
-            {
-                id:1,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            },
-            {
-                id:2,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            }
+
         ]
     },
     {
@@ -75,19 +66,10 @@ const campaigns:campaignsContent[] = [
         children:[
             {
                 id:0,
-                mImg:require("../../../public/assets/nearYou/kv-1.png"),
-                pImg:require("../../../public/assets/nearYou/kv-1.png"),
-            },
-            {
-                id:1,
                 mImg:require("../../../public/assets/nearYou/kv-3.png"),
                 pImg:require("../../../public/assets/nearYou/kv-3.png"),
             },
-            {
-                id:2,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            }
+
         ]
     },
     {
@@ -101,16 +83,7 @@ const campaigns:campaignsContent[] = [
                 mImg:require("../../../public/assets/nearYou/kv-1.png"),
                 pImg:require("../../../public/assets/nearYou/kv-1.png"),
             },
-            {
-                id:1,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            },
-            {
-                id:2,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            }
+
         ]
     },
     {
@@ -121,19 +94,10 @@ const campaigns:campaignsContent[] = [
         children:[
             {
                 id:0,
-                mImg:require("../../../public/assets/nearYou/kv-1.png"),
-                pImg:require("../../../public/assets/nearYou/kv-1.png"),
+                mImg:require("../../../public/assets/nearYou/kv-2.png"),
+                pImg:require("../../../public/assets/nearYou/kv-2.png"),
             },
-            {
-                id:1,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            },
-            {
-                id:2,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            }
+
         ]
     },
     {
@@ -144,19 +108,10 @@ const campaigns:campaignsContent[] = [
         children:[
             {
                 id:0,
-                mImg:require("../../../public/assets/nearYou/kv-1.png"),
-                pImg:require("../../../public/assets/nearYou/kv-1.png"),
-            },
-            {
-                id:1,
                 mImg:require("../../../public/assets/nearYou/kv-3.png"),
                 pImg:require("../../../public/assets/nearYou/kv-3.png"),
             },
-            {
-                id:2,
-                mImg:require("../../../public/assets/nearYou/kv-3.png"),
-                pImg:require("../../../public/assets/nearYou/kv-3.png"),
-            }
+
         ]
     }
 ];
@@ -192,7 +147,7 @@ function NestedCarousel(props: any) {
     const data = props.list;
     return (
 
-        <div className={`${activeFlag == true ? 'pointer-events-auto mobile:pointer-events-none' : 'pointer-events-none'} overflow-hidden relative h-full w-full`} ref={emblaRef}>
+        <div className={`${activeFlag == true && data.length != 1 ? 'pointer-events-auto mobile:pointer-events-none' : 'pointer-events-none'} overflow-hidden relative h-full w-full`} ref={emblaRef}>
             <div className="flex h-full w-full">
                 {
                     data.map((item:any,index:number)=>{
@@ -214,7 +169,7 @@ function NestedCarousel(props: any) {
             </div>
 
             <div className={` absolute mt-30px left-41px bottom-41px w-full items-center justify-start mobile:bottom-50px  paid:bottom-29px paid:left-29px  ${activeFlag == true ? 'flex mobile:hidden' : 'hidden'}`}>
-                {data.map((item:any, index:number) => {
+                {data.length == 1 ? null : data.map((item:any, index:number) => {
                     return (
                         <div
                             key={index}

@@ -62,6 +62,8 @@ function LocationMapComponent(props: any) {
         }
     ]
 
+    interface zoomContent {add:number,reduce:number}
+
 
     const items = ['Item 1', 'Item 2', 'Item 3'];
     const [browser,setBrowser] = useState(false);
@@ -75,10 +77,17 @@ function LocationMapComponent(props: any) {
     });
 
 
-    const [selectLocation, setSelectLocation] = useState(0);
+    let [selectLocation, setSelectLocation] = useState(0);
 
-    let [selectZoom, setSelectZoom] = useState(10);
+    let [selectZoom, setSelectZoom] = useState({
+        add:0,
+        reduce:0,
+    } as zoomContent);
 
+
+    let [selectZoomIn,setSelectZoomIn]  = useState(0);
+
+    let [selectZoomOut,setSelectZoomOut]  = useState(0);
 
 
     const [openSelected, setOpenSelected] = useState(false);
@@ -97,18 +106,22 @@ function LocationMapComponent(props: any) {
 
 
     const handleSelectAdd = () => {
-        if(selectZoom == 20){
-            return false;
-        }
-        setSelectZoom(selectZoom++);
+        // if(selectZoom == 20){
+        //     return false;
+        // }
+
+
+        setSelectZoomIn(selectZoomIn+1);
 
     };
 
     const handleSelectReduce = () => {
-        if(selectZoom == 0){
-            return false;
-        }
-        setSelectZoom(selectZoom--);
+        // if(selectZoom == 0){
+        //     return false;
+        // }
+
+        setSelectZoomOut(selectZoomOut+1);
+
 
     };
 
@@ -116,14 +129,14 @@ function LocationMapComponent(props: any) {
 
         setBrowser(true);
 
-    }, [browser]);
+    }, [browser,selectZoom]);
 
 
     return (
         <div className="overflow-hidden">
             <div className="h-screen relative">
                 {  // @ts-ignore
-                    browser ? <Baidu info={selectedItem} location={selectLocation} zoom={selectZoom}></Baidu> : null
+                    browser ? <Baidu  info={selectedItem} location={selectLocation} zoomIn={selectZoomIn} zoomOut={selectZoomOut}></Baidu> : null
                 }
 
 

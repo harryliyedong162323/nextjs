@@ -12,17 +12,23 @@ class HowToBuyDao {
             {
                 type: "locationMapComponent",
                 name: "locationMapComponent",
-                entry: {},
+                entry: {
+                    headStyle:'bg-white',
+                },
             },
             {
                 type: "IRLExperiencesComponent",
                 name: "IRLExperiencesComponent",
-                entry: {},
+                entry: {
+                    headStyle:'bg-white',
+                },
             },
             {
                 type: "digitalExperienceComponent",
                 name: "digitalExperienceComponent",
-                entry: {},
+                entry: {
+                    headStyle:'bg-white',
+                },
             },
         ];
     }

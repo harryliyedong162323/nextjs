@@ -13,7 +13,9 @@ class ActivityDetailDao {
             {
                 type: "activityDetailComponent",
                 name: "activityDetailComponent",
-                entry: {},
+                entry: {
+                    headStyle:'bg-white',
+                },
             },
         ];
     }

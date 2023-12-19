@@ -29,38 +29,38 @@ interface bottleContent {
 const bottle:bottleContent[] = [
     {
         id:0,
-        num:30,
+        num:23,
         active:false,
         info:{
             name:'ANCIENT MOORLAND',
             bottle:{
-                pImg:require("../../../public/assets/productFamily/kv-3.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
+                pImg:require("../../../public/assets/productFamily/bottle-1.png"),
+                mImg:require("../../../public/assets/productFamily/bottle-1.png"),
             },
             bg:{
                 pImg:require("../../../public/assets/productFamily/kv.png"),
                 mImg:require("../../../public/assets/productFamily/kv.png"),
             },
-            year:30,
+            year:23,
             price:'£750 RRP ',
             des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
         }
     },
     {
         id:1,
-        num:30,
+        num:40,
         active:false,
         info:{
             name:'ANCIENT MOORLAND',
             bottle:{
-                pImg:require("../../../public/assets/productFamily/kv-3.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
+                pImg:require("../../../public/assets/productFamily/bottle-2.png"),
+                mImg:require("../../../public/assets/productFamily/bottle-2.png"),
             },
             bg:{
                 pImg:require("../../../public/assets/productFamily/kv-2.png"),
                 mImg:require("../../../public/assets/productFamily/kv-m.png"),
             },
-            year:30,
+            year:40,
             price:'£750 RRP ',
             des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
         }
@@ -72,11 +72,30 @@ const bottle:bottleContent[] = [
         info:{
             name:'ANCIENT MOORLAND',
             bottle:{
-                pImg:require("../../../public/assets/productFamily/kv-3.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
+                pImg:require("../../../public/assets/productFamily/bottle-3.png"),
+                mImg:require("../../../public/assets/productFamily/bottle-3.png"),
             },
             bg:{
                 pImg:require("../../../public/assets/productFamily/kv-3.png"),
+                mImg:require("../../../public/assets/productFamily/kv-m.png"),
+            },
+            year:23,
+            price:'£750 RRP ',
+            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+        }
+    },
+    {
+        id:3,
+        num:30,
+        active:false,
+        info:{
+            name:'ANCIENT MOORLAND',
+            bottle:{
+                pImg:require("../../../public/assets/productFamily/bottle-4.png"),
+                mImg:require("../../../public/assets/productFamily/bottle-4.png"),
+            },
+            bg:{
+                pImg:require("../../../public/assets/productFamily/kv-4.png"),
                 mImg:require("../../../public/assets/productFamily/kv-m.png"),
             },
             year:30,
@@ -85,39 +104,20 @@ const bottle:bottleContent[] = [
         }
     },
     {
-        id:3,
-        num:23,
-        active:false,
-        info:{
-            name:'ANCIENT MOORLAND',
-            bottle:{
-                pImg:require("../../../public/assets/productFamily/kv-3.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
-            },
-            bg:{
-                pImg:require("../../../public/assets/productFamily/kv-4.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
-            },
-            year:110,
-            price:'£750 RRP ',
-            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-        }
-    },
-    {
         id:4,
-        num:40,
+        num:30,
         active:false,
         info:{
             name:'ANCIENT MOORLAND',
             bottle:{
-                pImg:require("../../../public/assets/productFamily/kv-3.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
+                pImg:require("../../../public/assets/productFamily/bottle-5.png"),
+                mImg:require("../../../public/assets/productFamily/bottle-5.png"),
             },
             bg:{
                 pImg:require("../../../public/assets/productFamily/kv-5.png"),
                 mImg:require("../../../public/assets/productFamily/kv-m.png"),
             },
-            year:31,
+            year:30,
             price:'£750 RRP ',
             des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
         }
@@ -129,14 +129,14 @@ const bottle:bottleContent[] = [
         info:{
             name:'ANCIENT MOORLAND',
             bottle:{
-                pImg:require("../../../public/assets/productFamily/kv-3.png"),
-                mImg:require("../../../public/assets/productFamily/kv-m.png"),
+                pImg:require("../../../public/assets/productFamily/bottle-6.png"),
+                mImg:require("../../../public/assets/productFamily/bottle-6.png"),
             },
             bg:{
                 pImg:require("../../../public/assets/productFamily/kv-6.png"),
                 mImg:require("../../../public/assets/productFamily/kv-m.png"),
             },
-            year:32,
+            year:23,
             price:'£750 RRP ',
             des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
         }
@@ -178,10 +178,11 @@ function ProductFamilyComponent(props: any) {
 
                     <div className="w-169px h-368px absolute left-1/2 translate-x-[-50%] top-150px paid:w-120px paid:h-262px paid:top-107px  mobile:w-102px mobile:h-223px mobile:top-94px">
                         <BaseImage
-                            mImg={require("../../../public/assets/productFamily/bottle-m.png")}
-                            pImg={require("../../../public/assets/productFamily/bottle.png")}
+                            mImg={currentBottleData.info.bottle.mImg}
+                            pImg={currentBottleData.info.bottle.pImg}
                             alt={""}
-                            objectFit="contain"
+                            layout="fill"
+                            objectFit="cover"
                             quality={100}
                         ></BaseImage>
                     </div>
@@ -189,7 +190,7 @@ function ProductFamilyComponent(props: any) {
                         <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px">
                             <div className="inline-block align-middle">
                                 <div className="relative">
-                                   <span className="text-60px font-light font-AlbertusNova-Light paid:text-42px mobile:text-38px">{currentBottleData.info.year}</span>
+                                   <span className="text-60px font-light font-AlbertusNova-Light pb-8px paid:text-42px paid:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
                                     <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center paid:text-7px mobile:text-7px">years old</span>
                                 </div>
                                 {/*<div className="text-11px font-bold">years old</div>*/}

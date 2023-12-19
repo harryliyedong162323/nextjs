@@ -29,6 +29,10 @@ class BaseLink extends Component<propsContent,State>{
 
     }
 
+    init(){
+        setTimeout(()=>{document&&(document.body.style.overflow = 'auto');},0);
+    }
+
     hasColor():string{
         if(this.props.color){
             return 'hover:'+this.props.color;
@@ -62,7 +66,7 @@ class BaseLink extends Component<propsContent,State>{
         if(this.props.display){
             // this.state.name+' '+(this.hasHover())+' '
             return (
-                <Link className={this.computedClassName()} href={this.props.link}>{this.props.children}</Link>
+                <Link className={this.computedClassName()} href={this.props.link} onClick={()=>{this.init()}}>{this.props.children}</Link>
             );
         }else{
             return null;

@@ -13,7 +13,9 @@ class StoriesDetailDao {
             {
                 type: "storiesDetailComponent",
                 name: "storiesDetailComponent",
-                entry: {},
+                entry: {
+                    headStyle:'bg-white',
+                },
             },
         ];
     }

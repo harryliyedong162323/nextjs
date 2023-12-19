@@ -2,7 +2,7 @@
 
 import React, {useCallback, useEffect, useState,useRef} from "react";
 import BaseImage from "@/components/base/image";
-
+import { flushSync } from 'react-dom'
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -39,14 +39,28 @@ const campaigns:object[] = [
         title:'New York',
         des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
         date:'2023-11-11',
+    },
+    {
+        id:4,
+        mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+        pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+        title:'New York',
+        des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
+        date:'2023-11-11',
     }
 ];
+
+
+const TWEEN_FACTOR = 3
+
+const numberWithinRange = (number:number, min:number, max:number) => Math.min(Math.max(number, min), max)
+
 
 function IntroduceCampaignComponent(props: any) {
     const headStyle = props.data.entry.headStyle;
     const carouselRefs = useRef([]);
 
-
+    const [tweenValues, setTweenValues] = useState([] as any)
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [Autoplay()]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [alignment, setAlignment] = useState<'start' | 'center' | 'end' | 'justify' | undefined>('start');
@@ -56,28 +70,78 @@ function IntroduceCampaignComponent(props: any) {
         let currentDom = null;
         if(index == 0){
             currentDom = document.getElementById(`campaign-${campaigns.length-1}`);
-        }else{
-            currentDom = document.getElementById(`campaign-${index - 1}`);
         }
+        // else{
+        //     currentDom = document.getElementById(`campaign-${index-1}`);
+        // }
 
         const campaignList = document.getElementsByClassName('campaign');
 
         for (let i =0;i<campaignList.length;i++){
             // @ts-ignore
-            campaignList[i].style.height = 0;
+            campaignList[i].style.opacity = '1';
         }
         // @ts-ignore
-        currentDom.style.height = '150px';
+        currentDom.style.opacity = '0';
 
 
     }
+
+
+
+
+    const onScroll = useCallback(() => {
+        if (!emblaApi) return
+
+        const engine = emblaApi.internalEngine()
+        const scrollProgress = emblaApi.scrollProgress()
+
+
+        const styles:any = emblaApi.scrollSnapList().map((scrollSnap, index) => {
+
+
+            let diffToTargetOpacity = (scrollSnap - scrollProgress) * 0.1
+
+            let diffToTargetY = scrollSnap - scrollProgress
+            if (engine.options.loop) {
+                engine.slideLooper.loopPoints.forEach((loopItem) => {
+                    const target = loopItem.target()
+                    if (index === loopItem.index && target !== 0) {
+                        const sign = Math.sign(target)
+                        if (sign === -1) diffToTargetOpacity = (scrollSnap - (1 + scrollProgress))
+                        if (sign === 1) diffToTargetOpacity = (scrollSnap + (1 - scrollProgress))
+
+                        if (sign === -1) diffToTargetY = scrollSnap - (1 + scrollProgress)
+                        if (sign === 1) diffToTargetY = scrollSnap + (1 - scrollProgress)
+                    }
+                })
+            }
+
+
+
+
+
+            const tweenValueOpacity = 1 - Math.abs(diffToTargetOpacity * TWEEN_FACTOR)
+            const tweenValueY = 1 - Math.abs(diffToTargetY * TWEEN_FACTOR)
+            return {
+                opacity:numberWithinRange(tweenValueOpacity, 0, 1),
+                y:numberWithinRange(tweenValueY, 0, 1)
+            }
+        })
+
+        console.log(styles)
+
+        setTweenValues(styles)
+    }, [emblaApi, setTweenValues])
+
+
 
 
     const onChangeScroll = useCallback(
         (emblaApi: { selectedScrollSnap: () => any }) => {
             console.log(emblaApi?.selectedScrollSnap());
             setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
-            computedActiveDrop(emblaApi?.selectedScrollSnap() || 0)
+            // computedActiveDrop(emblaApi?.selectedScrollSnap() || 0)
         },
         []
     );
@@ -86,6 +150,9 @@ function IntroduceCampaignComponent(props: any) {
 
     const scrollTo = useCallback(
         (index: number) => {
+
+
+
             emblaApi?.scrollTo(index);
             setCurrentIndex(index);
         },
@@ -125,15 +192,26 @@ function IntroduceCampaignComponent(props: any) {
 
     useEffect(() => {
         if (!emblaApi) return;
-        computedActiveDrop(0);
+        // computedActiveDrop(0);
+
+
+        onScroll()
+        emblaApi.on('scroll', () => {
+            flushSync(() => onScroll())
+        })
+
         emblaApi?.on("select", onChangeScroll);
+
+
+
+
 
         // @ts-ignore
         emblaApi.reInit({ align: alignment });
 
 
 
-    }, [emblaApi,onChangeScroll,alignment]);
+    }, [emblaApi,onChangeScroll,alignment,onScroll]);
 
 
 
@@ -141,13 +219,13 @@ function IntroduceCampaignComponent(props: any) {
     return (
         <section className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative">
             <input type="hidden" value={headStyle}/>
-            <div className="absolute top-[40%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[75%] h-600px bg-no-repeat  paid:h-428px paid:w-[75%] paid:top-[35%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%]"></div>
+            <div className="absolute top-[50%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[88%] h-600px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[50%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
 
 
 
-            <div className="relative overflow-hidden pt-75px h-685px paid:h-489px  paid:pt-53px mobile:pt-113px " ref={emblaRef}>
+            <div className="relative overflow-hidden pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px " ref={emblaRef}>
                 <div className="flex text-dark-grey">
 
                     {
@@ -155,26 +233,39 @@ function IntroduceCampaignComponent(props: any) {
 
                             return (
                                 <div  key={item.id} className="flex-grow-0 flex-shrink-0 basis-1/3 ml-25px w-280px paid:w-200px paid:ml-17px mobile:w-179px mobile:ml-56px mobile:basis-1/2">
-                                    <div id={`campaign-${index}`} className={`h-0 transition-all ease-in-out  campaign`} ref={carouselRefs.current[index]}></div>
 
-                                    <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px paid:w-200px paid:h-200px paid:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px">
-                                        <BaseImage
-                                            mImg={item.mImg}
-                                            pImg={item.pImg}
-                                            alt={""}
-                                            layout="fill"
-                                            objectFit="cover"
-                                            quality={100}
-                                        ></BaseImage>
-                                    </div>
-                                    <div className="text-center text-21px font-Grotesque-Medium font-medium paid:text-15px mobile:text-16px">
-                                        <span className="w-12px h-14px bg-contain bg-[url('/assets/introduceCampaign/subtract.png')] inline-block align-middle paid:w-8px paid:h-10px mobile:w-10px mobile:h-11px"></span>
-                                        <span className="uppercase inline-block align-middle pl-8px paid:pl-5px mobile:pl-9px">{item.title}</span>
-                                    </div>
+                                   <div className="translate-y-[8vw]">
+                                       <div id={`campaign-${index}`} className="block campaign "
+                                            style={{
+                                                ...(tweenValues.length && {
+                                                    transform: ` translateY(${-tweenValues[index].y*15}vw)`,
+                                                    // opacity:tweenValues[index].opacity
+                                                })
+                                            }}>
+                                           {/*<div id={`campaign-${index}`} className={`h-0 transition-all ease-in-out duration-500 campaign`} ref={carouselRefs.current[index]}></div>*/}
 
-                                    <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px paid:text-13px paid:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
-                                    <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px paid:w-200px mobile:text-center mobile:w-full">{item.des}</div>
-                                    <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+                                           <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px paid:w-200px paid:h-200px paid:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px">
+                                               <BaseImage
+                                                   mImg={item.mImg}
+                                                   pImg={item.pImg}
+                                                   alt={""}
+                                                   layout="fill"
+                                                   objectFit="cover"
+                                                   quality={100}
+                                               ></BaseImage>
+                                           </div>
+                                           <div className="text-center text-21px font-Grotesque-Medium font-medium paid:text-15px mobile:text-16px">
+                                               <span className="w-12px h-14px bg-contain bg-[url('/assets/introduceCampaign/subtract.png')] inline-block align-middle paid:w-8px paid:h-10px mobile:w-10px mobile:h-11px"></span>
+                                               <span className="uppercase inline-block align-middle pl-8px paid:pl-5px mobile:pl-9px">{item.title}</span>
+                                           </div>
+
+                                           <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px paid:text-13px paid:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
+                                           <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px paid:w-200px mobile:text-center mobile:w-full">{item.des}</div>
+                                           <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+
+                                       </div>
+                                   </div>
+
 
                                 </div>
                             );

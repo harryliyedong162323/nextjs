@@ -27,14 +27,26 @@ function KVAnimationComponent(props: any) {
         <div className="h-166px w-full paid:h-118px mobile:h-85px"></div>
         <div className="pt-20px container mx-auto paid:pt-14px mobile:pl-25px mobile:pr-25px">
             <div className="relative h-500px w-full paid:h-357px  mobile:h-[65vh]">
-                <BaseImage
-                    mImg={require("../../../public/assets/KVAnimation/kv-m.png")}
-                    pImg={require("../../../public/assets/KVAnimation/kv.png")}
-                    alt={""}
-                    layout="fill"
-                    objectFit="cover"
-                    quality={100}
-                ></BaseImage>
+
+                <BaseVideo
+                    src="https://yumen-ali.oss-cn-beijing.aliyuncs.com/bg.mp4"
+                    className="h-full object-cover"
+                    loop={true}
+                    autoplay={true}
+                    width="100%"
+                    height="100%"
+                >
+                </BaseVideo>
+
+
+                {/*<BaseImage*/}
+                {/*    mImg={require("../../../public/assets/KVAnimation/kv-m.png")}*/}
+                {/*    pImg={require("../../../public/assets/KVAnimation/kv.png")}*/}
+                {/*    alt={""}*/}
+                {/*    layout="fill"*/}
+                {/*    objectFit="cover"*/}
+                {/*    quality={100}*/}
+                {/*></BaseImage>*/}
                 <div className="absolute w-181px h-395px z-20 left-1/2 translate-x-[-50%] bottom-[-80px] paid:w-129px paid:h-282px paid:bottom-[-57px] mobile:w-102px mobile:h-223px mobile:bottom-[-40px]">
                     <BaseImage
                         mImg={require("../../../public/assets/KVAnimation/bottle-m.png")}

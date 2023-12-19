@@ -10,24 +10,24 @@ function InteractiveVideoComponent(props: any) {
     return (
        <div className="w-full h-screen relative overflow-hidden bg-black">
            <input type="hidden" value={headStyle}/>
-           {/*<BaseImage*/}
-           {/*    defaultImg={require("../../../public/assets/interactiveVideo/bg.png")}*/}
-           {/*    alt={""}*/}
-           {/*    layout="fill"*/}
-           {/*    objectFit="cover"*/}
-           {/*    quality={100}*/}
-           {/*></BaseImage>*/}
+           <BaseImage
+               defaultImg={require("../../../public/assets/interactiveVideo/bg.png")}
+               alt={""}
+               layout="fill"
+               objectFit="cover"
+               quality={100}
+           ></BaseImage>
            {/*src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.mp4"*/}
 
-           <BaseVideo
-               src="https://video.699pic.com/videos/67/96/85/a_6502c28512eef16946796850794.mp4"
-               className="h-screen object-cover"
-               loop={true}
-               autoplay={true}
-               width="100%"
-               height="100%"
-           >
-           </BaseVideo>
+           {/*<BaseVideo*/}
+           {/*    src="https://video.699pic.com/videos/67/96/85/a_6502c28512eef16946796850794.mp4"*/}
+           {/*    className="h-screen object-cover"*/}
+           {/*    loop={true}*/}
+           {/*    autoplay={true}*/}
+           {/*    width="100%"*/}
+           {/*    height="100%"*/}
+           {/*>*/}
+           {/*</BaseVideo>*/}
 
 
            <div className="absolute z-20 left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]">

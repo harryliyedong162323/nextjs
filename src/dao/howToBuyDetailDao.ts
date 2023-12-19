@@ -12,12 +12,16 @@ class HowToBuyDetailDao {
             {
                 type: "globalCampaignsComponent",
                 name: "globalCampaignsComponent",
-                entry: {},
+                entry: {
+                    headStyle:'white',
+                },
             },
             {
                 type: "howToBuyDetailComponent",
                 name: "howToBuyDetailComponent",
-                entry: {},
+                entry: {
+                    headStyle:'white',
+                },
             },
         ];
     }
