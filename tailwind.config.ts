@@ -1,11 +1,3 @@
-/*
- * @Author: charles.yu charles_yxh@163.com
- * @Date: 2023-11-20 17:48:01
- * @LastEditors: charles.yu charles_yxh@163.com
- * @LastEditTime: 2023-11-26 15:03:40
- * @FilePath: /wildmoor/tailwind.config.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import type { Config } from 'tailwindcss'
 import {generatePreset} from './src/utils/quantum';
 const defaultTheme = require('tailwindcss/defaultTheme');
@@ -57,6 +49,10 @@ const config: Config = {
         '26': '26deg',
         '37': '37deg',
       },
+      transitionDuration: {
+        '2000': '2000ms',
+        '3000': '3000ms',
+      },
       keyframes: {
 
 
@@ -90,7 +86,7 @@ const config: Config = {
         },
         moveTop: {
           '100%': {
-            top: '0px'
+            'padding-top': '0px'
           },
         }
       }

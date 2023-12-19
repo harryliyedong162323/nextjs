@@ -17,15 +17,28 @@ function BottleConceptComponent(props: any) {
 
   const [positionX, setPositionX] = useState(0)
 
+  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setHasWindow(true);
     }
   }, []);
 
-  setTimeout(() => {
-    setStartPlaying(true);
-  }, 1000);
+  useEffect(() => {
+    if (isFullPage) {
+      if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
+        setIsCurrentPage(true);
+        setTimeout(() => {
+          setStartPlaying(true);
+        }, 1000);
+      } else {
+        setIsCurrentPage(false);
+        // setStartVideoEnd(false);
+      }
+    }
+  }, [isFullPage, props]);
 
   return (
     <div id="BottleConcept" className="relative overflow-hidden">
