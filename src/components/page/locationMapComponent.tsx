@@ -174,7 +174,7 @@ function LocationMapComponent(props: any) {
                                 ))
                             }
 
-                            <div className="h-50px"></div>
+                            <div className="mobile:h-50px"></div>
 
                             {/*<div className={`text-center leading-[53px] ${selectedItem === 'CHINA mainland' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('CHINA mainland')}>*/}
                             {/*    <span className="cursor-pointer">CHINA mainland</span>*/}
