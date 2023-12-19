@@ -4,17 +4,91 @@ import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import BaseImage from "@/components/base/image";
 
-export interface Kol {
-  id?: string;
-  name?: string;
-  avatar: string;
-  banner: string;
-  description?: string;
+interface Kol {
+  id: string;
+  name: string;
+  avatar: {
+    pImg: string
+    mImg: string
+  }
+  banner: {
+    pImg: string
+    mImg: string
+  }
+  description: string;
 }
+
+const kols: Array<Kol> = [
+  {
+    id: "10086",
+    name: "NAME of KOL",
+    avatar: {
+      pImg:require("../../../public/assets/range/wild_face.png"),
+      mImg:require("../../../public/assets/range/wild_face.png"),
+    },
+    banner: {
+      pImg:require("../../../public/assets/range/wild_01.png"),
+      mImg:require("../../../public/assets/range/wild_01.png"),
+    },
+    description: "Bring the drinking occasion to life in a way",
+  },
+  {
+    id: "10087",
+    name: "NAME of KOL",
+    avatar: {
+      pImg:require("../../../public/assets/range/wild_face.png"),
+      mImg:require("../../../public/assets/range/wild_face.png"),
+    },
+    banner: {
+      pImg:require("../../../public/assets/range/wild_02.png"),
+      mImg:require("../../../public/assets/range/wild_02.png"),
+    },
+    description: "Bring the drinking occasion to life in a way",
+  },
+  {
+    id: "10088",
+    name: "NAME of KOL",
+    avatar: {
+      pImg:require("../../../public/assets/range/wild_face.png"),
+      mImg:require("../../../public/assets/range/wild_face.png"),
+    },
+    banner: {
+      pImg:require("../../../public/assets/range/wild_03.png"),
+      mImg:require("../../../public/assets/range/wild_03.png"),
+    },
+    description: "Bring the drinking occasion to life in a way",
+  },
+  {
+    id: "10089",
+    name: "NAME of KOL",
+    avatar: {
+      pImg:require("../../../public/assets/range/wild_face.png"),
+      mImg:require("../../../public/assets/range/wild_face.png"),
+    },
+    banner: {
+      pImg:require("../../../public/assets/range/wild_04.png"),
+      mImg:require("../../../public/assets/range/wild_04.png"),
+    },
+    description: "Bring the drinking occasion to life in a way",
+  },
+  {
+    id: "10090",
+    name: "NAME of KOL",
+    avatar: {
+      pImg:require("../../../public/assets/range/wild_face.png"),
+      mImg:require("../../../public/assets/range/wild_face.png"),
+    },
+    banner: {
+      pImg:require("../../../public/assets/range/wild_05.png"),
+      mImg:require("../../../public/assets/range/wild_05.png"),
+    },
+    description: "Bring the drinking occasion to life in a way",
+  },
+]
 
 function TalesFromTheWildComponent(props: any) {
   const [currentKol, setKol] = useState<number>(0);
-  const [kolList, setKolList] = useState<Array<Kol>>(props.data.entry.kols);
+  const [kolList, setKolList] = useState<Array<Kol>>(kols);
   const [hasNavigation, setHasNavigation] = useState<boolean>(
     props.data.entry.hasNavigation
   );
@@ -39,37 +113,39 @@ function TalesFromTheWildComponent(props: any) {
                 <div className="relative" key={index}>
                   {currentKol === index && (
                     <>
-                      {/* <div className="relative" key={index}> */}
-                      <Image
-                        className={`object-cover w-615px h-516px paid:w-492px paid:h-414px mobile:w-full mobile:h-360px transition-all ease-in-out duration-1000 ${ currentKol === index ? 'opacity-100' : 'opacity-0'}`}
-                        src={item.banner}
-                        alt={""}
-                        object-fit="contain"
-                        quality="100"
-                        width={500}
-                        height={500}
-                      ></Image>
-                      <div className="absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px paid:px-27px paid:pt-27px mobile:px-20px mobile:mt-10px">
-                        <Image
-                          className="object-cover w-48px h-48px paid:w-39px paid:h-39px mobile:w-48px mobile:h-48px"
-                          src={item.avatar}
+                      <div 
+                        className={`relative inline-block object-cover h-516px paid:h-414px mobile:w-full mobile:h-360px transition-all ease-in-out duration-2000 ${ currentKol === index ? 'opacity-100 w-615px paid:w-492px' : 'opacity-0 w-139px paid:w-111px'}`}
+                        >
+                        <BaseImage
+                          mImg={item.banner.mImg}
+                          pImg={item.banner.pImg}
                           alt={""}
-                          object-fit="contain"
-                          quality="100"
-                          width={500}
-                          height={500}
-                        ></Image>
+                          layout="fill"
+                          objectFit="cover"
+                          quality={100}
+                        ></BaseImage>
+                      </div>
+                      <div className="absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px paid:px-27px paid:pt-27px mobile:px-20px mobile:mt-10px">
+                        <div className="inline-block relative object-cover w-48px h-48px paid:w-39px paid:h-39px mobile:w-48px mobile:h-48px">
+                          <BaseImage
+                            mImg={item.avatar.mImg}
+                            pImg={item.avatar.pImg}
+                            alt={""}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
+                        </div>
                         <div className="text-white text-16px ml-10px paid:text-14px mobile:text-14px">
                           {item.name}
                         </div>
                       </div>
-                      <div className="absolute inline-flex justify-between bottom-0 w-full bg-gradient-to-b from-[rgba(10, 22, 27, 0.75)] to-[rgba(0, 0, 0, 0)] px-33px pb-33px paid:px-27px paid:pb-27px mobile:px-24px ">
+                      <div className="absolute left-0 inline-flex justify-between bottom-0 w-full bg-gradient-to-b from-[rgba(10, 22, 27, 0.75)] to-[rgba(0, 0, 0, 0)] px-33px pb-33px paid:px-27px paid:pb-27px mobile:px-24px ">
                         <div className="text-white font-Grotesque-Medium text-20px paid:text-16px mobile:text-14px">
                           {item.description}
                         </div>
                         <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px paid:w-24px paid:h-24px mobile:w-18px mobile:h-18px"></div>
                       </div>
-                      {/* </div> */}
                     </>
                   )}
                   {currentKol !== index && (
@@ -87,15 +163,16 @@ function TalesFromTheWildComponent(props: any) {
                           }}
                           className="absolute cursor-pointer z-10 bottom-20px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-15px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-30px paid:w-24px paid:h-24px paid:-mt-12px paid:hover:w-48px paid:hover:h-48px paid:hover:-ml-24px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px"
                         ></div>
-                        <Image
-                          className="object-cover w-139px h-452px paid:w-111px paid:h-362px mobile:w-full mobile:h-94px"
-                          src={item.banner}
-                          alt={""}
-                          object-fit="contain"
-                          quality="100"
-                          width={500}
-                          height={500}
-                        ></Image>
+                        <div className={`relative inline-block object-cover h-452px paid:h-362px mobile:w-full mobile:h-94px  transition-all ease-in-out duration-2000 ${ currentKol !== index ? 'w-139px paid:w-111px' : 'w-615px paid:w-492px'}`}>
+                        <BaseImage
+                            mImg={item.banner.mImg}
+                            pImg={item.banner.pImg}
+                            alt={""}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
+                         </div>
                       </div>
                     </>
                   )}

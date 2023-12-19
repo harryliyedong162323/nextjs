@@ -52,7 +52,7 @@ function StoryChapterOneComponent(props: any) {
           ></BaseImage>
       </div>
       <div className="absolute flex justify-center w-full top-294px paid:top-234px mobile:top-135px">
-        <div className={`overflow-hidden text-white font-Grotesque-Regular text-center text-28px  transition-all ease-in-out duration-500 delay-1000 h-0 ${isCurrentPage? "h-74px mobile:h-90px" : "h-0"} w-965px paid:text-20px paid:w-635px mobile:text-14px mobile:w-275px`}>
+        <div className={`overflow-hidden text-white font-Grotesque-Regular text-center text-28px transition-all ease-in-out duration-500 delay-1000 h-0 ${isCurrentPage? "h-90px mobile:h-90px" : "h-0"} w-965px paid:text-20px paid:w-635px mobile:text-14px mobile:w-275px`}>
           <div>{ data.description }</div>
         </div>
       </div>

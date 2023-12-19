@@ -75,7 +75,7 @@ function StoryChapterSixComponent(props: any) {
           {data.words.second}
         </span>
       </div>
-      <div className="absolute bg-white font-Grotesque-Regular text-dark-grey w-694px text-20px p-50px top-450px paid:text-16px paid:p-40px paid:top-360px paid:left-80px paid:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-1/2 mobile:left-1/2 mobile:-ml-165px">
+      <div className="absolute bg-white font-Grotesque-Regular text-dark-grey w-694px left-100px text-20px p-50px top-450px paid:text-16px paid:p-40px paid:top-360px paid:left-80px paid:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-1/2 mobile:left-1/2 mobile:-ml-165px">
         <div
           className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500 ${
             isCurrentPage ? "h-0" : "h-full"
