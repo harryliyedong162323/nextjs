@@ -56,11 +56,11 @@ function StoryChapterSixComponent(props: any) {
           pImg={data.bg.pImg}
           alt={""}
           layout="fill"
-          objectFit="cover"
+          objectFit="fill"
           quality={100}
         ></BaseImage>
       </div>
-      <span className="absolute bg-[url('/assets/story/brand_story_chatper_06_line.png')] w-170px h-1080px bg-cover top-0 left-1/2 -ml-210px mobile:bg-[url('/assets/story/brand_story_chatper_06_line_mobile.png')] mobile:w-60px mobile:h-812px mobile:-ml-25px"></span>
+      <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_06_line.png')]  h-screen"></div>
       <div
         className={`absolute top-[calc(15vh)] right-100px flex justify-center w-full flex-col items-end mobile:top-154px mobile:right-25px  transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage

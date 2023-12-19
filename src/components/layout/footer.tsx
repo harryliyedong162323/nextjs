@@ -18,89 +18,196 @@ function Footer(props: any) {
         setLanguage(false)
         document.body.style.overflow = 'auto';
     }
+    const screenTop = () => {
+        window.scrollTo(0, 0); // 将页面滚动到顶部
+    }
+    const [pannels, setPanels] = useState([
+        {
+            id: 1,
+            isExpanded: false,
+            title: [
+                {
+                    id: 2,
+                    name: 'OUR STORY',
+                }
+            ],
+            list: [
+                {
+                    id: 3,
+                    content: 'A Drop Of Wilderness'
+                },
+                {
+                    id: 4,
+                    content: 'What Others Say'
+                },
+
+            ]
+        },
+        {
+            id: 5,
+            isExpanded: false,
+            title: [
+                {
+                    id: 6,
+                    name: 'THE WILDMOOR RANGE',
+                }
+            ],
+            list: [
+                {
+                    id: 7,
+                    content: 'Products Family'
+                },
+                {
+                    id: 8,
+                    content: 'Tales From The Wild'
+                },
+                {
+                    id: 9,
+                    content: 'Serving Suggestion'
+                },
+                {
+                    id: 10,
+                    content: 'Discover your Wild Flavour'
+                },
+
+            ]
+        },
+        {
+            id: 11,
+            isExpanded: false,
+            title: [
+                {
+                    id: 12,
+                    name: 'THE WILD ESCAPE',
+                }
+            ],
+            list: [
+                {
+                    id: 13,
+                    content: 'Global News'
+                },
+                {
+                    id: 14,
+                    content: 'The Wild Escape'
+                },
+                {
+                    id: 15,
+                    content: 'Tales From The Wild'
+                },
+            ]
+        },
+        {
+            id: 17,
+            isExpanded: false,
+            title: [
+                {
+                    id: 18,
+                    name: 'FIND A DROP OF WILDERNESS NEAR YOU',
+                }
+            ],
+            list: [
+                {
+                    id: 13,
+                    content: 'Region Select & Global Store Map'
+                },
+                {
+                    id: 14,
+                    content: 'IRL Experiences'
+                },
+                {
+                    id: 15,
+                    content: 'Digital Experience'
+                },
+            ]
+        }
+    ])
+
+    const togglePanel = (id: any) => {
+
+        const newPanels = pannels.map((panel) => {
+            if (panel.id === id) {
+                return { ...panel, isExpanded: !panel.isExpanded };
+            } else {
+                return { ...panel, isExpanded: false }; // 关闭其他面板
+            }
+
+
+        });
+        setPanels(newPanels);
+        console.log(pannels)
+    };
     return (
         <footer className="relative overflow-hidden">
-            <input type="hidden" value={headStyle}/>
+            <input type="hidden" value={headStyle} />
             {/*h-900px*/}
             <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-auto mobile:bg-[url('/assets/mask_footer_2.png')]">
                 <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-40px">
                     {/*mobile:w-274px mobile:h-44px*/}
                     <div className="mobile:w-full mobile:order-2">
-                        <div className="bg-[url('/assets/wildmoor_footer.png')] w-262px h-41px bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto"></div>
+                        <BaseLink link="/en-Us/home">
+                            <div className="bg-[url('/assets/wildmoor_footer.png')] w-262px h-41px bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto"></div>
+                        </BaseLink>
                     </div>
                     <div className="mobile:order-1 mobile:w-full">
-                        <div className="w-44px h-46px bg-[url('/assets/scroll_top.png')] bg-cover cursor-pointer mobile:mb-45px mobile:mx-auto mobile:w-40px mobile:h-42px"></div>
+                        <div className="w-44px h-46px bg-[url('/assets/scroll_top.png')] bg-cover cursor-pointer mobile:mb-45px mobile:mx-auto mobile:w-40px mobile:h-42px" onClick={screenTop}></div>
                     </div>
                 </div>
                 <div className="flex justify-between pt-50px pb-50px mobile:flex-wrap mobile:justify-center">
-                    <ul className="flex-auto mobile:w-full ">
-                        <li className="flex justify-between pb-35px mobile:pb-40px">
-                            <span className="text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">our story</span>
-                            <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">
-                                A Drop Of Wildness
-                            </BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">What Others Say</BaseLink>
-                        </li>
-                    </ul>
+                    {pannels.map((panel) => (
+                        <ul className="flex-auto mobile:w-full mobile:hidden" key={panel.id} >
+                            <li className="flex justify-between pb-35px mobile:pb-40px">
+                                <span className="text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">{panel.title[0].name}</span>
+                                <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
+                            </li>
+                            {panel.list.map((item) => (
+                                <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden" key={item.id}>
+                                    <BaseLink hover="text-black-500">
+                                        {item.content}
+                                    </BaseLink>
+                                </li>
+                            ))}
 
-                    <ul className="flex-auto mobile:w-full">
-                        <li className="flex justify-between  pb-35px mobile:pb-40px">
-                            <span className="text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">our range</span>
-                            <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Products Family</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Tales From The Wild</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Serving Suggestion</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Bottle Concept</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Flavour Finder</BaseLink>
-                        </li>
-                    </ul>
+                        </ul>
+                    ))}
 
-                    <ul className="flex-auto mobile:w-full">
-                        <li className="flex justify-between  pb-35px mobile:pb-40px">
-                            <span className="text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">the Wild Escape Journal</span>
-                            <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink>Global Campaigns</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink>The Wild Escape</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink>Tales From The Wild</BaseLink>
-                        </li>
-                    </ul>
+                    {pannels.map((panel) => (
+                        <ul className="flex-auto hidden mobile:w-full mobile:block" key={panel.id} >
+                            <li className="flex justify-between pb-35px mobile:pb-40px">
+                                <span className=" w-11/12 text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">{panel.title[0].name}</span>
+                                <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block" onClick={() => togglePanel(panel.id)}></span>
+                            </li>
+                            {panel.isExpanded &&
+                                <div className="mobile:mt-[-22px] mobile:mb-20px">
+                                    {
+                                        panel.list.map((item) => (
+                                            <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular  pb-17px mobile:block " key={item.id}>
+                                                <div className="flex  justify-between">
+                                                   
+                                                        <div className="w-11/12">
+                                                        <BaseLink hover="text-black-500">
+                                                            {item.content}
+                                                            </BaseLink>
+                                                        </div>
+                                                
+                                                    <div className="mobile:w-15px mobile:h-17px reactive cursor-pointer">
+                                                        <BaseImage
+                                                            mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                                                            pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                                                            alt={""}
+                                                            objectFit="contain"
+                                                            quality={100}
+                                                        ></BaseImage>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))
+                                    }
+                                </div>
+                            }
 
-                    <ul className="flex-auto mobile:w-full">
-                        <li className="flex justify-between pb-35px mobile:pb-0">
-                            <span className="text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">wildmoor near you</span>
-                            <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')]  bg-contain cursor-pointer mobile:block"></span>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Region Selection &<br />Global Store Map</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">IRL Experiences</BaseLink>
-                        </li>
-                        <li className="text-[#696969] text-16px font-normal font-Grotesque-Regular pb-17px mobile:hidden">
-                            <BaseLink hover="text-black-500">Digital Experience</BaseLink>
-                        </li>
-                    </ul>
+
+                        </ul>
+                    ))}
                 </div>
 
                 <div className="border-b-2 border-b-500 border-solid border-[#969797] pb-100px mobile:pb-50px">

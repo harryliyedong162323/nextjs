@@ -237,10 +237,10 @@ function Panel({ menuFlag, onMenuChange }:any){
 
                             {panels.map((panel) => (
                                 <div className="flex flex-col mb-40px paid:mb-25 px mobile:mb-15px" key={panel.id}>
-                                    <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer" onClick={() => togglePanel(panel.id)}>
+                                    <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px " >
                                         <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">{panel.title[0].name}</div>
                                         {!panel.isExpanded ?
-                                            <div className="w-17px paid:w-15px mobile:w-20px h-18px paid:h-16px mobile:h-22px relative">
+                                            <div className="w-17px paid:w-15px mobile:w-20px h-18px paid:h-16px mobile:h-22px relative cursor-pointer" onClick={() => togglePanel(panel.id)}>
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/KVAnimation/add.png")}
                                                     pImg={require("../../../public/assets/KVAnimation/add.png")}
@@ -250,10 +250,10 @@ function Panel({ menuFlag, onMenuChange }:any){
                                                 ></BaseImage>
                                             </div>
                                             :
-                                            <div className="text-21px paid:text-17px mobile:text-21px font-GalanoGrotesque">—</div>}
+                                            <div className="text-21px paid:text-17px mobile:text-21px font-GalanoGrotesque cursor-pointer" onClick={() => togglePanel(panel.id)} >—</div>}
                                     </div>
                                     {panel.isExpanded && (
-                                        <div className="flex flex-col mt-10px paid:mt-8px mobile:mt-15px">
+                                        <div className="flex flex-col mt-10px paid:mt-8px mobile:mt-[-10px] mobile:mb-10px">
                                             {panel.list.map((item) => (
                                                 <div className="flex justify-between items-center mb-30px paid:mb-23px mobile:mb-20px" key={item.id}>
                                                     <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">{item.content}</div>

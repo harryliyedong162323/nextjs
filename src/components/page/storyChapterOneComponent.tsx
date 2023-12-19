@@ -47,7 +47,7 @@ function StoryChapterOneComponent(props: any) {
             pImg={data.bg.pImg}
             alt={""}
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
             quality={100}
           ></BaseImage>
       </div>
@@ -60,7 +60,7 @@ function StoryChapterOneComponent(props: any) {
         <div className="absolute w-78px h-78px border-white border border-solid rounded-full flex items-center justify-center z-10 mobile:w-39px mobile:h-39px">
             <span className="inline-block w-12px h-12px rounded-full bg-white mobile:w-6px mobile:h-6px"></span>
         </div>
-        <span className="absolute bg-[url('/assets/story/brand_story_chatper_01_line.png')] inline-block w-4px h-1090px bg-cover top-38px left-38px mobile:w-2px mobile:h-545px mobile:top-19px mobile:left-19px"></span>
+        <div className="absolute bg-[50%] bg-no-repeat bg-contain w-4px top-38px left-38px bg-[url('/assets/story/brand_story_chatper_01_line.png')] mobile:top-19px mobile:left-19px h-screen"></div>
       </div>
       <div className={`absolute z-20 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'bottom-24px' : '-bottom-48px'}`}>
         <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>

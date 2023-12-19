@@ -55,11 +55,11 @@ function StoryChapterThreeComponent(props: any) {
           pImg={data.bg.pImg}
           alt={""}
           layout="fill"
-          objectFit="cover"
+          objectFit="fill"
           quality={100}
         ></BaseImage>
       </div>
-      <span className="absolute bg-[url('/assets/story/brand_story_chatper_03_line.png')] w-118px h-1080px bg-cover top-0 left-1/2 -ml-80px -mt-1px mobile:bg-[url('/assets/story/brand_story_chatper_03_line_mobile.png')] mobile:w-56px mobile:h-812px mobile:-ml-11px"></span>
+      <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_03_line.png')]  h-screen"></div>
       <div className={`absolute w-full flex flex-col items-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-152px paid:top-122px mobile:top-200px' : 'opacity-0 top-400px'}`}>
         <div className="relative cursor-pointer z-10 w-825px h-420px paid:w-660px paid:h-335px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
           <BaseImage

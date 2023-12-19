@@ -106,7 +106,7 @@ function StoryChapterEndComponent(props: any) {
           pImg={data.bg.pImg}
           alt={""}
           layout="fill"
-          objectFit="cover"
+          objectFit="fill"
           quality={100}
         ></BaseImage>
       </div>

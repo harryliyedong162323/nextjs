@@ -74,11 +74,11 @@ function StoryChapterTwoComponent(props: any) {
             pImg={data.bg.pImg}
             alt={""}
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
             quality={100}
           ></BaseImage>
       </div>
-      <span className="absolute bg-[url('/assets/story/brand_story_chatper_02_line.png')] w-112px h-1080px bg-cover top-0 left-1/2 -ml-13px mobile:bg-[url('/assets/story/brand_story_chatper_02_line_mobile.png')] mobile:w-56px mobile:h-812px mobile:-ml-7px"></span>
+      <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_02_line.png')]  h-screen"></div>
       {!isShow && (
         <>
           <div className={`absolute w-full transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'top-135px paid:top-104px mobile:top-86px opacity-100' : 'top-300px paid:top-280px mobile:top-260px opacity-0'}`}>
@@ -123,7 +123,7 @@ function StoryChapterTwoComponent(props: any) {
               pImg={data.avatarTwo}
               alt={""}
               layout="fill"
-              objectFit="cover"
+              objectFit="fill"
               quality={100}
             ></BaseImage>
           </div>

@@ -41,7 +41,7 @@ function TalesFromTheWildComponent(props: any) {
                     <>
                       {/* <div className="relative" key={index}> */}
                       <Image
-                        className="object-cover w-615px h-516px paid:w-492px paid:h-414px mobile:w-full mobile:h-360px"
+                        className={`object-cover w-615px h-516px paid:w-492px paid:h-414px mobile:w-full mobile:h-360px transition-all ease-in-out duration-1000 ${ currentKol === index ? 'opacity-100' : 'opacity-0'}`}
                         src={item.banner}
                         alt={""}
                         object-fit="contain"

@@ -112,10 +112,10 @@ function StoryOpeningComponent(props: any) {
         <span className="bg-[url('/assets/wildmoor_white.png')] inline-block bg-cover w-456px h-74px paid:w-365px paid:h-59px mobile:w-274px mobile:h-44px"></span>
       </div>
       <div className={`absolute w-full flex items-center flex-col justify-center text-white top-660px paid:top-528px mobile:top-605px`}>
-        <div className={`overflow-hidden font-AlbertusNova-Regular text-26px uppercase mb-20px paid:text-18px mobile:text-13px transition-all ease-in-out duration-500 delay-500 h-0 ${isCurrentPage? "h-24px" : "h-0"}`}>
+        <div className={`overflow-hidden font-AlbertusNova-Regular text-26px uppercase mb-20px paid:text-18px mobile:text-13px transition-all ease-in-out duration-500 delay-500 h-0 ${isCurrentPage? "h-26px" : "h-0"}`}>
           <div>{data.title}</div>
         </div>
-        <div className={`overflow-hidden font-AlbertusNova-Light text-center uppercase transition-all ease-in-out duration-500 delay-1000 h-0 ${isCurrentPage? "h-33px mobile:h-54px" : "h-0"} text-40px paid:text-28px mobile:leading-[27px] mobile:w-325px mobile:text-20px`}>
+        <div className={`overflow-hidden font-AlbertusNova-Light text-center uppercase transition-all ease-in-out duration-500 delay-1000 h-0 ${isCurrentPage? "h-40px mobile:h-54px" : "h-0"} text-40px paid:text-28px mobile:leading-[27px] mobile:w-325px mobile:text-20px`}>
           <div>{data.description}</div>
         </div>
       </div>
