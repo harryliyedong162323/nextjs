@@ -59,30 +59,32 @@ const numberWithinRange = (number:number, min:number, max:number) => Math.min(Ma
 function IntroduceCampaignComponent(props: any) {
     const headStyle = props.data.entry.headStyle;
     const carouselRefs = useRef([]);
-
+    // Autoplay()
     const [tweenValues, setTweenValues] = useState([] as any)
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [Autoplay()]);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true,duration:50,watchDrag:false }, []);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [alignment, setAlignment] = useState<'start' | 'center' | 'end' | 'justify' | undefined>('start');
     // const [alignment, setAlignment] = useState('center'); // 初始对齐方式为 'start'
 
     const computedActiveDrop = (index:number)=>{
         let currentDom = null;
-        if(index == 0){
-            currentDom = document.getElementById(`campaign-${campaigns.length-1}`);
+        if(campaigns.length - 1 == index){
+            // currentDom = document.getElementById(`campaign-1`);
         }
-        // else{
-        //     currentDom = document.getElementById(`campaign-${index-1}`);
-        // }
+        else{
+            currentDom = document.getElementById(`campaign-${index+1}`);
+        }
+
+        currentDom = document.getElementById(`campaign-${index+1}`);
 
         const campaignList = document.getElementsByClassName('campaign');
 
         for (let i =0;i<campaignList.length;i++){
             // @ts-ignore
-            campaignList[i].style.opacity = '1';
+            campaignList[i].style.transform = 'translateY(8vw)';
         }
         // @ts-ignore
-        currentDom.style.opacity = '0';
+        currentDom.style.transform = 'translateY(1vw)';
 
 
     }
@@ -100,7 +102,7 @@ function IntroduceCampaignComponent(props: any) {
         const styles:any = emblaApi.scrollSnapList().map((scrollSnap, index) => {
 
 
-            let diffToTargetOpacity = (scrollSnap - scrollProgress) * 0.1
+            let diffToTargetOpacity = (scrollSnap - scrollProgress)
 
             let diffToTargetY = scrollSnap - scrollProgress
             if (engine.options.loop) {
@@ -112,7 +114,7 @@ function IntroduceCampaignComponent(props: any) {
                         if (sign === 1) diffToTargetOpacity = (scrollSnap + (1 - scrollProgress))
 
                         if (sign === -1) diffToTargetY = scrollSnap - (1 + scrollProgress)
-                        if (sign === 1) diffToTargetY = scrollSnap + (1 - scrollProgress)
+                        if (sign === 1) diffToTargetY =  scrollSnap + (1 - scrollProgress)
                     }
                 })
             }
@@ -224,8 +226,9 @@ function IntroduceCampaignComponent(props: any) {
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
 
 
-
+            <div className="absolute z-10 top-0 left-[0%] h-full w-200px bg-gradient-to-l from-[transparent] to-[#ebeded6e]"></div>
             <div className="relative overflow-hidden pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px " ref={emblaRef}>
+
                 <div className="flex text-dark-grey">
 
                     {
@@ -234,8 +237,8 @@ function IntroduceCampaignComponent(props: any) {
                             return (
                                 <div  key={item.id} className="flex-grow-0 flex-shrink-0 basis-1/3 ml-25px w-280px paid:w-200px paid:ml-17px mobile:w-179px mobile:ml-56px mobile:basis-1/2">
 
-                                   <div className="translate-y-[8vw]">
-                                       <div id={`campaign-${index}`} className="block campaign "
+                                   <div className="translate-y-[8vw] campaign" id={`campaign-${index}`}>
+                                       <div className="block "
                                             style={{
                                                 ...(tweenValues.length && {
                                                     transform: ` translateY(${-tweenValues[index].y*15}vw)`,
