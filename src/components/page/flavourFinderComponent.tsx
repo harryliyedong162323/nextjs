@@ -647,53 +647,55 @@ function FlavourFinderComponent(props: any) {
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
                         {data.quizs.q3.step2.title}
                       </div>
-                      <div
-                        className="relative overflow-hidden mt-20px mobile:mt-10px"
-                        ref={emblaRef}
-                      >
-                        <div className="flex">
-                          {data.quizs.q3.step2.answers.map((answer, index) => {
-                            return (
-                              <div className="flex-grow-0 flex-shrink-0 basis-full relative mobile:p-5px">
-                                <div
-                                  className={`mx-4px px-34px pt-21px pb-12px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
-                                    quizThreeSelected2 === index + 1
-                                      ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid paid:border-[3px] mobile:border-[2px]"
-                                      : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
-                                  }`}
-                                >
-                                  <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
-                                    <BaseImage
-                                      mImg={answer.mImg}
-                                      pImg={answer.pImg}
-                                      alt={""}
-                                      layout="fill"
-                                      objectFit="cover"
-                                      quality={100}
-                                    ></BaseImage>
-                                  </div>
-                                  <div className="flex justify-between items-center mt-10px">
-                                    <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px paid:text-16px mobile:py-16px mobile:text-12px">
-                                      {answer.label}
+                      <div className="w-1000px overflow-hidden">
+                        <div
+                          className="relative w-500px paid:w-400px mobile:w-310px mt-20px mobile:mt-10px"
+                          ref={emblaRef}
+                        >
+                          <div className="flex">
+                            {data.quizs.q3.step2.answers.map((answer, index) => {
+                              return (
+                                <div className="flex-grow-0 flex-shrink-0 basis-full relative mobile:p-5px">
+                                  <div
+                                    className={`mx-4px px-34px pt-21px pb-12px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
+                                      quizThreeSelected2 === index + 1
+                                        ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid paid:border-[3px] mobile:border-[2px]"
+                                        : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
+                                    }`}
+                                  >
+                                    <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
+                                      <BaseImage
+                                        mImg={answer.mImg}
+                                        pImg={answer.pImg}
+                                        alt={""}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        quality={100}
+                                      ></BaseImage>
                                     </div>
-                                    <i
-                                      className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
-                                        quizThreeSelected2 === index + 1
-                                          ? "bg-[url('/assets/range/icon_checked.png')]"
-                                          : "bg-[url('/assets/range/icon_check.png')]"
-                                      }`}
-                                      onClick={() => {
-                                        setQuizThreeSelected2(index + 1);
-                                        if (quizThreeSelected1 !== 0) {
-                                          setQuizIndex(3);
-                                        }
-                                      }}
-                                    ></i>
+                                    <div className="flex justify-between items-center mt-10px">
+                                      <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px paid:text-16px mobile:py-16px mobile:text-12px">
+                                        {answer.label}
+                                      </div>
+                                      <i
+                                        className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                          quizThreeSelected2 === index + 1
+                                            ? "bg-[url('/assets/range/icon_checked.png')]"
+                                            : "bg-[url('/assets/range/icon_check.png')]"
+                                        }`}
+                                        onClick={() => {
+                                          setQuizThreeSelected2(index + 1);
+                                          if (quizThreeSelected1 !== 0) {
+                                            setQuizIndex(3);
+                                          }
+                                        }}
+                                      ></i>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            );
-                          })}
+                              );
+                            })}
+                          </div>
                         </div>
                       </div>
                       <div className="w-full flex items-center justify-center mt-20px">
@@ -773,7 +775,7 @@ function FlavourFinderComponent(props: any) {
                     {data.quizs.q5.answers.map((answer, index) => {
                       return (
                         <div
-                          className={`flex justify-between items-center px-40px py-18px mt-20px paid:px-30px paid:py-14px paid:mt-16px mobile:px-20px mobile:py-17px mobile:mt-5px ${
+                          className={`flex justify-between items-center px-40px py-18px mt-10px paid:px-30px paid:py-14px paid:mt-6px mobile:px-20px mobile:py-17px mobile:mt-5px ${
                             quizFiveSelected === index + 1
                               ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
                               : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
@@ -797,7 +799,7 @@ function FlavourFinderComponent(props: any) {
                     })}
                   </div>
                   <div
-                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-50px w-314px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
+                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-40px w-314px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px paid:mt-36px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
                     onClick={() => {
                       setQuizIndex(5);
                     }}
@@ -816,7 +818,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 0
                           ? "font-Grotesque-Medium border-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE]"
-                      } relative text-20px w-233px paid:w-187px text-center border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center border-b-2 border-solid pb-10px`}
                       onClick={() => {
                         setQuizIndex(0);
                       }}
@@ -835,7 +837,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 1
                           ? "font-Grotesque-Medium border-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE]"
-                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
                       onClick={() => {
                         setQuizIndex(1);
                       }}
@@ -854,7 +856,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 2
                           ? "font-Grotesque-Medium border-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE]"
-                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
                       onClick={() => {
                         setQuizIndex(2);
                       }}
@@ -873,7 +875,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 3
                           ? "font-Grotesque-Medium border-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE]"
-                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
                       onClick={() => {
                         setQuizIndex(3);
                       }}
@@ -892,7 +894,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 4
                           ? "font-Grotesque-Medium border-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE]"
-                      } relative text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
                       onClick={() => {
                         setQuizIndex(4);
                       }}

@@ -8,7 +8,7 @@ function InteractiveVideoComponent(props: any) {
 
     const headStyle = props.data.entry.headStyle;
     return (
-       <div className="w-full h-screen relative overflow-hidden bg-black">
+       <div className="w-full h-screen relative overflow-hidden select-none">
            <input type="hidden" value={headStyle}/>
            <BaseImage
                defaultImg={require("../../../public/assets/interactiveVideo/bg.png")}
@@ -20,11 +20,11 @@ function InteractiveVideoComponent(props: any) {
            {/*src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.mp4"*/}
 
            {/*<BaseVideo*/}
-           {/*    src="https://video.699pic.com/videos/67/96/85/a_6502c28512eef16946796850794.mp4"*/}
+           {/*    src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.webm"*/}
            {/*    className="h-screen object-cover"*/}
            {/*    loop={true}*/}
            {/*    autoplay={true}*/}
-           {/*    width="100%"*/}
+           {/*    width="50%"*/}
            {/*    height="100%"*/}
            {/*>*/}
            {/*</BaseVideo>*/}

@@ -92,6 +92,10 @@ function FullPage(props: any) {
     const [slideFlag,setSliderFlag] = useState(true);
     const [currentPageNumber, setCurrentPageNumber] = useState<number>(0);
 
+    const [isCurrentPage, setIsCurrentPage] = useState(false)
+
+
+
     useEffect(() => {
 
         setTimeout(()=>{setIsBrowser(true);},50);
@@ -149,7 +153,13 @@ function FullPage(props: any) {
             navChildren&&(navChildren.style.transform = 'translateY(100%)');
         }else{
             let navChildren = document.getElementById('nav-large-content');
-            setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},250)
+            if(isCurrentPage){
+                setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},50)
+            }else{
+                setIsCurrentPage(true);
+                setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},1500)
+            }
+
         }
 
          currentNav&&(currentNav.style.display = 'block');
@@ -214,11 +224,12 @@ function FullPage(props: any) {
             {/*        );*/}
             {/*    }}*/}
             {/* />*/}
-
+            {/*currentSlideIndex={2}*/}
             {
                 isBrowser == true ? <PageSlides
                     enableAutoScroll={slideFlag}
                     transitionSpeed={1500}
+
                     slides={slides}
                     parallax={{
                         offset: 0.60,    //0.6

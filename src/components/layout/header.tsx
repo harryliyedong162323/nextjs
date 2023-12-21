@@ -7,9 +7,9 @@ import BaseLink from "@/components/base/link";
 function Header(props: any) {
     const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false)
 
-    useEffect(() => {
-        setTimeout(()=>{setIsCurrentPage(true)},500)
-    }, [props]);
+    // useEffect(() => {
+    //     setTimeout(()=>{setIsCurrentPage(true)},500)
+    // }, [props]);
     const [menu, setMenu] = useState(false)
 
     const headStyle = props.headStyle || 'white';
@@ -43,7 +43,8 @@ function Header(props: any) {
             </nav>
 
             <nav id="nav-large" className={` ${menu == true ? 'overflow-visible' : 'overflow-hidden'}  w-full fixed left-0 top-0 z-30   ${headStyle == 'large' ? 'block' : 'hidden'}`}>
-               <div id="nav-large-content" className={`w-full block  transition-all ease-in-out duration-500 delay-1000 h-166px paid:h-118px mobile:h-85px ${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}`}>
+                {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
+               <div id="nav-large-content" className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px paid:h-118px mobile:h-85px `}>
                    <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
                    <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] paid:w-17px paid:h-16px mobile:w-20px mobile:h-20px mobile:right-25px" onClick={()=>{handleMenu()}}></div>
 

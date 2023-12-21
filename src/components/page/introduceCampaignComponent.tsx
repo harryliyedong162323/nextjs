@@ -124,7 +124,15 @@ function IntroduceCampaignComponent(props: any) {
 
 
             const tweenValueOpacity = 1 - Math.abs(diffToTargetOpacity * TWEEN_FACTOR)
-            const tweenValueY = 1 - Math.abs(diffToTargetY * TWEEN_FACTOR)
+            let tweenValueY = 0;
+            if(index == 1){
+                tweenValueY = (1 - Math.abs(diffToTargetY * TWEEN_FACTOR))*-1
+            }else{
+                tweenValueY = 1 - Math.abs(diffToTargetY * TWEEN_FACTOR)
+            }
+
+
+
             return {
                 opacity:numberWithinRange(tweenValueOpacity, 0, 1),
                 y:numberWithinRange(tweenValueY, 0, 1)
@@ -219,7 +227,7 @@ function IntroduceCampaignComponent(props: any) {
 
 
     return (
-        <section className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative">
+        <section className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none">
             <input type="hidden" value={headStyle}/>
             <div className="absolute top-[50%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[88%] h-600px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[50%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 

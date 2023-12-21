@@ -11,6 +11,7 @@ interface propsContent {
     loading?:boolean,
     display?:boolean,
     alt?:string,
+    pointerEvents?:boolean,
     height:number,
     width:number,
     objectFit?:string,  //fill contain cover none scale-down
@@ -25,6 +26,7 @@ interface propsContent {
 
 class BaseImage extends Component<propsContent,State>{
     static defaultProps = {
+        pointerEvents:true,
         objectFit:'',
         layout:'',
         className:'',
@@ -119,11 +121,14 @@ class BaseImage extends Component<propsContent,State>{
         }
     }
 
+
+
+
     computedClassName():string{
         let className:string[] = [
             this.state.name,
             this.props.className ?? '',
-
+            this.props.pointerEvents ? 'pointer-events-none' : ''
         ];
         return className.filter(Boolean).join(' ');
 

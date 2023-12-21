@@ -163,7 +163,7 @@ function ProductFamilyComponent(props: any) {
     return (
 
 
-        <div id="ProductsFamily" className="h-screen overflow-hidden">
+        <div id="ProductsFamily" className="h-screen overflow-hidden select-none">
             <input type="hidden" value={headStyle}/>
             <div className="h-[70vh] overflow-hidden">
                 <div className="relative h-full w-full">
