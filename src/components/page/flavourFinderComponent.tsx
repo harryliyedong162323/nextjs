@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import Script from "next/script";
 import axios from "axios";
 import BaseImage from "../base/image";
@@ -341,7 +342,7 @@ function FlavourFinderComponent(props: any) {
   const [videoPlay2, setVideoPlay2] = useState<boolean>(false);
   const [videoPlay3, setVideoPlay3] = useState<boolean>(false);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, []);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [currentRecommend, setCurrentRecommend] = useState<number>(0);
@@ -610,13 +611,13 @@ function FlavourFinderComponent(props: any) {
                   </div>
                   <div className="flex justify-between mt-50px mx-auto w-[1166px] paid:w-933px mobile:w-300px mobile:flex-col mobile:mt-21px">
                     <div className="w-500px paid:w-400px mobile:w-300px">
-                      <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
+                      <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px mb-20px paid:text-16px paid:mb-20px mobile:text-12px">
                         {data.quizs.q3.step1.title}
                       </div>
                       {data.quizs.q3.step1.answers.map((answer, index) => {
                         return (
                           <div
-                            className={`flex justify-between items-center px-40px py-18px mt-20px paid:px-30px paid:py-14px paid:mt-16px mobile:px-20px mobile:py-17px mobile:mt-5px ${
+                            className={`flex justify-between items-center px-40px py-18px mt-6px paid:px-30px paid:py-14px paid:mt-4px mobile:px-20px mobile:py-17px mobile:mt-5px ${
                               quizThreeSelected1 === index + 1
                                 ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
                                 : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
@@ -672,7 +673,7 @@ function FlavourFinderComponent(props: any) {
                                     ></BaseImage>
                                   </div>
                                   <div className="flex justify-between items-center mt-10px">
-                                    <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px paid:text-16px mobile:text-12px">
+                                    <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px paid:text-16px mobile:py-16px mobile:text-12px">
                                       {answer.label}
                                     </div>
                                     <i
@@ -796,7 +797,7 @@ function FlavourFinderComponent(props: any) {
                     })}
                   </div>
                   <div
-                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-50px w-313px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
+                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-50px w-314px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
                     onClick={() => {
                       setQuizIndex(5);
                     }}
