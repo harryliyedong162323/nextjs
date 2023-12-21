@@ -799,7 +799,7 @@ function FlavourFinderComponent(props: any) {
                     })}
                   </div>
                   <div
-                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-40px w-314px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px paid:mt-36px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
+                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-40px w-316px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px paid:mt-36px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
                     onClick={() => {
                       setQuizIndex(5);
                     }}
