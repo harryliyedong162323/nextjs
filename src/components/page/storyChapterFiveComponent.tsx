@@ -62,7 +62,7 @@ function StoryChapterFiveComponent(props: any) {
       </div>
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_05_line.png')] h-screen"></div>
       <div
-        className={`absolute left-1/2 flex flex-col items-center w-970px h-500px -ml-485px paid:w-775px paid:-ml-388px paid:h-400px mobile:w-325px mobile:-ml-163px transition-all ease-in-out duration-500 delay-1000 ${
+        className={`absolute left-1/2 flex flex-col items-center w-970px h-500px -ml-485px paid:w-775px paid:-ml-388px paid:h-400px mobile:-ml-163px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
             ? "opacity-100 top-192px paid:top-154px mobile:top-200px"
             : "opacity-0 top-400px"
