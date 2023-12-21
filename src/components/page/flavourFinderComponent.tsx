@@ -439,7 +439,7 @@ function FlavourFinderComponent(props: any) {
               </div>
             </div>
             <div
-              className="absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-50px w-225px h-55px leading-[55px] -ml-112px paid:w-180px paid:-ml-90px paid:bottom-40px paid:h-44px paid:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-30px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
+              className="cursor-pointer absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-50px w-225px h-55px leading-[55px] -ml-112px paid:w-180px paid:-ml-90px paid:bottom-40px paid:h-44px paid:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-30px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
               onClick={() => setShowQuiz(true)}
             >
               Start
