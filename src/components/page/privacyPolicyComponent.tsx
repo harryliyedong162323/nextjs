@@ -11,7 +11,7 @@ function PrivacyPolicyComponent(props: any) {
 
     return (
 
-        <div className='w-full h-auto overflow-hidden relative '>
+        <div className='w-full h-auto overflow-hidden relative select-none '>
 
             <input type="hidden" value={headStyle}/>
 

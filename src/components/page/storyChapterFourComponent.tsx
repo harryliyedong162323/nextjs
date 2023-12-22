@@ -64,8 +64,8 @@ function StoryChapterFourComponent(props: any) {
   }
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="flex h-screen">
+    <div className="relative overflow-hidden select-none">
+      <div className="flex -mt-1px h-[calc(100vh+1px)]">
         <BaseImage
           mImg={data.bg.mImg}
           pImg={data.bg.pImg}
@@ -156,6 +156,7 @@ function StoryChapterFourComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[rgba(40,40,40,0.5)] to-[rgba(40,40,40,0)] h-160px paid:h-100px mobile:h-100px"></div>
       <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-225px paid:h-180px mobile:h-238px"></div>
     </div>
   );

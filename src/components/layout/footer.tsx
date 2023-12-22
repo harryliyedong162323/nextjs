@@ -6,17 +6,26 @@ import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 function Footer(props: any) {
     const headStyle = 'none';
-    // useEffect(() => {
-    //
-    // }, []);
     const [language, setLanguage] = useState(false)
+    useEffect(() => {
+        function wheelHandle(e:Event){
+            e.preventDefault()
+        }
+        if(language) {
+            window.addEventListener('wheel', wheelHandle, { passive: false });
+        }
+        return ()=>{
+            const option:any = { passive: false }
+            window.removeEventListener('wheel', wheelHandle,option );
+        }
+    }, [language]);
+   
     const hanleLanguage = () => {
         setLanguage(true)
-        // document.body.style.overflow = 'hidden';
+      
     }
     const hanleCloseLanguage = () => {
         setLanguage(false)
-        // document.body.style.overflow = 'auto';
     }
     const screenTop = () => {
         window.scrollTo(0, 0); // 将页面滚动到顶部
@@ -137,7 +146,7 @@ function Footer(props: any) {
         console.log(pannels)
     };
     return (
-        <footer className="relative overflow-hidden">
+        <footer className="relative overflow-hidden select-none">
             <input type="hidden" value={headStyle} />
             {/*h-900px*/}
             <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-auto mobile:bg-[url('/assets/mask_footer_2.png')]">

@@ -63,3 +63,29 @@ body{
 ::-webkit-scrollbar{
   display: none;
 }
+/*.swiper-slide-prev{*/
+/*  transform: translateY(15%) !important;*/
+/*}*/
+/*.swiper-slide-active{*/
+/*  transform: translateY(-25%) !important;*/
+/*}*/
+
+/*.swiper-slide-next{*/
+/*  transform: translateY(-5%) !important;*/
+/*}*/
+
+.slide-25{
+  transform: translateY(-25%) !important;
+}
+.slide-0{
+  transform: translateY(0%) !important;
+}
+.slide-50{
+  transform: translateY(-50%) !important;
+}
+.slide-25-m{
+  transform: translateY(25%) !important;
+}
+.swiper-slide-introduce:not(:nth-child(2n)) {
+  transform: translateY(-25%);
+}

@@ -40,8 +40,8 @@ function StoryChapterOneComponent(props: any) {
   }, [isFullPage, props]);
   
   return (
-    <div id="StoryChapterOne" className="relative overflow-hidden">
-      <div className="flex h-screen">
+    <div id="StoryChapterOne" className="relative overflow-hidden select-none">
+      <div className="flex -mt-1px h-[calc(100vh+1px)]">
         <BaseImage
             mImg={data.bg.mImg}
             pImg={data.bg.pImg}

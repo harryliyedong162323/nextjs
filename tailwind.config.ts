@@ -55,7 +55,17 @@ const config: Config = {
       },
       keyframes: {
 
-
+        slideIn:{
+          '0%':{
+            transform: 'translateY(-50%) !important'
+          },
+          '50%':{
+            transform: 'translateY(-25%) !important'
+          },
+          '100%':{
+            transform: 'translateY(-50%) !important'
+          }
+        },
         fadeIn:{
           '0%':{
             opacity: '0'

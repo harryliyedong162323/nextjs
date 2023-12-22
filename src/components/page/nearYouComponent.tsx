@@ -352,7 +352,7 @@ function NearYouComponent(props: any) {
 
 
     return (
-        <section className="w-full h-screen overflow-hidden bg-while relative">
+        <section className="w-full h-screen overflow-hidden bg-while relative select-none">
 
             <input type="hidden" value={headStyle}/>
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:text-23px mobile:text-20px mobile:pt-77px">Wildmoor near you</div>

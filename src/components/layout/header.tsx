@@ -11,11 +11,22 @@ function Header(props: any) {
     //     setTimeout(()=>{setIsCurrentPage(true)},500)
     // }, [props]);
     const [menu, setMenu] = useState(false)
-
+    useEffect(() => {
+        function wheelHandle(e: Event) {
+            e.preventDefault()
+        }
+        if (menu) {
+            window.addEventListener('wheel', wheelHandle, { passive: false });
+        }
+        return () => {
+            const option: any = { passive: false }
+            window.removeEventListener('wheel', wheelHandle, option);
+        }
+    }, [menu]);
     const headStyle = props.headStyle || 'white';
 
 
-    const handleMenuChange = (menu:boolean) => {
+    const handleMenuChange = (menu: boolean) => {
         setMenu(menu);
     };
 
@@ -28,7 +39,7 @@ function Header(props: any) {
         <div>
             <nav id="nav-white" className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn ${headStyle == 'white' ? 'block' : 'hidden'}`}>
                 <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
-                <div className="bg-[url('/assets/more_menu.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={()=>{handleMenu()}}></div>
+                <div className="bg-[url('/assets/more_menu.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={() => { handleMenu() }}></div>
                 {
                     <Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>
                 }
@@ -36,7 +47,7 @@ function Header(props: any) {
 
             <nav id="nav-black" className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn ${headStyle == 'black' ? 'block' : 'hidden'}`}>
                 <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
-                <div className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={()=>{handleMenu()}}></div>
+                <div className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={() => { handleMenu() }}></div>
                 {
                     <Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>
                 }
@@ -44,19 +55,19 @@ function Header(props: any) {
 
             <nav id="nav-large" className={` ${menu == true ? 'overflow-visible' : 'overflow-hidden'}  w-full fixed left-0 top-0 z-30   ${headStyle == 'large' ? 'block' : 'hidden'}`}>
                 {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
-               <div id="nav-large-content" className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px paid:h-118px mobile:h-85px `}>
-                   <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
-                   <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] paid:w-17px paid:h-16px mobile:w-20px mobile:h-20px mobile:right-25px" onClick={()=>{handleMenu()}}></div>
+                <div id="nav-large-content" className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px paid:h-118px mobile:h-85px `}>
+                    <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
+                    <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] paid:w-17px paid:h-16px mobile:w-20px mobile:h-20px mobile:right-25px" onClick={() => { handleMenu() }}></div>
 
-                   {
-                       <Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>
-                   }
-               </div>
+                    {
+                        <Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>
+                    }
+                </div>
             </nav>
 
             <nav id="nav-bg-white" className={`bg-white h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn paid:h-118px mobile:h-85px ${headStyle == 'bg-white' ? 'block' : 'hidden'}`}>
                 <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]" ></div>
-                <div className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={()=>{handleMenu()}}></div>
+                <div className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer" onClick={() => { handleMenu() }}></div>
                 {
                     <Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>
                 }
@@ -69,7 +80,7 @@ function Header(props: any) {
     );
 }
 
-function Panel({ menuFlag, onMenuChange }:any){
+function Panel({ menuFlag, onMenuChange }: any) {
 
     const [menu, setMenu] = useState(false)
 
@@ -222,7 +233,7 @@ function Panel({ menuFlag, onMenuChange }:any){
 
     return (
         <div>
-            {menu && <div className="absolute w-full h-screen">
+            {menu && <div className="absolute w-full h-screen select-none">
                 <div className="flex w-full justify-between h-screen">
                     <div className="flex  flex-1"></div>
                     <div className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
@@ -306,7 +317,7 @@ function Panel({ menuFlag, onMenuChange }:any){
                     </div>
                 </div>
             </div>}
-            {language && <div className="absolute w-full h-screen">
+            {language && <div className="absolute w-full h-screen select-none">
                 <div className="flex w-full justify-between h-screen">
                     <div className="flex  flex-1"></div>
                     <div className="w-381px relative pl-33px  overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">

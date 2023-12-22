@@ -108,7 +108,7 @@ function TalesFromTheWildComponent(props: any) {
   return (
     <div
       id="TalesFromTheWild"
-      className="relative overflow-hidden bg-[#E6E7E8]"
+      className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
       <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col">

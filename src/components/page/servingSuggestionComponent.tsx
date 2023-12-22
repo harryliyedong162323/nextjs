@@ -8,7 +8,7 @@ function ServingSuggestionComponent(props: any) {
   useEffect(() => {}, []);
 
   return (
-    <div id="ServingSuggestion" className="relative overflow-hidden bg-[#E6E7E8]">
+    <div id="ServingSuggestion" className="relative overflow-hidden bg-[#E6E7E8] select-none">
       <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px paid:text-27px paid:pt-124px mobile:text-20px mobile:pt-82px">

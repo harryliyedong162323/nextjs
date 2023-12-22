@@ -403,7 +403,7 @@ function FlavourFinderComponent(props: any) {
   }, [showQuiz, quizIndex]);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden select-none">
       <input type="hidden" value={headStyle}/>
 
       {

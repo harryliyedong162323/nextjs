@@ -56,7 +56,13 @@ class BaseVideo extends Component<propsContent,State>{
 
     }
 
-
+    // playsinline={true}
+    // webkit-playsinline={true}
+    // x5-playsinline={true}
+    // x-webkit-airplay={true}
+    // x5-video-player-type={"h5"}
+    // x5-video-player-fullscreen={false}
+    // disablePictureInPicture
 
 
     render() {
@@ -72,6 +78,7 @@ class BaseVideo extends Component<propsContent,State>{
                     muted={this.props.muted}
                     controls={this.props.controls}
                     controlsList={this.props.controlsList}
+
                 ></video>
             );
         }else{

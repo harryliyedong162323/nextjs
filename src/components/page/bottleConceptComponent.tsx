@@ -41,7 +41,7 @@ function BottleConceptComponent(props: any) {
   }, [isFullPage, props]);
 
   return (
-    <div id="BottleConcept" className="relative overflow-hidden">
+    <div id="BottleConcept" className="relative overflow-hidden select-none">
       <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px paid:top-84px mobile:top-82px">

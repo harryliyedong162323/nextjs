@@ -11,7 +11,7 @@ function GlobalCampaignsComponent(props: any) {
     const title:string = "Shenzhen Nanjing Road";
 
     return (
-        <section className="w-full h-screen overflow-hidden relative">
+        <section className="w-full h-screen overflow-hidden relative select-none">
             <input type="hidden" value={headStyle}/>
             <BaseImage
                 defaultImg={require("../../../public/assets/howToBuyDetail/bg.png")}

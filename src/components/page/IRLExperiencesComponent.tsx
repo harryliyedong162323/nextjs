@@ -14,7 +14,7 @@ function IRLExperiencesComponent(props: any) {
     // }, []);
 
     return (
-        <section className="overflow-hidden container mx-auto pb-164px mobile:pb-67px">
+        <section className="overflow-hidden container mx-auto pb-164px mobile:pb-67px select-none">
             <div className="relative">
                 <div className="text-40px font-normal font-AlbertusNova-Regular text-center pt-55px pb-54px mobile:text-24px mobile:pt-20px mobile:pb-20px">IRL Experiences</div>
 

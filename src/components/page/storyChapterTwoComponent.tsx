@@ -67,7 +67,7 @@ function StoryChapterTwoComponent(props: any) {
   }
 
   return (
-    <div id="StoryChapterTwo" className="relative overflow-hidden">
+    <div id="StoryChapterTwo" className="relative overflow-hidden select-none">
       <div className="flex h-screen">
         <BaseImage
             mImg={data.bg.mImg}
