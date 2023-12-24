@@ -1,6 +1,12 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, {
+  useEffect,
+  useState,
+  useCallback,
+  SyntheticEvent,
+  useRef,
+} from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -90,18 +96,18 @@ interface ComponentData {
   };
   recommendResults: Array<{
     img: {
-      pImg: string
-      mImg: string
-    },
-    name: string
+      pImg: string;
+      mImg: string;
+    };
+    name: string;
     icon: {
-      pImg: string
-      mImg: string
-    },
-    type: string
-    tips: string
-    description: string
-  }>
+      pImg: string;
+      mImg: string;
+    };
+    type: string;
+    tips: string;
+    description: string;
+  }>;
 }
 
 const componentData: ComponentData = {
@@ -141,7 +147,8 @@ const componentData: ComponentData = {
     q2: {
       id: 0,
       question: "Q2. NOW LISTEN VERY CAREFULLY...",
-      description: "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
+      description:
+        "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
       answers: [
         {
           id: 0,
@@ -292,33 +299,36 @@ const componentData: ComponentData = {
       ],
     },
   },
-  recommendResults: [{
-    img: {
-      pImg: require("../../../public/assets/range/product.png"),
-      mImg: require("../../../public/assets/range/product.png"),
+  recommendResults: [
+    {
+      img: {
+        pImg: require("../../../public/assets/range/product.png"),
+        mImg: require("../../../public/assets/range/product.png"),
+      },
+      name: "ancient moorland",
+      icon: {
+        pImg: require("../../../public/assets/range/icon_business_meal.png"),
+        mImg: require("../../../public/assets/range/icon_business_meal.png"),
+      },
+      type: "business meal",
+      tips: "gifting occasion suggestion",
+      description: "Business is best served with a glass of untamed pleasure.",
     },
-    name: "ancient moorland",
-    icon: {
-      pImg: require("../../../public/assets/range/icon_business_meal.png"),
-      mImg: require("../../../public/assets/range/icon_business_meal.png"),
+    {
+      img: {
+        pImg: require("../../../public/assets/range/product_40.png"),
+        mImg: require("../../../public/assets/range/product_40.png"),
+      },
+      name: "Tropical Coast",
+      icon: {
+        pImg: require("../../../public/assets/range/icon_home_sweet.png"),
+        mImg: require("../../../public/assets/range/icon_home_sweet.png"),
+      },
+      type: "At home alone",
+      tips: "gifting occasion suggestion",
+      description: "Nothing beats a night cap after another fine day.",
     },
-    type: "business meal",
-    tips: "gifting occasion suggestion",
-    description: "Business is best served with a glass of untamed pleasure."
-  }, {
-    img: {
-      pImg: require("../../../public/assets/range/product_40.png"),
-      mImg: require("../../../public/assets/range/product_40.png"),
-    },
-    name: "Tropical Coast",
-    icon: {
-      pImg: require("../../../public/assets/range/icon_home_sweet.png"),
-      mImg: require("../../../public/assets/range/icon_home_sweet.png"),
-    },
-    type: "At home alone",
-    tips: "gifting occasion suggestion",
-    description: "Nothing beats a night cap after another fine day."
-  }]
+  ],
 };
 
 function FlavourFinderComponent(props: any) {
@@ -404,7 +414,7 @@ function FlavourFinderComponent(props: any) {
 
   return (
     <div className="relative overflow-hidden select-none">
-      <input type="hidden" value={headStyle}/>
+      <input type="hidden" value={headStyle} />
 
       {
         <Script
@@ -450,19 +460,25 @@ function FlavourFinderComponent(props: any) {
               <a href="#ProductsFamily" className="inline-block mobile:w-64px">
                 products family
               </a>
-              <a href="#TalesFromTheWild" className="inline-block mobile:w-64px">
+              <a
+                href="#TalesFromTheWild"
+                className="inline-block mobile:w-64px"
+              >
                 Tales From The Wild
               </a>
               <a
-                href="#ServingSuggestion" className="inline-block mobile:w-64px"
+                href="#ServingSuggestion"
+                className="inline-block mobile:w-64px"
               >
                 Serving Suggestion
               </a>
               <a href="#BottleConcept" className="inline-block mobile:w-64px">
                 Bottle Concept
               </a>
-              <a href="#FlavourFinder"
-                className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white">
+              <a
+                href="#FlavourFinder"
+                className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white"
+              >
                 <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
                 Flavour Finder
               </a>
@@ -484,6 +500,7 @@ function FlavourFinderComponent(props: any) {
                   {data.quizs.q1.answers.map((answer, index) => {
                     return (
                       <div
+                        key={index}
                         className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                           quizOneSelected === index + 1
                             ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
@@ -535,6 +552,7 @@ function FlavourFinderComponent(props: any) {
                     {data.quizs.q2.answers.map((answer, index) => {
                       return (
                         <div
+                          key={index}
                           className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:p-20px mobile:mx-0 mobile:my-5px mobile:flex ${
                             quizTwoSelected === index + 1
                               ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
@@ -553,27 +571,34 @@ function FlavourFinderComponent(props: any) {
                           </div>
                           <div className="flex justify-between items-center mt-10px mobile:w-90px mobile:ml-20px">
                             <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px paid:text-18px mobile:text-13px mobile:flex-col">
-                              <i className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover mr-5px w-34px h-34px paid:w-27px paid:h-27px mobile:w-20px mobile:h-20px"
-                              onClick={() => {
-                                if (index === 0) {
-                                  setVideoPlay1(!videoPlay1)
-                                  setVideoPlay2(false)
-                                  setVideoPlay3(false)
-                                } else if (index === 1) {
-                                  setVideoPlay1(false)
-                                  setVideoPlay2(!videoPlay2)
-                                  setVideoPlay3(false)
-                                } else if (index === 2) {
-                                  setVideoPlay1(false)
-                                  setVideoPlay2(false)
-                                  setVideoPlay3(!videoPlay3)
-                                }
-                                  
-                              }}></i>
+                              <i
+                                className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover mr-5px w-34px h-34px paid:w-27px paid:h-27px mobile:w-20px mobile:h-20px"
+                                onClick={() => {
+                                  if (index === 0) {
+                                    setVideoPlay1(!videoPlay1);
+                                    setVideoPlay2(false);
+                                    setVideoPlay3(false);
+                                  } else if (index === 1) {
+                                    setVideoPlay1(false);
+                                    setVideoPlay2(!videoPlay2);
+                                    setVideoPlay3(false);
+                                  } else if (index === 2) {
+                                    setVideoPlay1(false);
+                                    setVideoPlay2(false);
+                                    setVideoPlay3(!videoPlay3);
+                                  }
+                                }}
+                              ></i>
                               <span>{answer.label}</span>
                               <ReactPlayer
                                 className="hidden"
-                                playing={index === 0 ? videoPlay1 : index === 1 ? videoPlay2 : videoPlay3}
+                                playing={
+                                  index === 0
+                                    ? videoPlay1
+                                    : index === 1
+                                    ? videoPlay2
+                                    : videoPlay3
+                                }
                                 loop={true}
                                 muted={false}
                                 controls={false}
@@ -605,43 +630,49 @@ function FlavourFinderComponent(props: any) {
             )}
             {quizIndex === 2 && (
               <>
-                <div className="">
+                <div>
                   <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px paid:w-720px paid:text-28px paid:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
                     {data.quizs.q3.question}
                   </div>
                   <div className="flex justify-between mt-50px mx-auto w-[1166px] paid:w-933px mobile:w-300px mobile:flex-col mobile:mt-21px">
-                    <div className="w-500px paid:w-400px mobile:w-300px">
+                    <div className="relative w-500px paid:w-400px mobile:w-300px">
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px mb-20px paid:text-16px paid:mb-20px mobile:text-12px">
                         {data.quizs.q3.step1.title}
                       </div>
-                      {data.quizs.q3.step1.answers.map((answer, index) => {
-                        return (
-                          <div
-                            className={`flex justify-between items-center px-40px py-18px mt-6px paid:px-30px paid:py-14px paid:mt-4px mobile:px-20px mobile:py-17px mobile:mt-5px ${
-                              quizThreeSelected1 === index + 1
-                                ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
-                                : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
-                            }`}
-                          >
-                            <div className="font-Grotesque-Regular text-[#262627] text-24px paid:text-18px mobile:text-12px">
-                              {answer.label}
-                            </div>
-                            <i
-                              className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                      <div className="relative overflow-auto max-h-[425px] paid:max-h-[325px] "
+                        onWheel={(event) => {
+                          event.stopPropagation();
+                        }}>
+                        {data.quizs.q3.step1.answers.map((answer, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={`flex justify-between items-center px-40px py-18px mt-6px paid:px-30px paid:py-14px paid:mt-4px mobile:px-20px mobile:py-17px mobile:mt-5px ${
                                 quizThreeSelected1 === index + 1
-                                  ? "bg-[url('/assets/range/icon_checked.png')]"
-                                  : "bg-[url('/assets/range/icon_check.png')]"
-                              } `}
-                              onClick={() => {
-                                setQuizThreeSelected1(index + 1);
-                                if (quizThreeSelected2 !== 0) {
-                                  setQuizIndex(3);
-                                }
-                              }}
-                            ></i>
-                          </div>
-                        );
-                      })}
+                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
+                                  : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                              }`}
+                            >
+                              <div className="font-Grotesque-Regular text-[#262627] text-24px paid:text-18px mobile:text-12px">
+                                {answer.label}
+                              </div>
+                              <i
+                                className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                  quizThreeSelected1 === index + 1
+                                    ? "bg-[url('/assets/range/icon_checked.png')]"
+                                    : "bg-[url('/assets/range/icon_check.png')]"
+                                } `}
+                                onClick={() => {
+                                  setQuizThreeSelected1(index + 1);
+                                  if (quizThreeSelected2 !== 0) {
+                                    setQuizIndex(3);
+                                  }
+                                }}
+                              ></i>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                     <div className="w-500px paid:w-400px mobile:w-310px mobile:mt-30px">
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
@@ -649,57 +680,62 @@ function FlavourFinderComponent(props: any) {
                       </div>
                       <div className="w-1000px overflow-hidden">
                         <div
-                          className="relative w-500px paid:w-400px mobile:w-310px mt-20px mobile:mt-10px"
+                          className="relative w-500px paid:w-400px mobile:w-310px "
                           ref={emblaRef}
                         >
                           <div className="flex">
-                            {data.quizs.q3.step2.answers.map((answer, index) => {
-                              return (
-                                <div className="flex-grow-0 flex-shrink-0 basis-full relative mobile:p-5px">
+                            {data.quizs.q3.step2.answers.map(
+                              (answer, index) => {
+                                return (
                                   <div
-                                    className={`mx-4px px-34px pt-21px pb-12px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
-                                      quizThreeSelected2 === index + 1
-                                        ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid paid:border-[3px] mobile:border-[2px]"
-                                        : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
-                                    }`}
+                                    key={index}
+                                    className="flex-grow-0 flex-shrink-0 basis-full relative py-20px mobile:p-5px"
                                   >
-                                    <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
-                                      <BaseImage
-                                        mImg={answer.mImg}
-                                        pImg={answer.pImg}
-                                        alt={""}
-                                        layout="fill"
-                                        objectFit="cover"
-                                        quality={100}
-                                      ></BaseImage>
-                                    </div>
-                                    <div className="flex justify-between items-center mt-10px">
-                                      <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px paid:text-16px mobile:py-16px mobile:text-12px">
-                                        {answer.label}
+                                    <div
+                                      className={`mx-4px px-34px pt-21px pb-12px ml-10px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
+                                        quizThreeSelected2 === index + 1
+                                          ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid paid:border-[3px] mobile:border-[2px]"
+                                          : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
+                                      }`}
+                                    >
+                                      <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
+                                        <BaseImage
+                                          mImg={answer.mImg}
+                                          pImg={answer.pImg}
+                                          alt={""}
+                                          layout="fill"
+                                          objectFit="cover"
+                                          quality={30}
+                                        ></BaseImage>
                                       </div>
-                                      <i
-                                        className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
-                                          quizThreeSelected2 === index + 1
-                                            ? "bg-[url('/assets/range/icon_checked.png')]"
-                                            : "bg-[url('/assets/range/icon_check.png')]"
-                                        }`}
-                                        onClick={() => {
-                                          setQuizThreeSelected2(index + 1);
-                                          if (quizThreeSelected1 !== 0) {
-                                            setQuizIndex(3);
-                                          }
-                                        }}
-                                      ></i>
+                                      <div className="flex justify-between items-center mt-10px">
+                                        <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px paid:text-16px mobile:py-16px mobile:text-12px">
+                                          {answer.label}
+                                        </div>
+                                        <i
+                                          className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                            quizThreeSelected2 === index + 1
+                                              ? "bg-[url('/assets/range/icon_checked.png')]"
+                                              : "bg-[url('/assets/range/icon_check.png')]"
+                                          }`}
+                                          onClick={() => {
+                                            setQuizThreeSelected2(index + 1);
+                                            if (quizThreeSelected1 !== 0) {
+                                              setQuizIndex(3);
+                                            }
+                                          }}
+                                        ></i>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              );
-                            })}
+                                );
+                              }
+                            )}
                           </div>
                         </div>
                       </div>
-                      <div className="w-full flex items-center justify-center mt-20px">
-                        {[0, 1, 2, 3].map((item, index) => {
+                      <div className="w-full flex items-center justify-center">
+                        {data.quizs.q3.step2.answers.map((item, index) => {
                           return (
                             <div
                               key={index}
@@ -727,6 +763,7 @@ function FlavourFinderComponent(props: any) {
                   {data.quizs.q4.answers.map((answer, index) => {
                     return (
                       <div
+                        key={index}
                         className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                           quizFourSelected === index + 1
                             ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
@@ -775,6 +812,7 @@ function FlavourFinderComponent(props: any) {
                     {data.quizs.q5.answers.map((answer, index) => {
                       return (
                         <div
+                          key={index}
                           className={`flex justify-between items-center px-40px py-18px mt-10px paid:px-30px paid:py-14px paid:mt-6px mobile:px-20px mobile:py-17px mobile:mt-5px ${
                             quizFiveSelected === index + 1
                               ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
@@ -941,7 +979,7 @@ function FlavourFinderComponent(props: any) {
                         quality="100"
                       ></Image>
                       <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px paid:text-16px mobile:text-14px">
-                      {data.recommendResults[currentRecommend].name}
+                        {data.recommendResults[currentRecommend].name}
                       </div>
                       <div className="flex mt-10px">
                         {data.recommendResults.map((item, index) => {
@@ -949,7 +987,9 @@ function FlavourFinderComponent(props: any) {
                             <div
                               key={key}
                               className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
-                                currentRecommend === index ? "bg-[#969797] w-50px" : "bg-[#E6E7E8] w-20px"
+                                currentRecommend === index
+                                  ? "bg-[#969797] w-50px"
+                                  : "bg-[#E6E7E8] w-20px"
                               }`}
                               onClick={() => setCurrentRecommend(index)}
                             ></div>
@@ -961,14 +1001,14 @@ function FlavourFinderComponent(props: any) {
                       <div className="inline-flex items-center">
                         <i className="inline-block bg-[url('/assets/range/icon_business_meal.png')] bg-cover mr-10px w-68px h-68px paid:w-54px paid:h-54px mobile:w-36px mobile:h-36px"></i>
                         <div className="font-AlbertusNova-Regular text-black uppercase text-34px paid:text-27px mobile:text-16px">
-                        {data.recommendResults[currentRecommend].type}
+                          {data.recommendResults[currentRecommend].type}
                         </div>
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px paid:text-12px mobile:text-10px">
                         {data.recommendResults[currentRecommend].tips}
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-20px leading-normal text-22px paid:text-18px mobile:text-14px mobile:text-center">
-                      {data.recommendResults[currentRecommend].description}
+                        {data.recommendResults[currentRecommend].description}
                       </div>
                       <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px paid:w-134px paid:h-44px paid:leading-[50px] paid:text-14px">
                         explore
@@ -1016,22 +1056,34 @@ function FlavourFinderComponent(props: any) {
                 </div>
                 <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
                   <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
-                    <a href="#ProductsFamily" className="inline-block mobile:w-64px">
+                    <a
+                      href="#ProductsFamily"
+                      className="inline-block mobile:w-64px"
+                    >
                       products family
                     </a>
-                    <a href="#TalesFromTheWild" className="inline-block mobile:w-64px">
+                    <a
+                      href="#TalesFromTheWild"
+                      className="inline-block mobile:w-64px"
+                    >
                       Tales From The Wild
                     </a>
                     <a
-                      href="#ServingSuggestion" className="inline-block mobile:w-64px"
+                      href="#ServingSuggestion"
+                      className="inline-block mobile:w-64px"
                     >
                       Serving Suggestion
                     </a>
-                    <a href="#BottleConcept" className="inline-block mobile:w-64px">
+                    <a
+                      href="#BottleConcept"
+                      className="inline-block mobile:w-64px"
+                    >
                       Bottle Concept
                     </a>
-                    <a href="#FlavourFinder"
-                      className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white">
+                    <a
+                      href="#FlavourFinder"
+                      className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white"
+                    >
                       <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
                       Flavour Finder
                     </a>

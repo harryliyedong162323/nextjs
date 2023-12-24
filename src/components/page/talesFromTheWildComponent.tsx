@@ -94,7 +94,7 @@ function TalesFromTheWildComponent(props: any) {
   const [hasNavigation, setHasNavigation] = useState<boolean>(
     props.data.entry.hasNavigation
   );
-  console.log(props);
+  // console.log(props);
   const headStyle = props.data.entry.headStyle;
   useEffect(() => {}, [currentKol, kolList]);
 

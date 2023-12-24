@@ -54,7 +54,7 @@ const componentData: ComponentData = {
   },
   {
     id: 4,
-    year: 23,
+    year: 30,
     yearDesc: "year old",
     name: "RUGGED COAST",
     mImg: require("../../../public/assets/story/product_04.png"),
@@ -116,7 +116,7 @@ function StoryChapterEndComponent(props: any) {
           <Marquee play={play}>
             { data.productList.map((item, index) => {
               return (
-                <div className={`flex flex-col items-center w-391px mr-64px paid:w-313px paid:mr-50px mobile:ml-0 mobile:w-235px mobile:mr-30px`}>
+                <div key={index} className={`flex flex-col items-center w-391px mr-64px paid:w-313px paid:mr-50px mobile:ml-0 mobile:w-235px mobile:mr-30px`}>
                   <div className={`inline-block relative w-391px h-345px paid:w-313px paid:h-276px mobile:w-235px mobile:h-207px ${ index % 4 == 1 ? "mt-100px" : "" } ${ index % 4 == 2 ? "mt-50px" : "" }  ${ index % 4 == 3 ? "mt-150px" : "" }`}>
                     <BaseImage
                       mImg={item.mImg}
@@ -124,7 +124,7 @@ function StoryChapterEndComponent(props: any) {
                       alt={""}
                       layout="fill"
                       objectFit="cover"
-                      quality={100}
+                      quality={50}
                     ></BaseImage>
                   </div>
                   <div className="text-white font-AlbertusNova-Light inline-flex items-center w-230px paid:w-200px mobile:w-160px">

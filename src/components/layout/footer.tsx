@@ -19,10 +19,10 @@ function Footer(props: any) {
             window.removeEventListener('wheel', wheelHandle,option );
         }
     }, [language]);
-   
+
     const hanleLanguage = () => {
         setLanguage(true)
-      
+
     }
     const hanleCloseLanguage = () => {
         setLanguage(false)
@@ -153,7 +153,7 @@ function Footer(props: any) {
                 <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-40px">
                     {/*mobile:w-274px mobile:h-44px*/}
                     <div className="mobile:w-full mobile:order-2">
-                        <BaseLink link="/en-Us/home">
+                        <BaseLink link="/home">
                             <div className="bg-[url('/assets/wildmoor_footer.png')] w-262px h-41px bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto"></div>
                         </BaseLink>
                     </div>
@@ -253,7 +253,7 @@ function Footer(props: any) {
                                 </BaseLink>
                             </li>
                             <li className="mr-84px font-Grotesque-Regular mobile:mr-0 mobile:w-full mobile:mb-25px">
-                                <BaseLink link="/en-Us/privacyPolicy">
+                                <BaseLink link="/privacyPolicy">
                                     Privacy policy
                                 </BaseLink>
                             </li>

@@ -4,6 +4,7 @@ interface State {
     name:string
 }
 interface propsContent {
+    autoLanguage?:boolean,
     display?:boolean,
     hover?:string,
     color?:string,
@@ -14,6 +15,8 @@ interface propsContent {
 class BaseLink extends Component<propsContent,State>{
 
     static defaultProps = {
+        autoLanguage:true,
+
         display:true,
         color:'',
         hover:'',
@@ -62,11 +65,39 @@ class BaseLink extends Component<propsContent,State>{
 
 
 
+
+    computedLink():string{
+        let location :string | undefined = process.env.LOCATION;
+        let trimmedUrl: string;
+        let trimmedLink:string;
+        let targetUrl:string;
+        let link:string = this.props.link;
+        if (location) {
+            trimmedUrl = location.replace(/^\/|\/$/g, '');
+        } else {
+            trimmedUrl = '';
+        }
+
+        trimmedLink = (link.replace(/^\/|\/$/g, ''))
+
+        if(trimmedLink == ''){
+           targetUrl = '/'
+        }else{
+           targetUrl = this.props.autoLanguage ? (`/${trimmedUrl}/`) + trimmedLink: this.props.link;
+        }
+
+        return targetUrl;
+
+
+    }
+
+
+
     render() {
         if(this.props.display){
             // this.state.name+' '+(this.hasHover())+' '
             return (
-                <Link className={this.computedClassName()} href={this.props.link} onClick={()=>{this.init()}}>{this.props.children}</Link>
+                <Link rel="preload" className={this.computedClassName()} href={this.computedLink()} onClick={()=>{this.init()}}>{this.props.children}</Link>
             );
         }else{
             return null;

@@ -7,7 +7,7 @@ import { flushSync } from 'react-dom'
 // import Autoplay from "embla-carousel-autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import gsap from "gsap";
 
 
 import 'swiper/css';
@@ -183,8 +183,12 @@ function IntroduceCampaignComponent(props: any) {
     const scrollNext = ()=>{
 
         // emblaApi?.scrollNext();
-
+        const activeSlide = swiper.slides[swiper.activeIndex];
         swiper?.slideNext();
+
+        gsap.timeline()
+            .to(activeSlide, {scale:2})
+
         console.log(swiper)
         // swiper.autoplay.start()
     }
@@ -344,7 +348,8 @@ function IntroduceCampaignComponent(props: any) {
 
                         const slides = e.slides;
 
-
+                        gsap.timeline()
+                            .to(".bg-border", {scale:1})
                         setTimeout(()=>{
                             if(centeredSlides){
                                 slides[e.activeIndex-2].classList.add('slide-25');
@@ -362,6 +367,7 @@ function IntroduceCampaignComponent(props: any) {
                         },50);
 
                     }}
+
 
                     onSlidePrevTransitionStart={(e)=>{
 

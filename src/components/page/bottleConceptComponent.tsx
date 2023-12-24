@@ -40,8 +40,64 @@ function BottleConceptComponent(props: any) {
     }
   }, [isFullPage, props]);
 
+  const [startX, setStartX] = useState<number>(0);
+  const [endX, setEndX] = useState<number>(0);
+  const [currentPercent, setCurrentPercent] = useState(0);
+  const [endPercent, setEndPercent] = useState(0);
+  const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
+  const bottleRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <div id="BottleConcept" className="relative overflow-hidden select-none">
+      <div ref={bottleRef} className="absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
+        onMouseDown={(event) => {
+          console.log('mouseup', event);
+          setIsMouseDown(true);
+          setStartX(event.clientX);
+        }}
+        onTouchStart={(event) => {
+          event.stopPropagation()
+          console.log('touchStart', event);
+          setIsMouseDown(true);
+          setStartX(event.touches[0].clientX);
+        }}
+        onMouseMove={(event) => {
+          // console.log('isMouseDown', isMouseDown)
+          if (isMouseDown) {
+            let percent = ((event.clientX - startX + 600 * endPercent) % 600) / 600;
+            console.log('percent:', percent)
+            if (percent < 0) {
+              percent = 1 + percent
+            }
+            setCurrentPercent(percent)
+            bottlePlayingRef.current?.seekTo(percent);
+          }
+        }}
+        onTouchMove={(event) => {
+          event.stopPropagation()
+          // console.log('touchMove isMouseDown', isMouseDown)
+          if (isMouseDown) {
+            let percent = ((event.touches[0].clientX - startX + 375 * endPercent) % 375) / 375;
+            console.log('percent:', percent)
+            if (percent < 0) {
+              percent = 1 + percent
+            }
+            setCurrentPercent(percent)
+            bottlePlayingRef.current?.seekTo(percent);
+          }
+        }}
+        onMouseUp={(event) => {
+          // console.log('mouseup', event);
+          setIsMouseDown(false);
+          setEndPercent(currentPercent);
+        }}
+        onTouchEnd={(event) => {
+          // console.log('touchEnd', event);
+          event.stopPropagation()
+          setIsMouseDown(false);
+          setEndPercent(currentPercent);
+          console.log(currentPercent)
+        }}></div>
       <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px paid:top-84px mobile:top-82px">
@@ -83,7 +139,10 @@ function BottleConceptComponent(props: any) {
               url="https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4"
             ></ReactPlayer>
             <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px paid:-ml-300px paid:w-600px paid:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>
-            <div id="DraggableBox" className="cursor-pointer absolute z-20 top-1/2 left-1/2 mt-115px -ml-375px w-750px h-44px paid:mt-95px paid:-ml-300px paid:w-600px mobile:mt-50px mobile:-ml-160px mobile:w-320px">
+            <div className="cursor-pointer absolute z-20 top-1/2 left-1/2 mt-115px -ml-375px w-44px h-44px paid:mt-95px paid:-ml-300px paid:w-44px mobile:mt-50px mobile:-ml-160px mobile:w-320px">
+              <div className="inline-block bg-[url('/assets/range/icon_pointer.png')] bg-cover w-44px h-44px paid:w-44px paid:h-44px mobile:w-44px mobile:h-44px"></div>
+            </div>
+            {/* <div id="DraggableBox" className="cursor-pointer absolute z-20 top-1/2 left-1/2 mt-115px -ml-375px w-750px h-44px paid:mt-95px paid:-ml-300px paid:w-600px mobile:mt-50px mobile:-ml-160px mobile:w-320px">
               <Draggable
                 axis="x"
                 defaultPosition={{ x: positionX, y: 0 }}
@@ -100,7 +159,7 @@ function BottleConceptComponent(props: any) {
               >
                 <div className="inline-block bg-[url('/assets/range/icon_pointer.png')] bg-cover w-44px h-44px paid:w-44px paid:h-44px mobile:w-44px mobile:h-44px"></div>
               </Draggable>
-            </div>
+            </div> */}
             <div className="bg-[url('/assets/range/icon_360.png')] absolute bg-cover z-10 left-1/2 -ml-34px w-68px h-35px bottom-80px"></div>
           </>
         )}
