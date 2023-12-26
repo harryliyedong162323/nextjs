@@ -1,16 +1,14 @@
 "use client";
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from "react";
-import BaseImage from "@/components/base/image";
-import BaseLink from "@/components/base/link";
-import BaseVideo from "@/components/base/video";
-import {any, number, object} from "prop-types";
+
+
 
 const Baidu:React.ComponentType<{}> = dynamic(() => import('@/components/map/baidu'));
 
 
 function LocationMapComponent(props: any) {
-
+    const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
 
     //mock
@@ -134,6 +132,7 @@ function LocationMapComponent(props: any) {
 
     return (
         <div className="overflow-hidden">
+            <input type="hidden" value={headStyle}/>
             <div className="h-screen relative">
                 {  // @ts-ignore
                     browser ? <Baidu  info={selectedItem} location={selectLocation} zoomIn={selectZoomIn} zoomOut={selectZoomOut}></Baidu> : null

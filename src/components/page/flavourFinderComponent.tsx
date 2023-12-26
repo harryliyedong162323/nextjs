@@ -8,12 +8,17 @@ import React, {
   useRef,
 } from "react";
 import Image from "next/image";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+// import useEmblaCarousel from "embla-carousel-react";
+// import Autoplay from "embla-carousel-autoplay";
 import Script from "next/script";
 import axios from "axios";
 import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
+
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+
 declare const grecaptcha: any;
 
 const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
@@ -352,25 +357,26 @@ function FlavourFinderComponent(props: any) {
   const [videoPlay2, setVideoPlay2] = useState<boolean>(false);
   const [videoPlay3, setVideoPlay3] = useState<boolean>(false);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerGroup, setSlidesPerGroup] = useState(2);
 
   const [currentRecommend, setCurrentRecommend] = useState<number>(0);
 
-  const onChangeScroll = useCallback(
-    (emblaApi: { selectedScrollSnap: () => any }) => {
-      setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
-    },
-    []
-  );
+  // const onChangeScroll = useCallback(
+  //   (emblaApi: { selectedScrollSnap: () => any }) => {
+  //     setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
+  //   },
+  //   []
+  // );
 
-  const scrollTo = useCallback(
-    (index: number) => {
-      emblaApi?.scrollTo(index);
-      setCurrentIndex(index);
-    },
-    [emblaApi]
-  );
+  // const scrollTo = useCallback(
+  //   (index: number) => {
+  //     emblaApi?.scrollTo(index);
+  //     setCurrentIndex(index);
+  //   },
+  //   [emblaApi]
+  // );
 
   const submit = () => {
     grecaptcha.ready(function () {
@@ -403,9 +409,9 @@ function FlavourFinderComponent(props: any) {
     });
   };
 
-  useEffect(() => {
-    emblaApi?.on("select", onChangeScroll);
-  }, [emblaApi, onChangeScroll]);
+  // useEffect(() => {
+  //   emblaApi?.on("select", onChangeScroll);
+  // }, [emblaApi, onChangeScroll]);
 
   useEffect(() => {
     console.log("showQuiz", showQuiz);
@@ -413,7 +419,7 @@ function FlavourFinderComponent(props: any) {
   }, [showQuiz, quizIndex]);
 
   return (
-    <div className="relative overflow-hidden select-none">
+    <div id="DiscoverYourWildFlavour" data-anchor={4} className="relative overflow-hidden select-none" >
       <input type="hidden" value={headStyle} />
 
       {
@@ -457,31 +463,47 @@ function FlavourFinderComponent(props: any) {
           </div>
           <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
             <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
-              <a href="#ProductsFamily" className="inline-block mobile:w-64px">
+              <span
+                className="inline-block cursor-pointer mobile:w-64px"
+                onClick={() => {
+                  props.scrollToPage(0);
+                }}
+              >
                 products family
-              </a>
-              <a
-                href="#TalesFromTheWild"
-                className="inline-block mobile:w-64px"
+              </span>
+              <span
+                className="inline-block cursor-pointer mobile:w-64px"
+                onClick={() => {
+                  props.scrollToPage(1);
+                }}
               >
                 Tales From The Wild
-              </a>
-              <a
-                href="#ServingSuggestion"
-                className="inline-block mobile:w-64px"
+              </span>
+              <span
+                className="inline-block cursor-pointer mobile:w-64px"
+                onClick={() => {
+                  props.scrollToPage(2);
+                }}
               >
                 Serving Suggestion
-              </a>
-              <a href="#BottleConcept" className="inline-block mobile:w-64px">
-                Bottle Concept
-              </a>
-              <a
-                href="#FlavourFinder"
-                className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white"
+              </span>
+              <span
+                className="inline-block cursor-pointer mobile:w-64px"
+                onClick={() => {
+                  props.scrollToPage(3);
+                }}
               >
-                <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+                Bottle Concept
+              </span>
+              <span
+                className="relative inline-block cursor-pointer text-[#696969] mobile:w-64px mobile:text-white"
+                onClick={() => {
+                  props.scrollToPage(4);
+                }}
+              >
                 Flavour Finder
-              </a>
+                <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+              </span>
             </div>
           </div>
         </>
@@ -639,10 +661,12 @@ function FlavourFinderComponent(props: any) {
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px mb-20px paid:text-16px paid:mb-20px mobile:text-12px">
                         {data.quizs.q3.step1.title}
                       </div>
-                      <div className="relative overflow-auto max-h-[425px] paid:max-h-[325px] "
+                      <div
+                        className="relative overflow-auto max-h-[325px] paid:max-h-[235px] mobile:max-h-[400px]"
                         onWheel={(event) => {
                           event.stopPropagation();
-                        }}>
+                        }}
+                      >
                         {data.quizs.q3.step1.answers.map((answer, index) => {
                           return (
                             <div
@@ -680,10 +704,77 @@ function FlavourFinderComponent(props: any) {
                       </div>
                       <div className="w-1000px overflow-hidden">
                         <div
-                          className="relative w-500px paid:w-400px mobile:w-310px "
-                          ref={emblaRef}
+                          className="relative w-500px paid:w-400px mobile:w-310px"
+                          // ref={emblaRef}
                         >
-                          <div className="flex">
+                          <Swiper
+                            style={{
+                              overflow: "visible",
+                            }}
+                            modules={[Autoplay]}
+                            loop={true}
+                            speed={500}
+                            allowTouchMove={true}
+                            slidesPerView={2}
+                            slidesPerGroup={1}
+                            autoplay={{
+                              delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
+                              disableOnInteraction: false, // 用户互动后是否停止自动播放
+                            }}
+                            onSlideChange={(e) => {
+                              setCurrentIndex(e.realIndex);
+                              // setSlidesPerGroup(1);
+                            }}
+                          >
+                            {data.quizs.q3.step2.answers.map(
+                              (answer, index) => {
+                                return (
+                                  <SwiperSlide
+                                    key={index}
+                                    className="flex-grow-0 flex-shrink-0 basis-full relative py-20px paid:py-15px mobile:py-10px"
+                                  >
+                                    <div
+                                      className={`mx-10px px-34px pt-21px pb-12px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
+                                        quizThreeSelected2 === index + 1
+                                          ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid paid:border-[3px] mobile:border-[2px]"
+                                          : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
+                                      }`}
+                                    >
+                                      <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
+                                        <BaseImage
+                                          mImg={answer.mImg}
+                                          pImg={answer.pImg}
+                                          alt={""}
+                                          layout="fill"
+                                          objectFit="cover"
+                                          quality={30}
+                                        ></BaseImage>
+                                      </div>
+                                      <div className="flex justify-between items-center mt-10px">
+                                        <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px paid:text-16px mobile:py-16px mobile:text-12px">
+                                          {answer.label}
+                                        </div>
+                                        <i
+                                          className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
+                                            quizThreeSelected2 === index + 1
+                                              ? "bg-[url('/assets/range/icon_checked.png')]"
+                                              : "bg-[url('/assets/range/icon_check.png')]"
+                                          }`}
+                                          onClick={() => {
+                                            setQuizThreeSelected2(index + 1);
+                                            if (quizThreeSelected1 !== 0) {
+                                              setQuizIndex(3);
+                                            }
+                                          }}
+                                        ></i>
+                                      </div>
+                                    </div>
+                                  </SwiperSlide>
+                                );
+                              }
+                            )}
+                          </Swiper>
+                          {/* <div className="flex">
                             {data.quizs.q3.step2.answers.map(
                               (answer, index) => {
                                 return (
@@ -731,7 +822,7 @@ function FlavourFinderComponent(props: any) {
                                 );
                               }
                             )}
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                       <div className="w-full flex items-center justify-center">
@@ -744,7 +835,7 @@ function FlavourFinderComponent(props: any) {
                                   ? "bg-white w-50px"
                                   : "bg-gray-300 w-20px"
                               }`}
-                              onClick={() => scrollTo(index)}
+                              // onClick={() => scrollTo(index)}
                             ></div>
                           );
                         })}
@@ -849,8 +940,8 @@ function FlavourFinderComponent(props: any) {
             )}
             {quizIndex !== 5 && (
               <>
-                <div className="absolute w-full bottom-50px">
-                  <div className="flex mx-auto justify-center w-[1141px] paid:w-913px">
+                <div className="absolute w-full bottom-50px paid:bottom-40px mobile:bottom-35px">
+                  <div className="flex mx-auto justify-center w-[1141px] paid:w-913px mobile:w-282px">
                     <div
                       className={`${
                         quizIndex === 0
@@ -865,9 +956,9 @@ function FlavourFinderComponent(props: any) {
                       <div
                         className={`${
                           quizIndex === 0
-                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
                       ></div>
                     </div>
                     <div
@@ -884,9 +975,9 @@ function FlavourFinderComponent(props: any) {
                       <div
                         className={`${
                           quizIndex === 1
-                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
                       ></div>
                     </div>
                     <div
@@ -903,9 +994,9 @@ function FlavourFinderComponent(props: any) {
                       <div
                         className={`${
                           quizIndex === 2
-                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
                       ></div>
                     </div>
                     <div
@@ -922,9 +1013,9 @@ function FlavourFinderComponent(props: any) {
                       <div
                         className={`${
                           quizIndex === 3
-                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
                       ></div>
                     </div>
                     <div
@@ -941,9 +1032,9 @@ function FlavourFinderComponent(props: any) {
                       <div
                         className={`${
                           quizIndex === 4
-                            ? "bg-[url('/assets/range/icon_arrow_line.png')]"
+                            ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
                       ></div>
                     </div>
                   </div>
@@ -1056,37 +1147,47 @@ function FlavourFinderComponent(props: any) {
                 </div>
                 <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
                   <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
-                    <a
-                      href="#ProductsFamily"
-                      className="inline-block mobile:w-64px"
+                    <span
+                      className="inline-block cursor-pointer mobile:w-64px"
+                      onClick={() => {
+                        props.scrollToPage(0);
+                      }}
                     >
                       products family
-                    </a>
-                    <a
-                      href="#TalesFromTheWild"
-                      className="inline-block mobile:w-64px"
+                    </span>
+                    <span
+                      className="inline-block cursor-pointer mobile:w-64px"
+                      onClick={() => {
+                        props.scrollToPage(1);
+                      }}
                     >
                       Tales From The Wild
-                    </a>
-                    <a
-                      href="#ServingSuggestion"
-                      className="inline-block mobile:w-64px"
+                    </span>
+                    <span
+                      className="inline-block cursor-pointer mobile:w-64px"
+                      onClick={() => {
+                        props.scrollToPage(2);
+                      }}
                     >
                       Serving Suggestion
-                    </a>
-                    <a
-                      href="#BottleConcept"
-                      className="inline-block mobile:w-64px"
+                    </span>
+                    <span
+                      className="inline-block cursor-pointer mobile:w-64px"
+                      onClick={() => {
+                        props.scrollToPage(3);
+                      }}
                     >
                       Bottle Concept
-                    </a>
-                    <a
-                      href="#FlavourFinder"
-                      className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white"
+                    </span>
+                    <span
+                      className="relative inline-block cursor-pointer text-[#696969] mobile:w-64px mobile:text-white"
+                      onClick={() => {
+                        props.scrollToPage(4);
+                      }}
                     >
-                      <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
                       Flavour Finder
-                    </a>
+                      <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+                    </span>
                   </div>
                 </div>
               </>

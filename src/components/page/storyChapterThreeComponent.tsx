@@ -82,7 +82,7 @@ function StoryChapterThreeComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(40,40,40,0.5)] to-[#28282800] h-225px paid:h-180px mobile:h-238px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-150px paid:h-100px mobile:h-238px"></div>
     </div>
   );
 }

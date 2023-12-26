@@ -74,7 +74,7 @@ function StoryOpeningComponent(props: any) {
   }, [emblaApi]);
 
   return (
-    <div className="relative overflow-hidden select-none" ref={emblaRef}>
+    <div id="ADropOfWildness" data-anchor={0} className="relative overflow-hidden select-none" ref={emblaRef}>
       <div className="flex h-screen">
         {data.bgList.map((item, key) => {
           return (

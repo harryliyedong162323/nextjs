@@ -6,7 +6,7 @@ import BaseLink from "@/components/base/link";
 import BaseVideo from "@/components/base/video";
 
 function IRLExperiencesComponent(props: any) {
-
+    const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
 
     // useEffect(() => {
@@ -14,7 +14,8 @@ function IRLExperiencesComponent(props: any) {
     // }, []);
 
     return (
-        <section className="overflow-hidden container mx-auto pb-164px mobile:pb-67px select-none">
+        <section id="IRLExperiences" data-anchor={props.data.entry.pageNumber} className="overflow-hidden h-screen container mx-auto pb-164px mobile:pb-67px select-none">
+            <input type="hidden" value={headStyle}/>
             <div className="relative">
                 <div className="text-40px font-normal font-AlbertusNova-Regular text-center pt-55px pb-54px mobile:text-24px mobile:pt-20px mobile:pb-20px">IRL Experiences</div>
 

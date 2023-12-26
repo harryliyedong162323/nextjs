@@ -9,27 +9,45 @@ class HowToBuyDao {
         // const result = await response.json()
         // return HomeModel.fromJson(result);
         return [
+
             {
-                type: "locationMapComponent",
-                name: "locationMapComponent",
+                type: "fullPage",
+                name: "fullPage",
                 entry: {
-                    headStyle:'bg-white',
-                },
+                    children:[
+                        {
+                            type: "locationInfoComponent",
+                            name: "locationInfoComponent",
+                            entry: {
+                                headStyle:'black',
+                            },
+                        },
+                        // {
+                        //     type: "locationMapComponent",
+                        //     name: "locationMapComponent",
+                        //     entry: {
+                        //         headStyle:'black',
+                        //     },
+                        // },
+                        {
+                            type: "IRLExperiencesComponent",
+                            name: "IRLExperiencesComponent",
+                            entry: {
+                                headStyle:'none',
+                            },
+                        },
+                        {
+                            type: "digitalExperienceComponent",
+                            name: "digitalExperienceComponent",
+                            entry: {
+                                headStyle:'none',
+                            },
+                        },
+                    ]
+                }
             },
-            {
-                type: "IRLExperiencesComponent",
-                name: "IRLExperiencesComponent",
-                entry: {
-                    headStyle:'bg-white',
-                },
-            },
-            {
-                type: "digitalExperienceComponent",
-                name: "digitalExperienceComponent",
-                entry: {
-                    headStyle:'bg-white',
-                },
-            },
+
+
         ];
     }
 }

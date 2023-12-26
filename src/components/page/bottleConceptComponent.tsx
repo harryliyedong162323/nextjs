@@ -48,7 +48,7 @@ function BottleConceptComponent(props: any) {
   const bottleRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div id="BottleConcept" className="relative overflow-hidden select-none">
+    <div id="BottleConcept" data-anchor={3} className="relative overflow-hidden select-none">
       <div ref={bottleRef} className="absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
         onMouseDown={(event) => {
           console.log('mouseup', event);
@@ -167,25 +167,24 @@ function BottleConceptComponent(props: any) {
       <div className="w-full absolute bottom-0 z-10 mobile:h-110px mobile:bg-gradient-to-t mobile:from-[rgba(0,0,0)] mobile:to-[rgba(0,0,0,0.1)]"></div>
       <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
         <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
-          <a href="#ProductsFamily" className="inline-block mobile:w-64px">
+          <span className="inline-block cursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(0)}}>
             products family
-          </a>
-          <a href="#TalesFromTheWild" className="inline-block mobile:w-64px">
+          </span>
+          <span className="inline-block cursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(1)}}>
             Tales From The Wild
-          </a>
-          <a href="#ServingSuggestion" className="inline-block mobile:w-64px">
-            Serving Suggestion
-          </a>
-          <a
-            href="#BottleConcept"
-            className="relative inline-block text-[#696969] mobile:w-64px mobile:text-white"
+          </span>
+          <span
+            className="inline-block cursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(2)}}
           >
-            <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+            Serving Suggestion
+          </span>
+          <span className="relative inline-block cursor-pointer text-[#696969] mobile:w-64px mobile:text-white" onClick={() => {props.scrollToPage(3)}}>
             Bottle Concept
-          </a>
-          <a href="#FlavourFinder" className="inline-block mobile:w-64px">
+            <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
+          </span>
+          <span className="inline-blockcursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(4)}}>
             Flavour Finder
-          </a>
+          </span>
         </div>
       </div>
     </div>

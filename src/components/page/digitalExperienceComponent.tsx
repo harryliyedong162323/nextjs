@@ -6,7 +6,7 @@ import BaseLink from "@/components/base/link";
 import BaseVideo from "@/components/base/video";
 
 function DigitalExperienceComponent(props: any) {
-
+    const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
 
     // useEffect(() => {
@@ -14,7 +14,8 @@ function DigitalExperienceComponent(props: any) {
     // }, []);
     console.log(props)
     return (
-        <section className="overflow-hidden bg-[url('/assets/digitalExperience/bg.png')] bg-cover bg-repeat h-750px mobile:h-auto select-none">
+        <section id="DigitalExperience" data-anchor={2} className="overflow-hidden h-screen bg-[url('/assets/digitalExperience/bg.png')] bg-cover bg-repeat  select-none">
+            <input type="hidden" value={headStyle}/>
             <div className="relative container mx-auto">
                 <div className="text-33px font-normal font-AlbertusNova-Regular text-center pt-84px pb-200px text-white mobile:pb-50px mobile:pt-50px mobile:text-20px ">Digital experience</div>
 

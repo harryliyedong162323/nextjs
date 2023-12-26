@@ -98,7 +98,7 @@ function StoryChapterFiveComponent(props: any) {
         </div>
       </div>
       <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#2828289c] to-[#28282800] h-225px paid:h-180px mobile:h-238px"></div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-414px paid:h-331px mobile:h-238px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-414px paid:h-331px mobile:h-238px"></div>
     </div>
   );
 }

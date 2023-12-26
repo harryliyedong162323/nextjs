@@ -10,19 +10,28 @@ class HowToBuyDetailDao {
         // return HomeModel.fromJson(result);
         return [
             {
-                type: "globalCampaignsComponent",
-                name: "globalCampaignsComponent",
+                type: "fullPage",
+                name: "fullPage",
                 entry: {
-                    headStyle:'white',
-                },
+                    children:[
+                        {
+                            type: "globalCampaignsComponent",
+                            name: "globalCampaignsComponent",
+                            entry: {
+                                headStyle:'white',
+                            },
+                        },
+                        {
+                            type: "howToBuyDetailComponent",
+                            name: "howToBuyDetailComponent",
+                            entry: {
+                                headStyle:'black',
+                            },
+                        },
+                    ]
+                }
             },
-            {
-                type: "howToBuyDetailComponent",
-                name: "howToBuyDetailComponent",
-                entry: {
-                    headStyle:'white',
-                },
-            },
+
         ];
     }
 }

@@ -183,11 +183,11 @@ function IntroduceCampaignComponent(props: any) {
     const scrollNext = ()=>{
 
         // emblaApi?.scrollNext();
-        const activeSlide = swiper.slides[swiper.activeIndex];
+        // const activeSlide = swiper.slides[swiper.activeIndex];
         swiper?.slideNext();
 
-        gsap.timeline()
-            .to(activeSlide, {scale:2})
+        // gsap.timeline()
+        //     .to(activeSlide, {y:'100%'})
 
         console.log(swiper)
         // swiper.autoplay.start()
@@ -197,7 +197,6 @@ function IntroduceCampaignComponent(props: any) {
         // emblaApi?.scrollPrev();
         swiper?.slidePrev();
     }
-
 
 
     useEffect(() => {
@@ -254,7 +253,7 @@ function IntroduceCampaignComponent(props: any) {
 
 
     return (
-        <section className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none">
+        <section id="GlobalNews" data-anchor={1}  className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none">
             <input type="hidden" value={headStyle}/>
 
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
@@ -319,14 +318,14 @@ function IntroduceCampaignComponent(props: any) {
             {/*</div>*/}
 
             <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px ">
-                <div className="absolute top-[40%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[50%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
+                <div className="absolute top-[40%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[40%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 
                 <Swiper
                     style={{
                         overflow:"visible"
                     }}
-
                     modules={[Autoplay]}
+
                     slidesPerView={slidesPerView}
                     loop={true}
                     centeredSlides={centeredSlides}
@@ -347,24 +346,38 @@ function IntroduceCampaignComponent(props: any) {
                     onSlideNextTransitionStart={(e)=>{
 
                         const slides = e.slides;
+                        if(centeredSlides){
+                            slides[e.activeIndex+1].style.transform = 'translateY(-50%)'
+                        }
 
-                        gsap.timeline()
-                            .to(".bg-border", {scale:1})
+
                         setTimeout(()=>{
                             if(centeredSlides){
-                                slides[e.activeIndex-2].classList.add('slide-25');
-                                slides[e.activeIndex-1].classList.add('slide-0');
-                                slides[e.activeIndex].classList.add('slide-25');
-                                slides[e.activeIndex+1].classList.add('slide-0');
+                                slides[e.activeIndex-2]?.classList.add('slide-25');
+                                slides[e.activeIndex-1]?.classList.add('slide-0');
+                                slides[e.activeIndex]?.classList.add('slide-25');
+                                slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
-                                slides[e.activeIndex-2].classList.add('slide-25-m');
-                                slides[e.activeIndex-1].classList.add('slide-0');
-                                slides[e.activeIndex].classList.add('slide-25-m');
-                                slides[e.activeIndex+1].classList.add('slide-0');
+                                slides[e.activeIndex-2]?.classList.add('slide-25-m');
+                                slides[e.activeIndex-1]?.classList.add('slide-0');
+                                slides[e.activeIndex]?.classList.add('slide-25-m');
+                                slides[e.activeIndex+1]?.classList.add('slide-0');
                             }
+                        },250);
 
+                        if(centeredSlides){
+                            setTimeout(()=>{
+                                slides[e.activeIndex+1].style.transform = 'translateY(0%)'
+                            },500);
+                        }
 
-                        },50);
+                    }}
+
+                    onSlideNextTransitionEnd={(e)=>{
+
+                        const slides = e.slides;
+                        // slides[e.activeIndex].style.transform = ''
+
 
                     }}
 
@@ -372,22 +385,34 @@ function IntroduceCampaignComponent(props: any) {
                     onSlidePrevTransitionStart={(e)=>{
 
                         const slides = e.slides;
+                        if(centeredSlides){
+                            slides[e.activeIndex+2].style.transform = 'translateY(-50%)'
+                        }
 
                         setTimeout(()=>{
                             if(centeredSlides){
-                                slides[e.activeIndex-1].classList.add('slide-0');
-                                slides[e.activeIndex].classList.add('slide-25');
-                                slides[e.activeIndex+1].classList.add('slide-0');
+                                slides[e.activeIndex-1]?.classList.add('slide-0');
+                                slides[e.activeIndex]?.classList.add('slide-25');
+                                slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
-                                slides[e.activeIndex-1].classList.add('slide-0');
-                                slides[e.activeIndex].classList.add('slide-25-m');
-                                slides[e.activeIndex+1].classList.add('slide-0');
+                                slides[e.activeIndex-1]?.classList.add('slide-0');
+                                slides[e.activeIndex]?.classList.add('slide-25-m');
+                                slides[e.activeIndex+1]?.classList.add('slide-0');
                             }
 
 
-                        },50);
-                    }}
+                        },250);
+                        if(centeredSlides){
+                            setTimeout(()=>{
+                                slides[e.activeIndex+2].style.transform = 'translateY(0%)'
+                            },700);
+                        }
 
+                    }}
+                    onInit={()=>{
+
+                        scrollNext();
+                    }}
                     onSwiper={(swiper) => {
 
 

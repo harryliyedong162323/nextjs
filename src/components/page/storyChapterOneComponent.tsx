@@ -38,9 +38,9 @@ function StoryChapterOneComponent(props: any) {
       }
     }
   }, [isFullPage, props]);
-  
+
   return (
-    <div id="StoryChapterOne" className="relative overflow-hidden select-none">
+    <div  id="WhatOthersSay" data-anchor={1} className="relative overflow-hidden select-none">
       <div className="flex -mt-1px h-[calc(100vh+1px)]">
         <BaseImage
             mImg={data.bg.mImg}

@@ -5,22 +5,30 @@ interface State {
 }
 interface propsContent {
     autoLanguage?:boolean,
+    className?:string,
     display?:boolean,
     hover?:string,
     color?:string,
     link:string,
     children?:any,
+    onClick?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
+    onMouseEnter?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
+    onMouseLeave?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
+    onHover?:(enter: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,leave: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void)=>void,
 }
 
 class BaseLink extends Component<propsContent,State>{
 
     static defaultProps = {
         autoLanguage:true,
-
+        className:'',
         display:true,
         color:'',
         hover:'',
-        link:''
+        link:'',
+        onMouseEnter:(()=>{}),
+        onMouseLeave:(()=>{}),
+
     }
 
     state: State = {
@@ -29,6 +37,39 @@ class BaseLink extends Component<propsContent,State>{
 
     constructor(props:any) {
         super(props);
+
+    }
+
+    handleClick(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>){
+        this.init();
+
+        this.props.onClick&&this.props.onClick(e);
+    }
+
+    handleMouseLeave(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>):void{
+        if(typeof this.props.onHover === 'function'){
+           // this.props.onHover&&this.props.onHover((e)=>{
+           //
+           // },(e)=>{
+           //
+           // })
+        }else{
+
+            this.props.onMouseLeave&&this.props.onMouseLeave(e);
+        }
+    }
+
+    handleMouseEnter(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>):void{
+        if(typeof this.props.onHover === 'function'){
+            // this.props.onHover&&this.props.onHover((e)=>{
+            //
+            // },(e)=>{
+            //
+            // })
+        }else{
+
+            this.props.onMouseEnter&&this.props.onMouseEnter(e);
+        }
 
     }
 
@@ -56,6 +97,7 @@ class BaseLink extends Component<propsContent,State>{
     computedClassName():string{
         let className:string[] = [
             this.state.name,
+            this.props.className || '',
             this.hasColor(),
             this.hasHover(),
         ];
@@ -97,7 +139,15 @@ class BaseLink extends Component<propsContent,State>{
         if(this.props.display){
             // this.state.name+' '+(this.hasHover())+' '
             return (
-                <Link rel="preload" className={this.computedClassName()} href={this.computedLink()} onClick={()=>{this.init()}}>{this.props.children}</Link>
+                <Link
+                    rel="preload"
+                    className={this.computedClassName()}
+                    href={this.computedLink()}
+                    onMouseLeave={(e)=>{this.handleMouseLeave(e)}}
+                    onMouseEnter={(e)=>{this.handleMouseEnter(e)}}
+                    onClick={(e)=>{this.handleClick(e)}}>
+                    {this.props.children}
+                </Link>
             );
         }else{
             return null;

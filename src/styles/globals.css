@@ -83,6 +83,12 @@ body{
 .slide-50{
   transform: translateY(-50%) !important;
 }
+
+
+.slide-200{
+  transform: translateY(-200%);
+}
+
 .slide-25-m{
   transform: translateY(25%) !important;
 }
