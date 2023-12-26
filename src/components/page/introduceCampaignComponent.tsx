@@ -332,11 +332,11 @@ function IntroduceCampaignComponent(props: any) {
                     speed={1500}
                     allowTouchMove={false}
                     autoplay={
-                       {
+                        {
 
-                           delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
-                           disableOnInteraction: false // 用户互动后是否停止自动播放
-                       }
+                            delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
+                            disableOnInteraction: false // 用户互动后是否停止自动播放
+                        }
                     }
                     onSlideChange={(e)=>{
 
@@ -423,32 +423,32 @@ function IntroduceCampaignComponent(props: any) {
                     {
                         campaigns.map((item:any,index:number)=>{
                             return (
-                               <div key={item.id}>
-                                   <SwiperSlide key={item.id} className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}>
-                                       <div>
-                                           <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px paid:w-200px paid:h-200px paid:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px">
-                                               <BaseImage
-                                                   mImg={item.mImg}
-                                                   pImg={item.pImg}
-                                                   alt={""}
-                                                   layout="fill"
-                                                   objectFit="cover"
-                                                   quality={100}
-                                               ></BaseImage>
-                                           </div>
-                                           <div className="text-center text-21px font-Grotesque-Medium font-medium paid:text-15px mobile:text-16px">
-                                               <span className="w-12px h-14px bg-contain bg-[url('/assets/introduceCampaign/subtract.png')] inline-block align-middle paid:w-8px paid:h-10px mobile:w-10px mobile:h-11px"></span>
-                                               <span className="uppercase inline-block align-middle pl-8px paid:pl-5px mobile:pl-9px">{item.title}</span>
-                                           </div>
+                                <div key={item.id}>
+                                    <SwiperSlide key={item.id} className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}>
+                                        <div>
+                                            <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px paid:w-200px paid:h-200px paid:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px">
+                                                <BaseImage
+                                                    mImg={item.mImg}
+                                                    pImg={item.pImg}
+                                                    alt={""}
+                                                    layout="fill"
+                                                    objectFit="cover"
+                                                    quality={100}
+                                                ></BaseImage>
+                                            </div>
+                                            <div className="text-center text-21px font-Grotesque-Medium font-medium paid:text-15px mobile:text-16px">
+                                                <span className="w-12px h-14px bg-contain bg-[url('/assets/introduceCampaign/subtract.png')] inline-block align-middle paid:w-8px paid:h-10px mobile:w-10px mobile:h-11px"></span>
+                                                <span className="uppercase inline-block align-middle pl-8px paid:pl-5px mobile:pl-9px">{item.title}</span>
+                                            </div>
 
-                                           <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px paid:text-13px paid:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
-                                           <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px paid:w-200px mobile:text-center mobile:w-full">{item.des}</div>
-                                           <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+                                            <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px paid:text-13px paid:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
+                                            <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px paid:w-200px mobile:text-center mobile:w-full">{item.des}</div>
+                                            <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
 
-                                       </div>
+                                        </div>
 
-                                   </SwiperSlide>
-                               </div>
+                                    </SwiperSlide>
+                                </div>
                             )
                         })
                     }

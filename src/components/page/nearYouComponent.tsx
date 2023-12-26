@@ -263,10 +263,10 @@ function MobileCarousel(props: any) {
             </div>
 
             <div className="pt-43px pl-22px pr-25px">
-                <div className="select-none font-Grotesque-Medium font-medium text-18px pb-15px text-20px will-change-transform">{data.title}</div>
+                <div className="select-none font-Grotesque-Medium font-medium text-18px pb-15px text-20px ">{data.title}</div>
                 <div className={`select-none font-Grotesque-Regular font-medium w-full  justify-between items-center flex  `}>
-                    <span className="w-[85%] truncate text-14px will-change-transform">{data.des}</span>
-                    <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-21px h-21px  will-change-transform"></span>
+                    <span className="w-[85%] truncate text-14px ">{data.des}</span>
+                    <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-21px h-21px  "></span>
                 </div>
             </div>
 
@@ -282,8 +282,8 @@ function NearYouComponent(props: any) {
 
     const headStyle = props.data.entry.headStyle;
 
-
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align:'start',loop: true,watchDrag:false }, [Autoplay()]);
+    // Autoplay()
+    const [emblaRef, emblaApi] = useEmblaCarousel({ align:'start',loop: true,watchDrag:false }, []);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const [campaignData,setCampaignData] = useState(campaigns);
@@ -352,7 +352,7 @@ function NearYouComponent(props: any) {
 
 
     return (
-        <section className="w-full h-screen overflow-hidden bg-while relative select-none">
+        <section className="w-full h-screen overflow-hidden bg-while relative select-none  ">
 
             <input type="hidden" value={headStyle}/>
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:text-23px mobile:text-20px mobile:pt-77px">Wildmoor near you</div>
@@ -370,35 +370,37 @@ function NearYouComponent(props: any) {
                         campaignData.map((item:any,index:number)=>{
 
                             return (
-                                <div  key={item.id} className={` ml-25px h-auto paid:ml-17px`}>
+                                <div  key={item.id} className={` ml-25px h-auto paid:ml-17px `}>
 
-                                    <div className={`transition-all ease-in-out origin-left  duration-1000 relative ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
-                                        <div className={`relative transition-all ease-in-out origin-left  duration-500 mb-40px paid:mb-28px ${item.active == true ? 'h-455px paid:h-325px mobile:h-166px' : 'h-406px paid:h-290px mobile:h-166px'}`}>
-                                            {/*<BaseImage*/}
-                                            {/*    mImg={item.mImg}*/}
-                                            {/*    pImg={item.pImg}*/}
-                                            {/*    alt={""}*/}
-                                            {/*    layout="fill"*/}
-                                            {/*    objectFit="cover"*/}
-                                            {/*    quality={100}*/}
-                                            {/*></BaseImage>*/}
-
-
-                                            {
-                                                <NestedCarousel list={item.children} activeFlag={item.active}></NestedCarousel>
-                                            }
-
-                                        </div>
+                                  <div className={`transition-all ease-in-out origin-left duration-1000 ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
+                                      <div className={`transition-all ease-in-out origin-left delay-1000 duration-1000 relative ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
+                                          <div className={`relative transition-all ease-in-out  origin-left  duration-500 mb-40px paid:mb-28px ${item.active == true ? 'h-455px paid:h-325px mobile:h-166px' : 'h-406px paid:h-290px mobile:h-166px'}`}>
+                                              {/*<BaseImage*/}
+                                              {/*    mImg={item.mImg}*/}
+                                              {/*    pImg={item.pImg}*/}
+                                              {/*    alt={""}*/}
+                                              {/*    layout="fill"*/}
+                                              {/*    objectFit="cover"*/}
+                                              {/*    quality={100}*/}
+                                              {/*></BaseImage>*/}
 
 
-                                        <div className="select-none font-Grotesque-Medium font-medium text-18px paid:text-12px mobile:text-16px will-change-transform">{item.title}</div>
-                                        <div className={`select-none font-Grotesque-Regular font-medium w-full absolute left-0 bottom-[-25px] z-20 justify-between items-center paid:bottom-[-17px]  ${item.active == true ? 'flex mobile:hidden' : 'hidden'}`}>
-                                            <span className="w-[70%] truncate paid:w-[50%] will-change-transform">{item.des}</span>
-                                            <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px paid:w-21px paid:h-21px will-change-transform"></span>
-                                        </div>
-                                    </div>
+                                              {
+                                                  <NestedCarousel list={item.children} activeFlag={item.active}></NestedCarousel>
+                                              }
+
+                                          </div>
 
 
+                                          <div className="select-none font-Grotesque-Medium font-medium text-18px paid:text-12px mobile:text-16px">{item.title}</div>
+                                          <div className={`select-none font-Grotesque-Regular font-medium w-full absolute left-0 bottom-[-25px] z-20 justify-between items-center paid:bottom-[-17px]  ${item.active == true ? 'flex mobile:hidden' : 'hidden'}`}>
+                                              <span className="w-[70%] truncate paid:w-[50%] ">{item.des}</span>
+                                              <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px paid:w-21px paid:h-21px"></span>
+                                          </div>
+                                      </div>
+
+
+                                  </div>
 
                                 </div>
                             );

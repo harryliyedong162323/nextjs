@@ -702,28 +702,23 @@ function FlavourFinderComponent(props: any) {
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
                         {data.quizs.q3.step2.title}
                       </div>
-                      <div className="w-1000px overflow-hidden">
+                      <div className="w-1000px paid:w-800px mobile:w-620px overflow-hidden">
                         <div
-                          className="relative w-500px paid:w-400px mobile:w-310px"
+                          className="relative"
                           // ref={emblaRef}
                         >
                           <Swiper
-                            style={{
-                              overflow: "visible",
-                            }}
                             modules={[Autoplay]}
                             loop={true}
                             speed={500}
                             allowTouchMove={true}
                             slidesPerView={2}
-                            slidesPerGroup={1}
                             autoplay={{
                               delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
                               disableOnInteraction: false, // 用户互动后是否停止自动播放
                             }}
                             onSlideChange={(e) => {
                               setCurrentIndex(e.realIndex);
-                              // setSlidesPerGroup(1);
                             }}
                           >
                             {data.quizs.q3.step2.answers.map(
@@ -731,7 +726,7 @@ function FlavourFinderComponent(props: any) {
                                 return (
                                   <SwiperSlide
                                     key={index}
-                                    className="flex-grow-0 flex-shrink-0 basis-full relative py-20px paid:py-15px mobile:py-10px"
+                                    className="relative py-20px paid:py-15px mobile:py-10px"
                                   >
                                     <div
                                       className={`mx-10px px-34px pt-21px pb-12px paid:px-26px paid:pt-16px paid:pb-10px mobile:px-22px ${
@@ -740,7 +735,7 @@ function FlavourFinderComponent(props: any) {
                                           : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
                                       }`}
                                     >
-                                      <div className="relative w-416px h-250px paid:w-333px paid:h-200px mobile:w-240px mobile:h-140px">
+                                      <div className="relative h-250px paid:h-200px mobile:h-140px">
                                         <BaseImage
                                           mImg={answer.mImg}
                                           pImg={answer.pImg}

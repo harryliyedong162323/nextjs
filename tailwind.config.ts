@@ -41,6 +41,7 @@ const config: Config = {
         'Grotesque-Medium':['GalanoGrotesque-Medium'],
       },
       animation: {
+
         fadeIn:'fadeIn 1s ease-in-out 1s forwards',
         scrollMore: 'scrollMore 1s infinite',
         'move-top': 'moveTop 0.5s 1 forwards',
