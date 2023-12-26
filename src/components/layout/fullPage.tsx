@@ -243,29 +243,12 @@ function FullPage(props: any) {
     // console.log(setHeadStyle(e))
     setHeadStyle(e);
 
-<<<<<<< HEAD
-
-    const analyzeURL = (params:string | null):void=>{
-        if(params){
-            const anchorDom= document.getElementById(params) as HTMLInputElement;
-            if(anchorDom){
-                const currentSlideIndex:string | null = anchorDom.getAttribute(`data-anchor`);
-                if(currentSlideIndex){
-                    scrollToPage(parseInt(currentSlideIndex));
-                }
-            }
-        }else{
-            scrollToPage(0);
-        }
-
-=======
     if (e == slides.length - 1) {
       // setSliderFlag(false);
       nav && (nav.style.display = "none");
     } else {
       // setSliderFlag(true);
       nav && (nav.style.display = "block");
->>>>>>> f6baa224951aab50eb0538f5221a3a079721e96f
     }
   };
 
@@ -296,144 +279,6 @@ function FullPage(props: any) {
       {/*                    )*/}
       {/*                })}*/}
 
-<<<<<<< HEAD
-    const slides: ISlideConfig[] = [
-
-        ...pageComponents.map((data:any, k:number)=>{
-            data.entry.isFullPage = true
-            data.entry.pageNumber = k;
-            data.entry.currentPageNumber = currentPageNumber;
-            return(
-
-                {
-                    content: getComponent(data, k, scrollToPage),
-                    style: {}
-                }
-
-            )
-        }),
-        {
-            content: <Footer scrollToPage={scrollToPage}></Footer>,
-            style: {}
-        },
-    ];
-
-
-
-
-    const setHeadStyle = (index:number):void => {
-        const slide = document.querySelectorAll('.rps-slide');
-        const currentHead = slide[index].querySelector('input[type="hidden"]') as HTMLInputElement;
-        const value:string = currentHead?.value || 'white';
-
-        const nav = document.getElementsByTagName('nav');
-        for(let i=0;i<nav.length;i++){
-            nav[i].style.display = 'none';
-        }
-         // console.log('nav-'+value)
-
-         let currentNav = document.getElementById('nav-'+value) as HTMLInputElement;
-
-
-        if(index != 0){
-            let navChildren = document.getElementById('nav-large-content');
-            navChildren&&(navChildren.style.transform = 'translateY(100%)');
-        }else{
-            let navChildren = document.getElementById('nav-large-content');
-            if(isCurrentPage){
-                setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},50)
-            }else{
-                setIsCurrentPage(true);
-                setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},1500)
-            }
-
-        }
-
-         currentNav&&(currentNav.style.display = 'block');
-
-    }
-
-
-
-
-    const handleSlideChange = (e:number):void=>{
-        // Used to monitor and determine whether to flip to the current page, to achieve animation effects
-        setCurrentPageNumber(e)
-        setCurrentSlideIndex(e)
-
-        pageComponents.map((item: any) => item.entry.currentPageNumber = e)
-        // console.log(slides)
-        // console.log((slides as ISlideConfig[])[e].content)
-        const nav:any = document.getElementById('nav');
-
-        // console.log(setHeadStyle(e))
-        setHeadStyle(e);
-
-        if(e == slides.length-1){
-            // setSliderFlag(false);
-            nav&&(nav.style.display = 'none');
-
-        }else{
-            // setSliderFlag(true);
-            nav&&(nav.style.display = 'block');
-        }
-    }
-
-
-
-    return (
-        <div>
-            {/*好用但要收费*/}
-            {/*<ReactFullpage*/}
-            {/*    //fullpage options*/}
-            {/*    credits={{*/}
-            {/*        enabled:true,*/}
-            {/*        label:'fuck',*/}
-            {/*        position: "left"*/}
-            {/*    }}*/}
-            {/*    //fullpage options*/}
-            {/*    licenseKey = {''}*/}
-            {/*    scrollingSpeed = {1000} */}
-            {/*    scrollHorizontally = {true}  */}
-            {/*    scrollHorizontallyKey = {''}*/}
-            {/*    render={({ state, fullpageApi }) => {*/}
-            {/*        return (*/}
-            {/*            <ReactFullpage.Wrapper>*/}
-
-            {/*                {pageComponents.map((data:any, k:number)=>{*/}
-            {/*                    return(*/}
-            {/*                        <div className="section" key={k}>*/}
-            {/*                            {getComponent(data, k)}*/}
-            {/*                        </div>*/}
-            {/*                    )*/}
-            {/*                })}*/}
-
-
-            {/*            </ReactFullpage.Wrapper>*/}
-            {/*        );*/}
-            {/*    }}*/}
-            {/* />*/}
-            {/*currentSlideIndex={2}*/}
-            {
-                isBrowser == true ? <PageSlides
-                    enableAutoScroll={slideFlag}
-                    transitionSpeed={1500}
-                    currentSlideIndex={currentSlideIndex}
-                    slides={slides}
-                    parallax={{
-                        offset: 0.60,    //0.6
-                        type: SlideParallaxType.reveal
-                    }}
-                    onChange={(e)=>{handleSlideChange(e)}}
-                /> : null
-            }
-
-
-
-
-        </div>
-    );
-=======
       {/*            </ReactFullpage.Wrapper>*/}
       {/*        );*/}
       {/*    }}*/}
@@ -456,7 +301,6 @@ function FullPage(props: any) {
       ) : null}
     </div>
   );
->>>>>>> f6baa224951aab50eb0538f5221a3a079721e96f
 }
 
 export default FullPage;
