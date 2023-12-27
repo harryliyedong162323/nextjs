@@ -11,6 +11,7 @@ import gsap from "gsap";
 
 
 import 'swiper/css';
+import {Swiper as SwiperClass} from "swiper/types";
 const campaigns:object[] = [
     {
         id:0,
@@ -186,11 +187,6 @@ function IntroduceCampaignComponent(props: any) {
         // const activeSlide = swiper.slides[swiper.activeIndex];
         swiper?.slideNext();
 
-        // gsap.timeline()
-        //     .to(activeSlide, {y:'100%'})
-
-        console.log(swiper)
-        // swiper.autoplay.start()
     }
     const scrollPrev = ()=>{
 
@@ -198,6 +194,11 @@ function IntroduceCampaignComponent(props: any) {
         swiper?.slidePrev();
     }
 
+
+    // useEffect(()=>{
+    //     scrollNext();
+    //     scrollNext();
+    // },[swiper])
 
     useEffect(() => {
         const handleResize = () => {
@@ -320,12 +321,12 @@ function IntroduceCampaignComponent(props: any) {
             <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px ">
                 <div className="absolute top-[40%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[40%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 
+
                 <Swiper
                     style={{
                         overflow:"visible"
                     }}
                     modules={[Autoplay]}
-
                     slidesPerView={slidesPerView}
                     loop={true}
                     centeredSlides={centeredSlides}
@@ -338,6 +339,14 @@ function IntroduceCampaignComponent(props: any) {
                             disableOnInteraction: false // 用户互动后是否停止自动播放
                         }
                     }
+                    onBeforeInit={(e)=>{
+                        setTimeout(()=>{
+                            const slides = e.slides;
+                            slides[e.activeIndex].style.transform = 'translateY(-25%)'
+                        },250)
+
+                    }}
+
                     onSlideChange={(e)=>{
 
                         setCurrentIndex(e.realIndex);
@@ -366,17 +375,20 @@ function IntroduceCampaignComponent(props: any) {
                         },250);
 
                         if(centeredSlides){
+
                             setTimeout(()=>{
-                                slides[e.activeIndex+1].style.transform = 'translateY(0%)'
+                                slides[e.activeIndex+1]?.style&&(slides[e.activeIndex+1].style.transform = 'translateY(0%)')
                             },500);
+
+
                         }
 
                     }}
 
                     onSlideNextTransitionEnd={(e)=>{
 
-                        const slides = e.slides;
-                        // slides[e.activeIndex].style.transform = ''
+                        // const slides = e.slides;
+                        // // slides[e.activeIndex].style.transform = ''
 
 
                     }}
@@ -403,9 +415,12 @@ function IntroduceCampaignComponent(props: any) {
 
                         },250);
                         if(centeredSlides){
+
                             setTimeout(()=>{
-                                slides[e.activeIndex+2].style.transform = 'translateY(0%)'
+                                slides[e.activeIndex+2]?.style&&(slides[e.activeIndex+2].style.transform = 'translateY(0%)')
                             },700);
+
+
                         }
 
                     }}
@@ -461,7 +476,7 @@ function IntroduceCampaignComponent(props: any) {
             <div className="flex justify-end pr-10">
                 <div>
                     <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px paid:w-31px paid:h-31px paid:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == campaigns.length-1 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle paid:w-31px paid:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+                    <span className={`cursor-pointer bg-contain ${currentIndex == campaigns.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle paid:w-31px paid:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
                 </div>
             </div>
 

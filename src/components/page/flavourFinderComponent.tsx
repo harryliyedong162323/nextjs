@@ -662,7 +662,7 @@ function FlavourFinderComponent(props: any) {
                         {data.quizs.q3.step1.title}
                       </div>
                       <div
-                        className="relative overflow-auto max-h-[325px] paid:max-h-[235px] mobile:max-h-[400px]"
+                        className="relative overflow-auto max-h-[calc(50vh)]"
                         onWheel={(event) => {
                           event.stopPropagation();
                         }}

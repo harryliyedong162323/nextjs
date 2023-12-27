@@ -186,14 +186,14 @@ function TalesFromTheWildComponent(props: any) {
                         key={index}
                         className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-77px paid:w-111px paid:pt-52px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           toKol === index
-                            ? "w-615px paid:w-492px mobile:h-360px"
+                            ? "w-615px paid:w-492px mobile:h-360px grayscale-0 animate-move-top"
                             : "w-139px paid:w-111px mobile:h-94px"
                         }`}
                       >
                         <div
                           className={`absolute w-full transition-all hover:text-white  ease-in-out duration-1000 ${
                             toKol === index
-                              ? "h-516px paid:h-414px mobile:h-360px"
+                              ? "h-516px paid:h-414px mobile:h-360px text-white"
                               : "h-452px paid:h-362px mobile:h-94px"
                           }`}
                         >

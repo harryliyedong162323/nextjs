@@ -49,7 +49,7 @@ function BottleConceptComponent(props: any) {
 
   return (
     <div id="BottleConcept" data-anchor={3} className="relative overflow-hidden select-none">
-      <div ref={bottleRef} className="absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
+      <div ref={bottleRef} className="cursor-pointer absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
         onMouseDown={(event) => {
           console.log('mouseup', event);
           setIsMouseDown(true);
@@ -139,27 +139,6 @@ function BottleConceptComponent(props: any) {
               url="https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4"
             ></ReactPlayer>
             <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px paid:-ml-300px paid:w-600px paid:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>
-            <div className="cursor-pointer absolute z-20 top-1/2 left-1/2 mt-115px -ml-375px w-44px h-44px paid:mt-95px paid:-ml-300px paid:w-44px mobile:mt-50px mobile:-ml-160px mobile:w-320px">
-              <div className="inline-block bg-[url('/assets/range/icon_pointer.png')] bg-cover w-44px h-44px paid:w-44px paid:h-44px mobile:w-44px mobile:h-44px"></div>
-            </div>
-            {/* <div id="DraggableBox" className="cursor-pointer absolute z-20 top-1/2 left-1/2 mt-115px -ml-375px w-750px h-44px paid:mt-95px paid:-ml-300px paid:w-600px mobile:mt-50px mobile:-ml-160px mobile:w-320px">
-              <Draggable
-                axis="x"
-                defaultPosition={{ x: positionX, y: 0 }}
-                bounds="parent"
-                // scale={1}
-                onStart={() => {}}
-                onDrag={(e, ui) => {
-                  const boxWidth = document.getElementById('DraggableBox')?.offsetWidth ?? 0
-                  const x = positionX + ui.deltaX
-                  setPositionX(positionX + ui.deltaX)
-                  bottlePlayingRef.current?.seekTo(x/boxWidth);
-                }}
-                onStop={() => {}}
-              >
-                <div className="inline-block bg-[url('/assets/range/icon_pointer.png')] bg-cover w-44px h-44px paid:w-44px paid:h-44px mobile:w-44px mobile:h-44px"></div>
-              </Draggable>
-            </div> */}
             <div className="bg-[url('/assets/range/icon_360.png')] absolute bg-cover z-10 left-1/2 -ml-34px w-68px h-35px bottom-80px"></div>
           </>
         )}

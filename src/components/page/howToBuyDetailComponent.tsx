@@ -50,7 +50,7 @@ function HowToBuyDetailComponent(props: any) {
            <input type="hidden" value={headStyle}/>
            {/*<section className="">*/}
               <div className="w-[50%] pb-67px mx-auto">
-                  <div className="text-33px font-normal font-AlbertusNova-Regular pb-64px text-center pt-68px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px uppercase">Servicing</div>
+                  <div className="text-33px font-normal font-AlbertusNova-Regular pb-64px text-center pt-78px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px uppercase">Servicing</div>
                   <div className="font-normal font-Grotesque-Regular text-22px text-center text-dark-grey leading-[33px] mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:leading-[20px]">The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and maintained over 6 decades by the Grant family. It includes casks from every region of Scotland, including some notable ghost distillery stocks.</div>
               </div>
 
