@@ -49,7 +49,7 @@ function BottleConceptComponent(props: any) {
 
   return (
     <div id="BottleConcept" data-anchor={3} className="relative overflow-hidden select-none">
-      <div ref={bottleRef} className="cursor-pointer absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
+      <div ref={bottleRef} className="cursor-[url('/assets/range/icon_pointer.cur'),_pointer] absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
         onMouseDown={(event) => {
           console.log('mouseup', event);
           setIsMouseDown(true);
