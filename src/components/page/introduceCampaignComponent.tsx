@@ -318,15 +318,15 @@ function IntroduceCampaignComponent(props: any) {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px ">
+            <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-135px mobile:pt-113px ">
                 <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 
-                {/*modules={[Autoplay]}*/}
+
                 <Swiper
                     style={{
                         overflow:"visible"
                     }}
-
+                    modules={[Autoplay]}
                     slidesPerView={slidesPerView}
                     loop={true}
                     centeredSlides={centeredSlides}
