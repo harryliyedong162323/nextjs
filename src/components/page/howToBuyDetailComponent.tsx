@@ -14,9 +14,9 @@ const Baidu:React.ComponentType<{}> = dynamic(() => import('@/components/map/bai
 function HowToBuyDetailComponent(props: any) {
 
     const headStyle = props.data.entry.headStyle;
-
+    // Autoplay()
     const [browser,setBrowser] = useState(false);
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, []);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const onChangeScroll = useCallback(
@@ -56,7 +56,7 @@ function HowToBuyDetailComponent(props: any) {
 
                <div className="relative overflow-hidden pb-33px mobile:pb-20px" ref={emblaRef}>
                    <div className="flex">
-                       <div className="flex-grow-0 flex-shrink-0 basis-4/5 ml-21px relative h-417px mobile:ml-10px mobile:basis-2/3 mobile:h-455px">
+                       <div className="flex-grow-0 flex-shrink-0 basis-4/6 ml-21px relative h-417px mobile:ml-10px mobile:basis-2/3 mobile:h-455px">
                            <BaseImage
                                mImg={require("../../../public/assets/howToBuyDetail/kv-1.png")}
                                pImg={require("../../../public/assets/howToBuyDetail/kv-1.png")}
@@ -67,7 +67,7 @@ function HowToBuyDetailComponent(props: any) {
                            ></BaseImage>
 
                        </div>
-                       <div className="flex-grow-0 flex-shrink-0 basis-4/5 ml-21px relative h-417px  mobile:ml-10px mobile:basis-2/3 mobile:h-455px">
+                       <div className="flex-grow-0 flex-shrink-0 basis-4/6 ml-21px relative h-417px  mobile:ml-10px mobile:basis-2/3 mobile:h-455px">
                            <BaseImage
                                mImg={require("../../../public/assets/howToBuyDetail/kv-2.png")}
                                pImg={require("../../../public/assets/howToBuyDetail/kv-2.png")}
@@ -78,7 +78,7 @@ function HowToBuyDetailComponent(props: any) {
                            ></BaseImage>
 
                        </div>
-                       <div className="flex-grow-0 flex-shrink-0 basis-4/5 ml-21px relative h-417px mobile:ml-10px mobile:basis-2/3 mobile:h-455px">
+                       <div className="flex-grow-0 flex-shrink-0 basis-4/6 ml-21px relative h-417px mobile:ml-10px mobile:basis-2/3 mobile:h-455px">
                            <BaseImage
                                mImg={require("../../../public/assets/howToBuyDetail/kv-3.png")}
                                pImg={require("../../../public/assets/howToBuyDetail/kv-3.png")}
