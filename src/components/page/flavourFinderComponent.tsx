@@ -161,7 +161,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_01.png"),
           label: "Play",
           value: "A",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video01.mp4",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4",
         },
         {
           id: 0,
@@ -169,7 +169,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_02.png"),
           label: "Play",
           value: "B",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video02.mp4",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4",
         },
         {
           id: 0,
@@ -177,7 +177,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_03.png"),
           label: "Play",
           value: "C",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video03.mp4",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4", // https://yumen-ali.oss-cn-beijing.aliyuncs.com/03.mp3
         },
       ],
     },
@@ -581,7 +581,15 @@ function FlavourFinderComponent(props: any) {
                               : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                           }`}
                         >
-                          <div className="relative mx-auto w-350px h-350px paid:w-291px paid:h-291px mobile:w-150px mobile:h-150px">
+                          <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-150px mobile:h-150px">
+                            {/* <BaseImage
+                              mImg={answer.mImg}
+                              pImg={answer.pImg}
+                              alt={""}
+                              layout="fill"
+                              objectFit="cover"
+                              quality={100}
+                            ></BaseImage> */}
                             <ReactPlayer
                                 playing={
                                   index === 0
