@@ -161,7 +161,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_01.png"),
           label: "Play",
           value: "A",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/01.mp3",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video01.mp4",
         },
         {
           id: 0,
@@ -169,7 +169,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_02.png"),
           label: "Play",
           value: "B",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/02.mp3",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video02.mp4",
         },
         {
           id: 0,
@@ -177,7 +177,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_03.png"),
           label: "Play",
           value: "C",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/03.mp3",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video03.mp4",
         },
       ],
     },
@@ -523,13 +523,13 @@ function FlavourFinderComponent(props: any) {
                     return (
                       <div
                         key={index}
-                        className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                        className={`mx-5px w-450px px-45px pt-20px pb-14px paid:w-341px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                           quizOneSelected === index + 1
                             ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
                             : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                         }`}
                       >
-                        <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-250px mobile:h-125px">
+                        <div className="relative mx-auto w-350px h-350px paid:w-291px paid:h-291px mobile:w-250px mobile:h-125px">
                           <BaseImage
                             mImg={answer.mImg}
                             pImg={answer.pImg}
@@ -570,26 +570,35 @@ function FlavourFinderComponent(props: any) {
                   <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-860px text-34px paid:w-720px paid:text-28px mobile:w-325px mobile:text-15px">
                     {data.quizs.q2.description}
                   </div>
-                  <div className="flex justify-center mt-84px paid:mt-68px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                  <div className="flex justify-center mt-48px paid:mt-84px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
                     {data.quizs.q2.answers.map((answer, index) => {
                       return (
                         <div
                           key={index}
-                          className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:p-20px mobile:mx-0 mobile:my-5px mobile:flex ${
+                          className={`mx-5px w-450px px-45px pt-20px pb-14px paid:w-341px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:p-20px mobile:mx-0 mobile:my-5px mobile:flex ${
                             quizTwoSelected === index + 1
                               ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
                               : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                           }`}
                         >
-                          <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-150px mobile:h-150px">
-                            <BaseImage
-                              mImg={answer.mImg}
-                              pImg={answer.pImg}
-                              alt={""}
-                              layout="fill"
-                              objectFit="cover"
-                              quality={100}
-                            ></BaseImage>
+                          <div className="relative mx-auto w-350px h-350px paid:w-291px paid:h-291px mobile:w-150px mobile:h-150px">
+                            <ReactPlayer
+                                playing={
+                                  index === 0
+                                    ? videoPlay1
+                                    : index === 1
+                                    ? videoPlay2
+                                    : videoPlay3
+                                }
+                                loop={true}
+                                muted={false}
+                                controls={false}
+                                controlsList="nodownload"
+                                onEnded={() => {}}
+                                width="100%"
+                                height="100%"
+                                url={answer.audio}
+                              ></ReactPlayer>
                           </div>
                           <div className="flex justify-between items-center mt-10px mobile:w-90px mobile:ml-20px">
                             <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px paid:text-18px mobile:text-13px mobile:flex-col">
@@ -612,24 +621,6 @@ function FlavourFinderComponent(props: any) {
                                 }}
                               ></i>
                               <span>{answer.label}</span>
-                              <ReactPlayer
-                                className="hidden"
-                                playing={
-                                  index === 0
-                                    ? videoPlay1
-                                    : index === 1
-                                    ? videoPlay2
-                                    : videoPlay3
-                                }
-                                loop={true}
-                                muted={false}
-                                controls={false}
-                                controlsList="nodownload"
-                                onEnded={() => {}}
-                                width="1%"
-                                height="1%"
-                                url={answer.audio}
-                              ></ReactPlayer>
                             </div>
                             <i
                               className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
@@ -656,8 +647,8 @@ function FlavourFinderComponent(props: any) {
                   <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px paid:w-720px paid:text-28px paid:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
                     {data.quizs.q3.question}
                   </div>
-                  <div className="flex justify-between mt-50px mx-auto w-[1166px] paid:w-933px mobile:w-300px mobile:flex-col mobile:mt-21px">
-                    <div className="relative w-500px paid:w-400px mobile:w-300px">
+                  <div className="flex justify-between mt-50px mx-auto w-[1374px] paid:w-[1045px] mobile:w-300px mobile:flex-col mobile:mt-21px">
+                    <div className="relative w-600px paid:w-500px mobile:w-300px">
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px mb-20px paid:text-16px paid:mb-20px mobile:text-12px">
                         {data.quizs.q3.step1.title}
                       </div>
@@ -698,11 +689,11 @@ function FlavourFinderComponent(props: any) {
                         })}
                       </div>
                     </div>
-                    <div className="w-500px paid:w-400px mobile:w-310px mobile:mt-30px">
+                    <div className="w-600px paid:w-500px mobile:w-310px mobile:mt-30px">
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px paid:text-16px mobile:text-12px">
                         {data.quizs.q3.step2.title}
                       </div>
-                      <div className="w-1000px paid:w-800px mobile:w-620px overflow-hidden">
+                      <div className="w-[1200px] paid:w-[1000px] mobile:w-620px overflow-hidden">
                         <div
                           className="relative"
                           // ref={emblaRef}
@@ -735,7 +726,7 @@ function FlavourFinderComponent(props: any) {
                                           : "border-[5px] border-[#C6C6C6] border-solid paid:border-[3px] mobile:border-[2px]"
                                       }`}
                                     >
-                                      <div className="relative h-250px paid:h-200px mobile:h-140px">
+                                      <div className="relative h-300px paid:h-250px mobile:h-140px">
                                         <BaseImage
                                           mImg={answer.mImg}
                                           pImg={answer.pImg}
@@ -801,13 +792,13 @@ function FlavourFinderComponent(props: any) {
                     return (
                       <div
                         key={index}
-                        className={`mx-5px w-341px px-20px pt-20px pb-14px paid:w-277px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                        className={`mx-5px w-450px px-45px pt-20px pb-14px paid:w-341px paid:px-17px paid:pt-17px paid:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                           quizFourSelected === index + 1
                             ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
                             : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                         }`}
                       >
-                        <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-250px mobile:h-125px">
+                        <div className="relative mx-auto w-350px h-350px paid:w-291px paid:h-291px mobile:w-250px mobile:h-125px">
                           <BaseImage
                             mImg={answer.mImg}
                             pImg={answer.pImg}
@@ -887,13 +878,13 @@ function FlavourFinderComponent(props: any) {
             {quizIndex !== 5 && (
               <>
                 <div className="absolute w-full bottom-50px paid:bottom-40px mobile:bottom-35px">
-                  <div className="flex mx-auto justify-center w-[1141px] paid:w-913px mobile:w-282px">
+                  <div className="relative flex mx-auto justify-center w-[1375px] paid:w-[1045px] mobile:w-282px">
                     <div
                       className={`${
                         quizIndex === 0
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative text-[#696969] cursor-pointer text-20px w-233px paid:w-187px text-center border-b-2 border-solid pb-10px`}
+                      } relative text-[#696969] cursor-pointer text-20px w-275px paid:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(0);
                       }}
@@ -904,7 +895,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 0
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
                       ></div>
                     </div>
                     <div
@@ -912,7 +903,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 1
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative text-[#696969] cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative text-[#696969] cursor-pointer text-20px w-275px paid:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(1);
                       }}
@@ -923,7 +914,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 1
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
                       ></div>
                     </div>
                     <div
@@ -931,7 +922,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 2
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-275px paid:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(2);
                       }}
@@ -942,7 +933,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 2
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
                       ></div>
                     </div>
                     <div
@@ -950,7 +941,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 3
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative cursor-pointer text-20px w-275px paid:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(3);
                       }}
@@ -961,7 +952,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 3
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
                       ></div>
                     </div>
                     <div
@@ -969,7 +960,7 @@ function FlavourFinderComponent(props: any) {
                         quizIndex === 4
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative  cursor-pointer text-20px w-233px paid:w-187px text-center  border-b-2 border-solid pb-10px`}
+                      } relative  cursor-pointer text-20px w-275px paid:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(4);
                       }}
@@ -980,7 +971,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 4
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px`}
+                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px paid:w-82px paid:-ml-41px paid:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
                       ></div>
                     </div>
                   </div>

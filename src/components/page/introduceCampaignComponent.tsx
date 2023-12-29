@@ -318,8 +318,8 @@ function IntroduceCampaignComponent(props: any) {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px ">
-                <div className="absolute top-[40%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[40%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
+            <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-135px mobile:pt-113px ">
+                <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 
 
                 <Swiper
@@ -343,6 +343,7 @@ function IntroduceCampaignComponent(props: any) {
                         setTimeout(()=>{
                             const slides = e.slides;
                             slides[e.activeIndex].style.transform = 'translateY(-25%)'
+                            slides[e.activeIndex-1].style.transform = 'translateY(26%)'
                         },250)
 
                     }}
@@ -355,16 +356,16 @@ function IntroduceCampaignComponent(props: any) {
                     onSlideNextTransitionStart={(e)=>{
 
                         const slides = e.slides;
-                        if(centeredSlides){
-                            slides[e.activeIndex+1].style.transform = 'translateY(-50%)'
-                        }
+                        // if(centeredSlides){
+                        //     slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                        // }
 
 
                         setTimeout(()=>{
                             if(centeredSlides){
-                                slides[e.activeIndex-2]?.classList.add('slide-25');
-                                slides[e.activeIndex-1]?.classList.add('slide-0');
-                                slides[e.activeIndex]?.classList.add('slide-25');
+                                slides[e.activeIndex-2]?.classList.add('slide-15');
+                                slides[e.activeIndex-1]?.classList.add('slide-26');
+                                slides[e.activeIndex]?.classList.add('slide-15');
                                 slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
                                 slides[e.activeIndex-2]?.classList.add('slide-25-m');
@@ -374,14 +375,14 @@ function IntroduceCampaignComponent(props: any) {
                             }
                         },250);
 
-                        if(centeredSlides){
-
-                            setTimeout(()=>{
-                                slides[e.activeIndex+1]?.style&&(slides[e.activeIndex+1].style.transform = 'translateY(0%)')
-                            },500);
-
-
-                        }
+                        // if(centeredSlides){
+                        //
+                        //     setTimeout(()=>{
+                        //         slides[e.activeIndex+1]?.style&&(slides[e.activeIndex+1].style.transform = 'translateY(0%)')
+                        //     },500);
+                        //
+                        //
+                        // }
 
                     }}
 
@@ -398,13 +399,14 @@ function IntroduceCampaignComponent(props: any) {
 
                         const slides = e.slides;
                         if(centeredSlides){
-                            slides[e.activeIndex+2].style.transform = 'translateY(-50%)'
+                            slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                            // slides[e.activeIndex+2].style.transform = 'translateY(-50%)'
                         }
 
                         setTimeout(()=>{
                             if(centeredSlides){
-                                slides[e.activeIndex-1]?.classList.add('slide-0');
-                                slides[e.activeIndex]?.classList.add('slide-25');
+                                slides[e.activeIndex-1]?.classList.add('slide-26');
+                                slides[e.activeIndex]?.classList.add('slide-15');
                                 slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
                                 slides[e.activeIndex-1]?.classList.add('slide-0');
@@ -441,7 +443,7 @@ function IntroduceCampaignComponent(props: any) {
                                 <div key={item.id}>
                                     <SwiperSlide key={item.id} className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}>
                                         <div>
-                                            <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px paid:w-200px paid:h-200px paid:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px">
+                                            <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px paid:w-200px paid:h-200px paid:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px paid:scale-125 paid:translate-y-[-10%]">
                                                 <BaseImage
                                                     mImg={item.mImg}
                                                     pImg={item.pImg}

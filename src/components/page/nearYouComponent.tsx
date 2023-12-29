@@ -372,8 +372,8 @@ function NearYouComponent(props: any) {
                             return (
                                 <div  key={item.id} className={` ml-25px h-auto paid:ml-17px `}>
 
-                                  <div className={`transition-all ease-in-out origin-left duration-1000 ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
-                                      <div className={`transition-all ease-in-out origin-left delay-1000 duration-1000 relative ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
+                                  {/*<div className={`transition-all ease-in-out origin-left duration-1000 ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>*/}
+                                      <div className={`transition-all ease-in-out origin-left duration-1000 relative ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
                                           <div className={`relative transition-all ease-in-out  origin-left  duration-500 mb-40px paid:mb-28px ${item.active == true ? 'h-455px paid:h-325px mobile:h-166px' : 'h-406px paid:h-290px mobile:h-166px'}`}>
                                               {/*<BaseImage*/}
                                               {/*    mImg={item.mImg}*/}
@@ -400,7 +400,7 @@ function NearYouComponent(props: any) {
                                       </div>
 
 
-                                  </div>
+                                  {/*</div>*/}
 
                                 </div>
                             );

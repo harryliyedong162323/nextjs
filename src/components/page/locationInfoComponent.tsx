@@ -99,26 +99,26 @@ const componentData: ComponentData = {
         mImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
     },
     productList: [{
-        id: 1,
+        id: 0,
 
         location:[
             ...locationList
         ],
-        name: "Taiwan region",
+        name: "CHINA MAINLAND",
         mImg: require("../../../public/assets/howToBuy/list-1.png"),
         pImg: require("../../../public/assets/howToBuy/list-1.png"),
     },
         {
-            id: 2,
+            id: 1,
             location:[
                 ...locationList
             ],
-            name: "ANCIENT MOORLAND",
+            name: "TAIWAN REGION",
             mImg: require("../../../public/assets/howToBuy/list-2.png"),
             pImg: require("../../../public/assets/howToBuy/list-2.png"),
         },
         {
-            id: 3,
+            id: 2,
             location:[
                 {
                     id:2,
@@ -131,21 +131,21 @@ const componentData: ComponentData = {
                     }
                 }
             ],
-            name: "DARK MOORLAND",
+            name: "SINGAPORE",
             mImg: require("../../../public/assets/howToBuy/list-1.png"),
             pImg: require("../../../public/assets/howToBuy/list-1.png"),
         },
         {
-            id: 4,
+            id: 3,
             location:[
                 ...locationList
             ],
-            name: "RUGGED COAST",
+            name: "KOREA",
             mImg: require("../../../public/assets/howToBuy/list-2.png"),
             pImg: require("../../../public/assets/howToBuy/list-2.png"),
         },
         {
-            id: 5,
+            id: 4,
             location:[
                 {
                     id:4,
@@ -158,12 +158,12 @@ const componentData: ComponentData = {
                     }
                 }
             ],
-            name: "TROPICAL COAST",
+            name: "UNITED KINGDOM",
             mImg: require("../../../public/assets/howToBuy/list-1.png"),
             pImg: require("../../../public/assets/howToBuy/list-1.png"),
         },
         {
-            id: 6,
+            id: 5,
             location:[
                 {
                     id:5,
@@ -187,8 +187,10 @@ const componentData: ComponentData = {
 
 const options = [
     { value: '0', label: 'CHINA MAINLAND' },
-    { value: '1', label: 'TAIWAN MAINLAND' },
-    { value: '2', label: 'AMERICA MAINLAND' },
+    { value: '1', label: 'TAIWAN REGION' },
+    { value: '2', label: 'SINGAPORE' },
+    { value: '3', label: 'KOREA' },
+    { value: '4', label: 'UNITED KINGDOM' },
 ];
 
 
@@ -200,7 +202,8 @@ interface OptionType {
 
 function LocationStoreList(props: any){
 
-    const location = props.location;
+    const location = props.location.location;
+    const id = props.location.id;
 
     const customStyles = {
         control: (styles:any) => ({
@@ -234,14 +237,21 @@ function LocationStoreList(props: any){
     const [currentIndex, setCurrentIndex] = useState(0);
     const [swiper, setSwiper] = useState<any>(null);
     const [locationInfo,setLocationInfo] = useState(location);
-    const [selectedOption, setSelectedOption] = useState({} as OptionType);
+    const [selectedOption, setSelectedOption] = useState(options[0] as OptionType);
     const [spaceBetween,setSpaceBetween] = useState(10);
-
+    const [selectedReady,setSelectReady] = useState(false);
     useEffect(()=>{
+        console.log(location)
+        const currentLocation = options.filter((item:any)=>{
+            return parseInt(item.value) == id;
+        })
+        console.log(currentLocation)
 
-        setSelectedOption( { value: '0', label: 'CHINA MAINLAND' })
-    },[])
-
+        setSelectedOption(currentLocation[0])
+    },[props])
+    useEffect(()=>{
+        setSelectReady(true)
+    },[selectedOption])
     const scrollNext = ()=>{
 
 
@@ -299,13 +309,16 @@ function LocationStoreList(props: any){
         <div className="pt-138px pl-45px paid:pt-98px paid:pl-32px mobile:pl-13px mobile:pt-112px">
 
             <div className="pb-45px relative z-20 paid:pb-32px mobile:pb-35px">
-                <Select
-                    styles={customStyles}
-                    className={`text-14px pt-18px pb-18px pl-25px pr-25px bg-transparent w-255px h-55px paid:pt-12px paid:pb-12px paid:pl-0 `}
-                    defaultValue={{ value: '0', label: 'CHINA MAINLAND' }}
-                    options={options}
-                    onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
-                />
+                {
+                    selectedReady ? <Select
+                        styles={customStyles}
+                        className={`text-14px pt-18px pb-18px  pr-25px bg-transparent w-255px h-55px paid:pt-12px paid:pb-12px paid:pl-0 mobile:pl-0`}
+                        defaultValue={selectedOption}
+                        options={options}
+                        onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
+                    /> : null
+                }
+
             </div>
 
 
@@ -342,7 +355,7 @@ function LocationStoreList(props: any){
                 >
 
                     {
-                        locationInfo.map((item:any,index:number)=>{
+                        locationInfo.length>0 && locationInfo.map((item:any,index:number)=>{
                             return (
                                 <div key={item.id}>
                                     <SwiperSlide key={item.id} className={``}>
@@ -400,9 +413,12 @@ function LocationInfoComponent(props: any) {
     const [play, setPlay] = useState<boolean>(true);
     const [isChooseMarquee,setIsChooseMarquee] = useState<boolean>(false);
     const [locationInfo,setLocationInfo] = useState({});
-    const handleClick = (location:object)=>{
+    const handleClick = (item:any)=>{
         setIsChooseMarquee(true);
-        setLocationInfo(location);
+        setLocationInfo({
+            id:item.id,
+            location:item.location
+        });
     }
     const handleMouseEnter = (e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 
@@ -421,12 +437,12 @@ function LocationInfoComponent(props: any) {
 
             {
                 isChooseMarquee == false ? <div>
-                    <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Find A Drop of Wilderness Near You</div>
+                    <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
                     <div className="w-full mt-145px paid:mt-103px mobile:mt-132px ">
 
                         <Marquee play={play}>
                             <div className="w-250px mobile:hidden"></div>
-                            { data.productList.map((item, index) => {
+                            { [data.productList[0],data.productList[1],data.productList[2]].map((item, index) => {
                                 return (
                                     <div
 
@@ -436,7 +452,7 @@ function LocationInfoComponent(props: any) {
 
                                    <span
                                        className={`cursor-pointer`}
-                                       onClick={()=>{handleClick(item.location)}}
+                                       onClick={()=>{handleClick(item)}}
                                        onMouseEnter={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseEnter(e)}}
                                        onMouseLeave={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseLeave(e)}}
                                    >
@@ -476,7 +492,7 @@ function LocationInfoComponent(props: any) {
                     <div className="w-full mt-148px paid:mt-105px mobile:mt-128px ">
 
                         <Marquee play={play}>
-                            { data.productList.map((item, index) => {
+                            { [data.productList[3],data.productList[4]].map((item, index) => {
                                 return (
                                     <div
 
@@ -486,7 +502,7 @@ function LocationInfoComponent(props: any) {
 
                                     <span
                                         className={`cursor-pointer`}
-                                        onClick={()=>{handleClick(item.location)}}
+                                        onClick={()=>{handleClick(item)}}
                                         onMouseEnter={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseEnter(e)}}
                                         onMouseLeave={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseLeave(e)}}
                                     >
