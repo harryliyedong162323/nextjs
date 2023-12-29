@@ -161,7 +161,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_01.png"),
           label: "Play",
           value: "A",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/01.mp3",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4",
         },
         {
           id: 0,
@@ -169,7 +169,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_02.png"),
           label: "Play",
           value: "B",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/02.mp3",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4",
         },
         {
           id: 0,
@@ -177,7 +177,7 @@ const componentData: ComponentData = {
           pImg: require("../../../public/assets/range/q2_pic_03.png"),
           label: "Play",
           value: "C",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/03.mp3",
+          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4", // https://yumen-ali.oss-cn-beijing.aliyuncs.com/03.mp3
         },
       ],
     },
@@ -582,14 +582,31 @@ function FlavourFinderComponent(props: any) {
                           }`}
                         >
                           <div className="relative w-291px h-291px paid:w-233px paid:h-233px mobile:w-150px mobile:h-150px">
-                            <BaseImage
+                            {/* <BaseImage
                               mImg={answer.mImg}
                               pImg={answer.pImg}
                               alt={""}
                               layout="fill"
                               objectFit="cover"
                               quality={100}
-                            ></BaseImage>
+                            ></BaseImage> */}
+                            <ReactPlayer
+                                playing={
+                                  index === 0
+                                    ? videoPlay1
+                                    : index === 1
+                                    ? videoPlay2
+                                    : videoPlay3
+                                }
+                                loop={true}
+                                muted={false}
+                                controls={false}
+                                controlsList="nodownload"
+                                onEnded={() => {}}
+                                width="100%"
+                                height="100%"
+                                url={answer.audio}
+                              ></ReactPlayer>
                           </div>
                           <div className="flex justify-between items-center mt-10px mobile:w-90px mobile:ml-20px">
                             <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px paid:text-18px mobile:text-13px mobile:flex-col">
@@ -612,24 +629,6 @@ function FlavourFinderComponent(props: any) {
                                 }}
                               ></i>
                               <span>{answer.label}</span>
-                              <ReactPlayer
-                                className="hidden"
-                                playing={
-                                  index === 0
-                                    ? videoPlay1
-                                    : index === 1
-                                    ? videoPlay2
-                                    : videoPlay3
-                                }
-                                loop={true}
-                                muted={false}
-                                controls={false}
-                                controlsList="nodownload"
-                                onEnded={() => {}}
-                                width="1%"
-                                height="1%"
-                                url={answer.audio}
-                              ></ReactPlayer>
                             </div>
                             <i
                               className={`cursor-pointer bg-cover w-22px h-22px paid:w-18px paid:h-18px mobile:w-13px mobile:h-13px ${
