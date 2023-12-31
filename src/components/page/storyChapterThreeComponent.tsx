@@ -72,7 +72,7 @@ function StoryChapterThreeComponent(props: any) {
           ></BaseImage>
         </div>
         <div className="relative bg-white font-Grotesque-Regular text-dark-grey w-825px text-20px p-50px paid:w-660px paid:text-16px paid:p-40px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0">
-          <div className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500 ${ isCurrentPage ? 'h-0' : 'h-full'}`}></div>
+          <div className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in duration-500 delay-1500`}></div>
           <div>{data.description}</div>
         </div>
       </div>

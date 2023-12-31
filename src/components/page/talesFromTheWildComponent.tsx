@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import BaseImage from "@/components/base/image";
+import Link from "../base/link";
 
 interface Kol {
   id: string;
@@ -188,7 +189,9 @@ function TalesFromTheWildComponent(props: any) {
                         <div className="text-white font-Grotesque-Medium text-20px paid:text-16px mobile:text-14px">
                           {item.description}
                         </div>
-                        <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px paid:w-24px paid:h-24px mobile:w-18px mobile:h-18px"></div>
+                        <Link link={"/storiesDetail"}>
+                          <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px paid:w-24px paid:h-24px mobile:w-18px mobile:h-18px"></div>
+                        </Link>
                       </div>
                     </>
                   )}
@@ -196,7 +199,7 @@ function TalesFromTheWildComponent(props: any) {
                     <>
                       <div
                         key={index}
-                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-48px paid:w-111px paid:pt-52px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-48px paid:w-111px paid:pt-34px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           toKol === index
                             ? "w-615px paid:w-492px mobile:h-360px grayscale-0 animate-move-top"
                             : "w-139px paid:w-111px mobile:h-94px"
@@ -212,7 +215,7 @@ function TalesFromTheWildComponent(props: any) {
                           <div
                             className={`${
                               toKol === index ? "hidden" : ""
-                            } absolute z-10 font-AlbertusNova-Regular text-16px rotate-90 top-60px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
+                            } absolute z-10 font-AlbertusNova-Regular text-16px rotate-90 top-60px paid:top-80px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
                           >
                             {item.name}
                           </div>
@@ -229,7 +232,7 @@ function TalesFromTheWildComponent(props: any) {
                                 : "w-139px h-472px paid:w-111px paid:h-362px mobile:h-94px"
                             }`}
                           >
-                            {toKol === index ? (
+                            <div className={`${toKol === index ? "w-full h-full" : "w-0 h-0 overflow-hidden"} relative`}>
                               <BaseImage
                                 mImg={item.banner.mImg}
                                 pImg={item.banner.pImg}
@@ -238,7 +241,8 @@ function TalesFromTheWildComponent(props: any) {
                                 objectFit="cover"
                                 quality={100}
                               ></BaseImage>
-                            ) : (
+                            </div>
+                            <div className={`${toKol === index ? "w-0 h-0 overflow-hidden" : "w-full h-full"} relative`}>
                               <BaseImage
                                 mImg={item.banner.smImg}
                                 pImg={item.banner.spImg}
@@ -247,7 +251,7 @@ function TalesFromTheWildComponent(props: any) {
                                 objectFit="cover"
                                 quality={100}
                               ></BaseImage>
-                            )}
+                            </div>
                           </div>
                         </div>
                       </div>

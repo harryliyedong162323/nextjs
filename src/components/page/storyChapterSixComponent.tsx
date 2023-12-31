@@ -62,7 +62,7 @@ function StoryChapterSixComponent(props: any) {
       </div>
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_06_line.png')]  h-screen"></div>
       <div
-        className={`absolute top-[calc(15vh)] right-100px flex justify-center w-full flex-col items-end mobile:top-154px mobile:right-25px  transition-all ease-in-out duration-500 delay-1000 ${
+        className={`absolute top-[calc(15vh)] right-100px flex justify-center w-full flex-col items-end mobile:top-154px mobile:right-25px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
             ? "top-197px paid:top-158px mobile:top-86px opacity-100"
             : "top-397px paid:top-358px mobile:top-286px opacity-0"
@@ -75,11 +75,13 @@ function StoryChapterSixComponent(props: any) {
           {data.words.second}
         </span>
       </div>
-      <div className="absolute bg-white font-Grotesque-Regular text-dark-grey w-694px left-100px text-20px p-50px top-450px paid:text-16px paid:p-40px paid:top-360px paid:left-80px paid:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-1/2 mobile:left-1/2 mobile:-ml-165px">
+      <div className={`absolute bg-white font-Grotesque-Regular text-dark-grey w-694px left-100px text-20px p-50px paid:text-16px paid:p-40px paid:left-80px paid:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
+        isCurrentPage
+        ? "top-450px paid:top-360px mobile:top-1/2 opacity-100"
+        : "top-650px paid:top-560px mobile:top-2/3 opacity-0"
+      }`}>
         <div
-          className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500 ${
-            isCurrentPage ? "h-0" : "h-full"
-          }`}
+          className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
         ></div>
         <div>{data.description}</div>
       </div>

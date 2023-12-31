@@ -80,9 +80,7 @@ function StoryChapterFiveComponent(props: any) {
         </div>
         <div className="absolute right-0 z-10 bg-white font-Grotesque-Regular text-dark-grey w-470px text-20px p-50px top-214px paid:w-376px paid:text-16px paid:p-40px paid:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
           <div
-            className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500 ${
-              isCurrentPage ? "h-0" : "h-full"
-            }`}
+            className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
           ></div>
           <div>{data.description}</div>
         </div>

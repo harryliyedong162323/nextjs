@@ -120,7 +120,7 @@ function StoryOpeningComponent(props: any) {
         <span className="bg-[url('/assets/wildmoor_white.png')] inline-block bg-cover w-456px h-74px paid:w-365px paid:h-59px mobile:w-274px mobile:h-44px"></span>
       </div>
       <div
-        className={`absolute z-10 w-full flex items-center flex-col justify-center text-white top-660px paid:top-528px mobile:top-605px`}
+        className={`absolute z-10 w-full flex items-center flex-col justify-center text-white bottom-180px paid:bottom-140px mobile:bottom-160px`}
       >
         <div
           className={`overflow-hidden font-AlbertusNova-Regular text-26px uppercase mb-20px paid:text-18px mobile:text-13px transition-all ease-in-out duration-500 delay-500 h-0 ${
@@ -147,7 +147,7 @@ function StoryOpeningComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-20 w-full h-20px flex items-center justify-center top-791px paid:top-634px mobile:top-730px">
+      <div className="absolute z-20 w-full h-20px flex items-center justify-center bottom-140px paid:bottom-100px mobile:bottom-120px">
         {data.bgList.map((item, key) => {
           return (
             <div
