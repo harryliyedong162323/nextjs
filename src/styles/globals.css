@@ -42,7 +42,27 @@
 /*  width:400px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;*/
 /*}*/
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    margin-left: -5px;
+  }
 
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #C6C6C6;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+  }
+}
 
 .base-image{
   display: block;
