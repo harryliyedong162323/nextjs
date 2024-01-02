@@ -335,7 +335,7 @@ function Footer(props: any) {
         </div>
       </div>
       {language && (
-        <div className="w-385px h-full bg-[#FFFFFF] z-30 absolute top-0 right-0 pl-33px pr-33px paid:pl-24px paid:pr-24px paid:w-278px mobile:w-full mobile:pl-20px mobile:pr-20px ">
+        <div className="w-400px h-full bg-[#FFFFFF] z-30 absolute top-0 right-0 pl-33px pr-33px paid:pl-24px paid:pr-24px paid:w-285px mobile:w-full mobile:pl-20px mobile:pr-20px ">
           <div className="flex items-center  mt-27px paid:mt-19px mobile:mt-44px mobile:reactive ">
             <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
               <BaseImage

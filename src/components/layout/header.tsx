@@ -448,7 +448,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
         <div className="absolute w-full h-screen select-none">
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"></div>
-            <div className="w-381px relative pl-33px  overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
+            <div className="w-400px relative pl-33px  overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-285px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
               <div className="flex justify-between items-center  mt-25px paid:mt-18px mobile:mt-15px">
                 <div
                   className="w-33px h-17px paid:w-24px paid:h-12px mobile:w-28px mobile:h-13px relative cursor-pointer "
