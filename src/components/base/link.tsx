@@ -18,7 +18,7 @@ interface propsContent {
 }
 
 class BaseLink extends Component<propsContent,State>{
-
+    private location: string;
     static defaultProps = {
         autoLanguage:true,
         className:'',
@@ -30,15 +30,25 @@ class BaseLink extends Component<propsContent,State>{
         onMouseLeave:(()=>{}),
 
     }
-
     state: State = {
         name:'base-link',
     };
 
     constructor(props:any) {
         super(props);
-
+        this.location = '';
     }
+
+    setLocation(path:string){
+
+        window.localStorage.setItem('location',path);
+        this.location = path;
+    }
+
+    getLocation():string{
+        return this.location;
+    }
+
 
     handleClick(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>){
         this.init();
@@ -74,7 +84,12 @@ class BaseLink extends Component<propsContent,State>{
     }
 
     init(){
+
+
+
         setTimeout(()=>{document&&(document.body.style.overflow = 'auto');},0);
+
+
     }
 
     hasColor():string{
@@ -109,7 +124,8 @@ class BaseLink extends Component<propsContent,State>{
 
 
     computedLink():string{
-        let location :string | undefined = process.env.LOCATION;
+
+        let location :string | undefined = this.getLocation() || process.env.LOCATION;
         let trimmedUrl: string;
         let trimmedLink:string;
         let targetUrl:string;
@@ -125,7 +141,8 @@ class BaseLink extends Component<propsContent,State>{
         if(trimmedLink == ''){
            targetUrl = '/'
         }else{
-           targetUrl = this.props.autoLanguage ? (`/${trimmedUrl}/`) + trimmedLink: this.props.link;
+
+            targetUrl = this.props.autoLanguage ? (`/${trimmedUrl}/`) + trimmedLink : this.props.link;
         }
 
         return targetUrl;

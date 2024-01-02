@@ -77,8 +77,8 @@ body{
 .slide-15{
   transform: translateY(-15%) !important;
 }
-.slide-26{
-  transform: translateY(26%) !important;
+.slide-25{
+  transform: translateY(25%) !important;
 }
 .slide-0{
   transform: translateY(0%) !important;
@@ -90,6 +90,6 @@ body{
 .slide-25-m{
   transform: translateY(25%) !important;
 }
-.swiper-slide-introduce:not(:nth-child(2n)) {
-  transform: translateY(-15%);
-}
+/*.swiper-slide-introduce:not(:nth-child(2n)) {*/
+/*  transform: translateY(-15%);*/
+/*}*/

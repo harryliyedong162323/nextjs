@@ -9,6 +9,24 @@ function GlobalCampaignsComponent(props: any) {
   const subTitle: string = "Wildmoor house";
   const title: string = "Shenzhen Nanjing Road";
 
+
+
+  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
+
+
+  useEffect(() => {
+    if (isFullPage) {
+      if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
+        setIsCurrentPage(true);
+      } else {
+        setIsCurrentPage(false);
+      }
+    }
+  }, [isFullPage, props]);
+
+
+
   return (
     <section
       id="WildmoorHouse"
@@ -24,7 +42,7 @@ function GlobalCampaignsComponent(props: any) {
         quality={100}
       ></BaseImage>
 
-      <div className="absolute z-10 bottom-[148px] left-1/2 w-full translate-x-[-50%] mobile:bottom-[106px]">
+      <div className={`absolute z-10 bottom-[148px] left-1/2 w-full ease-in-out duration-1000 transition-all translate-x-[-50%] mobile:bottom-[106px] ${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-70%] opacity-0'}`}>
         {subTitle != "" ? (
           <div className="font-AlbertusNova-Regular font-normal text-center text-22px pb-42px text-[#E6E7E8] mobile:text-14px mobile:pb-25px uppercase">
             {subTitle}
@@ -36,6 +54,23 @@ function GlobalCampaignsComponent(props: any) {
             {title}
           </div>
         ) : null}
+
+
+        <div className={`pt-28px paid:pt-20px flex justify-between  mx-auto text-white w-889px paid:w-740px mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center`}>
+          <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:w-full mobile:text-12px mobile:pb-15px">
+            <span className="w-18px h-24px mobile:w-21px mobile:h-21 paid:w-12px paid:h-20px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/address.png')] bg-contain"></span>
+            <span className="inline-block align-middle pl-17px paid:pl-12px mobile:pl-9px">4325 Glenwood AvenueRaleigh, NC 27612, </span>
+          </div>
+          <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:text-12px">
+            <span className="w-20px h-20px mobile:w-21px mobile:h-21 paid:w-14px paid:h-14px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/time.png')] bg-contain"></span>
+            <span className="inline-block align-middle pl-17px paid:pl-12px mobile:pl-9px">10:00-24:00</span>
+          </div>
+          <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:text-12px mobile:pl-25px">
+            <span className="w-20px h-18px mobile:w-21px mobile:h-21 paid:w-14px paid:h-12px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/phone.png')] bg-contain"></span>
+            <span className="inline-block align-middle pl-17px paid:pl-12px mobile:pl-9px">000-1234567890</span>
+          </div>
+        </div>
+
       </div>
 
       <div className="absolute bottom-24px w-full flex flex-col items-center justify-center mobile:hidden">

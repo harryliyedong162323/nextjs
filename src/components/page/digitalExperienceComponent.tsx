@@ -20,7 +20,7 @@ function DigitalExperienceComponent(props: any) {
                 <div className="text-33px font-normal font-AlbertusNova-Regular text-center pt-84px pb-200px text-white mobile:pb-50px mobile:pt-50px mobile:text-20px ">Digital experience</div>
 
                 <div className="grid grid-cols-3 place-items-center mobile:grid-rows-3 mobile:grid-cols-none">
-                    <div className="w-155px h-111px relative self-center cursor-pointer  mobile:w-165px mobile:h-204px">
+                    <div className="w-155px h-32px relative self-center mobile:w-165px mobile:h-204px">
                         <BaseImage
                             mImg={require("../../../public/assets/digitalExperience/list-1-m.png")}
                             pImg={require("../../../public/assets/digitalExperience/list-1.png")}
@@ -28,17 +28,26 @@ function DigitalExperienceComponent(props: any) {
                             objectFit="contain"
                             quality={100}
                         ></BaseImage>
+                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')] bg-[length:100%_100%] mt-41px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal paid:w-107px paid:h-25px paid:leading-[25px] paid:text-8px paid:mt-14px">
+                            explore
+                        </div>
                     </div>
-                    <div className="w-232px h-168px relative self-center cursor-pointer mobile:w-125px mobile:h-89px">
-                        <BaseImage
-                            mImg={require("../../../public/assets/digitalExperience/list-2-m.png")}
-                            pImg={require("../../../public/assets/digitalExperience/list-2.png")}
-                            alt={""}
-                            objectFit="contain"
-                            quality={100}
-                        ></BaseImage>
+                    <div className=" relative self-center mobile:w-125px mobile:h-89px text-center">
+                        <div className={`w-137px h-137px mx-auto`}>
+                            <BaseImage
+
+                                mImg={require("../../../public/assets/digitalExperience/list-2-m.png")}
+                                pImg={require("../../../public/assets/digitalExperience/list-2.png")}
+                                alt={""}
+                                objectFit="contain"
+                                quality={100}
+                            ></BaseImage>
+                        </div>
+                        <div className=" mt-16px mx-auto w-278px  text-white text-17px uppercase text-center font-AlbertusNova-Regular font-normal paid:w-231px paid:text-12px paid:mt-11px">
+                            Scan to follow WILDMOOR
+                        </div>
                     </div>
-                    <div className="w-218px h-117px relative self-center cursor-pointer mobile:w-125px mobile:h-89px">
+                    <div className="w-218px h-32px relative self-center mobile:w-125px mobile:h-89px">
                         <BaseImage
                             mImg={require("../../../public/assets/digitalExperience/list-3-m.png")}
                             pImg={require("../../../public/assets/digitalExperience/list-3.png")}
@@ -46,6 +55,9 @@ function DigitalExperienceComponent(props: any) {
                             objectFit="contain"
                             quality={100}
                         ></BaseImage>
+                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')] bg-[length:100%_100%] mt-41px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal paid:w-107px paid:h-25px paid:leading-[25px] paid:text-8px paid:mt-14px">
+                            explore
+                        </div>
                     </div>
                 </div>
             </div>

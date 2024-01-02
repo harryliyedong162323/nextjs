@@ -13,18 +13,18 @@ function Footer(props: any) {
 
   const lastPathName = getLastPathName(usePathname());
 
-  useEffect(() => {
-    function wheelHandle(e: Event) {
-      e.preventDefault();
-    }
-    if (language) {
-      window.addEventListener("wheel", wheelHandle, { passive: false });
-    }
-    return () => {
-      const option: any = { passive: false };
-      window.removeEventListener("wheel", wheelHandle, option);
-    };
-  }, [language]);
+  // useEffect(() => {
+  //   function wheelHandle(e: Event) {
+  //     e.preventDefault();
+  //   }
+  //   if (language) {
+  //     window.addEventListener("wheel", wheelHandle, { passive: false });
+  //   }
+  //   return () => {
+  //     const option: any = { passive: false };
+  //     window.removeEventListener("wheel", wheelHandle, option);
+  //   };
+  // }, [language]);
 
   const hanleLanguage = () => {
     setLanguage(true);
@@ -167,7 +167,6 @@ function Footer(props: any) {
       }
     });
     setPanels(newPanels);
-    console.log(pannels);
   };
   return (
     <footer className="relative overflow-hidden select-none">
@@ -295,20 +294,20 @@ function Footer(props: any) {
           <div className="text-16px  mobile:w-full">
             <ul className="flex mobile:flex-wrap mobile:justify-center mobile:text-center">
               <li className="mr-84px text-[#696969] font-Grotesque-Regular mobile:hidden">
-                <BaseLink>&copy; 2023 WILDMOOR All rights reserved</BaseLink>
+                &copy; 2023 WILDMOOR All rights reserved
               </li>
-              <li className="mr-84px font-Grotesque-Regular mobile:mr-0 mobile:w-full mobile:mb-25px">
-                <BaseLink link="/privacyPolicy">Privacy policy</BaseLink>
+              <li className="mr-84px mobile:mr-0 mobile:w-full mobile:mb-25px">
+                <BaseLink link="/privacyPolicy" className="font-Grotesque-Regular text-black">Privacy policy</BaseLink>
               </li>
-              <li className="font-Grotesque-Regular mobile:w-full mobile:mb-64px">
-                <BaseLink>Terms of Service</BaseLink>
+              <li className="mobile:w-full mobile:mb-64px">
+                <BaseLink className="font-Grotesque-Regular text-black">Terms of Service</BaseLink>
               </li>
             </ul>
           </div>
           <div className="pr-21px flex mobile:pr-0 mobile:w-full mobile:justify-center mobile:pb-53px">
             <div className="w-24px h-24px mr-10px  bg-cover bg-[url('/assets/language.png')]"></div>
             <div
-              className=" font-Grotesque-Regular text-16px font-medium cursor-pointer"
+              className=" font-Grotesque-Regular  text-black text-16px font-medium cursor-pointer"
               onClick={hanleLanguage}
             >
               Location and Language
@@ -351,10 +350,10 @@ function Footer(props: any) {
                 <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-GalanoGrotesque w-4/5 truncate">
                   CHINA MAINLAND-SIMPLIFIED CHINESE
                 </div>
-                <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                   <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                      mImg={require("../../../public/assets/arrow-right.png")}
+                      pImg={require("../../../public/assets/arrow-right.png")}
                       alt={""}
                       objectFit="contain"
                       quality={100}
@@ -367,10 +366,10 @@ function Footer(props: any) {
                 <div className="uppercase text-14px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                   Taiwan region - traditional Chinese
                 </div>
-                <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                   <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                      mImg={require("../../../public/assets/arrow-right.png")}
+                      pImg={require("../../../public/assets/arrow-right.png")}
                       alt={""}
                       objectFit="contain"
                       quality={100}
@@ -383,10 +382,10 @@ function Footer(props: any) {
                 <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                   Korea - Korean
                 </div>
-                <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                   <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                      mImg={require("../../../public/assets/arrow-right.png")}
+                      pImg={require("../../../public/assets/arrow-right.png")}
                       alt={""}
                       objectFit="contain"
                       quality={100}
@@ -399,10 +398,10 @@ function Footer(props: any) {
                 <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                   Singapore - English
                 </div>
-                <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                   <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                      mImg={require("../../../public/assets/arrow-right.png")}
+                      pImg={require("../../../public/assets/arrow-right.png")}
                       alt={""}
                       objectFit="contain"
                       quality={100}

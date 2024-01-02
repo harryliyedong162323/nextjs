@@ -1,9 +1,10 @@
 "use client";
 
 
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import BaseImage from "@/components/base/image";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 
 interface bottleContent {
@@ -147,27 +148,76 @@ function ProductFamilyComponent(props: any) {
     const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
     const [currentBottleIndex,setCurrentBottleIndex] = useState(0);
-
+    const container = useRef(null);
+    const [animationReady,setAnimationReady] = useState(false);
     const [bottleData,setBottleData] = useState(bottle);
     const [currentBottleData,setCurrentBottleData] = useState(bottle[0] as bottleContent);
     const handleChooseBottle = (index:number)=>{
-        setCurrentBottleData(bottleData[index]);
+
+        if(animationReady) return false;
+
+        setAnimationReady(true);
+
+        setTimeout(()=>{
+            setCurrentBottleData(bottleData[index]);
+        },500)
+
         setCurrentBottleIndex(index);
     }
 
+
+
+    useGSAP(
+        () => {
+
+            gsap.timeline()
+                .from('.an-group-1',{width:'auto'})
+                .from('.an-bottle,.an-text',{x:'150%',duration:1})
+                .to('.an-bg',{opacity:0,duration:0.5,onComplete:function() {
+                        setAnimationReady(false);
+                    }})
+
+        },
+        { scope: container,dependencies: [currentBottleData],revertOnUpdate: true}
+    );
+
+
+    useGSAP(
+        () => {
+
+            gsap.timeline()
+
+                .to('.an-group-1',{width:0})
+                // .to('.an-bg',{opacity:1})
+        },
+        { scope: container,dependencies: [currentBottleIndex],revertOnUpdate: true}
+    );
+
+
+
     useEffect(() => {
-        console.log(bottleData)
-        setCurrentBottleData(bottleData[0])
-    }, [bottleData]);
-    console.log(props)
+        handleChooseBottle(1)
+    }, []);
+
     return (
 
 
-        <div id="ProductsFamily" data-anchor={0}  className="h-screen overflow-hidden select-none">
+        <section id="ProductsFamily" data-anchor={0}  className="h-screen overflow-hidden select-none" ref={container}>
             <input type="hidden" value={headStyle}/>
             <div className="h-[70vh] overflow-hidden">
                 <div className="relative h-full w-full">
                     <BaseImage
+                        className="z-10 left-0 top-0"
+                        mImg={bottleData[currentBottleIndex].info.bg.mImg}
+                        pImg={bottleData[currentBottleIndex].info.bg.pImg}
+                        alt={""}
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                    ></BaseImage>
+
+                    <BaseImage
+                        className="an-bg transition-opacity duration-700 ease-in-out left-0 top-0 z-20"
                         mImg={currentBottleData.info.bg.mImg}
                         pImg={currentBottleData.info.bg.pImg}
                         alt={""}
@@ -176,33 +226,37 @@ function ProductFamilyComponent(props: any) {
                         quality={100}
                     ></BaseImage>
 
-                    <div className="w-169px h-368px absolute left-1/2 translate-x-[-50%] top-150px paid:w-120px paid:h-262px paid:top-107px  mobile:w-102px mobile:h-223px mobile:top-94px">
-                        <BaseImage
-                            mImg={currentBottleData.info.bottle.mImg}
-                            pImg={currentBottleData.info.bottle.pImg}
-                            alt={""}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                        ></BaseImage>
-                    </div>
-                    <div className="left-1/2 translate-x-[50%] absolute top-240px text-white paid:top-171px mobile:translate-x-[-50%] mobile:top-342px mobile:pl-23px mobile:pr-23px mobile:w-full">
-                        <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px">
-                            <div className="inline-block align-middle">
-                                <div className="relative">
-                                   <span className="text-60px font-light font-AlbertusNova-Light pb-8px paid:text-42px paid:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
-                                    <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center paid:text-7px mobile:text-7px">years old</span>
-                                </div>
-                                {/*<div className="text-11px font-bold">years old</div>*/}
-                            </div>
-                            <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px bg-white paid:mr-11px paid:ml-6px paid:h-[57%] mobile:ml-10px mobile:mr-6px"></div>
-                            <div className="inline-block align-middle w-194px text-29px pt-20px paid:w-138px paid:text-20px paid:pt-14px mobile:text-19px mobile:w-125px">{currentBottleData.info.name}</div>
-                        </div>
-                        <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal paid:pb-21px paid:w-304px paid:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
-                            {currentBottleData.info.des}
-                        </div>
-                        <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
-                    </div>
+                   <div className="an-group-1  w-full   overflow-hidden    absolute left-[46%] z-30 top-150px">
+                      <div className="an-bottle w-700px paid:w-500px flex flex-nowrap items-end">
+                          <div className="w-169px h-368px  relative mr-90px  paid:mr-64px paid:w-120px paid:h-262px  mobile:w-102px mobile:h-223px ">
+                              <BaseImage
+                                  mImg={currentBottleData.info.bottle.mImg}
+                                  pImg={currentBottleData.info.bottle.pImg}
+                                  alt={""}
+                                  layout="fill"
+                                  objectFit="cover"
+                                  quality={100}
+                              ></BaseImage>
+                          </div>
+                          <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
+                              <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px">
+                                  <div className="inline-block align-middle">
+                                      <div className="relative">
+                                          <span className="text-60px font-light font-AlbertusNova-Light pb-8px paid:text-42px paid:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
+                                          <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center paid:text-7px mobile:text-7px">years old</span>
+                                      </div>
+                                      {/*<div className="text-11px font-bold">years old</div>*/}
+                                  </div>
+                                  <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px bg-white paid:mr-11px paid:ml-6px paid:h-[57%] mobile:ml-10px mobile:mr-6px"></div>
+                                  <div className="inline-block align-middle w-194px text-29px pt-20px paid:w-138px paid:text-20px paid:pt-14px mobile:text-19px mobile:w-125px">{currentBottleData.info.name}</div>
+                              </div>
+                              <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal paid:pb-21px paid:w-304px paid:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
+                                  {currentBottleData.info.des}
+                              </div>
+                              <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
+                          </div>
+                      </div>
+                   </div>
                 </div>
             </div>
             <div className="h-[30vh] overflow-hidden">
@@ -252,7 +306,7 @@ function ProductFamilyComponent(props: any) {
 
                 </div>
             </div>
-        </div>
+        </section>
 
 
     );

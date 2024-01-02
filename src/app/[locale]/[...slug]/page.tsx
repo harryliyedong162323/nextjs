@@ -94,7 +94,7 @@ export default async function Page({
 
 
   return (
-
+      // className="w-[1920px] mx-auto relative"
     <div>
       <Header headStyle={componentsData[0].type != 'fullPage' ? componentsData[0].entry.headStyle : ''}></Header>
       <main>

@@ -342,7 +342,7 @@ function IntroduceCampaignComponent(props: any) {
                     onBeforeInit={(e)=>{
                         setTimeout(()=>{
                             const slides = e.slides;
-                            slides[e.activeIndex].style.transform = 'translateY(-25%)'
+                            slides[e.activeIndex].style.transform = 'translateY(-15%)'
                             slides[e.activeIndex-1].style.transform = 'translateY(26%)'
                         },250)
 
@@ -356,21 +356,27 @@ function IntroduceCampaignComponent(props: any) {
                     onSlideNextTransitionStart={(e)=>{
 
                         const slides = e.slides;
-                        // if(centeredSlides){
-                        //     slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
-                        // }
+                        if(centeredSlides){
+                            slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                        }
 
 
                         setTimeout(()=>{
                             if(centeredSlides){
-                                slides[e.activeIndex-2]?.classList.add('slide-15');
-                                slides[e.activeIndex-1]?.classList.add('slide-26');
+                                // slides[e.activeIndex-2]?.classList.add('slide-15');
+                                slides[e.activeIndex-1]?.classList.add('slide-25');
                                 slides[e.activeIndex]?.classList.add('slide-15');
-                                slides[e.activeIndex+1]?.classList.add('slide-0');
+                                // slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
                                 slides[e.activeIndex-2]?.classList.add('slide-25-m');
                                 slides[e.activeIndex-1]?.classList.add('slide-0');
                                 slides[e.activeIndex]?.classList.add('slide-25-m');
+                                slides[e.activeIndex+1]?.classList.add('slide-0');
+                            }
+                        },100);
+
+                        setTimeout(()=>{
+                            if(centeredSlides){
                                 slides[e.activeIndex+1]?.classList.add('slide-0');
                             }
                         },250);
@@ -378,7 +384,7 @@ function IntroduceCampaignComponent(props: any) {
                         // if(centeredSlides){
                         //
                         //     setTimeout(()=>{
-                        //         slides[e.activeIndex+1]?.style&&(slides[e.activeIndex+1].style.transform = 'translateY(0%)')
+                        //         slides[e.activeIndex+2]?.style&&(slides[e.activeIndex+2].style.transform = 'translateY(0%)')
                         //     },500);
                         //
                         //
@@ -405,25 +411,33 @@ function IntroduceCampaignComponent(props: any) {
 
                         setTimeout(()=>{
                             if(centeredSlides){
-                                slides[e.activeIndex-1]?.classList.add('slide-26');
+                                slides[e.activeIndex-1]?.classList.add('slide-25');
                                 slides[e.activeIndex]?.classList.add('slide-15');
-                                slides[e.activeIndex+1]?.classList.add('slide-0');
+                                // slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
-                                slides[e.activeIndex-1]?.classList.add('slide-0');
+                                // slides[e.activeIndex-1]?.classList.add('slide-0');
                                 slides[e.activeIndex]?.classList.add('slide-25-m');
                                 slides[e.activeIndex+1]?.classList.add('slide-0');
                             }
 
 
+                        },100);
+
+
+                        setTimeout(()=>{
+                            if(centeredSlides){
+                                slides[e.activeIndex+1]?.classList.add('slide-0');
+                            }
                         },250);
-                        if(centeredSlides){
 
-                            setTimeout(()=>{
-                                slides[e.activeIndex+2]?.style&&(slides[e.activeIndex+2].style.transform = 'translateY(0%)')
-                            },700);
-
-
-                        }
+                        // if(centeredSlides){
+                        //
+                        //     setTimeout(()=>{
+                        //         slides[e.activeIndex+2]?.style&&(slides[e.activeIndex+2].style.transform = 'translateY(0%)')
+                        //     },700);
+                        //
+                        //
+                        // }
 
                     }}
                     onInit={()=>{
@@ -477,8 +491,10 @@ function IntroduceCampaignComponent(props: any) {
 
             <div className="flex justify-end pr-10">
                 <div>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px paid:w-31px paid:h-31px paid:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == campaigns.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle paid:w-31px paid:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+                    {/*${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"}*/}
+                    <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/prev-active.png')]  w-44px h-44px inline-block align-middle mr-7px paid:w-31px paid:h-31px paid:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
+                    {/*${currentIndex == campaigns.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"}*/}
+                    <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/next-active.png')]  w-44px h-44px inline-block align-middle paid:w-31px paid:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
                 </div>
             </div>
 

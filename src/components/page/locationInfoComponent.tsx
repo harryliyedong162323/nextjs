@@ -241,11 +241,11 @@ function LocationStoreList(props: any){
     const [spaceBetween,setSpaceBetween] = useState(10);
     const [selectedReady,setSelectReady] = useState(false);
     useEffect(()=>{
-        console.log(location)
+
         const currentLocation = options.filter((item:any)=>{
             return parseInt(item.value) == id;
         })
-        console.log(currentLocation)
+
 
         setSelectedOption(currentLocation[0])
     },[props])
@@ -360,7 +360,7 @@ function LocationStoreList(props: any){
                                 <div key={item.id}>
                                     <SwiperSlide key={item.id} className={``}>
                                         <div className="w-383px paid:w-273px mobile:w-265px ">
-                                            <BaseLink link={item.link}>
+                                            <BaseLink link={item.link} className="text-black">
                                                 <div className="relative w-383px h-250px paid:w-273px paid:h-178px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
                                                         mImg={item.listImg.mImg}

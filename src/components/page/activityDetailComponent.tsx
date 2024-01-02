@@ -11,6 +11,10 @@ function ActivityDetailComponent(props: any) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
+
+
+
+
     const onChangeScroll = useCallback(
         (emblaApi: { selectedScrollSnap: () => any }) => {
             setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);

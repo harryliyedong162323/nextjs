@@ -12,18 +12,18 @@ function Header(props: any) {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
   // }, [props]);
   const [menu, setMenu] = useState(false);
-  useEffect(() => {
-    function wheelHandle(e: Event) {
-      e.preventDefault();
-    }
-    if (menu) {
-      window.addEventListener("wheel", wheelHandle, { passive: false });
-    }
-    return () => {
-      const option: any = { passive: false };
-      window.removeEventListener("wheel", wheelHandle, option);
-    };
-  }, [menu]);
+  // useEffect(() => {
+  //   function wheelHandle(e: Event) {
+  //     e.preventDefault();
+  //   }
+  //   if (menu) {
+  //     window.addEventListener("wheel", wheelHandle, { passive: false });
+  //   }
+  //   return () => {
+  //     const option: any = { passive: false };
+  //     window.removeEventListener("wheel", wheelHandle, option);
+  //   };
+  // }, [menu]);
   const headStyle = props.headStyle || "white";
 
   const handleMenuChange = (menu: boolean) => {
@@ -276,23 +276,28 @@ function Panel({ menuFlag, onMenuChange }: any) {
     },
   ]);
 
-  const togglePanel = (id: any) => {
+  const togglePanel = (id: number) => {
     const newPanels = panels.map((panel) => {
+
       if (panel.id === id) {
-        return { ...panel, isExpanded: !panel.isExpanded };
+        return { ...panel, isExpanded: panel.isExpanded = !panel.isExpanded  };
       } else {
         return { ...panel, isExpanded: false }; // 关闭其他面板
       }
     });
+
     setPanels(newPanels);
+
   };
 
   return (
     <div>
       {menu && (
-        <div className="absolute w-full h-screen select-none">
+        <div className="togglePanel absolute w-full h-screen select-none">
           <div className="flex w-full justify-between h-screen">
-            <div className="flex  flex-1"></div>
+            <div className="flex  flex-1"  onClick={(e) => {
+              handleClose();
+            }}></div>
             <div className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
               <div className="h-41px paid:h-29px   mobile:h-40px flex justify-between items-end ">
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px">
@@ -319,8 +324,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
               </div>
               <div className="mt-64px paid:mt-53px mobile:mt-80px flex flex-col">
                 <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
-                  <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque">
-                    <BaseLink link={`/home`}>HOME</BaseLink>
+                  <div className="">
+                    <BaseLink link={`/home`} className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque">HOME</BaseLink>
                   </div>
                 </div>
 
@@ -330,8 +335,9 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     key={panel.id}
                   >
                     <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer">
-                      <div className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque w-9/12 ">
+                      <div className="w-9/12 ">
                         <BaseLink
+                            className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque "
                           link={panel.title[0].link}
                           onClick={(e) => {
                             handleClose();
@@ -354,7 +360,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                           ></BaseImage>
                         </div>
                       ) : (
-                        <div className="text-21px paid:text-17px mobile:text-21px font-GalanoGrotesque">
+                        <div className="text-21px paid:text-17px mobile:text-21px font-GalanoGrotesque" onClick={() => togglePanel(panel.id)}>
                           —
                         </div>
                       )}
@@ -467,10 +473,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-GalanoGrotesque w-4/5 truncate">
                       CHINA MAINLAND-SIMPLIFIED CHINESE
                     </div>
-                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                       <BaseImage
-                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          mImg={require("../../../public/assets/arrow-right.png")}
+                          pImg={require("../../../public/assets/arrow-right.png")}
                           alt={""}
                           objectFit="contain"
                           quality={100}
@@ -484,10 +490,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     <div className="uppercase text-14px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                       Taiwan region - traditional Chinese
                     </div>
-                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                       <BaseImage
-                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          mImg={require("../../../public/assets/arrow-right.png")}
+                          pImg={require("../../../public/assets/arrow-right.png")}
                           alt={""}
                           objectFit="contain"
                           quality={100}
@@ -501,10 +507,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                       Korea - Korean
                     </div>
-                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                       <BaseImage
-                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          mImg={require("../../../public/assets/arrow-right.png")}
+                          pImg={require("../../../public/assets/arrow-right.png")}
                           alt={""}
                           objectFit="contain"
                           quality={100}
@@ -518,10 +524,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                       Singapore - English
                     </div>
-                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
                       <BaseImage
-                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          mImg={require("../../../public/assets/arrow-right.png")}
+                          pImg={require("../../../public/assets/arrow-right.png")}
                           alt={""}
                           objectFit="contain"
                           quality={100}

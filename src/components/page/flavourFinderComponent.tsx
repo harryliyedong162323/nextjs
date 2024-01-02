@@ -14,11 +14,9 @@ import Script from "next/script";
 import axios from "axios";
 import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
-
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
-import { components } from "react-select";
 
 declare const grecaptcha: any;
 
@@ -814,7 +812,7 @@ function FlavourFinderComponent(props: any) {
                         {data.quizs.q3.step1.title}
                       </div>
                       <div
-                        className="relative overflow-auto max-h-[calc(50vh)]"
+                        className="relative overflow-y-auto max-h-[calc(50vh)] scrollbar"
                         onWheel={(event) => {
                           event.stopPropagation();
                         }}
@@ -1253,20 +1251,20 @@ function FlavourFinderComponent(props: any) {
                       </div>
                     </div>
                     <div className="inline-flex items-center pb-17px paid:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
-                      <div className="inline-flex items-center px-100px paid:px-70px mobile:pt-10px mobile:pb-20px">
+                      <div className="inline-flex items-center px-85px paid:px-70px mobile:pt-10px mobile:pb-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px paid:w-15px paid:h-15px mobile:w-12px mobile:h-11px"></i>
                         <input
                           type="text"
-                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-164px paid:text-16px paid:placeholder:text-16px paid:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-194px paid:w-164px paid:text-16px paid:placeholder:text-16px paid:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
                           placeholder="Enter first Name"
                         />
                       </div>
                       <div className="w-1px bg-black h-57px paid:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex items-center px-120px paid:px-90px mobile:py-20px">
+                      <div className="inline-flex items-center px-95px paid:px-90px mobile:py-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px paid:w-20px paid:h-15px mobile:w-15px mobile:h-11px"></i>
                         <input
                           type="text"
-                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-250px paid:text-16px paid:placeholder:text-16px paid:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-300px paid:w-250px paid:text-16px paid:placeholder:text-16px paid:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
                           placeholder="Enter your email address"
                         />
                       </div>
