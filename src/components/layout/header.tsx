@@ -12,18 +12,38 @@ function Header(props: any) {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
   // }, [props]);
   const [menu, setMenu] = useState(false);
-  // useEffect(() => {
-  //   function wheelHandle(e: Event) {
-  //     e.preventDefault();
-  //   }
-  //   if (menu) {
-  //     window.addEventListener("wheel", wheelHandle, { passive: false });
-  //   }
-  //   return () => {
-  //     const option: any = { passive: false };
-  //     window.removeEventListener("wheel", wheelHandle, option);
-  //   };
-  // }, [menu]);
+
+  useEffect(() => {
+
+
+    function wheelHandle(e: Event) {
+
+      e.preventDefault();
+      e.stopPropagation();
+
+    }
+
+    function keyDownHandle(e: Event){
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (menu) {
+      document.addEventListener("wheel", wheelHandle, { passive: false });
+      document.addEventListener("keydown", keyDownHandle, { passive: false });
+    }
+    return () => {
+      const option: any = { passive: false };
+      document.removeEventListener("wheel", wheelHandle, option);
+      document.removeEventListener("keydown", keyDownHandle, option);
+    };
+  }, [menu]);
+
+
+
+
+
+
   const headStyle = props.headStyle || "white";
 
   const handleMenuChange = (menu: boolean) => {
@@ -325,7 +345,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
               <div className="mt-64px paid:mt-53px mobile:mt-80px flex flex-col">
                 <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
                   <div className="">
-                    <BaseLink link={`/home`} className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque">HOME</BaseLink>
+                    <BaseLink link={`/home`} className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium">HOME</BaseLink>
                   </div>
                 </div>
 
@@ -337,7 +357,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer">
                       <div className="w-9/12 ">
                         <BaseLink
-                            className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque "
+                            className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
                           link={panel.title[0].link}
                           onClick={(e) => {
                             handleClose();
@@ -372,7 +392,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                             className="cursor-pointer flex justify-between items-center mb-30px paid:mb-23px mobile:mb-20px"
                             key={item.id}
                           >
-                            <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                            <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Medium w-4/5 truncate">
                               <BaseLink
                                 link={item.link}
                                 onClick={(e) => {
@@ -382,14 +402,14 @@ function Panel({ menuFlag, onMenuChange }: any) {
                                 {item.content}
                               </BaseLink>
                             </div>
-                            <div className="w-19px h-23px  paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
-                              <BaseImage
-                                mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                                pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                                alt={""}
-                                objectFit="contain"
-                                quality={100}
-                              ></BaseImage>
+                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
+                              {/*<BaseImage*/}
+                              {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                              {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                              {/*  alt={""}*/}
+                              {/*  objectFit="contain"*/}
+                              {/*  quality={100}*/}
+                              {/*></BaseImage>*/}
                             </div>
                           </div>
                         ))}
@@ -413,7 +433,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     ></BaseImage>
                   </div>
                   <div
-                    className="ml-14px paid:ml-12px mobile:ml-10px text-[#000000]  cursor-pointer text-15px paid:text-13px mobile:text-17px not-italic font-medium font-GalanoGrotesque"
+                    className="ml-14px paid:ml-12px mobile:ml-10px text-[#000000]  cursor-pointer text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
                     onClick={hanleLanguage}
                   >
                     Location and Language
@@ -470,68 +490,68 @@ function Panel({ menuFlag, onMenuChange }: any) {
               <div className="flex flex-col mt-67px paid:mt-48px mobile:mt-73px">
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
-                    <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-GalanoGrotesque w-4/5 truncate">
                       CHINA MAINLAND-SIMPLIFIED CHINESE
                     </div>
-                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
-                      <BaseImage
-                          mImg={require("../../../public/assets/arrow-right.png")}
-                          pImg={require("../../../public/assets/arrow-right.png")}
-                          alt={""}
-                          objectFit="contain"
-                          quality={100}
-                      ></BaseImage>
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-9px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    alt={""}*/}
+                      {/*    objectFit="contain"*/}
+                      {/*    quality={100}*/}
+                      {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
 
                 </div>
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
-                    <div className="uppercase text-14px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                       Taiwan region - traditional Chinese
                     </div>
-                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
-                      <BaseImage
-                          mImg={require("../../../public/assets/arrow-right.png")}
-                          pImg={require("../../../public/assets/arrow-right.png")}
-                          alt={""}
-                          objectFit="contain"
-                          quality={100}
-                      ></BaseImage>
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-9px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    alt={""}*/}
+                      {/*    objectFit="contain"*/}
+                      {/*    quality={100}*/}
+                      {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
 
                 </div>
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
-                    <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                       Korea - Korean
                     </div>
-                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
-                      <BaseImage
-                          mImg={require("../../../public/assets/arrow-right.png")}
-                          pImg={require("../../../public/assets/arrow-right.png")}
-                          alt={""}
-                          objectFit="contain"
-                          quality={100}
-                      ></BaseImage>
+                    <div className="w-13px h-25px  paid:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    alt={""}*/}
+                      {/*    objectFit="contain"*/}
+                      {/*    quality={100}*/}
+                      {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
 
                 </div>
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
-                    <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
                       Singapore - English
                     </div>
-                    <div className="w-14px h-23px  paid:w-10px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
-                      <BaseImage
-                          mImg={require("../../../public/assets/arrow-right.png")}
-                          pImg={require("../../../public/assets/arrow-right.png")}
-                          alt={""}
-                          objectFit="contain"
-                          quality={100}
-                      ></BaseImage>
+                    <div className="w-13px h-25px paid:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
+                      {/*    alt={""}*/}
+                      {/*    objectFit="contain"*/}
+                      {/*    quality={100}*/}
+                      {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
 

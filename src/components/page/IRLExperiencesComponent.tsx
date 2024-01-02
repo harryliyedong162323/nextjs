@@ -35,7 +35,9 @@ function IRLExperiencesComponent(props: any) {
                             <div className="pb-29px font-medium text-22px font-Grotesque-Regular mobile:text-16px mobile:pb-26px">Coventry Road</div>
                             <div className="flex justify-between items-center">
                                 <div className="w-[80%] truncate text-22px font-Grotesque-Regular font-normal  mobile:text-16px mobile:w-224px">4325 Glenwood AvenueRaleigh, NC 27612, 000-1234567890 10:00-24:00</div>
-                                <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                <BaseLink link="/howToBuyDetail">
+                                    <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                </BaseLink>
                             </div>
 
                         </div>
@@ -55,7 +57,9 @@ function IRLExperiencesComponent(props: any) {
                             <div className="pb-29px font-medium text-22px font-Grotesque-Regular mobile:text-16px mobile:pb-26px">Coventry Road</div>
                             <div className="flex justify-between items-center">
                                 <div className="w-[80%] truncate text-22px font-Grotesque-Regular font-normal  mobile:text-16px mobile:w-224px">4325 Glenwood AvenueRaleigh, NC 27612, 000-1234567890 10:00-24:00</div>
-                                <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                <BaseLink link="/howToBuyDetail">
+                                    <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                </BaseLink>
                             </div>
 
                         </div>

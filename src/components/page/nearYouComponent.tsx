@@ -412,8 +412,8 @@ function NearYouComponent(props: any) {
                 </div>
             </div>
 
-
-            <div className="flex justify-end pr-10">
+            <div className="absolute z-10 top-0 right-[0%] h-full w-200px bg-gradient-to-l from-[#ebeded6e] to-[transparent]"></div>
+            <div className="flex justify-end pr-10 relative z-30">
                 <div>
                     {/*${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"}*/}
                     <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/prev-active.png')]  w-44px h-44px inline-block align-middle mr-7px paid:w-31px paid:h-31px paid:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>

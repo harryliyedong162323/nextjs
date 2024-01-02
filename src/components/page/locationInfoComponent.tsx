@@ -238,7 +238,7 @@ function LocationStoreList(props: any){
     const [swiper, setSwiper] = useState<any>(null);
     const [locationInfo,setLocationInfo] = useState(location);
     const [selectedOption, setSelectedOption] = useState(options[0] as OptionType);
-    const [spaceBetween,setSpaceBetween] = useState(10);
+    const [spaceBetween,setSpaceBetween] = useState(90);
     const [selectedReady,setSelectReady] = useState(false);
     useEffect(()=>{
 
@@ -288,7 +288,7 @@ function LocationStoreList(props: any){
                 setSpaceBetween(200);
             }else{
                 setSlidesPerView(3);
-                setSpaceBetween(10);
+                setSpaceBetween(90);
             }
 
 
@@ -359,9 +359,9 @@ function LocationStoreList(props: any){
                             return (
                                 <div key={item.id}>
                                     <SwiperSlide key={item.id} className={``}>
-                                        <div className="w-383px paid:w-273px mobile:w-265px ">
+                                        <div className="w-full   mobile:w-265px ">
                                             <BaseLink link={item.link} className="text-black">
-                                                <div className="relative w-383px h-250px paid:w-273px paid:h-178px mobile:w-265px mobile:h-240px">
+                                                <div className="relative w-full h-320px  paid:h-230px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
                                                         mImg={item.listImg.mImg}
                                                         pImg={item.listImg.pImg}
@@ -372,8 +372,8 @@ function LocationStoreList(props: any){
                                                     ></BaseImage>
                                                 </div>
                                                 <div className="pt-25px paid:pt-17px mobile:pt-29px">
-                                                    <div className="pb-16px font-medium text-26px font-AlbertusNova-Regular paid:text-18px paid:pb-11px w-auto mobile:text-16px mobile:pb-15px">{item.name}</div>
-                                                    <div className="w-[85%]  text-13px font-Grotesque-Regular font-normal paid:text-9px mobile:text-11px ">{item.des}</div>
+                                                    <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular paid:text-22px paid:pb-11px w-auto mobile:text-16px mobile:pb-15px">{item.name}</div>
+                                                    <div className="w-[85%]  text-15px font-Grotesque-Regular font-normal paid:text-10px mobile:text-11px ">{item.des}</div>
                                                     <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]  paid:w-28px paid:h-28px paid:mt-17px mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
 
                                                 </div>
