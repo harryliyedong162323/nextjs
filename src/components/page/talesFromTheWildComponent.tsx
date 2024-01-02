@@ -163,7 +163,7 @@ function TalesFromTheWildComponent(props: any) {
                       <div
                         className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           currentKol !== toKol
-                            ? "w-139px h-420px paid:w-111px paid:h-334px mobile:h-94px mt-48px paid:mt-78px"
+                            ? "w-139px h-420px mt-98px paid:w-111px paid:h-334px paid:mt-78px mobile:h-94px"
                             : "w-615px h-519px paid:w-492px paid:h-414px mobile:h-360px"
                         }`}
                       >
@@ -213,7 +213,7 @@ function TalesFromTheWildComponent(props: any) {
                     <>
                       <div
                         key={index}
-                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-46px paid:w-111px paid:pt-78px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-98px paid:w-111px paid:pt-78px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           toKol === index
                             ? "w-615px paid:w-492px mobile:h-360px grayscale-0 animate-move-top"
                             : "w-139px paid:w-111px mobile:h-94px"
