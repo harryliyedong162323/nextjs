@@ -12,6 +12,7 @@ import gsap from "gsap";
 
 import 'swiper/css';
 import {Swiper as SwiperClass} from "swiper/types";
+import BaseLink from "@/components/base/link";
 const campaigns:object[] = [
     {
         id:0,
@@ -321,12 +322,12 @@ function IntroduceCampaignComponent(props: any) {
             <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-135px mobile:pt-113px ">
                 <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
 
-
                 <Swiper
                     style={{
                         overflow:"visible"
                     }}
                     modules={[Autoplay]}
+
                     slidesPerView={slidesPerView}
                     loop={true}
                     centeredSlides={centeredSlides}
@@ -343,7 +344,7 @@ function IntroduceCampaignComponent(props: any) {
                         setTimeout(()=>{
                             const slides = e.slides;
                             slides[e.activeIndex].style.transform = 'translateY(-15%)'
-                            slides[e.activeIndex-1].style.transform = 'translateY(26%)'
+                            slides[e.activeIndex-1].style.transform = 'translateY(25%)'
                         },250)
 
                     }}
@@ -358,13 +359,14 @@ function IntroduceCampaignComponent(props: any) {
                         const slides = e.slides;
                         if(centeredSlides){
                             slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                            slides[e.activeIndex-1].style.transform = 'translateY(25%)'
                         }
 
 
                         setTimeout(()=>{
                             if(centeredSlides){
                                 // slides[e.activeIndex-2]?.classList.add('slide-15');
-                                slides[e.activeIndex-1]?.classList.add('slide-25');
+                                // slides[e.activeIndex-1]?.classList.add('slide-25');
                                 slides[e.activeIndex]?.classList.add('slide-15');
                                 // slides[e.activeIndex+1]?.classList.add('slide-0');
                             }else{
@@ -406,6 +408,7 @@ function IntroduceCampaignComponent(props: any) {
                         const slides = e.slides;
                         if(centeredSlides){
                             slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                            slides[e.activeIndex-1].style.transform = 'translateY(25%)'
                             // slides[e.activeIndex+2].style.transform = 'translateY(-50%)'
                         }
 
@@ -474,8 +477,9 @@ function IntroduceCampaignComponent(props: any) {
 
                                             <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px paid:text-13px paid:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
                                             <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px paid:w-200px mobile:text-center mobile:w-full">{item.des}</div>
-                                            <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
-
+                                            <BaseLink link="/activityDetail">
+                                                <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+                                            </BaseLink>
                                         </div>
 
                                     </SwiperSlide>
