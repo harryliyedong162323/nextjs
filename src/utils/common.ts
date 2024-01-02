@@ -12,3 +12,15 @@ export const getHash = (url:string):string=>{
     }
     return hash
 }
+
+
+export const getLastPathName = (url:string):string=>{
+    let path:string = '';
+    const splitPath = url.split('/');
+
+    if(splitPath.length > 0){
+        path = splitPath[splitPath.length - 1];
+    }
+
+    return path;
+}

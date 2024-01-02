@@ -1,11 +1,12 @@
 "use client";
-
+import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
-
+import {getLastPathName} from "@/utils/common";
 function Header(props: any) {
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
+
 
   // useEffect(() => {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
@@ -113,6 +114,8 @@ function Header(props: any) {
 
 function Panel({ menuFlag, onMenuChange }: any) {
   const [menu, setMenu] = useState(false);
+  const lastPathName = getLastPathName(usePathname());
+
 
   useEffect(() => {
     setMenu(menuFlag);
@@ -459,64 +462,76 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 Location And Language
               </div>
               <div className="flex flex-col mt-67px paid:mt-48px mobile:mt-73px">
-                <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
-                  <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] cursor-pointer font-normal font-GalanoGrotesque w-4/5 truncate">
-                    CHINA MAINLAND-SIMPLIFIED CHINESE
-                  </div>
-                  <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
-                    <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      alt={""}
-                      objectFit="contain"
-                      quality={100}
-                    ></BaseImage>
-                  </div>
+                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
+                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
+                    <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-GalanoGrotesque w-4/5 truncate">
+                      CHINA MAINLAND-SIMPLIFIED CHINESE
+                    </div>
+                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                      <BaseImage
+                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          alt={""}
+                          objectFit="contain"
+                          quality={100}
+                      ></BaseImage>
+                    </div>
+                  </BaseLink>
+
                 </div>
-                <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
-                  <div className="text-14px paid:text-10px mobile:text-15px cursor-pointer not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
-                    CHINA MAINLAND-SIMPLIFIED CHINESE
-                  </div>
-                  <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
-                    <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      alt={""}
-                      objectFit="contain"
-                      quality={100}
-                    ></BaseImage>
-                  </div>
+                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
+                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
+                    <div className="uppercase text-14px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                      Taiwan region - traditional Chinese
+                    </div>
+                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                      <BaseImage
+                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          alt={""}
+                          objectFit="contain"
+                          quality={100}
+                      ></BaseImage>
+                    </div>
+                  </BaseLink>
+
                 </div>
-                <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
-                  <div className="text-14px paid:text-10px cursor-pointer mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
-                    CHINA MAINLAND-SIMPLIFIED CHINESE
-                  </div>
-                  <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
-                    <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      alt={""}
-                      objectFit="contain"
-                      quality={100}
-                    ></BaseImage>
-                  </div>
+                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
+                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
+                    <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                      Korea - Korean
+                    </div>
+                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                      <BaseImage
+                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          alt={""}
+                          objectFit="contain"
+                          quality={100}
+                      ></BaseImage>
+                    </div>
+                  </BaseLink>
+
                 </div>
-                <div className="flex justify-between items-center mb-75px paid:mb-54px mobile:mb-60px">
-                  <div className="text-14px paid:text-10px cursor-pointer mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
-                    CHINA MAINLAND-SIMPLIFIED CHINESE
-                  </div>
-                  <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive cursor-pointer">
-                    <BaseImage
-                      mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
-                      alt={""}
-                      objectFit="contain"
-                      quality={100}
-                    ></BaseImage>
-                  </div>
+                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
+                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
+                    <div className="uppercase text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                      Singapore - English
+                    </div>
+                    <div className="w-17px h-15px  paid:w-12px  paid:h-13px mobile:w-15px mobile:h-17px reactive ">
+                      <BaseImage
+                          mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}
+                          alt={""}
+                          objectFit="contain"
+                          quality={100}
+                      ></BaseImage>
+                    </div>
+                  </BaseLink>
+
                 </div>
               </div>
-              <div className="font-medium font-GalanoGrotesque text-14px paid:text-10px mobile:text-15px mt-68px paid:mt-48px mobile:mt-53px">
+              <div className="uppercase font-medium font-GalanoGrotesque text-14px paid:text-10px mobile:text-15px mt-68px paid:mt-48px mobile:mt-53px">
                 UNITED LINGDOM - ENGLISH
               </div>
             </div>

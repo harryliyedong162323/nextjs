@@ -6,6 +6,7 @@ import {ISlideConfig, PageSlides, SlideParallaxType} from 'react-page-slides';
 import {getHash} from "@/utils/common";
 
 import Footer from '@/components/layout/footer';
+import RangeNav from '@/components/layout/rangeNav';
 
 import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
 import InteractiveVideo from "@/components/page/interactiveVideoComponent";
@@ -38,8 +39,8 @@ import DigitalExperience from "@/components/page/digitalExperienceComponent";
 import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
 
-function getComponent(data: any, k:number, scrollToPage: Function) {
-    const props = { data : data, scrollToPage }
+function getComponent(data: any, k:number, scrollToPage: Function, changeNavStatus: Function) {
+    const props = { data : data, scrollToPage, changeNavStatus }
 
     switch(data.name) {
         /** public components **/
@@ -89,7 +90,7 @@ function getComponent(data: any, k:number, scrollToPage: Function) {
 
 function FullPage(props: any) {
 
-    // console.log(props)
+    console.log(props)
     const [isBrowser, setIsBrowser] = useState(false);
     const [slideFlag,setSliderFlag] = useState(true);
     const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
@@ -97,6 +98,9 @@ function FullPage(props: any) {
     const [anchor, setAnchor] = useState<string|null>('');
     const [isCurrentPage, setIsCurrentPage] = useState(false)
     const searchParams = useSearchParams()
+    // range nav
+    const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav)
+    const [isShowRangeNav, setIsShowRangeNav] = useState(true)
 
     useEffect(() => {
         setTimeout(()=>{
@@ -126,9 +130,9 @@ function FullPage(props: any) {
         setCurrentSlideIndex(page)
     }
 
-
-
-
+    const changeNavStatus = (status: boolean) => {
+        setIsShowRangeNav(status)
+    }
 
     const analyzeURL = (params:string | null):void=>{
         if(params){
@@ -156,7 +160,7 @@ function FullPage(props: any) {
             return(
 
                 {
-                    content: getComponent(data, k, scrollToPage),
+                    content: getComponent(data, k, scrollToPage, changeNavStatus),
                     style: {}
                 }
 
@@ -276,10 +280,9 @@ function FullPage(props: any) {
                     onChange={(e)=>{handleSlideChange(e)}}
                 /> : null
             }
-
-
-
-
+            {
+                hasRangeNav && <RangeNav currentSlideIndex={currentSlideIndex} scrollToPage={scrollToPage} isShowRangeNav={isShowRangeNav} onChangeStatus={changeNavStatus}></RangeNav>
+            }
         </div>
     );
 }

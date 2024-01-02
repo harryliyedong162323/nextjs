@@ -144,28 +144,6 @@ function BottleConceptComponent(props: any) {
         )}
       </div>
       <div className="w-full absolute bottom-0 z-10 mobile:h-110px mobile:bg-gradient-to-t mobile:from-[rgba(0,0,0)] mobile:to-[rgba(0,0,0,0.1)]"></div>
-      <div className="w-full absolute bottom-20px z-20 font-Grotesque-Regular text-[#969797] uppercase text-20px paid:text-14px mobile:text-10px">
-        <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center">
-          <span className="inline-block cursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(0)}}>
-            products family
-          </span>
-          <span className="inline-block cursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(1)}}>
-            Tales From The Wild
-          </span>
-          <span
-            className="inline-block cursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(2)}}
-          >
-            Serving Suggestion
-          </span>
-          <span className="relative inline-block cursor-pointer text-[#696969] mobile:w-64px mobile:text-white" onClick={() => {props.scrollToPage(3)}}>
-            Bottle Concept
-            <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px top-26px -ml-95px paid:w-154px paid:h-6px paid:top-24px paid:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
-          </span>
-          <span className="inline-blockcursor-pointer mobile:w-64px" onClick={() => {props.scrollToPage(4)}}>
-            Flavour Finder
-          </span>
-        </div>
-      </div>
     </div>
   );
 }

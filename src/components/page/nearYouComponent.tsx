@@ -363,16 +363,16 @@ function NearYouComponent(props: any) {
             </div>
 
 
-            <div className="relative overflow-hidden ml-[10%] h-630px pt-80px paid:pt-57px paid:ml-[7%] paid:h-450px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto" ref={emblaRef}>
+            <div className="relative  overflow-hidden ml-[10%] h-630px pt-80px paid:pt-57px paid:ml-[7%] paid:h-450px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto" ref={emblaRef}>
                 <div className="flex text-dark-grey items-end pb-40px paid:pb-28px">
 
                     {
                         campaignData.map((item:any,index:number)=>{
 
                             return (
-                                <div  key={item.id} className={` ml-25px h-auto paid:ml-17px `}>
+                                <div  key={item.id} className={` ml-25px h-auto paid:ml-17px relative`}>
 
-                                  {/*<div className={`transition-all ease-in-out origin-left duration-1000 ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>*/}
+                                  {/*<div className={`float-left`}>*/}
                                       <div className={`transition-all ease-in-out origin-left duration-1000 relative ${item.active == true ? 'w-615px paid:w-439px mobile:w-192px' : 'w-406px paid:290px mobile:w-192px'}`}>
                                           <div className={`relative transition-all ease-in-out  origin-left  duration-500 mb-40px paid:mb-28px ${item.active == true ? 'h-455px paid:h-325px mobile:h-166px' : 'h-406px paid:h-290px mobile:h-166px'}`}>
                                               {/*<BaseImage*/}
@@ -392,7 +392,7 @@ function NearYouComponent(props: any) {
                                           </div>
 
 
-                                          <div className="select-none font-Grotesque-Medium font-medium text-18px paid:text-12px mobile:text-16px">{item.title}</div>
+                                          <div className="w-500px select-none font-Grotesque-Medium font-medium text-18px paid:text-12px mobile:text-16px">{item.title}</div>
                                           <div className={`select-none font-Grotesque-Regular font-medium w-full absolute left-0 bottom-[-25px] z-20 justify-between items-center paid:bottom-[-17px]  ${item.active == true ? 'flex mobile:hidden' : 'hidden'}`}>
                                               <span className="w-[70%] truncate paid:w-[50%] ">{item.des}</span>
                                               <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px paid:w-21px paid:h-21px"></span>

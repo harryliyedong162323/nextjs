@@ -118,23 +118,23 @@ function KVAnimationComponent(props: any) {
             </BaseVideo>
         </div>
 
-          <div className="select-none absolute uppercase top-1/2 translate-y-[-50%] w-full text-center text-white leading-[75px] font-Grotesque-Medium font-bold text-56px paid:leading-[53px] paid:text-40px mobile:leading-[37px] mobile:text-28px">
+          {/*<div className="select-none absolute uppercase top-1/2 translate-y-[-50%] w-full text-center text-white leading-[75px] font-Grotesque-Medium font-bold text-56px paid:leading-[53px] paid:text-40px mobile:leading-[37px] mobile:text-28px">*/}
 
-             <div className={`text-group-1 hidden`}>
-                 <div className={`text-1 transition-opacity delay-200 duration-500 ease-in opacity-0`}>discover a wilderness</div>
-                 <div className={`text-2 transition-opacity delay-500 duration-500 ease-in opacity-0`}>in every drop</div>
-             </div>
+          {/*   <div className={`text-group-1 hidden`}>*/}
+          {/*       <div className={`text-1 transition-opacity delay-200 duration-500 ease-in opacity-0`}>discover a wilderness</div>*/}
+          {/*       <div className={`text-2 transition-opacity delay-500 duration-500 ease-in opacity-0`}>in every drop</div>*/}
+          {/*   </div>*/}
 
-              <div className={`text-group-2 text-90px hidden paid:text-64px mobile:text-45px`}>
-                  <div className={`text-3 transition-opacity delay-200 duration-300 ease-in opacity-0`}>ancient moorland</div>
-              </div>
+          {/*    <div className={`text-group-2 text-90px hidden paid:text-64px mobile:text-45px`}>*/}
+          {/*        <div className={`text-3 transition-opacity delay-200 duration-300 ease-in opacity-0`}>ancient moorland</div>*/}
+          {/*    </div>*/}
 
-              <div className={`text-group-3 hidden`}>
-                  <div className={`text-4 transition-opacity delay-200 duration-500 ease-in opacity-0`}>explore the boundless flavours</div>
-                  <div className={`text-5 transition-opacity delay-500 duration-500 ease-in opacity-0`}>of where sherry meets malt.</div>
-              </div>
+          {/*    <div className={`text-group-3 hidden`}>*/}
+          {/*        <div className={`text-4 transition-opacity delay-200 duration-500 ease-in opacity-0`}>explore the boundless flavours</div>*/}
+          {/*        <div className={`text-5 transition-opacity delay-500 duration-500 ease-in opacity-0`}>of where sherry meets malt.</div>*/}
+          {/*    </div>*/}
 
-          </div>
+          {/*</div>*/}
 
 
         <div className={`bg-border absolute left-0 top-0 w-screen h-screen z-20 scale-[2.5] transition-transform duration-[1500ms] delay-[500ms] ease-in`}>

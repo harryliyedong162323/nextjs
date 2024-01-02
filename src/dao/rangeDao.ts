@@ -13,6 +13,7 @@ class RangeDao {
       {
         type: "fullPage",
         name: "fullPage",
+        rangeNav: true,
         entry: {
           children:[
             {
