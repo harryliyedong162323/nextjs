@@ -560,7 +560,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
               </div>
               <div className="uppercase font-medium font-Grotesque-Medium text-14px paid:text-10px mobile:text-15px mt-68px paid:mt-48px mobile:mt-53px">
-                UNITED LINGDOM - ENGLISH
+                United Kingdom - English
               </div>
             </div>
           </div>
