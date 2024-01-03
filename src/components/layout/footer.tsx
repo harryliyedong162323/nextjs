@@ -335,100 +335,107 @@ function Footer(props: any) {
         </div>
       </div>
       {language && (
-        <div className="w-400px h-full bg-[#FFFFFF] z-30 absolute top-0 right-0 pl-33px pr-33px paid:pl-24px paid:pr-24px paid:w-285px mobile:w-full mobile:pl-20px mobile:pr-20px ">
-          <div className="flex items-center  mt-27px paid:mt-19px mobile:mt-44px mobile:reactive ">
-            <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
-              <BaseImage
-                mImg={require("../../../public/assets/logo.png")}
-                pImg={require("../../../public/assets/logo.png")}
-                alt={""}
-                objectFit="contain"
-                quality={100}
-              ></BaseImage>
-            </div>
-            <div
-              className="w-20px h-19px absolute right-33px paid:right-24px   paid:w-14px  paid:h-13px mobile:right-20px mobile:w-20px mobile:h-19px reactive cursor-pointer"
-              onClick={hanleCloseLanguage}
-            >
-              <BaseImage
-                mImg={require("../../../public/assets/KVAnimation/close.png")}
-                pImg={require("../../../public/assets/KVAnimation/close.png")}
-                alt={""}
-                objectFit="contain"
-                quality={100}
-              ></BaseImage>
+
+          <div className="absolute w-full h-screen select-none top-0 right-0 z-30">
+            <div className="flex w-full justify-between h-screen">
+              <div className="flex  flex-1"   onClick={hanleCloseLanguage}></div>
+              <div className="w-400px h-full bg-[#FFFFFF]  pl-33px pr-33px paid:pl-24px paid:pr-24px paid:w-285px mobile:w-full mobile:pl-20px mobile:pr-20px ">
+                <div className="flex items-center  mt-27px paid:mt-19px mobile:mt-44px mobile:reactive ">
+                  <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
+                    <BaseImage
+                        mImg={require("../../../public/assets/logo.png")}
+                        pImg={require("../../../public/assets/logo.png")}
+                        alt={""}
+                        objectFit="contain"
+                        quality={100}
+                    ></BaseImage>
+                  </div>
+                  <div
+                      className="w-20px h-19px absolute right-33px paid:right-24px   paid:w-14px  paid:h-13px mobile:right-20px mobile:w-20px mobile:h-19px reactive cursor-pointer"
+                      onClick={hanleCloseLanguage}
+                  >
+                    <BaseImage
+                        mImg={require("../../../public/assets/KVAnimation/close.png")}
+                        pImg={require("../../../public/assets/KVAnimation/close.png")}
+                        alt={""}
+                        objectFit="contain"
+                        quality={100}
+                    ></BaseImage>
+                  </div>
+                </div>
+                <div className="flex flex-col mt-67px paid:mt-48px mobile:mt-73px">
+                  <div className="mb-75px paid:mb-54px mobile:mb-60px">
+                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
+                      <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
+                        CHINA MAINLAND-SIMPLIFIED CHINESE
+                      </div>
+                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
+                        {/*<BaseImage*/}
+                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  alt={""}*/}
+                        {/*  objectFit="contain"*/}
+                        {/*  quality={100}*/}
+                        {/*></BaseImage>*/}
+                      </div>
+                    </BaseLink>
+                  </div>
+                  <div className="mb-75px paid:mb-54px mobile:mb-60px">
+                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
+                      <div className="uppercase text-13px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                        Taiwan region - traditional Chinese
+                      </div>
+                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
+                        {/*<BaseImage*/}
+                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  alt={""}*/}
+                        {/*  objectFit="contain"*/}
+                        {/*  quality={100}*/}
+                        {/*></BaseImage>*/}
+                      </div>
+                    </BaseLink>
+                  </div>
+                  <div className="mb-75px paid:mb-54px mobile:mb-60px">
+                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
+                      <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                        Korea - Korean
+                      </div>
+                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
+                        {/*<BaseImage*/}
+                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  alt={""}*/}
+                        {/*  objectFit="contain"*/}
+                        {/*  quality={100}*/}
+                        {/*></BaseImage>*/}
+                      </div>
+                    </BaseLink>
+                  </div>
+                  <div className="mb-75px paid:mb-54px mobile:mb-60px">
+                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
+                      <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                        Singapore - English
+                      </div>
+                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
+                        {/*<BaseImage*/}
+                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                        {/*  alt={""}*/}
+                        {/*  objectFit="contain"*/}
+                        {/*  quality={100}*/}
+                        {/*></BaseImage>*/}
+                      </div>
+                    </BaseLink>
+                  </div>
+                </div>
+                <div className="uppercase text-13px paid:text-9px text-black mobile:text-15px font-semibold">
+                  United Kingdom - English
+                </div>
+              </div>
+
             </div>
           </div>
-          <div className="flex flex-col mt-67px paid:mt-48px mobile:mt-73px">
-            <div className="mb-75px paid:mb-54px mobile:mb-60px">
-              <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
-                <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-                  CHINA MAINLAND-SIMPLIFIED CHINESE
-                </div>
-                <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
-                  {/*<BaseImage*/}
-                  {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  alt={""}*/}
-                  {/*  objectFit="contain"*/}
-                  {/*  quality={100}*/}
-                  {/*></BaseImage>*/}
-                </div>
-              </BaseLink>
-            </div>
-            <div className="mb-75px paid:mb-54px mobile:mb-60px">
-              <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
-                <div className="uppercase text-13px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                  Taiwan region - traditional Chinese
-                </div>
-                <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
-                  {/*<BaseImage*/}
-                  {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  alt={""}*/}
-                  {/*  objectFit="contain"*/}
-                  {/*  quality={100}*/}
-                  {/*></BaseImage>*/}
-                </div>
-              </BaseLink>
-            </div>
-            <div className="mb-75px paid:mb-54px mobile:mb-60px">
-              <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
-                <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                  Korea - Korean
-                </div>
-                <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
-                  {/*<BaseImage*/}
-                  {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  alt={""}*/}
-                  {/*  objectFit="contain"*/}
-                  {/*  quality={100}*/}
-                  {/*></BaseImage>*/}
-                </div>
-              </BaseLink>
-            </div>
-            <div className="mb-75px paid:mb-54px mobile:mb-60px">
-              <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
-                <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                  Singapore - English
-                </div>
-                <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
-                  {/*<BaseImage*/}
-                  {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                  {/*  alt={""}*/}
-                  {/*  objectFit="contain"*/}
-                  {/*  quality={100}*/}
-                  {/*></BaseImage>*/}
-                </div>
-              </BaseLink>
-            </div>
-          </div>
-          <div className="text-13px paid:text-9px text-black mobile:text-15px font-semibold">
-            United Kingdom - English
-          </div>
-        </div>
       )}
     </footer>
   );

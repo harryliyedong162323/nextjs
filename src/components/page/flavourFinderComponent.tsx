@@ -1250,7 +1250,7 @@ function FlavourFinderComponent(props: any) {
                         I’d like to have a personal copy of the results!
                       </div>
                     </div>
-                    <div className="inline-flex items-center pb-17px paid:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
+                    <div className="flex items-center pb-17px paid:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
                       <div className="inline-flex items-center px-85px paid:px-70px mobile:pt-10px mobile:pb-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px paid:w-15px paid:h-15px mobile:w-12px mobile:h-11px"></i>
                         <input
@@ -1269,7 +1269,7 @@ function FlavourFinderComponent(props: any) {
                         />
                       </div>
                       <div className="w-1px bg-black h-57px paid:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex justify-center items-center px-15px w-250px mobile:w-330px mobile:h-60px">
+                      <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px">
                         <div
                           id="flavourFinderSubmit"
                           className="inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase "

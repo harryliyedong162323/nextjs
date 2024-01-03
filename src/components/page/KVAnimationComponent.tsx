@@ -149,7 +149,7 @@ function KVAnimationComponent(props: any) {
 
         </div>
 
-          <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden`}>
+          <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden paid:w-129px paid:h-281px paid:translate-y-[-21%]`}>
               <BaseVideo
                   src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.webm"
                   className="h-full object-cover"

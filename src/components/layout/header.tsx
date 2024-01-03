@@ -47,6 +47,7 @@ function Header(props: any) {
   const headStyle = props.headStyle || "white";
 
   const handleMenuChange = (menu: boolean) => {
+    console.log(23232323)
     setMenu(menu);
   };
 
@@ -163,7 +164,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
   };
   const handlePop = () => {
     setLanguage(false);
-    setMenu(false);
+    handleClose()
+    // setMenu(false);
   };
 
   const [panels, setPanels] = useState([
@@ -490,7 +492,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
               <div className="flex flex-col mt-67px paid:mt-48px mobile:mt-73px">
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
                       CHINA MAINLAND-SIMPLIFIED CHINESE
                     </div>
                     <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-9px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
@@ -507,7 +509,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
                       Taiwan region - traditional Chinese
                     </div>
                     <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-9px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
@@ -524,7 +526,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
                       Korea - Korean
                     </div>
                     <div className="w-13px h-25px  paid:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:h-17px mobile:w-15px mobile:h-17px reactive">
@@ -541,7 +543,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
                 <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-GalanoGrotesque w-4/5 truncate">
+                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
                       Singapore - English
                     </div>
                     <div className="w-13px h-25px paid:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:h-17px mobile:w-15px mobile:h-17px reactive">
@@ -557,7 +559,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
                 </div>
               </div>
-              <div className="uppercase font-medium font-GalanoGrotesque text-14px paid:text-10px mobile:text-15px mt-68px paid:mt-48px mobile:mt-53px">
+              <div className="uppercase font-medium font-Grotesque-Medium text-14px paid:text-10px mobile:text-15px mt-68px paid:mt-48px mobile:mt-53px">
                 UNITED LINGDOM - ENGLISH
               </div>
             </div>
