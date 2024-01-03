@@ -212,7 +212,7 @@ function Footer(props: any) {
             >
               <li className="flex justify-between pb-35px mobile:pb-40px">
                 <span className="mobile:text-17px">
-                  <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Regular dark-grey">
+                  <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Medium dark-grey">
                     {panel.title[0].name}
                   </BaseLink>
                 </span>
