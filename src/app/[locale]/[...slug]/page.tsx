@@ -108,6 +108,7 @@ export default async function Page({
       {
         componentsData[0].type != 'fullPage' ?  <Footer></Footer> : null
       }
+
     </div>
 
 

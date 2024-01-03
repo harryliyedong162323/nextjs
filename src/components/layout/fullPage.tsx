@@ -224,7 +224,7 @@ function FullPage(props: any) {
 
         if(e == slides.length-1){
             // setSliderFlag(false);
-            nav&&(nav.style.display = 'none');
+            // nav&&(nav.style.display = 'none');
 
         }else{
             // setSliderFlag(true);

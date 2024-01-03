@@ -6,8 +6,19 @@ import BaseLink from "@/components/base/link";
 import {getLastPathName} from "@/utils/common";
 function Header(props: any) {
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
+  const [mouseFlag,setMouseFlag] = useState(false);
+
+  function wheelHandle(e: Event) {
+
+    e.preventDefault();
+    e.stopPropagation();
+  }
 
 
+  function keyDownHandle(e: Event){
+    e.preventDefault();
+    e.stopPropagation();
+  }
   // useEffect(() => {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
   // }, [props]);
@@ -15,27 +26,26 @@ function Header(props: any) {
 
   useEffect(() => {
 
-
-    function wheelHandle(e: Event) {
-
-      e.preventDefault();
-      e.stopPropagation();
-
-    }
-
-    function keyDownHandle(e: Event){
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
     if (menu) {
+      const lock = document.getElementsByClassName('lock');
       document.addEventListener("wheel", wheelHandle, { passive: false });
       document.addEventListener("keydown", keyDownHandle, { passive: false });
+
+      setTimeout(()=>{
+        for(let i=0;i<lock.length;i++){
+          lock[i].addEventListener("wheel", function(e){
+            e.stopPropagation();
+          });
+        }
+      },0)
     }
     return () => {
       const option: any = { passive: false };
+
       document.removeEventListener("wheel", wheelHandle, option);
       document.removeEventListener("keydown", keyDownHandle, option);
+
+
     };
   }, [menu]);
 
@@ -47,9 +57,14 @@ function Header(props: any) {
   const headStyle = props.headStyle || "white";
 
   const handleMenuChange = (menu: boolean) => {
-    console.log(23232323)
+
     setMenu(menu);
   };
+
+  const handleMouseChange = (flag:boolean)=>{
+    console.log(flag)
+    setMouseFlag(flag);
+  }
 
   const handleMenu = () => {
     setMenu(true);
@@ -70,7 +85,7 @@ function Header(props: any) {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
       </nav>
 
       <nav
@@ -86,7 +101,7 @@ function Header(props: any) {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
       </nav>
 
       <nav
@@ -110,7 +125,7 @@ function Header(props: any) {
             }}
           ></div>
 
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
         </div>
       </nav>
 
@@ -127,16 +142,15 @@ function Header(props: any) {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
       </nav>
     </div>
   );
 }
 
-function Panel({ menuFlag, onMenuChange }: any) {
+function Panel({ menuFlag, onMenuChange, onMouseChange }: any) {
   const [menu, setMenu] = useState(false);
   const lastPathName = getLastPathName(usePathname());
-
 
   useEffect(() => {
     setMenu(menuFlag);
@@ -312,6 +326,14 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
   };
 
+
+  const handleMouseEnter = (e)=>{
+    onMouseChange(true)
+  }
+  const handleMouseLeave = (e)=>{
+    onMouseChange(false)
+  }
+
   return (
     <div>
       {menu && (
@@ -320,7 +342,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
             <div className="flex  flex-1"  onClick={(e) => {
               handleClose();
             }}></div>
-            <div className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
+            {/*onMouseEnter={(e)=>{handleMouseEnter(e)}}*/}
+            {/*onMouseLeave={(e)=>{handleMouseLeave(e)}}*/}
+            <div
+
+
+                className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
               <div className="h-41px paid:h-29px   mobile:h-40px flex justify-between items-end ">
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px">
                   <BaseImage
@@ -344,7 +371,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
               </div>
-              <div className="mt-64px paid:mt-53px mobile:mt-80px flex flex-col">
+              <div
+
+
+                  className="lock mt-64px paid:mt-53px mobile:mt-80px flex flex-col h-770px paid:h-550px overflow-y-auto">
                 <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
                   <div className="">
                     <BaseLink link={`/home`} className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium">HOME</BaseLink>
@@ -394,8 +424,9 @@ function Panel({ menuFlag, onMenuChange }: any) {
                             className="cursor-pointer flex justify-between items-center mb-30px paid:mb-23px mobile:mb-20px"
                             key={item.id}
                           >
-                            <div className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Medium w-4/5 truncate">
+                            <div className="w-4/5 truncate">
                               <BaseLink
+                                  className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular "
                                 link={item.link}
                                 onClick={(e) => {
                                   handleClose();

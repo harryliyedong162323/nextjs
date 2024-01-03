@@ -412,7 +412,7 @@ function NearYouComponent(props: any) {
                 </div>
             </div>
 
-            <div className="absolute z-10 top-0 right-[0%] h-full w-200px bg-gradient-to-l from-[#ebeded6e] to-[transparent]"></div>
+            <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent]"></div>
             <div className="flex justify-end pr-10 relative z-30">
                 <div>
                     {/*${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"}*/}

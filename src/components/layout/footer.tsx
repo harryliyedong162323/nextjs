@@ -237,8 +237,8 @@ function Footer(props: any) {
               key={panel.id}
             >
               <li className="flex justify-between pb-35px mobile:pb-40px">
-                <span className=" w-11/12 text-20px font-medium font-Grotesque-Regular dark-grey mobile:text-17px">
-                  <BaseLink link={panel.title[0].link}>
+                <span className=" w-11/12  mobile:text-17px">
+                  <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Regular dark-grey">
                     {panel.title[0].name}
                   </BaseLink>
                 </span>

@@ -258,10 +258,10 @@ function IntroduceCampaignComponent(props: any) {
         <section id="GlobalNews" data-anchor={1}  className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none">
             <input type="hidden" value={headStyle}/>
 
-            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
+            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-90px paid:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
 
 
-            <div className="absolute z-10 top-0 left-[0%] h-full w-200px bg-gradient-to-l from-[transparent] to-[#ebeded6e]"></div>
+            <div className="absolute z-10 top-0 left-[0%] h-full w-200px bg-gradient-to-l from-[transparent] to-[#f6f6f6f6]"></div>
             {/*<div className="relative overflow-hidden pt-155px h-685px paid:h-489px  paid:pt-120px mobile:pt-113px " ref={emblaRef}>*/}
 
             {/*    <div className="flex text-dark-grey">*/}
@@ -319,14 +319,14 @@ function IntroduceCampaignComponent(props: any) {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-135px mobile:pt-113px ">
+            <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-110px mobile:pt-113px ">
                 <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
-
+                {/*modules={[Autoplay]}*/}
                 <Swiper
                     style={{
                         overflow:"visible"
                     }}
-                    modules={[Autoplay]}
+
 
                     slidesPerView={slidesPerView}
                     loop={true}
@@ -343,7 +343,7 @@ function IntroduceCampaignComponent(props: any) {
                     onBeforeInit={(e)=>{
                         setTimeout(()=>{
                             const slides = e.slides;
-                            slides[e.activeIndex].style.transform = 'translateY(-15%)'
+                            slides[e.activeIndex+1].style.transform = 'translateY(15%)'
                             slides[e.activeIndex-1].style.transform = 'translateY(25%)'
                         },250)
 
@@ -358,7 +358,7 @@ function IntroduceCampaignComponent(props: any) {
 
                         const slides = e.slides;
                         if(centeredSlides){
-                            slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                            slides[e.activeIndex+1].style.transform = 'translateY(15%)'
                             slides[e.activeIndex-1].style.transform = 'translateY(25%)'
                         }
 
@@ -366,9 +366,9 @@ function IntroduceCampaignComponent(props: any) {
                         setTimeout(()=>{
                             if(centeredSlides){
                                 // slides[e.activeIndex-2]?.classList.add('slide-15');
-                                // slides[e.activeIndex-1]?.classList.add('slide-25');
+                                slides[e.activeIndex-1]?.classList.add('slide-25');
                                 slides[e.activeIndex]?.classList.add('slide-15');
-                                // slides[e.activeIndex+1]?.classList.add('slide-0');
+                                // slides[e.activeIndex+1]?.classList.add('slide-15');
                             }else{
                                 slides[e.activeIndex-2]?.classList.add('slide-25-m');
                                 slides[e.activeIndex-1]?.classList.add('slide-0');
@@ -377,11 +377,11 @@ function IntroduceCampaignComponent(props: any) {
                             }
                         },100);
 
-                        setTimeout(()=>{
-                            if(centeredSlides){
-                                slides[e.activeIndex+1]?.classList.add('slide-0');
-                            }
-                        },250);
+                        // setTimeout(()=>{
+                        //     if(centeredSlides){
+                        //         slides[e.activeIndex+1]?.classList.add('slide-15');
+                        //     }
+                        // },250);
 
                         // if(centeredSlides){
                         //
@@ -407,7 +407,7 @@ function IntroduceCampaignComponent(props: any) {
 
                         const slides = e.slides;
                         if(centeredSlides){
-                            slides[e.activeIndex+1].style.transform = 'translateY(-15%)'
+                            slides[e.activeIndex+1].style.transform = 'translateY(15%)'
                             slides[e.activeIndex-1].style.transform = 'translateY(25%)'
                             // slides[e.activeIndex+2].style.transform = 'translateY(-50%)'
                         }
@@ -416,7 +416,7 @@ function IntroduceCampaignComponent(props: any) {
                             if(centeredSlides){
                                 slides[e.activeIndex-1]?.classList.add('slide-25');
                                 slides[e.activeIndex]?.classList.add('slide-15');
-                                // slides[e.activeIndex+1]?.classList.add('slide-0');
+                                // slides[e.activeIndex+1]?.classList.add('slide-15');
                             }else{
                                 // slides[e.activeIndex-1]?.classList.add('slide-0');
                                 slides[e.activeIndex]?.classList.add('slide-25-m');
@@ -427,11 +427,11 @@ function IntroduceCampaignComponent(props: any) {
                         },100);
 
 
-                        setTimeout(()=>{
-                            if(centeredSlides){
-                                slides[e.activeIndex+1]?.classList.add('slide-0');
-                            }
-                        },250);
+                        // setTimeout(()=>{
+                        //     if(centeredSlides){
+                        //         slides[e.activeIndex+1]?.classList.add('slide-15');
+                        //     }
+                        // },250);
 
                         // if(centeredSlides){
                         //
@@ -478,7 +478,7 @@ function IntroduceCampaignComponent(props: any) {
                                             <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px paid:text-13px paid:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
                                             <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px paid:w-200px mobile:text-center mobile:w-full">{item.des}</div>
                                             <BaseLink link="/activityDetail">
-                                                <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px mt-17px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+                                                <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px paid:w-21px paid:h-21px paid:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
                                             </BaseLink>
                                         </div>
 
