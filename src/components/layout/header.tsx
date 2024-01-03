@@ -85,7 +85,7 @@ function Header(props: any) {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
       </nav>
 
       <nav
@@ -101,7 +101,7 @@ function Header(props: any) {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
       </nav>
 
       <nav
@@ -125,7 +125,7 @@ function Header(props: any) {
             }}
           ></div>
 
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
         </div>
       </nav>
 
@@ -142,13 +142,13 @@ function Header(props: any) {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} onMouseChange={handleMouseChange}></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
       </nav>
     </div>
   );
 }
 
-function Panel({ menuFlag, onMenuChange, onMouseChange }: any) {
+function Panel({ menuFlag, onMenuChange }: any) {
   const [menu, setMenu] = useState(false);
   const lastPathName = getLastPathName(usePathname());
 
@@ -327,12 +327,7 @@ function Panel({ menuFlag, onMenuChange, onMouseChange }: any) {
   };
 
 
-  const handleMouseEnter = (e)=>{
-    onMouseChange(true)
-  }
-  const handleMouseLeave = (e)=>{
-    onMouseChange(false)
-  }
+
 
   return (
     <div>
@@ -342,8 +337,7 @@ function Panel({ menuFlag, onMenuChange, onMouseChange }: any) {
             <div className="flex  flex-1"  onClick={(e) => {
               handleClose();
             }}></div>
-            {/*onMouseEnter={(e)=>{handleMouseEnter(e)}}*/}
-            {/*onMouseLeave={(e)=>{handleMouseLeave(e)}}*/}
+
             <div
 
 
