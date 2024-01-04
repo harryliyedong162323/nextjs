@@ -21,7 +21,7 @@ const componentData: ComponentData = {
   },
 };
 
-const Custom404 = () => {
+const Custom500 = () => {
   const [data, setData] = useState<ComponentData>(componentData);
   return (
     <section className="relative overflow-hidden select-none">
@@ -39,7 +39,7 @@ const Custom404 = () => {
         ></BaseImage>
       </div>
       <div className="absolute w-full top-1/2 -mt-170px text-white font-AlbertusNova-Regular text-44px mobile:text-20px text-center">
-        <div className="text-36px mobile:text-18px mb-20px">404</div>
+        <div className="text-36px mobile:text-18px mb-20px">500</div>
         <div>OOPS! </div>
         <div className="mb-40px">SOMETHING WENT WRONG</div>
         <BaseLink link="/home" className="uppercase bg-[url('/assets/back_home_btn.png')] inline-block bg-cover w-295px h-72px leading-[72px] text-center text-16px mobile:w-148px mobile:h-36px mobile:leading-[36px] mobile:text-12px">back home</BaseLink>
@@ -48,4 +48,4 @@ const Custom404 = () => {
   );
 };
 
-export default Custom404;
+export default Custom500;

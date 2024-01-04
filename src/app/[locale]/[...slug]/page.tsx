@@ -7,6 +7,7 @@ import HowToBuyDao from "@/dao/howToBuyDao";
 import HowToBuyDetailDao from "@/dao/howToBuyDetailDao";
 import LocalMarketActivityDao from "@/dao/localMarketActivityDao";
 import PrivacyPolicyDao from '@/dao/privacyPolicyDao'
+import ErrorDao from '@/dao/errorDao'
 import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 
@@ -62,6 +63,9 @@ async function getPageData(params: any) {
       break;
     case "privacyPolicy":
       result = await PrivacyPolicyDao.fetch();
+      break;
+    case "error":
+      result = await ErrorDao.fetch();
       break;
     default:
       result = await HomeDao.fetch();
