@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "@/components/base/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import Swiper from "react-id-swiper";
 import { EffectCreative } from 'swiper/modules';
 import "swiper/css";
 

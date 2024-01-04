@@ -268,17 +268,23 @@ function FullPage(props: any) {
             {/* />*/}
             {/*currentSlideIndex={2}*/}
             {
-                isBrowser == true ? <PageSlides
-                    enableAutoScroll={slideFlag}
-                    transitionSpeed={1500}
-                    currentSlideIndex={currentSlideIndex}
-                    slides={slides}
-                    parallax={{
-                        offset: 0.60,    //0.6
-                        type: SlideParallaxType.reveal
-                    }}
-                    onChange={(e)=>{handleSlideChange(e)}}
-                /> : null
+                isBrowser == true ? 
+                <div
+                    onWheel={() => {
+                        console.log('wheel')
+                    }}>
+                    <PageSlides
+                        enableAutoScroll={slideFlag}
+                        transitionSpeed={1500}
+                        currentSlideIndex={currentSlideIndex}
+                        slides={slides}
+                        parallax={{
+                            offset: 0.60,    //0.6
+                            type: SlideParallaxType.reveal
+                        }}
+                        onChange={(e)=>{handleSlideChange(e)}}
+                    /> 
+                </div> : null
             }
             {
                 hasRangeNav && <RangeNav currentSlideIndex={currentSlideIndex} scrollToPage={scrollToPage} isShowRangeNav={isShowRangeNav} onChangeStatus={changeNavStatus}></RangeNav>

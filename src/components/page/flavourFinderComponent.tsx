@@ -16,7 +16,7 @@ import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
+import "swiper/css";
 
 declare const grecaptcha: any;
 
@@ -80,7 +80,7 @@ interface ComponentData {
           icon: {
             mImg: string;
             pImg: string;
-          }
+          };
         }>;
       };
       step2: {
@@ -130,52 +130,59 @@ interface ComponentData {
     tips: string;
     description: string;
   }>;
-  resultList: Array<result>
+  resultList: Array<result>;
 }
 
-const productList: Array<product> = [{
-  id: 1,
-  name: "Ancient Moorland",
-  img: {
-    pImg: require("../../../public/assets/product/product_AM.png"),
-    mImg: require("../../../public/assets/product/product_AM.png"),
+const productList: Array<product> = [
+  {
+    id: 1,
+    name: "Ancient Moorland",
+    img: {
+      pImg: require("../../../public/assets/product/product_AM.png"),
+      mImg: require("../../../public/assets/product/product_AM.png"),
+    },
   },
-},{
-  id: 2,
-  name: "Black Mountain",
-  img: {
-    pImg: require("../../../public/assets/product/product_BM.png"),
-    mImg: require("../../../public/assets/product/product_BM.png"),
+  {
+    id: 2,
+    name: "Black Mountain",
+    img: {
+      pImg: require("../../../public/assets/product/product_BM.png"),
+      mImg: require("../../../public/assets/product/product_BM.png"),
+    },
   },
-},  {
-  id: 3,
-  name: "Dark Moorland",
-  img: {
-    pImg: require("../../../public/assets/product/product_DM.png"),
-    mImg: require("../../../public/assets/product/product_DM.png"),
+  {
+    id: 3,
+    name: "Dark Moorland",
+    img: {
+      pImg: require("../../../public/assets/product/product_DM.png"),
+      mImg: require("../../../public/assets/product/product_DM.png"),
+    },
   },
-}, {
-  id: 4,
-  name: "Rugged Coast",
-  img: {
-    pImg: require("../../../public/assets/product/product_RC.png"),
-    mImg: require("../../../public/assets/product/product_RC.png"),
+  {
+    id: 4,
+    name: "Rugged Coast",
+    img: {
+      pImg: require("../../../public/assets/product/product_RC.png"),
+      mImg: require("../../../public/assets/product/product_RC.png"),
+    },
   },
-}, {
-  id: 5,
-  name: "Tropical Coast",
-  img: {
-    pImg: require("../../../public/assets/product/product_TC.png"),
-    mImg: require("../../../public/assets/product/product_TC.png"),
+  {
+    id: 5,
+    name: "Tropical Coast",
+    img: {
+      pImg: require("../../../public/assets/product/product_TC.png"),
+      mImg: require("../../../public/assets/product/product_TC.png"),
+    },
   },
-}, {
-  id: 6,
-  name: "Walking Forest",
-  img: {
-    pImg: require("../../../public/assets/product/product_WF.png"),
-    mImg: require("../../../public/assets/product/product_WF.png"),
+  {
+    id: 6,
+    name: "Walking Forest",
+    img: {
+      pImg: require("../../../public/assets/product/product_WF.png"),
+      mImg: require("../../../public/assets/product/product_WF.png"),
+    },
   },
-}]
+];
 
 const componentData: ComponentData = {
   id: 1,
@@ -214,7 +221,8 @@ const componentData: ComponentData = {
     q2: {
       id: 0,
       question: "Q2. NOW LISTEN VERY CAREFULLY...",
-      description: "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
+      description:
+        "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
       answers: [
         {
           id: 0,
@@ -256,7 +264,7 @@ const componentData: ComponentData = {
             icon: {
               mImg: require("../../../public/assets/range/icon_friend.png"),
               pImg: require("../../../public/assets/range/icon_friend.png"),
-            }
+            },
           },
           {
             id: 0,
@@ -265,7 +273,7 @@ const componentData: ComponentData = {
             icon: {
               mImg: require("../../../public/assets/range/icon_business_meal.png"),
               pImg: require("../../../public/assets/range/icon_business_meal.png"),
-            }
+            },
           },
           {
             id: 0,
@@ -274,7 +282,7 @@ const componentData: ComponentData = {
             icon: {
               mImg: require("../../../public/assets/range/icon_home_sweet.png"),
               pImg: require("../../../public/assets/range/icon_home_sweet.png"),
-            }
+            },
           },
           {
             id: 0,
@@ -283,25 +291,27 @@ const componentData: ComponentData = {
             icon: {
               mImg: require("../../../public/assets/range/icon_working.png"),
               pImg: require("../../../public/assets/range/icon_working.png"),
-            }
+            },
           },
           {
             id: 0,
             label: "Camping/Picnic Outdoors",
-            value: "Take in the great outdoors with a taste of untamed wilderness.",
+            value:
+              "Take in the great outdoors with a taste of untamed wilderness.",
             icon: {
               mImg: require("../../../public/assets/range/icon_camping_picnic.png"),
               pImg: require("../../../public/assets/range/icon_camping_picnic.png"),
-            }
+            },
           },
           {
             id: 0,
             label: "Special Occasions & Celebrations",
-            value: "An unrestrained flavour to make every celebration unforgettable.",
+            value:
+              "An unrestrained flavour to make every celebration unforgettable.",
             icon: {
               mImg: require("../../../public/assets/range/icon_special.png"),
               pImg: require("../../../public/assets/range/icon_special.png"),
-            }
+            },
           },
         ],
       },
@@ -384,7 +394,8 @@ const componentData: ComponentData = {
         {
           id: 0,
           label: "The Open-Minded Traditionalist",
-          value: "Just because you respect tradition, doesn’t mean you can’t have a wild side.",
+          value:
+            "Just because you respect tradition, doesn’t mean you can’t have a wild side.",
         },
       ],
     },
@@ -419,115 +430,152 @@ const componentData: ComponentData = {
       description: "Nothing beats a night cap after another fine day.",
     },
   ],
-  resultList: [{
-    key: "AAA",
-    productList: [productList[1]]
-  }, {
-    key: "AAB",
-    productList: [productList[1], productList[2]]
-  }, {
-    key: "AAC",
-    productList: [productList[1], productList[2]]
-  }, {
-    key: "AAD",
-    productList: [productList[5]]
-  }, {
-    key: "ABA",
-    productList: [productList[1]]
-  },{
-    key: "ABB",
-    productList: [productList[1]]
-  }, {
-    key: "ABC",
-    productList: [productList[1]]
-  }, {
-    key: "ABD",
-    productList: [productList[1]]
-  }, {
-    key: "ACA",
-    productList: [productList[1]]
-  },{
-    key: "ACB",
-    productList: [productList[1], productList[2]]
-  }, {
-    key: "ACC",
-    productList: [productList[1], productList[2], productList[3]]
-  }, {
-    key: "ACD",
-    productList: [productList[1], productList[2]]
-  }, {
-    key: "BAA",
-    productList: [productList[4]]
-  }, {
-    key: "BAB",
-    productList: [productList[4]]
-  }, {
-    key: "BAC",
-    productList: [productList[4]]
-  }, {
-    key: "BAD",
-    productList: [productList[4]]
-  }, {
-    key: "BBA",
-    productList: [productList[1], productList[4]]
-  },{
-    key: "BBB",
-    productList: [productList[4]]
-  }, {
-    key: "BBC",
-    productList: [productList[4]]
-  }, {
-    key: "BBD",
-    productList: [productList[4]]
-  }, {
-    key: "BCA",
-    productList: [productList[4]]
-  },{
-    key: "BCB",
-    productList: [productList[4]]
-  }, {
-    key: "BCC",
-    productList: [productList[3], productList[4]]
-  }, {
-    key: "BCD",
-    productList: [productList[4]]
-  }, {
-    key: "CAA",
-    productList: [productList[0]]
-  }, {
-    key: "CAB",
-    productList: [productList[0]]
-  }, {
-    key: "CAC",
-    productList: [productList[0]]
-  }, {
-    key: "CAD",
-    productList: [productList[0]]
-  }, {
-    key: "CBA",
-    productList: [productList[0], productList[1]]
-  },{
-    key: "CBB",
-    productList: [productList[0]]
-  }, {
-    key: "CBC",
-    productList: [productList[0]]
-  }, {
-    key: "CBD",
-    productList: [productList[0]]
-  }, {
-    key: "CCA",
-    productList: [productList[0]]
-  },{
-    key: "CCB",
-    productList: [productList[0]]
-  }, {
-    key: "CCC",
-    productList: [productList[0], productList[3]]
-  }, {
-    key: "CCD",
-    productList: [productList[0]]
-  }]
+  resultList: [
+    {
+      key: "AAA",
+      productList: [productList[1]],
+    },
+    {
+      key: "AAB",
+      productList: [productList[1], productList[2]],
+    },
+    {
+      key: "AAC",
+      productList: [productList[1], productList[2]],
+    },
+    {
+      key: "AAD",
+      productList: [productList[5]],
+    },
+    {
+      key: "ABA",
+      productList: [productList[1]],
+    },
+    {
+      key: "ABB",
+      productList: [productList[1]],
+    },
+    {
+      key: "ABC",
+      productList: [productList[1]],
+    },
+    {
+      key: "ABD",
+      productList: [productList[1]],
+    },
+    {
+      key: "ACA",
+      productList: [productList[1]],
+    },
+    {
+      key: "ACB",
+      productList: [productList[1], productList[2]],
+    },
+    {
+      key: "ACC",
+      productList: [productList[1], productList[2], productList[3]],
+    },
+    {
+      key: "ACD",
+      productList: [productList[1], productList[2]],
+    },
+    {
+      key: "BAA",
+      productList: [productList[4]],
+    },
+    {
+      key: "BAB",
+      productList: [productList[4]],
+    },
+    {
+      key: "BAC",
+      productList: [productList[4]],
+    },
+    {
+      key: "BAD",
+      productList: [productList[4]],
+    },
+    {
+      key: "BBA",
+      productList: [productList[1], productList[4]],
+    },
+    {
+      key: "BBB",
+      productList: [productList[4]],
+    },
+    {
+      key: "BBC",
+      productList: [productList[4]],
+    },
+    {
+      key: "BBD",
+      productList: [productList[4]],
+    },
+    {
+      key: "BCA",
+      productList: [productList[4]],
+    },
+    {
+      key: "BCB",
+      productList: [productList[4]],
+    },
+    {
+      key: "BCC",
+      productList: [productList[3], productList[4]],
+    },
+    {
+      key: "BCD",
+      productList: [productList[4]],
+    },
+    {
+      key: "CAA",
+      productList: [productList[0]],
+    },
+    {
+      key: "CAB",
+      productList: [productList[0]],
+    },
+    {
+      key: "CAC",
+      productList: [productList[0]],
+    },
+    {
+      key: "CAD",
+      productList: [productList[0]],
+    },
+    {
+      key: "CBA",
+      productList: [productList[0], productList[1]],
+    },
+    {
+      key: "CBB",
+      productList: [productList[0]],
+    },
+    {
+      key: "CBC",
+      productList: [productList[0]],
+    },
+    {
+      key: "CBD",
+      productList: [productList[0]],
+    },
+    {
+      key: "CCA",
+      productList: [productList[0]],
+    },
+    {
+      key: "CCB",
+      productList: [productList[0]],
+    },
+    {
+      key: "CCC",
+      productList: [productList[0], productList[3]],
+    },
+    {
+      key: "CCD",
+      productList: [productList[0]],
+    },
+  ],
 };
 
 function FlavourFinderComponent(props: any) {
@@ -550,6 +598,7 @@ function FlavourFinderComponent(props: any) {
   const [videoPlay1, setVideoPlay1] = useState<boolean>(false);
   const [videoPlay2, setVideoPlay2] = useState<boolean>(false);
   const [videoPlay3, setVideoPlay3] = useState<boolean>(false);
+  const [currentVideoPlay, setCurrentVideoPlay] = useState<number>(0);
 
   // const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -573,11 +622,23 @@ function FlavourFinderComponent(props: any) {
   // );
 
   const doRecommend = () => {
-    const key = `${data.quizs.q1.answers[quizOneSelected - 1].value}${data.quizs.q2.answers[quizTwoSelected - 1].value}${data.quizs.q3.step2.answers[quizThreeSelected2 - 1].value}`
-    const obj = data.resultList.filter(item => item.key === key)[0]
-    setRecommend(obj)
+    // todo
+    if (
+      quizOneSelected === 0 ||
+      quizTwoSelected === 0 ||
+      quizThreeSelected1 === 0 ||
+      quizThreeSelected2 === 0 ||
+      quizFourSelected === 0 ||
+      quizFiveSelected === 0
+    )
+      return false;
+    const key = `${data.quizs.q1.answers[quizOneSelected - 1].value}${
+      data.quizs.q2.answers[quizTwoSelected - 1].value
+    }${data.quizs.q3.step2.answers[quizThreeSelected2 - 1].value}`;
+    const obj = data.resultList.filter((item) => item.key === key)[0];
+    setRecommend(obj);
     setQuizIndex(5);
-  }
+  };
 
   const submit = () => {
     grecaptcha.ready(function () {
@@ -620,7 +681,11 @@ function FlavourFinderComponent(props: any) {
   }, [showQuiz, quizIndex]);
 
   return (
-    <div id="DiscoverYourWildFlavour" data-anchor={4} className="relative overflow-hidden select-none" >
+    <div
+      id="DiscoverYourWildFlavour"
+      data-anchor={4}
+      className="relative overflow-hidden select-none"
+    >
       <input type="hidden" value={headStyle} />
 
       {
@@ -658,8 +723,8 @@ function FlavourFinderComponent(props: any) {
             <div
               className="cursor-pointer absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-50px w-225px h-55px leading-[55px] -ml-112px paid:w-180px paid:-ml-90px paid:bottom-40px paid:h-44px paid:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-30px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
               onClick={() => {
-                props.changeNavStatus(false)
-                setShowQuiz(true)
+                props.changeNavStatus(false);
+                setShowQuiz(true);
               }}
             >
               Start
@@ -710,7 +775,7 @@ function FlavourFinderComponent(props: any) {
                             } `}
                             onClick={() => {
                               setQuizOneSelected(index + 1);
-                              setQuizIndex(1);
+                              // setQuizIndex(1);
                             }}
                           ></i>
                         </div>
@@ -742,28 +807,37 @@ function FlavourFinderComponent(props: any) {
                         >
                           <div className="relative mx-auto w-350px h-350px paid:w-291px paid:h-291px mobile:w-150px mobile:h-150px">
                             <ReactPlayer
-                                playing={
-                                  index === 0
-                                    ? videoPlay1
-                                    : index === 1
-                                    ? videoPlay2
-                                    : videoPlay3
-                                }
-                                loop={true}
-                                muted={false}
-                                controls={false}
-                                controlsList="nodownload"
-                                onEnded={() => {}}
-                                width="100%"
-                                height="100%"
-                                url={answer.audio}
-                              ></ReactPlayer>
+                              playing={
+                                index === 0
+                                  ? videoPlay1
+                                  : index === 1
+                                  ? videoPlay2
+                                  : videoPlay3
+                              }
+                              loop={true}
+                              muted={false}
+                              controls={false}
+                              controlsList="nodownload"
+                              onEnded={() => {}}
+                              width="100%"
+                              height="100%"
+                              url={answer.audio}
+                            ></ReactPlayer>
                           </div>
-                          <div className="flex justify-between items-center mt-10px mobile:w-90px mobile:ml-20px">
+                          <div className="flex justify-between items-center mt-5px mobile:w-90px mobile:ml-20px">
                             <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px paid:text-18px mobile:text-13px mobile:flex-col">
                               <i
-                                className="inline-block cursor-pointer  bg-[url('/assets/range/icon_play.png')] bg-cover mr-5px w-34px h-34px paid:w-27px paid:h-27px mobile:w-20px mobile:h-20px"
+                                className={`inline-block cursor-pointer ${
+                                  currentVideoPlay == index + 1
+                                    ? 'bg-[url("/assets/range/icon_playing.gif")]'
+                                    : 'bg-[url("/assets/range/icon_play.png")]'
+                                } bg-cover mr-5px w-40px h-40px paid:w-34px paid:h-34px mobile:w-26px mobile:h-26px`}
                                 onClick={() => {
+                                  if (currentVideoPlay === index + 1) {
+                                    setCurrentVideoPlay(0);
+                                  } else {
+                                    setCurrentVideoPlay(index + 1);
+                                  }
                                   if (index === 0) {
                                     setVideoPlay1(!videoPlay1);
                                     setVideoPlay2(false);
@@ -789,7 +863,7 @@ function FlavourFinderComponent(props: any) {
                               } `}
                               onClick={() => {
                                 setQuizTwoSelected(index + 1);
-                                setQuizIndex(2);
+                                // setQuizIndex(2);
                               }}
                             ></i>
                           </div>
@@ -838,9 +912,9 @@ function FlavourFinderComponent(props: any) {
                                 } `}
                                 onClick={() => {
                                   setQuizThreeSelected1(index + 1);
-                                  if (quizThreeSelected2 !== 0) {
-                                    setQuizIndex(3);
-                                  }
+                                  // if (quizThreeSelected2 !== 0) {
+                                  //   setQuizIndex(3);
+                                  // }
                                 }}
                               ></i>
                             </div>
@@ -907,9 +981,9 @@ function FlavourFinderComponent(props: any) {
                                           }`}
                                           onClick={() => {
                                             setQuizThreeSelected2(index + 1);
-                                            if (quizThreeSelected1 !== 0) {
-                                              setQuizIndex(3);
-                                            }
+                                            // if (quizThreeSelected1 !== 0) {
+                                            //   setQuizIndex(3);
+                                            // }
                                           }}
                                         ></i>
                                       </div>
@@ -979,7 +1053,7 @@ function FlavourFinderComponent(props: any) {
                             } `}
                             onClick={() => {
                               setQuizFourSelected(index + 1);
-                              setQuizIndex(4);
+                              // setQuizIndex(4);
                             }}
                           ></i>
                         </div>
@@ -1024,9 +1098,14 @@ function FlavourFinderComponent(props: any) {
                     })}
                   </div>
                   <div
-                    className="cursor-pointer font-AlbertusNova-Regular bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center mx-auto leading-[80px] text-18px mt-40px w-316px h-77px paid:leading-[65px] paid:text-14px paid:w-254px paid:h-62px paid:mt-36px mobile:bg-[url('/assets/range/start_btn_m2.png')] mobile:w-188px mobile:h-44px mobile:leading-[50px] mobile:text-10px"
+                    className={`cursor-pointer font-AlbertusNova-Regular bg-cover uppercase text-center mx-auto leading-[88px] text-18px mt-40px w-375px h-88px paid:leading-[65px] paid:text-14px paid:w-277px paid:h-65px paid:mt-36px mobile:w-188px mobile:h-44px mobile:leading-[44px] mobile:text-10px
+                    ${
+                      quizOneSelected === 0 || quizTwoSelected === 0 || quizThreeSelected1 === 0 || quizThreeSelected2 === 0 || quizFourSelected === 0 || quizFiveSelected === 0
+                        ? "bg-[url('/assets/range/result_btn_grey.png')] text-[#969797]"
+                        : "bg-[url('/assets/range/result_btn.png')] text-[#000000]"
+                    }`}
                     onClick={() => {
-                      doRecommend()
+                      doRecommend();
                     }}
                   >
                     see your flavor profile
@@ -1049,6 +1128,9 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q1
+                      {quizOneSelected !== 0 && (
+                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
+                      )}
                       <div
                         className={`${
                           quizIndex === 0
@@ -1068,6 +1150,9 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q2
+                      {quizTwoSelected !== 0 && (
+                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
+                      )}
                       <div
                         className={`${
                           quizIndex === 1
@@ -1087,6 +1172,9 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q3
+                      {quizThreeSelected1 !== 0 && quizThreeSelected2 !== 0 && (
+                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
+                      )}
                       <div
                         className={`${
                           quizIndex === 2
@@ -1106,6 +1194,9 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q4
+                      {quizFourSelected !== 0 && (
+                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
+                      )}
                       <div
                         className={`${
                           quizIndex === 3
@@ -1125,6 +1216,9 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q5
+                      {quizFiveSelected !== 0 && (
+                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px bg-cover ml-5px"></i>
+                      )}
                       <div
                         className={`${
                           quizIndex === 4
@@ -1158,8 +1252,8 @@ function FlavourFinderComponent(props: any) {
                 <div className="mx-auto mt-10px w-[1251px] paid:w-[1042px] mobile:w-330px">
                   <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-153px pt-42px w-[1251px] h-334px paid:w-[1042px] paid:h-300px paid:px-130px paid:pt-34px mobile:w-330px mobile:h-461px mobile:flex-col mobile:px-45px mobile:pt-25px">
                     <div className="w-234px paid:w-188px mobile:w-241px">
-                      {
-                        recommend && <Swiper
+                      {recommend && (
+                        <Swiper
                           modules={[Autoplay]}
                           loop={true}
                           speed={500}
@@ -1172,74 +1266,85 @@ function FlavourFinderComponent(props: any) {
                             setCurrentRecommend(e.realIndex);
                           }}
                         >
-                          {recommend.productList.map(
-                            (product, index) => {
-                              return (
-                                <SwiperSlide
-                                  key={index}
-                                  className="relative"
-                                >
-                                  <div className="flex flex-col items-center justify-center">
-                                    <div className="relative w-215px h-209px paid:w-180px paid:h-175px mobile:w-148px mobile:h-145px">
-                                      <BaseImage
-                                        mImg={product.img.mImg}
-                                        pImg={product.img.pImg}
-                                        alt={""}
-                                        layout="fill"
-                                        objectFit="cover"
-                                        quality={100}
-                                      ></BaseImage>
-                                    </div>
-                                    <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px paid:text-16px mobile:text-14px">
-                                      {product.name}
-                                    </div>
+                          {recommend.productList.map((product, index) => {
+                            return (
+                              <SwiperSlide key={index} className="relative">
+                                <div className="flex flex-col items-center justify-center">
+                                  <div className="relative w-215px h-209px paid:w-180px paid:h-175px mobile:w-148px mobile:h-145px">
+                                    <BaseImage
+                                      mImg={product.img.mImg}
+                                      pImg={product.img.pImg}
+                                      alt={""}
+                                      layout="fill"
+                                      objectFit="cover"
+                                      quality={100}
+                                    ></BaseImage>
                                   </div>
-                                </SwiperSlide>
-                              );
-                            }
-                          )}
+                                  <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px paid:text-16px mobile:text-14px">
+                                    {product.name}
+                                  </div>
+                                </div>
+                              </SwiperSlide>
+                            );
+                          })}
                         </Swiper>
-                      }
+                      )}
                       <div className="flex justify-center mt-10px">
-                        {recommend && recommend.productList.length > 1 && recommend.productList.map((item, index) => {
-                          return (
-                            <div
-                              key={key}
-                              className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
-                                currentRecommend === index
-                                  ? "bg-[#969797] w-50px"
-                                  : "bg-[#E6E7E8] w-20px"
-                              }`}
-                              // onClick={() => setCurrentRecommend(index)}
-                            ></div>
-                          );
-                        })}
+                        {recommend &&
+                          recommend.productList.length > 1 &&
+                          recommend.productList.map((item, index) => {
+                            return (
+                              <div
+                                key={key}
+                                className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
+                                  currentRecommend === index
+                                    ? "bg-[#969797] w-50px"
+                                    : "bg-[#E6E7E8] w-20px"
+                                }`}
+                                // onClick={() => setCurrentRecommend(index)}
+                              ></div>
+                            );
+                          })}
                       </div>
                     </div>
                     <div className="inline-flex flex-col ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
                       <div className="inline-flex items-center">
                         <div className="relative inline-block w-68px h-68px paid:w-54px paid:h-54px mobile:w-36px mobile:h-36px">
                           <BaseImage
-                              mImg={data.quizs.q3.step1.answers[quizThreeSelected1 - 1].icon.mImg}
-                              pImg={data.quizs.q3.step1.answers[quizThreeSelected1 - 1].icon.pImg}
-                              alt={""}
-                              layout="fill"
-                              objectFit="cover"
-                              quality={100}
-                            ></BaseImage>
+                            mImg={
+                              data.quizs.q3.step1.answers[
+                                quizThreeSelected1 - 1
+                              ].icon.mImg
+                            }
+                            pImg={
+                              data.quizs.q3.step1.answers[
+                                quizThreeSelected1 - 1
+                              ].icon.pImg
+                            }
+                            alt={""}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
                         </div>
                         {/* <i className="inline-block bg-[url('/assets/range/icon_business_meal.png')] bg-cover mr-10px w-68px h-68px paid:w-54px paid:h-54px mobile:w-36px mobile:h-36px"></i> */}
                         <div className="ml-10px font-AlbertusNova-Regular text-black text-34px paid:text-27px mobile:text-16px">
-                          {data.quizs.q3.step1.answers[quizThreeSelected1 - 1].label}
+                          {
+                            data.quizs.q3.step1.answers[quizThreeSelected1 - 1]
+                              .label
+                          }
                         </div>
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px paid:text-12px mobile:text-10px">
                         gifting occasion suggestion
                       </div>
                       <div className="font-Grotesque-Regular text-black mt-20px leading-normal text-22px opacity-50 paid:text-18px mobile:text-14px mobile:text-center">
-                        {data.quizs.q3.step1.answers[quizThreeSelected1 - 1].value}
+                        {
+                          data.quizs.q3.step1.answers[quizThreeSelected1 - 1]
+                            .value
+                        }
                       </div>
-                      <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px paid:w-134px paid:h-44px paid:leading-[50px] paid:text-14px">
+                      <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px paid:w-134px paid:h-44px paid:leading-[50px] paid:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px">
                         explore
                       </div>
                     </div>
@@ -1251,7 +1356,7 @@ function FlavourFinderComponent(props: any) {
                       </div>
                     </div>
                     <div className="flex items-center pb-17px paid:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
-                      <div className="inline-flex items-center px-85px paid:px-70px mobile:pt-10px mobile:pb-20px">
+                      <div className="inline-flex items-center px-85px paid:px-70px mobile:pt-10px mobile:pb-20px mobile:px-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px paid:w-15px paid:h-15px mobile:w-12px mobile:h-11px"></i>
                         <input
                           type="text"
@@ -1260,7 +1365,7 @@ function FlavourFinderComponent(props: any) {
                         />
                       </div>
                       <div className="w-1px bg-black h-57px paid:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex items-center px-95px paid:px-90px mobile:py-20px">
+                      <div className="inline-flex items-center px-95px paid:px-90px mobile:py-20px mobile:px-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px paid:w-20px paid:h-15px mobile:w-15px mobile:h-11px"></i>
                         <input
                           type="text"
@@ -1269,7 +1374,7 @@ function FlavourFinderComponent(props: any) {
                         />
                       </div>
                       <div className="w-1px bg-black h-57px paid:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px">
+                      <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px mobile:flex-auto mobile:w-full">
                         <div
                           id="flavourFinderSubmit"
                           className="inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase "
