@@ -5,8 +5,13 @@ import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import {getLastPathName} from "@/utils/common";
 function Header(props: any) {
-  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
-  const [mouseFlag,setMouseFlag] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const currentSlideIndex = props.currentSlideIndex;
+  console.log(currentSlideIndex);
+
+
+
+
 
   function wheelHandle(e: Event) {
 
@@ -19,35 +24,56 @@ function Header(props: any) {
     e.preventDefault();
     e.stopPropagation();
   }
-  // useEffect(() => {
-  //     setTimeout(()=>{setIsCurrentPage(true)},500)
-  // }, [props]);
-  const [menu, setMenu] = useState(false);
+
+
 
   useEffect(() => {
 
-    if (menu) {
-      const lock = document.getElementsByClassName('lock');
-      document.addEventListener("wheel", wheelHandle, { passive: false });
-      document.addEventListener("keydown", keyDownHandle, { passive: false });
+    const option: object = { passive: false };
 
-      setTimeout(()=>{
-        for(let i=0;i<lock.length;i++){
-          lock[i].addEventListener("wheel", function(e){
-            e.stopPropagation();
-          });
-        }
-      },0)
-    }
-    return () => {
-      const option: any = { passive: false };
+    setMenu(false)
+    document.addEventListener("wheel", wheelHandle, option);
+    document.addEventListener("keydown", keyDownHandle, option);
 
+
+    setTimeout(()=>{
       document.removeEventListener("wheel", wheelHandle, option);
       document.removeEventListener("keydown", keyDownHandle, option);
+    },500)
 
 
-    };
-  }, [menu]);
+  }, [currentSlideIndex]);
+
+
+  // useEffect(() => {
+  //     setTimeout(()=>{setIsCurrentPage(true)},500)
+  // }, [props]);
+
+
+  // useEffect(() => {
+  //
+  //   if (menu) {
+  //     // const lock = document.getElementsByClassName('lock');
+  //     document.addEventListener("wheel", wheelHandle, { passive: false });
+  //     document.addEventListener("keydown", keyDownHandle, { passive: false });
+  //
+  //     // setTimeout(()=>{
+  //     //   for(let i=0;i<lock.length;i++){
+  //     //     lock[i].addEventListener("wheel", function(e){
+  //     //       e.stopPropagation();
+  //     //     });
+  //     //   }
+  //     // },0)
+  //   }
+  //   return () => {
+  //     const option: any = { passive: false };
+  //
+  //     document.removeEventListener("wheel", wheelHandle, option);
+  //     document.removeEventListener("keydown", keyDownHandle, option);
+  //
+  //
+  //   };
+  // }, [menu]);
 
 
 
@@ -61,10 +87,6 @@ function Header(props: any) {
     setMenu(menu);
   };
 
-  const handleMouseChange = (flag:boolean)=>{
-    console.log(flag)
-    setMouseFlag(flag);
-  }
 
   const handleMenu = () => {
     setMenu(true);
@@ -80,7 +102,7 @@ function Header(props: any) {
       >
         <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]"></div>
         <div
-          className="bg-[url('/assets/more_menu.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="bg-[url('/assets/menu-white.png')] w-44px h-44px  absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
             handleMenu();
           }}
@@ -119,7 +141,7 @@ function Header(props: any) {
         >
           <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
           <div
-            className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] paid:w-17px paid:h-16px mobile:w-20px mobile:h-20px mobile:right-25px"
+            className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
             onClick={() => {
               handleMenu();
             }}
@@ -153,8 +175,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
   const lastPathName = getLastPathName(usePathname());
 
   useEffect(() => {
+    initPanel();
     setMenu(menuFlag);
-    console.log(menuFlag);
   }, [menuFlag]);
 
   const handleMenu = () => {
@@ -328,11 +350,18 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
 
 
+  const initPanel = ()=>{
+    const newPanels = panels.map((panel) => {
+      return { ...panel, isExpanded: false }; // 关闭其他面板
+    });
+
+    setPanels(newPanels);
+  }
 
   return (
     <div>
       {menu && (
-        <div className="togglePanel absolute w-full h-screen select-none">
+        <div className="togglePanel absolute w-full h-screen select-none ">
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"  onClick={(e) => {
               handleClose();
@@ -341,7 +370,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
             <div
 
 
-                className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
+                className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
               <div className="h-41px paid:h-29px   mobile:h-40px flex justify-between items-end ">
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px">
                   <BaseImage
@@ -366,8 +395,9 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
               </div>
               <div
-
-
+                  onWheel={(e)=>{
+                    e.stopPropagation()
+                  }}
                   className="lock mt-64px paid:mt-53px mobile:mt-80px flex flex-col h-770px paid:h-550px overflow-y-auto">
                 <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
                   <div className="">

@@ -9,29 +9,31 @@ class HowToBuyDetailDao {
         // const result = await response.json()
         // return HomeModel.fromJson(result);
         return [
-            {
-                type: "fullPage",
-                name: "fullPage",
-                entry: {
-                    children:[
-                        {
-                            type: "globalCampaignsComponent",
-                            name: "globalCampaignsComponent",
-                            entry: {
-                                headStyle:'white',
-                            },
-                        },
-                        {
-                            type: "howToBuyDetailComponent",
-                            name: "howToBuyDetailComponent",
-                            entry: {
-                                headStyle:'black',
-                            },
-                        },
-                    ]
-                }
-            },
+            // {
+            //     type: "fullPage",
+            //     name: "fullPage",
+            //     entry: {
+            //         children:[
+            //
+            //         ]
+            //     }
+            // },
 
+
+            {
+                type: "globalCampaignsComponent",
+                name: "globalCampaignsComponent",
+                entry: {
+                    headStyle:'white',
+                },
+            },
+            {
+                type: "howToBuyDetailComponent",
+                name: "howToBuyDetailComponent",
+                entry: {
+                    headStyle:'black',
+                },
+            },
         ];
     }
 }

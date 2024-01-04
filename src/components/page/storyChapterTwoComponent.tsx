@@ -67,7 +67,7 @@ function StoryChapterTwoComponent(props: any) {
   }
 
   return (
-    <div id="StoryChapterTwo" className="relative overflow-hidden select-none">
+    <section id="StoryChapterTwo" className="relative overflow-hidden select-none">
       <div className="flex h-screen">
         <BaseImage
             mImg={data.bg.mImg}
@@ -112,7 +112,7 @@ function StoryChapterTwoComponent(props: any) {
         </>
       )}
       {
-        isShow && 
+        isShow &&
         <div className={`absolute w-[1134px] left-1/2 -ml-567px top-174px h-393px paid:w-906px paid:-ml-453px paid:h-315px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}>
           <div
             onClick={() => showIntroduce(false)}
@@ -140,7 +140,7 @@ function StoryChapterTwoComponent(props: any) {
         </div>
       </div>
       <div className="absolute z-10 top-0 left-0 w-full h-382px bg-gradient-to-b from-[#2828289c] to-[#28282800] paid:h-320px mobile:h-250px"></div>
-    </div>
+    </section>
   );
 }
 

@@ -100,7 +100,7 @@ function StoryChapterEndComponent(props: any) {
   }, [isFullPage, props]);
 
   return (
-    <div className="relative overflow-hidden select-none">
+    <section className="relative overflow-hidden select-none">
       <div className="flex h-screen">
         <BaseImage
           mImg={data.bg.mImg}
@@ -145,7 +145,7 @@ function StoryChapterEndComponent(props: any) {
           {data.description}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

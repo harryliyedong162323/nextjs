@@ -192,7 +192,7 @@ function NestedCarousel(props: any) {
 
 function MobileCarousel(props: any) {
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, [Autoplay()]);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, }, []);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const scrollTo = useCallback(
@@ -283,7 +283,7 @@ function NearYouComponent(props: any) {
     const headStyle = props.data.entry.headStyle;
 
     // Autoplay()
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align:'start',loop: true,watchDrag:false }, []);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ align:'start',loop: true,watchDrag:false }, [Autoplay()]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const [campaignData,setCampaignData] = useState(campaigns);

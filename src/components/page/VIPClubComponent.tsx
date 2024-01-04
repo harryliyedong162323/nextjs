@@ -14,7 +14,7 @@ function VIPClubComponent(props: any) {
         <section className="relative h-screen bg-cover bg-[url('/assets/VIPClub/bg.png')] bg-black overflow-hidden select-none">
             <input type="hidden" value={headStyle}/>
             <div className="relative container mx-auto">
-                <div className="pt-154px uppercase font-AlbertusNova-Regular font-normal text-33px text-center w-625px mx-auto text-white pb-114px paid:pt-110px paid:text-23px paid:w-446px paid:pb-81px mobile:text-20px mobile:leading-[30px] mobile:w-325px mobile:pt-90px mobile:pb-67px">Join us in our next adventures,be the first to know.</div>
+                <div className="pt-154px uppercase font-AlbertusNova-Regular font-normal text-33px text-center w-645px mx-auto text-white pb-114px paid:pt-110px paid:text-23px paid:w-446px paid:pb-81px mobile:text-20px mobile:leading-[30px] mobile:w-325px mobile:pt-90px mobile:pb-67px">Join us in our next adventures,be the first to know.</div>
 
                 <div className="grid grid-cols-3 place-items-center mobile:grid-rows-3 mobile:grid-cols-none">
                     <div className="w-283px h-245px relative self-center paid:w-262px paid:h-235px mobile:w-315px mobile:h-130px mobile:mb-46px">

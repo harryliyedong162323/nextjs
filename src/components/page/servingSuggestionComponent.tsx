@@ -8,7 +8,7 @@ function ServingSuggestionComponent(props: any) {
   useEffect(() => {}, []);
 
   return (
-    <div id="ServingSuggestion" data-anchor={2} className="relative overflow-hidden bg-[#E6E7E8] select-none">
+    <section id="ServingSuggestion" data-anchor={2} className="relative overflow-hidden bg-[#E6E7E8] select-none">
       <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px paid:text-27px paid:pt-124px mobile:text-20px mobile:pt-82px">
@@ -43,7 +43,7 @@ function ServingSuggestionComponent(props: any) {
         </div>
       </div>
       <div className="w-full absolute bottom-0 z-10 mobile:h-110px mobile:bg-gradient-to-t mobile:from-[rgba(0,0,0)] mobile:to-[rgba(0,0,0,0.1)]"></div>
-    </div>
+    </section>
   );
 }
 

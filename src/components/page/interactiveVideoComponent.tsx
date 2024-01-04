@@ -8,7 +8,7 @@ function InteractiveVideoComponent(props: any) {
 
     const headStyle = props.data.entry.headStyle;
     return (
-       <div id="TheWildEscape" data-anchor={2} className="w-full h-screen relative overflow-hidden select-none">
+       <section id="TheWildEscape" data-anchor={2} className="w-full h-screen relative overflow-hidden select-none">
            <input type="hidden" value={headStyle}/>
            <BaseImage
                defaultImg={require("../../../public/assets/interactiveVideo/bg.png")}
@@ -42,7 +42,7 @@ function InteractiveVideoComponent(props: any) {
                </div>
            </div>
 
-       </div>
+       </section>
 
     );
 }

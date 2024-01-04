@@ -46,6 +46,125 @@ class HomeDao{
                             name: "productFamilyComponent",
                             entry: {
                                 headStyle:'white',
+
+
+                                bottleData:[
+                                    {
+                                        id:0,
+                                        num:23,
+                                        active:false,
+                                        info:{
+                                            name:'ANCIENT MOORLAND',
+                                            bottle:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-1.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-1.png",
+                                            },
+                                            bg:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv.png",
+                                            },
+                                            year:23,
+                                            price:'£750 RRP ',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                        }
+                                    },
+                                    {
+                                        id:1,
+                                        num:40,
+                                        active:false,
+                                        info:{
+                                            name:'ANCIENT MOORLAND',
+                                            bottle:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-2.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-2.png",
+                                            },
+                                            bg:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-2.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-2.png",
+                                            },
+                                            year:40,
+                                            price:'£750 RRP ',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                        }
+                                    },
+                                    {
+                                        id:2,
+                                        num:23,
+                                        active:false,
+                                        info:{
+                                            name:'ANCIENT MOORLAND',
+                                            bottle:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-3.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-3.png",
+                                            },
+                                            bg:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-3.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-3.png",
+                                            },
+                                            year:23,
+                                            price:'£750 RRP ',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                        }
+                                    },
+                                    {
+                                        id:3,
+                                        num:30,
+                                        active:false,
+                                        info:{
+                                            name:'ANCIENT MOORLAND',
+                                            bottle:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-4.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-4.png",
+                                            },
+                                            bg:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-4.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-4.png",
+                                            },
+                                            year:30,
+                                            price:'£750 RRP ',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                        }
+                                    },
+                                    {
+                                        id:4,
+                                        num:30,
+                                        active:false,
+                                        info:{
+                                            name:'ANCIENT MOORLAND',
+                                            bottle:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-5.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-5.png",
+                                            },
+                                            bg:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-5.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-5.png",
+                                            },
+                                            year:30,
+                                            price:'£750 RRP ',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                        }
+                                    },
+                                    {
+                                        id:5,
+                                        num:23,
+                                        active:true,
+                                        info:{
+                                            name:'ANCIENT MOORLAND',
+                                            bottle:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-6.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-6.png",
+                                            },
+                                            bg:{
+                                                pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-6.png",
+                                                mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-6.png",
+                                            },
+                                            year:23,
+                                            price:'£750 RRP ',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                        }
+                                    },
+                                ]
+
                             },
                         },
                         {

@@ -48,7 +48,7 @@ function StoryChapterThreeComponent(props: any) {
   }, [isFullPage, props]);
 
   return (
-    <div className="relative overflow-hidden select-none">
+    <section className="relative overflow-hidden select-none">
       <div className="flex h-screen">
         <BaseImage
           mImg={data.bg.mImg}
@@ -83,7 +83,7 @@ function StoryChapterThreeComponent(props: any) {
         </div>
       </div>
       <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-150px paid:h-100px mobile:h-238px"></div>
-    </div>
+    </section>
   );
 }
 

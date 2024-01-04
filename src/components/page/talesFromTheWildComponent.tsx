@@ -143,7 +143,7 @@ function TalesFromTheWildComponent(props: any) {
     }
   }, [num]);
   return (
-    <div
+    <section
       id="TalesFromTheWild"
       data-anchor={num}
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
@@ -277,7 +277,7 @@ function TalesFromTheWildComponent(props: any) {
         </div>
       </div>
       <div className="w-full absolute bottom-0 z-10 mobile:h-110px mobile:bg-gradient-to-t mobile:from-[rgba(0,0,0)] mobile:to-[rgba(0,0,0,0.1)]"></div>
-    </div>
+    </section>
   );
 }
 

@@ -35,14 +35,15 @@ function GlobalCampaignsComponent(props: any) {
     >
       <input type="hidden" value={headStyle} />
       <BaseImage
-        defaultImg={require("../../../public/assets/howToBuyDetail/bg.png")}
+        defaultImg={require("../../../public/assets/howToBuyDetail/bg2.png")}
         alt={""}
         layout="fill"
         objectFit="cover"
         quality={100}
       ></BaseImage>
 
-      <div className={`absolute z-10 bottom-[148px] left-1/2 w-full ease-in-out duration-1000 transition-all translate-x-[-50%] mobile:bottom-[106px] ${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-70%] opacity-0'}`}>
+      {/*${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-70%] opacity-0'}*/}
+      <div className={`absolute z-10 bottom-[148px] left-1/2 w-full ease-in-out duration-1000 transition-all translate-x-[-50%] mobile:bottom-[106px] translate-y-0 opacity-1 `}>
         {subTitle != "" ? (
           <div className="font-AlbertusNova-Regular font-normal text-center text-22px pb-42px text-[#E6E7E8] mobile:text-14px mobile:pb-25px uppercase">
             {subTitle}

@@ -48,7 +48,7 @@ function BottleConceptComponent(props: any) {
   const bottleRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div id="BottleConcept" data-anchor={3} className="relative overflow-hidden select-none">
+    <section id="BottleConcept" data-anchor={3} className="relative overflow-hidden select-none">
       <div ref={bottleRef} className="cursor-[url('/assets/range/icon_pointer.cur'),_pointer] absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
         onMouseDown={(event) => {
           console.log('mouseup', event);
@@ -144,7 +144,7 @@ function BottleConceptComponent(props: any) {
         )}
       </div>
       <div className="w-full absolute bottom-0 z-10 mobile:h-110px mobile:bg-gradient-to-t mobile:from-[rgba(0,0,0)] mobile:to-[rgba(0,0,0,0.1)]"></div>
-    </div>
+    </section>
   );
 }
 

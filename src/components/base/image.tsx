@@ -117,7 +117,7 @@ class BaseImage extends Component<propsContent,State>{
             // 在 props 变化时执行操作
             // 比如更新组件内部的状态
             this.handleResize();
-            console.log(prevProps)
+            // console.log(prevProps)
         }
     }
 

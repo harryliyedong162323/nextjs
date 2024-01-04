@@ -681,7 +681,7 @@ function FlavourFinderComponent(props: any) {
   }, [showQuiz, quizIndex]);
 
   return (
-    <div
+    <section
       id="DiscoverYourWildFlavour"
       data-anchor={4}
       className="relative overflow-hidden select-none"
@@ -1393,7 +1393,7 @@ function FlavourFinderComponent(props: any) {
           </div>
         </>
       )}
-    </div>
+    </section>
   );
 }
 

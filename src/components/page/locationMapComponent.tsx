@@ -131,7 +131,7 @@ function LocationMapComponent(props: any) {
 
 
     return (
-        <div className="overflow-hidden">
+        <section className="overflow-hidden">
             <input type="hidden" value={headStyle}/>
             <div className="h-screen relative">
                 {  // @ts-ignore
@@ -199,7 +199,7 @@ function LocationMapComponent(props: any) {
 
 
             </div>
-        </div>
+        </section>
     );
 }
 

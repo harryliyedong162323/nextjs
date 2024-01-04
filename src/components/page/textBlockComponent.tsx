@@ -13,7 +13,7 @@ function TextBlockComponent(props: any) {
     // <section className={props.data.name}>
     //   {props.data.name}:<span className="text-ellipsis">{JSON.stringify(props)}</span>
     // </section>
-    <div>
+    <section>
       <div className={style.more_container}>
         {/* <img src="../../assets/more_bgc.png" alt="" /> */}
         <div className={style.more_nav}>
@@ -271,7 +271,7 @@ function TextBlockComponent(props: any) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

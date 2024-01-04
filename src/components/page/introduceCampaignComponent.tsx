@@ -321,13 +321,13 @@ function IntroduceCampaignComponent(props: any) {
 
             <div className="relative  pt-155px h-685px paid:h-489px  paid:pt-110px mobile:pt-113px ">
                 <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  paid:h-428px paid:w-[80%] paid:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
-                {/*modules={[Autoplay]}*/}
+
                 <Swiper
                     style={{
                         overflow:"visible"
                     }}
 
-
+                    modules={[Autoplay]}
                     slidesPerView={slidesPerView}
                     loop={true}
                     centeredSlides={centeredSlides}
@@ -343,8 +343,8 @@ function IntroduceCampaignComponent(props: any) {
                     onBeforeInit={(e)=>{
                         setTimeout(()=>{
                             const slides = e.slides;
-                            slides[e.activeIndex+1].style.transform = 'translateY(15%)'
-                            slides[e.activeIndex-1].style.transform = 'translateY(25%)'
+                            slides[e.activeIndex+1]&&(slides[e.activeIndex+1].style.transform = 'translateY(15%)')
+                            slides[e.activeIndex-1]&&(slides[e.activeIndex-1].style.transform = 'translateY(25%)')
                         },250)
 
                     }}
@@ -358,8 +358,8 @@ function IntroduceCampaignComponent(props: any) {
 
                         const slides = e.slides;
                         if(centeredSlides){
-                            slides[e.activeIndex+1].style.transform = 'translateY(15%)'
-                            slides[e.activeIndex-1].style.transform = 'translateY(25%)'
+                            slides[e.activeIndex+1]&&(slides[e.activeIndex+1].style.transform = 'translateY(15%)')
+                            slides[e.activeIndex-1]&&(slides[e.activeIndex-1].style.transform = 'translateY(25%)')
                         }
 
 
@@ -407,8 +407,8 @@ function IntroduceCampaignComponent(props: any) {
 
                         const slides = e.slides;
                         if(centeredSlides){
-                            slides[e.activeIndex+1].style.transform = 'translateY(15%)'
-                            slides[e.activeIndex-1].style.transform = 'translateY(25%)'
+                            slides[e.activeIndex+1]&&(slides[e.activeIndex+1].style.transform = 'translateY(15%)')
+                            slides[e.activeIndex-1]&&(slides[e.activeIndex-1].style.transform = 'translateY(25%)')
                             // slides[e.activeIndex+2].style.transform = 'translateY(-50%)'
                         }
 

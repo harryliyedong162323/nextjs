@@ -40,7 +40,7 @@ function StoryChapterOneComponent(props: any) {
   }, [isFullPage, props]);
 
   return (
-    <div  id="WhatOthersSay" data-anchor={1} className="relative overflow-hidden select-none">
+    <section  id="WhatOthersSay" data-anchor={1} className="relative overflow-hidden select-none">
       <div className="flex -mt-1px h-[calc(100vh+1px)]">
         <BaseImage
             mImg={data.bg.mImg}
@@ -70,7 +70,7 @@ function StoryChapterOneComponent(props: any) {
       </div>
       <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#282828] to-[#28282800] h-382px paid:h-320px mobile:h-250px"></div>
       <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-280px paid:h-224px mobile:h-238px"></div>
-    </div>
+    </section>
   );
 }
 

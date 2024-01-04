@@ -306,7 +306,7 @@ function LocationStoreList(props: any){
     }, []);
 
     return (
-        <div className="pt-138px pl-45px paid:pt-98px paid:pl-32px mobile:pl-13px mobile:pt-112px">
+        <section className="pt-138px pl-45px paid:pt-98px paid:pl-32px mobile:pl-13px mobile:pt-112px">
 
             <div className="pb-45px relative z-20 paid:pb-32px mobile:pb-35px">
                 {
@@ -402,7 +402,7 @@ function LocationStoreList(props: any){
 
 
 
-        </div>
+        </section>
     )
 }
 

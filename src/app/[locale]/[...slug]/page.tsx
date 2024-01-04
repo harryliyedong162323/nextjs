@@ -90,15 +90,18 @@ export default async function Page({
     componentsData.push(componentData);
   });
 
-
+  let isFullPageFlag:boolean = componentsData[0].type != 'fullPage' ? true : false;
 
 
   return (
       // className="w-[1920px] mx-auto relative"
     <div>
-      <Header headStyle={componentsData[0].type != 'fullPage' ? componentsData[0].entry.headStyle : ''}></Header>
-      <main>
 
+      {
+        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle}></Header> : null
+      }
+
+      <main>
         <Suspense fallback={<div>Loading...</div>}>
           {componentsData.map((data, k) => (
               getDynamicComponent(data, k)
@@ -106,7 +109,7 @@ export default async function Page({
         </Suspense>
       </main>
       {
-        componentsData[0].type != 'fullPage' ?  <Footer></Footer> : null
+        isFullPageFlag ?  <Footer></Footer> : null
       }
 
     </div>

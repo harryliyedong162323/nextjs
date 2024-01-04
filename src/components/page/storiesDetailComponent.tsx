@@ -32,7 +32,7 @@ function StoriesDetailComponent(props: any) {
 
 
     return (
-        <div>
+        <section>
 
             <div className="w-full h-407px overflow-hidden relative mobile:hidden">
                 <BaseImage
@@ -223,7 +223,7 @@ function StoriesDetailComponent(props: any) {
 
 
             </div>
-        </div>
+        </section>
 
     );
 }

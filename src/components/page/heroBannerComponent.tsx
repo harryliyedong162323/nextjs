@@ -14,7 +14,7 @@ function HeroBannerComponent(props: any) {
 
   return (
 
-    <div>
+    <section>
       <div className={style.video_container}>
         <div className={style.video_nav}>
           <div className={style.video_logo}>
@@ -68,7 +68,7 @@ function HeroBannerComponent(props: any) {
         <div className={style.small_video_next}>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

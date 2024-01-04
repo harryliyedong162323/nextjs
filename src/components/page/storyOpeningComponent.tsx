@@ -68,7 +68,7 @@ function StoryOpeningComponent(props: any) {
   );
 
   return (
-    <div
+    <section
       id="ADropOfWildness"
       data-anchor={0}
       className="relative overflow-hidden select-none"
@@ -162,7 +162,7 @@ function StoryOpeningComponent(props: any) {
         })}
       </div>
       <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] h-160px paid:h-100px mobile:h-100px"></div>
-    </div>
+    </section>
   );
 }
 

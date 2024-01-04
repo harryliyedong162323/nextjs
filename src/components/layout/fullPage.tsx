@@ -4,7 +4,7 @@ import React, {useEffect, useState, useCallback, Suspense, useRef} from "react";
 // import ReactFullpage from '@fullpage/react-fullpage';
 import {ISlideConfig, PageSlides, SlideParallaxType} from 'react-page-slides';
 import {getHash} from "@/utils/common";
-
+import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import RangeNav from '@/components/layout/rangeNav';
 
@@ -90,7 +90,7 @@ function getComponent(data: any, k:number, scrollToPage: Function, changeNavStat
 
 function FullPage(props: any) {
 
-    console.log(props)
+
     const [isBrowser, setIsBrowser] = useState(false);
     const [slideFlag,setSliderFlag] = useState(true);
     const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
@@ -215,16 +215,15 @@ function FullPage(props: any) {
         setCurrentPageNumber(e)
         setCurrentSlideIndex(e)
         pageComponents.map((item: any) => item.entry.currentPageNumber = e)
-        // console.log(slides)
-        // console.log((slides as ISlideConfig[])[e].content)
+
         const nav:any = document.getElementById('nav');
 
-        // console.log(setHeadStyle(e))
+
         setHeadStyle(e);
 
         if(e == slides.length-1){
             // setSliderFlag(false);
-            // nav&&(nav.style.display = 'none');
+            nav&&(nav.style.display = 'none');
 
         }else{
             // setSliderFlag(true);
@@ -267,12 +266,13 @@ function FullPage(props: any) {
             {/*    }}*/}
             {/* />*/}
             {/*currentSlideIndex={2}*/}
+
+
+            <Header scrollToPage={scrollToPage} currentSlideIndex={currentSlideIndex}></Header>
+
             {
-                isBrowser == true ? 
-                <div
-                    onWheel={() => {
-                        console.log('wheel')
-                    }}>
+                isBrowser == true ?
+                <div>
                     <PageSlides
                         enableAutoScroll={slideFlag}
                         transitionSpeed={1500}
@@ -283,12 +283,13 @@ function FullPage(props: any) {
                             type: SlideParallaxType.reveal
                         }}
                         onChange={(e)=>{handleSlideChange(e)}}
-                    /> 
+                    />
                 </div> : null
             }
             {
                 hasRangeNav && <RangeNav currentSlideIndex={currentSlideIndex} scrollToPage={scrollToPage} isShowRangeNav={isShowRangeNav} onChangeStatus={changeNavStatus}></RangeNav>
             }
+
         </div>
     );
 }
