@@ -11,7 +11,7 @@ function RangeNav(props: any) {
       >
         <div className="flex justify-between mx-auto w-[1250px] paid:w-1000px mobile:w-full text-center uppercase text-20px paid:text-14px mobile:text-10px">
           <span
-            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 0 ? 'text-[#696969] mobile:text-white' : '' } mobile:w-64px`}
+            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 0 ? 'text-[#696969] mobile:text-white' : 'text-[#969797]' } mobile:w-64px`}
             onClick={() => {
               props.scrollToPage(0);
             }}
@@ -19,7 +19,7 @@ function RangeNav(props: any) {
             products family
           </span>
           <span
-            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 1 ? 'text-[#696969] mobile:text-white' : '' } mobile:w-64px`}
+            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 1 ? 'text-[#696969] mobile:text-white' : 'text-[#969797]' } mobile:w-64px`}
             onClick={() => {
               props.scrollToPage(1);
             }}
@@ -30,7 +30,7 @@ function RangeNav(props: any) {
             )}
           </span>
           <span
-            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 2 ? 'text-[#696969] mobile:text-white' : '' } mobile:w-64px`}
+            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 2 ? 'text-[#696969] mobile:text-white' : 'text-[#969797]' } mobile:w-64px`}
             onClick={() => {
               props.scrollToPage(2);
             }}
@@ -41,7 +41,7 @@ function RangeNav(props: any) {
             )}
           </span>
           <span
-            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 3 ? 'text-[#696969] mobile:text-white' : '' } mobile:w-64px`}
+            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 3 ? 'text-[#696969] mobile:text-white' : 'text-[#969797]' } mobile:w-64px`}
             onClick={() => {
               props.scrollToPage(3);
             }}
@@ -52,7 +52,7 @@ function RangeNav(props: any) {
             )}
           </span>
           <span
-            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 4 ? 'text-[#696969] mobile:text-white' : '' } mobile:w-64px`}
+            className={`relative inline-block cursor-pointer ${ currentSlideIndex === 4 ? 'text-[#696969] mobile:text-white' : 'text-[#969797]' } mobile:w-64px`}
             onClick={() => {
               props.scrollToPage(4);
             }}
