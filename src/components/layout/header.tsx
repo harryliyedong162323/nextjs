@@ -398,7 +398,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   onWheel={(e)=>{
                     e.stopPropagation()
                   }}
-                  className="lock mt-64px paid:mt-53px mobile:mt-80px flex flex-col h-770px paid:h-550px overflow-y-auto">
+                  className="lock mt-64px paid:mt-53px mobile:mt-80px flex flex-col h-[75vh]  overflow-y-auto">
                 <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
                   <div className="">
                     <BaseLink link={`/home`} className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium">HOME</BaseLink>
@@ -407,10 +407,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
                 {panels.map((panel) => (
                   <div
-                    className="flex flex-col mb-40px paid:mb-25 px mobile:mb-15px"
+                    className="flex flex-col mb-40px paid:mb-25 px mobile:mb-15px "
                     key={panel.id}
                   >
-                    <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer">
+                    <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer h-50px">
                       <div className="w-9/12 ">
                         <BaseLink
                             className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
@@ -482,8 +482,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     onClick={hanleLanguage}
                   >
                     <BaseImage
-                      mImg={require("../../../public/assets/language.png")}
-                      pImg={require("../../../public/assets/language.png")}
+                      mImg={require("../../../public/assets/language@4.png")}
+                      pImg={require("../../../public/assets/language@4.png")}
                       alt={""}
                       objectFit="contain"
                       quality={100}

@@ -63,7 +63,7 @@ function HowToBuyDetailComponent(props: any) {
 
 
     return (
-       <section className="w-full h-screen relative">
+       <section className="w-full h-900px relative">
            <input type="hidden" value={headStyle}/>
            {/*<section className="">*/}
            {/*${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-100%] opacity-0'}*/}

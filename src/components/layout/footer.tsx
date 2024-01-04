@@ -322,7 +322,7 @@ function Footer(props: any) {
           <div className="pr-21px flex mobile:pr-0 mobile:w-full mobile:justify-center mobile:pb-53px">
             <div className="w-24px h-24px mr-10px  bg-cover bg-[url('/assets/language.png')]"></div>
             <div
-              className=" font-Grotesque-Regular  text-black text-16px font-medium cursor-pointer"
+              className=" font-Grotesque-Medium  text-black text-16px font-medium cursor-pointer"
               onClick={hanleLanguage}
             >
               Location and Language

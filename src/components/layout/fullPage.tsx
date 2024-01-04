@@ -101,7 +101,8 @@ function FullPage(props: any) {
     // range nav
     const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav)
     const [isShowRangeNav, setIsShowRangeNav] = useState(true)
-
+    const [canScroll, setCanScroll] = useState<boolean>(true)
+    
     useEffect(() => {
         setTimeout(()=>{
             setAnchor(searchParams.get('anchor'))
@@ -134,6 +135,12 @@ function FullPage(props: any) {
         setIsShowRangeNav(status)
     }
 
+    const onScroll = (event: React.WheelEvent<HTMLDivElement>) => {
+        if (!canScroll) {
+            event.stopPropagation()
+        }
+    }
+
     const analyzeURL = (params:string | null):void=>{
         if(params){
             const anchorDom= document.getElementById(params) as HTMLInputElement;
@@ -160,7 +167,15 @@ function FullPage(props: any) {
             return(
 
                 {
-                    content: getComponent(data, k, scrollToPage, changeNavStatus),
+                    content: (
+                        <div onWheel={(event) => {
+                            onScroll(event)
+                        }}>
+                            {
+                                getComponent(data, k, scrollToPage, changeNavStatus)
+                            }
+                        </div>
+                    ),
                     style: {}
                 }
 
@@ -214,6 +229,11 @@ function FullPage(props: any) {
         // Used to monitor and determine whether to flip to the current page, to achieve animation effects
         setCurrentPageNumber(e)
         setCurrentSlideIndex(e)
+
+        setCanScroll(false)
+        setTimeout(() => {
+            setCanScroll(true)
+        }, 1500)
         pageComponents.map((item: any) => item.entry.currentPageNumber = e)
 
         const nav:any = document.getElementById('nav');
