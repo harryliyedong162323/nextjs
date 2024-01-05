@@ -14,7 +14,7 @@ module.exports = postcss.plugin("postcss-px-to-vw", () => {
       let pxValue = /(-?\d*\.?\d+)px/.exec(decl.value);
       if (!pxValue) return;
 
-      let vwValue = Number(pxValue[1]) / (1920 / 100);
+      let vwValue = Number(pxValue[1]) / (1920 / 100) * 1.2;
 
       if (decl.prop === "min-height" && pxValue[1] === "700") {
         console.log(pxValue)
