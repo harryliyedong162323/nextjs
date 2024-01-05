@@ -153,7 +153,7 @@ function TalesFromTheWildComponent(props: any) {
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px pad:text-27px pad:pt-124px mobile:text-20px mobile:pt-82px">
           Tales From The Wild
         </div>
-        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] h-516px pad:mt-67px pad:w-1000px pad:h-414px mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
+        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] h-516px pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
           {kolList?.length > 0 &&
             kolList.map((item, index) => {
               return (
@@ -163,8 +163,8 @@ function TalesFromTheWildComponent(props: any) {
                       <div
                         className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           currentKol !== toKol
-                            ? "w-139px h-420px mt-98px pad:w-111px pad:h-334px pad:mt-78px mobile:h-94px"
-                            : "w-615px h-519px pad:w-492px pad:h-414px mobile:h-360px"
+                            ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
+                            : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-360px"
                         }`}
                       >
                         <BaseImage
@@ -191,7 +191,7 @@ function TalesFromTheWildComponent(props: any) {
                             quality={100}
                           ></BaseImage>
                         </div>
-                        <div className="text-white text-16px ml-10px pad:text-14px mobile:text-14px">
+                        <div className="text-white text-18px ml-10px pad:text-14px mobile:text-14px">
                           {item.name}
                         </div>
                       </div>
@@ -213,23 +213,23 @@ function TalesFromTheWildComponent(props: any) {
                     <>
                       <div
                         key={index}
-                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-98px pad:w-111px pad:pt-78px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-98px pad:w-139px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           toKol === index
                             ? "w-615px pad:w-492px mobile:h-360px grayscale-0 animate-move-top"
-                            : "w-139px pad:w-111px mobile:h-94px"
+                            : "w-139px pad:w-139px mobile:h-94px"
                         }`}
                       >
                         <div
                           className={`absolute w-full transition-all hover:text-white  ease-in-out duration-1000 ${
                             toKol === index
-                              ? "w-615px h-516px pad:w-492px pad:h-414px mobile:w-full mobile:h-360px text-white"
-                              : "w-139px h-420px pad:w-111px pad:h-334px mobile:w-full mobile:h-94px"
+                              ? "w-615px h-516px pad:w-615px pad:h-516px mobile:w-full mobile:h-360px text-white"
+                              : "w-139px h-420px pad:w-139px pad:h-420px mobile:w-full mobile:h-94px"
                           }`}
                         >
                           <div
                             className={`${
                               toKol === index ? "hidden" : ""
-                            } absolute z-10 font-AlbertusNova-Regular text-16px rotate-90 top-90px pad:top-70px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
+                            } absolute z-10 font-AlbertusNova-Regular text-18px rotate-90 top-90px left-14px pad:top-[30%] pad:-left-[46%] pad:w-250px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
                           >
                             {item.name}
                           </div>
@@ -237,13 +237,13 @@ function TalesFromTheWildComponent(props: any) {
                             onClick={() => {
                               handleAnimation(index);
                             }}
-                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-15px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-30px pad:w-24px pad:h-24px pad:-mt-12px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-24px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:-mt-20px"
+                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:-mt-20px"
                           ></div>
                           <div
                             className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${
                               toKol === index
-                                ? "w-615px h-516px pad:w-492px pad:h-414px mobile:h-360px"
-                                : "w-139px h-420px pad:w-111px pad:h-334px mobile:h-94px"
+                                ? "w-615px h-516px pad:w-615px pad:h-516px mobile:h-360px"
+                                : "w-139px h-420px pad:w-139px pad:h-420px mobile:h-94px"
                             }`}
                           >
                             <div className={`${toKol === index ? "w-full h-full" : "w-0 h-0 overflow-hidden"} relative`}>

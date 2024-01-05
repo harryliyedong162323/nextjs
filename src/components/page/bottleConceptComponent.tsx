@@ -135,7 +135,7 @@ function BottleConceptComponent(props: any) {
                 console.log("onEnded");
               }}
               width="100%"
-              height="100%"
+              height="80%"
               url="https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4"
             ></ReactPlayer>
             <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px pad:-ml-300px pad:w-600px pad:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>

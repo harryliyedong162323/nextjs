@@ -160,7 +160,9 @@ function ProductFamilyComponent(props: any) {
                         quality={100}
                     ></BaseImage>
 
-                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-150px mobile:hidden">
+
+                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-50% translate-y-[50%] mobile:hidden">
+
                         <div className="an-bottle w-700px pad:w-500px flex flex-nowrap items-end">
                             <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px  mobile:w-102px mobile:h-223px ">
                                 <BaseImage
@@ -186,7 +188,7 @@ function ProductFamilyComponent(props: any) {
                                         <span className="whitespace-break-spaces relative">
                                             {currentBottleData.info.name}
                                             {
-                                                currentBottleData.info.tag != '' ? <div className="text-10px inline-block align-middle absolute bottom-10px pad:bottom-4px right-[-25%]  pad:right-[-95%] scale-[.8]">{currentBottleData.info.tag}</div> : null
+                                                currentBottleData.info.tag != '' ? <div className="text-10px inline-block align-middle absolute bottom-10px pad:bottom-4px right-[-68%]  pad:right-[-95%] scale-[.8]">{currentBottleData.info.tag}</div> : null
                                             }
 
                                         </span>

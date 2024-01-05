@@ -102,7 +102,7 @@ body{
 }
 
 .rps-slide__inner-container section{
-  min-height: 700px;
+  min-height: 50vw;
   overflow: hidden;
 }
 

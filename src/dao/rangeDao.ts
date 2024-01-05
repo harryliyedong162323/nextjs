@@ -205,7 +205,7 @@ class RangeDao {
               type: "flavourFinderComponent",
               name: "flavourFinderComponent",
               entry: {
-                headStyle:'white',
+                headStyle:'black',
               },
             },
           ]

@@ -310,6 +310,9 @@ function FullPage(props: any) {
                 hasRangeNav && <RangeNav currentSlideIndex={currentSlideIndex} scrollToPage={scrollToPage} isShowRangeNav={isShowRangeNav} onChangeStatus={changeNavStatus}></RangeNav>
             }
 
+
+
+
         </div>
     );
 }
