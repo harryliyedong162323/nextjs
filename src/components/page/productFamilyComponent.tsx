@@ -38,7 +38,8 @@ function ProductFamilyComponent(props: any) {
     const [currentBottleIndex,setCurrentBottleIndex] = useState(0);
     const [textGradient,setTextGradient]  = useState({
         'background': 'linear-gradient(to bottom, #e9aa87, #953e1a)',
-        'backgroundClip':'text',
+        'background-clip':'text',
+        '-webkit-background-clip':'text',
         'color': 'transparent',
     } as React.CSSProperties);
     const container = useRef(null);
@@ -64,7 +65,8 @@ function ProductFamilyComponent(props: any) {
         }else{
             setTextGradient({
                 'background': 'linear-gradient(to bottom, #e9aa87, #953e1a)',
-                'backgroundClip':'text',
+                'background-clip':'text',
+                '-webkit-background-clip':'text',
                 'color': 'transparent',
             })
         }
