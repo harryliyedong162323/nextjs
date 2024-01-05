@@ -111,13 +111,13 @@ function StoryChapterEndComponent(props: any) {
           quality={100}
         ></BaseImage>
       </div>
-      <div className="w-full absolute left-0 top-120px paid:top-108px mobile:top-210px">
+      <div className="w-full absolute left-0 top-120px pad:top-108px mobile:top-210px">
         <div className="absolute z-10 top-0 -right-25px h-full w-125px bg-gradient-to-l from-[#00000090] to-[#00000000]"></div>
           <Marquee play={play}>
             { data.productList.map((item, index) => {
               return (
-                <div key={index} className={`flex flex-col items-center w-391px mr-64px paid:w-313px paid:mr-50px mobile:ml-0 mobile:w-235px mobile:mr-30px`}>
-                  <div className={`inline-block relative w-391px h-345px paid:w-313px paid:h-276px mobile:w-235px mobile:h-207px ${ index % 4 == 1 ? "mt-100px" : "" } ${ index % 4 == 2 ? "mt-50px" : "" }  ${ index % 4 == 3 ? "mt-150px" : "" }`}>
+                <div key={index} className={`flex flex-col items-center w-391px mr-64px pad:w-313px pad:mr-50px mobile:ml-0 mobile:w-235px mobile:mr-30px`}>
+                  <div className={`inline-block relative w-391px h-345px pad:w-313px pad:h-276px mobile:w-235px mobile:h-207px ${ index % 4 == 1 ? "mt-100px" : "" } ${ index % 4 == 2 ? "mt-50px" : "" }  ${ index % 4 == 3 ? "mt-150px" : "" }`}>
                     <BaseImage
                       mImg={item.mImg}
                       pImg={item.pImg}
@@ -127,13 +127,13 @@ function StoryChapterEndComponent(props: any) {
                       quality={50}
                     ></BaseImage>
                   </div>
-                  <div className="text-white font-AlbertusNova-Light inline-flex items-center w-230px paid:w-200px mobile:w-160px">
+                  <div className="text-white font-AlbertusNova-Light inline-flex items-center w-230px pad:w-200px mobile:w-160px">
                     <div>
-                      <div className="leading-none text-48px paid:text-38px mobile:text-34px">{item.year}</div>
-                      <div className="leading-none uppercase text-10px paid:text-8px mobile:text-6px">{item.yearDesc}</div>
+                      <div className="leading-none text-48px pad:text-38px mobile:text-34px">{item.year}</div>
+                      <div className="leading-none uppercase text-10px pad:text-8px mobile:text-6px">{item.yearDesc}</div>
                     </div>
-                    <div className="h-60px w-2px bg-white mx-10px paid:w-1px paid:h-46px paid:mx-8px mobile:mx-5px mobile:h-40px mobile:w-1px"></div>
-                    <div className="leading-tight uppercase text-24px paid:text-20px mobile:text-16px">{item.name}</div>
+                    <div className="h-60px w-2px bg-white mx-10px pad:w-1px pad:h-46px pad:mx-8px mobile:mx-5px mobile:h-40px mobile:w-1px"></div>
+                    <div className="leading-tight uppercase text-24px pad:text-20px mobile:text-16px">{item.name}</div>
                   </div>
                 </div>
               )
@@ -141,7 +141,7 @@ function StoryChapterEndComponent(props: any) {
           </Marquee>
       </div>
       <div className="absolute text-[#E6E7E8] font-Grotesque-Light text-22px bottom-[calc(11.5vh)] w-full mobile:text-14px">
-        <div className="w-830px paid:w-664px m-auto mobile:w-300px">
+        <div className="w-830px pad:w-664px m-auto mobile:w-300px">
           {data.description}
         </div>
       </div>

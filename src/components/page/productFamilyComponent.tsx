@@ -145,8 +145,8 @@ function ProductFamilyComponent(props: any) {
                     ></BaseImage>
 
                     <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-150px mobile:hidden">
-                      <div className="an-bottle w-700px paid:w-500px flex flex-nowrap items-end">
-                          <div className="w-169px h-368px  relative mr-90px  paid:mr-64px paid:w-120px paid:h-262px  mobile:w-102px mobile:h-223px ">
+                      <div className="an-bottle w-700px pad:w-500px flex flex-nowrap items-end">
+                          <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px  mobile:w-102px mobile:h-223px ">
                               <BaseImage
                                   mImg={currentBottleData.info.bottle.mImg}
                                   pImg={currentBottleData.info.bottle.pImg}
@@ -160,26 +160,26 @@ function ProductFamilyComponent(props: any) {
                               <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px ">
                                   <div className="inline-block align-middle">
                                       <div className="relative">
-                                          <span className="text-60px font-light font-AlbertusNova-Light pb-8px paid:text-42px paid:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
-                                          <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center paid:text-7px mobile:text-7px">years old</span>
+                                          <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
+                                          <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">years old</span>
                                       </div>
                                       {/*<div className="text-11px font-bold">years old</div>*/}
                                   </div>
-                                  <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px bg-white paid:mr-11px paid:ml-6px paid:h-[57%] mobile:ml-10px mobile:mr-6px"></div>
-                                  <div className="inline-block align-middle w-194px text-29px pt-20px paid:w-138px paid:text-20px paid:pt-14px mobile:text-19px mobile:w-125px">{currentBottleData.info.name}</div>
+                                  <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px mobile:mr-6px"></div>
+                                  <div className="inline-block align-middle w-194px text-29px pt-20px pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px">{currentBottleData.info.name}</div>
                               </div>
-                              <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal paid:pb-21px paid:w-304px paid:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
+                              <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
                                   {currentBottleData.info.des}
                               </div>
-                              <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
+                              <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
                           </div>
                       </div>
                    </div>
 
 
                     <div className=" w-full  overflow-hidden  absolute  z-30 top-150px transform-x-[-50%] hidden mobile:block">
-                        <div className="paid:w-500px flex flex-wrap items-center justify-center">
-                            <div className="w-169px h-368px  relative mr-90px  paid:mr-64px paid:w-120px paid:h-262px mobile:mr-0  mobile:w-102px mobile:h-223px ">
+                        <div className="pad:w-500px flex flex-wrap items-center justify-center">
+                            <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px mobile:mr-0  mobile:w-102px mobile:h-223px ">
                                 <BaseImage
                                     mImg={currentBottleData.info.bottle.mImg}
                                     pImg={currentBottleData.info.bottle.pImg}
@@ -193,18 +193,18 @@ function ProductFamilyComponent(props: any) {
                                 <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:pt-20px mobile:w-full mobile:pb-20px mobile:flex mobile:flex-wrap justify-center items-end">
                                     <div className="inline-block align-middle">
                                         <div className="relative">
-                                            <span className="text-60px font-light font-AlbertusNova-Light pb-8px paid:text-42px paid:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
-                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center paid:text-7px mobile:text-7px">years old</span>
+                                            <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
+                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">years old</span>
                                         </div>
                                         {/*<div className="text-11px font-bold">years old</div>*/}
                                     </div>
-                                    <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px mobile:h-50px bg-white paid:mr-11px paid:ml-6px paid:h-[57%] mobile:ml-10px "></div>
-                                    <div className="inline-block align-middle w-194px text-29px  paid:w-138px paid:text-20px paid:pt-14px mobile:text-19px mobile:w-125px mobile:translate-y-[5px]  mobile:text-left">{currentBottleData.info.name}</div>
+                                    <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px mobile:h-50px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px "></div>
+                                    <div className="inline-block align-middle w-194px text-29px  pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px mobile:translate-y-[5px]  mobile:text-left">{currentBottleData.info.name}</div>
                                 </div>
-                                <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal paid:pb-21px paid:w-304px paid:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
+                                <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
                                     {currentBottleData.info.des}
                                 </div>
-                                <div className="font-Grotesque-Regular font-normal text-21px paid:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
+                                <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
                             </div>
                         </div>
                     </div>
@@ -225,37 +225,37 @@ function ProductFamilyComponent(props: any) {
                     ></BaseImage>
 
 
-                    <div className="absolute container left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] paid:leading-[14px] mobile:w-[80%]">
-                        <div className="text-center text-dark-grey font-AlbertusNova-Bold text-16px paid:text-11px mobile:text-14px">SMOKY</div>
-                        <div className="pb-11px text-center text-dark-grey text-13px paid:text-9px paid:pb-7px mobile:text-10px">MALT</div>
-                        <div className="flex justify-between text-center h-108px pb-11px paid:h-77px paid:pb-7px">
+                    <div className="absolute container left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%]">
+                        <div className="text-center text-dark-grey font-AlbertusNova-Bold text-16px pad:text-11px mobile:text-14px">SMOKY</div>
+                        <div className="pb-11px text-center text-dark-grey text-13px pad:text-9px pad:pb-7px mobile:text-10px">MALT</div>
+                        <div className="flex justify-between text-center h-108px pb-11px pad:h-77px pad:pb-7px">
                             <div className="rotate-[-90deg] block">
-                                <div className="font-AlbertusNova-Regular font-normal text-dark-grey font-AlbertusNova-Bold text-16px paid:text-11px mobile:text-14px">LIGHT</div>
-                                <div className="pb-6px font-AlbertusNova-Medium font-normal text-dark-grey text-13px paid:pb-4px paid:text-9px mobile:text-10px">GRAIN</div>
+                                <div className="font-AlbertusNova-Regular font-normal text-dark-grey font-AlbertusNova-Bold text-16px pad:text-11px mobile:text-14px">LIGHT</div>
+                                <div className="pb-6px font-AlbertusNova-Medium font-normal text-dark-grey text-13px pad:pb-4px pad:text-9px mobile:text-10px">GRAIN</div>
                             </div>
                             <div className="w-full relative after:content-[''] after:absolute after:top-1/2 after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full after:h-2px after:bg-dark-grey after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-2px before:h-full before:bg-dark-grey">
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 0 ? 'shadow-[#B96566]-500 bg-[#B96566] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'}  bottom-0 left-1/4 translate-x-[-50%] translate-y-[50%] paid:w-42px paid:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(0)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal paid:text-18px mobile:text-16px">{bottleData[0].num}</span>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 0 ? 'shadow-[#B96566]-500 bg-[#B96566] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'}  bottom-0 left-1/4 translate-x-[-50%] translate-y-[50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(0)}}>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[0].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 1 ? 'shadow-[#B96566]-500 bg-[#96934C] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'} top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] paid:w-42px paid:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(1)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal paid:text-18px mobile:text-16px">{bottleData[1].num}</span>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 1 ? 'shadow-[#B96566]-500 bg-[#96934C] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'} top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(1)}}>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[1].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 2 ? 'shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]' : 'bg-[#CECECE] text-[#779374]'} top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] paid:w-42px paid:h-42px mobile:w-36px mobile:h-36px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`} onClick={()=>{handleChooseBottle(2)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal paid:text-18px mobile:text-16px">{bottleData[2].num}</span>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 2 ? 'shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]' : 'bg-[#CECECE] text-[#779374]'} top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`} onClick={()=>{handleChooseBottle(2)}}>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[2].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-50%] paid:w-42px paid:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(3)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal paid:text-18px mobile:text-16px">{bottleData[3].num}</span>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(3)}}>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[3].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 4 ? 'shadow-[#B96566]-500 bg-[#779374] text-[#fff]' : 'bg-[#CECECE]'}  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] paid:w-42px paid:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(4)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal paid:text-18px mobile:text-16px">{bottleData[4].num}</span>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 4 ? 'shadow-[#B96566]-500 bg-[#779374] text-[#fff]' : 'bg-[#CECECE]'}  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(4)}}>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[4].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 5 ? 'shadow-[#B96566]-500 bg-[#588C96] text-[#fff]' : 'bg-[#CECECE] text-[#96934C]'} top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] paid:w-42px paid:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(5)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal  paid:text-18px mobile:text-16px">{bottleData[5].num}</span>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 5 ? 'shadow-[#B96566]-500 bg-[#588C96] text-[#fff]' : 'bg-[#CECECE] text-[#96934C]'} top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(5)}}>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal  pad:text-18px mobile:text-16px">{bottleData[5].num}</span>
                                 </div>
                             </div>
-                            <div className="rotate-[90deg] block text-dark-grey font-AlbertusNova-Bold text-16px paid:text-11px mobile:text-14px">RICH</div>
+                            <div className="rotate-[90deg] block text-dark-grey font-AlbertusNova-Bold text-16px pad:text-11px mobile:text-14px">RICH</div>
                         </div>
-                        <div className=" text-center text-dark-grey font-AlbertusNova-Bold text-16px paid:text-11px mobile:text-14px">SWEET</div>
+                        <div className=" text-center text-dark-grey font-AlbertusNova-Bold text-16px pad:text-11px mobile:text-14px">SWEET</div>
                     </div>
 
                 </div>

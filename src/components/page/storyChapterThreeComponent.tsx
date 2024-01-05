@@ -60,8 +60,8 @@ function StoryChapterThreeComponent(props: any) {
         ></BaseImage>
       </div>
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_03_line.png')]  h-screen"></div>
-      <div className={`absolute w-full flex flex-col items-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-152px paid:top-122px mobile:top-200px' : 'opacity-0 top-400px'}`}>
-        <div className="relative cursor-pointer z-10 w-825px h-420px paid:w-660px paid:h-335px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
+      <div className={`absolute w-full flex flex-col items-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-152px pad:top-122px mobile:top-200px' : 'opacity-0 top-400px'}`}>
+        <div className="relative cursor-pointer z-10 w-825px h-420px pad:w-660px pad:h-335px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
           <BaseImage
             mImg={data.avatar.mImg}
             pImg={data.avatar.pImg}
@@ -71,7 +71,7 @@ function StoryChapterThreeComponent(props: any) {
             quality={100}
           ></BaseImage>
         </div>
-        <div className="relative bg-white font-Grotesque-Regular text-dark-grey w-825px text-20px p-50px paid:w-660px paid:text-16px paid:p-40px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0">
+        <div className="relative bg-white font-Grotesque-Regular text-dark-grey w-825px text-20px p-50px pad:w-660px pad:text-16px pad:p-40px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0">
           <div className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in duration-500 delay-1500`}></div>
           <div>{data.description}</div>
         </div>
@@ -82,7 +82,7 @@ function StoryChapterThreeComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-150px paid:h-100px mobile:h-238px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-150px pad:h-100px mobile:h-238px"></div>
     </section>
   );
 }

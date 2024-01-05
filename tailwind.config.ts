@@ -24,7 +24,7 @@ const config: Config = {
       },
       screens: {
         mobile: { max: "768px" }, // size / 2
-        paid: { min: "769px", max: "1536px" }, // pc(size / 1.2) / 1.4
+        pad: { min: "769px", max: "1536px" }, // pc(size / 1.2) / 1.4
         // pc: {'max': '1600px'},  // size / 1.2
       },
       colors: {

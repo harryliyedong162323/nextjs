@@ -57,13 +57,13 @@ function KVAnimationComponent(props: any) {
 
       <section className="h-screen overflow-hidden relative select-none" ref={container}>
           <input type="hidden" value={headStyle}/>
-        {/*<div className="h-166px w-full relative paid:h-118px mobile:h-85px">*/}
-        {/*    <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>*/}
-        {/*    <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] paid:w-17px paid:h-16px mobile:w-20px mobile:h-20px mobile:right-25px"></div>*/}
+        {/*<div className="h-166px w-full relative pad:h-118px mobile:h-85px">*/}
+        {/*    <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>*/}
+        {/*    <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] pad:w-17px pad:h-16px mobile:w-20px mobile:h-20px mobile:right-25px"></div>*/}
         {/*</div>*/}
-        {/*<div className="h-166px w-full paid:h-118px mobile:h-85px"></div>*/}
-        {/*<div className="pt-20px container mx-auto paid:pt-14px mobile:pl-25px mobile:pr-25px">*/}
-        {/*    <div className="relative h-500px w-full paid:h-357px  mobile:h-[65vh]">*/}
+        {/*<div className="h-166px w-full pad:h-118px mobile:h-85px"></div>*/}
+        {/*<div className="pt-20px container mx-auto pad:pt-14px mobile:pl-25px mobile:pr-25px">*/}
+        {/*    <div className="relative h-500px w-full pad:h-357px  mobile:h-[65vh]">*/}
 
         {/*        <BaseVideo*/}
         {/*            src="https://yumen-ali.oss-cn-beijing.aliyuncs.com/bg.mp4"*/}
@@ -84,7 +84,7 @@ function KVAnimationComponent(props: any) {
         {/*        /!*    objectFit="cover"*!/*/}
         {/*        /!*    quality={100}*!/*/}
         {/*        /!*></BaseImage>*!/*/}
-        {/*        <div className="absolute w-181px h-395px z-20 left-1/2 translate-x-[-50%] bottom-[-80px] paid:w-129px paid:h-282px paid:bottom-[-57px] mobile:w-102px mobile:h-223px mobile:bottom-[-40px]">*/}
+        {/*        <div className="absolute w-181px h-395px z-20 left-1/2 translate-x-[-50%] bottom-[-80px] pad:w-129px pad:h-282px pad:bottom-[-57px] mobile:w-102px mobile:h-223px mobile:bottom-[-40px]">*/}
         {/*            <BaseImage*/}
         {/*                mImg={require("../../../public/assets/KVAnimation/bottle-m.png")}*/}
         {/*                pImg={require("../../../public/assets/KVAnimation/bottle.png")}*/}
@@ -94,7 +94,7 @@ function KVAnimationComponent(props: any) {
         {/*            ></BaseImage>*/}
         {/*        </div>*/}
         {/*    </div>*/}
-        {/*    <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular paid:pt-67px paid:pb-20px paid:text-21px mobile:pt-66px">*/}
+        {/*    <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular pad:pt-67px pad:pb-20px pad:text-21px mobile:pt-66px">*/}
         {/*        A drop of wilderness in every glass*/}
         {/*    </div>*/}
 
@@ -118,14 +118,14 @@ function KVAnimationComponent(props: any) {
             </BaseVideo>
         </div>
 
-          {/*<div className="select-none absolute uppercase top-1/2 translate-y-[-50%] w-full text-center text-white leading-[75px] font-Grotesque-Medium font-bold text-56px paid:leading-[53px] paid:text-40px mobile:leading-[37px] mobile:text-28px">*/}
+          {/*<div className="select-none absolute uppercase top-1/2 translate-y-[-50%] w-full text-center text-white leading-[75px] font-Grotesque-Medium font-bold text-56px pad:leading-[53px] pad:text-40px mobile:leading-[37px] mobile:text-28px">*/}
 
           {/*   <div className={`text-group-1 hidden`}>*/}
           {/*       <div className={`text-1 transition-opacity delay-200 duration-500 ease-in opacity-0`}>discover a wilderness</div>*/}
           {/*       <div className={`text-2 transition-opacity delay-500 duration-500 ease-in opacity-0`}>in every drop</div>*/}
           {/*   </div>*/}
 
-          {/*    <div className={`text-group-2 text-90px hidden paid:text-64px mobile:text-45px`}>*/}
+          {/*    <div className={`text-group-2 text-90px hidden pad:text-64px mobile:text-45px`}>*/}
           {/*        <div className={`text-3 transition-opacity delay-200 duration-300 ease-in opacity-0`}>ancient moorland</div>*/}
           {/*    </div>*/}
 
@@ -149,7 +149,7 @@ function KVAnimationComponent(props: any) {
 
         </div>
 
-          <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden paid:w-129px paid:h-281px paid:translate-y-[-21%]`}>
+          <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden pad:w-129px pad:h-281px pad:translate-y-[-21%]`}>
               <BaseVideo
                   src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.webm"
                   className="h-full object-cover"
@@ -164,7 +164,7 @@ function KVAnimationComponent(props: any) {
 
          <div className={`absolute bottom-0 w-full left-1/2 z-30`}>
             <div className={`text-group-4 translate-x-[-50%] translate-y-full transition-all ease-in-out duration-500 delay-1000`}>
-                <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular paid:pt-67px paid:pb-20px paid:text-21px mobile:pt-66px">
+                <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular pad:pt-67px pad:pb-20px pad:text-21px mobile:pt-66px">
                     A drop of wilderness in every glass
                 </div>
 

@@ -15,12 +15,12 @@ function PrivacyPolicyComponent(props: any) {
 
             <input type="hidden" value={headStyle}/>
 
-            <div className="relative mt-155px pl-48px pr-48px paid:pl-35px paid:pr-35px mobile:pr-23px mobile:pl-23px">
-                <div className="flex flex-col mb-67px paid:mb-48px mobile:mb-50px">
+            <div className="relative mt-155px pl-48px pr-48px pad:pl-35px pad:pr-35px mobile:pr-23px mobile:pl-23px">
+                <div className="flex flex-col mb-67px pad:mb-48px mobile:mb-50px">
                     <div className="flex justify-center">
-                        <div className="text-20px font-AlbertusNova not-italic  font-normal paid:text-14px mobile:text-14px ">WEB SITE USAGE TERMS & CONDITIONS</div>
+                        <div className="text-20px font-AlbertusNova not-italic  font-normal pad:text-14px mobile:text-14px ">WEB SITE USAGE TERMS & CONDITIONS</div>
                     </div>
-                    <div className='text-[#696969]   mx-auto  not-italic font-GalanoGrotesque text-15px mt-25px paid:mt-18px  paid:text-12px mobile:text-13px mobile:mt-24px'>
+                    <div className='text-[#696969]   mx-auto  not-italic font-GalanoGrotesque text-15px mt-25px pad:mt-18px  pad:text-12px mobile:text-13px mobile:mt-24px'>
 
                        <p>Welcome to www.xxxxx.com. This website is jointly operated by:</p>
                         <p>
@@ -47,11 +47,11 @@ function PrivacyPolicyComponent(props: any) {
 
                     </div>
                 </div>
-                <div className="flex flex-col mb-67px paid:mb-48px mobile:mb-50px">
+                <div className="flex flex-col mb-67px pad:mb-48px mobile:mb-50px">
                     <div className="flex justify-center">
-                        <div className="text-20px font-AlbertusNova not-italic  font-normal paid:text-14px mobile:text-14px ">USE OF THE SITE</div>
+                        <div className="text-20px font-AlbertusNova not-italic  font-normal pad:text-14px mobile:text-14px ">USE OF THE SITE</div>
                     </div>
-                    <div className='text-[#696969]   mx-auto  not-italic font-GalanoGrotesque text-15px mt-25px paid:mt-18px  paid:text-12px mobile:text-13px mobile:mt-24px'>
+                    <div className='text-[#696969]   mx-auto  not-italic font-GalanoGrotesque text-15px mt-25px pad:mt-18px  pad:text-12px mobile:text-13px mobile:mt-24px'>
 
                        <p>Welcome to www.xxxxx.com. This website is jointly operated by:</p>
                         <p>
@@ -78,11 +78,11 @@ function PrivacyPolicyComponent(props: any) {
 
                     </div>
                 </div>
-                <div className="flex flex-col mb-67px paid:mb-48px mobile:mb-50px">
+                <div className="flex flex-col mb-67px pad:mb-48px mobile:mb-50px">
                     <div className="flex justify-center">
-                        <div className="text-20px font-AlbertusNova not-italic  font-normal paid:text-14px mobile:text-14px ">LEGAL DRINKING AGE</div>
+                        <div className="text-20px font-AlbertusNova not-italic  font-normal pad:text-14px mobile:text-14px ">LEGAL DRINKING AGE</div>
                     </div>
-                    <div className='text-[#696969]   mx-auto  not-italic font-GalanoGrotesque text-15px mt-25px paid:mt-18px  paid:text-12px mobile:text-13px mobile:mt-24px'>
+                    <div className='text-[#696969]   mx-auto  not-italic font-GalanoGrotesque text-15px mt-25px pad:mt-18px  pad:text-12px mobile:text-13px mobile:mt-24px'>
 
                        <p>Welcome to www.xxxxx.com. This website is jointly operated by:</p>
                         <p>
@@ -110,7 +110,7 @@ function PrivacyPolicyComponent(props: any) {
                     </div>
                 </div>
                 <div className="absolute z-0 left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]  rotate-26 mobile:rotate-37   whitespace-nowrap opacity-20  overflow-hidden text-[#696969]">
-                      <div className='text-90px font-light not-italic font-GalanoGrotesque paid:text-64px  mobile:text-52px select-none'>
+                      <div className='text-90px font-light not-italic font-GalanoGrotesque pad:text-64px  mobile:text-52px select-none'>
                        To Be Provided By Brand
                     </div>
                 </div>

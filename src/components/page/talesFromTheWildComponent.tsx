@@ -150,10 +150,10 @@ function TalesFromTheWildComponent(props: any) {
     >
       <input type="hidden" value={headStyle} />
       <div className="flex h-screen flex-col">
-        <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px paid:text-27px paid:pt-124px mobile:text-20px mobile:pt-82px">
+        <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px pad:text-27px pad:pt-124px mobile:text-20px mobile:pt-82px">
           Tales From The Wild
         </div>
-        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] h-516px paid:mt-67px paid:w-1000px paid:h-414px mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
+        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] h-516px pad:mt-67px pad:w-1000px pad:h-414px mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
           {kolList?.length > 0 &&
             kolList.map((item, index) => {
               return (
@@ -163,8 +163,8 @@ function TalesFromTheWildComponent(props: any) {
                       <div
                         className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           currentKol !== toKol
-                            ? "w-139px h-420px mt-98px paid:w-111px paid:h-334px paid:mt-78px mobile:h-94px"
-                            : "w-615px h-519px paid:w-492px paid:h-414px mobile:h-360px"
+                            ? "w-139px h-420px mt-98px pad:w-111px pad:h-334px pad:mt-78px mobile:h-94px"
+                            : "w-615px h-519px pad:w-492px pad:h-414px mobile:h-360px"
                         }`}
                       >
                         <BaseImage
@@ -179,9 +179,9 @@ function TalesFromTheWildComponent(props: any) {
                       <div
                         className={`${
                           currentKol !== toKol ? "hidden" : ""
-                        } absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px paid:px-27px paid:pt-27px mobile:px-20px mobile:mt-10px`}
+                        } absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px pad:px-27px pad:pt-27px mobile:px-20px mobile:mt-10px`}
                       >
-                        <div className="inline-block relative object-cover w-48px h-48px paid:w-39px paid:h-39px mobile:w-48px mobile:h-48px">
+                        <div className="inline-block relative object-cover w-48px h-48px pad:w-39px pad:h-39px mobile:w-48px mobile:h-48px">
                           <BaseImage
                             mImg={item.avatar.mImg}
                             pImg={item.avatar.pImg}
@@ -191,20 +191,20 @@ function TalesFromTheWildComponent(props: any) {
                             quality={100}
                           ></BaseImage>
                         </div>
-                        <div className="text-white text-16px ml-10px paid:text-14px mobile:text-14px">
+                        <div className="text-white text-16px ml-10px pad:text-14px mobile:text-14px">
                           {item.name}
                         </div>
                       </div>
                       <div
                         className={`${
                           currentKol !== toKol ? "hidden" : ""
-                        } absolute left-0 inline-flex justify-between bottom-0 w-full bg-gradient-to-b from-[rgba(10, 22, 27, 0.75)] to-[rgba(0, 0, 0, 0)] px-33px pb-33px paid:px-27px paid:pb-27px mobile:px-24px mobile:pb-20px`}
+                        } absolute left-0 inline-flex justify-between bottom-0 w-full bg-gradient-to-b from-[rgba(10, 22, 27, 0.75)] to-[rgba(0, 0, 0, 0)] px-33px pb-33px pad:px-27px pad:pb-27px mobile:px-24px mobile:pb-20px`}
                       >
-                        <div className="text-white font-Grotesque-Medium text-20px paid:text-16px mobile:text-14px">
+                        <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
                           {item.description}
                         </div>
                         <Link link={"/storiesDetail"}>
-                          <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px paid:w-24px paid:h-24px mobile:w-18px mobile:h-18px"></div>
+                          <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
                         </Link>
                       </div>
                     </>
@@ -213,23 +213,23 @@ function TalesFromTheWildComponent(props: any) {
                     <>
                       <div
                         key={index}
-                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-98px paid:w-111px paid:pt-78px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                        className={`relative grayscale hover:grayscale-0 hover:animate-move-top w-139px h-full pt-98px pad:w-111px pad:pt-78px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           toKol === index
-                            ? "w-615px paid:w-492px mobile:h-360px grayscale-0 animate-move-top"
-                            : "w-139px paid:w-111px mobile:h-94px"
+                            ? "w-615px pad:w-492px mobile:h-360px grayscale-0 animate-move-top"
+                            : "w-139px pad:w-111px mobile:h-94px"
                         }`}
                       >
                         <div
                           className={`absolute w-full transition-all hover:text-white  ease-in-out duration-1000 ${
                             toKol === index
-                              ? "w-615px h-516px paid:w-492px paid:h-414px mobile:w-full mobile:h-360px text-white"
-                              : "w-139px h-420px paid:w-111px paid:h-334px mobile:w-full mobile:h-94px"
+                              ? "w-615px h-516px pad:w-492px pad:h-414px mobile:w-full mobile:h-360px text-white"
+                              : "w-139px h-420px pad:w-111px pad:h-334px mobile:w-full mobile:h-94px"
                           }`}
                         >
                           <div
                             className={`${
                               toKol === index ? "hidden" : ""
-                            } absolute z-10 font-AlbertusNova-Regular text-16px rotate-90 top-90px paid:top-70px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
+                            } absolute z-10 font-AlbertusNova-Regular text-16px rotate-90 top-90px pad:top-70px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
                           >
                             {item.name}
                           </div>
@@ -237,13 +237,13 @@ function TalesFromTheWildComponent(props: any) {
                             onClick={() => {
                               handleAnimation(index);
                             }}
-                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-15px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-30px paid:w-24px paid:h-24px paid:-mt-12px paid:hover:w-48px paid:hover:h-48px paid:hover:-ml-24px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:-mt-20px"
+                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-15px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-30px pad:w-24px pad:h-24px pad:-mt-12px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-24px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:-mt-20px"
                           ></div>
                           <div
                             className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${
                               toKol === index
-                                ? "w-615px h-516px paid:w-492px paid:h-414px mobile:h-360px"
-                                : "w-139px h-420px paid:w-111px paid:h-334px mobile:h-94px"
+                                ? "w-615px h-516px pad:w-492px pad:h-414px mobile:h-360px"
+                                : "w-139px h-420px pad:w-111px pad:h-334px mobile:h-94px"
                             }`}
                           >
                             <div className={`${toKol === index ? "w-full h-full" : "w-0 h-0 overflow-hidden"} relative`}>

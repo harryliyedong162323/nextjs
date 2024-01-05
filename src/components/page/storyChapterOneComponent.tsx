@@ -51,8 +51,8 @@ function StoryChapterOneComponent(props: any) {
             quality={100}
           ></BaseImage>
       </div>
-      <div className="absolute flex justify-center w-full top-294px paid:top-234px mobile:top-135px">
-        <div className={`overflow-hidden text-white font-Grotesque-Regular text-center text-28px transition-all ease-in-out duration-500 delay-1000 h-0 ${isCurrentPage? "h-90px mobile:h-90px" : "h-0"} w-965px paid:text-20px paid:w-635px mobile:text-14px mobile:w-275px`}>
+      <div className="absolute flex justify-center w-full top-294px pad:top-234px mobile:top-135px">
+        <div className={`overflow-hidden text-white font-Grotesque-Regular text-center text-28px transition-all ease-in-out duration-500 delay-1000 h-0 ${isCurrentPage? "h-90px mobile:h-90px" : "h-0"} w-965px pad:text-20px pad:w-635px mobile:text-14px mobile:w-275px`}>
           <div>{ data.description }</div>
         </div>
       </div>
@@ -68,8 +68,8 @@ function StoryChapterOneComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#282828] to-[#28282800] h-382px paid:h-320px mobile:h-250px"></div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-280px paid:h-224px mobile:h-238px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#282828] to-[#28282800] h-382px pad:h-320px mobile:h-250px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-280px pad:h-224px mobile:h-238px"></div>
     </section>
   );
 }

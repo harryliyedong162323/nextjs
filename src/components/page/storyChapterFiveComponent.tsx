@@ -62,13 +62,13 @@ function StoryChapterFiveComponent(props: any) {
       </div>
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_05_line.png')] h-screen"></div>
       <div
-        className={`absolute left-1/2 flex flex-col items-center w-970px h-500px -ml-485px paid:w-775px paid:-ml-388px paid:h-400px mobile:w-325px mobile:-ml-163px transition-all ease-in-out duration-500 delay-1000 ${
+        className={`absolute left-1/2 flex flex-col items-center w-970px h-500px -ml-485px pad:w-775px pad:-ml-388px pad:h-400px mobile:w-325px mobile:-ml-163px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
-            ? "opacity-100 top-192px paid:top-154px mobile:top-200px"
+            ? "opacity-100 top-192px pad:top-154px mobile:top-200px"
             : "opacity-0 top-400px"
         }`}
       >
-        <div className="absolute left-0 cursor-pointer z-10 w-630px h-500px paid:w-504px paid:h-400px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
+        <div className="absolute left-0 cursor-pointer z-10 w-630px h-500px pad:w-504px pad:h-400px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
           <BaseImage
             mImg={data.avatar.mImg}
             pImg={data.avatar.pImg}
@@ -78,7 +78,7 @@ function StoryChapterFiveComponent(props: any) {
             quality={100}
           ></BaseImage>
         </div>
-        <div className="absolute right-0 z-10 bg-white font-Grotesque-Regular text-dark-grey w-470px text-20px p-50px top-214px paid:w-376px paid:text-16px paid:p-40px paid:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
+        <div className="absolute right-0 z-10 bg-white font-Grotesque-Regular text-dark-grey w-470px text-20px p-50px top-214px pad:w-376px pad:text-16px pad:p-40px pad:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
           <div
             className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
           ></div>
@@ -95,8 +95,8 @@ function StoryChapterFiveComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#2828289c] to-[#28282800] h-225px paid:h-180px mobile:h-238px"></div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-414px paid:h-331px mobile:h-238px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#2828289c] to-[#28282800] h-225px pad:h-180px mobile:h-238px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-414px pad:h-331px mobile:h-238px"></div>
     </section>
   );
 }

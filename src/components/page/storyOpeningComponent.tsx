@@ -117,14 +117,14 @@ function StoryOpeningComponent(props: any) {
           );
         })}
       </Swiper>
-      <div className="absolute z-10 flex justify-center w-full top-144px paid:top-115px mobile:top-86px">
-        <span className="bg-[url('/assets/wildmoor_white.png')] inline-block bg-cover w-456px h-74px paid:w-365px paid:h-59px mobile:w-274px mobile:h-44px"></span>
+      <div className="absolute z-10 flex justify-center w-full top-144px pad:top-115px mobile:top-86px">
+        <span className="bg-[url('/assets/wildmoor_white.png')] inline-block bg-cover w-456px h-74px pad:w-365px pad:h-59px mobile:w-274px mobile:h-44px"></span>
       </div>
       <div
-        className={`absolute z-10 w-full flex items-center flex-col justify-center text-white bottom-180px paid:bottom-140px mobile:bottom-160px`}
+        className={`absolute z-10 w-full flex items-center flex-col justify-center text-white bottom-180px pad:bottom-140px mobile:bottom-160px`}
       >
         <div
-          className={`overflow-hidden font-AlbertusNova-Regular text-26px uppercase mb-20px paid:text-18px mobile:text-13px transition-all ease-in-out duration-500 delay-500 h-0 ${
+          className={`overflow-hidden font-AlbertusNova-Regular text-26px uppercase mb-20px pad:text-18px mobile:text-13px transition-all ease-in-out duration-500 delay-500 h-0 ${
             isCurrentPage ? "h-32px" : "h-0"
           }`}
         >
@@ -133,7 +133,7 @@ function StoryOpeningComponent(props: any) {
         <div
           className={`overflow-hidden font-AlbertusNova-Light text-center uppercase transition-all ease-in-out duration-500 delay-1000 h-0 ${
             isCurrentPage ? "h-48px mobile:h-54px" : "h-0"
-          } text-40px paid:text-28px mobile:leading-[27px] mobile:w-325px mobile:text-20px`}
+          } text-40px pad:text-28px mobile:leading-[27px] mobile:w-325px mobile:text-20px`}
         >
           <div>{data.description}</div>
         </div>
@@ -148,7 +148,7 @@ function StoryOpeningComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-20 w-full h-20px flex items-center justify-center bottom-140px paid:bottom-100px mobile:bottom-120px">
+      <div className="absolute z-20 w-full h-20px flex items-center justify-center bottom-140px pad:bottom-100px mobile:bottom-120px">
         {data.bgList.map((item, key) => {
           return (
             <div
@@ -161,7 +161,7 @@ function StoryOpeningComponent(props: any) {
           );
         })}
       </div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] h-160px paid:h-100px mobile:h-100px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] h-160px pad:h-100px mobile:h-100px"></div>
     </section>
   );
 }

@@ -4,5 +4,6 @@ module.exports = {
     'tailwindcss/nesting': {},
     tailwindcss: {},
     autoprefixer: {},
+    './pxToVwPlugin/postcss-px-to-vw': {},
   },
 }

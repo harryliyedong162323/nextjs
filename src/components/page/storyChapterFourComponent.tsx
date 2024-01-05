@@ -81,23 +81,23 @@ function StoryChapterFourComponent(props: any) {
           <div
             className={`absolute flex justify-center w-full flex-col items-start left-100px mobile:left-25px mobile:top-180px transition-all ease-in-out duration-500 delay-1000 ${
               isCurrentPage
-                ? "top-294px paid:top-254px mobile:top-86px opacity-100"
-                : "top-494px paid:top-454px mobile:top-286px opacity-0"
+                ? "top-294px pad:top-254px mobile:top-86px opacity-100"
+                : "top-494px pad:top-454px mobile:top-286px opacity-0"
             }`}
           >
-            <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px paid:text-27px mobile:text-20px mobile:w-full">
+            <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px pad:text-27px mobile:text-20px mobile:w-full">
               {data.words.first}
             </span>
-            <span className="text-[#d28656] font-AlbertusNova-Regular uppercase leading-none text-58px my-34px paid:text-46px paid:my-27px mobile:text-32px mobile:w-full mobile:my-20px">
+            <span className="text-[#d28656] font-AlbertusNova-Regular uppercase leading-none text-58px my-34px pad:text-46px pad:my-27px mobile:text-32px mobile:w-full mobile:my-20px">
               {data.words.second}
             </span>
-            <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px paid:text-27px mobile:text-20px mobile:w-full">
+            <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px pad:text-27px mobile:text-20px mobile:w-full">
               {data.words.thrid}
             </span>
           </div>
           <span
             onClick={() => showIntroduce(true)}
-            className={`absolute cursor-pointer w-300px h-300px top-244px left-902px paid:w-240px paid:h-240px paid:left-605px paid:top-195px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
+            className={`absolute cursor-pointer w-300px h-300px top-244px left-902px pad:w-240px pad:h-240px pad:left-605px pad:top-195px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
               isCurrentPage ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -115,13 +115,13 @@ function StoryChapterFourComponent(props: any) {
 
       {isShow && (
         <div
-          className={`absolute w-[1134px] left-1/2 -ml-567px top-174px h-496px paid:w-906px paid:-ml-453px paid:h-398px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
+          className={`absolute w-[1134px] left-1/2 -ml-567px top-174px h-496px pad:w-906px pad:-ml-453px pad:h-398px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
         >
           <div
             onClick={() => showIntroduce(false)}
-            className={`absolute cursor-pointer z-20 right-0 w-575px h-388px paid:w-460px paid:h-310px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 mobile:top-0 transition-all ease-in-out duration-500 delay-1000 ${
+            className={`absolute cursor-pointer z-20 right-0 w-575px h-388px pad:w-460px pad:h-310px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 mobile:top-0 transition-all ease-in-out duration-500 delay-1000 ${
               isCurrentPage
-                ? "opacity-100 top-200px paid:top-160px"
+                ? "opacity-100 top-200px pad:top-160px"
                 : "opacity-0 top-400px"
             }`}
           >
@@ -135,11 +135,11 @@ function StoryChapterFourComponent(props: any) {
             ></BaseImage>
           </div>
           <div
-            className={`overflow-hidden absolute left-0 top-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px p-42px w-640px paid:text-16px paid:p-33px paid:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
+            className={`overflow-hidden absolute left-0 top-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px p-42px w-640px pad:text-16px pad:p-33px pad:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
           >
             <div
               className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-500 delay-1000 ${
-                isCurrentPage ? "w-0" : "w-640px paid:w-512px mobile:w-330px"
+                isCurrentPage ? "w-0" : "w-640px pad:w-512px mobile:w-330px"
               }`}
             ></div>
             <div>{data.description}</div>
@@ -156,8 +156,8 @@ function StoryChapterFourComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-160px paid:h-100px mobile:h-100px"></div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-225px paid:h-180px mobile:h-238px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-160px pad:h-100px mobile:h-100px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-225px pad:h-180px mobile:h-238px"></div>
     </section>
   );
 }

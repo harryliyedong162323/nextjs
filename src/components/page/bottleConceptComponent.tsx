@@ -100,8 +100,8 @@ function BottleConceptComponent(props: any) {
         }}></div>
       <input type="hidden" value={headStyle}/>
       <div className="flex h-screen flex-col justify-center bg-black">
-        <div className="absolute w-full z-10 top-124px paid:top-84px mobile:top-82px">
-          <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px paid:text-27px mobile:text-20px">
+        <div className="absolute w-full z-10 top-124px pad:top-84px mobile:top-82px">
+          <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px pad:text-27px mobile:text-20px">
             BOTTLE CONCEPT
           </div>
         </div>
@@ -138,7 +138,7 @@ function BottleConceptComponent(props: any) {
               height="100%"
               url="https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4"
             ></ReactPlayer>
-            <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px paid:-ml-300px paid:w-600px paid:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>
+            <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px pad:-ml-300px pad:w-600px pad:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>
             <div className="bg-[url('/assets/range/icon_360.png')] absolute bg-cover z-10 left-1/2 -ml-34px w-68px h-35px bottom-80px"></div>
           </>
         )}

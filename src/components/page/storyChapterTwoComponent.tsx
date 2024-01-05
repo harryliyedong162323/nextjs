@@ -81,24 +81,24 @@ function StoryChapterTwoComponent(props: any) {
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_02_line.png')]  h-screen"></div>
       {!isShow && (
         <>
-          <div className={`absolute w-full transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'top-135px paid:top-104px mobile:top-86px opacity-100' : 'top-300px paid:top-280px mobile:top-260px opacity-0'}`}>
+          <div className={`absolute w-full transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'top-135px pad:top-104px mobile:top-86px opacity-100' : 'top-300px pad:top-280px mobile:top-260px opacity-0'}`}>
             <div className={`flex justify-center items-baseline mobile:flex-col mobile:items-start mobile:pl-50px`}>
-              <span className="text-white font-AlbertusNova-Regular uppercase text-30px paid:text-24px mobile:text-17px mobile:w-full">
+              <span className="text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:w-full">
                 { data.words.first }
               </span>
               <span className="flex justify-center items-baseline mx-10px">
                 <span className="font-AlbertusNova-Light text-[#d18350] text-[160px]"> { data.words.second }</span>
                 <span className="font-AlbertusNova-Regular text-[#d18350] text-42px"> { data.words.thrid }</span>
               </span>
-              <span className="text-white font-AlbertusNova-Regular uppercase text-30px paid:text-24px mobile:text-17px mobile:w-full">
+              <span className="text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:w-full">
               { data.words.fourth }
               </span>
             </div>
-            <div className="flex justify-center text-white font-AlbertusNova-Regular uppercase text-30px paid:text-24px mobile:text-17px mobile:justify-start mobile:mt-10px mobile:pl-50px"> { data.words.fifth }</div>
+            <div className="flex justify-center text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:justify-start mobile:mt-10px mobile:pl-50px"> { data.words.fifth }</div>
           </div>
           <span
             onClick={() => showIntroduce(true)}
-            className={`absolute bg-[url('/assets/story/brand_story_chatper_02_face.png')]  bg-cover top-1/2 left-1/2 cursor-pointer transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100' : 'opacity-0'} w-295px h-295px -ml-148px paid:w-236px paid:h-236px mobile:w-177px mobile:h-177px mobile:-ml-88px`}
+            className={`absolute bg-[url('/assets/story/brand_story_chatper_02_face.png')]  bg-cover top-1/2 left-1/2 cursor-pointer transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100' : 'opacity-0'} w-295px h-295px -ml-148px pad:w-236px pad:h-236px mobile:w-177px mobile:h-177px mobile:-ml-88px`}
           >
             <BaseImage
               mImg={data.avatarOne}
@@ -113,10 +113,10 @@ function StoryChapterTwoComponent(props: any) {
       )}
       {
         isShow &&
-        <div className={`absolute w-[1134px] left-1/2 -ml-567px top-174px h-393px paid:w-906px paid:-ml-453px paid:h-315px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}>
+        <div className={`absolute w-[1134px] left-1/2 -ml-567px top-174px h-393px pad:w-906px pad:-ml-453px pad:h-315px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}>
           <div
             onClick={() => showIntroduce(false)}
-            className={`absolute cursor-pointer z-20 left-0 w-528px h-422px paid:w-422px paid:h-282px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-0' : 'opacity-0 top-200px'}`}
+            className={`absolute cursor-pointer z-20 left-0 w-528px h-422px pad:w-422px pad:h-282px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-0' : 'opacity-0 top-200px'}`}
           >
             <BaseImage
               mImg={data.avatarTwo}
@@ -127,8 +127,8 @@ function StoryChapterTwoComponent(props: any) {
               quality={100}
             ></BaseImage>
           </div>
-          <div className={`overflow-hidden absolute right-0 bottom-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px p-42px w-640px paid:text-16px paid:p-33px paid:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}>
-            <div className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'w-0' : 'w-640px paid:w-512px mobile:w-330px'}`}></div>
+          <div className={`overflow-hidden absolute right-0 bottom-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px p-42px w-640px pad:text-16px pad:p-33px pad:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}>
+            <div className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'w-0' : 'w-640px pad:w-512px mobile:w-330px'}`}></div>
             <div>{ data.description }</div>
           </div>
         </div>
@@ -139,7 +139,7 @@ function StoryChapterTwoComponent(props: any) {
           { data.scrollText }
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full h-382px bg-gradient-to-b from-[#2828289c] to-[#28282800] paid:h-320px mobile:h-250px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full h-382px bg-gradient-to-b from-[#2828289c] to-[#28282800] pad:h-320px mobile:h-250px"></div>
     </section>
   );
 }

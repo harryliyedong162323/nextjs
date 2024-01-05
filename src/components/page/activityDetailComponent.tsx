@@ -37,7 +37,7 @@ function ActivityDetailComponent(props: any) {
 
     return (
         <div className="container mx-auto overflow-hidden">
-            <div className="text-22px font-normal text-center text-dark-grey pt-95px pb-42px font-AlbertusNova-Regular mobile:pt-22px mobile:pb-20px mobile:text-14px uppercase paid:pt-150px">the Wild Escape Journal</div>
+            <div className="text-22px font-normal text-center text-dark-grey pt-95px pb-42px font-AlbertusNova-Regular mobile:pt-22px mobile:pb-20px mobile:text-14px uppercase pad:pt-150px">the Wild Escape Journal</div>
             <div className="text-40px font-normal text-center w-623px mx-auto font-AlbertusNova-Regular pb-117px mobile:pl-45px mobile:pr-45px mobile:text-20px mobile:w-auto mobile:pb-40px uppercase">Bring the drinking occasion to life in a way</div>
             <div className="text-dark-grey pl-53px pr-53px pb-67px text-22px color-dark-grey font-normal leading-[38px] font-Grotesque-Regular mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:pb-20px mobile:leading-[22px] mobile:flex mobile:flex-wrap">
                 <p className="mobile:order-2">Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. </p>

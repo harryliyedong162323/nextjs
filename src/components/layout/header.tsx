@@ -137,9 +137,9 @@ function Header(props: any) {
         {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
         <div
           id="nav-large-content"
-          className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px paid:h-118px mobile:h-85px `}
+          className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px pad:h-118px mobile:h-85px `}
         >
-          <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] paid:w-380px paid:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
+          <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
           <div
             className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
             onClick={() => {
@@ -153,7 +153,7 @@ function Header(props: any) {
 
       <nav
         id="nav-bg-white"
-        className={`bg-white h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn paid:h-118px mobile:h-85px ${
+        className={`bg-white h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn pad:h-118px mobile:h-85px ${
           headStyle == "bg-white" ? "block" : "hidden"
         }`}
       >
@@ -370,8 +370,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
             <div
 
 
-                className="w-381px relative pl-33px   overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
-              <div className="h-41px paid:h-29px   mobile:h-40px flex justify-between items-end ">
+                className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
+              <div className="h-41px pad:h-29px   mobile:h-40px flex justify-between items-end ">
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px">
                   <BaseImage
                     mImg={require("../../../public/assets/logo.png")}
@@ -382,7 +382,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
                 <div
-                  className=" w-20px paid:w-14px mobile:w-19px h-20px paid:h-14px mobile:h-19px cursor-pointer"
+                  className=" w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
                   onClick={handleClose}
                 >
                   <BaseImage
@@ -398,22 +398,22 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   onWheel={(e)=>{
                     e.stopPropagation()
                   }}
-                  className="lock mt-64px paid:mt-53px mobile:mt-80px flex flex-col h-[75vh]  overflow-y-auto">
-                <div className="flex justify-between mb-91px paid:mb-65 px mobile:mb-75px">
+                  className="lock mt-64px pad:mt-53px mobile:mt-80px flex flex-col h-[75vh]  overflow-y-auto">
+                <div className="flex justify-between mb-91px pad:mb-65 px mobile:mb-75px">
                   <div className="">
-                    <BaseLink link={`/home`} className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium">HOME</BaseLink>
+                    <BaseLink link={`/home`} className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium">HOME</BaseLink>
                   </div>
                 </div>
 
                 {panels.map((panel) => (
                   <div
-                    className="flex flex-col mb-40px paid:mb-25 px mobile:mb-15px "
+                    className="flex flex-col mb-40px pad:mb-25 px mobile:mb-15px "
                     key={panel.id}
                   >
-                    <div className="flex justify-between items-center mb-33px paid:mb-27 px mobile:mb31-px cursor-pointer h-50px">
+                    <div className="flex justify-between items-center mb-33px pad:mb-27 px mobile:mb31-px cursor-pointer h-50px">
                       <div className="w-9/12 ">
                         <BaseLink
-                            className="text-[#000000] text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
+                            className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
                           link={panel.title[0].link}
                           onClick={(e) => {
                             handleClose();
@@ -424,7 +424,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                       </div>
                       {!panel.isExpanded ? (
                         <div
-                          className="w-17px paid:w-15px mobile:w-20px h-18px paid:h-16px mobile:h-22px relative"
+                          className="w-17px pad:w-15px mobile:w-20px h-18px pad:h-16px mobile:h-22px relative"
                           onClick={() => togglePanel(panel.id)}
                         >
                           <BaseImage
@@ -436,21 +436,21 @@ function Panel({ menuFlag, onMenuChange }: any) {
                           ></BaseImage>
                         </div>
                       ) : (
-                        <div className="text-21px paid:text-17px mobile:text-21px font-GalanoGrotesque" onClick={() => togglePanel(panel.id)}>
+                        <div className="text-21px pad:text-17px mobile:text-21px font-GalanoGrotesque" onClick={() => togglePanel(panel.id)}>
                           —
                         </div>
                       )}
                     </div>
                     {panel.isExpanded && (
-                      <div className="flex flex-col mt-10px paid:mt-8px mobile:mt-15px">
+                      <div className="flex flex-col mt-10px pad:mt-8px mobile:mt-15px">
                         {panel.list.map((item) => (
                           <div
-                            className="cursor-pointer flex justify-between items-center mb-30px paid:mb-23px mobile:mb-20px"
+                            className="cursor-pointer flex justify-between items-center mb-30px pad:mb-23px mobile:mb-20px"
                             key={item.id}
                           >
                             <div className="w-4/5 truncate">
                               <BaseLink
-                                  className="text-14px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular "
+                                  className="text-14px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular "
                                 link={item.link}
                                 onClick={(e) => {
                                   handleClose();
@@ -459,7 +459,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                                 {item.content}
                               </BaseLink>
                             </div>
-                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-15px  paid:h-16px mobile:w-15px mobile:h-17px reactive">
+                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
                               {/*<BaseImage*/}
                               {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
                               {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
@@ -475,10 +475,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   </div>
                 ))}
               </div>
-              <div className="absolute bottom-40px  paid:bottom-28px mobile:bottom-13px ">
+              <div className="absolute bottom-40px  pad:bottom-28px mobile:bottom-13px ">
                 <div className="flex items-center">
                   <div
-                    className="w-17px paid:w-14px mobile:w-24px h-17px paid:h-14px mobile:h-24px  cursor-pointer relative"
+                    className="w-17px pad:w-14px mobile:w-24px h-17px pad:h-14px mobile:h-24px  cursor-pointer relative"
                     onClick={hanleLanguage}
                   >
                     <BaseImage
@@ -490,7 +490,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     ></BaseImage>
                   </div>
                   <div
-                    className="ml-14px paid:ml-12px mobile:ml-10px text-[#000000]  cursor-pointer text-15px paid:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
+                    className="ml-14px pad:ml-12px mobile:ml-10px text-[#000000]  cursor-pointer text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
                     onClick={hanleLanguage}
                   >
                     Location and Language
@@ -505,10 +505,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
         <div className="absolute w-full h-screen select-none">
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"></div>
-            <div className="w-400px relative pl-33px  overflow-hidden pr-33px paid:pl-24px paid:pr-24px paid:w-285px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
-              <div className="flex justify-between items-center  mt-25px paid:mt-18px mobile:mt-15px">
+            <div className="w-400px relative pl-33px  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-285px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
+              <div className="flex justify-between items-center  mt-25px pad:mt-18px mobile:mt-15px">
                 <div
-                  className="w-33px h-17px paid:w-24px paid:h-12px mobile:w-28px mobile:h-13px relative cursor-pointer "
+                  className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative cursor-pointer "
                   onClick={handlePrev}
                 >
                   <BaseImage
@@ -529,7 +529,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
                 <div
-                  className=" w-20px paid:w-14px mobile:w-19px h-20px paid:h-14px mobile:h-19px cursor-pointer"
+                  className=" w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
                   onClick={handlePop}
                 >
                   <BaseImage
@@ -541,16 +541,16 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
               </div>
-              <div className="text-center not-italic font-medium font-GalanoGrotesque  text-22px paid:text-15px mobile:text-20px mt-68px paid:mt-48px mobile:mt-53px">
+              <div className="text-center not-italic font-medium font-GalanoGrotesque  text-22px pad:text-15px mobile:text-20px mt-68px pad:mt-48px mobile:mt-53px">
                 Location And Language
               </div>
-              <div className="flex flex-col mt-67px paid:mt-48px mobile:mt-73px">
-                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
+              <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
+                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
                       CHINA MAINLAND-SIMPLIFIED CHINESE
                     </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-9px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
                       {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
                       {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
@@ -562,12 +562,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   </BaseLink>
 
                 </div>
-                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer">
+                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
                       Taiwan region - traditional Chinese
                     </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:w-9px  paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
                       {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
                       {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
@@ -579,12 +579,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   </BaseLink>
 
                 </div>
-                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
+                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
                       Korea - Korean
                     </div>
-                    <div className="w-13px h-25px  paid:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                    <div className="w-13px h-25px  pad:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
                       {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
                       {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
@@ -596,12 +596,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   </BaseLink>
 
                 </div>
-                <div className="mb-75px paid:mb-54px mobile:mb-60px cursor-pointer ">
+                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
-                    <div className="uppercase text-13px paid:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
                       Singapore - English
                     </div>
-                    <div className="w-13px h-25px paid:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat paid:h-17px mobile:w-15px mobile:h-17px reactive">
+                    <div className="w-13px h-25px pad:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
                       {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
                       {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
@@ -614,7 +614,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
                 </div>
               </div>
-              <div className="uppercase font-medium font-Grotesque-Medium text-14px paid:text-10px mobile:text-15px mt-68px paid:mt-48px mobile:mt-53px">
+              <div className="uppercase font-medium font-Grotesque-Medium text-14px pad:text-10px mobile:text-15px mt-68px pad:mt-48px mobile:mt-53px">
                 United Kingdom - English
               </div>
             </div>

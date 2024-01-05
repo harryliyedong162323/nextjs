@@ -64,21 +64,21 @@ function StoryChapterSixComponent(props: any) {
       <div
         className={`absolute top-[calc(15vh)] right-100px flex justify-center w-full flex-col items-end mobile:top-154px mobile:right-25px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
-            ? "top-197px paid:top-158px mobile:top-86px opacity-100"
-            : "top-397px paid:top-358px mobile:top-286px opacity-0"
+            ? "top-197px pad:top-158px mobile:top-86px opacity-100"
+            : "top-397px pad:top-358px mobile:top-286px opacity-0"
         }`}
       >
-        <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px paid:text-28px mobile:text-18px mobile:w-full mobile:text-right">
+        <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px pad:text-28px mobile:text-18px mobile:w-full mobile:text-right">
           {data.words.first}
         </span>
-        <span className="text-[#d28656] font-AlbertusNova-Regular uppercase leading-none text-58px mt-60px paid:47px paid:mt-50px mobile:text-27px mobile:w-full mobile:my-20px mobile:text-right">
+        <span className="text-[#d28656] font-AlbertusNova-Regular uppercase leading-none text-58px mt-60px pad:47px pad:mt-50px mobile:text-27px mobile:w-full mobile:my-20px mobile:text-right">
           {data.words.second}
         </span>
       </div>
-      <div className={`absolute bg-white font-Grotesque-Regular text-dark-grey w-694px left-100px text-20px p-50px paid:text-16px paid:p-40px paid:left-80px paid:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
+      <div className={`absolute bg-white font-Grotesque-Regular text-dark-grey w-694px left-100px text-20px p-50px pad:text-16px pad:p-40px pad:left-80px pad:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
         isCurrentPage
-        ? "top-450px paid:top-360px mobile:top-1/2 opacity-100"
-        : "top-650px paid:top-560px mobile:top-2/3 opacity-0"
+        ? "top-450px pad:top-360px mobile:top-1/2 opacity-100"
+        : "top-650px pad:top-560px mobile:top-2/3 opacity-0"
       }`}>
         <div
           className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
@@ -95,7 +95,7 @@ function StoryChapterSixComponent(props: any) {
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-414px paid:h-331px mobile:h-238px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-414px pad:h-331px mobile:h-238px"></div>
     </section>
   );
 }

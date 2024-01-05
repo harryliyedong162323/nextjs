@@ -25,8 +25,8 @@ const Custom404 = () => {
   const [data, setData] = useState<ComponentData>(componentData);
   return (
     <section className="relative overflow-hidden select-none">
-      <div className="absolute z-10 flex justify-center w-full top-144px paid:top-115px mobile:top-86px">
-        <span className="bg-[url('/assets/wildmoor_white.png')] inline-block bg-cover w-456px h-74px paid:w-365px paid:h-59px mobile:w-274px mobile:h-44px"></span>
+      <div className="absolute z-10 flex justify-center w-full top-144px pad:top-115px mobile:top-86px">
+        <span className="bg-[url('/assets/wildmoor_white.png')] inline-block bg-cover w-456px h-74px pad:w-365px pad:h-59px mobile:w-274px mobile:h-44px"></span>
       </div>
       <div className="flex h-screen">
         <BaseImage

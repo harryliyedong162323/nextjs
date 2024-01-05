@@ -306,13 +306,13 @@ function LocationStoreList(props: any){
     }, []);
 
     return (
-        <section className="pt-138px pl-45px paid:pt-98px paid:pl-32px mobile:pl-13px mobile:pt-112px">
+        <section className="pt-138px pl-45px pad:pt-98px pad:pl-32px mobile:pl-13px mobile:pt-112px">
 
-            <div className="pb-45px relative z-20 paid:pb-32px mobile:pb-35px">
+            <div className="pb-45px relative z-20 pad:pb-32px mobile:pb-35px">
                 {
                     selectedReady ? <Select
                         styles={customStyles}
-                        className={`text-14px pt-18px pb-18px  pr-25px bg-transparent w-255px h-55px paid:pt-12px paid:pb-12px paid:pl-0 mobile:pl-0`}
+                        className={`text-14px pt-18px pb-18px  pr-25px bg-transparent w-255px h-55px pad:pt-12px pad:pb-12px pad:pl-0 mobile:pl-0`}
                         defaultValue={selectedOption}
                         options={options}
                         onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
@@ -361,7 +361,7 @@ function LocationStoreList(props: any){
                                     <SwiperSlide key={item.id} className={``}>
                                         <div className="w-full   mobile:w-265px ">
                                             <BaseLink link={item.link} className="text-black">
-                                                <div className="relative w-full h-320px  paid:h-230px mobile:w-265px mobile:h-240px">
+                                                <div className="relative w-full h-320px  pad:h-230px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
                                                         mImg={item.listImg.mImg}
                                                         pImg={item.listImg.pImg}
@@ -371,10 +371,10 @@ function LocationStoreList(props: any){
                                                         quality={100}
                                                     ></BaseImage>
                                                 </div>
-                                                <div className="pt-25px paid:pt-17px mobile:pt-29px">
-                                                    <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular paid:text-22px paid:pb-11px w-auto mobile:text-16px mobile:pb-15px">{item.name}</div>
-                                                    <div className="w-[85%]  text-15px font-Grotesque-Regular font-normal paid:text-10px mobile:text-11px ">{item.des}</div>
-                                                    <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]  paid:w-28px paid:h-28px paid:mt-17px mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
+                                                <div className="pt-25px pad:pt-17px mobile:pt-29px">
+                                                    <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular pad:text-22px pad:pb-11px w-auto mobile:text-16px mobile:pb-15px">{item.name}</div>
+                                                    <div className="w-[85%]  text-15px font-Grotesque-Regular font-normal pad:text-10px mobile:text-11px ">{item.des}</div>
+                                                    <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]  pad:w-28px pad:h-28px pad:mt-17px mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
 
                                                 </div>
                                             </BaseLink>
@@ -393,10 +393,10 @@ function LocationStoreList(props: any){
             </div>
 
 
-            <div className="flex justify-end pr-10 pt-97px paid:pt-69px">
+            <div className="flex justify-end pr-10 pt-97px pad:pt-69px">
                 <div>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px paid:w-31px paid:h-31px paid:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == locationInfo.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle paid:w-31px paid:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+                    <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px pad:w-31px pad:h-31px pad:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
+                    <span className={`cursor-pointer bg-contain ${currentIndex == locationInfo.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle pad:w-31px pad:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
                 </div>
             </div>
 
@@ -437,8 +437,8 @@ function LocationInfoComponent(props: any) {
 
             {
                 isChooseMarquee == false ? <div>
-                    <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center paid:pt-110px paid:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
-                    <div className="w-full mt-145px paid:mt-103px mobile:mt-132px ">
+                    <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
+                    <div className="w-full mt-145px pad:mt-103px mobile:mt-132px ">
 
                         <Marquee play={play}>
                             <div className="w-250px mobile:hidden"></div>
@@ -457,7 +457,7 @@ function LocationInfoComponent(props: any) {
                                        onMouseLeave={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseLeave(e)}}
                                    >
 
-                                        <div className={`relative inline-block align-middle w-152px h-152px mr-20px paid:mr-14px mobile:mr-12px paid:w-108px paid:h-108px mobile:w-91px mobile:h-91px `}>
+                                        <div className={`relative inline-block align-middle w-152px h-152px mr-20px pad:mr-14px mobile:mr-12px pad:w-108px pad:h-108px mobile:w-91px mobile:h-91px `}>
                                             <BaseImage
 
                                                 mImg={item.mImg}
@@ -468,10 +468,10 @@ function LocationInfoComponent(props: any) {
                                                 quality={50}
                                             ></BaseImage>
                                         </div>
-                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px paid:w-208px mobile:w-175px">
-                                            <div className="leading-tight uppercase text-33px paid:text-23px mobile:text-20px whitespace-nowrap">{item.name}</div>
+                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px pad:w-208px mobile:w-175px">
+                                            <div className="leading-tight uppercase text-33px pad:text-23px mobile:text-20px whitespace-nowrap">{item.name}</div>
 
-                                            <div className="w-195px h-60px mt-16px paid:mt-11px mobile:mt-10px">
+                                            <div className="w-195px h-60px mt-16px pad:mt-11px mobile:mt-10px">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/howToBuy/btn.png")}
                                                     pImg={require("../../../public/assets/howToBuy/btn.png")}
@@ -489,7 +489,7 @@ function LocationInfoComponent(props: any) {
                         </Marquee>
                     </div>
 
-                    <div className="w-full mt-148px paid:mt-105px mobile:mt-128px ">
+                    <div className="w-full mt-148px pad:mt-105px mobile:mt-128px ">
 
                         <Marquee play={play}>
                             { [data.productList[3],data.productList[4]].map((item, index) => {
@@ -508,7 +508,7 @@ function LocationInfoComponent(props: any) {
                                     >
 
 
-                                        <div className={`relative inline-block align-middle  w-152px h-152px mr-20px paid:mr-14px mobile:mr-12px paid:w-108px paid:h-108px mobile:w-91px mobile:h-91px `}>
+                                        <div className={`relative inline-block align-middle  w-152px h-152px mr-20px pad:mr-14px mobile:mr-12px pad:w-108px pad:h-108px mobile:w-91px mobile:h-91px `}>
                                             <BaseImage
                                                 mImg={item.mImg}
                                                 pImg={item.pImg}
@@ -518,10 +518,10 @@ function LocationInfoComponent(props: any) {
                                                 quality={50}
                                             ></BaseImage>
                                         </div>
-                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px paid:w-208px mobile:w-175px">
-                                            <div className="leading-tight uppercase text-33px paid:text-23px mobile:text-20px whitespace-nowrap">{item.name}</div>
+                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px pad:w-208px mobile:w-175px">
+                                            <div className="leading-tight uppercase text-33px pad:text-23px mobile:text-20px whitespace-nowrap">{item.name}</div>
 
-                                            <div className="w-195px h-60px mt-16px paid:mt-11px mobile:mt-10px">
+                                            <div className="w-195px h-60px mt-16px pad:mt-11px mobile:mt-10px">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/howToBuy/btn.png")}
                                                     pImg={require("../../../public/assets/howToBuy/btn.png")}
