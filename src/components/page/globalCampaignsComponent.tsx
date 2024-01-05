@@ -57,16 +57,16 @@ function GlobalCampaignsComponent(props: any) {
         ) : null}
 
 
-        <div className={`pt-28px relative z-30 pad:pt-20px flex justify-between  mx-auto text-white w-889px pad:w-740px mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center`}>
-          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:w-full mobile:text-12px mobile:pb-15px">
+        <div className={`pt-28px relative z-30 pad:pt-20px flex justify-between  mx-auto text-white w-889px pad:w-740px mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center flex pad:justify-center`}>
+          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:w-full mobile:text-12px mobile:pb-15px whitespace-nowrap">
             <span className="w-18px h-24px mobile:w-21px mobile:h-21 pad:w-12px pad:h-20px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/address.png')] bg-contain"></span>
             <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">4325 Glenwood AvenueRaleigh, NC 27612, </span>
           </div>
-          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px">
+          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px whitespace-nowrap">
             <span className="w-20px h-20px mobile:w-21px mobile:h-21 pad:w-14px pad:h-14px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/time.png')] bg-contain"></span>
             <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">10:00-24:00</span>
           </div>
-          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px mobile:pl-25px">
+          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px mobile:pl-25px whitespace-nowrap">
             <span className="w-20px h-18px mobile:w-21px mobile:h-21 pad:w-14px pad:h-12px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/phone.png')] bg-contain"></span>
             <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">000-1234567890</span>
           </div>
