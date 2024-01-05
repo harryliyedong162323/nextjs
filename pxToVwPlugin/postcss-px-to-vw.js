@@ -15,13 +15,13 @@ module.exports = postcss.plugin("postcss-px-to-vw", () => {
       }
 
       // pad
-      // if (
-      //   rule.parent &&
-      //   rule.parent.type === "atrule" &&
-      //   rule.parent.params.includes("(min-width: 769px) and (max-width: 1536px)")
-      // ) {
-      //   base = 1600 * 1.2 * 1.4;
-      // }
+      if (
+        rule.parent &&
+        rule.parent.type === "atrule" &&
+        rule.parent.params.includes("(min-width: 769px) and (max-width: 1536px)")
+      ) {
+        base = 1600;
+      }
 
       rule.walkDecls((decl) => {
         if (decl.prop === "background-image") {
