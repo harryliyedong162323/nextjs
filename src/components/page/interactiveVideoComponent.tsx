@@ -11,7 +11,7 @@ function InteractiveVideoComponent(props: any) {
        <section id="TheWildEscape" data-anchor={2} className="w-full h-screen relative overflow-hidden select-none">
            <input type="hidden" value={headStyle}/>
            <BaseImage
-               defaultImg={require("../../../public/assets/interactiveVideo/bg.png")}
+               defaultImg={require("../../../public/assets/interactiveVideo/bg2.png")}
                alt={""}
                layout="fill"
                objectFit="cover"
@@ -40,6 +40,8 @@ function InteractiveVideoComponent(props: any) {
                        quality={100}
                    ></BaseImage>
                </div>
+
+
            </div>
 
        </section>

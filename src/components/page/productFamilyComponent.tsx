@@ -22,6 +22,7 @@ interface bottleContent {
             mImg: string,
         },
         year: number,
+        tag: string,
         price: string,
         des: string,
     }
@@ -35,6 +36,11 @@ function ProductFamilyComponent(props: any) {
     const [alignment,setAlignment] = useState(false);
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
     const [currentBottleIndex,setCurrentBottleIndex] = useState(0);
+    const [textGradient,setTextGradient]  = useState({
+        'background': 'linear-gradient(to bottom, #e9aa87, #953e1a)',
+        'backgroundClip':'text',
+        'color': 'transparent',
+    } as React.CSSProperties);
     const container = useRef(null);
     const [animationReady,setAnimationReady] = useState(false);
     const [bottleData,setBottleData] = useState(bottle);
@@ -47,14 +53,24 @@ function ProductFamilyComponent(props: any) {
         setAnimationReady(true);
 
         setTimeout(()=>{
+
             setCurrentBottleData(bottleData[index]);
         },500)
 
-
+        if(index == 3){
+            setTextGradient({
+                'color': '#fff',
+            })
+        }else{
+            setTextGradient({
+                'background': 'linear-gradient(to bottom, #e9aa87, #953e1a)',
+                'backgroundClip':'text',
+                'color': 'transparent',
+            })
+        }
 
         setCurrentBottleIndex(index);
     }
-
 
 
     useGSAP(
@@ -78,7 +94,7 @@ function ProductFamilyComponent(props: any) {
             gsap.timeline()
 
                 .to('.an-group-1',{width:0})
-                // .to('.an-bg',{opacity:1})
+            // .to('.an-bg',{opacity:1})
         },
         { scope: container,dependencies: [currentBottleIndex],revertOnUpdate: true}
     );
@@ -144,37 +160,44 @@ function ProductFamilyComponent(props: any) {
                         quality={100}
                     ></BaseImage>
 
-                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[44%] pad:left-[45%] z-30 top-150px pad:top-[30%] mobile:hidden">
-                      <div className="an-bottle w-700px pad:w-700px flex flex-nowrap items-end">
-                          <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-169px pad:h-368px  mobile:w-102px mobile:h-223px ">
-                              <BaseImage
-                                  mImg={currentBottleData.info.bottle.mImg}
-                                  pImg={currentBottleData.info.bottle.pImg}
-                                  alt={""}
-                                  layout="fill"
-                                  objectFit="cover"
-                                  quality={100}
-                              ></BaseImage>
-                          </div>
-                          <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
-                              <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px">
-                                  <div className="inline-block align-middle">
-                                      <div className="relative">
-                                          <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
-                                          <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">years old</span>
-                                      </div>
-                                      {/*<div className="text-11px font-bold">years old</div>*/}
-                                  </div>
-                                  <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px mobile:mr-6px"></div>
-                                  <div className="inline-block align-middle w-194px text-29px pt-20px pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px">{currentBottleData.info.name}</div>
-                              </div>
-                              <div className="pt-18px pb-18px w-426px text-20px font-Grotesque-Light font-normal pad:pb-15px pad:pt-15px pad:w-400px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
-                                  {currentBottleData.info.des}
-                              </div>
-                              <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
-                          </div>
-                      </div>
-                   </div>
+                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-150px mobile:hidden">
+                        <div className="an-bottle w-700px pad:w-500px flex flex-nowrap items-end">
+                            <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px  mobile:w-102px mobile:h-223px ">
+                                <BaseImage
+                                    mImg={currentBottleData.info.bottle.mImg}
+                                    pImg={currentBottleData.info.bottle.pImg}
+                                    alt={""}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    quality={100}
+                                ></BaseImage>
+                            </div>
+                            <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
+                                <div className="font-AlbertusNova-Regular pb-29px pad:pb-21px font-normal mobile:text-center mobile:w-full mobile:pb-20px flex items-center">
+                                    <div className="inline-block align-middle">
+                                        <div className="relative">
+                                            <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
+                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">years old</span>
+                                        </div>
+                                        {/*<div className="text-11px font-bold">years old</div>*/}
+                                    </div>
+                                    <div className="mr-16px ml-9px inline-block align-middle pad:translate-y-[5px] translate-y-[7px] h-70px w-2px bg-white pad:mr-11px pad:ml-6px pad:h-50px mobile:ml-10px mobile:mr-6px"></div>
+                                    <div className="inline-block uppercase relative align-middle w-194px text-29px pt-20px pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px">
+                                        {currentBottleData.info.name}
+                                        {
+                                            currentBottleData.info.tag != '' ? <div className="text-10px inline-block align-middle absolute bottom-10px pad:bottom-4px right-[-25%]  pad:right-[-50%] scale-[.8]">{currentBottleData.info.tag}</div> : null
+                                        }
+
+                                    </div>
+
+                                </div>
+                                <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
+                                    {currentBottleData.info.des}
+                                </div>
+                                <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>
+                            </div>
+                        </div>
+                    </div>
 
 
                     <div className=" w-full  overflow-hidden  absolute  z-30 top-150px transform-x-[-50%] hidden mobile:block">
@@ -199,7 +222,7 @@ function ProductFamilyComponent(props: any) {
                                         {/*<div className="text-11px font-bold">years old</div>*/}
                                     </div>
                                     <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px mobile:h-50px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px "></div>
-                                    <div className="inline-block align-middle w-194px text-29px  pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px mobile:translate-y-[5px]  mobile:text-left">{currentBottleData.info.name}</div>
+                                    <div className="inline-block uppercase align-middle w-194px text-29px  pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px mobile:translate-y-[5px]  mobile:text-left">{currentBottleData.info.name}</div>
                                 </div>
                                 <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
                                     {currentBottleData.info.des}
@@ -244,7 +267,7 @@ function ProductFamilyComponent(props: any) {
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[2].num}</span>
                                 </div>
                                 <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(3)}}>
-                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[3].num}</span>
+                                    <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px" style={textGradient}>{bottleData[3].num}</span>
                                 </div>
                                 <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 4 ? 'shadow-[#B96566]-500 bg-[#779374] text-[#fff]' : 'bg-[#CECECE]'}  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(4)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[4].num}</span>

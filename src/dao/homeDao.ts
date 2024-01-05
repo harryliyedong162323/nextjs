@@ -64,16 +64,17 @@ class HomeDao{
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv.png",
                                             },
                                             year:23,
-                                            price:'£750 RRP ',
-                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                            price:'£175 RRP ',
+                                            tag:'',
+                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness,inspired by Scotland’s heather-covered moorlands in full bloom.'
                                         }
                                     },
                                     {
                                         id:1,
-                                        num:40,
+                                        num:23,
                                         active:false,
                                         info:{
-                                            name:'ANCIENT MOORLAND',
+                                            name:'dark moorland',
                                             bottle:{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-2.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-2.png",
@@ -82,17 +83,18 @@ class HomeDao{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-2.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-2.png",
                                             },
-                                            year:40,
-                                            price:'£750 RRP ',
-                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                            year:23,
+                                            price:'£175 RRP',
+                                            tag:'',
+                                            des:'An epic landscape of rich oak, deep vanilla and mellow sherry spice, inspired by Scotland’s wind-swept moorlands.'
                                         }
                                     },
                                     {
                                         id:2,
-                                        num:23,
+                                        num:30,
                                         active:false,
                                         info:{
-                                            name:'ANCIENT MOORLAND',
+                                            name:'RUGGED COAST',
                                             bottle:{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-3.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-3.png",
@@ -101,17 +103,18 @@ class HomeDao{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-3.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-3.png",
                                             },
-                                            year:23,
-                                            price:'£750 RRP ',
-                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                            year:30,
+                                            price:'£350 RRP',
+                                            tag:'',
+                                            des:'Experience waves of bonfire smoke, sea salt and vanilla sweetness, balanced with sherry spice. A whisky inspired by Scotland’s rugged coastlines.'
                                         }
                                     },
                                     {
                                         id:3,
-                                        num:30,
+                                        num:40,
                                         active:false,
                                         info:{
-                                            name:'ANCIENT MOORLAND',
+                                            name:'black mountain',
                                             bottle:{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-4.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-4.png",
@@ -120,17 +123,18 @@ class HomeDao{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-4.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-4.png",
                                             },
-                                            year:30,
+                                            year:40,
                                             price:'£750 RRP ',
-                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                            tag:'',
+                                            des:'A towering peak of flavour, where vanilla and caramel notes meet an indulgent sherry richness. The pinnacle of the Wildmoor range.'
                                         }
                                     },
                                     {
                                         id:4,
-                                        num:30,
+                                        num:23,
                                         active:false,
                                         info:{
-                                            name:'ANCIENT MOORLAND',
+                                            name:'WAKING FOREST',
                                             bottle:{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-5.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-5.png",
@@ -139,17 +143,18 @@ class HomeDao{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-5.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-5.png",
                                             },
-                                            year:30,
-                                            price:'£750 RRP ',
-                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                            year:23,
+                                            price:'£175 RRP ',
+                                            tag:'TRAVEL RETAIL  EXCLUSIVE',
+                                            des:'A vibrant combination of deep vanilla oak and subtle sherry spice, inspired by Scotland’s vast ancient woodlands.'
                                         }
                                     },
                                     {
                                         id:5,
-                                        num:23,
+                                        num:30,
                                         active:true,
                                         info:{
-                                            name:'ANCIENT MOORLAND',
+                                            name:'TROPICAL COAST',
                                             bottle:{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-6.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-6.png",
@@ -158,9 +163,10 @@ class HomeDao{
                                                 pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-6.png",
                                                 mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-6.png",
                                             },
-                                            year:23,
-                                            price:'£750 RRP ',
-                                            des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
+                                            year:30,
+                                            price:'£350 RRP ',
+                                            tag:'TRAVEL RETAIL  EXCLUSIVE',
+                                            des:'A whisky of deep fruit and zesty spice with a smooth finish, inspired by the white sandy beaches of Scotland’s northwestern islands.'
                                         }
                                     },
                                 ]

@@ -100,7 +100,7 @@ function Footer(props: any) {
         },
         {
           id: 10,
-          content: "Bottle Concept",
+          content: "The Story Behind our Bottle",
           link: "/range?anchor=BottleConcept",
         },
         {
@@ -123,24 +123,20 @@ function Footer(props: any) {
       list: [
         {
           id: 1311,
-          content: "Wildmoor House",
+          content: "Global News",
           link: "/localMarketActivity?anchor=WildmoorHouse",
         },
         {
           id: 13,
-          content: "Global News",
+          content: "The Wild Escape",
           link: "/localMarketActivity?anchor=GlobalNews",
         },
         {
           id: 14,
-          content: "The Wild Escape",
+          content: "Tales From The Wild",
           link: "/localMarketActivity?anchor=TheWildEscape",
         },
-        {
-          id: 15,
-          content: "Tales From The Wild",
-          link: "/localMarketActivity?anchor=TalesFromTheWild",
-        },
+
       ],
     },
     {
@@ -367,7 +363,8 @@ function Footer(props: any) {
                   <div className="mb-75px pad:mb-54px mobile:mb-60px">
                     <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
                       <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-                        CHINA MAINLAND-SIMPLIFIED CHINESE
+                        <p>CHINA MAINLAND -</p>
+                        <p>SIMPLIFIED CHINESE</p>
                       </div>
                       <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
                         {/*<BaseImage*/}
@@ -383,7 +380,8 @@ function Footer(props: any) {
                   <div className="mb-75px pad:mb-54px mobile:mb-60px">
                     <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
                       <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                        Taiwan region - traditional Chinese
+                        <p>Taiwan region -</p>
+                        <p>traditional Chinese</p>
                       </div>
                       <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
                         {/*<BaseImage*/}
@@ -399,7 +397,8 @@ function Footer(props: any) {
                   <div className="mb-75px pad:mb-54px mobile:mb-60px">
                     <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
                       <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                        Korea - Korean
+                        <p>Korea -</p>
+                        <p>Korean</p>
                       </div>
                       <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
                         {/*<BaseImage*/}
@@ -415,7 +414,8 @@ function Footer(props: any) {
                   <div className="mb-75px pad:mb-54px mobile:mb-60px">
                     <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
                       <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                        Singapore - English
+                        <p>Singapore -</p>
+                        <p>English</p>
                       </div>
                       <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
                         {/*<BaseImage*/}
@@ -430,7 +430,8 @@ function Footer(props: any) {
                   </div>
                 </div>
                 <div className="uppercase text-13px pad:text-9px text-black mobile:text-15px font-semibold">
-                  United Kingdom - English
+                  <p>United Kingdom -</p>
+                  <p>English</p>
                 </div>
               </div>
 

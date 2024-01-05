@@ -232,7 +232,7 @@ function LocationStoreList(props: any){
             color:'#000',
         }),
     };
-    const [centeredSlides,setCenteredSlides] = useState(false);
+    const [centeredSlides,setCenteredSlides] = useState(true);
     const [slidesPerView, setSlidesPerView] = useState<number>(3);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [swiper, setSwiper] = useState<any>(null);
@@ -288,7 +288,7 @@ function LocationStoreList(props: any){
                 setSpaceBetween(200);
             }else{
                 setSlidesPerView(3);
-                setSpaceBetween(90);
+                setSpaceBetween(0);
             }
 
 
@@ -306,13 +306,13 @@ function LocationStoreList(props: any){
     }, []);
 
     return (
-        <section className="pt-138px pl-45px pad:pt-98px pad:pl-32px mobile:pl-13px mobile:pt-112px">
+        <section className="pt-138px  pad:pt-98px   mobile:pt-112px">
 
             <div className="pb-45px relative z-20 pad:pb-32px mobile:pb-35px">
                 {
                     selectedReady ? <Select
                         styles={customStyles}
-                        className={`text-14px pt-18px pb-18px  pr-25px bg-transparent w-255px h-55px pad:pt-12px pad:pb-12px pad:pl-0 mobile:pl-0`}
+                        className={`text-14px pt-18px pb-18px mx-auto pr-25px bg-transparent w-255px h-55px pad:pt-12px pad:pb-12px pad:pl-0 mobile:pl-0`}
                         defaultValue={selectedOption}
                         options={options}
                         onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
@@ -323,14 +323,16 @@ function LocationStoreList(props: any){
 
 
             <div>
-
+                {/*modules={[Autoplay]}*/}
                 <Swiper
 
 
-                    modules={[Autoplay]}
+
                     slidesPerView={slidesPerView}
                     loop={true}
+
                     spaceBetween={spaceBetween}
+
                     centeredSlides={centeredSlides}
                     speed={1500}
                     allowTouchMove={false}
@@ -341,6 +343,8 @@ function LocationStoreList(props: any){
                             disableOnInteraction: false // 用户互动后是否停止自动播放
                         }
                     }
+
+
                     onSlideChange={(e)=>{
 
                         setCurrentIndex(e.realIndex);
@@ -358,8 +362,8 @@ function LocationStoreList(props: any){
                         locationInfo.length>0 && locationInfo.map((item:any,index:number)=>{
                             return (
                                 <div key={item.id}>
-                                    <SwiperSlide key={item.id} className={``}>
-                                        <div className="w-full   mobile:w-265px ">
+                                    <SwiperSlide key={item.id} className={`  pl-20px pr-20px `}>
+                                        <div className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}>
                                             <BaseLink link={item.link} className="text-black">
                                                 <div className="relative w-full h-320px  pad:h-230px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
@@ -395,8 +399,10 @@ function LocationStoreList(props: any){
 
             <div className="flex justify-end pr-10 pt-97px pad:pt-69px">
                 <div>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px pad:w-31px pad:h-31px pad:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
-                    <span className={`cursor-pointer bg-contain ${currentIndex == locationInfo.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle pad:w-31px pad:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+                    {/*${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"}*/}
+                    <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/prev-active.png')] w-44px h-44px inline-block align-middle mr-7px pad:w-31px pad:h-31px pad:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
+                    <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/next-active.png')] w-44px h-44px inline-block align-middle pad:w-31px pad:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+                    {/*${currentIndex == locationInfo.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"}*/}
                 </div>
             </div>
 

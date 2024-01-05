@@ -548,7 +548,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
                     <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-                      CHINA MAINLAND-SIMPLIFIED CHINESE
+                      <p>CHINA MAINLAND-</p>
+                      <p>SIMPLIFIED CHINESE</p>
                     </div>
                     <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
@@ -565,7 +566,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
                     <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                      Taiwan region - traditional Chinese
+                      <p>Taiwan region -</p>
+                      <p>traditional Chinese</p>
                     </div>
                     <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
@@ -582,7 +584,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
                     <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                      Korea - Korean
+                      <p>Korea -</p>
+                      <p>Korean</p>
                     </div>
                     <div className="w-13px h-25px  pad:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
@@ -599,7 +602,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
                   <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
                     <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                      Singapore - English
+                      <p>Singapore -</p>
+                      <p>English</p>
                     </div>
                     <div className="w-13px h-25px pad:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">
                       {/*<BaseImage*/}
@@ -615,7 +619,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
               </div>
               <div className="uppercase font-medium font-Grotesque-Medium text-14px pad:text-10px mobile:text-15px mt-68px pad:mt-48px mobile:mt-53px">
-                United Kingdom - English
+                <p>United Kingdom -</p>
+                <p>English</p>
               </div>
             </div>
           </div>

@@ -355,7 +355,7 @@ function NearYouComponent(props: any) {
         <section className="w-full h-screen overflow-hidden bg-while relative select-none  ">
 
             <input type="hidden" value={headStyle}/>
-            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:text-20px mobile:pt-77px">Wildmoor near you</div>
+            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:text-20px mobile:pt-77px">Find A Drop of Wilderness Near You</div>
 
 
             <div className="w-full pt-20px hidden mobile:block">
@@ -373,7 +373,7 @@ function NearYouComponent(props: any) {
                                 <div  key={item.id} className={` ml-25px h-auto pad:ml-17px relative`}>
 
                                   {/*<div className={`float-left`}>*/}
-                                      <div className={`transition-all ease-in-out origin-left duration-1000 relative ${item.active == true ? 'w-615px pad:w-439px mobile:w-192px' : 'w-406px pad:290px mobile:w-192px'}`}>
+                                      <div className={`transition-all ease-in-out origin-left duration-1000  relative ${item.active == true ? 'w-615px pad:w-439px mobile:w-192px' : 'w-406px pad:290px mobile:w-192px'}`}>
                                           <div className={`relative transition-all ease-in-out  origin-left  duration-500 mb-40px pad:mb-28px ${item.active == true ? 'h-455px pad:h-325px mobile:h-166px' : 'h-406px pad:h-290px mobile:h-166px'}`}>
                                               {/*<BaseImage*/}
                                               {/*    mImg={item.mImg}*/}

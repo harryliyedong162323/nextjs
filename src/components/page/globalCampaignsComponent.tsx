@@ -41,23 +41,23 @@ function GlobalCampaignsComponent(props: any) {
         objectFit="cover"
         quality={100}
       ></BaseImage>
-
+      <div className="absolute z-10 bottom-0 h-[60vh] w-full bg-gradient-to-b from-[transparent] to-[#000] "></div>
       {/*${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-70%] opacity-0'}*/}
-      <div className={`absolute z-10 bottom-[148px] left-1/2 w-full ease-in-out duration-1000 transition-all translate-x-[-50%] mobile:bottom-[106px] translate-y-0 opacity-1 `}>
+      <div className={`absolute z-10 bottom-[148px] left-1/2 w-full  translate-x-[-50%] mobile:bottom-[106px] translate-y-0 opacity-1 `}>
         {subTitle != "" ? (
-          <div className="font-AlbertusNova-Regular font-normal text-center text-22px pb-42px text-[#E6E7E8] mobile:text-14px mobile:pb-25px uppercase">
+          <div className="font-AlbertusNova-Regular font-normal text-center text-22px pb-42px text-[#fff] mobile:text-14px mobile:pb-25px uppercase">
             {subTitle}
           </div>
         ) : null}
 
         {title != "" ? (
-          <div className="font-AlbertusNova-Regular font-normal text-center text-[#E6E7E8] text-40px mobile:text-24px uppercase">
+          <div className="font-AlbertusNova-Regular font-normal text-center text-[#fff] text-40px mobile:text-24px uppercase">
             {title}
           </div>
         ) : null}
 
 
-        <div className={`pt-28px pad:pt-20px flex justify-between  mx-auto text-white w-889px pad:w-740px mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center`}>
+        <div className={`pt-28px relative z-30 pad:pt-20px flex justify-between  mx-auto text-white w-889px pad:w-740px mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center`}>
           <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:w-full mobile:text-12px mobile:pb-15px">
             <span className="w-18px h-24px mobile:w-21px mobile:h-21 pad:w-12px pad:h-20px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/address.png')] bg-contain"></span>
             <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">4325 Glenwood AvenueRaleigh, NC 27612, </span>
@@ -74,7 +74,7 @@ function GlobalCampaignsComponent(props: any) {
 
       </div>
 
-      <div className="absolute bottom-24px w-full flex flex-col items-center justify-center mobile:hidden">
+      <div className="absolute bottom-24px w-full flex flex-col items-center justify-center mobile:hidden z-30">
         <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
         <div className="text-12px leading-tight text-white font-Grotesque-Regular">
           Scroll to explore more
