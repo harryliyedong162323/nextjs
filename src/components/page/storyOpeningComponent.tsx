@@ -132,7 +132,7 @@ function StoryOpeningComponent(props: any) {
         </div>
         <div
           className={`overflow-hidden font-AlbertusNova-Light text-center uppercase transition-all ease-in-out duration-500 delay-1000 h-0 ${
-            isCurrentPage ? "h-48px mobile:h-54px" : "h-0"
+            isCurrentPage ? "h-52px mobile:h-54px" : "h-0"
           } text-40px pad:text-28px mobile:leading-[27px] mobile:w-325px mobile:text-20px`}
         >
           <div>{data.description}</div>

@@ -23,8 +23,7 @@ const componentData: ComponentData = {
     pImg: require("../../../public/assets/story/brand_story_chatper_06.png"),
     mImg: require("../../../public/assets/story/brand_story_chatper_06.png"),
   },
-  description:
-    "But wild wind-swept moorlands, savage waves breaking across jagged shorelines. And rolling mountains shrouded in mist.",
+  description: "Taking from  the Grant family vault of prized liquids. Kinsman has crafted liquids unbound by the established flavour profiles of the traditional Scotch whisky regions  to create a new taste experience inspired by Scotland's epic wilderness.",
   scrollText: "Scroll to explore more",
   words: {
     first: "An unrestrained",
@@ -75,10 +74,10 @@ function StoryChapterSixComponent(props: any) {
           {data.words.second}
         </span>
       </div>
-      <div className={`absolute bg-white font-Grotesque-Regular text-dark-grey w-694px left-100px text-20px p-50px pad:text-16px pad:p-40px pad:left-80px pad:w-554px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
+      <div className={`absolute bg-white font-Grotesque-Regular text-dark-grey w-900px left-100px text-20px p-50px pad:text-16px pad:p-40px pad:left-120px pad:w-880px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
         isCurrentPage
-        ? "top-450px pad:top-360px mobile:top-1/2 opacity-100"
-        : "top-650px pad:top-560px mobile:top-2/3 opacity-0"
+        ? "top-450px pad:top-460px mobile:top-1/2 opacity-100"
+        : "top-650px pad:top-660px mobile:top-2/3 opacity-0"
       }`}>
         <div
           className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}

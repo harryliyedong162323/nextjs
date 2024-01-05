@@ -30,7 +30,7 @@ const componentData: ComponentData = {
   },
   description: "Drawn from the Grant Gordon family ancient reserve stock, Wildmoor is the cumulation of a decades-long mission to collect the rarest and most prestigious aged whiskies.",
   words: {
-    first: "A family collection,",
+    first: "A Rare family collection,",
     second: "60",
     thrid: "yrs",
     fourth: "in the making.",
@@ -81,13 +81,13 @@ function StoryChapterTwoComponent(props: any) {
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_02_line.png')]  h-screen"></div>
       {!isShow && (
         <>
-          <div className={`absolute w-full transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'top-135px pad:top-104px mobile:top-86px opacity-100' : 'top-300px pad:top-280px mobile:top-260px opacity-0'}`}>
+          <div className={`absolute w-full transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'top-135px pad:top-120px mobile:top-86px opacity-100' : 'top-300px pad:top-280px mobile:top-260px opacity-0'}`}>
             <div className={`flex justify-center items-baseline mobile:flex-col mobile:items-start mobile:pl-50px`}>
               <span className="text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:w-full">
                 { data.words.first }
               </span>
               <span className="flex justify-center items-baseline mx-10px">
-                <span className="font-AlbertusNova-Light text-[#d18350] text-[160px]"> { data.words.second }</span>
+                <span className="font-AlbertusNova-Light text-[#d18350] text-[160px] leading-none"> { data.words.second }</span>
                 <span className="font-AlbertusNova-Regular text-[#d18350] text-42px"> { data.words.thrid }</span>
               </span>
               <span className="text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:w-full">
@@ -98,7 +98,7 @@ function StoryChapterTwoComponent(props: any) {
           </div>
           <span
             onClick={() => showIntroduce(true)}
-            className={`absolute bg-[url('/assets/story/brand_story_chatper_02_face.png')]  bg-cover top-1/2 left-1/2 cursor-pointer transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100' : 'opacity-0'} w-295px h-295px -ml-148px pad:w-236px pad:h-236px mobile:w-177px mobile:h-177px mobile:-ml-88px`}
+            className={`absolute bg-[url('/assets/story/brand_story_chatper_02_face.png')]  bg-cover top-1/2 left-1/2 cursor-pointer transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100' : 'opacity-0'} w-295px h-295px -ml-148px pad:w-300px pad:h-300px mobile:w-177px mobile:h-177px mobile:-ml-88px`}
           >
             <BaseImage
               mImg={data.avatarOne}

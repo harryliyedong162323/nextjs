@@ -144,9 +144,9 @@ function ProductFamilyComponent(props: any) {
                         quality={100}
                     ></BaseImage>
 
-                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-150px mobile:hidden">
-                      <div className="an-bottle w-700px pad:w-500px flex flex-nowrap items-end">
-                          <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px  mobile:w-102px mobile:h-223px ">
+                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[44%] pad:left-[45%] z-30 top-150px pad:top-[30%] mobile:hidden">
+                      <div className="an-bottle w-700px pad:w-700px flex flex-nowrap items-end">
+                          <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-169px pad:h-368px  mobile:w-102px mobile:h-223px ">
                               <BaseImage
                                   mImg={currentBottleData.info.bottle.mImg}
                                   pImg={currentBottleData.info.bottle.pImg}
@@ -157,7 +157,7 @@ function ProductFamilyComponent(props: any) {
                               ></BaseImage>
                           </div>
                           <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
-                              <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px ">
+                              <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:w-full mobile:pb-20px">
                                   <div className="inline-block align-middle">
                                       <div className="relative">
                                           <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.info.year}</span>
@@ -168,7 +168,7 @@ function ProductFamilyComponent(props: any) {
                                   <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px mobile:mr-6px"></div>
                                   <div className="inline-block align-middle w-194px text-29px pt-20px pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px">{currentBottleData.info.name}</div>
                               </div>
-                              <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
+                              <div className="pt-18px pb-18px w-426px text-20px font-Grotesque-Light font-normal pad:pb-15px pad:pt-15px pad:w-400px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
                                   {currentBottleData.info.des}
                               </div>
                               <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-center mobile:text-16px">{currentBottleData.info.price}</div>

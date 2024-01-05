@@ -81,7 +81,7 @@ function StoryChapterFourComponent(props: any) {
           <div
             className={`absolute flex justify-center w-full flex-col items-start left-100px mobile:left-25px mobile:top-180px transition-all ease-in-out duration-500 delay-1000 ${
               isCurrentPage
-                ? "top-294px pad:top-254px mobile:top-86px opacity-100"
+                ? "top-294px pad:top-360px mobile:top-86px opacity-100"
                 : "top-494px pad:top-454px mobile:top-286px opacity-0"
             }`}
           >
@@ -97,7 +97,7 @@ function StoryChapterFourComponent(props: any) {
           </div>
           <span
             onClick={() => showIntroduce(true)}
-            className={`absolute cursor-pointer w-300px h-300px top-244px left-902px pad:w-240px pad:h-240px pad:left-605px pad:top-195px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
+            className={`absolute cursor-pointer w-300px h-300px top-244px right-600px pad:w-340px pad:h-340px pad:right-580px pad:top-300px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
               isCurrentPage ? "opacity-100" : "opacity-0"
             }`}
           >
