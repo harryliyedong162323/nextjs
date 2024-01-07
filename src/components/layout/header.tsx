@@ -96,13 +96,13 @@ function Header(props: any) {
     <div>
       <nav
         id="nav-white"
-        className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn ${
+        className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn mobile:h-59px ${
           headStyle == "white" ? "block" : "hidden"
         }`}
       >
-        <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]"></div>
+        <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         <div
-          className="bg-[url('/assets/menu-white.png')] w-44px h-44px  absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
             handleMenu();
           }}

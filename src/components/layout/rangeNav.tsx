@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 function RangeNav(props: any) {
   const currentSlideIndex = props.currentSlideIndex;
-  console.log("isShowRangeNav", props.isShowRangeNav);
   return (
     (currentSlideIndex !== 0 && currentSlideIndex !== 5 && !(currentSlideIndex === 4 && !props.isShowRangeNav)) && (
       <div

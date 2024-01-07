@@ -1,12 +1,128 @@
 "use client";
 
 import React, { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
+
 import BaseImage from "@/components/base/image";
 
-function VIPClubComponent(props: any) {
 
+
+interface entryContent{
+    headStyle:string,
+    joinUsLeftContent:string,
+    joinUsLeftCtaAImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+    joinUsLeftCtaImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+
+    joinUsMiddleContent:string,
+    joinUsMiddleCtaAImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+
+    joinUsMiddleCtaImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+    vipClubComponentJoinUsTitle:string,
+    vipClubComponentLeftImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+
+    joinUsRightContent:string,
+
+    joinUsRightCtaAImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+    joinUsRightCtaImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+
+
+    vipClubComponentMiddleImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+    vipClubComponentRightImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    }
+
+}
+
+
+
+export interface propsContent{
+    changeNavStatus:Function,
+    scrollToPage:Function,
+
+    data:{
+        entry:entryContent,
+        name:string,
+        type:string,
+    }
+}
+
+
+
+function VIPClubComponent(props: propsContent) {
+    // console.log(props)
     const headStyle = props.data.entry.headStyle;
+
+    const VIPClubData = props.data.entry;
+
 
     useEffect(() => {}, []);
 
@@ -14,46 +130,61 @@ function VIPClubComponent(props: any) {
         <section className="relative h-screen bg-cover bg-[url('/assets/VIPClub/bg.png')] bg-black overflow-hidden select-none">
             <input type="hidden" value={headStyle}/>
             <div className="relative container mx-auto">
-                <div className="pt-154px uppercase font-AlbertusNova-Regular font-normal text-33px text-center mx-auto text-white whitespace-nowrap pad:pt-110px pad:text-23px mobile:text-20px mobile:leading-[30px] mobile:pt-90px">Join us in our next adventures,</div>
-                <div className="uppercase font-AlbertusNova-Regular font-normal text-33px text-center mx-auto text-white pb-114px whitespace-nowrap  pad:text-23px  pad:pb-81px mobile:text-20px mobile:leading-[30px] mobile:pb-67px">be the first to know.</div>
+                <div className="pt-154px uppercase font-AlbertusNova-Regular pb-107px paid:pb-76px font-normal text-33px text-center mx-auto text-white whitespace-nowrap pad:pt-110px pad:text-23px mobile:text-20px mobile:leading-[30px] mobile:pt-90px">{VIPClubData.vipClubComponentJoinUsTitle}</div>
+
 
                 <div className="grid grid-cols-3 place-items-center mobile:grid-rows-3 mobile:grid-cols-none">
-                    <div className="w-323px h-285px relative self-center pad:w-302px pad:h-275px mobile:w-315px mobile:h-130px mobile:mb-46px">
-                        <BaseImage
-                            mImg={require("../../../public/assets/VIPClub/list-1-m.png")}
-                            pImg={require("../../../public/assets/VIPClub/list-1.png")}
-                            alt={""}
-                            objectFit="contain"
-                            quality={100}
-                        ></BaseImage>
-                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')] bg-[length:100%_100%] mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
+
+                    <div className="self-center">
+                        <div className="w-323px h-285px relative pad:w-302px pad:h-275px mobile:w-315px mobile:h-130px mobile:mb-46px">
+                            <BaseImage
+                                mImg={VIPClubData.vipClubComponentLeftImage.imagemobile.url}
+                                pImg={VIPClubData.vipClubComponentLeftImage.imagepc.url}
+                                alt={VIPClubData.vipClubComponentLeftImage.altText}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                            ></BaseImage>
+                        </div>
+                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')]  mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
                             explore
                         </div>
                     </div>
-                    <div className="w-323px h-285px relative self-center pad:w-302px pad:h-275px mobile:w-315px mobile:h-130px mobile:mb-46px">
-                        <BaseImage
-                            mImg={require("../../../public/assets/VIPClub/list-2-m.png")}
-                            pImg={require("../../../public/assets/VIPClub/list-2.png")}
-                            alt={""}
-                            objectFit="contain"
-                            quality={100}
-                        ></BaseImage>
-                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')] bg-[length:100%_100%] mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
+
+
+                    <div className="self-center">
+                        <div className="w-323px h-285px relative pad:w-302px pad:h-275px mobile:w-315px mobile:h-130px mobile:mb-46px">
+                            <BaseImage
+                                mImg={VIPClubData.vipClubComponentMiddleImage.imagemobile.url}
+                                pImg={VIPClubData.vipClubComponentMiddleImage.imagepc.url}
+                                alt={VIPClubData.vipClubComponentMiddleImage.altText}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                            ></BaseImage>
+                        </div>
+                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')]  mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
                             explore
                         </div>
                     </div>
-                    <div className="w-323px h-285px relative self-center pad:w-302px pad:h-275px mobile:w-315px mobile:h-129px">
-                        <BaseImage
-                            mImg={require("../../../public/assets/VIPClub/list-3-m.png")}
-                            pImg={require("../../../public/assets/VIPClub/list-3.png")}
-                            alt={""}
-                            objectFit="contain"
-                            quality={100}
-                        ></BaseImage>
-                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')] bg-[length:100%_100%] mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
+
+                    <div className="self-center">
+                        <div className="w-323px h-285px relative  pad:w-302px pad:h-275px mobile:w-315px mobile:h-129px">
+                            <BaseImage
+                                mImg={VIPClubData.vipClubComponentRightImage.imagepc.url}
+                                pImg={VIPClubData.vipClubComponentRightImage.imagepc.url}
+                                alt={VIPClubData.vipClubComponentRightImage.altText}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                            ></BaseImage>
+                        </div>
+                        <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')]  mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
                             explore
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>

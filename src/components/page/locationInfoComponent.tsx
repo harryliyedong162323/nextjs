@@ -8,6 +8,41 @@ import Select, {SingleValue} from 'react-select';
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+
+
+
+
+
+
+interface entryContent{
+    headStyle:string,
+    locationInfoComponentTitle:string,
+
+    locationInfoComponentStoreListCollection:locationInfoComponentStoreListCollectionContent,
+
+}
+
+
+interface locationInfoComponentStoreListCollectionContent{
+    items:Array<ComponentData>
+}
+
+
+
+interface propsContent{
+    changeNavStatus:()=>{},
+    scrollToPage:()=>{},
+    data:{
+        entry:entryContent,
+        name:string,
+        type:string,
+    }
+}
+
+
+
+
+
 interface locationData {
     id:number,
     name:string,
@@ -21,10 +56,7 @@ interface locationData {
 
 interface ComponentData {
     id: number;
-    bg: {
-        mImg: string;
-        pImg: string;
-    };
+
     productList: Array<{
         id: number
         location: Array<locationData>,
@@ -32,8 +64,7 @@ interface ComponentData {
         mImg: string;
         pImg: string;
     }>;
-    description: string;
-    scrollText: string;
+
 }
 
 
@@ -94,11 +125,9 @@ const locationList:Array<locationData> = [
 
 const componentData: ComponentData = {
     id: 1,
-    bg: {
-        pImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
-        mImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
-    },
-    productList: [{
+
+    productList: [
+        {
         id: 0,
 
         location:[
@@ -180,9 +209,7 @@ const componentData: ComponentData = {
             mImg: require("../../../public/assets/howToBuy/list-2.png"),
             pImg: require("../../../public/assets/howToBuy/list-2.png"),
         }],
-    description:
-        "But wild wind-swept moorlands, savage waves breaking across jagged shorelines. And rolling mountains shrouded in mist.",
-    scrollText: "Scroll to explore more",
+
 };
 
 const options = [
@@ -414,6 +441,9 @@ function LocationStoreList(props: any){
 
 
 function LocationInfoComponent(props: any) {
+
+    console.log(props);
+
     const headStyle = props.data.entry.headStyle;
     const [data, setData] = useState<ComponentData>(componentData);
     const [play, setPlay] = useState<boolean>(true);

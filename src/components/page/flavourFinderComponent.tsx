@@ -22,26 +22,42 @@ declare const grecaptcha: any;
 
 const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
 
-interface product {
+interface Product {
   id: number;
   name: string;
-  img: {
-    pImg: string;
-    mImg: string;
+  productCode: string;
+  quizResultProductImage: {
+    altText: string;
+    imagemobile: {
+      url: string;
+    };
+    imagepc: {
+      url: string;
+    };
   };
 }
 
 interface result {
   key: string;
-  productList: Array<product>;
+  productList: Array<Product>;
 }
 
 interface ComponentData {
-  id: number;
-  bg: {
-    mImg: string;
-    pImg: string;
-  };
+  basic: {
+    dywfEmailAddress: string;
+    dywfEmailContent: string;
+    dywfEmailName: string;
+    dywfExploreContent: string;
+    dywfResultContent: string;
+    dywfResultSubtitle: string;
+    dywfSubmitContent: string;
+    flavourFinderComponentDescription1: string;
+    flavourFinderComponentDescription2: string;
+    flavourFinderComponentTitle: string;
+    flavourFinderComponentStartContent: string;
+    dywfSeeYourFlavorProfile: string;
+    dywfRedo: string;
+  }
   quizs: {
     q1: {
       id: number;
@@ -116,471 +132,426 @@ interface ComponentData {
       }>;
     };
   };
-  recommendResults: Array<{
-    img: {
-      pImg: string;
-      mImg: string;
-    };
-    name: string;
-    icon: {
-      pImg: string;
-      mImg: string;
-    };
-    type: string;
-    tips: string;
-    description: string;
-  }>;
-  resultList: Array<result>;
 }
 
-const productList: Array<product> = [
-  {
-    id: 1,
-    name: "Ancient Moorland",
-    img: {
-      pImg: require("../../../public/assets/product/product_AM.png"),
-      mImg: require("../../../public/assets/product/product_AM.png"),
-    },
-  },
-  {
-    id: 2,
-    name: "Black Mountain",
-    img: {
-      pImg: require("../../../public/assets/product/product_BM.png"),
-      mImg: require("../../../public/assets/product/product_BM.png"),
-    },
-  },
-  {
-    id: 3,
-    name: "Dark Moorland",
-    img: {
-      pImg: require("../../../public/assets/product/product_DM.png"),
-      mImg: require("../../../public/assets/product/product_DM.png"),
-    },
-  },
-  {
-    id: 4,
-    name: "Rugged Coast",
-    img: {
-      pImg: require("../../../public/assets/product/product_RC.png"),
-      mImg: require("../../../public/assets/product/product_RC.png"),
-    },
-  },
-  {
-    id: 5,
-    name: "Tropical Coast",
-    img: {
-      pImg: require("../../../public/assets/product/product_TC.png"),
-      mImg: require("../../../public/assets/product/product_TC.png"),
-    },
-  },
-  {
-    id: 6,
-    name: "Walking Forest",
-    img: {
-      pImg: require("../../../public/assets/product/product_WF.png"),
-      mImg: require("../../../public/assets/product/product_WF.png"),
-    },
-  },
-];
+function genComponentData(data: any) {
+  const Q1 = data.dataQuizQ1Collection.items[0];
+  const Q2 = data.dataQuizQ2Collection.items[0];
+  const Q3 = data.dataQuizQ3Collection.items[0];
+  const Q4 = data.dataQuizQ4Collection.items[0];
+  const Q5 = data.dataQuizQ5Collection.items[0];
+  const basic = data.rangeCollection.items[0];
 
-const componentData: ComponentData = {
-  id: 1,
-  bg: {
-    pImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
-    mImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
-  },
-  quizs: {
-    q1: {
-      id: 0,
-      question: "Q1. Which food is your favorite？",
-      answers: [
-        {
-          id: 0,
-          mImg: require("../../../public/assets/range/q1_pic_01_m.png"),
-          pImg: require("../../../public/assets/range/q1_pic_01.png"),
-          label: "Rich and Spicy",
-          value: "A",
-        },
-        {
-          id: 1,
-          mImg: require("../../../public/assets/range/q1_pic_02_m.png"),
-          pImg: require("../../../public/assets/range/q1_pic_02.png"),
-          label: "Light and Sweet",
-          value: "B",
-        },
-        {
-          id: 2,
-          mImg: require("../../../public/assets/range/q1_pic_03_m.png"),
-          pImg: require("../../../public/assets/range/q1_pic_03.png"),
-          label: "Smoky and Mellow",
-          value: "C",
-        },
-      ],
+  const _data: ComponentData = {
+    basic: {
+      dywfEmailAddress: basic.dywfEmailAddress,
+      dywfEmailContent: basic.dywfEmailContent,
+      dywfEmailName: basic.dywfEmailName,
+      dywfExploreContent: basic.dywfExploreContent,
+      dywfResultContent: basic.dywfResultContent,
+      dywfResultSubtitle: basic.dywfResultSubtitle,
+      dywfSubmitContent: basic.dywfSubmitContent,
+      flavourFinderComponentDescription1: basic.flavourFinderComponentDescription1,
+      flavourFinderComponentDescription2: basic.flavourFinderComponentDescription2,
+      flavourFinderComponentTitle: basic.flavourFinderComponentTitle,
+      flavourFinderComponentStartContent: basic.flavourFinderComponentStartContent,
+      dywfSeeYourFlavorProfile: basic.dywfSeeYourFlavorProfile,
+      dywfRedo: basic.dywfRedo,
     },
-    q2: {
-      id: 0,
-      question: "Q2. NOW LISTEN VERY CAREFULLY...",
-      description:
-        "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
-      answers: [
-        {
-          id: 0,
-          mImg: require("../../../public/assets/range/q2_pic_01.png"),
-          pImg: require("../../../public/assets/range/q2_pic_01.png"),
-          label: "Play",
-          value: "A",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video01.mp4",
-        },
-        {
-          id: 0,
-          mImg: require("../../../public/assets/range/q2_pic_02.png"),
-          pImg: require("../../../public/assets/range/q2_pic_02.png"),
-          label: "Play",
-          value: "B",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video02.mp4",
-        },
-        {
-          id: 0,
-          mImg: require("../../../public/assets/range/q2_pic_03.png"),
-          pImg: require("../../../public/assets/range/q2_pic_03.png"),
-          label: "Play",
-          value: "C",
-          audio: "https://yumen-ali.oss-cn-beijing.aliyuncs.com/video03.mp4",
-        },
-      ],
-    },
-    q3: {
-      id: 0,
-      question: "Q3. When it comes to whisky？",
-      step1: {
-        id: 0,
-        title: "Where would you commonly enjoy your whisky?",
+    quizs: {
+      q1: {
+        id: Q1.id,
+        question: Q1.topicContent,
         answers: [
           {
-            id: 0,
-            label: "Friendly Gathering At Home",
-            value: "Every bottle of Wildmoor is best shared with loved ones.",
-            icon: {
-              mImg: require("../../../public/assets/range/icon_friend.png"),
-              pImg: require("../../../public/assets/range/icon_friend.png"),
-            },
+            id: Q1.optionAId,
+            mImg: Q1.optionAImage.imagemobile.url,
+            pImg: Q1.optionAImage.imagepc.url,
+            value: Q1.optionAValue,
+            label: Q1.optionAContent,
           },
           {
-            id: 0,
-            label: "Business Meal",
-            value: "Business is best served with a glass of untamed pleasure.",
-            icon: {
-              mImg: require("../../../public/assets/range/icon_business_meal.png"),
-              pImg: require("../../../public/assets/range/icon_business_meal.png"),
-            },
+            id: Q1.optionBId,
+            mImg: Q1.optionBImage.imagemobile.url,
+            pImg: Q1.optionBImage.imagepc.url,
+            value: Q1.optionBValue,
+            label: Q1.optionBContent,
           },
           {
-            id: 0,
-            label: "At Home Alone",
-            value: "Nothing beats a night cap after another fine day.",
-            icon: {
-              mImg: require("../../../public/assets/range/icon_home_sweet.png"),
-              pImg: require("../../../public/assets/range/icon_home_sweet.png"),
-            },
-          },
-          {
-            id: 0,
-            label: "Working At The Office",
-            value: "The perfect whisky to toast our every success. ",
-            icon: {
-              mImg: require("../../../public/assets/range/icon_working.png"),
-              pImg: require("../../../public/assets/range/icon_working.png"),
-            },
-          },
-          {
-            id: 0,
-            label: "Camping/Picnic Outdoors",
-            value:
-              "Take in the great outdoors with a taste of untamed wilderness.",
-            icon: {
-              mImg: require("../../../public/assets/range/icon_camping_picnic.png"),
-              pImg: require("../../../public/assets/range/icon_camping_picnic.png"),
-            },
-          },
-          {
-            id: 0,
-            label: "Special Occasions & Celebrations",
-            value:
-              "An unrestrained flavour to make every celebration unforgettable.",
-            icon: {
-              mImg: require("../../../public/assets/range/icon_special.png"),
-              pImg: require("../../../public/assets/range/icon_special.png"),
-            },
+            id: Q1.optionCId,
+            mImg: Q1.optionCImage.imagemobile.url,
+            pImg: Q1.optionCImage.imagepc.url,
+            value: Q1.optionCValue,
+            label: Q1.optionCContent,
           },
         ],
       },
-      step2: {
-        id: 0,
-        title: "Where would you most like to enjoy your whiskey?",
+      q2: {
+        id: Q2.id,
+        question: Q2.topicContent,
+        description: Q2.description,
         answers: [
           {
-            id: 0,
-            mImg: require("../../../public/assets/range/q3_pic_01.png"),
-            pImg: require("../../../public/assets/range/q3_pic_01.png"),
-            label: "Top Of Mountain",
-            value: "A",
+            id: Q2.optionAId,
+            mImg: Q2.optionAImage.imagemobile.url,
+            pImg: Q2.optionAImage.imagepc.url,
+            value: Q2.optionAValue,
+            label: Q2.optionAContent,
+            audio: Q2.optionAAudio.video.url,
           },
           {
-            id: 0,
-            mImg: require("../../../public/assets/range/q3_pic_02.png"),
-            pImg: require("../../../public/assets/range/q3_pic_02.png"),
-            label: "Sunny Beach",
-            value: "B",
+            id: Q2.optionBId,
+            mImg: Q2.optionBImage.imagemobile.url,
+            pImg: Q2.optionBImage.imagepc.url,
+            value: Q2.optionBValue,
+            label: Q2.optionBContent,
+            audio: Q2.optionBAudio.video.url,
           },
           {
-            id: 0,
-            mImg: require("../../../public/assets/range/q3_pic_03.png"),
-            pImg: require("../../../public/assets/range/q3_pic_03.png"),
-            label: "Windy Coastline",
-            value: "C",
+            id: Q2.optionCId,
+            mImg: Q2.optionCImage.imagemobile.url,
+            pImg: Q2.optionCImage.imagepc.url,
+            value: Q2.optionCValue,
+            label: Q2.optionCContent,
+            audio: Q2.optionCAudio.video.url,
+          },
+        ],
+      },
+      q3: {
+        id: Q3.id,
+        question: Q3.topicContent,
+        step1: {
+          id: Q3.question1Id,
+          title: Q3.question1Content,
+          answers: [
+            {
+              id: Q3.option1AId,
+              label: Q3.option1AContent,
+              value: Q3.option1AValue,
+              icon: {
+                mImg: Q3.option1AIcon?.imagemobile?.url,
+                pImg: Q3.option1AIcon?.imagepc?.url,
+              },
+            },
+            {
+              id: Q3.option1BId,
+              label: Q3.option1BContent,
+              value: Q3.option1BValue,
+              icon: {
+                mImg: Q3.option1BIcon?.imagemobile?.url,
+                pImg: Q3.option1BIcon?.imagepc?.url,
+              },
+            },
+            {
+              id: Q3.option1CId,
+              label: Q3.option1CContent,
+              value: Q3.option1CValue,
+              icon: {
+                mImg: Q3.option1CIcon?.imagemobile?.url,
+                pImg: Q3.option1CIcon?.imagepc?.url,
+              },
+            },
+            {
+              id: Q3.option1DId,
+              label: Q3.option1DContent,
+              value: Q3.option1DValue,
+              icon: {
+                mImg: Q3.option1DIcon?.imagemobile?.url,
+                pImg: Q3.option1DIcon?.imagepc?.url,
+              },
+            },
+            {
+              id: Q3.option1EId,
+              label: Q3.option1EContent,
+              value: Q3.option1EValue,
+              icon: {
+                mImg: Q3.option1EIcon?.imagemobile?.url,
+                pImg: Q3.option1EIcon?.imagepc?.url,
+              },
+            },
+            {
+              id: Q3.option1FId,
+              label: Q3.option1FContent,
+              value: Q3.option1FValue,
+              icon: {
+                mImg: Q3.option1FIcon?.imagemobile?.url,
+                pImg: Q3.option1FIcon?.imagepc?.url,
+              },
+            },
+          ],
+        },
+        step2: {
+          id: Q3.question2Id,
+          title: Q3.question2Content,
+          answers: [
+            {
+              id: Q3.option2AId,
+              label: Q3.option2AContent,
+              value: Q3.option2AValue,
+              mImg: Q3.option2AImage?.imagemobile?.url,
+              pImg: Q3.option2AImage?.imagepc?.url,
+            },
+            {
+              id: Q3.option2BId,
+              label: Q3.option2BContent,
+              value: Q3.option2BValue,
+              mImg: Q3.option2BImage?.imagemobile?.url,
+              pImg: Q3.option2BImage?.imagepc?.url,
+            },
+            {
+              id: Q3.option2CId,
+              label: Q3.option2CContent,
+              value: Q3.option2CValue,
+              mImg: Q3.option2CImage?.imagepc?.url,
+              pImg: Q3.option2CImage?.imagemobile?.url,
+            },
+            {
+              id: Q3.option2DId,
+              label: Q3.option2DContent,
+              value: Q3.option2DValue,
+              mImg: Q3.option2DImage?.imagemobile?.url,
+              pImg: Q3.option2DImage?.imagepc?.url,
+            },
+          ],
+        },
+      },
+      q4: {
+        id: Q4.id,
+        question: Q4.topicContent,
+        answers: [
+          {
+            id: Q4.optionAId,
+            mImg: Q4.optionAImage?.imagemobile?.url,
+            pImg: Q4.optionAImage?.imagepc?.url,
+            value: Q4.optionAValue,
+            label: Q4.optionAContent,
           },
           {
-            id: 0,
-            mImg: require("../../../public/assets/range/q3_pic_04.png"),
-            pImg: require("../../../public/assets/range/q3_pic_04.png"),
-            label: "Hiking Through A Valley",
-            value: "D",
+            id: Q4.optionBId,
+            mImg: Q4.optionBImage?.imagemobile?.url,
+            pImg: Q4.optionBImage?.imagepc?.url,
+            value: Q4.optionBValue,
+            label: Q4.optionBContent,
+          },
+          {
+            id: Q4.optionCId,
+            mImg: Q4.optionCImage?.imagemobile?.url,
+            pImg: Q4.optionCImage?.imagepc?.url,
+            value: Q4.optionCValue,
+            label: Q4.optionCContent,
+          },
+        ],
+      },
+      q5: {
+        id: Q5.id,
+        question: Q5.topicContent,
+        answers: [
+          {
+            id: Q5.optionAId,
+            value: Q5.optionAValue,
+            label: Q5.optionAContent,
+          },
+          {
+            id: Q5.optionBId,
+            value: Q5.optionBValue,
+            label: Q5.optionBContent,
+          },
+          {
+            id: Q5.optionCId,
+            value: Q5.optionCValue,
+            label: Q5.optionCContent,
           },
         ],
       },
     },
-    q4: {
-      id: 0,
-      question: "Q4. Which one is yours ?",
-      answers: [
-        {
-          id: 0,
-          mImg: require("../../../public/assets/range/q4_pic_01_m.png"),
-          pImg: require("../../../public/assets/range/q4_pic_01.png"),
-          label: "A",
-          value: "A",
-        },
-        {
-          id: 1,
-          mImg: require("../../../public/assets/range/q4_pic_02_m.png"),
-          pImg: require("../../../public/assets/range/q4_pic_02.png"),
-          label: "B",
-          value: "B",
-        },
-        {
-          id: 2,
-          mImg: require("../../../public/assets/range/q4_pic_03_m.png"),
-          pImg: require("../../../public/assets/range/q4_pic_03.png"),
-          label: "C",
-          value: "C",
-        },
-      ],
-    },
-    q5: {
-      id: 0,
-      question: "Q5. Which best describes you？",
-      answers: [
-        {
-          id: 0,
-          label: "The Purist",
-          value: "Classy, with a taste for the classics.",
-        },
-        {
-          id: 0,
-          label: "The Rule Breaker",
-          value: "Why follow the crowd, when you can follow your great taste?",
-        },
-        {
-          id: 0,
-          label: "The Open-Minded Traditionalist",
-          value:
-            "Just because you respect tradition, doesn’t mean you can’t have a wild side.",
-        },
-      ],
-    },
-  },
-  recommendResults: [
-    {
-      img: {
-        pImg: require("../../../public/assets/range/product.png"),
-        mImg: require("../../../public/assets/range/product.png"),
-      },
-      name: "ancient moorland",
-      icon: {
-        pImg: require("../../../public/assets/range/icon_business_meal.png"),
-        mImg: require("../../../public/assets/range/icon_business_meal.png"),
-      },
-      type: "business meal",
-      tips: "gifting occasion suggestion",
-      description: "Business is best served with a glass of untamed pleasure.",
-    },
-    {
-      img: {
-        pImg: require("../../../public/assets/range/product_40.png"),
-        mImg: require("../../../public/assets/range/product_40.png"),
-      },
-      name: "Tropical Coast",
-      icon: {
-        pImg: require("../../../public/assets/range/icon_home_sweet.png"),
-        mImg: require("../../../public/assets/range/icon_home_sweet.png"),
-      },
-      type: "At home alone",
-      tips: "gifting occasion suggestion",
-      description: "Nothing beats a night cap after another fine day.",
-    },
-  ],
-  resultList: [
+  };
+  return _data;
+}
+
+function genProductData(data: any) {
+  const _data: any = data.productFamilyCollection.items;
+  return _data;
+}
+
+function genResultData(productList: Array<Product>) {
+  // 0A 1B 2D 3R 4T 5W
+  const _data: Array<{
+    key: string;
+    productList: Array<Product>;
+  }> = [
     {
       key: "AAA",
-      productList: [productList[1]],
+      productList: productList.filter((item) => item.productCode === "003"),
     },
     {
       key: "AAB",
-      productList: [productList[1], productList[2]],
+      productList: productList
+        .filter((item) => item.productCode === "003")
+        .concat(productList.filter((item) => item.productCode === "005")),
     },
     {
       key: "AAC",
-      productList: [productList[1], productList[2]],
+      productList: productList
+        .filter((item) => item.productCode === "003")
+        .concat(productList.filter((item) => item.productCode === "005")),
     },
     {
       key: "AAD",
-      productList: [productList[5]],
+      productList: productList.filter((item) => item.productCode === "002"),
     },
     {
       key: "ABA",
-      productList: [productList[1]],
+      productList: productList.filter((item) => item.productCode === "005"),
     },
     {
       key: "ABB",
-      productList: [productList[1]],
+      productList: productList.filter((item) => item.productCode === "003"),
     },
     {
       key: "ABC",
-      productList: [productList[1]],
+      productList: productList.filter((item) => item.productCode === "003"),
     },
     {
       key: "ABD",
-      productList: [productList[1]],
+      productList: productList.filter((item) => item.productCode === "003"),
     },
     {
       key: "ACA",
-      productList: [productList[1]],
+      productList: productList.filter((item) => item.productCode === "003"),
     },
     {
       key: "ACB",
-      productList: [productList[1], productList[2]],
+      productList: productList
+        .filter((item) => item.productCode === "003")
+        .concat(productList.filter((item) => item.productCode === "005")),
     },
     {
       key: "ACC",
-      productList: [productList[1], productList[2], productList[3]],
+      productList: productList
+        .filter((item) => item.productCode === "003")
+        .concat(productList.filter((item) => item.productCode === "005"))
+        .concat(productList.filter((item) => item.productCode === "001")),
     },
     {
       key: "ACD",
-      productList: [productList[1], productList[2]],
+      productList: productList
+        .filter((item) => item.productCode === "003")
+        .concat(productList.filter((item) => item.productCode === "005")),
     },
     {
       key: "BAA",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BAB",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BAC",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BAD",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BBA",
-      productList: [productList[1], productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BBB",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BBC",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BBD",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BCA",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BCB",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "BCC",
-      productList: [productList[3], productList[4]],
+      productList: productList
+        .filter((item) => item.productCode === "000")
+        .concat(productList.filter((item) => item.productCode === "000")),
     },
     {
       key: "BCD",
-      productList: [productList[4]],
+      productList: productList.filter((item) => item.productCode === "000"),
     },
     {
       key: "CAA",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CAB",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CAC",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CAD",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CBA",
-      productList: [productList[0], productList[1]],
+      productList: productList
+        .filter((item) => item.productCode === "004")
+        .concat(productList.filter((item) => item.productCode === "003")),
     },
     {
       key: "CBB",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CBC",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CBD",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CCA",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CCB",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
     {
       key: "CCC",
-      productList: [productList[0], productList[3]],
+      productList: productList
+        .filter((item) => item.productCode === "004")
+        .concat(productList.filter((item) => item.productCode === "001")),
     },
     {
       key: "CCD",
-      productList: [productList[0]],
+      productList: productList.filter((item) => item.productCode === "004"),
     },
-  ],
-};
+  ];
+  return _data;
+}
 
 function FlavourFinderComponent(props: any) {
   const headStyle = props.data.entry.headStyle;
-  const [data, setData] = useState<ComponentData>(componentData);
+  console.log("FlavourFinderComponent:", props.data.entry);
+  const _componentData = genComponentData(props.data.entry.data);
+  const _productData = genProductData(props.data.entry.data);
+  const _resultData = genResultData(_productData);
+
+  const [data, setData] = useState<ComponentData>(_componentData);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -605,21 +576,15 @@ function FlavourFinderComponent(props: any) {
 
   const [currentRecommend, setCurrentRecommend] = useState<number>(0);
   const [recommend, setRecommend] = useState<result>();
+  const [swiper, setSwiper] = useState<any>(null);
 
-  // const onChangeScroll = useCallback(
-  //   (emblaApi: { selectedScrollSnap: () => any }) => {
-  //     setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
-  //   },
-  //   []
-  // );
-
-  // const scrollTo = useCallback(
-  //   (index: number) => {
-  //     emblaApi?.scrollTo(index);
-  //     setCurrentIndex(index);
-  //   },
-  //   [emblaApi]
-  // );
+  const scrollTo = useCallback(
+    (index: number) => {
+      setCurrentIndex(index);
+      swiper.slideToLoop(index, 500, true);
+    },
+    [swiper]
+  );
 
   const doRecommend = () => {
     // todo
@@ -635,7 +600,7 @@ function FlavourFinderComponent(props: any) {
     const key = `${data.quizs.q1.answers[quizOneSelected - 1].value}${
       data.quizs.q2.answers[quizTwoSelected - 1].value
     }${data.quizs.q3.step2.answers[quizThreeSelected2 - 1].value}`;
-    const obj = data.resultList.filter((item) => item.key === key)[0];
+    const obj = _resultData.filter((item) => item.key === key)[0];
     setRecommend(obj);
     setQuizIndex(5);
   };
@@ -671,15 +636,6 @@ function FlavourFinderComponent(props: any) {
     });
   };
 
-  // useEffect(() => {
-  //   emblaApi?.on("select", onChangeScroll);
-  // }, [emblaApi, onChangeScroll]);
-
-  useEffect(() => {
-    console.log("showQuiz", showQuiz);
-    console.log("quizIndex", quizIndex);
-  }, [showQuiz, quizIndex]);
-
   return (
     <section
       id="DiscoverYourWildFlavour"
@@ -708,16 +664,14 @@ function FlavourFinderComponent(props: any) {
           </div>
           <div className="absolute right-0 bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover top-1/2 w-560px h-490px -mt-245px pad:w-448 pad:h-391px pad:-mt-196px mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
             <div className="leading-6 font-AlbertusNova-Regular uppercase text-center text-28px mt-100px pad:text-24px pad:mt-80px mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
-              Discover your Wild Flavour
+              { data.basic.flavourFinderComponentTitle }
             </div>
             <div className="font-Grotesque-Regular text-[#696969] px-20px m-20px text-18px pad:text-16px mobile:text-14px">
               <div className="text-center">
-                The whisky you choose to drink, and how you drink it, can reveal
-                a lot about your character.
+              { data.basic.flavourFinderComponentDescription1 }
               </div>
               <div className="text-center mt-10px">
-                Let&apos;s find out which one is your &ldquo;Glass of
-                Wildmoor&rdquo; and what is special in YOU.
+              { data.basic.flavourFinderComponentDescription2 }
               </div>
             </div>
             <div
@@ -727,7 +681,7 @@ function FlavourFinderComponent(props: any) {
                 setShowQuiz(true);
               }}
             >
-              Start
+              { data.basic.flavourFinderComponentStartContent }
             </div>
           </div>
         </>
@@ -742,7 +696,7 @@ function FlavourFinderComponent(props: any) {
                 <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px pad:text-28px pad:pt-100px mobile:text-15px mobile:pt-78px">
                   {data.quizs.q1.question}
                 </div>
-                <div className="flex justify-center mt-84px pad:mt-68px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
                   {data.quizs.q1.answers.map((answer, index) => {
                     return (
                       <div
@@ -753,7 +707,7 @@ function FlavourFinderComponent(props: any) {
                             : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                         }`}
                       >
-                        <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-250px mobile:h-125px">
+                        <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-full mobile:h-125px">
                           <BaseImage
                             mImg={answer.mImg}
                             pImg={answer.pImg}
@@ -763,7 +717,7 @@ function FlavourFinderComponent(props: any) {
                             quality={100}
                           ></BaseImage>
                         </div>
-                        <div className="flex justify-between items-center mt-10px mobile:px-20px">
+                        <div className="flex justify-between items-center mt-10px mobile:pt-10px">
                           <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
                             {answer.label}
                           </div>
@@ -788,24 +742,24 @@ function FlavourFinderComponent(props: any) {
             {quizIndex === 1 && (
               <>
                 <div className="">
-                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-720px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-860px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
                     {data.quizs.q2.question}
                   </div>
-                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-860px text-34px pad:w-720px pad:text-28px mobile:w-325px mobile:text-15px">
+                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-910px text-34px pad:w-860px pad:text-28px mobile:w-325px mobile:text-15px">
                     {data.quizs.q2.description}
                   </div>
-                  <div className="flex justify-center mt-48px pad:mt-84px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                  <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-135px paid:-mt-87px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
                     {data.quizs.q2.answers.map((answer, index) => {
                       return (
                         <div
                           key={index}
-                          className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:p-20px mobile:mx-0 mobile:my-5px mobile:flex ${
+                          className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:p-10px mobile:mx-0 mobile:my-5px mobile:flex ${
                             quizTwoSelected === index + 1
                               ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
                               : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                           }`}
                         >
-                          <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-150px mobile:h-150px">
+                          <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-150px mobile:h-150px mobile:mx-0">
                             <ReactPlayer
                               playing={
                                 index === 0
@@ -824,7 +778,7 @@ function FlavourFinderComponent(props: any) {
                               url={answer.audio}
                             ></ReactPlayer>
                           </div>
-                          <div className="flex justify-between items-center mt-5px mobile:w-90px mobile:ml-20px">
+                          <div className="flex justify-between items-center mt-5px mobile:w-100px mobile:ml-20px">
                             <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px pad:text-18px mobile:text-13px mobile:flex-col">
                               <i
                                 className={`inline-block cursor-pointer ${
@@ -886,7 +840,7 @@ function FlavourFinderComponent(props: any) {
                         {data.quizs.q3.step1.title}
                       </div>
                       <div
-                        className="relative overflow-y-auto max-h-[calc(50vh)] scrollbar"
+                        className="relative overflow-y-auto max-h-[calc(50vh)] p-10px scrollbar mobile:p-5px"
                         onWheel={(event) => {
                           event.stopPropagation();
                         }}
@@ -895,9 +849,9 @@ function FlavourFinderComponent(props: any) {
                           return (
                             <div
                               key={index}
-                              className={`flex justify-between items-center px-40px py-18px mt-6px pad:px-30px pad:py-14px pad:mt-4px mobile:px-20px mobile:py-17px mobile:mt-5px ${
+                              className={`flex justify-between items-center px-40px py-18px mt-6px pad:px-30px pad:py-14px pad:mt-4px mobile:px-20px mobile:py-10px mobile:mt-5px ${
                                 quizThreeSelected1 === index + 1
-                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
+                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px] mobile:shadow-[0_2px_5px_0_rgba(0,0,0,0.4)]"
                                   : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                               }`}
                             >
@@ -944,6 +898,9 @@ function FlavourFinderComponent(props: any) {
                             onSlideChange={(e) => {
                               setCurrentIndex(e.realIndex);
                             }}
+                            onSwiper={(swiper) => {
+                              setSwiper(swiper);
+                            }}
                           >
                             {data.quizs.q3.step2.answers.map(
                               (answer, index) => {
@@ -953,7 +910,7 @@ function FlavourFinderComponent(props: any) {
                                     className="relative py-20px pad:py-15px mobile:py-10px"
                                   >
                                     <div
-                                      className={`mx-10px px-34px pt-21px pb-12px pad:px-26px pad:pt-16px pad:pb-10px mobile:px-22px ${
+                                      className={`mx-10px px-34px pt-34px pb-12px pad:px-26px pad:pt-26px pad:pb-10px mobile:px-18px mobile:pt-18px ${
                                         quizThreeSelected2 === index + 1
                                           ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid pad:border-[3px] mobile:border-[2px]"
                                           : "border-[5px] border-[#C6C6C6] border-solid pad:border-[3px] mobile:border-[2px]"
@@ -1005,7 +962,7 @@ function FlavourFinderComponent(props: any) {
                                   ? "bg-white w-50px"
                                   : "bg-gray-300 w-20px"
                               }`}
-                              // onClick={() => scrollTo(index)}
+                              onClick={() => scrollTo(index)}
                             ></div>
                           );
                         })}
@@ -1020,7 +977,7 @@ function FlavourFinderComponent(props: any) {
                 <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px pad:text-28px pad:pt-100px mobile:text-15px mobile:pt-78px">
                   {data.quizs.q4.question}
                 </div>
-                <div className="flex justify-center mt-84px pad:mt-68px mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:left-0 mobile:top-0 mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
                   {data.quizs.q4.answers.map((answer, index) => {
                     return (
                       <div
@@ -1031,7 +988,7 @@ function FlavourFinderComponent(props: any) {
                             : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                         }`}
                       >
-                        <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-250px mobile:h-125px">
+                        <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-full mobile:h-125px">
                           <BaseImage
                             mImg={answer.mImg}
                             pImg={answer.pImg}
@@ -1041,7 +998,7 @@ function FlavourFinderComponent(props: any) {
                             quality={100}
                           ></BaseImage>
                         </div>
-                        <div className="flex justify-between items-center mt-10px mobile:px-20px">
+                        <div className="flex justify-between items-center mt-10px mobile:pt-10px">
                           <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
                             {answer.label}
                           </div>
@@ -1069,12 +1026,12 @@ function FlavourFinderComponent(props: any) {
                   <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-720px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-195px">
                     {data.quizs.q5.question}
                   </div>
-                  <div className="w-724px mx-auto mt-120px pad:mt-96px mobile:mt-42px mobile:w-305px">
+                  <div className="absolute left-1/2 -ml-362px top-1/2 -mt-200px w-724px mx-auto mobile:relative mobile:top-0 mobile:left-0 mobile:mt-42px mobile:mx-auto mobile:w-305px">
                     {data.quizs.q5.answers.map((answer, index) => {
                       return (
                         <div
                           key={index}
-                          className={`flex justify-between items-center px-40px py-18px mt-10px pad:px-30px pad:py-14px pad:mt-6px mobile:px-20px mobile:py-17px mobile:mt-5px ${
+                          className={`flex justify-between items-center px-40px py-40px mt-10px pad:px-30px pad:py-25px pad:mt-6px mobile:px-20px mobile:py-17px mobile:mt-5px ${
                             quizFiveSelected === index + 1
                               ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px]"
                               : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
@@ -1096,19 +1053,24 @@ function FlavourFinderComponent(props: any) {
                         </div>
                       );
                     })}
-                  </div>
-                  <div
-                    className={`cursor-pointer font-AlbertusNova-Regular bg-cover uppercase text-center mx-auto leading-[88px] text-18px mt-40px w-375px h-88px pad:leading-[65px] pad:text-14px pad:w-277px pad:h-65px pad:mt-36px mobile:w-188px mobile:h-44px mobile:leading-[44px] mobile:text-10px
-                    ${
-                      quizOneSelected === 0 || quizTwoSelected === 0 || quizThreeSelected1 === 0 || quizThreeSelected2 === 0 || quizFourSelected === 0 || quizFiveSelected === 0
-                        ? "bg-[url('/assets/range/result_btn_grey.png')] text-[#969797]"
-                        : "bg-[url('/assets/range/result_btn.png')] text-[#000000]"
-                    }`}
-                    onClick={() => {
-                      doRecommend();
-                    }}
-                  >
-                    see your flavor profile
+                    <div
+                      className={`cursor-pointer font-AlbertusNova-Regular bg-cover uppercase text-center mx-auto leading-[88px] text-18px mt-40px w-375px h-88px pad:leading-[65px] pad:text-14px pad:w-277px pad:h-65px pad:mt-36px mobile:w-188px mobile:h-44px mobile:leading-[44px] mobile:text-10px mobile:mt-20px
+                      ${
+                        quizOneSelected === 0 ||
+                        quizTwoSelected === 0 ||
+                        quizThreeSelected1 === 0 ||
+                        quizThreeSelected2 === 0 ||
+                        quizFourSelected === 0 ||
+                        quizFiveSelected === 0
+                          ? "bg-[url('/assets/range/result_btn_grey.png')] text-[#969797]"
+                          : "bg-[url('/assets/range/result_btn.png')] text-[#000000]"
+                      }`}
+                      onClick={() => {
+                        doRecommend();
+                      }}
+                    >
+                    { data.basic.dywfSeeYourFlavorProfile }
+                    </div>
                   </div>
                 </div>
               </>
@@ -1121,50 +1083,50 @@ function FlavourFinderComponent(props: any) {
                       className={`${
                         quizIndex === 0
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          : quizOneSelected !== 0
+                          ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative text-[#696969] cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
+                      } relative cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(0);
                       }}
                     >
                       Q1
-                      {quizOneSelected !== 0 && (
-                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
-                      )}
                       <div
                         className={`${
                           quizIndex === 0
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
                       ></div>
                     </div>
                     <div
                       className={`${
                         quizIndex === 1
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          : quizTwoSelected !== 0
+                          ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative text-[#696969] cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
+                      } relative cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(1);
                       }}
                     >
                       Q2
-                      {quizTwoSelected !== 0 && (
-                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
-                      )}
                       <div
                         className={`${
                           quizIndex === 1
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                     <div
                       className={`${
                         quizIndex === 2
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          : quizThreeSelected1 !== 0 && quizThreeSelected2 !== 0
+                          ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
                       } relative cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
@@ -1172,21 +1134,20 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q3
-                      {quizThreeSelected1 !== 0 && quizThreeSelected2 !== 0 && (
-                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
-                      )}
                       <div
                         className={`${
                           quizIndex === 2
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                     <div
-                      className={`${
+                      className={` ${
                         quizIndex === 3
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          : quizFourSelected !== 0
+                          ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
                       } relative cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
@@ -1194,37 +1155,33 @@ function FlavourFinderComponent(props: any) {
                       }}
                     >
                       Q4
-                      {quizFourSelected !== 0 && (
-                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px mobile:w-8px mobile:h-7px bg-cover ml-5px"></i>
-                      )}
                       <div
                         className={`${
                           quizIndex === 3
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                     <div
                       className={`${
                         quizIndex === 4
                           ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          : quizFiveSelected !== 0
+                          ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
-                      } relative  cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
+                      } relative cursor-pointer text-20px w-275px pad:w-233px text-center border-b-2 border-solid pb-10px mobile:text-12px`}
                       onClick={() => {
                         setQuizIndex(4);
                       }}
                     >
                       Q5
-                      {quizFiveSelected !== 0 && (
-                        <i className="inline-block bg-[url('/assets/range/icon_right.png')] w-16px h-13px bg-cover ml-5px"></i>
-                      )}
                       <div
                         className={`${
                           quizIndex === 4
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 top-40px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:top-28px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                   </div>
@@ -1246,11 +1203,11 @@ function FlavourFinderComponent(props: any) {
                       setQuizIndex(0);
                     }}
                   >
-                    Redo
+                    { data.basic.dywfRedo }
                   </span>
                 </div>
                 <div className="mx-auto mt-10px w-[1251px] pad:w-[1042px] mobile:w-330px">
-                  <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-153px pt-42px w-[1251px] h-334px pad:w-[1042px] pad:h-300px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-461px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                  <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
                     <div className="w-234px pad:w-188px mobile:w-241px">
                       {recommend && (
                         <Swiper
@@ -1272,9 +1229,9 @@ function FlavourFinderComponent(props: any) {
                                 <div className="flex flex-col items-center justify-center">
                                   <div className="relative w-215px h-209px pad:w-180px pad:h-175px mobile:w-148px mobile:h-145px">
                                     <BaseImage
-                                      mImg={product.img.mImg}
-                                      pImg={product.img.pImg}
-                                      alt={""}
+                                      mImg={product.quizResultProductImage?.imagemobile?.url}
+                                      pImg={product.quizResultProductImage?.imagepc?.url}
+                                      alt={product.quizResultProductImage?.altText}
                                       layout="fill"
                                       objectFit="cover"
                                       quality={100}
@@ -1327,7 +1284,6 @@ function FlavourFinderComponent(props: any) {
                             quality={100}
                           ></BaseImage>
                         </div>
-                        {/* <i className="inline-block bg-[url('/assets/range/icon_business_meal.png')] bg-cover mr-10px w-68px h-68px pad:w-54px pad:h-54px mobile:w-36px mobile:h-36px"></i> */}
                         <div className="ml-10px font-AlbertusNova-Regular text-black text-34px pad:text-27px mobile:text-16px">
                           {
                             data.quizs.q3.step1.answers[quizThreeSelected1 - 1]
@@ -1336,7 +1292,7 @@ function FlavourFinderComponent(props: any) {
                         </div>
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px pad:text-12px mobile:text-10px">
-                        gifting occasion suggestion
+                        { data.basic.dywfResultSubtitle }
                       </div>
                       <div className="font-Grotesque-Regular text-black mt-20px leading-normal text-22px opacity-50 pad:text-18px mobile:text-14px mobile:text-center">
                         {
@@ -1345,32 +1301,32 @@ function FlavourFinderComponent(props: any) {
                         }
                       </div>
                       <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px">
-                        explore
+                        { data.basic.dywfExploreContent }
                       </div>
                     </div>
                   </div>
                   <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
                     <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
                       <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">
-                        I’d like to have a personal copy of the results!
+                        { data.basic.dywfEmailContent }
                       </div>
                     </div>
                     <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
-                      <div className="inline-flex items-center px-85px pad:px-70px mobile:pt-10px mobile:pb-20px mobile:px-20px">
+                      <div className="inline-flex items-center px-70px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px pad:w-15px pad:h-15px mobile:w-12px mobile:h-11px"></i>
                         <input
                           type="text"
-                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-194px pad:w-164px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
-                          placeholder="Enter first Name"
+                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-224px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                          placeholder={data.basic.dywfEmailName}
                         />
                       </div>
                       <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex items-center px-95px pad:px-90px mobile:py-20px mobile:px-20px">
+                      <div className="inline-flex items-center px-80px pad:px-80px mobile:py-20px mobile:px-20px">
                         <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px pad:w-20px pad:h-15px mobile:w-15px mobile:h-11px"></i>
                         <input
                           type="text"
-                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-300px pad:w-250px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
-                          placeholder="Enter your email address"
+                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-330px pad:w-270px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                          placeholder={data.basic.dywfEmailAddress}
                         />
                       </div>
                       <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
@@ -1382,7 +1338,7 @@ function FlavourFinderComponent(props: any) {
                             submit();
                           }}
                         >
-                          SUBMIT
+                        { data.basic.dywfSubmitContent }
                         </div>
                       </div>
                     </div>

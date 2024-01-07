@@ -1,10 +1,6 @@
 
 interface itemObj{
-    sys:{
-        type:String,
-        linkType:String,
-        id:String,
-    },
+    items:Array<object>
 }
 
 class CommonModel{
@@ -16,26 +12,50 @@ class CommonModel{
 
     }
 
-    setPageContent<T extends itemObj>(containers:T[],components:[]):void{
+    // setPageContent<T extends itemObj>(containers:T[],components:[]):void{
+    //
+    //     const mapping = containers.map((item,index:number)=>{
+    //
+    //
+    //         let currentComponent = components.filter(list=>list['sys']['id'] ==item.sys.id)[0];
+    //
+    //         return  {
+    //             type: currentComponent['sys']['contentType']['sys']['id'],
+    //             name: currentComponent['sys']['contentType']['sys']['id'],
+    //             entry:currentComponent,
+    //             // publicComponents:components,
+    //         }
+    //     });
+    //
+    //     this.pageContent = mapping;
+    //
+    //
+    //
+    // }
 
-        const mapping = containers.map((item,index:number)=>{
 
 
-            let currentComponent = components.filter(list=>list['sys']['id'] ==item.sys.id)[0];
+    setPageContent(components:any):void{
 
-            return  {
-                type: currentComponent['sys']['contentType']['sys']['id'],
-                name: currentComponent['sys']['contentType']['sys']['id'],
-                entry:currentComponent,
-                // publicComponents:components,
-            }
-        });
+        let mapping = [];
+
+        for(let key in components){
+
+            const item = components[key].items[0];
+
+            mapping.push({
+                type:key+'Component',
+                name:key+'Component',
+                entry:item
+            })
+        }
 
         this.pageContent = mapping;
 
 
 
     }
+
 
 
 

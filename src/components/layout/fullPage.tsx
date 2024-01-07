@@ -9,13 +9,13 @@ import Footer from '@/components/layout/footer';
 import RangeNav from '@/components/layout/rangeNav';
 
 import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
-import InteractiveVideo from "@/components/page/interactiveVideoComponent";
-import IntroduceCampaign from "@/components/page/introduceCampaignComponent";
+import InteractiveVideo, { propsContent as InteractiveVideoPropsContent } from "@/components/page/interactiveVideoComponent";
+import IntroduceCampaign, { propsContent as IntroduceCampaignPropsContent } from "@/components/page/introduceCampaignComponent";
 import HeroBanner from "@/components/page/heroBannerComponent";
 import KVAnimation from "@/components/page/KVAnimationComponent";
-import NearYou from "@/components/page/nearYouComponent";
-import VIPClub from "@/components/page/VIPClubComponent";
-import ProductFamily from "@/components/page/productFamilyComponent";
+import NearYou, { propsContent as NearYouPropsContent } from "@/components/page/nearYouComponent";
+import VIPClub, { propsContent as VIPClubPropsContent } from "@/components/page/VIPClubComponent";
+import ProductFamily, { propsContent as ProductFamilyPropsContent } from "@/components/page/productFamilyComponent";
 import Quote from "@/components/page/quoteComponent";
 import TextBlock from "@/components/page/textBlockComponent";
 import StoryOpening from "@/components/page/storyOpeningComponent";
@@ -35,7 +35,7 @@ import BottleConcept from "@/components/page/bottleConceptComponent";
 import LocationMap from "@/components/page/locationMapComponent";
 import LocationInfo from "@/components/page/locationInfoComponent";
 import IRLExperiences from "@/components/page/IRLExperiencesComponent";
-import DigitalExperience from "@/components/page/digitalExperienceComponent";
+import DigitalExperience, { propsContent as DigitalExperiencePropsContent }  from "@/components/page/digitalExperienceComponent";
 import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
 
@@ -46,17 +46,17 @@ function getComponent(data: any, k:number, scrollToPage: Function, changeNavStat
         /** public components **/
 
         case "globalCampaignsComponent":  return <GlobalCampaigns key={k} {...props} />;
-        case "interactiveVideoComponent":  return <InteractiveVideo key={k} {...props} />;
-        case "introduceCampaignComponent":  return <IntroduceCampaign key={k} {...props} />;
+        case "interactiveVideoComponent":  return <InteractiveVideo key={k} {...props as InteractiveVideoPropsContent } />;
+        case "introduceCampaignComponent":  return <IntroduceCampaign key={k} {...props as IntroduceCampaignPropsContent } />;
 
 
         /** page components  **/
 
         case "heroBannerComponent":  return <HeroBanner key={k} {...props} />;
         case "KVAnimationComponent":   return <KVAnimation key={k} {...props} />;
-        case "nearYouComponent":   return <NearYou key={k} {...props} />;
-        case "VIPClubComponent":   return <VIPClub key={k} {...props} />;
-        case "productFamilyComponent":   return <ProductFamily key={k} {...props} />;
+        case "nearYouComponent":   return <NearYou key={k} {...props as NearYouPropsContent} />;
+        case "VIPClubComponent":   return <VIPClub key={k} {...props as VIPClubPropsContent} />;
+        case "productFamilyComponent":   return <ProductFamily key={k} {...props as ProductFamilyPropsContent} />;
         case "quoteComponent":       return <Quote key={k} {...props} />;
         case "textBlockComponent":   return <TextBlock key={k} {...props} />;
 
@@ -80,7 +80,7 @@ function getComponent(data: any, k:number, scrollToPage: Function, changeNavStat
         case "locationMapComponent":   return <LocationMap key={k} {...props} />;
         case "locationInfoComponent":   return <LocationInfo key={k} {...props} />;
         case "IRLExperiencesComponent":   return <IRLExperiences key={k} {...props} />;
-        case "digitalExperienceComponent":   return <DigitalExperience key={k} {...props} />;
+        case "digitalExperienceComponent":   return <DigitalExperience key={k} {...props as DigitalExperiencePropsContent} />;
         case "privacyPolicyComponent" : return <PrivacyPolicy key={k} {...props} />;
         case "howToBuyDetailComponent":   return <HowToBuyDetail key={k} {...props} />;
         default:      return <div></div>

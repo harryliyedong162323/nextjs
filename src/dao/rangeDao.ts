@@ -1,159 +1,442 @@
-import RangeModel from "../model/rangeModel";
+import PageModel from "../model/pageModel";
 
-const HOME_URL =
-  "https://cdn.contentful.com/spaces/zedtwknbsk02/entries?content_type=landingPage&fields.slug=test1&locale=en-US&include=4&access_token=5mGkIgazQQqwe9NykxKqitB0zopjFOvVHotuSM8GZvg";
+// const BASE_URL = "https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss";
+
+const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
+  
+
+const query = `
+  query {
+    productFamily:homeCollection (limit:1 where:{pageName:"home"} ) {
+      items {
+          productFamilyComponentProductsCollection(limit: 10, order:id_ASC) {
+              items {
+                id
+                active
+                num
+                productName
+                age
+                tag
+                productImage {
+                    imagepc {
+                        url
+                        
+                    }
+                    imagemobile {
+                        url
+                    }
+                    altText
+                }
+                backGroundImage {
+                    imagepc {
+                        url
+                        
+                    }
+                    imagemobile {
+                        url
+                    }
+                    altText
+                }
+                age
+                unit
+                description
+                price       
+              }
+          }
+      }
+    }
+  }
+`;
+
+const quizQuery = `
+query {
+
+  productFamilyCollection(limit: 10, order:id_ASC) {
+      items {
+          id
+          productCode
+          productName
+          quizResultProductImage {
+              imagepc {
+                  url
+              }
+              imagemobile {
+                  url
+              }
+              altText
+          }
+
+      }
+    }
+
+  dataQuizQ1Collection {
+      items {
+          id
+           topicContent
+           optionAId
+           optionAValue
+            optionAContent
+            optionAImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            optionBId
+           optionBValue
+            optionBContent
+            optionBImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            optionCId
+            optionCValue
+            optionCContent
+            optionCImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+      }
+  }
+
+  dataQuizQ2Collection {
+      items {
+          id
+          topicContent
+          description
+          optionAId
+          optionAValue
+            optionAContent
+            optionAImage {
+                imagepc {
+                    url
+                }
+
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            optionAAudio {
+                video {
+                    url
+                }
+            }
+
+            optionBId
+            optionBValue
+            optionBContent
+            optionBImage {
+                imagepc {
+                    url
+                }
+
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            optionBAudio {
+                video {
+                    url
+                }
+            }
+
+            optionCId
+            optionCValue
+            optionCContent
+            optionCImage {
+                imagepc {
+                    url
+                }
+
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            optionCAudio {
+                video {
+                    url
+                }
+            }
+      }
+  }
+
+  dataQuizQ3Collection {
+      items {
+          id
+          topicContent
+          question1Id
+            question1Content
+            option1AId
+            option1AContent
+            option1AValue
+            option1AIcon {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            option1BId
+            option1BContent
+            option1BValue
+            option1BIcon {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            option1CId
+            option1CContent
+            option1CValue
+            option1CIcon {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            option1DId
+            option1DContent
+            option1DValue
+            option1DIcon {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            option1EId
+            option1EContent
+            option1EValue
+            option1EIcon {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            option1FId
+            option1FContent
+            option1FValue
+            option1FIcon {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+                altText
+            }
+            question2Id
+            question2Content
+            option2AId
+            option2AValue
+            option2AContent
+            option2AImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+            }
+            option2BId
+            option2BValue
+            option2BContent
+            option2BImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+            }
+
+            option2CId
+            option2CValue
+            option2CContent
+            option2CImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+            }
+
+            option2DId
+            option2DValue
+            option2DContent
+            option2DImage {
+                imagepc {
+                    url
+                }
+                imagemobile {
+                    url
+                }
+            }
+      }
+  }
+
+  dataQuizQ4Collection {
+      items {
+          id
+          topicContent
+          optionAId
+          optionAValue
+            optionAContent
+            optionAImage {
+                imagemobile {
+                    url
+                }
+                imagepc {
+                    url
+                }
+                altText
+            }
+            optionBId
+            optionBValue
+            optionBContent
+            optionBImage {
+                imagemobile {
+                    url
+                }
+                imagepc {
+                    url
+                }
+                altText
+            }
+            optionCId
+            optionCValue
+            optionCContent
+            optionCImage {
+                imagemobile {
+                    url
+                }
+                imagepc {
+                    url
+                }
+                altText
+            }
+      }
+  }
+
+  dataQuizQ5Collection {
+      items {
+           id
+           topicContent
+            optionAId
+            optionAValue
+            optionAContent
+            optionBId
+            optionBValue
+            optionBContent
+            optionCId
+            optionCValue
+            optionCContent
+      }
+  }
+
+
+  rangeCollection (limit:1 where:{pageName:"range"} ) {
+    items {
+
+        flavourFinderComponentTitle
+        flavourFinderComponentStartContent
+        flavourFinderComponentDescription1
+        flavourFinderComponentDescription2
+        dywfResultSubtitle
+        dywfResultContent
+        dywfExploreContent
+        dywfEmailContent
+        dywfEmailName
+        dywfEmailAddress
+        dywfSubmitContent
+        dywfSeeYourFlavorProfile
+        dywfRedo
+    }
+}
+
+  
+}
+`;
 
 class RangeDao {
-  static async fetch<RangeModel>() {
-    // const response = await fetch(HOME_URL)
-    // const result = await response.json()
-    // return HomeModel.fromJson(result);
-    return [
+  static async fetch<PageModel>() {
+    const response = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+    });
+    const result = await response.json();
 
+    const quizResponse = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: quizQuery }),
+    });
+    const quizResult = await quizResponse.json();
+
+    return [
       {
         type: "fullPage",
         name: "fullPage",
         rangeNav: true,
         entry: {
-          children:[
+          children: [
             {
               type: "productFamilyComponent",
               name: "productFamilyComponent",
               entry: {
-                headStyle:'white',
-
-                bottleData:[
-                  {
-                    id:0,
-                    num:23,
-                    active:false,
-                    info:{
-                      name:'ANCIENT MOORLAND',
-                      bottle:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-1.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-1.png",
-                      },
-                      bg:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv.png",
-                      },
-                      year:23,
-                      price:'£750 RRP ',
-                      des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-                    }
-                  },
-                  {
-                    id:1,
-                    num:40,
-                    active:false,
-                    info:{
-                      name:'ANCIENT MOORLAND',
-                      bottle:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-2.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-2.png",
-                      },
-                      bg:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-2.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-2.png",
-                      },
-                      year:40,
-                      price:'£750 RRP ',
-                      des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-                    }
-                  },
-                  {
-                    id:2,
-                    num:23,
-                    active:false,
-                    info:{
-                      name:'ANCIENT MOORLAND',
-                      bottle:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-3.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-3.png",
-                      },
-                      bg:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-3.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-3.png",
-                      },
-                      year:23,
-                      price:'£750 RRP ',
-                      des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-                    }
-                  },
-                  {
-                    id:3,
-                    num:30,
-                    active:false,
-                    info:{
-                      name:'ANCIENT MOORLAND',
-                      bottle:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-4.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-4.png",
-                      },
-                      bg:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-4.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-4.png",
-                      },
-                      year:30,
-                      price:'£750 RRP ',
-                      des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-                    }
-                  },
-                  {
-                    id:4,
-                    num:30,
-                    active:false,
-                    info:{
-                      name:'ANCIENT MOORLAND',
-                      bottle:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-5.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-5.png",
-                      },
-                      bg:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-5.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-5.png",
-                      },
-                      year:30,
-                      price:'£750 RRP ',
-                      des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-                    }
-                  },
-                  {
-                    id:5,
-                    num:23,
-                    active:true,
-                    info:{
-                      name:'ANCIENT MOORLAND',
-                      bottle:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-6.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/bottle-6.png",
-                      },
-                      bg:{
-                        pImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-6.png",
-                        mImg:"https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/widmoor/productFamily/kv-6.png",
-                      },
-                      year:23,
-                      price:'£750 RRP ',
-                      des:'An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.'
-                    }
-                  },
-                ]
-
-
+                headStyle: "white",
+                ...PageModel.query("productFamily", result),
               },
             },
             {
               type: "talesFromTheWildComponent",
               name: "talesFromTheWildComponent",
               entry: {
-                headStyle:'black',
+                headStyle: "black",
                 hasNavigation: true,
                 kols: [
                   {
                     id: "10086",
                     name: "NAME of KOL",
                     avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                    banner:  `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_01.png?w=1000&h=1000`,
+                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_01.png?w=1000&h=1000`,
                     description: "Bring the drinking occasion to life in a way",
                   },
                   {
@@ -191,28 +474,27 @@ class RangeDao {
               type: "servingSuggestionComponent",
               name: "servingSuggestionComponent",
               entry: {
-                headStyle:'black',
+                headStyle: "black",
               },
             },
             {
               type: "bottleConceptComponent",
               name: "bottleConceptComponent",
               entry: {
-                headStyle:'white',
+                headStyle: "white",
               },
             },
             {
               type: "flavourFinderComponent",
               name: "flavourFinderComponent",
               entry: {
-                headStyle:'black',
+                headStyle: "black",
+                ...quizResult
               },
             },
-          ]
-        }
+          ],
+        },
       },
-
-
     ];
   }
 }

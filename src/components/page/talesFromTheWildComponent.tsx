@@ -150,7 +150,7 @@ function TalesFromTheWildComponent(props: any) {
     >
       <input type="hidden" value={headStyle} />
       <div className="flex h-screen flex-col">
-        <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px pad:text-27px pad:pt-124px mobile:text-20px mobile:pt-82px">
+        <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px pad:text-27px pad:pt-124px mobile:text-20px mobile:pt-80px">
           Tales From The Wild
         </div>
         <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] h-516px pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">

@@ -149,7 +149,7 @@ function KVAnimationComponent(props: any) {
 
         </div>
 
-          <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden pad:w-129px pad:h-281px pad:translate-y-[-21%]`}>
+          <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden pad:w-129px pad:h-281px pad:translate-y-[-21%] mobile:h-223px mobile:w-102px mobile:translate-y-[0%]`}>
               <BaseVideo
                   src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.webm"
                   className="h-full object-cover"
@@ -162,9 +162,9 @@ function KVAnimationComponent(props: any) {
           </div>
 
 
-         <div className={`absolute bottom-[5%] w-full left-1/2 z-30`}>
+         <div className={`absolute bottom-[5%] w-full left-1/2 z-30 mobile:w-[80%] mobile:bottom-[8%]`}>
             <div className={`text-group-4 translate-x-[-50%] translate-y-full transition-all ease-in-out duration-500 delay-1000`}>
-                <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular pad:pt-67px pad:pb-20px pad:text-21px mobile:pt-66px">
+                <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular pad:pt-67px pad:pb-20px pad:text-21px mobile:pt-66px mobile:text-24px">
                     A drop of wilderness in every glass
                 </div>
 

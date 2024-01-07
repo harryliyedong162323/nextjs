@@ -2,59 +2,120 @@
 
 import React, {useCallback, useEffect, useState,useRef} from "react";
 import BaseImage from "@/components/base/image";
+import BaseLink from "@/components/base/link";
 import { flushSync } from 'react-dom'
 // import useEmblaCarousel from "embla-carousel-react";
 // import Autoplay from "embla-carousel-autoplay";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import gsap from "gsap";
-
-
 import 'swiper/css';
-import {Swiper as SwiperClass} from "swiper/types";
-import BaseLink from "@/components/base/link";
-const campaigns:object[] = [
-    {
-        id:0,
-        mImg:require("../../../public/assets/howToBuyDetail/kv-1.png"),
-        pImg:require("../../../public/assets/howToBuyDetail/kv-1.png"),
-        title:'New York',
-        des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
-        date:'2023-11-11',
+
+
+
+
+
+
+
+
+
+interface entryContent{
+    headStyle:string,
+    introduceCampaignComponentTitle:string,
+    introduceCampaignComponentBackgroundImage:{
+        altText:string,
+        imagemobile:{
+            url:string,
+        },
+        imagepc:{
+            url:string,
+        }
     },
-    {
-        id:1,
-        mImg:require("../../../public/assets/howToBuyDetail/kv-2.png"),
-        pImg:require("../../../public/assets/howToBuyDetail/kv-2.png"),
-        title:'New York',
-        des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
-        date:'2023-11-11',
-    },
-    {
-        id:2,
-        mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
-        pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
-        title:'New York',
-        des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
-        date:'2023-11-11',
-    },
-    {
-        id:3,
-        mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
-        pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
-        title:'New York',
-        des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
-        date:'2023-11-11',
-    },
-    {
-        id:4,
-        mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
-        pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
-        title:'New York',
-        des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
-        date:'2023-11-11',
+    introduceCampaignComponentCampaignsCollection:introduceCampaignComponentCampaignsCollectionContent
+}
+interface introduceCampaignComponentCampaignsCollectionContent{
+    items:Array<campaignsContent>
+}
+
+
+
+export interface propsContent{
+    changeNavStatus:Function,
+    scrollToPage:Function,
+
+    data:{
+        entry:entryContent,
+        name:string,
+        type:string,
     }
-];
+}
+
+
+interface campaignsContent{
+    campaignImage:{
+        altText:string,
+        imagemobile:{
+            url:string,
+        },
+        imagepc:{
+            url:string,
+        }
+    },
+    description:string,
+    location:string,
+    year:string,
+}
+
+
+
+
+
+//
+// const campaigns:object[] = [
+//     {
+//         id:0,
+//         mImg:require("../../../public/assets/howToBuyDetail/kv-1.png"),
+//         pImg:require("../../../public/assets/howToBuyDetail/kv-1.png"),
+//         title:'New York',
+//         des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
+//         date:'2023-11-11',
+//     },
+//     {
+//         id:1,
+//         mImg:require("../../../public/assets/howToBuyDetail/kv-2.png"),
+//         pImg:require("../../../public/assets/howToBuyDetail/kv-2.png"),
+//         title:'New York',
+//         des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
+//         date:'2023-11-11',
+//     },
+//     {
+//         id:2,
+//         mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+//         pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+//         title:'New York',
+//         des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
+//         date:'2023-11-11',
+//     },
+//     {
+//         id:3,
+//         mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+//         pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+//         title:'New York',
+//         des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
+//         date:'2023-11-11',
+//     },
+//     {
+//         id:4,
+//         mImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+//         pImg:require("../../../public/assets/howToBuyDetail/kv-3.png"),
+//         title:'New York',
+//         des:'Bring the drinking occasion to life in a way Bring the drinking occasion...',
+//         date:'2023-11-11',
+//     }
+// ];
+//
+//
+
+
 
 
 const TWEEN_FACTOR = 3
@@ -62,8 +123,14 @@ const TWEEN_FACTOR = 3
 const numberWithinRange = (number:number, min:number, max:number) => Math.min(Math.max(number, min), max)
 
 
-function IntroduceCampaignComponent(props: any) {
+function IntroduceCampaignComponent(props: propsContent) {
+
     const headStyle = props.data.entry.headStyle;
+
+    const title = props.data.entry.introduceCampaignComponentTitle;
+    // const bg = props.data.entry.introduceCampaignComponentBackgroundImage;
+    const campaigns = props.data.entry.introduceCampaignComponentCampaignsCollection.items;
+
     // const carouselRefs = useRef([]);
     // // Autoplay()
     // const [tweenValues, setTweenValues] = useState([] as any)
@@ -255,10 +322,10 @@ function IntroduceCampaignComponent(props: any) {
 
 
     return (
-        <section id="GlobalNews" data-anchor={1}  className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none">
+        <section id="GlobalNews" data-anchor={1}  className={`w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none`}>
             <input type="hidden" value={headStyle}/>
 
-            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-90px pad:text-23px mobile:pt-84px mobile:text-24px">Global news</div>
+            <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-90px pad:text-23px mobile:pt-84px mobile:text-24px">{title}</div>
 
 
             <div className="absolute z-10 top-0 left-[0%] h-full w-200px bg-gradient-to-l from-[transparent] to-[#f6f6f6f6]"></div>
@@ -457,14 +524,15 @@ function IntroduceCampaignComponent(props: any) {
                     {
                         campaigns.map((item:any,index:number)=>{
                             return (
-                                <div key={item.id}>
-                                    <SwiperSlide key={item.id} className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}>
+                                // item.id
+                                <div key={index}>
+                                    <SwiperSlide key={index} className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}>
                                         <div>
                                             <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
                                                 <BaseImage
-                                                    mImg={item.mImg}
-                                                    pImg={item.pImg}
-                                                    alt={""}
+                                                    mImg={item.campaignImage.imagepc.url}
+                                                    pImg={item.campaignImage.imagemobile.url}
+                                                    alt={item.campaignImage.altText}
                                                     layout="fill"
                                                     objectFit="cover"
                                                     quality={100}
@@ -472,11 +540,11 @@ function IntroduceCampaignComponent(props: any) {
                                             </div>
                                             <div className="text-center text-21px font-Grotesque-Medium font-medium pad:text-15px mobile:text-16px">
                                                 <span className="w-12px h-14px bg-contain bg-[url('/assets/introduceCampaign/subtract.png')] inline-block align-middle pad:w-8px pad:h-10px mobile:w-10px mobile:h-11px"></span>
-                                                <span className="uppercase inline-block align-middle pl-8px pad:pl-5px mobile:pl-9px">{item.title}</span>
+                                                <span className="uppercase inline-block align-middle pl-8px pad:pl-5px mobile:pl-9px">{item.location}</span>
                                             </div>
 
-                                            <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px pad:text-13px pad:pb-7px mobile:text-14px mobile:pb-20px">{item.date}</div>
-                                            <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px pad:w-200px mobile:text-center mobile:w-full">{item.des}</div>
+                                            <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px pad:text-13px pad:pb-7px mobile:text-14px mobile:pb-20px">{item.year}</div>
+                                            <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px pad:w-200px mobile:text-center mobile:w-full">{item.description}</div>
                                             <BaseLink link="/activityDetail">
                                                 <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
                                             </BaseLink>
