@@ -386,8 +386,8 @@ function IntroduceCampaignComponent(props: propsContent) {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <div className="relative  pt-100px h-685px pad:h-489px  pad:pt-110px mobile:pt-113px ">
-                <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  pad:h-428px pad:w-[80%] pad:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[35%]"></div>
+            <div className="relative  pt-100px h-685px mobile:h-485px  pad:h-489px  pad:pt-110px mobile:pt-60px ">
+                <div className="absolute top-[45%] translate-y-[-50%] right-0 bg-contain bg-[url('/assets/introduceCampaign/line.png')] bg-center w-[80%] h-300px bg-no-repeat  pad:h-428px pad:w-[80%] pad:top-[46%] mobile:bg-[url('/assets/introduceCampaign/line-m.png')] mobile:w-[40%] mobile:left-[30%] mobile:top-[45%]"></div>
 
                 <Swiper
                     style={{

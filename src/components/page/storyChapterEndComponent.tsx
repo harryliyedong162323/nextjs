@@ -26,7 +26,7 @@ const componentData: ComponentData = {
   id: 1,
   bg: {
     pImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
-    mImg: require("../../../public/assets/story/brand_story_chatper_end.png"),
+    mImg: require("../../../public/assets/story/brand_story_chatper_end_m.png"),
   },
   productList: [{
     id: 1,
@@ -111,7 +111,7 @@ function StoryChapterEndComponent(props: any) {
           quality={100}
         ></BaseImage>
       </div>
-      <div className="w-full absolute left-0 top-120px pad:top-108px mobile:top-210px">
+      <div className="w-full absolute left-0 top-120px pad:top-108px mobile:top-150px">
         <div className="absolute z-10 top-0 -right-25px h-full w-125px bg-gradient-to-l from-[#00000090] to-[#00000000]"></div>
           <Marquee play={play}>
             { data.productList.map((item, index) => {
@@ -140,7 +140,7 @@ function StoryChapterEndComponent(props: any) {
             })}
           </Marquee>
       </div>
-      <div className="absolute text-[#E6E7E8] font-Grotesque-Light text-22px bottom-[calc(11.5vh)] w-full mobile:text-14px">
+      <div className="absolute text-[#E6E7E8] font-Grotesque-Light text-22px bottom-[calc(11.5vh)] w-full mobile:text-14px mobile:bottom-150px">
         <div className="w-830px pad:w-664px m-auto mobile:w-300px">
           {data.description}
         </div>

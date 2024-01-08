@@ -211,19 +211,19 @@ function Footer(props: any) {
             ></div>
           </div>
         </div>
-        <div className="flex justify-between pt-50px pb-50px mobile:flex-wrap mobile:justify-center">
+        <div className="flex justify-between pt-50px mobile:pt-35px pb-50px mobile:flex-wrap mobile:justify-center">
           {pannels.map((panel) => (
             <ul
               className="flex-auto mobile:w-full mobile:hidden"
               key={panel.id}
             >
-              <li className="flex justify-between pb-35px mobile:pb-40px">
+              <li className="flex justify-between pb-35px mobile:pb-40px items-center">
                 <span className="mobile:text-17px">
                   <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Medium dark-grey">
                     {panel.title[0].name}
                   </BaseLink>
                 </span>
-                <span className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
+                <span className="text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
               </li>
               {panel.list.map((item) => (
                 <li
@@ -243,22 +243,32 @@ function Footer(props: any) {
               className="flex-auto hidden mobile:w-full mobile:block"
               key={panel.id}
             >
-              <li className="flex justify-between pb-35px mobile:pb-40px">
+              <li className="flex justify-between pb-35px mobile:pb-40px items-center ">
                 <span className=" w-11/12  mobile:text-17px">
                   <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Regular dark-grey">
                     {panel.title[0].name}
                   </BaseLink>
                 </span>
-                <span
-                  className="text-33px w-23px h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"
-                  onClick={() => togglePanel(panel.id)}
-                ></span>
+
+
+                {!panel.isExpanded ? (
+                    <span
+                        className={`text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden  bg-[url('/assets/add_footer.png')]   bg-contain cursor-pointer mobile:block`}
+                        onClick={() => togglePanel(panel.id)}
+                    ></span>
+                ) : (
+                    <span className="text-21px pad:text-17px mobile:text-21px font-Grotesque-Medium" onClick={() => togglePanel(panel.id)}>
+                      —
+                    </span>
+                )}
+
+
               </li>
               {panel.isExpanded && (
                 <div className="mobile:mt-[-22px] mobile:mb-20px">
                   {panel.list.map((item) => (
                     <li
-                      className="text-[#696969] text-16px font-normal font-Grotesque-Regular  pb-17px mobile:block "
+                      className="text-[#696969] text-16px font-normal font-Grotesque-Regular  pb-17px mobile:block  mobile:pb-20px"
                       key={item.id}
                     >
                       <div className="flex  justify-between">

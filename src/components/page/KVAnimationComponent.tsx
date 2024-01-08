@@ -16,7 +16,7 @@ function KVAnimationComponent(props: any) {
     const container = useRef(null);
 
 
-
+    console.log(props)
 
 
   useEffect(() => {
@@ -162,7 +162,7 @@ function KVAnimationComponent(props: any) {
           </div>
 
 
-         <div className={`absolute bottom-[5%] w-full left-1/2 z-30 mobile:w-[80%] mobile:bottom-[8%]`}>
+         <div className={`absolute bottom-[5%] w-full left-1/2 z-30 mobile:w-[80%] mobile:bottom-[5%]`}>
             <div className={`text-group-4 translate-x-[-50%] translate-y-full transition-all ease-in-out duration-500 delay-1000`}>
                 <div className="pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Regular pad:pt-67px pad:pb-20px pad:text-21px mobile:pt-66px mobile:text-24px">
                     A drop of wilderness in every glass

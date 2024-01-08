@@ -61,7 +61,7 @@ interface bottleContent {
 
 
 function ProductFamilyComponent(props:propsContent) {
-    console.log(props)
+    // console.log(props)
     const headStyle = props.data.entry.headStyle;
 
     const bottle =  props.data.entry.productFamilyComponentProductsCollection.items;
@@ -244,8 +244,8 @@ function ProductFamilyComponent(props:propsContent) {
                     </div>
 
 
-                    <div className=" w-full  overflow-hidden  absolute  z-30 top-150px mobile:top-94px transform-x-[-50%] hidden mobile:block">
-                        <div className="pad:w-500px flex flex-wrap items-center justify-center">
+                    <div className=" w-full  overflow-hidden  absolute  z-30 top-150px mobile:top-[55%] mobile:scale-[.8] mobile:translate-y-[-50%]  hidden mobile:block">
+                        <div className="pad:w-500px flex flex-wrap items-center justify-center  ">
                             <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px mobile:mr-0  mobile:w-102px mobile:h-223px ">
                                 <BaseImage
                                     mImg={currentBottleData.productImage.imagemobile.url}
@@ -270,7 +270,7 @@ function ProductFamilyComponent(props:propsContent) {
                                        <div className="flex flex-wrap">
                                            <div className="">{currentBottleData.productName}</div>
                                            {
-                                               currentBottleData.tag&&currentBottleData.tag != '' ?  <div className="text-6px font-AlbertusNova-Light">{currentBottleData.tag}</div>: null
+                                               currentBottleData.tag&&currentBottleData.tag != '' ?  <div className="text-6px font-AlbertusNova-Light whitespace-nowrap">{currentBottleData.tag}</div>: null
                                            }
 
                                        </div>
@@ -300,10 +300,10 @@ function ProductFamilyComponent(props:propsContent) {
                     ></BaseImage>
 
 
-                    <div className="absolute container left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%]">
+                    <div className="absolute container left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%] mobile:leading-[20px]">
                         <div className="text-center font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">SMOKY</div>
                         <div className="pb-11px text-center font-Grotesque-Light tracking-[5px] text-[#696969] text-13px pad:text-9px pad:pb-7px mobile:text-10px">MALT</div>
-                        <div className="flex justify-between text-center h-200px pb-11px pad:h-77px pad:pb-7px">
+                        <div className="flex justify-between text-center h-200px pb-11px pad:h-77px pad:pb-7px mobile:h-100px">
                             <div className="rotate-[-90deg] block">
                                 <div className="font-AlbertusNova-Regular tracking-[5px] text-[#696969] font-normal  text-16px pad:text-11px mobile:text-14px">LIGHT</div>
                                 <div className="pb-6px  font-normal font-Grotesque-Light tracking-[2px] text-[#696969] text-13px pad:pb-4px pad:text-9px mobile:text-10px">GRAIN</div>

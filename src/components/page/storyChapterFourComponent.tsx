@@ -29,7 +29,7 @@ const componentData: ComponentData = {
   id: 1,
   bg: {
     pImg: require("../../../public/assets/story/brand_story_chatper_04.png"),
-    mImg: require("../../../public/assets/story/brand_story_chatper_04.png"),
+    mImg: require("../../../public/assets/story/brand_story_chatper_04_m.png"),
   },
   description:
     "Landscapes of Scotland, including the historic warehouses in the heart of Speyside and on the Ayrshire coast inspired William Grant & Sons Mlalt Master Distiller Brian Kinsman to create a range of Scotch whiskies that would invoke not gentle, picturesque glens, but the awe-inspiring landscapes of Scotland.",
@@ -163,7 +163,7 @@ function StoryChapterFourComponent(props: any) {
 
           <SwiperSlide>
             <div
-              className={`absolute w-[1692px] left-1/2 -ml-900px top-174px h-496px pad:w-906px pad:-ml-453px pad:h-398px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
+              className={`absolute w-[1692px] left-1/2 -ml-900px top-174px h-496px pad:w-906px pad:-ml-453px pad:h-398px mobile:w-330px mobile:-ml-165px mobile:mt-88px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
             >
               <div
                 onClick={() => showIntroduce(false)}
@@ -268,17 +268,17 @@ function StoryChapterFourComponent(props: any) {
         </div>
       )} */}
       <div
-        className={`absolute z-20 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
-          isCurrentPage ? "bottom-24px" : "-bottom-48px"
+        className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
+          isCurrentPage ? "bottom-24px mobile:bottom-120px" : "-bottom-48px mobile:-bottom-48px"
         }`}
       >
-        <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
-        <div className="text-12px leading-tight text-white font-GalanoGrotesque">
+        <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
+        <div className="text-12px leading-tight text-white font-Grotesque-Regular">
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-160px pad:h-100px mobile:h-100px"></div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-225px pad:h-180px mobile:h-238px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-160px pad:h-100px mobile:h-0"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-225px pad:h-180px mobile:h-0"></div>
     </section>
   );
 }

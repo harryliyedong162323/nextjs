@@ -141,14 +141,13 @@ function StoryChapterTwoComponent(props: any) {
                 }`}
               >
                 <div
-                  className={`flex justify-center items-baseline mobile:flex-col mobile:items-start mobile:pl-50px`}
+                  className={`flex justify-center items-baseline mobile:flex-col mobile:items-start mobile:pl-40px`}
                 >
                   <span className="text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:w-full">
                     {data.words.first}
                   </span>
-                  <span className="flex justify-center items-baseline mx-10px">
-                    <span className="font-AlbertusNova-Light text-[#d18350] text-[160px] leading-none">
-                      {" "}
+                  <span className="flex justify-center items-baseline mx-10px mobile:mx-0">
+                    <span className="font-AlbertusNova-Light text-[#d18350] text-[160px] leading-none mobile:text-[95px]">
                       {data.words.second}
                     </span>
                     <span className="font-AlbertusNova-Regular text-[#d18350] text-42px">
@@ -160,7 +159,7 @@ function StoryChapterTwoComponent(props: any) {
                     {data.words.fourth}
                   </span>
                 </div>
-                <div className="flex justify-center text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:justify-start mobile:mt-10px mobile:pl-50px">
+                <div className="flex justify-center text-white font-AlbertusNova-Regular uppercase text-30px pad:text-24px mobile:text-17px mobile:justify-start mobile:mt-10px mobile:pl-40px">
                   {" "}
                   {data.words.fifth}
                 </div>
@@ -184,7 +183,7 @@ function StoryChapterTwoComponent(props: any) {
           </SwiperSlide>
           <SwiperSlide>
             <div
-              className={`absolute w-[1364px] left-1/2 -ml-647px top-174px h-471px pad:w-906px pad:-ml-453px pad:h-315px mobile:w-330px mobile:-ml-165px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
+              className={`absolute w-[1364px] left-1/2 -ml-647px top-174px h-471px pad:w-906px pad:-ml-453px pad:h-315px mobile:w-330px mobile:-ml-165px mobile:mt-88px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
             >
               <div
                 onClick={() => showIntroduce(false)}
@@ -270,16 +269,16 @@ function StoryChapterTwoComponent(props: any) {
         </div>
       } */}
       <div
-        className={`absolute  w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
-          isCurrentPage ? "bottom-24px" : "-bottom-48px"
+        className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
+          isCurrentPage ? "bottom-24px mobile:bottom-120px" : "-bottom-48px mobile:-bottom-48px"
         }`}
       >
-        <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
-        <div className="text-12px leading-tight text-white font-GalanoGrotesque">
+        <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
+        <div className="text-12px leading-tight text-white font-Grotesque-Regular">
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full h-382px bg-gradient-to-b from-[#2828289c] to-[#28282800] pad:h-320px mobile:h-250px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full h-382px bg-gradient-to-b from-[#2828289c] to-[#28282800] pad:h-320px mobile:h-0"></div>
     </section>
   );
 }

@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 //layout
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-
+import Popup from '@/components/layout/popup';
 
 
 function getDynamicComponent(data: any, k:number) {
@@ -34,7 +34,7 @@ function getDynamicComponent(data: any, k:number) {
 
 async function getPageData(params: any) {
   // params should be paased to fetch()
-  console.log(params)
+  // console.log(params)
   let result = {}
   switch (params?.slug[0]) {
     case "home":
@@ -115,7 +115,6 @@ export default async function Page({
       {
         isFullPageFlag ?  <Footer></Footer> : null
       }
-
     </div>
 
 

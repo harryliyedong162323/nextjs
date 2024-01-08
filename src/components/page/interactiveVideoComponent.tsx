@@ -81,7 +81,7 @@ function InteractiveVideoComponent(props: propsContent) {
            <div className="absolute z-20 left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]">
                <div className="uppercase font-normal text-33px text-center font-AlbertusNova-Regular pb-56px text-white pad:text-23px pad:pb-40px mobile:pb-27px mobile:text-20px">The Wild Escape </div>
                 <BaseLink link={interactiveVideoData.interactiveVideoComponentJumpUrl}>
-                    <div className="cursor-pointer relative w-334px h-65px mx-auto pad:w-238px pad:h-46px mobile:h-44px mobile:w-200px">
+                    <div className="cursor-pointer relative w-334px h-65px mx-auto pad:w-238px pad:h-46px mobile:w-200px mobile:h-39px ">
                         <BaseImage
                             pImg={interactiveVideoData.interactiveVideoComponentExploreMoreImage.imagepc.url}
                             mImg={interactiveVideoData.interactiveVideoComponentExploreMoreImage.imagemobile.url}

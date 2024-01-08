@@ -7,7 +7,7 @@ import {getLastPathName} from "@/utils/common";
 function Header(props: any) {
   const [menu, setMenu] = useState(false);
   const currentSlideIndex = props.currentSlideIndex;
-  console.log(currentSlideIndex);
+
 
 
 
@@ -102,7 +102,7 @@ function Header(props: any) {
       >
         <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         <div
-          className="bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
             handleMenu();
           }}
@@ -112,13 +112,13 @@ function Header(props: any) {
 
       <nav
         id="nav-black"
-        className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn ${
+        className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn mobile:h-59px ${
           headStyle == "black" ? "block" : "hidden"
         }`}
       >
-        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]"></div>
+        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         <div
-          className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
           onClick={() => {
             handleMenu();
           }}
@@ -157,9 +157,9 @@ function Header(props: any) {
           headStyle == "bg-white" ? "block" : "hidden"
         }`}
       >
-        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]"></div>
+        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         <div
-          className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="bg-[url('/assets/more_menu_black.png')] w-44px h-44px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
           onClick={() => {
             handleMenu();
           }}
@@ -371,7 +371,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
 
                 className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
-              <div className="mt-25px pad:mt-18px mobile:mt-15px   flex justify-end mobile:justify-between items-end ">
+              <div className="mt-25px pad:mt-18px mobile:mt-15px   flex justify-end mobile:justify-between items-end  mobile:items-center ">
+                <div className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative"></div>
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px hidden mobile:block">
                   <BaseImage
                     mImg={require("../../../public/assets/logo.png")}
@@ -398,6 +399,9 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   onWheel={(e)=>{
                     e.stopPropagation()
                   }}
+                  onTouchMove={(e)=>{
+                    e.stopPropagation()
+                  }}
                   className="lock mt-64px pad:mt-53px mobile:mt-80px flex flex-col h-[75vh]  overflow-y-auto">
                 <div className="flex justify-between mb-91px pad:mb-65 px mobile:mb-75px">
                   <div className="">
@@ -410,7 +414,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     className="flex flex-col mb-40px pad:mb-25 px mobile:mb-15px "
                     key={panel.id}
                   >
-                    <div className="flex justify-between items-center mb-33px pad:mb-27 px mobile:mb31-px cursor-pointer h-50px">
+                    <div className="flex justify-between items-center mb-33px pad:mb-27 px mobile:mb-31px cursor-pointer h-50px mobile:h-22px">
                       <div className="w-9/12 ">
                         <BaseLink
                             className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
@@ -436,7 +440,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                           ></BaseImage>
                         </div>
                       ) : (
-                        <div className="text-21px pad:text-17px mobile:text-21px font-GalanoGrotesque" onClick={() => togglePanel(panel.id)}>
+                        <div className="text-21px pad:text-17px mobile:text-21px font-Grotesque-Medium" onClick={() => togglePanel(panel.id)}>
                           —
                         </div>
                       )}
@@ -502,7 +506,15 @@ function Panel({ menuFlag, onMenuChange }: any) {
         </div>
       )}
       {language && (
-        <div className="absolute w-full h-screen select-none">
+        <div
+
+            onWheel={(e)=>{
+              e.stopPropagation()
+            }}
+            onTouchMove={(e)=>{
+              e.stopPropagation()
+            }}
+            className="absolute w-full h-screen select-none">
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"></div>
             <div className="w-381px relative pl-33px  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">

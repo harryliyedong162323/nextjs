@@ -16,6 +16,7 @@ import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Popup, { propsContent as PopupPropsContent } from "../base/popup";
 import "swiper/css";
 
 declare const grecaptcha: any;
@@ -577,6 +578,12 @@ function FlavourFinderComponent(props: any) {
   const [currentRecommend, setCurrentRecommend] = useState<number>(0);
   const [recommend, setRecommend] = useState<result>();
   const [swiper, setSwiper] = useState<any>(null);
+  const [popupPropsContent, setPopupPropsContent] = useState<PopupPropsContent>({
+    title: "success",
+    message: "Email sent successfully",
+    btnTxt: "OK",
+    visible: false
+  });
 
   const scrollTo = useCallback(
     (index: number) => {
@@ -606,6 +613,8 @@ function FlavourFinderComponent(props: any) {
   };
 
   const submit = () => {
+    const popupData = {...popupPropsContent, ...{ visible: true }}
+    setPopupPropsContent(popupData);
     grecaptcha.ready(function () {
       grecaptcha
         .execute(key, { action: "submit" })
@@ -1097,7 +1106,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 0
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
                       ></div>
                     </div>
                     <div
@@ -1118,7 +1127,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 1
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                     <div
@@ -1139,7 +1148,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 2
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                     <div
@@ -1160,7 +1169,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 3
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                     <div
@@ -1181,7 +1190,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 4
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px pad:w-82px pad:-ml-41px pad:h-6px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
                       ></div>
                     </div>
                   </div>
@@ -1349,6 +1358,7 @@ function FlavourFinderComponent(props: any) {
           </div>
         </>
       )}
+      <Popup {...popupPropsContent}></Popup>
     </section>
   );
 }

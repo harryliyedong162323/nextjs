@@ -60,7 +60,7 @@ function StoryChapterThreeComponent(props: any) {
         ></BaseImage>
       </div>
       <div className="absolute top-0 left-0 bg-[50%] bg-no-repeat bg-contain w-full bg-[url('/assets/story/brand_story_chatper_03_line.png')]  h-screen"></div>
-      <div className={`absolute w-full flex flex-col items-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-152px pad:top-122px mobile:top-200px' : 'opacity-0 top-400px'}`}>
+      <div className={`absolute w-full flex flex-col items-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'opacity-100 top-152px pad:top-122px mobile:top-88px' : 'opacity-0 top-400px'}`}>
         <div className="relative cursor-pointer z-10 w-825px h-420px pad:w-660px pad:h-335px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
           <BaseImage
             mImg={data.avatar.mImg}
@@ -76,13 +76,17 @@ function StoryChapterThreeComponent(props: any) {
           <div>{data.description}</div>
         </div>
       </div>
-      <div className={`absolute z-20 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'bottom-24px' : '-bottom-48px'}`}>
-        <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
+      <div
+        className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
+          isCurrentPage ? "bottom-24px mobile:bottom-120px" : "-bottom-48px mobile:-bottom-48px"
+        }`}
+      >
+        <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
         <div className="text-12px leading-tight text-white font-Grotesque-Regular">
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-150px pad:h-100px mobile:h-238px"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#000000] to-[#28282800] h-150px pad:h-100px mobile:h-0"></div>
     </section>
   );
 }

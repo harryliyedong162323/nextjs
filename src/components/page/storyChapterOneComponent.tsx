@@ -60,16 +60,20 @@ function StoryChapterOneComponent(props: any) {
         <div className="absolute w-78px h-78px border-white border border-solid rounded-full flex items-center justify-center z-10 mobile:w-39px mobile:h-39px">
             <span className="inline-block w-12px h-12px rounded-full bg-white mobile:w-6px mobile:h-6px"></span>
         </div>
-        <div className="absolute bg-[50%] bg-no-repeat bg-contain w-4px top-38px left-38px bg-[url('/assets/story/brand_story_chatper_01_line.png')] mobile:top-19px mobile:left-19px h-screen"></div>
+        <div className="absolute bg-[50%] bg-no-repeat bg-contain w-4px top-38px left-38px bg-[url('/assets/story/brand_story_chatper_01_line.png')] mobile:w-2px mobile:top-19px mobile:left-16px h-screen"></div>
       </div>
-      <div className={`absolute z-20 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${ isCurrentPage ? 'bottom-24px' : '-bottom-48px'}`}>
-        <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
+      <div
+        className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
+          isCurrentPage ? "bottom-24px mobile:bottom-120px" : "-bottom-48px mobile:-bottom-48px"
+        }`}
+      >
+        <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
         <div className="text-12px leading-tight text-white font-Grotesque-Regular">
           {data.scrollText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#282828] to-[#28282800] h-382px pad:h-320px mobile:h-250px"></div>
-      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-280px pad:h-224px mobile:h-238px"></div>
+      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#282828] to-[#28282800] h-382px pad:h-320px mobile:h-0"></div>
+      <div className="absolute z-10 bottom-0 left-0 w-full bg-gradient-to-t from-[#2828289c] to-[#28282800] h-280px pad:h-224px mobile:h-0"></div>
     </section>
   );
 }

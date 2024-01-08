@@ -268,7 +268,8 @@ function MobileCarousel(props: any) {
     return (
 
         <div>
-            <div className={`h-246px overflow-hidden relative  w-full`} ref={emblaRef}>
+            {/*mobile:h-246px*/}
+            <div className={`h-246px overflow-hidden relative  w-full mobile:h-143px`} ref={emblaRef}>
                 <div className="flex h-full w-full">
                     {
                         children.map((item:campaignsChildren,index:number)=>{
@@ -295,10 +296,10 @@ function MobileCarousel(props: any) {
                         return (
                             <div
                                 key={index}
-                                className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer pad:mx-3px pad:h-3px ${
+                                className={`h-4px mx-4px mobile:mx-5px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer mobile:h-2px pad:mx-3px pad:h-3px ${
                                     currentIndex === index
-                                        ? "bg-[#fff] w-41px pad:w-29px"
-                                        : "bg-[#969797] w-16px pad:w-16px"
+                                        ? "bg-[#fff] w-41px mobile:w-25px pad:w-29px"
+                                        : "bg-[#969797] w-16px mobile:w-10px pad:w-16px"
                                 }`}
                                 onClick={() => scrollTo(index)}
                             ></div>
@@ -311,7 +312,7 @@ function MobileCarousel(props: any) {
                 <div className="select-none font-Grotesque-Medium font-medium text-18px pb-15px text-20px ">{data.howToBuyDetailComponentStoreName}</div>
                 <div className={`select-none font-Grotesque-Regular font-medium w-full  justify-between items-center flex  `}>
                     <span className="w-[85%] truncate text-14px ">{data.howToBuyDetailComponentStoreAddress}</span>
-                    <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-21px h-21px  "></span>
+                    <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-21px h-21px  mobile:w-21px mobile:h-21px"></span>
                 </div>
             </div>
 
@@ -347,7 +348,7 @@ function NearYouComponent(props: propsContent) {
             }
 
         });
-        console.log(updatedData)
+        // console.log(updatedData)
 
         setCampaignData(updatedData)
 
@@ -361,7 +362,7 @@ function NearYouComponent(props: propsContent) {
 
     const onChangeScroll = useCallback(
         (emblaApi: { selectedScrollSnap: () => any }) => {
-            console.log(emblaApi?.selectedScrollSnap());
+            // console.log(emblaApi?.selectedScrollSnap());
             setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
             setTimeout(()=>{
                 computedActiveDrop(emblaApi?.selectedScrollSnap() || 0);
@@ -407,61 +408,63 @@ function NearYouComponent(props: propsContent) {
             <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:text-20px mobile:pt-77px">{title}</div>
 
 
-            <div className="w-full pt-20px hidden mobile:block">
+            <div className="w-full pt-20px hidden mobile:block mobile:pt-20px">
                 {<MobileCarousel list={campaignData[0]}></MobileCarousel>}
             </div>
+            <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:hidden"></div>
+            <div className="relative">
+                <div className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto" ref={emblaRef}>
+                    <div className="flex text-dark-grey items-end pb-40px pad:pb-28px">
+
+                        {
+                            campaignData.map((item:any,index:number)=>{
+
+                                return (
+                                    <div  key={item.nearYouId} className={` ml-25px h-auto pad:ml-17px relative mobile:ml-25px`}>
+
+                                        {/*<div className={`float-left`}>*/}
+                                        <div className={`transition-all ease-in-out origin-left duration-1000  relative ${item.nearYouActive == true ? 'w-615px pad:w-439px mobile:w-192px' : 'w-406px pad:290px mobile:w-192px'}`}>
+                                            <div className={`relative transition-all ease-in-out  origin-left  duration-500 mb-40px pad:mb-28px ${item.nearYouActive == true ? 'h-455px pad:h-325px mobile:h-166px' : 'h-406px pad:h-290px mobile:h-166px'}`}>
+                                                {/*<BaseImage*/}
+                                                {/*    mImg={item.nearYouComponentNearYouCarouselImageCollection.items[0].imagesCollection.items[0].imagemobile.url}*/}
+                                                {/*    pImg={item.nearYouComponentNearYouCarouselImageCollection.items[0].imagesCollection.items[0].imagepc.url}*/}
+                                                {/*    alt={""}*/}
+                                                {/*    layout="fill"*/}
+                                                {/*    objectFit="cover"*/}
+                                                {/*    quality={100}*/}
+                                                {/*></BaseImage>*/}
 
 
-            <div className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto" ref={emblaRef}>
-                <div className="flex text-dark-grey items-end pb-40px pad:pb-28px">
+                                                {
+                                                    <NestedCarousel list={item.nearYouComponentNearYouCarouselImageCollection.items} activeFlag={item.nearYouActive}></NestedCarousel>
+                                                }
 
-                    {
-                        campaignData.map((item:any,index:number)=>{
-
-                            return (
-                                <div  key={item.nearYouId} className={` ml-25px h-auto pad:ml-17px relative`}>
-
-                                  {/*<div className={`float-left`}>*/}
-                                      <div className={`transition-all ease-in-out origin-left duration-1000  relative ${item.nearYouActive == true ? 'w-615px pad:w-439px mobile:w-192px' : 'w-406px pad:290px mobile:w-192px'}`}>
-                                          <div className={`relative transition-all ease-in-out  origin-left  duration-500 mb-40px pad:mb-28px ${item.nearYouActive == true ? 'h-455px pad:h-325px mobile:h-166px' : 'h-406px pad:h-290px mobile:h-166px'}`}>
-                                              {/*<BaseImage*/}
-                                              {/*    mImg={item.nearYouComponentNearYouCarouselImageCollection.items[0].imagesCollection.items[0].imagemobile.url}*/}
-                                              {/*    pImg={item.nearYouComponentNearYouCarouselImageCollection.items[0].imagesCollection.items[0].imagepc.url}*/}
-                                              {/*    alt={""}*/}
-                                              {/*    layout="fill"*/}
-                                              {/*    objectFit="cover"*/}
-                                              {/*    quality={100}*/}
-                                              {/*></BaseImage>*/}
+                                            </div>
 
 
-                                              {
-                                                  <NestedCarousel list={item.nearYouComponentNearYouCarouselImageCollection.items} activeFlag={item.nearYouActive}></NestedCarousel>
-                                              }
-
-                                          </div>
-
-
-                                          <div className="w-500px select-none font-Grotesque-Medium font-medium text-18px pad:text-12px mobile:text-16px">{item.howToBuyDetailComponentStoreName}</div>
-                                          <div className={`select-none font-Grotesque-Regular font-medium w-full absolute left-0 bottom-[-25px] z-20 justify-between items-center pad:bottom-[-25px]  ${item.nearYouActive == true ? 'flex mobile:hidden' : 'hidden'}`}>
-                                              <span className="w-[70%] truncate pad:w-[50%] ">{item.howToBuyDetailComponentStoreAddress}</span>
-                                              <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></span>
-                                          </div>
-                                      </div>
+                                            <div className="w-500px select-none font-Grotesque-Medium font-medium text-18px pad:text-12px mobile:w-500px mobile:text-16px">{item.howToBuyDetailComponentStoreName}</div>
+                                            <div className={`select-none font-Grotesque-Regular font-medium w-full absolute left-0 bottom-[-25px] z-20 justify-between items-center pad:bottom-[-25px]  ${item.nearYouActive == true ? 'flex mobile:hidden' : 'hidden'}`}>
+                                                <span className="w-[70%] truncate pad:w-[50%] ">{item.howToBuyDetailComponentStoreAddress}</span>
+                                                <span className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></span>
+                                            </div>
+                                        </div>
 
 
-                                  {/*</div>*/}
+                                        {/*</div>*/}
 
-                                </div>
-                            );
-                        })
-                    }
+                                    </div>
+                                );
+                            })
+                        }
 
 
 
+                    </div>
                 </div>
+
+                <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:from-[#ffffff94] mobile:block"></div>
             </div>
 
-            <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent]"></div>
             <div className="flex justify-end pr-10 relative z-30">
                 <div>
                     {/*${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"}*/}
