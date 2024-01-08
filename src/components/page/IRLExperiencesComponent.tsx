@@ -16,7 +16,7 @@ function IRLExperiencesComponent(props: any) {
     return (
         <section id="IRLExperiences" data-anchor={props.data.entry.pageNumber} className="overflow-hidden h-screen container mx-auto pb-164px mobile:pb-67px select-none">
             <input type="hidden" value={headStyle}/>
-            <div className="relative">
+            <div className="relative top-1/2 translate-y-[-50%]">
                 <div className="text-40px font-normal font-AlbertusNova-Regular text-center pt-55px pb-54px mobile:text-24px mobile:pt-20px mobile:pb-20px">IRL Experiences</div>
 
                 <div className="grid grid-cols-2 justify-center gap-[41px] pad:gap-[29px] items-center mobile:grid-rows-2 mobile:grid-cols-none">

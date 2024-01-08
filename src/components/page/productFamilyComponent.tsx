@@ -53,14 +53,15 @@ interface bottleContent {
         },
     },
     age: string,
-    tag: string | null,
+    tag?: string | null,
+    unit:string,
     price: string,
     description: string,
 }
 
 
 function ProductFamilyComponent(props:propsContent) {
-
+    console.log(props)
     const headStyle = props.data.entry.headStyle;
 
     const bottle =  props.data.entry.productFamilyComponentProductsCollection.items;
@@ -196,9 +197,9 @@ function ProductFamilyComponent(props:propsContent) {
                     ></BaseImage>
 
 
-                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-50% translate-y-[50%] mobile:hidden">
+                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-[50%] translate-y-[-50%] mobile:hidden">
 
-                        <div className="an-bottle w-700px pad:w-500px flex flex-nowrap items-end">
+                        <div className="an-bottle w-700px  flex flex-nowrap items-end">
                             <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px  mobile:w-102px mobile:h-223px ">
                                 <BaseImage
                                     mImg={currentBottleData.productImage.imagemobile.url}
@@ -214,24 +215,27 @@ function ProductFamilyComponent(props:propsContent) {
                                     <div className="inline-block align-middle">
                                         <div className="relative">
                                             <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.age}</span>
-                                            <span className="text-11px font-AlbertusNova-Regular absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px uppercase">years old</span>
+                                            <span className="text-11px font-AlbertusNova-Regular absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px uppercase">{currentBottleData.unit}</span>
                                         </div>
                                         {/*<div className="text-11px font-bold">years old</div>*/}
                                     </div>
                                     <div className="mr-16px ml-9px inline-block align-middle pad:translate-y-[5px] translate-y-[7px] h-70px w-2px bg-white pad:mr-11px pad:ml-6px pad:h-50px mobile:ml-10px mobile:mr-6px"></div>
                                     <div className="flex flex-nowrap uppercase relative align-middle text-29px pt-20px   pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px">
-                                        <span className="w-185px pad:w-132px whitespace-break-spaces relative">
-                                            {currentBottleData.productName}
-                                            {
-                                                currentBottleData.tag != '' ? <div className="text-10px inline-block align-middle absolute bottom-10px pad:bottom-4px right-[-68%]  pad:right-[-95%] scale-[.8]">{currentBottleData.tag}</div> : null
-                                            }
+                                        <div className=" flex flex-nowrap items-end justify-start">
+                                            <div className=" w-125px  paid:w-89px  relative ">
+                                                {currentBottleData.productName}
+                                                {
+                                                    currentBottleData.tag&&currentBottleData.tag != '' ? <span className="pl-10px text-8px paid:text-5px ">{currentBottleData.tag}</span> : null
+                                                }
+                                            </div>
 
-                                        </span>
+
+                                        </div>
 
                                     </div>
 
                                 </div>
-                                <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
+                                <div className="pb-30px  w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
                                     {currentBottleData.description}
                                 </div>
                                 <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-center mobile:text-16px">{currentBottleData.price}</div>
@@ -257,7 +261,7 @@ function ProductFamilyComponent(props:propsContent) {
                                     <div className="inline-block align-middle">
                                         <div className="relative">
                                             <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.age}</span>
-                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">years old</span>
+                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">{currentBottleData.unit}</span>
                                         </div>
                                         {/*<div className="text-11px font-bold">years old</div>*/}
                                     </div>
@@ -265,7 +269,10 @@ function ProductFamilyComponent(props:propsContent) {
                                     <div className=" border-l border-white border-solid pl-40px ml-40px inline-block uppercase align-middle w-194px text-29px  pad:w-138px pad:text-20px pad:pt-14px mobile:text-18px mobile:w-80px mobile:translate-y-[5px]  mobile:text-left">
                                        <div className="flex flex-wrap">
                                            <div className="">{currentBottleData.productName}</div>
-                                           <div className="text-6px font-AlbertusNova-Regular">sadfsadf</div>
+                                           {
+                                               currentBottleData.tag != '' ?  <div className="text-6px font-AlbertusNova-Regular">sadfsadf</div>: null
+                                           }
+
                                        </div>
                                     </div>
                                 </div>

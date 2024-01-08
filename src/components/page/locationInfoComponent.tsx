@@ -474,17 +474,18 @@ function LocationInfoComponent(props: any) {
             {
                 isChooseMarquee == false ? <div>
                     <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
-                    <div className="w-full mt-145px pad:mt-103px mobile:mt-132px ">
+                    <div className=" ">
+                        <div className="w-full mt-145px pad:mt-243px mobile:mt-132px  ">
 
-                        <Marquee play={play}>
-                            <div className="w-250px mobile:hidden"></div>
-                            { [data.productList[0],data.productList[1],data.productList[2]].map((item, index) => {
-                                return (
-                                    <div
+                            <Marquee play={play}>
+                                <div className="w-250px mobile:hidden"></div>
+                                { [data.productList[0],data.productList[1],data.productList[2]].map((item, index) => {
+                                    return (
+                                        <div
 
-                                        key={index}
-                                        className={`flex flex-nowrap items-center w-[50vw] mobile:w-[100vw]`}
-                                    >
+                                            key={index}
+                                            className={`flex flex-nowrap items-center w-[50vw] mobile:w-[100vw]`}
+                                        >
 
                                    <span
                                        className={`cursor-pointer`}
@@ -519,22 +520,22 @@ function LocationInfoComponent(props: any) {
                                             </div>
                                         </div>
                                    </span>
-                                    </div>
-                                )
-                            })}
-                        </Marquee>
-                    </div>
+                                        </div>
+                                    )
+                                })}
+                            </Marquee>
+                        </div>
 
-                    <div className="w-full mt-148px pad:mt-105px mobile:mt-128px ">
+                        <div className="w-full mt-148px pad:mt-105px mobile:mt-128px ">
 
-                        <Marquee play={play}>
-                            { [data.productList[3],data.productList[4]].map((item, index) => {
-                                return (
-                                    <div
+                            <Marquee play={play}>
+                                { [data.productList[3],data.productList[4]].map((item, index) => {
+                                    return (
+                                        <div
 
-                                        key={index}
-                                        className={`flex flex-nowrap items-center w-[50vw] mobile:w-[100vw]`}
-                                    >
+                                            key={index}
+                                            className={`flex flex-nowrap items-center w-[50vw] mobile:w-[100vw]`}
+                                        >
 
                                     <span
                                         className={`cursor-pointer`}
@@ -569,11 +570,12 @@ function LocationInfoComponent(props: any) {
                                             </div>
                                         </div>
                                   </span>
-                                    </div>
-                                )
-                            })
-                            }
-                        </Marquee>
+                                        </div>
+                                    )
+                                })
+                                }
+                            </Marquee>
+                        </div>
                     </div>
 
                 </div> : <LocationStoreList location={locationInfo}></LocationStoreList>

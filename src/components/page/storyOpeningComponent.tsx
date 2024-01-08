@@ -5,7 +5,7 @@ import BaseImage from "@/components/base/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import Swiper from "react-id-swiper";
-import { EffectCreative } from 'swiper/modules';
+import { EffectCreative, Parallax } from 'swiper/modules';
 import "swiper/css";
 
 interface bg {
@@ -49,6 +49,8 @@ function StoryOpeningComponent(props: any) {
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
   const [swiper, setSwiper] = useState<any>(null);
 
+  const parallaxAmount = swiper ? swiper.width * 0.95 : 0;
+
   useEffect(() => {
     if (isFullPage) {
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
@@ -71,10 +73,10 @@ function StoryOpeningComponent(props: any) {
     <section
       id="ADropOfWildness"
       data-anchor={0}
-      className="relative overflow-hidden select-none"
+      className="relative overflow-hidden select-none h-screen"
     >
       <Swiper
-        modules={[Autoplay, EffectCreative]}
+        modules={[Autoplay, Parallax]}
         loop={true}
         speed={1000}
         allowTouchMove={true}
@@ -83,16 +85,10 @@ function StoryOpeningComponent(props: any) {
           disableOnInteraction: false, // 用户互动后是否停止自动播放
         }}
         grabCursor={true}
-        effect={'creative'}
-        creativeEffect={{
-          prev: {
-            shadow: true,
-            translate: ['0%', 0, -1],
-          },
-          next: {
-            translate: ['100%', 0, 0],
-          },
-        }}
+        effect="slide"
+        parallax={true}
+        spaceBetween="0"
+        centeredSlides= {true}
         onSlideChange={(e) => {
           setCurrentIndex(e.realIndex);
         }}
@@ -102,8 +98,8 @@ function StoryOpeningComponent(props: any) {
       >
         {data.bgList.map((item, key) => {
           return (
-            <SwiperSlide key={key}>
-              <div className="relative h-screen">
+            <SwiperSlide key={key} className="flex relative overflow-hidden">
+              <div className="absolute h-screen w-full left-0 top-0" data-swiper-parallax={parallaxAmount}>
                 <BaseImage
                   mImg={item.mImg}
                   pImg={item.pImg}
@@ -113,6 +109,7 @@ function StoryOpeningComponent(props: any) {
                   quality={100}
                 ></BaseImage>
               </div>
+              <div className="relative h-screen"></div>
             </SwiperSlide>
           );
         })}
