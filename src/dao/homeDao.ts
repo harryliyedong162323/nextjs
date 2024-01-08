@@ -37,6 +37,7 @@ const query = `
             id
             active
             num
+            tag
           productName
           age
           productImage {

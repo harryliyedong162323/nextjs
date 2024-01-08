@@ -371,8 +371,8 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
 
                 className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
-              <div className="h-41px pad:h-29px   mobile:h-40px flex justify-between items-end ">
-                <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px">
+              <div className="mt-25px pad:mt-18px mobile:mt-15px   flex justify-end mobile:justify-between items-end ">
+                <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px hidden mobile:block">
                   <BaseImage
                     mImg={require("../../../public/assets/logo.png")}
                     pImg={require("../../../public/assets/logo.png")}
@@ -382,7 +382,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
                 <div
-                  className=" w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
+                  className="w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
                   onClick={handleClose}
                 >
                   <BaseImage
@@ -505,7 +505,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
         <div className="absolute w-full h-screen select-none">
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"></div>
-            <div className="w-400px relative pl-33px  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-285px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
+            <div className="w-381px relative pl-33px  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
               <div className="flex justify-between items-center  mt-25px pad:mt-18px mobile:mt-15px">
                 <div
                   className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative cursor-pointer "
@@ -529,7 +529,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
                 <div
-                  className=" w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
+                  className="w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
                   onClick={handlePop}
                 >
                   <BaseImage

@@ -225,7 +225,7 @@ function ProductFamilyComponent(props:propsContent) {
                                             <div className=" w-125px  paid:w-89px  relative ">
                                                 {currentBottleData.productName}
                                                 {
-                                                    currentBottleData.tag&&currentBottleData.tag != '' ? <span className="pl-10px text-8px paid:text-5px ">{currentBottleData.tag}</span> : null
+                                                    currentBottleData.tag&&currentBottleData.tag != '' ? <span className="pl-10px text-8px paid:text-5px whitespace-nowrap">{currentBottleData.tag}</span> : null
                                                 }
                                             </div>
 
