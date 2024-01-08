@@ -545,7 +545,7 @@ function IntroduceCampaignComponent(props: propsContent) {
 
                                             <div className="text-center font-Grotesque-Medium font-medium text-19px pb-10px pad:text-13px pad:pb-7px mobile:text-14px mobile:pb-20px">{item.year}</div>
                                             <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px pad:w-200px mobile:text-center mobile:w-full">{item.description}</div>
-                                            <BaseLink link="/activityDetail">
+                                            <BaseLink link="en-GB/activityDetail">
                                                 <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
                                             </BaseLink>
                                         </div>

@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 
 interface entryContent{
     headStyle:string,
+    selectedProductId?:number,
     productFamilyComponentProductsCollection:productFamilyComponentProductsCollectionContent
 }
 interface productFamilyComponentProductsCollectionContent{
@@ -64,12 +65,12 @@ function ProductFamilyComponent(props:propsContent) {
 
     const bottle =  props.data.entry.productFamilyComponentProductsCollection.items;
 
-
+    const selectedProductId = props.data.entry.selectedProductId;
 
 
     const [alignment,setAlignment] = useState(false);
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
-    const [currentBottleIndex,setCurrentBottleIndex] = useState(0);
+    const [currentBottleIndex,setCurrentBottleIndex] = useState(selectedProductId || 0);
     const [textGradient,setTextGradient]  = useState({
         'background': 'linear-gradient(to bottom, #e9aa87, #953e1a)',
         WebkitBackgroundClip: 'text',
@@ -239,7 +240,7 @@ function ProductFamilyComponent(props:propsContent) {
                     </div>
 
 
-                    <div className=" w-full  overflow-hidden  absolute  z-30 top-150px transform-x-[-50%] hidden mobile:block">
+                    <div className=" w-full  overflow-hidden  absolute  z-30 top-150px mobile:top-94px transform-x-[-50%] hidden mobile:block">
                         <div className="pad:w-500px flex flex-wrap items-center justify-center">
                             <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px mobile:mr-0  mobile:w-102px mobile:h-223px ">
                                 <BaseImage
@@ -260,8 +261,13 @@ function ProductFamilyComponent(props:propsContent) {
                                         </div>
                                         {/*<div className="text-11px font-bold">years old</div>*/}
                                     </div>
-                                    <div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px mobile:h-50px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px "></div>
-                                    <div className="inline-block uppercase align-middle w-194px text-29px  pad:w-138px pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px mobile:translate-y-[5px]  mobile:text-left">{currentBottleData.productName}</div>
+                                    {/*<div className="mr-16px ml-9px inline-block align-middle h-[80%] w-2px mobile:h-50px bg-white pad:mr-11px pad:ml-6px pad:h-[57%] mobile:ml-10px mobile:mr-10px"></div>*/}
+                                    <div className=" border-l border-white border-solid pl-40px ml-40px inline-block uppercase align-middle w-194px text-29px  pad:w-138px pad:text-20px pad:pt-14px mobile:text-18px mobile:w-80px mobile:translate-y-[5px]  mobile:text-left">
+                                       <div className="flex flex-wrap">
+                                           <div className="">{currentBottleData.productName}</div>
+                                           <div className="text-6px font-AlbertusNova-Regular">sadfsadf</div>
+                                       </div>
+                                    </div>
                                 </div>
                                 <div className="pb-30px w-426px text-20px font-Grotesque-Light font-normal pad:pb-21px pad:w-304px pad:text-14px mobile:w-full mobile:text-center mobile:text-14px mobile:leading-[21px]">
                                     {currentBottleData.description}
@@ -290,28 +296,28 @@ function ProductFamilyComponent(props:propsContent) {
                     <div className="absolute container left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%]">
                         <div className="text-center font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">SMOKY</div>
                         <div className="pb-11px text-center font-Grotesque-Light tracking-[5px] text-[#696969] text-13px pad:text-9px pad:pb-7px mobile:text-10px">MALT</div>
-                        <div className="flex justify-between text-center h-108px pb-11px pad:h-77px pad:pb-7px">
+                        <div className="flex justify-between text-center h-200px pb-11px pad:h-77px pad:pb-7px">
                             <div className="rotate-[-90deg] block">
                                 <div className="font-AlbertusNova-Regular tracking-[5px] text-[#696969] font-normal  text-16px pad:text-11px mobile:text-14px">LIGHT</div>
                                 <div className="pb-6px  font-normal font-Grotesque-Light tracking-[2px] text-[#696969] text-13px pad:pb-4px pad:text-9px mobile:text-10px">GRAIN</div>
                             </div>
                             <div className="w-full relative after:content-[''] after:absolute after:top-1/2 after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full after:h-2px after:bg-dark-grey after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-2px before:h-full before:bg-dark-grey">
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 0 ? 'shadow-[#B96566]-500 bg-[#588C96] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'}  bottom-0 left-1/4 translate-x-[-50%] translate-y-[50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(0)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 0 ? 'shadow-[#B96566]-500 bg-[#588C96] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'}  bottom-0 left-1/4 translate-x-[-50%] translate-y-[50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(0)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[0].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 1 ? 'shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]' : 'bg-[#CECECE] text-[#5C829A]'} top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(1)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 1 ? 'shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]' : 'bg-[#CECECE] text-[#5C829A]'} top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(1)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[1].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 2 ? 'shadow-[#B96566]-500 bg-[#779374] text-[#fff]' : 'bg-[#CECECE] text-[#779374]'} top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`} onClick={()=>{handleChooseBottle(2)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 2 ? 'shadow-[#B96566]-500 bg-[#779374] text-[#fff]' : 'bg-[#CECECE] text-[#779374]'} top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`} onClick={()=>{handleChooseBottle(2)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[2].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(3)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(3)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px" style={textGradient}>{bottleData[3].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 4 ? 'shadow-[#B96566]-500 bg-[#B96566] text-[#fff]' : 'bg-[#CECECE] text-[#B96566]'}  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(4)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 4 ? 'shadow-[#B96566]-500 bg-[#B96566] text-[#fff]' : 'bg-[#CECECE] text-[#B96566]'}  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(4)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[4].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 5 ? 'shadow-[#B96566]-500 bg-[#96934C] text-[#fff]' : 'bg-[#CECECE] text-[#96934C]'} top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] pad:w-42px pad:h-42px mobile:w-36px mobile:h-36px`} onClick={()=>{handleChooseBottle(5)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 5 ? 'shadow-[#B96566]-500 bg-[#96934C] text-[#fff]' : 'bg-[#CECECE] text-[#96934C]'} top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(5)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal  pad:text-18px mobile:text-16px">{bottleData[5].num}</span>
                                 </div>
                             </div>
