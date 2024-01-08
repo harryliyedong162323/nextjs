@@ -475,7 +475,8 @@ function LocationInfoComponent(props: any) {
                 isChooseMarquee == false ? <div>
                     <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
                     <div className=" ">
-                        <div className="w-full mt-145px pad:mt-243px mobile:mt-132px  ">
+
+                        <div className="w-full mt-145px   pad:mt-243px mobile:mt-132px  ">
 
                             <Marquee play={play}>
                                 <div className="w-250px mobile:hidden"></div>
@@ -493,8 +494,8 @@ function LocationInfoComponent(props: any) {
                                        onMouseEnter={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseEnter(e)}}
                                        onMouseLeave={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseLeave(e)}}
                                    >
-
-                                        <div className={`relative inline-block align-middle w-152px h-152px mr-20px pad:mr-14px mobile:mr-12px pad:w-108px pad:h-108px mobile:w-91px mobile:h-91px `}>
+                                        {/*pad:mr-14px pad:h-108px pad:w-108px */}
+                                        <div className={`relative inline-block align-middle w-152px h-152px mr-20px  mobile:mr-12px  mobile:w-91px mobile:h-91px `}>
                                             <BaseImage
 
                                                 mImg={item.mImg}
@@ -505,10 +506,12 @@ function LocationInfoComponent(props: any) {
                                                 quality={50}
                                             ></BaseImage>
                                         </div>
-                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px pad:w-208px mobile:w-175px">
-                                            <div className="leading-tight uppercase text-33px pad:text-23px mobile:text-20px whitespace-nowrap">{item.name}</div>
-
-                                            <div className="w-195px h-60px mt-16px pad:mt-11px mobile:mt-10px">
+                                        {/*pad:w-208px*/}
+                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px  mobile:w-175px">
+                                             {/*pad:text-23px*/}
+                                            <div className="leading-tight uppercase text-33px mobile:text-20px whitespace-nowrap">{item.name}</div>
+                                            {/*pad:mt-11px*/}
+                                            <div className="w-195px h-60px mt-16px  mobile:mt-10px">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/howToBuy/btn.png")}
                                                     pImg={require("../../../public/assets/howToBuy/btn.png")}
@@ -525,8 +528,8 @@ function LocationInfoComponent(props: any) {
                                 })}
                             </Marquee>
                         </div>
-
-                        <div className="w-full mt-148px pad:mt-105px mobile:mt-128px ">
+                        {/*pad:mt-105px*/}
+                        <div className="w-full mt-148px  mobile:mt-128px ">
 
                             <Marquee play={play}>
                                 { [data.productList[3],data.productList[4]].map((item, index) => {
@@ -544,8 +547,8 @@ function LocationInfoComponent(props: any) {
                                         onMouseLeave={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{handleMouseLeave(e)}}
                                     >
 
-
-                                        <div className={`relative inline-block align-middle  w-152px h-152px mr-20px pad:mr-14px mobile:mr-12px pad:w-108px pad:h-108px mobile:w-91px mobile:h-91px `}>
+                                        {/*pad:mr-14px pad:w-108px pad:h-108px*/}
+                                        <div className={`relative inline-block align-middle  w-152px h-152px mr-20px  mobile:mr-12px  mobile:w-91px mobile:h-91px `}>
                                             <BaseImage
                                                 mImg={item.mImg}
                                                 pImg={item.pImg}
@@ -555,10 +558,12 @@ function LocationInfoComponent(props: any) {
                                                 quality={50}
                                             ></BaseImage>
                                         </div>
-                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px pad:w-208px mobile:w-175px">
-                                            <div className="leading-tight uppercase text-33px pad:text-23px mobile:text-20px whitespace-nowrap">{item.name}</div>
-
-                                            <div className="w-195px h-60px mt-16px pad:mt-11px mobile:mt-10px">
+                                        {/*pad:w-208px*/}
+                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px  mobile:w-175px">
+                                            {/*pad:text-23px*/}
+                                            <div className="leading-tight uppercase text-33px  mobile:text-20px whitespace-nowrap">{item.name}</div>
+                                            {/*pad:mt-11px*/}
+                                            <div className="w-195px h-60px mt-16px  mobile:mt-10px">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/howToBuy/btn.png")}
                                                     pImg={require("../../../public/assets/howToBuy/btn.png")}
