@@ -54,7 +54,7 @@ function StoriesDetailComponent(props: any) {
             <div className="container mx-auto  mobile:pt-100px">
 
                 <div className="hidden mobile:block">
-                    <div className="uppercase pl-25px pr-25px text-center pt-18px pb-33px text-17px font-AlbertusNova-Regular">Bring the drinking occasion to life in a way</div>
+                    <div className="uppercase pl-25px pr-25px text-center pt-18px pb-33px text-17px font-AlbertusNova-Regular mobile:w-[80%] mobile:mx-auto mobile:pt-18px mobile:pb-33px">Bring the drinking occasion to life in a way</div>
 
                     <div className="h-253px relative w-full mobile:h-253px">
                         <BaseImage
