@@ -64,7 +64,7 @@ function StoryChapterFiveComponent(props: any) {
       <div
         className={`absolute left-1/2 flex flex-col items-center w-970px h-500px -ml-485px pad:w-775px pad:-ml-388px pad:h-400px mobile:w-325px mobile:h-500px mobile:-ml-163px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
-            ? "opacity-100 top-192px pad:top-154px mobile:top-88px"
+            ? "opacity-100 top-192px pad:top-154px mobile:top-118px"
             : "opacity-0 top-400px"
         }`}
       >
@@ -87,7 +87,7 @@ function StoryChapterFiveComponent(props: any) {
       </div>
       <div
         className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
-          isCurrentPage ? "bottom-24px mobile:bottom-120px" : "-bottom-48px mobile:-bottom-48px"
+          isCurrentPage ? "bottom-24px mobile:bottom-100px" : "-bottom-48px mobile:-bottom-48px"
         }`}
       >
         <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>

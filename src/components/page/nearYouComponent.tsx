@@ -291,7 +291,7 @@ function MobileCarousel(props: any) {
                     }
                 </div>
 
-                <div className={` mt-30px absolute z-20 bottom-25px  w-full items-center justify-center flex`}>
+                <div className={` mt-30px absolute z-30 bottom-25px  w-full items-center justify-center flex`}>
                     {children.map((item:any, index:number) => {
                         return (
                             <div
@@ -462,7 +462,7 @@ function NearYouComponent(props: propsContent) {
                     </div>
                 </div>
 
-                <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:from-[#ffffff94] mobile:block"></div>
+                <div className="absolute z-30 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:from-[#ffffff94] mobile:block"></div>
             </div>
 
             <div className="flex justify-end pr-10 relative z-30">

@@ -261,7 +261,7 @@ function ProductFamilyComponent(props:propsContent) {
                                     <div className="inline-block align-middle">
                                         <div className="relative">
                                             <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.age}</span>
-                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px">{currentBottleData.unit}</span>
+                                            <span className="text-11px font-bold absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px whitespace-nowrap">{currentBottleData.unit}</span>
                                         </div>
                                         {/*<div className="text-11px font-bold">years old</div>*/}
                                     </div>
@@ -309,7 +309,7 @@ function ProductFamilyComponent(props:propsContent) {
                                 <div className="pb-6px  font-normal font-Grotesque-Light tracking-[2px] text-[#696969] text-13px pad:pb-4px pad:text-9px mobile:text-10px">GRAIN</div>
                             </div>
                             <div className="w-full relative after:content-[''] after:absolute after:top-1/2 after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full after:h-2px after:bg-dark-grey after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-2px before:h-full before:bg-dark-grey">
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 0 ? 'shadow-[#B96566]-500 bg-[#588C96] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'}  bottom-0 left-1/4 translate-x-[-50%] translate-y-[50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(0)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 0 ? 'shadow-[#B96566]-500 bg-[#588C96] text-[#fff]' : 'bg-[#CECECE] text-[#588C96]'}  bottom-0 left-1/4 translate-x-[-50%] translate-y-[-30%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(0)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[0].num}</span>
                                 </div>
                                 <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full ${currentBottleIndex == 1 ? 'shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]' : 'bg-[#CECECE] text-[#5C829A]'} top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(1)}}>
@@ -318,7 +318,7 @@ function ProductFamilyComponent(props:propsContent) {
                                 <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 2 ? 'shadow-[#B96566]-500 bg-[#779374] text-[#fff]' : 'bg-[#CECECE] text-[#779374]'} top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`} onClick={()=>{handleChooseBottle(2)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">{bottleData[2].num}</span>
                                 </div>
-                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(3)}}>
+                                <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 3 ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]' : 'bg-[#CECECE] text-[#af4f1f]'} top-0 right-1/4 translate-x-[50%] translate-y-[-10%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(3)}}>
                                     <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px" style={textGradient}>{bottleData[3].num}</span>
                                 </div>
                                 <div className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px absolute z-20 rounded-full  ${currentBottleIndex == 4 ? 'shadow-[#B96566]-500 bg-[#B96566] text-[#fff]' : 'bg-[#CECECE] text-[#B96566]'}  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`} onClick={()=>{handleChooseBottle(4)}}>
@@ -328,7 +328,9 @@ function ProductFamilyComponent(props:propsContent) {
                                     <span className="text-26px font-AlbertusNova-Regular font-normal  pad:text-18px mobile:text-16px">{bottleData[5].num}</span>
                                 </div>
                             </div>
-                            <div className="rotate-[90deg] block font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">RICH</div>
+                            <div className="rotate-[90deg] block font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
+                                <span className="rotate-[180deg] block">RICH</span>
+                            </div>
                         </div>
                         <div className=" text-center font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">SWEET</div>
                     </div>

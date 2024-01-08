@@ -479,7 +479,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   </div>
                 ))}
               </div>
-              <div className="absolute bottom-40px  pad:bottom-28px mobile:bottom-13px ">
+              <div className="absolute bottom-40px  pad:bottom-28px mobile:bottom-auto mobile:top-[85%] ">
                 <div className="flex items-center">
                   <div
                     className="w-17px pad:w-14px mobile:w-24px h-17px pad:h-14px mobile:h-24px  cursor-pointer relative"
