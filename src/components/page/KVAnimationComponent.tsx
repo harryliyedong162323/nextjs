@@ -7,12 +7,45 @@ import BaseLink from "@/components/base/link";
 import BaseVideo from "@/components/base/video";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-function KVAnimationComponent(props: any) {
+
+
+interface entryContent{
+    headStyle:string,
+    kvAnimationComponentKvTitle:string,
+    kvAnimationComponentScrollContent:string,
+    kvAnimationComponentProductVideo:{
+        video:{
+            url:string,
+        }
+    },
+    kvAnimationComponentBackgroundVideo:{
+       video:{
+           url:string,
+       }
+    },
+}
+
+
+export interface propsContent{
+    changeNavStatus:Function,
+    scrollToPage:Function,
+
+    data:{
+        entry:entryContent,
+        name:string,
+        type:string,
+    }
+}
+
+
+
+
+function KVAnimationComponent(props: propsContent) {
 
     const headStyle = props.data.entry.headStyle;
   // const block1Image = props.data.entry.fields.block1Image.sys.fields;
     const [isCurrentPage, setIsCurrentPage] = useState(false);
-
+    const KVAnimationData = props.data.entry;
     const container = useRef(null);
 
 
@@ -105,10 +138,10 @@ function KVAnimationComponent(props: any) {
         {/*        </div>*/}
         {/*    </div>*/}
         {/*</div>*/}
-
+        {/*  src="https://yumen-ali.oss-cn-beijing.aliyuncs.com/bg.mp4"*/}
         <div className="w-full h-screen">
             <BaseVideo
-                src="https://yumen-ali.oss-cn-beijing.aliyuncs.com/bg.mp4"
+                src={KVAnimationData.kvAnimationComponentBackgroundVideo.video.url}
                 className="h-full object-cover"
                 loop={true}
                 autoplay={true}
@@ -151,7 +184,7 @@ function KVAnimationComponent(props: any) {
 
           <div className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden pad:w-129px pad:h-281px pad:translate-y-[-21%] mobile:h-223px mobile:w-102px mobile:translate-y-[-30%]`}>
               <BaseVideo
-                  src="https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/bottle.webm"
+                  src={KVAnimationData.kvAnimationComponentProductVideo.video.url}
                   className="h-full object-cover"
                   loop={false}
                   autoplay={true}
@@ -165,13 +198,13 @@ function KVAnimationComponent(props: any) {
          <div className={`absolute bottom-[5%] w-full left-1/2 z-30 mobile:w-[80%] mobile:bottom-[10%]`}>
             <div className={`text-group-4 translate-x-[-50%] translate-y-full transition-all ease-in-out duration-500 delay-1000`}>
                 <div className="uppercase pt-94px text-center pb-29px text-30px font-normal font-AlbertusNova-Bold pad:pt-67px pad:pb-20px pad:text-21px mobile:pt-66px mobile:text-24px">
-                    A drop of wilderness in every glass
+                    {KVAnimationData.kvAnimationComponentKvTitle}
                 </div>
 
                 <div className="w-full flex flex-col items-center justify-center mobile:hidden mb-20px">
                     <div className="w-18px h-24px border-black border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-black before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
                     <div className="text-12px leading-tight text-black font-Grotesque-Regular">
-                        Scroll to explore more
+                        {KVAnimationData.kvAnimationComponentScrollContent}
                     </div>
                 </div>
             </div>

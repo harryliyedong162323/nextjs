@@ -18,7 +18,7 @@ const GRAPHQL_URL = 'https://uat-lamerqixi.workbyus.cn/px.php';
 const query = `
 
    query {
-  KVAnimation: homeCollection(limit: 1, where: {pageName: "home"}) {
+ KVAnimation: homeCollection(limit: 1, where: {pageName: "home"}) {
     items {
       kvAnimationComponentKvTitle
       kvAnimationComponentScrollContent
@@ -26,6 +26,11 @@ const query = `
         video {
           url
         }
+      }
+      kvAnimationComponentProductVideo {
+          video {
+              url
+          }
       }
     }
   }
@@ -295,6 +300,8 @@ class HomeDao{
                             name: "KVAnimationComponent",
                             entry: {
                                 headStyle:'large',   //large white black bg-white none
+
+                                ...HomeModel.query('KVAnimation',result)
                             },
                         },
                         {

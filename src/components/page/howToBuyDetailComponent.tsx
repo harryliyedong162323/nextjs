@@ -70,7 +70,7 @@ function HowToBuyDetailComponent(props: any) {
            {/*${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-100%] opacity-0'}*/}
               <div className={`w-[50%] pad:w-[70%] mobile:w-auto  pb-67px mobile:pt-67px mx-auto   opacity-1 `}>
                   <div className="text-33px font-normal font-AlbertusNova-Regular pb-64px text-center pt-143px pad:pt-102px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px uppercase">Servicing</div>
-                  <div className="font-normal font-Grotesque-Regular text-22px text-center text-dark-grey leading-[33px] mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:leading-[20px] whitespace-nowrap flex justify-center">The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and<br/> maintained over 6 decades by the Grant family. It includes casks from every region of<br/> Scotland, including some notable ghost distillery stocks.</div>
+                  <div className="font-normal font-Grotesque-Regular text-22px text-center text-dark-grey leading-[33px] mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:leading-[20px] flex justify-center">The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and<br/> maintained over 6 decades by the Grant family. It includes casks from every region of<br/> Scotland, including some notable ghost distillery stocks.</div>
               </div>
 
            <div className="absolute z-10 top-0 right-[0%] h-full w-200px bg-gradient-to-l from-[#f6f6f6] to-[transparent] mobile:hidden"></div>

@@ -9,7 +9,8 @@ import { useGSAP } from "@gsap/react";
 interface entryContent{
     headStyle:string,
     selectedProductId?:number,
-    productFamilyComponentProductsCollection:productFamilyComponentProductsCollectionContent
+    productFamilyComponentProductsCollection:productFamilyComponentProductsCollectionContent,
+
 }
 interface productFamilyComponentProductsCollectionContent{
     items:Array<bottleContent>
