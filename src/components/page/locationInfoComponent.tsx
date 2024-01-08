@@ -510,7 +510,7 @@ function LocationInfoComponent(props: any) {
                                             ></BaseImage>
                                         </div>
                                         {/*pad:w-208px*/}
-                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px  mobile:w-175px">
+                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Regular items-center w-291px  mobile:w-175px">
                                              {/*pad:text-23px*/}
                                             <div className="leading-tight uppercase text-33px mobile:text-20px whitespace-nowrap">{item.name}</div>
                                             {/*pad:mt-11px*/}
@@ -562,7 +562,7 @@ function LocationInfoComponent(props: any) {
                                             ></BaseImage>
                                         </div>
                                         {/*pad:w-208px*/}
-                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Light items-center w-291px  mobile:w-175px">
+                                        <div className="text-black inline-block align-bottom font-AlbertusNova-Regular items-center w-291px  mobile:w-175px">
                                             {/*pad:text-23px*/}
                                             <div className="leading-tight uppercase text-33px  mobile:text-20px whitespace-nowrap">{item.name}</div>
                                             {/*pad:mt-11px*/}
