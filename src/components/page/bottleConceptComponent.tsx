@@ -112,6 +112,9 @@ function BottleConceptComponent(props: any) {
             muted={true}
             controls={false}
             controlsList="nodownload"
+            playsInline={true}
+            webkit-playsInline={true}
+            x5-playsInline={true}
             onEnded={() => {
               console.log("onEnded");
               setStartVideoEnd(true);
@@ -131,6 +134,9 @@ function BottleConceptComponent(props: any) {
               muted={true}
               controls={false}
               controlsList="nodownload"
+              playsInline={true}
+              webkit-playsInline={true}
+              x5-playsInline={true}
               onEnded={() => {
                 console.log("onEnded");
               }}

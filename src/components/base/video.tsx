@@ -72,9 +72,9 @@ class BaseVideo extends Component<propsContent,State>{
                     muted={this.props.muted}
                     controls={this.props.controls}
                     controlsList={this.props.controlsList}
-                    playsinline={true}
-                    webkit-playsinline={true}
-                    x5-playsinline={true}
+                    playsInline={true}
+                    webkit-playsInline={true}
+                    x5-playsInline={true}
                     x-webkit-airplay={true}
                     x5-video-player-type={"h5"}
                     x5-video-player-fullscreen={false}
