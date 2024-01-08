@@ -205,8 +205,8 @@ function StoryChapterTwoComponent(props: any) {
                 className={`overflow-hidden absolute right-0 bottom-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px p-42px px-66px w-769px pad:text-16px pad:p-33px pad:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
               >
                 <div
-                  className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-500 delay-1000 ${
-                    isCurrentPage ? "w-0" : "w-640px pad:w-512px mobile:w-330px"
+                  className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-11500 delay-1000 ${
+                    isCurrentPage ? "w-0" : "w-1000px pad:w-1000px mobile:w-330px"
                   }`}
                 ></div>
                 <div>{data.description}</div>

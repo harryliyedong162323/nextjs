@@ -12,32 +12,43 @@ function Footer(props: any) {
   const [language, setLanguage] = useState(false);
 
   const lastPathName = getLastPathName(usePathname());
+  const currentSlideIndex = props.currentSlideIndex;
 
 
   useEffect(() => {
 
 
-    function wheelHandle(e: Event) {
 
-      e.preventDefault();
-      e.stopPropagation();
+    setLanguage(false);
 
-    }
 
-    function keyDownHandle(e: Event){
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    if (language) {
-      document.addEventListener("wheel", wheelHandle, { passive: false });
-      document.addEventListener("keydown", keyDownHandle, { passive: false });
-    }
-    return () => {
-      const option: any = { passive: false };
-      document.removeEventListener("wheel", wheelHandle, option);
-      document.removeEventListener("keydown", keyDownHandle, option);
-    };
-  }, [language]);
+
+  }, [currentSlideIndex]);
+
+  // useEffect(() => {
+  //
+  //
+  //   function wheelHandle(e: Event) {
+  //
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //
+  //   }
+  //
+  //   function keyDownHandle(e: Event){
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //   }
+  //   if (language) {
+  //     document.addEventListener("wheel", wheelHandle, { passive: false });
+  //     document.addEventListener("keydown", keyDownHandle, { passive: false });
+  //   }
+  //   return () => {
+  //     const option: any = { passive: false };
+  //     document.removeEventListener("wheel", wheelHandle, option);
+  //     document.removeEventListener("keydown", keyDownHandle, option);
+  //   };
+  // }, [language]);
 
 
 
@@ -335,7 +346,7 @@ function Footer(props: any) {
           <div className="absolute w-full h-screen select-none top-0 right-0 z-30">
             <div className="flex w-full justify-between h-screen">
               <div className="flex  flex-1"   onClick={hanleCloseLanguage}></div>
-              <div className="w-400px h-full bg-[#FFFFFF]  pl-33px pr-33px pad:pl-24px pad:pr-24px pad:w-285px mobile:w-full mobile:pl-20px mobile:pr-20px ">
+              <div className="w-381px h-full bg-[#FFFFFF]  pl-33px pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-20px shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
                 <div className="flex items-center  mt-27px pad:mt-19px mobile:mt-44px mobile:reactive ">
                   <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
                     <BaseImage

@@ -102,7 +102,7 @@ function FullPage(props: any) {
     const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav)
     const [isShowRangeNav, setIsShowRangeNav] = useState(true)
     const [canScroll, setCanScroll] = useState<boolean>(true)
-    
+
     useEffect(() => {
         setTimeout(()=>{
             setAnchor(searchParams.get('anchor'))
@@ -182,7 +182,7 @@ function FullPage(props: any) {
             )
         }),
         {
-            content: <Footer scrollToPage={scrollToPage}></Footer>,
+            content: <Footer scrollToPage={scrollToPage} currentSlideIndex={currentSlideIndex}></Footer>,
             style: {}
         },
     ];

@@ -270,7 +270,7 @@ function ProductFamilyComponent(props:propsContent) {
                                        <div className="flex flex-wrap">
                                            <div className="">{currentBottleData.productName}</div>
                                            {
-                                               currentBottleData.tag != '' ?  <div className="text-6px font-AlbertusNova-Regular">sadfsadf</div>: null
+                                               currentBottleData.tag&&currentBottleData.tag != '' ?  <div className="text-6px font-AlbertusNova-Light">{currentBottleData.tag}</div>: null
                                            }
 
                                        </div>

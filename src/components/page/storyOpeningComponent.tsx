@@ -49,7 +49,7 @@ function StoryOpeningComponent(props: any) {
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
   const [swiper, setSwiper] = useState<any>(null);
 
-  const parallaxAmount = swiper ? swiper.width * 0.95 : 0;
+  const parallaxAmount = swiper ? swiper.width * 1 : 0;
 
   useEffect(() => {
     if (isFullPage) {
@@ -89,7 +89,7 @@ function StoryOpeningComponent(props: any) {
         parallax={true}
         spaceBetween="0"
         centeredSlides= {true}
-        onSlideChange={(e) => {
+        onSlideChangeTransitionStart={(e) => {
           setCurrentIndex(e.realIndex);
         }}
         onSwiper={(swiper) => {
