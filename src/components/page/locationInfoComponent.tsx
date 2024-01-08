@@ -312,10 +312,13 @@ function LocationStoreList(props: any){
             if(windowWidth <= 768){
 
                 setSlidesPerView(2);
-                setSpaceBetween(200);
+                setSpaceBetween(250);
+                setCenteredSlides(false);
             }else{
                 setSlidesPerView(3);
                 setSpaceBetween(0);
+                setCenteredSlides(true);
+
             }
 
 
@@ -339,7 +342,7 @@ function LocationStoreList(props: any){
                 {
                     selectedReady ? <Select
                         styles={customStyles}
-                        className={`text-14px pt-18px pb-18px mx-auto pr-25px bg-transparent w-255px h-55px pad:pt-12px pad:pb-12px pad:pl-0 mobile:pl-0`}
+                        className={`text-14px pt-18px pb-18px mx-auto pr-25px bg-transparent w-255px h-55px mobile:w-203px mobile:h-44px pad:pt-12px pad:pb-12px pad:pl-0 mobile:pl-0`}
                         defaultValue={selectedOption}
                         options={options}
                         onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
@@ -349,15 +352,15 @@ function LocationStoreList(props: any){
             </div>
 
 
-            <div>
-                {/*modules={[Autoplay]}*/}
+            <div className="mobile:ml-61px">
+
                 <Swiper
 
 
 
-                    slidesPerView={slidesPerView}
+                    modules={[Autoplay]}
                     loop={true}
-
+                    slidesPerView={slidesPerView}
                     spaceBetween={spaceBetween}
 
                     centeredSlides={centeredSlides}
@@ -389,7 +392,7 @@ function LocationStoreList(props: any){
                         locationInfo.length>0 && locationInfo.map((item:any,index:number)=>{
                             return (
                                 <div key={item.id}>
-                                    <SwiperSlide key={item.id} className={`  pl-20px pr-20px `}>
+                                    <SwiperSlide key={item.id} className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}>
                                         <div className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}>
                                             <BaseLink link={item.link} className="text-black">
                                                 <div className="relative w-full h-320px  pad:h-230px mobile:w-265px mobile:h-240px">
@@ -476,10 +479,10 @@ function LocationInfoComponent(props: any) {
                     <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
                     <div className=" ">
 
-                        <div className="w-full mt-145px   pad:mt-243px mobile:mt-132px  ">
+                        <div className="w-full mt-145px   pad:mt-243px mobile:mt-72px  ">
 
                             <Marquee play={play}>
-                                <div className="w-250px mobile:hidden"></div>
+                                <div className="w-250px mobile:w-79px"></div>
                                 { [data.productList[0],data.productList[1],data.productList[2]].map((item, index) => {
                                     return (
                                         <div
@@ -511,7 +514,7 @@ function LocationInfoComponent(props: any) {
                                              {/*pad:text-23px*/}
                                             <div className="leading-tight uppercase text-33px mobile:text-20px whitespace-nowrap">{item.name}</div>
                                             {/*pad:mt-11px*/}
-                                            <div className="w-195px h-60px mt-16px  mobile:mt-10px">
+                                            <div className="w-195px h-60px mt-16px mobile:w-128px mobile:h-39px mobile:mt-10px">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/howToBuy/btn.png")}
                                                     pImg={require("../../../public/assets/howToBuy/btn.png")}
@@ -529,7 +532,7 @@ function LocationInfoComponent(props: any) {
                             </Marquee>
                         </div>
                         {/*pad:mt-105px*/}
-                        <div className="w-full mt-148px  mobile:mt-128px ">
+                        <div className="w-full mt-148px  mobile:mt-72px ">
 
                             <Marquee play={play}>
                                 { [data.productList[3],data.productList[4]].map((item, index) => {
@@ -563,7 +566,7 @@ function LocationInfoComponent(props: any) {
                                             {/*pad:text-23px*/}
                                             <div className="leading-tight uppercase text-33px  mobile:text-20px whitespace-nowrap">{item.name}</div>
                                             {/*pad:mt-11px*/}
-                                            <div className="w-195px h-60px mt-16px  mobile:mt-10px">
+                                            <div className="w-195px h-60px mt-16px mobile:w-128px mobile:h-39px mobile:mt-10px">
                                                 <BaseImage
                                                     mImg={require("../../../public/assets/howToBuy/btn.png")}
                                                     pImg={require("../../../public/assets/howToBuy/btn.png")}

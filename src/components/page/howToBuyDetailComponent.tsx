@@ -63,7 +63,7 @@ function HowToBuyDetailComponent(props: any) {
 
 
     return (
-       <section className="w-full h-900px relative">
+       <section className="w-full h-900px relative mobile:h-auto overflow-hidden">
            <input type="hidden" value={headStyle}/>
 
            {/*<section className="">*/}

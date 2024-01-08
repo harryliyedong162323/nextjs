@@ -96,7 +96,7 @@ function Header(props: any) {
     <div>
       <nav
         id="nav-white"
-        className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn mobile:h-59px ${
+        className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
           headStyle == "white" ? "block" : "hidden"
         }`}
       >
@@ -112,7 +112,7 @@ function Header(props: any) {
 
       <nav
         id="nav-black"
-        className={`h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn mobile:h-59px ${
+        className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
           headStyle == "black" ? "block" : "hidden"
         }`}
       >
@@ -130,7 +130,7 @@ function Header(props: any) {
         id="nav-large"
         className={` ${
           menu == true ? "overflow-visible" : "overflow-hidden"
-        }  w-full fixed left-0 top-0 z-30   ${
+        }  w-full fixed left-0 top-0 z-50   ${
           headStyle == "large" ? "block" : "hidden"
         }`}
       >
@@ -153,7 +153,7 @@ function Header(props: any) {
 
       <nav
         id="nav-bg-white"
-        className={`bg-white h-85px w-full fixed left-0 top-0 z-30 opacity-0 animate-fadeIn pad:h-118px mobile:h-85px ${
+        className={`bg-white h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn pad:h-118px mobile:h-85px ${
           headStyle == "bg-white" ? "block" : "hidden"
         }`}
       >
