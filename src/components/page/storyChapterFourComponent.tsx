@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "../base/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Mousewheel } from "swiper/modules";
+import { Parallax, EffectFade, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -50,17 +50,18 @@ function StoryChapterFourComponent(props: any) {
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
   const [fadeLock, setFadeLock] = useState(true);
   const [allowScroll, setAllowScroll] = useState(false);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   useEffect(() => {
     const fadeBox: HTMLElement = document.querySelector(
       "#fadeBox2"
     ) as HTMLElement;
     if (fadeBox) {
-      fadeBox.onwheel = function (e) {
-        if (fadeLock) {
-          e.stopPropagation();
-        }
-      };
+      // fadeBox.onwheel = function (e) {
+      // if (fadeLock) {
+      //   e.stopPropagation();
+      // }
+      // };
       document.ontouchmove = function (e) {
         if (fadeLock && isCurrentPage) {
           e.stopPropagation();
@@ -110,9 +111,10 @@ function StoryChapterFourComponent(props: any) {
       <div className="absolute top-0 left-0 w-full h-screen" id="fadeBox2">
         <Swiper
           className="h-screen"
-          modules={[EffectFade, Mousewheel]}
-          effect={"fade"}
+          modules={[Parallax, Mousewheel]}
+          parallax={true}
           speed={1000}
+          nested={true}
           fadeEffect={{
             crossFade: true,
           }}
@@ -123,8 +125,9 @@ function StoryChapterFourComponent(props: any) {
               setFadeLock(false);
             }, 500);
           }}
-          onSlideChangeTransitionStart={() => {
+          onSlideChangeTransitionStart={(e) => {
             setFadeLock(true);
+            setCurrentSlideIndex(e.realIndex);
           }}
           allowSlideNext={allowScroll}
           allowSlidePrev={allowScroll}
@@ -133,10 +136,12 @@ function StoryChapterFourComponent(props: any) {
             <>
               <div
                 className={`absolute flex justify-center w-full flex-col items-start left-100px mobile:left-25px mobile:top-180px transition-all ease-in-out duration-500 delay-1000 ${
-                  isCurrentPage
+                  isCurrentPage && currentSlideIndex === 0
                     ? "top-294px pad:top-360px mobile:top-86px opacity-100"
                     : "top-494px pad:top-454px mobile:top-286px opacity-0"
                 }`}
+                data-swiper-parallax={100}
+                data-swiper-parallax-opacity={0}
               >
                 <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px pad:text-27px mobile:text-20px mobile:w-full">
                   {data.words.first}
@@ -151,7 +156,9 @@ function StoryChapterFourComponent(props: any) {
               <span
                 onClick={() => showIntroduce(true)}
                 className={`absolute cursor-pointer w-300px h-300px top-244px right-600px pad:w-340px pad:h-340px pad:right-580px pad:top-300px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
-                  isCurrentPage ? "opacity-100" : "opacity-0"
+                  isCurrentPage && currentSlideIndex === 0
+                    ? "opacity-100"
+                    : "opacity-0"
                 }`}
               >
                 <BaseImage
@@ -169,11 +176,13 @@ function StoryChapterFourComponent(props: any) {
           <SwiperSlide>
             <div
               className={`absolute w-[1692px] left-1/2 -ml-900px top-174px h-496px pad:w-906px pad:-ml-453px pad:h-398px mobile:w-330px mobile:-ml-165px mobile:mt-88px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
+              data-swiper-parallax={100}
+              data-swiper-parallax-opacity={0}
             >
               <div
                 onClick={() => showIntroduce(false)}
                 className={`absolute cursor-pointer z-20 right-0 w-828px h-558px pad:w-460px pad:h-310px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 mobile:top-0 transition-all ease-in-out duration-500 delay-1000 ${
-                  isCurrentPage
+                  isCurrentPage && currentSlideIndex === 1
                     ? "opacity-100 top-100px pad:top-160px"
                     : "opacity-0 top-400px"
                 }`}
@@ -192,7 +201,9 @@ function StoryChapterFourComponent(props: any) {
               >
                 <div
                   className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-500 delay-1000 ${
-                    isCurrentPage ? "w-0" : "w-640px pad:w-512px mobile:w-330px"
+                    isCurrentPage && currentSlideIndex === 1
+                      ? "w-0"
+                      : "w-1000px pad:w-1000px mobile:w-330px"
                   }`}
                 ></div>
                 <div>{data.description}</div>

@@ -705,7 +705,7 @@ function FlavourFinderComponent(props: any) {
                 <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px pad:text-28px pad:pt-100px mobile:text-15px mobile:pt-78px">
                   {data.quizs.q1.question}
                 </div>
-                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:-mt-24px mobile:flex-col mobile:mx-auto mobile:items-center mobile:scale-[0.8]">
                   {data.quizs.q1.answers.map((answer, index) => {
                     return (
                       <div
@@ -757,7 +757,7 @@ function FlavourFinderComponent(props: any) {
                   <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-910px text-34px pad:w-860px pad:text-28px mobile:w-325px mobile:text-15px">
                     {data.quizs.q2.description}
                   </div>
-                  <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-135px paid:-mt-87px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                  <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-135px paid:-mt-87px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:-mt-24px mobile:flex-col mobile:mx-auto mobile:items-center mobile:scale-[0.8]">
                     {data.quizs.q2.answers.map((answer, index) => {
                       return (
                         <div
@@ -889,7 +889,7 @@ function FlavourFinderComponent(props: any) {
                       <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center mb-10px text-20px pad:text-16px mobile:text-12px">
                         {data.quizs.q3.step2.title}
                       </div>
-                      <div className="w-[1200px] pad:w-[1000px] mobile:w-620px overflow-hidden">
+                      <div className="w-[1200px] pad:w-[1000px] mobile:w-620px overflow-hidden mobile:scale-[0.8] mobile:-ml-60px">
                         <div
                           className="relative"
                           // ref={emblaRef}
@@ -986,7 +986,7 @@ function FlavourFinderComponent(props: any) {
                 <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px pad:text-28px pad:pt-100px mobile:text-15px mobile:pt-78px">
                   {data.quizs.q4.question}
                 </div>
-                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:left-0 mobile:top-0 mobile:mt-24px mobile:flex-col mobile:mx-auto mobile:items-center">
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:left-0 mobile:top-0 mobile:-mt-24px mobile:flex-col mobile:mx-auto mobile:items-center mobile:scale-[0.8]">
                   {data.quizs.q4.answers.map((answer, index) => {
                     return (
                       <div
