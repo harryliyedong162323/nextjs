@@ -665,7 +665,7 @@ function FlavourFinderComponent(props: any) {
         <>
           <div className="flex h-screen">
             <Image
-              className="object-cover"
+              className="object-cover mobile:h-screen mobile:max-w-none mobile:-ml-160px"
               src={require("../../../public/assets/range/favour_finder_bg.png")}
               alt={""}
               quality="100"

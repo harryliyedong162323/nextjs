@@ -258,7 +258,7 @@ function ProductFamilyComponent(props:propsContent) {
                                 ></BaseImage>
                             </div>
                             <div className="text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
-                                <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:pt-20px mobile:w-full mobile:pb-20px mobile:flex mobile:flex-wrap justify-center items-end">
+                                <div className="font-AlbertusNova-Regular font-normal mobile:text-center mobile:pt-20px mobile:w-full mobile:pb-20px mobile:flex mobile:flex-wrap justify-center items-start">
                                     <div className="inline-block align-middle">
                                         <div className="relative">
                                             <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.age}</span>

@@ -153,7 +153,7 @@ function Header(props: any) {
 
       <nav
         id="nav-bg-white"
-        className={`bg-white h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn pad:h-118px mobile:h-85px ${
+        className={`bg-white h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn pad:h-118px mobile:h-60px ${
           headStyle == "bg-white" ? "block" : "hidden"
         }`}
       >
