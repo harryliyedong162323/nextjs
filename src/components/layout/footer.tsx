@@ -204,7 +204,7 @@ function Footer(props: any) {
           </div>
           <div className="mobile:order-1 mobile:w-full">
             <div
-              className="w-44px h-46px bg-[url('/assets/scroll_top.png')] bg-cover cursor-pointer mobile:mb-45px mobile:mx-auto mobile:w-40px mobile:h-42px"
+              className="w-44px h-46px bg-[url('/assets/scroll_top.svg')] bg-cover cursor-pointer mobile:mb-45px mobile:mx-auto mobile:w-40px mobile:h-42px"
               onClick={() => {
                 scrollToPage(0);
               }}

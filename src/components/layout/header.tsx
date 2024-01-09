@@ -383,7 +383,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
                 <div
-                  className="w-20px pad:w-14px mobile:w-19px h-20px pad:h-14px mobile:h-19px cursor-pointer"
+                  className="w-20px pad:w-14px mobile:w-19px mobile:ml-9px h-20px pad:h-14px mobile:h-19px cursor-pointer"
                   onClick={handleClose}
                 >
                   <BaseImage
