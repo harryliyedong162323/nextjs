@@ -8,42 +8,45 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Parallax } from 'swiper/modules';
 import "swiper/css";
 
-interface bg {
-  pImg: string;
-  mImg: string;
-}
-interface ComponentData {
-  id: number;
-  title: string;
-  description: string;
-  scrollText: string;
-  bgList: Array<bg>;
+interface entryContent {
+  isFullPage: boolean;
+  pageNumber: number;
+  currentPageNumber: number;
+  storyOpeningTitle: string
+  storyOpeningDescription: string;
+  storyOpeningScrollText: string;
+  storyOpeningComponentCarouselCollection: {
+    items: Array<{
+      sys: {
+        id: string
+      }
+      backgroundImage: {
+        altText: string;
+        imagemobile: {
+          url: string;
+        }
+        imagepc: {
+          url: string;
+        }
+      }
+    }>
+  }
 }
 
-const componentData: ComponentData = {
-  id: 1,
-  title: "OUR STORY",
-  description: "A drop of wilderness in every glass.",
-  scrollText: "Scroll to explore more",
-  bgList: [
-    {
-      pImg: require("../../../public/assets/story/brand_story_bannner.png"),
-      mImg: require("../../../public/assets/story/brand_story_bannner_m.png"),
-    },
-    {
-      pImg: require("../../../public/assets/productFamily/kv-2.png"),
-      mImg: require("../../../public/assets/productFamily/kv-m.png"),
-    },
-    {
-      pImg: require("../../../public/assets/productFamily/kv-3.png"),
-      mImg: require("../../../public/assets/productFamily/kv-m.png"),
-    },
-  ],
-};
+export interface propsContent {
+  changeNavStatus: Function;
+  scrollToPage: Function;
 
-function StoryOpeningComponent(props: any) {
+  data: {
+    entry: entryContent;
+    name: string;
+    type: string;
+  };
+}
+
+function StoryOpeningComponent(props: propsContent) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [data, setData] = useState<ComponentData>(componentData);
+  const [data, setData] = useState<entryContent>(props.data.entry);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -96,14 +99,14 @@ function StoryOpeningComponent(props: any) {
           setSwiper(swiper);
         }}
       >
-        {data.bgList.map((item, key) => {
+        {data.storyOpeningComponentCarouselCollection.items.map((item, key) => {
           return (
             <SwiperSlide key={key} className="flex relative overflow-hidden">
               <div className="absolute h-screen w-full left-0 top-0" data-swiper-parallax={parallaxAmount}>
                 <BaseImage
-                  mImg={item.mImg}
-                  pImg={item.pImg}
-                  alt={""}
+                  mImg={item.backgroundImage.imagemobile.url}
+                  pImg={item.backgroundImage.imagepc.url}
+                  alt={item.backgroundImage.altText}
                   layout="fill"
                   objectFit="cover"
                   quality={100}
@@ -125,14 +128,14 @@ function StoryOpeningComponent(props: any) {
             isCurrentPage ? "h-80px" : "h-0"
           }`}
         >
-          <div>{data.title}</div>
+          <div>{data.storyOpeningTitle}</div>
         </div>
         <div
           className={`overflow-hidden font-AlbertusNova-Light text-center uppercase transition-all ease-in-out duration-500 delay-1000 h-0 ${
             isCurrentPage ? "h-52px pad:h-60px mobile:h-54px" : "h-0"
           } text-40px pad:text-28px mobile:leading-[27px] mobile:w-300px mobile:text-20px`}
         >
-          <div>{data.description}</div>
+          <div>{data.storyOpeningDescription}</div>
         </div>
       </div>
       <div
@@ -142,11 +145,11 @@ function StoryOpeningComponent(props: any) {
       >
         <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
         <div className="text-12px leading-tight text-white font-Grotesque-Regular">
-          {data.scrollText}
+          {data.storyOpeningScrollText}
         </div>
       </div>
       <div className="absolute z-20 w-full h-20px flex items-center justify-center bottom-140px pad:bottom-100px mobile:bottom-190px">
-        {data.bgList.map((item, key) => {
+        {data.storyOpeningComponentCarouselCollection.items.map((item, key) => {
           return (
             <div
               key={key}

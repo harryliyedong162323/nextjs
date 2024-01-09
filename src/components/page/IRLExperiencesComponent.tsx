@@ -8,10 +8,20 @@ import BaseVideo from "@/components/base/video";
 function IRLExperiencesComponent(props: any) {
     const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
+    const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
+    const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+    useEffect(() => {
+        if (isFullPage) {
+            if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
+                setIsCurrentPage(true);
+                console.log(2323)
+            } else {
+                setIsCurrentPage(false);
+            }
+        }
+    }, [isFullPage, props])
 
-    // useEffect(() => {
 
-    // }, []);
 
     return (
         <section id="IRLExperiences" data-anchor={props.data.entry.pageNumber} className="overflow-hidden h-screen container mx-auto pb-164px mobile:pb-67px select-none">

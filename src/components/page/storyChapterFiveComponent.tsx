@@ -3,37 +3,47 @@
 import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "../base/image";
 
-interface ComponentData {
-  id: number;
-  bg: {
-    mImg: string;
-    pImg: string;
+interface entryContent {
+  isFullPage: boolean;
+  pageNumber: number;
+  currentPageNumber: number;
+  sys: {
+    id: string;
   };
-  avatar: {
-    mImg: string;
-    pImg: string;
+  storyChapterFiveComponentDescription: string;
+  storyChapterFiveComponentSlidingText: string;
+  storyChapterFiveComponentBackgroundImage: {
+    imagepc: {
+      url: string;
+    };
+    imagemobile: {
+      url: string;
+    };
+    altText: string;
   };
-  description: string;
-  scrollText: string;
+  storyChapterFiveComponentSmallImage: {
+    imagepc: {
+      url: string;
+    };
+    imagemobile: {
+      url: string;
+    };
+    altText: string;
+  };
 }
 
-const componentData: ComponentData = {
-  id: 1,
-  bg: {
-    pImg: require("../../../public/assets/story/brand_story_chatper_05.png"),
-    mImg: require("../../../public/assets/story/brand_story_chatper_05_m.png"),
-  },
-  avatar: {
-    mImg: require("../../../public/assets/story/brand_story_chatper_05_face_big.png"),
-    pImg: require("../../../public/assets/story/brand_story_chatper_05_face_big.png"),
-  },
-  description:
-    "But wild wind-swept moorlands, savage waves breaking across jagged shorelines. And rolling mountains shrouded in mist.",
-  scrollText: "Scroll to explore more",
-};
+export interface propsContent {
+  changeNavStatus: Function;
+  scrollToPage: Function;
+  data: {
+    entry: entryContent;
+    name: string;
+    type: string;
+  };
+}
 
-function StoryChapterFiveComponent(props: any) {
-  const [data, setData] = useState<ComponentData>(componentData);
+function StoryChapterFiveComponent(props: propsContent) {
+  const [data, setData] = useState<entryContent>(props.data.entry);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -52,9 +62,9 @@ function StoryChapterFiveComponent(props: any) {
     <section className="relative overflow-hidden select-none">
       <div className="flex h-screen">
         <BaseImage
-          mImg={data.bg.mImg}
-          pImg={data.bg.pImg}
-          alt={""}
+          mImg={data.storyChapterFiveComponentBackgroundImage.imagemobile.url}
+          pImg={data.storyChapterFiveComponentBackgroundImage.imagepc.url}
+          alt={data.storyChapterFiveComponentBackgroundImage.altText}
           layout="fill"
           objectFit="fill"
           quality={100}
@@ -70,9 +80,9 @@ function StoryChapterFiveComponent(props: any) {
       >
         <div className="absolute left-0 cursor-pointer z-10 w-630px h-500px pad:w-504px pad:h-400px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
           <BaseImage
-            mImg={data.avatar.mImg}
-            pImg={data.avatar.pImg}
-            alt={""}
+          mImg={data.storyChapterFiveComponentSmallImage?.imagemobile?.url}
+          pImg={data.storyChapterFiveComponentSmallImage?.imagepc?.url}
+          alt={data.storyChapterFiveComponentSmallImage?.altText}
             layout="fill"
             objectFit="cover"
             quality={100}
@@ -82,17 +92,19 @@ function StoryChapterFiveComponent(props: any) {
           <div
             className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
           ></div>
-          <div>{data.description}</div>
+          <div>{data.storyChapterFiveComponentDescription}</div>
         </div>
       </div>
       <div
         className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
-          isCurrentPage ? "bottom-24px mobile:bottom-100px" : "-bottom-48px mobile:-bottom-48px"
+          isCurrentPage
+            ? "bottom-24px mobile:bottom-100px"
+            : "-bottom-48px mobile:-bottom-48px"
         }`}
       >
         <div className="w-18px h-24px mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
         <div className="text-12px leading-tight text-white font-Grotesque-Regular">
-          {data.scrollText}
+          {data.storyChapterFiveComponentSlidingText}
         </div>
       </div>
       <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#2828289c] to-[#28282800] h-225px pad:h-180px mobile:h-0"></div>

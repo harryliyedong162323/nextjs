@@ -106,6 +106,9 @@ body{
   overflow: hidden;
 }
 
-.pr-slide-20{
-
+.video-react{
+  background-color: transparent !important;
+}
+.video-react .video-react-big-play-button {
+  display: none;
 }

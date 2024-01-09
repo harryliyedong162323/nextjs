@@ -7,11 +7,63 @@ const GRAPHQL_URL = 'https://uat-lamerqixi.workbyus.cn/px.php';
 const query = `
 
   query {
-  locationInfo:howToBuyCollection (limit:1 where:{internalName:"howToBuy"} ) {
+  
+  stores: dataStoreCollection (limit:80){
+              items {
+                  sys {
+                      id
+                  }
+                  howToBuyDetailComponentRegion {
+                      regionId
+                      name
+                  }
+                  howToBuyDetailComponentStoreName
+                  howToBuyDescription
+                  howToBuyJumpUrl
+                  howToBuyDetailComponentBannerImage {
+                      imagepc {
+                          url
+                      }
+                      imagemobile {
+                          url
+                      }
+                      altText
+                  }
+                  
+                  
+                 
+                  howToBuyIrlImage {
+                      imagepc {
+                              url
+                          }
+                          imagemobile {
+                              url
+                          }
+                          altText
+                  }
+                  showInHowToBuyIrl
+                  howToBuyIrlSort
+              }
+          }
+  
+  
+   locationInfo:howToBuyCollection (limit:1 where:{internalName:"howToBuy"} ) {
       items {
-          locationInfoComponentRegionListCollection(limit :10) {
+          locationInfoComponentTitle
+          regionExploreMoreImage {
+              imagepc {
+                  url
+              }
+              imagemobile {
+                  url
+              }
+              altText
+          }
+
+          locationInfoComponentRegionListCollection(limit :10,order:regionId_ASC) {
               items {
                   name
+                  regionId
                   exploreMoreContent
                   image {
                       imagepc {
@@ -24,14 +76,19 @@ const query = `
                   }
               }
           }
-          locationInfoComponentTitle
 
-          locationInfoComponentStoreListCollection (limit:100){
+          locationInfoComponentStoreListCollection (limit:50){
               items {
+                  sys {
+                      id
+                  }
+                  howToBuyDetailComponentRegion {
+                      regionId
+                      name
+                  }
                   howToBuyDetailComponentStoreName
-                  howToBuyDetailComponentStoreAddress
-                  howToBuyDetailComponentStoreBusinessHours
-                  howToBuyDetailComponentStorePhone
+                  howToBuyDescription
+                  howToBuyJumpUrl
                   howToBuyDetailComponentBannerImage {
                       imagepc {
                           url
@@ -41,31 +98,9 @@ const query = `
                       }
                       altText
                   }
-                  howToBuyDetailComponentBannerTitle
-                  howToBuyDetailComponentBannerSubTitle
-                  howToBuyDetailComponentScrollContent
-                  howToBuyDetailComponentServiceTitle
-                  howToBuyDetailComponentServiceContent
-                  serviceCarouselImageCollection(limit : 10) {
-                      items {
-                          imagepc {
-                              url
-                          }
-                          imagemobile {
-                              url
-                          }
-                          altText
-                      }
-                  }
-                  howToBuyDetailComponentHowToBuyHeadImage {
-                      imagepc {
-                              url
-                          }
-                          imagemobile {
-                              url
-                          }
-                          altText
-                  }
+                  
+                  
+                 
                   howToBuyIrlImage {
                       imagepc {
                               url
@@ -77,11 +112,11 @@ const query = `
                   }
                   showInHowToBuyIrl
                   howToBuyIrlSort
-                  
               }
           }
       }
   }
+
 
   IRLExperiences:howToBuyCollection (limit:1 where:{internalName:"howToBuy"} ) {
       items {
@@ -270,6 +305,7 @@ class HowToBuyDao {
                             name: "IRLExperiencesComponent",
                             entry: {
                                 headStyle:'none',
+                                ...HowToBuyModel.query('stores',result)
                             },
                         },
                         {

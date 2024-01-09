@@ -17,21 +17,70 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 interface entryContent{
     headStyle:string,
     locationInfoComponentTitle:string,
-
+    locationInfoComponentRegionListCollection:locationInfoComponentRegionListCollectionContent,
     locationInfoComponentStoreListCollection:locationInfoComponentStoreListCollectionContent,
 
 }
 
-
+interface locationInfoComponentRegionListCollectionContent{
+    items:Array<locationInfoRegion>
+}
 interface locationInfoComponentStoreListCollectionContent{
-    items:Array<ComponentData>
+    items:Array<locationInfoStore>
 }
 
+interface locationInfoRegion{
+    regionId:number,
+    exploreMoreContent:string,
+    image:{
+        altText:string,
+        imagemobile:{
+            url:string,
+        },
+        imagepc:{
+            url:string
+        },
 
+    },
+    name:string,
+}
+
+interface locationInfoStore{
+    sys:{
+        id:string,
+    },
+    howToBuyDescription:string,
+    howToBuyDetailComponentBannerImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string,
+        }
+    },
+    howToBuyDetailComponentRegion:{
+        name:string,
+        regionId:number,
+    },
+    howToBuyDetailComponentStoreName:string,
+    howToBuyIrlImage:{
+        altText:string,
+        imagemobile:{
+            url:string
+        },
+        imagepc:{
+            url:string
+        }
+    },
+    howToBuyIrlSort:number,
+    howToBuyJumpUrl:string,
+    showInHowToBuyIrl:boolean,
+}
 
 interface propsContent{
-    changeNavStatus:()=>{},
-    scrollToPage:()=>{},
+    changeNavStatus: Function;
+    scrollToPage: Function;
     data:{
         entry:entryContent,
         name:string,
@@ -212,13 +261,13 @@ const componentData: ComponentData = {
 
 };
 
-const options = [
-    { value: '0', label: 'CHINA MAINLAND' },
-    { value: '1', label: 'TAIWAN REGION' },
-    { value: '2', label: 'SINGAPORE' },
-    { value: '3', label: 'KOREA' },
-    { value: '4', label: 'UNITED KINGDOM' },
-];
+// const options = [
+//     { value: '0', label: 'CHINA MAINLAND' },
+//     { value: '1', label: 'TAIWAN REGION' },
+//     { value: '2', label: 'SINGAPORE' },
+//     { value: '3', label: 'KOREA' },
+//     { value: '4', label: 'UNITED KINGDOM' },
+// ];
 
 
 
@@ -228,7 +277,8 @@ interface OptionType {
 }
 
 function LocationStoreList(props: any){
-
+    const stores = props.store;
+    const options = props.options;
     const location = props.location.location;
     const id = props.location.id;
 
@@ -296,7 +346,11 @@ function LocationStoreList(props: any){
             const value = (selectedOption as OptionType).value;
             console.log('Selected option:', value);
 
-            setLocationInfo(componentData.productList[parseInt(value)].location)
+            setLocationInfo(stores.filter((item:any)=>{
+                if(item.howToBuyDetailComponentRegion.regionId == value){
+                    return item;
+                }
+            }))
 
             // 执行其他逻辑操作
         }
@@ -359,7 +413,7 @@ function LocationStoreList(props: any){
 
 
                     modules={[Autoplay]}
-                    loop={true}
+                    loop={false}
                     slidesPerView={slidesPerView}
                     spaceBetween={spaceBetween}
 
@@ -389,25 +443,25 @@ function LocationStoreList(props: any){
                 >
 
                     {
-                        locationInfo.length>0 && locationInfo.map((item:any,index:number)=>{
+                        locationInfo.length>0 ? locationInfo.map((item:any,index:number)=>{
                             return (
-                                <div key={item.id}>
-                                    <SwiperSlide key={item.id} className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}>
+                                <div key={item.sys.id}>
+                                    <SwiperSlide key={item.sys.id} className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}>
                                         <div className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}>
-                                            <BaseLink link={item.link} className="text-black">
+                                            <BaseLink link={item.howToBuyJumpUrl} className="text-black">
                                                 <div className="relative w-full h-320px  pad:h-230px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
-                                                        mImg={item.listImg.mImg}
-                                                        pImg={item.listImg.pImg}
-                                                        alt={""}
+                                                        mImg={item.howToBuyDetailComponentBannerImage.imagemobile.url}
+                                                        pImg={item.howToBuyDetailComponentBannerImage.imagepc.url}
+                                                        alt={item.howToBuyDetailComponentBannerImage.altText}
                                                         layout="fill"
                                                         objectFit="cover"
                                                         quality={100}
                                                     ></BaseImage>
                                                 </div>
                                                 <div className="pt-25px pad:pt-17px mobile:pt-29px">
-                                                    <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular pad:text-22px pad:pb-11px w-auto mobile:text-16px mobile:pb-15px">{item.name}</div>
-                                                    <div className="w-[85%]  text-15px font-Grotesque-Regular font-normal pad:text-10px mobile:text-11px ">{item.des}</div>
+                                                    <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular pad:text-22px pad:pb-11px w-auto mobile:text-16px mobile:pb-15px">{item.howToBuyDetailComponentStoreName}</div>
+                                                    <div className="w-[85%]  text-15px font-Grotesque-Regular font-normal pad:text-10px mobile:text-11px ">{item.howToBuyDescription}</div>
                                                     <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]  pad:w-28px pad:h-28px pad:mt-17px mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
 
                                                 </div>
@@ -416,7 +470,7 @@ function LocationStoreList(props: any){
                                     </SwiperSlide>
                                 </div>
                             )
-                        })
+                        }) : null//<div>暂无门店</div>
                     }
 
 
@@ -427,14 +481,16 @@ function LocationStoreList(props: any){
             </div>
 
 
-            <div className="flex justify-end pr-10 pt-97px pad:pt-69px">
-                <div>
-                    {/*${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"}*/}
-                    <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/prev-active.png')] w-44px h-44px inline-block align-middle mr-7px pad:w-31px pad:h-31px pad:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
-                    <span className={`cursor-pointer bg-contain bg-[url('/assets/nearYou/next-active.png')] w-44px h-44px inline-block align-middle pad:w-31px pad:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
-                    {/*${currentIndex == locationInfo.length-2 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"}*/}
-                </div>
-            </div>
+            {
+                locationInfo.length > 0 ? <div className="flex justify-end pr-10 pt-97px pad:pt-69px">
+                    <div>
+
+                        <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px pad:w-31px pad:h-31px pad:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>
+                        <span className={`cursor-pointer bg-contain ${currentIndex == locationInfo.length-1 ? "bg-[url('/assets/nearYou/next.png')]" : "bg-[url('/assets/nearYou/next-active.png')]"} w-44px h-44px inline-block align-middle pad:w-31px pad:h-31px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollNext()}}></span>
+
+                    </div>
+                </div> : null
+            }
 
 
 
@@ -443,20 +499,43 @@ function LocationStoreList(props: any){
 }
 
 
-function LocationInfoComponent(props: any) {
+function LocationInfoComponent(props: propsContent) {
 
-    console.log(props);
+    console.log(props)
+    const title = props.data.entry.locationInfoComponentTitle;
+    const locationInfoRegionData = props.data.entry.locationInfoComponentRegionListCollection.items;
+    const locationInfoStoreData = props.data.entry.locationInfoComponentStoreListCollection.items;
+    const regionOptions = locationInfoRegionData.map((location,index)=>{
+        return {
+            value:location.regionId,
+            label:location.name,
+        }
+    })
+
+    const topData = [
+        locationInfoRegionData[0],
+        locationInfoRegionData[1],
+        locationInfoRegionData[2],
+    ]
+
+    const bottomData = [
+        locationInfoRegionData[3],
+        locationInfoRegionData[4],
+    ]
+
+
 
     const headStyle = props.data.entry.headStyle;
-    const [data, setData] = useState<ComponentData>(componentData);
+
     const [play, setPlay] = useState<boolean>(true);
     const [isChooseMarquee,setIsChooseMarquee] = useState<boolean>(false);
     const [locationInfo,setLocationInfo] = useState({});
-    const handleClick = (item:any)=>{
+    const handleClick = (item:locationInfoRegion)=>{
         setIsChooseMarquee(true);
+
         setLocationInfo({
-            id:item.id,
-            location:item.location
+            id:item.regionId,
+            location:locationInfoStoreData.filter(store => store.howToBuyDetailComponentRegion.regionId == item.regionId)
         });
     }
     const handleMouseEnter = (e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -476,14 +555,14 @@ function LocationInfoComponent(props: any) {
 
             {
                 isChooseMarquee == false ? <div>
-                    <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">Find A Drop of Wilderness Near You</div>
+                    <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">{title}</div>
                     <div className=" ">
 
                         <div className="w-full mt-145px   pad:mt-243px mobile:mt-72px  ">
 
                             <Marquee play={play}>
                                 <div className="w-250px mobile:w-79px"></div>
-                                { [data.productList[0],data.productList[1],data.productList[2]].map((item, index) => {
+                                { topData.map((item, index) => {
                                     return (
                                         <div
 
@@ -501,9 +580,10 @@ function LocationInfoComponent(props: any) {
                                         <div className={`relative inline-block align-middle w-152px h-152px mr-20px  mobile:mr-12px  mobile:w-91px mobile:h-91px `}>
                                             <BaseImage
 
-                                                mImg={item.mImg}
-                                                pImg={item.pImg}
-                                                alt={""}
+                                                mImg={item.image.imagemobile.url}
+                                                pImg={item.image.imagepc.url}
+                                                alt={item.image.altText}
+
                                                 layout="fill"
                                                 objectFit="cover"
                                                 quality={50}
@@ -535,7 +615,7 @@ function LocationInfoComponent(props: any) {
                         <div className="w-full mt-148px  mobile:mt-72px ">
 
                             <Marquee play={play}>
-                                { [data.productList[3],data.productList[4]].map((item, index) => {
+                                { bottomData.map((item, index) => {
                                     return (
                                         <div
 
@@ -553,9 +633,9 @@ function LocationInfoComponent(props: any) {
                                         {/*pad:mr-14px pad:w-108px pad:h-108px*/}
                                         <div className={`relative inline-block align-middle  w-152px h-152px mr-20px  mobile:mr-12px  mobile:w-91px mobile:h-91px `}>
                                             <BaseImage
-                                                mImg={item.mImg}
-                                                pImg={item.pImg}
-                                                alt={""}
+                                                mImg={item.image.imagemobile.url}
+                                                pImg={item.image.imagepc.url}
+                                                alt={item.image.altText}
                                                 layout="fill"
                                                 objectFit="cover"
                                                 quality={50}
@@ -586,7 +666,7 @@ function LocationInfoComponent(props: any) {
                         </div>
                     </div>
 
-                </div> : <LocationStoreList location={locationInfo}></LocationStoreList>
+                </div> : <LocationStoreList location={locationInfo} options={regionOptions} store={locationInfoStoreData}></LocationStoreList>
 
             }
 

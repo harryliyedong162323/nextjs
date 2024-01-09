@@ -56,7 +56,7 @@ export interface propsContent{
 
 
 function DigitalExperienceComponent(props: propsContent) {
-    console.log(props)
+    // console.log(props)
     const headStyle = props.data.entry.headStyle;
     const digitalExperienceData = props.data.entry;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
