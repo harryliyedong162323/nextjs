@@ -13,7 +13,7 @@ function QuoteComponent(props: any) {
     // <section className={props.data.name}>
     //   {props.data.name}:<span className="text-ellipsis">{JSON.stringify(props)}</span>
     // </section>
-    <div>
+    <section>
       <div className={style.quote_container}>
         <div className={style.quote_nav}>
           <div className={style.quote_logo}>
@@ -225,7 +225,7 @@ function QuoteComponent(props: any) {
           <div className={style.next}></div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

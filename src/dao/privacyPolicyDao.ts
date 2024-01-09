@@ -33,9 +33,11 @@ class privacyPolicyDao{
             {
                 type: "privacyPolicyComponent",
                 name: "privacyPolicyComponent",
-                entry: {},
+                entry: {
+                    headStyle:'black',
+                },
             },
-           
+
         ];
 
     }

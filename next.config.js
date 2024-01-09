@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
 
+
+
 const nextConfig = {
   reactStrictMode: false,
+
+  env:{
+    LOCATION:'en-GB'
+  },
+
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },

@@ -7,13 +7,14 @@ import HowToBuyDao from "@/dao/howToBuyDao";
 import HowToBuyDetailDao from "@/dao/howToBuyDetailDao";
 import LocalMarketActivityDao from "@/dao/localMarketActivityDao";
 import PrivacyPolicyDao from '@/dao/privacyPolicyDao'
+import ErrorDao from '@/dao/errorDao'
 import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 //layout
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
-
+import Popup from '@/components/layout/popup';
 
 
 function getDynamicComponent(data: any, k:number) {
@@ -31,10 +32,9 @@ function getDynamicComponent(data: any, k:number) {
 
 
 
-
 async function getPageData(params: any) {
   // params should be paased to fetch()
-  console.log(params)
+  // console.log(params)
   let result = {}
   switch (params?.slug[0]) {
     case "home":
@@ -64,6 +64,9 @@ async function getPageData(params: any) {
     case "privacyPolicy":
       result = await PrivacyPolicyDao.fetch();
       break;
+    case "error":
+      result = await ErrorDao.fetch();
+      break;
     default:
       result = await HomeDao.fetch();
       break;
@@ -91,22 +94,27 @@ export default async function Page({
     componentsData.push(componentData);
   });
 
-
+  let isFullPageFlag:boolean = componentsData[0].type != 'fullPage' ? true : false;
 
 
   return (
-
+      // className="w-[1920px] mx-auto relative"
     <div>
-      <Header></Header>
-      <main>
 
+      {
+        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle}></Header> : null
+      }
+
+      <main>
         <Suspense fallback={<div>Loading...</div>}>
           {componentsData.map((data, k) => (
               getDynamicComponent(data, k)
           ))}
         </Suspense>
       </main>
-      <Footer></Footer>
+      {
+        isFullPageFlag ?  <Footer></Footer> : null
+      }
     </div>
 
 

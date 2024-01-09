@@ -11,6 +11,7 @@ interface propsContent {
     loading?:boolean,
     display?:boolean,
     alt?:string,
+    pointerEvents?:boolean,
     height:number,
     width:number,
     objectFit?:string,  //fill contain cover none scale-down
@@ -25,6 +26,7 @@ interface propsContent {
 
 class BaseImage extends Component<propsContent,State>{
     static defaultProps = {
+        pointerEvents:true,
         objectFit:'',
         layout:'',
         className:'',
@@ -115,15 +117,18 @@ class BaseImage extends Component<propsContent,State>{
             // 在 props 变化时执行操作
             // 比如更新组件内部的状态
             this.handleResize();
-            console.log(prevProps)
+            // console.log(prevProps)
         }
     }
+
+
+
 
     computedClassName():string{
         let className:string[] = [
             this.state.name,
             this.props.className ?? '',
-
+            this.props.pointerEvents ? 'pointer-events-none' : ''
         ];
         return className.filter(Boolean).join(' ');
 

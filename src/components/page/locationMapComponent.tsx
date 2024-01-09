@@ -1,16 +1,14 @@
 "use client";
 import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from "react";
-import BaseImage from "@/components/base/image";
-import BaseLink from "@/components/base/link";
-import BaseVideo from "@/components/base/video";
-import {any, number, object} from "prop-types";
+
+
 
 const Baidu:React.ComponentType<{}> = dynamic(() => import('@/components/map/baidu'));
 
 
 function LocationMapComponent(props: any) {
-
+    const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
 
     //mock
@@ -62,6 +60,8 @@ function LocationMapComponent(props: any) {
         }
     ]
 
+    interface zoomContent {add:number,reduce:number}
+
 
     const items = ['Item 1', 'Item 2', 'Item 3'];
     const [browser,setBrowser] = useState(false);
@@ -75,10 +75,17 @@ function LocationMapComponent(props: any) {
     });
 
 
-    const [selectLocation, setSelectLocation] = useState(0);
+    let [selectLocation, setSelectLocation] = useState(0);
 
-    let [selectZoom, setSelectZoom] = useState(10);
+    let [selectZoom, setSelectZoom] = useState({
+        add:0,
+        reduce:0,
+    } as zoomContent);
 
+
+    let [selectZoomIn,setSelectZoomIn]  = useState(0);
+
+    let [selectZoomOut,setSelectZoomOut]  = useState(0);
 
 
     const [openSelected, setOpenSelected] = useState(false);
@@ -97,18 +104,22 @@ function LocationMapComponent(props: any) {
 
 
     const handleSelectAdd = () => {
-        if(selectZoom == 20){
-            return false;
-        }
-        setSelectZoom(selectZoom++);
+        // if(selectZoom == 20){
+        //     return false;
+        // }
+
+
+        setSelectZoomIn(selectZoomIn+1);
 
     };
 
     const handleSelectReduce = () => {
-        if(selectZoom == 0){
-            return false;
-        }
-        setSelectZoom(selectZoom--);
+        // if(selectZoom == 0){
+        //     return false;
+        // }
+
+        setSelectZoomOut(selectZoomOut+1);
+
 
     };
 
@@ -116,18 +127,19 @@ function LocationMapComponent(props: any) {
 
         setBrowser(true);
 
-    }, [browser]);
+    }, [browser,selectZoom]);
 
 
     return (
-        <div className="overflow-hidden">
+        <section className="overflow-hidden">
+            <input type="hidden" value={headStyle}/>
             <div className="h-screen relative">
                 {  // @ts-ignore
-                    browser ? <Baidu info={selectedItem} location={selectLocation} zoom={selectZoom}></Baidu> : null
+                    browser ? <Baidu  info={selectedItem} location={selectLocation} zoomIn={selectZoomIn} zoomOut={selectZoomOut}></Baidu> : null
                 }
 
 
-                <div className="absolute z-20 top-[31px] right-[42px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
+                <div className="absolute z-20 top-[118px] right-[42px] grid grid-rows-3 mobile:top-[25px] mobile:right-[20px]">
                     <div className="bg-[url('/assets/add.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectAdd()}></div>
                     <div className="bg-[url('/assets/reduce.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleSelectReduce()}></div>
                     <div className="bg-[url('/assets/positioning.png')] bg-contain w-40px h-40px inline-block align-middle cursor-pointer mobile:w-32px mobile:h-32px" onClick={()=>handleLocation()}></div>
@@ -149,38 +161,45 @@ function LocationMapComponent(props: any) {
                             <span className=" bg-[url('/assets/arrow.png')] bg-contain w-13px h-6px bg-no-repeat inline-block"></span>
                         </div>
                     </div>
-                    <div className={`transition font-Grotesque-Regular font-medium grid grid-cols-5 divide-x-2 bg-[rgba(0,0,0,.4)] backdrop-opacity-10 text-white select-none mobile:grid-rows-5 mobile:grid-cols-none ${openSelected ? 'mobile:h-auto' : 'mobile:h-0'}`}>
+                    <div className=" backdrop-opacity-10 mobile:bg-[rgba(0,0,0,.4)]">
+                        <div className={`transition font-Grotesque-Regular font-medium grid grid-cols-5   text-white select-none mobile:grid-rows-5 mobile:grid-cols-none mobile:pr-25px mobile:pl-25px ${openSelected ? 'mobile:h-auto' : 'mobile:h-0'}`}>
 
-                        {
-                            cityInfo.map((item:any, index:number) => (
-                                <div key={item.id} className={`text-center leading-[53px] ${selectedItem.id === item.id ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick(item)}>
-                                    <span className="cursor-pointer">{item.name}</span>
-                                </div>
-                            ))
-                        }
+                            {
+                                cityInfo.map((item:any, index:number) => (
+                                    <div key={item.id} className={`  text-center leading-[53px] relative bg-[length:120%_65px] bg-no-repeat bg-[center_top_-6.5px] ${cityInfo.length-1 == index ? "" : "mobile:border-b-[0.2px] mobile:border-solid mobile:border-b-[rgba(255,255,255,.2)]"} ${selectedItem.id === item.id ? "bg-[url('/assets/block.png')] text-black" : 'bg-[rgba(0,0,0,.4)] mobile:bg-transparent'}`} onClick={()=>handleItemClick(item)}>
+                                        <span className="cursor-pointer">{item.name}</span>
+                                        {/*<span className="triangle-down w-0 h-0 border-solid border-t-[6px] border-l-[12px] border-r-[12px] border-l-transparent border-r-transparent  border-t-red-500 absolute left-[50%] translate-x-[-50%] top-0 z-20"></span>*/}
+                                    </div>
+                                ))
+                            }
 
-                        {/*<div className={`text-center leading-[53px] ${selectedItem === 'CHINA mainland' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('CHINA mainland')}>*/}
-                        {/*    <span className="cursor-pointer">CHINA mainland</span>*/}
-                        {/*</div>*/}
-                        {/*<div className={`text-center leading-[53px] ${selectedItem === 'Taiwan region' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('Taiwan region')}>*/}
-                        {/*    <span className="cursor-pointer">Taiwan region</span>*/}
-                        {/*</div>*/}
-                        {/*<div className={`text-center leading-[53px] ${selectedItem === 'SINGAPORE' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('SINGAPORE')}>*/}
-                        {/*    <span className="cursor-pointer">SINGAPORE</span>*/}
-                        {/*</div>*/}
-                        {/*<div className={`text-center leading-[53px] ${selectedItem === 'KOREA' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('KOREA')}>*/}
-                        {/*    <span className="cursor-pointer">KOREA</span>*/}
-                        {/*</div>*/}
-                        {/*<div className={`text-center leading-[53px] ${selectedItem === 'UNited kingdom' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('UNited kingdom')}>*/}
-                        {/*    <span className="cursor-pointer">UNited kingdom</span>*/}
-                        {/*</div>*/}
+                            <div className="mobile:h-50px"></div>
+
+                            {/*<div className={`text-center leading-[53px] ${selectedItem === 'CHINA mainland' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('CHINA mainland')}>*/}
+                            {/*    <span className="cursor-pointer">CHINA mainland</span>*/}
+                            {/*</div>*/}
+                            {/*<div className={`text-center leading-[53px] ${selectedItem === 'Taiwan region' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('Taiwan region')}>*/}
+                            {/*    <span className="cursor-pointer">Taiwan region</span>*/}
+                            {/*</div>*/}
+                            {/*<div className={`text-center leading-[53px] ${selectedItem === 'SINGAPORE' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('SINGAPORE')}>*/}
+                            {/*    <span className="cursor-pointer">SINGAPORE</span>*/}
+                            {/*</div>*/}
+                            {/*<div className={`text-center leading-[53px] ${selectedItem === 'KOREA' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('KOREA')}>*/}
+                            {/*    <span className="cursor-pointer">KOREA</span>*/}
+                            {/*</div>*/}
+                            {/*<div className={`text-center leading-[53px] ${selectedItem === 'UNited kingdom' ? 'bg-white text-black' : ''}`} onClick={()=>handleItemClick('UNited kingdom')}>*/}
+                            {/*    <span className="cursor-pointer">UNited kingdom</span>*/}
+                            {/*</div>*/}
+                        </div>
+
+
                     </div>
                 </div>
 
 
 
             </div>
-        </div>
+        </section>
     );
 }
 

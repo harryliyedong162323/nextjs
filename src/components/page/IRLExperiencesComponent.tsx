@@ -6,7 +6,7 @@ import BaseLink from "@/components/base/link";
 import BaseVideo from "@/components/base/video";
 
 function IRLExperiencesComponent(props: any) {
-
+    const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
 
     // useEffect(() => {
@@ -14,33 +14,14 @@ function IRLExperiencesComponent(props: any) {
     // }, []);
 
     return (
-        <section className="overflow-hidden container mx-auto pb-164px mobile:pb-67px">
-            <div className="relative">
+        <section id="IRLExperiences" data-anchor={props.data.entry.pageNumber} className="overflow-hidden h-screen container mx-auto pb-164px mobile:pb-67px select-none">
+            <input type="hidden" value={headStyle}/>
+            <div className="relative top-1/2 translate-y-[-50%]">
                 <div className="text-40px font-normal font-AlbertusNova-Regular text-center pt-55px pb-54px mobile:text-24px mobile:pt-20px mobile:pb-20px">IRL Experiences</div>
 
-                <div className="grid grid-cols-2 justify-center items-center mobile:grid-rows-2 mobile:grid-cols-none">
-                    <div className="pr-21px mobile:pr-0 mobile:pb-50px">
-                        <div className="relative h-405px mobile:h-217px mobile:w-325px">
-                            <BaseImage
-                                mImg={require("../../../public/assets/IRLExperiences/list-1.png")}
-                                pImg={require("../../../public/assets/IRLExperiences/list-1.png")}
-                                alt={""}
-                                layout="fill"
-                                objectFit="cover"
-                                quality={100}
-                            ></BaseImage>
-                        </div>
-                        <div className="pt-52px mobile:pt-26px">
-                            <div className="pb-43px font-medium text-22px font-Grotesque-Regular mobile:text-16px mobile:pb-26px">Coventry Road</div>
-                            <div className="flex justify-between items-center">
-                                <div className="w-[80%] truncate text-22px font-Grotesque-Regular font-normal  mobile:text-16px mobile:w-224px">4325 Glenwood AvenueRaleigh, NC 27612, 000-1234567890 10:00-24:00</div>
-                                <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="pl-21px mobile:pl-0">
-                        <div className="relative h-405px  mobile:h-217px  mobile:w-325px">
+                <div className="grid grid-cols-2 justify-center gap-[41px] pad:gap-[29px] items-center mobile:grid-rows-2 mobile:grid-cols-none">
+                    <div className="pl-21px mobile:pl-0 mobile:w-[90%] mobile:mx-auto">
+                        <div className="relative h-405px pad:h-289px  mobile:h-217px  mobile:w-full">
                             <BaseImage
                                 mImg={require("../../../public/assets/IRLExperiences/list-1.png")}
                                 pImg={require("../../../public/assets/IRLExperiences/list-1.png")}
@@ -51,10 +32,40 @@ function IRLExperiencesComponent(props: any) {
                             ></BaseImage>
                         </div>
                         <div className="pt-43px mobile:pt-26px">
-                            <div className="pb-29px font-medium text-22px font-Grotesque-Regular mobile:text-16px mobile:pb-26px">Coventry Road</div>
+                            <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-26px">The Wildmoor House Shanghai</div>
                             <div className="flex justify-between items-center">
-                                <div className="w-[80%] truncate text-22px font-Grotesque-Regular font-normal  mobile:text-16px mobile:w-224px">4325 Glenwood AvenueRaleigh, NC 27612, 000-1234567890 10:00-24:00</div>
-                                <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                <div className="w-[90%]  text-13px pad:text-9px font-Grotesque-Regular font-normal  mobile:text-16px ">Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.</div>
+
+                            </div>
+                            <div className="pt-31px pad:pt-22px">
+                                <BaseLink link="/howToBuyDetail">
+                                    <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                </BaseLink>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="pl-21px mobile:pl-0 mobile:w-[90%] mobile:mx-auto">
+                        <div className="relative h-405px pad:h-289px mobile:h-217px  mobile:w-full">
+                            <BaseImage
+                                mImg={require("../../../public/assets/IRLExperiences/list-1.png")}
+                                pImg={require("../../../public/assets/IRLExperiences/list-1.png")}
+                                alt={""}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                            ></BaseImage>
+                        </div>
+                        <div className="pt-43px mobile:pt-26px">
+                            <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-26px">The Wildmoor House Shanghai</div>
+                            <div className="flex justify-between items-center">
+                                <div className="w-[90%]  text-13px pad:text-9px  font-Grotesque-Regular font-normal  mobile:text-16px ">Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.</div>
+
+                            </div>
+                            <div className="pt-31px pad:pt-22px">
+                                <BaseLink link="/howToBuyDetail">
+                                    <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                                </BaseLink>
                             </div>
 
                         </div>

@@ -55,40 +55,78 @@ declare const BMapGL: any;
 
 
 const BaiduMap = (props: any) => {
-
+    const map_anchor = "https://miracle-1300295615.cos.ap-shanghai.myqcloud.com/map_anchor.png?q-sign-algorithm=sha1&q-ak=AKID0r9CgQJfm4cblGc_Lne0hY2YfYqBtmAaNUoQ-m6BBlQsEA4itgO8IrTnPCwO6hlv&q-sign-time=1702985009;1702988609&q-key-time=1702985009;1702988609&q-header-list=host&q-url-param-list=ci-process&q-signature=6871bb1c63f62bf46f0511787d76c7395c4d47fb&x-cos-security-token=xr6GD1d3URN8BeHG2ZdvliyaHJ6Uu2Kaa0f5ee9bafefbba4f5086fdf6fd2c95bBu26YGerqgjX9K2Y8JJTXsvnw1psirQedR0COerCnRx41oeMZ09lxjA4Mqk1rQqD8svZLmP-QQCM6hozGREjVr5rivf1ZIawYfKioJPSUcOgOgvI9T5cc-YrpWQZnGQXikS37hKZHgNmS_1ibjFoiZl-0U1FTQn9yseo6Eg-x6__ar1xCjDcwOQM_Kp09JXp&ci-process=originImage";
     const [map,setMap] = useState(BMapGL);
     const mapContainerRef = useRef(null);
     const [shouldUpdateMap, setShouldUpdateMap] = useState(false); // 控制是否更新地图
-    const {info,location,zoom} = props;
+    const {info,location,zoomIn,zoomOut} = props;
 
     const point = {
         lng: -73.868851,
         lat: 40.843036
     }
+
+    const customIcon = new BMapGL.Icon(map_anchor, new BMapGL.Size(53, 75), {
+        // 设置图标偏移量
+        offset: new BMapGL.Size(0, 0),
+        // 设置图标尺寸
+        imageSize: new BMapGL.Size(53, 75)
+    });
+
     // let map:any = null;
 
     useEffect(() => {
-
-        // let mapInstance = new BMapGL.Map(mapContainerRef.current); // 创建地图实例
         console.log(location)
-
-        // if(location){
-        //     map.clearOverlays();
-        //     map.centerAndZoom(point, 10);
-        //     map.addOverlay(new BMapGL.Marker(point, {title: '纽约'}))
-        // }
-        //
-        if(info?.point.lng || info?.point.lat){
+        if(location){
             map.clearOverlays();
-            map.centerAndZoom(info.point, info.zoom);
-            map.addOverlay(new BMapGL.Marker(info.point, {title: info.name}))
+            map.centerAndZoom(point, 10);
+            map.addOverlay(new BMapGL.Marker(point, {
+                title: '纽约',
+                icon:customIcon,
+            }))
         }
 
-        // if(zoom){
-        //     map.zoomTo(zoom);
-        // }
+    },[location])
+    useEffect(() => {
 
-    },[map,location,info,zoom])
+        if(zoomIn){
+            console.log(zoomIn)
+            map&&map?.zoomIn();
+        }
+
+
+    },[zoomIn])
+
+    useEffect(() => {
+
+
+        if(zoomOut){
+            console.log(zoomOut)
+            map&&map?.zoomOut();
+
+        }
+
+    },[zoomOut])
+        useEffect(() => {
+
+        // let mapInstance = new BMapGL.Map(mapContainerRef.current); // 创建地图实例
+
+
+
+        if(info?.point.lng || info?.point.lat){
+            map.clearOverlays();
+            console.log(info.point)
+            map.centerAndZoom(info.point, info.zoom);
+
+            map.addOverlay(new BMapGL.Marker(info.point, {
+                title: info.name,
+                icon:customIcon,
+            }))
+
+        }
+
+
+    },[map,info])
 
 
     useEffect(() => {
@@ -103,11 +141,23 @@ const BaiduMap = (props: any) => {
                     building: false
                 }
             });
+
+
+            const customIcon = new BMapGL.Icon(map_anchor, new BMapGL.Size(53, 75), {
+                // 设置图标偏移量
+                offset: new BMapGL.Size(0, 0),
+                // 设置图标尺寸
+                imageSize: new BMapGL.Size(53, 75)
+            });
+
             mapInstance.centerAndZoom(new BMapGL.Point(-73.868851,40.843036), 11);
-            mapInstance.addOverlay(new BMapGL.Marker(point, {title: '纽约'}))
+            mapInstance.addOverlay(new BMapGL.Marker(point, {
+                title: '纽约',
+                icon:customIcon,
+            }))
             mapInstance.disableScrollWheelZoom();
             // mapInstance.disableDragging();
-            addFillLayer(mapInstance);
+            // addFillLayer(mapInstance);
             // let mapInstance = new BMapGL.Map(mapContainerRef.current); // 创建地图实例
 
             setMap(mapInstance)
@@ -183,7 +233,7 @@ const BaiduMap = (props: any) => {
         //
         // };
 
-    },[map,location,info,zoom,shouldUpdateMap])
+    },[map,shouldUpdateMap])
 
 
     // useEffect(() => {

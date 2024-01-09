@@ -32,7 +32,7 @@ function StoriesDetailComponent(props: any) {
 
 
     return (
-        <div>
+        <section>
 
             <div className="w-full h-407px overflow-hidden relative mobile:hidden">
                 <BaseImage
@@ -51,12 +51,12 @@ function StoriesDetailComponent(props: any) {
 
 
 
-            <div className="container mx-auto ">
+            <div className="container mx-auto  mobile:pt-100px">
 
                 <div className="hidden mobile:block">
-                    <div className="uppercase pl-25px pr-25px text-center pt-18px pb-33px text-17px font-AlbertusNova-Regular">Bring the drinking occasion to life in a way</div>
+                    <div className="uppercase pl-25px pr-25px text-center pt-18px pb-33px text-20px font-AlbertusNova-Bold mobile:w-[80%] mobile:mx-auto mobile:pt-18px mobile:pb-33px">Bring the drinking occasion to life in a way</div>
 
-                    <div className="h-253px relative w-full">
+                    <div className="h-253px relative w-full mobile:h-253px">
                         <BaseImage
                             defaultImg={require("../../../public/assets/storiesDetail/pic-0-m.png")}
                             alt={""}
@@ -78,7 +78,7 @@ function StoriesDetailComponent(props: any) {
                         ></BaseImage>
                     </div>
 
-                    <div className="pl-196px pb-8px color-dark-grey text-23px font-bold font-Grotesque-Regular mobile:pl-25px mobile:text-14px">Name of KOL </div>
+                    <div className="pl-196px pb-8px color-dark-grey text-23px font-bold  mobile:pl-25px mobile:text-14px">Name of KOL </div>
                     <div className="pl-196px text-[#969797] font-Grotesque-Regular font-medium text-23px mobile:pl-25px mobile:text-14px">Sailor | Professional traveler</div>
                 </div>
 
@@ -223,7 +223,7 @@ function StoriesDetailComponent(props: any) {
 
 
             </div>
-        </div>
+        </section>
 
     );
 }
