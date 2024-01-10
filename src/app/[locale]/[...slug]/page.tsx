@@ -34,7 +34,7 @@ function getDynamicComponent(data: any, k:number) {
 
 async function getPageData(params: any) {
   // params should be paased to fetch()
-  // console.log(params)
+  console.log(params)
   let result = {}
   switch (params?.slug[0]) {
     case "home":
@@ -56,7 +56,7 @@ async function getPageData(params: any) {
       result = await HowToBuyDao.fetch();
       break;
     case "howToBuyDetail":
-      result = await HowToBuyDetailDao.fetch();
+      result = await HowToBuyDetailDao.fetch(params?.slug[1]);
       break;
     case "localMarketActivity":
       result = await LocalMarketActivityDao.fetch();

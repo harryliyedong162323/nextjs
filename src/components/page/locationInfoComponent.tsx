@@ -468,7 +468,7 @@ function LocationStoreList(props: any){
                                 <div key={item.sys.id}>
                                     <SwiperSlide key={item.sys.id} className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}>
                                         <div className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}>
-                                            <BaseLink link={item.howToBuyJumpUrl} className="text-black">
+                                            <BaseLink link={`/howToBuyDetail/${item.sys.id}`} className="text-black">
                                                 <div className="relative w-full h-320px  pad:h-230px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
                                                         mImg={item.howToBuyDetailComponentBannerImage.imagemobile.url}

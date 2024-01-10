@@ -18,6 +18,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Popup, { propsContent as PopupPropsContent } from "../base/popup";
 import "swiper/css";
+import eventbus from "@/utils/eventbus";
 
 declare const grecaptcha: any;
 
@@ -36,6 +37,23 @@ interface Product {
       url: string;
     };
   };
+  productImage: {
+    altText: string;
+    imagemobile: {
+      url: string;
+    };
+    imagepc: {
+      url: string;
+    };
+  };
+}
+
+interface Message {
+  dywfMessageTitleSuccess: string;
+  dywfMessageSuccess: string;
+  dywfMessageTitleFail: string;
+  dywfMessageFail: string;
+  dywfMessageBtnContent: string;
 }
 
 interface result {
@@ -373,7 +391,7 @@ function genComponentData(data: any) {
 }
 
 function genProductData(data: any) {
-  const _data: any = data.productFamilyCollection.items;
+  const _data: any = data.items;
   return _data;
 }
 
@@ -385,180 +403,178 @@ function genResultData(productList: Array<Product>) {
   }> = [
     {
       key: "AAA",
-      productList: productList.filter((item) => item.productCode === "003"),
+      productList: productList.filter((item) => item.id === 3),
     },
     {
       key: "AAB",
       productList: productList
-        .filter((item) => item.productCode === "003")
-        .concat(productList.filter((item) => item.productCode === "005")),
+        .filter((item) => item.id === 3)
+        .concat(productList.filter((item) => item.id === 5)),
     },
     {
       key: "AAC",
       productList: productList
-        .filter((item) => item.productCode === "003")
-        .concat(productList.filter((item) => item.productCode === "005")),
+        .filter((item) => item.id === 3)
+        .concat(productList.filter((item) => item.id === 5)),
     },
     {
       key: "AAD",
-      productList: productList.filter((item) => item.productCode === "002"),
+      productList: productList.filter((item) => item.id === 2),
     },
     {
       key: "ABA",
-      productList: productList.filter((item) => item.productCode === "005"),
+      productList: productList.filter((item) => item.id === 5),
     },
     {
       key: "ABB",
-      productList: productList.filter((item) => item.productCode === "003"),
+      productList: productList.filter((item) => item.id === 3),
     },
     {
       key: "ABC",
-      productList: productList.filter((item) => item.productCode === "003"),
+      productList: productList.filter((item) => item.id === 3),
     },
     {
       key: "ABD",
-      productList: productList.filter((item) => item.productCode === "003"),
+      productList: productList.filter((item) => item.id === 3),
     },
     {
       key: "ACA",
-      productList: productList.filter((item) => item.productCode === "003"),
+      productList: productList.filter((item) => item.id === 3),
     },
     {
       key: "ACB",
       productList: productList
-        .filter((item) => item.productCode === "003")
-        .concat(productList.filter((item) => item.productCode === "005")),
+        .filter((item) => item.id === 3)
+        .concat(productList.filter((item) => item.id === 5)),
     },
     {
       key: "ACC",
       productList: productList
-        .filter((item) => item.productCode === "003")
-        .concat(productList.filter((item) => item.productCode === "005"))
-        .concat(productList.filter((item) => item.productCode === "001")),
+        .filter((item) => item.id === 3)
+        .concat(productList.filter((item) => item.id === 5))
+        .concat(productList.filter((item) => item.id === 1)),
     },
     {
       key: "ACD",
       productList: productList
-        .filter((item) => item.productCode === "003")
-        .concat(productList.filter((item) => item.productCode === "005")),
+        .filter((item) => item.id === 3)
+        .concat(productList.filter((item) => item.id === 5)),
     },
     {
       key: "BAA",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BAB",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BAC",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BAD",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BBA",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BBB",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BBC",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BBD",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BCA",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BCB",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "BCC",
       productList: productList
-        .filter((item) => item.productCode === "000")
-        .concat(productList.filter((item) => item.productCode === "000")),
+        .filter((item) => item.id === 0)
+        .concat(productList.filter((item) => item.id === 0)),
     },
     {
       key: "BCD",
-      productList: productList.filter((item) => item.productCode === "000"),
+      productList: productList.filter((item) => item.id === 0),
     },
     {
       key: "CAA",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CAB",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CAC",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CAD",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CBA",
       productList: productList
-        .filter((item) => item.productCode === "004")
-        .concat(productList.filter((item) => item.productCode === "003")),
+        .filter((item) => item.id === 4)
+        .concat(productList.filter((item) => item.id === 3)),
     },
     {
       key: "CBB",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CBC",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CBD",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CCA",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CCB",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
     {
       key: "CCC",
       productList: productList
-        .filter((item) => item.productCode === "004")
-        .concat(productList.filter((item) => item.productCode === "001")),
+        .filter((item) => item.id === 4)
+        .concat(productList.filter((item) => item.id === 1)),
     },
     {
       key: "CCD",
-      productList: productList.filter((item) => item.productCode === "004"),
+      productList: productList.filter((item) => item.id === 4),
     },
   ];
   return _data;
 }
 
 function FlavourFinderComponent(props: any) {
+
   const headStyle = props.data.entry.headStyle;
-  console.log("FlavourFinderComponent:", props.data.entry);
   const _componentData = genComponentData(props.data.entry.data);
-  const _productData = genProductData(props.data.entry.data);
+  const _productData = genProductData(props.data.entry.productFamilyComponentProductsCollection);
   const _resultData = genResultData(_productData);
+  const _messageData = props.data.entry.data.quizMessage.items[0] as Message
 
   const [data, setData] = useState<ComponentData>(_componentData);
-
-  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
-  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
 
   const [showQuiz, setShowQuiz] = useState<boolean>(false);
   // QUIZ step:  0,1,2,3,4 => Q1,Q2,Q3,Q4,Q5  5 => Result
@@ -583,9 +599,9 @@ function FlavourFinderComponent(props: any) {
   const [swiper, setSwiper] = useState<any>(null);
   const [popupPropsContent, setPopupPropsContent] = useState<PopupPropsContent>(
     {
-      title: "success",
-      message: "Email sent successfully",
-      btnTxt: "OK",
+      title: _messageData.dywfMessageTitleSuccess,
+      message: _messageData.dywfMessageSuccess,
+      btnTxt: _messageData.dywfMessageBtnContent,
       visible: false,
     }
   );
@@ -1322,7 +1338,9 @@ function FlavourFinderComponent(props: any) {
                             .value
                         }
                       </div>
-                      <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px">
+                      <div onClick={() => {
+                        eventbus.emit('selectProduct', recommend?.productList[currentRecommend].id)
+                      }} className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px">
                         {data.basic.dywfExploreContent}
                       </div>
                     </div>

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import BaseImage from "@/components/base/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import eventbus from "@/utils/eventbus";
 
 interface entryContent {
   headStyle: string;
@@ -82,6 +83,16 @@ function ProductFamilyComponent(props: propsContent) {
   const [currentBottleData, setCurrentBottleData] = useState(
     bottle[0] as bottleContent
   );
+
+  eventbus.on('selectProduct', (value:number) => {
+    bottleData.map((item,index) => {
+      if (item.id === value) {
+        handleChooseBottle(index)
+      }
+    })
+    // setCurrentBottleData(bottleData.filter(item => item.id === value)[0])
+  })
+
   const handleChooseBottle = (index: number) => {
     if (animationReady) return false;
 
@@ -106,6 +117,21 @@ function ProductFamilyComponent(props: propsContent) {
     setCurrentBottleIndex(index);
   };
 
+  const handleMouseEnter = (index: number) => {
+    if (index == 3) {
+      setTextGradient({
+        color: "#fff",
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setTextGradient({
+      background: "linear-gradient(to bottom, #e9aa87, #953e1a)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+    });
+  };
   useGSAP(
     () => {
       gsap
@@ -311,25 +337,25 @@ function ProductFamilyComponent(props: propsContent) {
             quality={100}
           ></BaseImage>
 
-          <div className="absolute container left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%] mobile:leading-[20px]">
-            <div className="text-center font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
+          <div className="absolute container  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%] mobile:leading-[20px]">
+            <div className="text-center ml-17px font-AlbertusNova tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
               SMOKY
             </div>
-            <div className="pb-11px text-center font-Grotesque-Light tracking-[5px] text-[#696969] text-13px pad:text-9px pad:pb-7px mobile:text-10px">
+            <div className="pb-11px text-center  ml-17px font-Grotesque tracking-[5px] text-[#696969] text-13px pad:text-9px pad:pb-7px mobile:text-10px">
               MALT
             </div>
-            <div className="flex justify-between text-center h-200px pb-11px pad:h-77px pad:pb-7px mobile:h-100px">
+            <div className="flex justify-between text-center h-142px pb-11px pad:h-77px pad:pb-7px mobile:h-150px">
               <div className="rotate-[-90deg] block">
-                <div className="font-AlbertusNova-Regular tracking-[5px] text-[#696969] font-normal  text-16px pad:text-11px mobile:text-14px">
+                <div className="font-AlbertusNova tracking-[5px] text-[#696969] font-normal  text-16px pad:text-11px mobile:text-14px">
                   LIGHT
                 </div>
-                <div className="pb-6px  font-normal font-Grotesque-Light tracking-[2px] text-[#696969] text-13px pad:pb-4px pad:text-9px mobile:text-10px">
+                <div className="pb-6px  font-normal font-Grotesque tracking-[2px] text-[#696969] text-13px pad:pb-4px pad:text-9px mobile:text-10px">
                   GRAIN
                 </div>
               </div>
-              <div className="w-full relative after:content-[''] after:absolute after:top-1/2 after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full after:h-2px after:bg-dark-grey after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-2px before:h-full before:bg-dark-grey">
+              <div className="w-full relative after:content-[''] after:absolute after:top-1/2  after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-[105%] after:h-2px after:bg-[#696969] after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-2px before:h-[80%] before:bg-[#696969]">
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center  w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 0
                       ? "shadow-[#B96566]-500 bg-[#588C96] text-[#fff]"
                       : "bg-[#CECECE] text-[#588C96]"
@@ -379,6 +405,10 @@ function ProductFamilyComponent(props: propsContent) {
                   onClick={() => {
                     handleChooseBottle(3);
                   }}
+                  onMouseEnter={() => {
+                    handleMouseEnter(3);
+                  }}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <span
                     className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px"
@@ -416,11 +446,11 @@ function ProductFamilyComponent(props: propsContent) {
                   </span>
                 </div>
               </div>
-              <div className="rotate-[90deg] block font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
+              <div className="rotate-[90deg] block font-AlbertusNova tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
                 <span className="rotate-[180deg] block">RICH</span>
               </div>
             </div>
-            <div className=" text-center font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
+            <div className=" text-center ml-17px font-AlbertusNova tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
               SWEET
             </div>
           </div>

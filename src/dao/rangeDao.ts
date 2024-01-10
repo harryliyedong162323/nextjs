@@ -46,6 +46,8 @@ query {
   
     talesFromTheWild:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
         items {
+  
+            talesFromTheWildTitle
             talesFromTheWildListCollection (order:id_ASC, locale: "en") {
               items {
                   sys {
@@ -165,342 +167,384 @@ query {
 const quizQuery = `
 query {
 
-  productFamilyCollection(limit: 10, order:id_ASC) {
-      items {
-          id
-          productCode
-          productName
-          quizResultProductImage {
-              imagepc {
-                  url
+    dataQuizQ1Collection(locale: "en") {
+        items {
+            id
+             topicContent
+             optionAId
+             optionAValue
+              optionAContent
+              optionAImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
               }
-              imagemobile {
-                  url
+              optionBId
+             optionBValue
+              optionBContent
+              optionBImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
               }
-              altText
-          }
-
-      }
+              optionCId
+              optionCValue
+              optionCContent
+              optionCImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+        }
     }
 
-  dataQuizQ1Collection {
-      items {
-          id
-           topicContent
-           optionAId
-           optionAValue
-            optionAContent
-            optionAImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            optionBId
-           optionBValue
-            optionBContent
-            optionBImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            optionCId
-            optionCValue
-            optionCContent
-            optionCImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-      }
-  }
-
-  dataQuizQ2Collection {
-      items {
-          id
-          topicContent
-          description
-          optionAId
-          optionAValue
-            optionAContent
-            optionAImage {
-                imagepc {
-                    url
-                }
-
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            optionAAudio {
-                video {
-                    url
-                }
-            }
-
-            optionBId
-            optionBValue
-            optionBContent
-            optionBImage {
-                imagepc {
-                    url
-                }
-
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            optionBAudio {
-                video {
-                    url
-                }
-            }
-
-            optionCId
-            optionCValue
-            optionCContent
-            optionCImage {
-                imagepc {
-                    url
-                }
-
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            optionCAudio {
-                video {
-                    url
-                }
-            }
-      }
-  }
-
-  dataQuizQ3Collection {
-      items {
-          id
-          topicContent
-          question1Id
-            question1Content
-            option1AId
-            option1AContent
-            option1AValue
-            option1AIcon {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            option1BId
-            option1BContent
-            option1BValue
-            option1BIcon {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            option1CId
-            option1CContent
-            option1CValue
-            option1CIcon {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            option1DId
-            option1DContent
-            option1DValue
-            option1DIcon {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            option1EId
-            option1EContent
-            option1EValue
-            option1EIcon {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            option1FId
-            option1FContent
-            option1FValue
-            option1FIcon {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-                altText
-            }
-            question2Id
-            question2Content
-            option2AId
-            option2AValue
-            option2AContent
-            option2AImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-            }
-            option2BId
-            option2BValue
-            option2BContent
-            option2BImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-            }
-
-            option2CId
-            option2CValue
-            option2CContent
-            option2CImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-            }
-
-            option2DId
-            option2DValue
-            option2DContent
-            option2DImage {
-                imagepc {
-                    url
-                }
-                imagemobile {
-                    url
-                }
-            }
-      }
-  }
-
-  dataQuizQ4Collection {
-      items {
-          id
-          topicContent
-          optionAId
-          optionAValue
-            optionAContent
-            optionAImage {
-                imagemobile {
-                    url
-                }
-                imagepc {
-                    url
-                }
-                altText
-            }
-            optionBId
-            optionBValue
-            optionBContent
-            optionBImage {
-                imagemobile {
-                    url
-                }
-                imagepc {
-                    url
-                }
-                altText
-            }
-            optionCId
-            optionCValue
-            optionCContent
-            optionCImage {
-                imagemobile {
-                    url
-                }
-                imagepc {
-                    url
-                }
-                altText
-            }
-      }
-  }
-
-  dataQuizQ5Collection {
-      items {
-           id
-           topicContent
+    dataQuizQ2Collection(locale: "en") {
+        items {
+            id
+            topicContent
+            description
             optionAId
             optionAValue
-            optionAContent
-            optionBId
-            optionBValue
-            optionBContent
-            optionCId
-            optionCValue
-            optionCContent
+              optionAContent
+              optionAImage {
+                  imagepc {
+                      url
+                  }
+
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              optionAAudio {
+                  video {
+                      url
+                  }
+              }
+
+              optionBId
+              optionBValue
+              optionBContent
+              optionBImage {
+                  imagepc {
+                      url
+                  }
+
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              optionBAudio {
+                  video {
+                      url
+                  }
+              }
+
+              optionCId
+              optionCValue
+              optionCContent
+              optionCImage {
+                  imagepc {
+                      url
+                  }
+
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              optionCAudio {
+                  video {
+                      url
+                  }
+              }
+        }
+    }
+
+    dataQuizQ3Collection(locale: "en") {
+        items {
+            id
+            topicContent
+            question1Id
+              question1Content
+              option1AId
+              option1AContent
+              option1AValue
+              option1AIcon {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              option1BId
+              option1BContent
+              option1BValue
+              option1BIcon {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              option1CId
+              option1CContent
+              option1CValue
+              option1CIcon {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              option1DId
+              option1DContent
+              option1DValue
+              option1DIcon {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              option1EId
+              option1EContent
+              option1EValue
+              option1EIcon {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              option1FId
+              option1FContent
+              option1FValue
+              option1FIcon {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              question2Id
+              question2Content
+              option2AId
+              option2AValue
+              option2AContent
+              option2AImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+              }
+              option2BId
+              option2BValue
+              option2BContent
+              option2BImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+              }
+
+              option2CId
+              option2CValue
+              option2CContent
+              option2CImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+              }
+
+              option2DId
+              option2DValue
+              option2DContent
+              option2DImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+              }
+        }
+    }
+
+    dataQuizQ4Collection(locale: "en") {
+        items {
+            id
+            topicContent
+            optionAId
+            optionAValue
+              optionAContent
+              optionAImage {
+                  imagemobile {
+                      url
+                  }
+                  imagepc {
+                      url
+                  }
+                  altText
+              }
+              optionBId
+              optionBValue
+              optionBContent
+              optionBImage {
+                  imagemobile {
+                      url
+                  }
+                  imagepc {
+                      url
+                  }
+                  altText
+              }
+              optionCId
+              optionCValue
+              optionCContent
+              optionCImage {
+                  imagemobile {
+                      url
+                  }
+                  imagepc {
+                      url
+                  }
+                  altText
+              }
+        }
+    }
+
+    dataQuizQ5Collection(locale: "en") {
+        items {
+             id
+             topicContent
+              optionAId
+              optionAValue
+              optionAContent
+              optionBId
+              optionBValue
+              optionBContent
+              optionCId
+              optionCValue
+              optionCContent
+        }
+    }
+
+
+    rangeCollection (limit:1 where:{pageName:"range"},locale: "en" ) {
+      items {
+
+          flavourFinderComponentTitle
+          flavourFinderComponentStartContent
+          flavourFinderComponentDescription1
+          flavourFinderComponentDescription2
+          dywfResultSubtitle
+          dywfResultContent
+          dywfExploreContent
+          dywfEmailContent
+          dywfEmailName
+          dywfEmailAddress
+          dywfSubmitContent
+          dywfSeeYourFlavorProfile
+          dywfRedo
       }
   }
 
-
-  rangeCollection (limit:1 where:{pageName:"range"} ) {
-    items {
-
-        flavourFinderComponentTitle
-        flavourFinderComponentStartContent
-        flavourFinderComponentDescription1
-        flavourFinderComponentDescription2
-        dywfResultSubtitle
-        dywfResultContent
-        dywfExploreContent
-        dywfEmailContent
-        dywfEmailName
-        dywfEmailAddress
-        dywfSubmitContent
-        dywfSeeYourFlavorProfile
-        dywfRedo
+    quizMessage:rangeCollection (limit:1 where:{pageName:"range"},locale: "en" ) {
+      items {
+        dywfMessageTitleSuccess
+        dywfMessageSuccess
+        dywfMessageTitleFail
+        dywfMessageFail
+        dywfMessageBtnContent
+      }
     }
-}
 
-  
+    
 }
 `;
+
+const productFamilyQuery = `
+query {
+    productFamily:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: "en") {
+                items {
+                    id
+                    active
+                    num
+                    tag
+                    productName
+                    age
+                    unit
+                    description
+                    price 
+                    quizResultProductImage{
+                        imagepc {
+                            url
+                        }
+                        imagemobile {
+                            url
+                        }
+                        altText
+                      }
+                    productImage {
+                        imagepc {
+                        url
+                     }
+                      imagemobile {
+                      url
+                      }
+                      altText
+                    }
+                      backGroundImage {
+                          imagepc {
+                          url
+                          }
+                          imagemobile {
+                          url
+                          }
+                          altText
+                      }
+                 
+                }
+            }
+        }
+    }
+  }
+`
 
 class RangeDao {
   static async fetch<PageModel>() {
@@ -523,6 +567,16 @@ class RangeDao {
       body: JSON.stringify({ query: quizQuery }),
     });
     const quizResult = await quizResponse.json();
+
+    const productFamilyResponse = await fetch(BASE_URL, {
+        method: "POST",
+        cache: "no-store",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query: productFamilyQuery }),
+    });
+    const productFamilyResult = await productFamilyResponse.json();
 
     return [
       {
@@ -547,6 +601,7 @@ class RangeDao {
               entry: {
                 headStyle: "black",
                 hasNavigation: true,
+                isFullPage: true,
                 ...PageModel.query("talesFromTheWild", result),
               },
             },
@@ -574,7 +629,8 @@ class RangeDao {
               entry: {
                 headStyle: "black",
                 ...quizResult, 
-                ...PageModel.query("flavourFinder", result)
+                ...PageModel.query("flavourFinder", result),
+                ...PageModel.query("productFamily", productFamilyResult),
               },
             },
           ],

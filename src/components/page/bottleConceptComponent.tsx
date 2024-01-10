@@ -6,8 +6,41 @@ import Draggable from "react-draggable";
 // import dynamic from 'next/dynamic';
 // const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
-function BottleConceptComponent(props: any) {
+interface entryContent {
+  headStyle: string;
+  isFullPage?: boolean;
+  pageNumber: number;
+  currentPageNumber: number;
+  bottleConceptComponentTitle: string;
+  bottleConceptComponentPrompttext: string;
+  bottleConceptComponentVideo1: {
+    video: {
+      url: string;
+    }
+  }
+  bottleConceptComponentVideo2: {
+    video: {
+      url: string;
+    }
+  }
+}
+
+export interface propsContent {
+  getPageStore: Function;
+  updatePageStore: Function;
+  changeNavStatus: Function;
+  scrollToPage: Function;
+
+  data: {
+    entry: entryContent;
+    name: string;
+    type: string;
+  };
+}
+
+function BottleConceptComponent(props: propsContent) {
   const headStyle = props.data.entry.headStyle;
+  const [data, setData] = useState(props.data.entry);
   const [hasWindow, setHasWindow] = useState(false);
 
   const [startPlaying, setStartPlaying] = useState(false);
@@ -102,7 +135,7 @@ function BottleConceptComponent(props: any) {
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px pad:top-84px mobile:top-82px">
           <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px pad:text-27px mobile:text-20px">
-            The Story Behind our Bottle
+            { data.bottleConceptComponentTitle }
           </div>
         </div>
         {hasWindow && !startVideoEnd && (
@@ -113,8 +146,6 @@ function BottleConceptComponent(props: any) {
             controls={false}
             controlsList="nodownload"
             playsInline={true}
-            webkit-playsInline={true}
-            x5-playsInline={true}
             onEnded={() => {
               console.log("onEnded");
               setStartVideoEnd(true);
@@ -122,7 +153,7 @@ function BottleConceptComponent(props: any) {
             }}
             width="100%"
             height="100%"
-            url="https://yumen-ali.oss-cn-beijing.aliyuncs.com/video_bg.mp4"
+            url={data.bottleConceptComponentVideo1.video.url}
           ></ReactPlayer>
         )}
         {hasWindow && startVideoEnd && (
@@ -135,14 +166,12 @@ function BottleConceptComponent(props: any) {
               controls={false}
               controlsList="nodownload"
               playsInline={true}
-              webkit-playsInline={true}
-              x5-playsInline={true}
               onEnded={() => {
                 console.log("onEnded");
               }}
               width="100%"
               height="80%"
-              url="https://yumen-ali.oss-cn-beijing.aliyuncs.com/23_AM.mp4"
+              url={data.bottleConceptComponentVideo2.video.url}
             ></ReactPlayer>
             <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px pad:-ml-300px pad:w-600px pad:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>
             <div className="bg-[url('/assets/range/icon_360.png')] absolute bg-cover z-10 left-1/2 -ml-34px w-68px h-35px bottom-80px"></div>

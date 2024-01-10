@@ -64,7 +64,6 @@ export interface propsContent {
 }
 
 function StoryChapterTwoComponent(props: propsContent) {
-  console.log(props);
   const [data, setData] = useState<entryContent>(props.data.entry);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);

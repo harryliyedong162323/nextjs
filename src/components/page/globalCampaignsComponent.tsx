@@ -3,13 +3,56 @@
 import React, { useCallback, useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 
-function GlobalCampaignsComponent(props: any) {
+
+
+
+interface entryContent{
+  isFullPage:boolean,
+  currentPageNumber:number,
+  pageNumber:number,
+  headStyle:string,
+  howToBuyDetailComponentBannerImage:{
+    altText:string,
+    imagemobile:{
+      url:string
+    },
+    imagepc:{
+      url:string
+    },
+
+  }
+  howToBuyDetailComponentBannerTitle:string,
+  howToBuyDetailComponentScrollContent:string,
+  howToBuyDetailComponentStoreAddress:string,
+  howToBuyDetailComponentStoreBusinessHours:string,
+  howToBuyDetailComponentStoreName:string,
+  howToBuyDetailComponentStorePhone:string,
+}
+
+interface propsContent{
+  getPageStore:Function,
+  updatePageStore:Function,
+  changeNavStatus:Function,
+  scrollToPage:Function,
+
+  data:{
+    entry:entryContent,
+    name:string,
+    type:string,
+  }
+}
+
+
+
+function GlobalCampaignsComponent(props: propsContent) {
+  // console.log(props)
   const headStyle = props.data.entry.headStyle;
-
-  const subTitle: string = "Wildmoor house";
-  const title: string = "Shenzhen Nanjing Road";
-
-
+  const globalCampaigns = props.data.entry;
+  const subTitle: string = globalCampaigns.howToBuyDetailComponentScrollContent;
+  const title: string = globalCampaigns.howToBuyDetailComponentBannerTitle;
+  const address:string = globalCampaigns.howToBuyDetailComponentStoreAddress;
+  const time:string = globalCampaigns.howToBuyDetailComponentStoreBusinessHours;
+  const phone:string = globalCampaigns.howToBuyDetailComponentStorePhone;
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -57,20 +100,22 @@ function GlobalCampaignsComponent(props: any) {
         ) : null}
 
 
-        <div className={`pt-28px relative z-30 pad:pt-20px justify-center  mx-auto text-white  mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center flex `}>
-          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:w-full mobile:text-12px mobile:pb-15px whitespace-nowrap mr-66px">
-            <span className="w-18px h-24px mobile:w-15px mobile:h-15px pad:w-12px pad:h-20px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/address.png')] bg-contain"></span>
-            <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">4325 Glenwood AvenueRaleigh, NC 27612, </span>
+        {
+          (address&&phone&&time)&&<div className={`pt-28px relative z-30 pad:pt-20px justify-center  mx-auto text-white  mobile:flex-wrap mobile:justify-center mobile:w-full mobile:text-center flex `}>
+            <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:w-full mobile:text-12px mobile:pb-15px whitespace-nowrap mr-66px">
+              <span className="w-18px h-24px mobile:w-15px mobile:h-15px pad:w-12px pad:h-20px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/address.png')] bg-contain"></span>
+              <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">{address}</span>
+            </div>
+            <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px whitespace-nowrap mr-66px">
+              <span className="w-20px h-20px mobile:w-15px mobile:h-15px pad:w-14px pad:h-14px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/time.png')] bg-contain"></span>
+              <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">{time}</span>
+            </div>
+            <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px mobile:pl-25px whitespace-nowrap">
+              <span className="w-20px h-18px mobile:w-15px mobile:h-15px pad:w-14px pad:h-12px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/phone.png')] bg-contain"></span>
+              <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">{phone}</span>
+            </div>
           </div>
-          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px whitespace-nowrap mr-66px">
-            <span className="w-20px h-20px mobile:w-15px mobile:h-15px pad:w-14px pad:h-14px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/time.png')] bg-contain"></span>
-            <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">10:00-24:00</span>
-          </div>
-          <div className="font-Grotesque-Regular font-normal text-21px pad:text-15px mobile:text-12px mobile:pl-25px whitespace-nowrap">
-            <span className="w-20px h-18px mobile:w-15px mobile:h-15px pad:w-14px pad:h-12px inline-block align-middle bg-no-repeat bg-[url('/assets/howToBuyDetail/phone.png')] bg-contain"></span>
-            <span className="inline-block align-middle pl-17px pad:pl-12px mobile:pl-9px">000-1234567890</span>
-          </div>
-        </div>
+        }
 
       </div>
 

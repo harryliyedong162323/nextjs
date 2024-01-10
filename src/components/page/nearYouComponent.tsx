@@ -466,7 +466,7 @@ function NearYouComponent(props: propsContent) {
                       }`}
                     >
                       <span className="w-[70%] truncate pad:w-[50%] ">
-                        {item.nearYouDes} + "54545"
+                        {item.nearYouDes} + &quot;54545&ldquo;
                       </span>
                       <BaseLink link="/howToBuyDetail">
                         <div className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>

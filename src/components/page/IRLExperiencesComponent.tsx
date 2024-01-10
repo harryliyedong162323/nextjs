@@ -14,7 +14,7 @@ interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  stores: any;
+  stores?: any;
   data: {
     entry: any;
     name: string;
@@ -55,7 +55,7 @@ interface locationInfoStore {
   showInHowToBuyIrl: boolean;
 }
 
-function IRLExperiencesComponent(props: any) {
+function IRLExperiencesComponent(props: propsContent) {
   const getPageStore = props.getPageStore;
   const stores = props.data.entry.stores;
   const headStyle = props.data.entry.headStyle;
@@ -90,13 +90,15 @@ function IRLExperiencesComponent(props: any) {
     if (isFullPage) {
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
         setIsCurrentPage(true);
-        console.log(getPageStore("IRLExperiencesComponent"));
+
 
         setCurrentStore(
           filterStore(
             getPageStore("IRLExperiencesComponent").data?.regionId || 0
           )
         );
+
+        console.log( filterStore(getPageStore("IRLExperiencesComponent").data?.regionId || 0));
       } else {
         setIsCurrentPage(false);
       }
@@ -144,7 +146,7 @@ function IRLExperiencesComponent(props: any) {
                 {currentStore[0] && (
                   <div className="pl-21px mobile:pl-0 mobile:w-325px mobile:mx-auto">
                     <BaseLink
-                      link={`/howToBuyDetail?id=${currentStore[0].sys.id}`}
+                        link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                     >
                       <div className="relative h-405px pad:h-289px cursor-pointer  mobile:h-217px  mobile:w-full">
                         <BaseImage
@@ -170,7 +172,7 @@ function IRLExperiencesComponent(props: any) {
                       </div>
                       <div className="pt-31px pad:pt-22px">
                         <BaseLink
-                          link={`/howToBuyDetail?id=${currentStore[0].sys.id}`}
+                          link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                         >
                           <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
                         </BaseLink>
@@ -202,7 +204,7 @@ function IRLExperiencesComponent(props: any) {
                       </div>
                       <div className="pt-31px pad:pt-22px">
                         <BaseLink
-                          link={`/howToBuyDetail?id=${currentStore[1].sys.id}`}
+                            link={`/howToBuyDetail/${currentStore[1].sys.id}`}
                         >
                           <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
                         </BaseLink>

@@ -1,44 +1,105 @@
 "use client";
 
 import React, { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
+import BaseImage from "../base/image";
+import eventbus from "@/utils/eventbus";
 
-function ServingSuggestionComponent(props: any) {
+interface entryContent {
+  headStyle: string;
+  servingSuggestionComponentTitle: string;
+  productFamilyComponentProductsCollection: productFamilyComponentProductsCollection;
+}
+interface product {
+  id: number;
+  productName: string;
+  servingSuggestionContentText: string;
+  servingSuggestionDescription: string;
+  servingSuggestionLeftImage: {
+    imagepc: {
+      url: string;
+    };
+    imagemobile: {
+      url: string;
+    };
+    altText: string;
+  };
+  servingSuggestionRightImage: {
+    imagepc: {
+      url: string;
+    };
+    imagemobile: {
+      url: string;
+    };
+    altText: string;
+  };
+}
+interface productFamilyComponentProductsCollection {
+  items: Array<product>;
+}
+
+export interface propsContent {
+  getPageStore: Function;
+  updatePageStore: Function;
+  changeNavStatus: Function;
+  scrollToPage: Function;
+
+  data: {
+    entry: entryContent;
+    name: string;
+    type: string;
+  };
+}
+
+function ServingSuggestionComponent(props: propsContent) {
   const headStyle = props.data.entry.headStyle;
-  useEffect(() => {}, []);
+  const title = props.data.entry.servingSuggestionComponentTitle;
+  const [data, setData] = useState<product>(props.data.entry.productFamilyComponentProductsCollection.items[0]);
+
+  eventbus.on('selectProduct', (value:number) => {
+    setData(props.data.entry.productFamilyComponentProductsCollection.items.filter(item => item.id === value)[0])
+  })
 
   return (
-    <section id="ServingSuggestion" data-anchor={2} className="relative overflow-hidden bg-[#E6E7E8] select-none">
-      <input type="hidden" value={headStyle}/>
+    <section
+      id="ServingSuggestion"
+      data-anchor={2}
+      className="relative overflow-hidden bg-[#E6E7E8] select-none"
+    >
+      <input type="hidden" value={headStyle} />
       <div className="flex h-screen flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
-          SERVING SUGGESTION
+          { title }
         </div>
         <div className="font-Grotesque-Regular text-center text-[#696969] mt-20px mb-10px pad:mb-4px text-20px pad:text-16px mobile:text-14px mobile:mt-20px mobile:px-50px">
-          Ideal enjoyed neat or slightly chilled with a cube of ice.
+          { data.servingSuggestionContentText }
         </div>
         <div className="flex justify-between mx-auto mt-20px w-[1250px] pad:w-1200px pad:mt-[2%] mobile:w-full mobile:flex-col mobile:px-0">
-          <div className="w-615px h-524px pad:w-550px pad:h-524px mobile:w-full mobile:h-265px mobile:mt-35px">
-            <Image
-              className="object-cover w-full h-412px pad:h-360px mobile:w-full mobile:h-200px"
-              src={require("../../../public/assets/range/product_01.png")}
-              alt={""}
-              object-fit="contain"
-              quality="100"
-            ></Image>
+          <div className="relative w-615px h-524px pad:w-550px pad:h-524px mobile:w-full mobile:h-265px mobile:mt-35px">
+            <div className="relative w-full h-412px pad:h-360px mobile:w-full mobile:h-200px">
+              <BaseImage
+                mImg={data.servingSuggestionLeftImage.imagemobile.url}
+                pImg={data.servingSuggestionLeftImage.imagepc.url}
+                alt={data.servingSuggestionLeftImage.altText}
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              ></BaseImage>
+            </div>
             <div className="font-Grotesque-Regular text-20px text-[#696969] mt-20px pad:text-16px mobile:text-14px mobile:text-center mobile:px-25px mobile:mt-30px">
-              Alternatively, in a Wild Moorland with sweet vermouth, soda water,
-              and a Blackberry.
+            { data.servingSuggestionDescription }
             </div>
           </div>
-          <div className="w-593px h-524px pad:w-593px pad:h-524px mobile:w-full mobile:mt-20px">
-            <Image
-              className="object-cover w-full h-524px pad:h-418px mobile:w-full mobile:h-[100vw]"
-              src={require("../../../public/assets/range/product_02.png")}
-              alt={""}
-              object-fit="contain"
-              quality="100"
-            ></Image>
+          <div className="relative w-593px h-524px pad:w-593px pad:h-524px mobile:w-full mobile:mt-20px">
+            <div className="relative w-full h-524px pad:h-418px mobile:w-full mobile:h-[100vw]">
+              <BaseImage
+                mImg={data.servingSuggestionRightImage.imagemobile.url}
+                pImg={data.servingSuggestionRightImage.imagepc.url}
+                alt={data.servingSuggestionRightImage.altText}
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              ></BaseImage>
+            </div>
           </div>
         </div>
       </div>
