@@ -52,6 +52,21 @@ class HowToBuyModel extends CommonModel{
     }
 
 
+    queryIrlstores(json: pageLayout){
+        const currentPage:any = json.data;
+
+        let targetComponent;
+        for(let key in currentPage){
+            if('irlstores' == key){
+                targetComponent = currentPage[key].items
+                break;
+            }
+        }
+
+        return targetComponent;
+    }
+
+
 }
 
 

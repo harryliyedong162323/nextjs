@@ -180,6 +180,7 @@ function FullPage(props: any) {
   // range nav
   const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav);
   const [isShowRangeNav, setIsShowRangeNav] = useState(true);
+  const [rangeNavData, setRangeNavData] = useState(props.data?.rangeNavData);
   const [canScroll, setCanScroll] = useState<boolean>(true);
 
   // Debug Func
@@ -467,6 +468,7 @@ function FullPage(props: any) {
           scrollToPage={scrollToPage}
           isShowRangeNav={isShowRangeNav}
           onChangeStatus={changeNavStatus}
+          { ...rangeNavData }
         ></RangeNav>
       )}
     </div>

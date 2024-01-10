@@ -322,7 +322,6 @@ function LocationStoreList(props: any){
     const [locationInfo,setLocationInfo] = useState(location);
     const [selectedOption, setSelectedOption] = useState(options[0] as OptionType);
 
-
     const [spaceBetween,setSpaceBetween] = useState(90);
     const [selectedReady,setSelectReady] = useState(false);
     const [open,setOpen]=useState(false)
@@ -419,7 +418,7 @@ function LocationStoreList(props: any){
                         className={`text-14px pt-18px pb-18px mx-auto pr-25px bg-transparent w-255px h-55px mobile:w-203px mobile:h-44px pad:pt-12px pad:pb-12px pad:pl-0 mobile:pl-0`}
                         defaultValue={selectedOption}
                         options={options}
-                        onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
+                        onChange={(e: SingleValue<{value: string, label: string} | null>)=>{setOpen(false);handleChange(e)}}
                         menuIsOpen={open}
                     /> : null
                 }

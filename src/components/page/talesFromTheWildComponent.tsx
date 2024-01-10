@@ -99,9 +99,17 @@ const kols: Array<Kol> = [
   },
 ];
 
+function isMobile() {
+  let ua = navigator.userAgent
+  let iphone = ua.match(/(iPhone\sOS)\s([\d_]+)/),
+      android = ua.match(/(Android)\s+([\d.]+)/),
+      isMobile = iphone || android;
+  return isMobile
+}
+
 function TalesFromTheWildComponent(props: any) {
-  const [currentKol, setCurrentKol] = useState<number>(0);
-  const [toKol, setToKol] = useState<number>(0);
+  const [currentKol, setCurrentKol] = useState<any>(isMobile() ? null : 0);
+  const [toKol, setToKol] = useState<any>(isMobile() ? null : 0);
   const [kolList, setKolList] = useState<Array<Kol>>(kols);
   const [isAnimation, setIsAnimation] = useState<boolean>(false);
   const [hasNavigation, setHasNavigation] = useState<boolean>(
@@ -149,7 +157,7 @@ function TalesFromTheWildComponent(props: any) {
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
       <input type="hidden" value={headStyle} />
-      <div className="flex h-screen flex-col justify-center">
+      <div className="flex h-screen flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           Tales From The Wild
         </div>
@@ -237,7 +245,7 @@ function TalesFromTheWildComponent(props: any) {
                             onClick={() => {
                               handleAnimation(index);
                             }}
-                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-18px mobile:h-18px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:-mt-20px"
+                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-20px mobile:h-20px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-20px mobile:hover:h-20px mobile:hover:mt-0px"
                           ></div>
                           <div
                             className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${

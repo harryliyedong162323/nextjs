@@ -102,7 +102,7 @@ function Header(props: any) {
       >
         <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         <div
-          className="image-[rendering: pixelated] bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
             handleMenu();
           }}
@@ -370,7 +370,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
             <div
 
 
-                className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
+                className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-1/3 mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
               <div className="mt-25px pad:mt-18px mobile:mt-15px   flex justify-end mobile:justify-between items-end  mobile:items-center ">
                 <div className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative"></div>
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px hidden mobile:block">
@@ -479,7 +479,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   </div>
                 ))}
               </div>
-              <div className="absolute bottom-40px  pad:bottom-28px mobile:bottom-auto mobile:top-[85%] ">
+              <div className="absolute bottom-40px  pad:bottom-28px mobile:bottom-auto mobile:bottom-[10%] bg-white">
                 <div className="flex items-center">
                   <div
                     className="w-17px pad:w-14px mobile:w-24px h-17px pad:h-14px mobile:h-24px  cursor-pointer relative"

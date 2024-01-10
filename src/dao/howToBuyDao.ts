@@ -8,6 +8,35 @@ const query = `
 
   query {
   
+  
+  irlstores: dataStoreCollection( where: { showInHowToBuyIrl: true },order:howToBuyIrlSort_ASC,locale: "en"
+ ) {
+              items {
+                sys {
+                      id
+                  }
+                  howToBuyDetailComponentRegion {
+                      regionId
+                      name
+                  }
+                  howToBuyIrlImage {
+                      imagepc {
+                          url
+                      }
+                      imagemobile {
+                          url
+                      }
+                      altText
+                  }
+                  showInHowToBuyIrl
+                  howToBuyIrlSort
+                  howToBuyDetailComponentStoreName
+                  howToBuyDescription
+
+              }
+          }
+  
+  
   stores: dataStoreCollection (limit:80){
               items {
                   sys {
@@ -305,7 +334,7 @@ class HowToBuyDao {
                             name: "IRLExperiencesComponent",
                             entry: {
                                 headStyle:'none',
-                                ...HowToBuyModel.query('stores',result)
+                                stores:HowToBuyModel.queryIrlstores(result),
                             },
                         },
                         {

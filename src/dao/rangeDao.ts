@@ -6,45 +6,159 @@ const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
   
 
 const query = `
-  query {
-    productFamily:homeCollection (limit:1 where:{pageName:"home"} ) {
-      items {
-          productFamilyComponentProductsCollection(limit: 10, order:id_ASC) {
-              items {
-                id
-                active
-                num
-                productName
-                age
-                tag
-                productImage {
-                    imagepc {
+query {
+    productFamily:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: "en") {
+                items {
+                    id
+                    active
+                    num
+                    tag
+                    productName
+                    age
+                    unit
+                    description
+                    price 
+                    productImage {
+                        imagepc {
                         url
-                        
+                     }
+                      imagemobile {
+                      url
+                      }
+                      altText
                     }
-                    imagemobile {
-                        url
-                    }
-                    altText
+                      backGroundImage {
+                          imagepc {
+                          url
+                          }
+                          imagemobile {
+                          url
+                          }
+                          altText
+                      }
+                 
                 }
-                backGroundImage {
-                    imagepc {
-                        url
-                        
-                    }
-                    imagemobile {
-                        url
-                    }
-                    altText
-                }
-                age
-                unit
-                description
-                price       
-              }
-          }
-      }
+            }
+        }
     }
+  
+    talesFromTheWild:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            talesFromTheWildListCollection (order:id_ASC, locale: "en") {
+              items {
+                  sys {
+                    id
+                }
+                id
+                listName
+                listDescription
+                listImage {
+                    imagepc {
+                        url
+                    }
+                    imagemobile {
+                        url
+                    }
+                    altText
+                }
+                listSmallImage {
+                    imagepc {
+                        url
+                    }
+                    imagemobile {
+                        url
+                    }
+                    altText
+                }
+                listAvatar {
+                    imagepc {
+                        url
+                    }
+                    imagemobile {
+                        url
+                    }
+                    altText
+                }
+              }
+            }
+  
+        }
+    }
+  
+    servingSuggestion:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            servingSuggestionComponentTitle
+            productFamilyComponentProductsCollection(limit:10, order:id_ASC, locale: "en") {
+                items {
+                    id
+                    productName
+                    servingSuggestionContentText
+                    servingSuggestionDescription
+                    servingSuggestionLeftImage {
+                        imagepc {
+                            url
+                        }
+                        imagemobile {
+                            url
+                        }
+                        altText
+                    }
+                    servingSuggestionRightImage {
+                        imagepc {
+                            url
+                        }
+                        imagemobile {
+                            url
+                        }
+                        altText
+                    }
+                }
+            }
+        }
+    }
+  
+    bottleConcept:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            bottleConceptComponentTitle
+            bottleConceptComponentPrompttext
+            bottleConceptComponentVideo1 {
+                video {
+                    url
+                }
+            }
+             bottleConceptComponentVideo2 {
+                video {
+                    url
+                }
+            }
+        }
+    }
+  
+    flavourFinder:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            flavourFinderComponentTitle
+            flavourFinderComponentDescription1
+            flavourFinderComponentStartContent
+        }
+    }
+  
+    rangeNav:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+        items {
+            nav1Name
+            nav1Render
+            nav2Name
+            nav2Render
+            nav3Name
+            nav3Render
+            nav4Name
+            nav4Render
+            nav5Name
+            nav5Render
+        }
+    }
+  
   }
 `;
 
@@ -415,6 +529,7 @@ class RangeDao {
         type: "fullPage",
         name: "fullPage",
         rangeNav: true,
+        rangeNavData: PageModel.query("rangeNav", result),
         entry: {
           children: [
             {
@@ -422,6 +537,7 @@ class RangeDao {
               name: "productFamilyComponent",
               entry: {
                 headStyle: "white",
+                hasNavigation: false,
                 ...PageModel.query("productFamily", result),
               },
             },
@@ -431,43 +547,7 @@ class RangeDao {
               entry: {
                 headStyle: "black",
                 hasNavigation: true,
-                kols: [
-                  {
-                    id: "10086",
-                    name: "NAME of KOL",
-                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_01.png?w=1000&h=1000`,
-                    description: "Bring the drinking occasion to life in a way",
-                  },
-                  {
-                    id: "10087",
-                    name: "NAME of KOL",
-                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_02.png?w=1000&h=1000`,
-                    description: "Bring the drinking occasion to life in a way",
-                  },
-                  {
-                    id: "10088",
-                    name: "NAME of KOL",
-                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_03.png?w=1000&h=1000`,
-                    description: "Bring the drinking occasion to life in a way",
-                  },
-                  {
-                    id: "10089",
-                    name: "NAME of KOL",
-                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_04.png?w=1000&h=1000`,
-                    description: "Bring the drinking occasion to life in a way",
-                  },
-                  {
-                    id: "10090",
-                    name: "NAME of KOL",
-                    avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                    banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_05.png?w=1000&h=1000`,
-                    description: "Bring the drinking occasion to life in a way",
-                  },
-                ],
+                ...PageModel.query("talesFromTheWild", result),
               },
             },
             {
@@ -475,6 +555,8 @@ class RangeDao {
               name: "servingSuggestionComponent",
               entry: {
                 headStyle: "black",
+                hasNavigation: true,
+                ...PageModel.query("servingSuggestion", result),
               },
             },
             {
@@ -482,6 +564,8 @@ class RangeDao {
               name: "bottleConceptComponent",
               entry: {
                 headStyle: "white",
+                hasNavigation: true,
+                ...PageModel.query("bottleConcept", result),
               },
             },
             {
@@ -489,7 +573,8 @@ class RangeDao {
               name: "flavourFinderComponent",
               entry: {
                 headStyle: "black",
-                ...quizResult
+                ...quizResult, 
+                ...PageModel.query("flavourFinder", result)
               },
             },
           ],
