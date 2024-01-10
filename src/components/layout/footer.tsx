@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
-import {getLastPathName} from "@/utils/common";
-import {usePathname} from "next/navigation";
+import { getLastPathName } from "@/utils/common";
+import { usePathname } from "next/navigation";
 function Footer(props: any) {
   const scrollToPage = props.scrollToPage;
 
@@ -14,15 +14,8 @@ function Footer(props: any) {
   const lastPathName = getLastPathName(usePathname());
   const currentSlideIndex = props.currentSlideIndex;
 
-
   useEffect(() => {
-
-
-
     setLanguage(false);
-
-
-
   }, [currentSlideIndex]);
 
   // useEffect(() => {
@@ -49,8 +42,6 @@ function Footer(props: any) {
   //     document.removeEventListener("keydown", keyDownHandle, option);
   //   };
   // }, [language]);
-
-
 
   const hanleLanguage = () => {
     setLanguage(true);
@@ -147,7 +138,6 @@ function Footer(props: any) {
           content: "Tales From The Wild",
           link: "/localMarketActivity?anchor=TheWildEscape",
         },
-
       ],
     },
     {
@@ -191,7 +181,7 @@ function Footer(props: any) {
     setPanels(newPanels);
   };
   return (
-    <footer className="relative overflow-hidden select-none mobile:h-[100%]">
+    <footer className="relative overflow-hidden bg-[#E6E7E8] select-none mobile:h-[100%]">
       <input type="hidden" value={headStyle} />
       {/*h-900px*/}
       <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-[100%] mobile:pl-30px mobile:pr-30px mobile:bg-[url('/assets/mask_footer_2.png')] mobile:bg-contain mobile:flex mobile:flex-col mobile:items-center mobile:justify-between">
@@ -219,18 +209,22 @@ function Footer(props: any) {
             >
               <li className="flex justify-between pb-35px mobile:pb-40px items-center">
                 <span className="mobile:text-17px">
-                  <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Medium dark-grey">
+                  <BaseLink
+                    link={panel.title[0].link}
+                    className="text-20px font-medium font-Grotesque-Medium dark-grey"
+                  >
                     {panel.title[0].name}
                   </BaseLink>
                 </span>
                 <span className="text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
               </li>
               {panel.list.map((item) => (
-                <li
-                  className="pb-17px mobile:hidden"
-                  key={item.id}
-                >
-                  <BaseLink link={item.link} hover="text-black-500" className="text-[#696969] text-16px font-normal font-Grotesque-Regular ">
+                <li className="pb-17px mobile:hidden" key={item.id}>
+                  <BaseLink
+                    link={item.link}
+                    hover="text-black-500"
+                    className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
+                  >
                     {item.content}
                   </BaseLink>
                 </li>
@@ -245,24 +239,27 @@ function Footer(props: any) {
             >
               <li className="flex justify-between pb-35px mobile:pb-25px items-center ">
                 <span className=" w-11/12  mobile:text-17px">
-                  <BaseLink link={panel.title[0].link} className="text-20px mobile:text-17px font-medium font-Grotesque-Medium dark-grey">
+                  <BaseLink
+                    link={panel.title[0].link}
+                    className="text-20px mobile:text-17px font-medium font-Grotesque-Medium dark-grey"
+                  >
                     {panel.title[0].name}
                   </BaseLink>
                 </span>
 
-
                 {!panel.isExpanded ? (
-                    <span
-                        className={`text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden  bg-[url('/assets/add_footer.png')]   bg-contain cursor-pointer mobile:block`}
-                        onClick={() => togglePanel(panel.id)}
-                    ></span>
+                  <span
+                    className={`text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden  bg-[url('/assets/add_footer.png')]   bg-contain cursor-pointer mobile:block`}
+                    onClick={() => togglePanel(panel.id)}
+                  ></span>
                 ) : (
-                    <span className="text-21px pad:text-17px mobile:text-21px font-Grotesque-Medium" onClick={() => togglePanel(panel.id)}>
-                      —
-                    </span>
+                  <span
+                    className="text-21px pad:text-17px mobile:text-21px font-Grotesque-Medium"
+                    onClick={() => togglePanel(panel.id)}
+                  >
+                    —
+                  </span>
                 )}
-
-
               </li>
               {panel.isExpanded && (
                 <div className="mobile:mt-[-22px] mobile:mb-20px">
@@ -329,10 +326,17 @@ function Footer(props: any) {
                 &copy; 2023 WILDMOOR All rights reserved
               </li>
               <li className="mr-84px mobile:mr-0 mobile:w-full mobile:mb-15px">
-                <BaseLink link="/privacyPolicy" className="font-Grotesque-Regular text-black">Privacy policy</BaseLink>
+                <BaseLink
+                  link="/privacyPolicy"
+                  className="font-Grotesque-Regular text-black"
+                >
+                  Privacy policy
+                </BaseLink>
               </li>
               <li className="mobile:w-full mobile:mb-30px">
-                <BaseLink className="font-Grotesque-Regular text-black">Terms of Service</BaseLink>
+                <BaseLink className="font-Grotesque-Regular text-black">
+                  Terms of Service
+                </BaseLink>
               </li>
             </ul>
           </div>
@@ -352,112 +356,126 @@ function Footer(props: any) {
         </div>
       </div>
       {language && (
-
-          <div className="absolute w-full h-screen select-none top-0 right-0 z-30">
-            <div className="flex w-full justify-between h-screen">
-              <div className="flex  flex-1"   onClick={hanleCloseLanguage}></div>
-              <div className="w-381px h-full bg-[#FFFFFF]  pl-33px pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-20px shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
-                <div className="flex items-center  mt-27px pad:mt-19px mobile:mt-44px mobile:reactive ">
-                  <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
-                    <BaseImage
-                        mImg={require("../../../public/assets/logo.png")}
-                        pImg={require("../../../public/assets/logo.png")}
-                        alt={""}
-                        objectFit="contain"
-                        quality={100}
-                    ></BaseImage>
-                  </div>
-                  <div
-                      className="w-20px h-19px absolute right-33px pad:right-24px   pad:w-14px  pad:h-13px mobile:right-20px mobile:w-20px mobile:h-19px reactive cursor-pointer"
-                      onClick={hanleCloseLanguage}
-                  >
-                    <BaseImage
-                        mImg={require("../../../public/assets/KVAnimation/close.png")}
-                        pImg={require("../../../public/assets/KVAnimation/close.png")}
-                        alt={""}
-                        objectFit="contain"
-                        quality={100}
-                    ></BaseImage>
-                  </div>
+        <div className="absolute w-full h-screen select-none top-0 right-0 z-30">
+          <div className="flex w-full justify-between h-screen">
+            <div className="flex  flex-1" onClick={hanleCloseLanguage}></div>
+            <div className="w-381px h-full bg-[#FFFFFF]  pl-33px pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-20px shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
+              <div className="flex items-center  mt-27px pad:mt-19px mobile:mt-44px mobile:reactive ">
+                <div className="hidden mobile:block mobile:absolute mobile:left-1/2 mobile:translate-x-[-50%] mobile:w-29px  mobile:h-29px mobile:mr-133px mobile:reactive ">
+                  <BaseImage
+                    mImg={require("../../../public/assets/logo.png")}
+                    pImg={require("../../../public/assets/logo.png")}
+                    alt={""}
+                    objectFit="contain"
+                    quality={100}
+                  ></BaseImage>
                 </div>
-                <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
-                  <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
-                      <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-                        <p>CHINA MAINLAND -</p>
-                        <p>SIMPLIFIED CHINESE</p>
-                      </div>
-                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                        {/*<BaseImage*/}
-                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  alt={""}*/}
-                        {/*  objectFit="contain"*/}
-                        {/*  quality={100}*/}
-                        {/*></BaseImage>*/}
-                      </div>
-                    </BaseLink>
-                  </div>
-                  <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
-                      <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                        <p>Taiwan region -</p>
-                        <p>traditional Chinese</p>
-                      </div>
-                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                        {/*<BaseImage*/}
-                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  alt={""}*/}
-                        {/*  objectFit="contain"*/}
-                        {/*  quality={100}*/}
-                        {/*></BaseImage>*/}
-                      </div>
-                    </BaseLink>
-                  </div>
-                  <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
-                      <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                        <p>Korea -</p>
-                        <p>Korean</p>
-                      </div>
-                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                        {/*<BaseImage*/}
-                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  alt={""}*/}
-                        {/*  objectFit="contain"*/}
-                        {/*  quality={100}*/}
-                        {/*></BaseImage>*/}
-                      </div>
-                    </BaseLink>
-                  </div>
-                  <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                    <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
-                      <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                        <p>Singapore -</p>
-                        <p>English</p>
-                      </div>
-                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                        {/*<BaseImage*/}
-                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  alt={""}*/}
-                        {/*  objectFit="contain"*/}
-                        {/*  quality={100}*/}
-                        {/*></BaseImage>*/}
-                      </div>
-                    </BaseLink>
-                  </div>
-                </div>
-                <div className="uppercase text-13px pad:text-9px text-black mobile:text-15px font-semibold">
-                  <p>United Kingdom -</p>
-                  <p>English</p>
+                <div
+                  className="w-20px h-19px absolute right-33px pad:right-24px   pad:w-14px  pad:h-13px mobile:right-20px mobile:w-20px mobile:h-19px reactive cursor-pointer"
+                  onClick={hanleCloseLanguage}
+                >
+                  <BaseImage
+                    mImg={require("../../../public/assets/KVAnimation/close.png")}
+                    pImg={require("../../../public/assets/KVAnimation/close.png")}
+                    alt={""}
+                    objectFit="contain"
+                    quality={100}
+                  ></BaseImage>
                 </div>
               </div>
-
+              <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
+                <div className="mb-75px pad:mb-54px mobile:mb-60px">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/zh-CN/${lastPathName}`}
+                  >
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
+                      <p>CHINA MAINLAND -</p>
+                      <p>SIMPLIFIED CHINESE</p>
+                    </div>
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  alt={""}*/}
+                      {/*  objectFit="contain"*/}
+                      {/*  quality={100}*/}
+                      {/*></BaseImage>*/}
+                    </div>
+                  </BaseLink>
+                </div>
+                <div className="mb-75px pad:mb-54px mobile:mb-60px">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/zh-Hant-TW/${lastPathName}`}
+                  >
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                      <p>Taiwan region -</p>
+                      <p>traditional Chinese</p>
+                    </div>
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  alt={""}*/}
+                      {/*  objectFit="contain"*/}
+                      {/*  quality={100}*/}
+                      {/*></BaseImage>*/}
+                    </div>
+                  </BaseLink>
+                </div>
+                <div className="mb-75px pad:mb-54px mobile:mb-60px">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/ko-KR/${lastPathName}`}
+                  >
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                      <p>Korea -</p>
+                      <p>Korean</p>
+                    </div>
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  alt={""}*/}
+                      {/*  objectFit="contain"*/}
+                      {/*  quality={100}*/}
+                      {/*></BaseImage>*/}
+                    </div>
+                  </BaseLink>
+                </div>
+                <div className="mb-75px pad:mb-54px mobile:mb-60px">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/en/${lastPathName}`}
+                  >
+                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                      <p>Singapore -</p>
+                      <p>English</p>
+                    </div>
+                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
+                      {/*<BaseImage*/}
+                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
+                      {/*  alt={""}*/}
+                      {/*  objectFit="contain"*/}
+                      {/*  quality={100}*/}
+                      {/*></BaseImage>*/}
+                    </div>
+                  </BaseLink>
+                </div>
+              </div>
+              <div className="uppercase text-13px pad:text-9px text-black mobile:text-15px font-semibold">
+                <p>United Kingdom -</p>
+                <p>English</p>
+              </div>
             </div>
           </div>
+        </div>
       )}
     </footer>
   );

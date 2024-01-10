@@ -16,13 +16,13 @@ interface entryContent {
   bottleConceptComponentVideo1: {
     video: {
       url: string;
-    }
-  }
+    };
+  };
   bottleConceptComponentVideo2: {
     video: {
       url: string;
-    }
-  }
+    };
+  };
 }
 
 export interface propsContent {
@@ -46,9 +46,9 @@ function BottleConceptComponent(props: propsContent) {
   const [startPlaying, setStartPlaying] = useState(false);
   const [startVideoEnd, setStartVideoEnd] = useState(false);
   const [bottlePlaying, setBottlePlaying] = useState(false);
-  const bottlePlayingRef = useRef<ReactPlayer>(null)
+  const bottlePlayingRef = useRef<ReactPlayer>(null);
 
-  const [positionX, setPositionX] = useState(0)
+  const [positionX, setPositionX] = useState(0);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -81,41 +81,50 @@ function BottleConceptComponent(props: propsContent) {
   const bottleRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <section id="BottleConcept" data-anchor={3} className="relative overflow-hidden select-none">
-      <div ref={bottleRef} className="cursor-[url('/assets/range/icon_pointer.cur'),_pointer] absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
+    <section
+      id="BottleConcept"
+      data-anchor={3}
+      className="relative overflow-hidden select-none"
+    >
+      <div
+        ref={bottleRef}
+        className="cursor-[url('/assets/range/icon_pointer.cur'),_pointer] absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
         onMouseDown={(event) => {
-          console.log('mouseup', event);
+          console.log("mouseup", event);
           setIsMouseDown(true);
           setStartX(event.clientX);
         }}
         onTouchStart={(event) => {
-          event.stopPropagation()
-          console.log('touchStart', event);
+          event.stopPropagation();
+          console.log("touchStart", event);
           setIsMouseDown(true);
           setStartX(event.touches[0].clientX);
         }}
         onMouseMove={(event) => {
           // console.log('isMouseDown', isMouseDown)
           if (isMouseDown) {
-            let percent = ((event.clientX - startX + 600 * endPercent) % 600) / 600;
-            console.log('percent:', percent)
+            let percent =
+              ((event.clientX - startX + 600 * endPercent) % 600) / 600;
+            console.log("percent:", percent);
             if (percent < 0) {
-              percent = 1 + percent
+              percent = 1 + percent;
             }
-            setCurrentPercent(percent)
+            setCurrentPercent(percent);
             bottlePlayingRef.current?.seekTo(percent);
           }
         }}
         onTouchMove={(event) => {
-          event.stopPropagation()
+          event.stopPropagation();
           // console.log('touchMove isMouseDown', isMouseDown)
           if (isMouseDown) {
-            let percent = ((event.touches[0].clientX - startX + 375 * endPercent) % 375) / 375;
-            console.log('percent:', percent)
+            let percent =
+              ((event.touches[0].clientX - startX + 375 * endPercent) % 375) /
+              375;
+            console.log("percent:", percent);
             if (percent < 0) {
-              percent = 1 + percent
+              percent = 1 + percent;
             }
-            setCurrentPercent(percent)
+            setCurrentPercent(percent);
             bottlePlayingRef.current?.seekTo(percent);
           }
         }}
@@ -126,16 +135,17 @@ function BottleConceptComponent(props: propsContent) {
         }}
         onTouchEnd={(event) => {
           // console.log('touchEnd', event);
-          event.stopPropagation()
+          event.stopPropagation();
           setIsMouseDown(false);
           setEndPercent(currentPercent);
-          console.log(currentPercent)
-        }}></div>
-      <input type="hidden" value={headStyle}/>
+          console.log(currentPercent);
+        }}
+      ></div>
+      <input type="hidden" value={headStyle} />
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px pad:top-84px mobile:top-82px">
           <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px pad:text-27px mobile:text-20px">
-            { data.bottleConceptComponentTitle }
+            {data.bottleConceptComponentTitle}
           </div>
         </div>
         {hasWindow && !startVideoEnd && (

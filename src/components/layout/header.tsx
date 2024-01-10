@@ -1,54 +1,39 @@
 "use client";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
-import {getLastPathName} from "@/utils/common";
+import { getLastPathName } from "@/utils/common";
 function Header(props: any) {
   const [menu, setMenu] = useState(false);
   const currentSlideIndex = props.currentSlideIndex;
 
-
-
-
-
-
   function wheelHandle(e: Event) {
-
     e.preventDefault();
     e.stopPropagation();
   }
 
-
-  function keyDownHandle(e: Event){
+  function keyDownHandle(e: Event) {
     e.preventDefault();
     e.stopPropagation();
   }
-
-
 
   useEffect(() => {
-
     const option: object = { passive: false };
 
-    setMenu(false)
+    setMenu(false);
     document.addEventListener("wheel", wheelHandle, option);
     document.addEventListener("keydown", keyDownHandle, option);
 
-
-    setTimeout(()=>{
+    setTimeout(() => {
       document.removeEventListener("wheel", wheelHandle, option);
       document.removeEventListener("keydown", keyDownHandle, option);
-    },500)
-
-
+    }, 500);
   }, [currentSlideIndex]);
-
 
   // useEffect(() => {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
   // }, [props]);
-
 
   // useEffect(() => {
   //
@@ -75,18 +60,11 @@ function Header(props: any) {
   //   };
   // }, [menu]);
 
-
-
-
-
-
   const headStyle = props.headStyle || "white";
 
   const handleMenuChange = (menu: boolean) => {
-
     setMenu(menu);
   };
-
 
   const handleMenu = () => {
     setMenu(true);
@@ -96,18 +74,20 @@ function Header(props: any) {
     <div>
       <nav
         id="nav-white"
-        className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
+        className={`h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-59px ${
           headStyle == "white" ? "block" : "hidden"
         }`}
       >
-        <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        <BaseLink link="/home">
+          <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 cursor-pointer translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        </BaseLink>
         <div
           className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[45px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
       </nav>
 
       <nav
@@ -116,14 +96,16 @@ function Header(props: any) {
           headStyle == "black" ? "block" : "hidden"
         }`}
       >
-        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        <BaseLink link="/home">
+          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  cursor-pointer left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        </BaseLink>
         <div
           className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
           onClick={() => {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
       </nav>
 
       <nav
@@ -147,24 +129,26 @@ function Header(props: any) {
             }}
           ></div>
 
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
         </div>
       </nav>
 
       <nav
         id="nav-bg-white"
-        className={`bg-white h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn pad:h-118px mobile:h-60px ${
+        className={`bg-white h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn pad:h-118px mobile:h-60px ${
           headStyle == "bg-white" ? "block" : "hidden"
         }`}
       >
-        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        <BaseLink link="/home">
+          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        </BaseLink>
         <div
           className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
           onClick={() => {
             handleMenu();
           }}
         ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange} ></Panel>}
+        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
       </nav>
     </div>
   );
@@ -200,7 +184,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
   };
   const handlePop = () => {
     setLanguage(false);
-    handleClose()
+    handleClose();
     // setMenu(false);
   };
 
@@ -336,41 +320,37 @@ function Panel({ menuFlag, onMenuChange }: any) {
 
   const togglePanel = (id: number) => {
     const newPanels = panels.map((panel) => {
-
       if (panel.id === id) {
-        return { ...panel, isExpanded: panel.isExpanded = !panel.isExpanded  };
+        return { ...panel, isExpanded: (panel.isExpanded = !panel.isExpanded) };
       } else {
         return { ...panel, isExpanded: false }; // 关闭其他面板
       }
     });
 
     setPanels(newPanels);
-
   };
 
-
-
-  const initPanel = ()=>{
+  const initPanel = () => {
     const newPanels = panels.map((panel) => {
       return { ...panel, isExpanded: false }; // 关闭其他面板
     });
 
     setPanels(newPanels);
-  }
+  };
 
   return (
     <div>
       {menu && (
         <div className="togglePanel absolute w-full h-screen select-none ">
           <div className="flex w-full justify-between h-screen">
-            <div className="flex  flex-1"  onClick={(e) => {
-              handleClose();
-            }}></div>
-
             <div
+              className="flex  flex-1"
+              onClick={(e) => {
+                handleClose();
+              }}
+            ></div>
 
-
-                className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-[300px!ignore] mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
+            <div className="w-381px relative pl-33px   overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-[300px!ignore] mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)] ">
               <div className="mt-25px pad:mt-18px mobile:mt-15px   flex justify-end mobile:justify-between items-end  mobile:items-center ">
                 <div className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative"></div>
                 <div className="mx-auto opacity-0 mobile:opacity-100 mobile:w-29px mobile:h-29px hidden mobile:block">
@@ -396,16 +376,22 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
               </div>
               <div
-                  onWheel={(e)=>{
-                    e.stopPropagation()
-                  }}
-                  onTouchMove={(e)=>{
-                    e.stopPropagation()
-                  }}
-                  className="lock mt-64px pad:mt-53px mobile:mt-80px flex flex-col h-[75vh]  overflow-y-auto">
+                onWheel={(e) => {
+                  e.stopPropagation();
+                }}
+                onTouchMove={(e) => {
+                  e.stopPropagation();
+                }}
+                className="lock mt-64px pad:mt-53px mobile:mt-80px flex flex-col h-[75vh]  overflow-y-auto"
+              >
                 <div className="flex justify-between mb-91px pad:mb-65 px mobile:mb-75px">
                   <div className="">
-                    <BaseLink link={`/home`} className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium">HOME</BaseLink>
+                    <BaseLink
+                      link={`/home`}
+                      className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
+                    >
+                      HOME
+                    </BaseLink>
                   </div>
                 </div>
 
@@ -417,7 +403,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                     <div className="flex justify-between items-center mb-33px pad:mb-27 px mobile:mb-31px cursor-pointer h-50px mobile:h-22px">
                       <div className="w-9/12 ">
                         <BaseLink
-                            className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
+                          className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
                           link={panel.title[0].link}
                           onClick={(e) => {
                             handleClose();
@@ -440,7 +426,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                           ></BaseImage>
                         </div>
                       ) : (
-                        <div className="text-21px pad:text-17px mobile:text-21px font-Grotesque-Medium" onClick={() => togglePanel(panel.id)}>
+                        <div
+                          className="text-21px pad:text-17px mobile:text-21px font-Grotesque-Medium"
+                          onClick={() => togglePanel(panel.id)}
+                        >
                           —
                         </div>
                       )}
@@ -454,7 +443,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
                           >
                             <div className="w-4/5 truncate">
                               <BaseLink
-                                  className="text-14px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular "
+                                className="text-14px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular "
                                 link={item.link}
                                 onClick={(e) => {
                                   handleClose();
@@ -507,14 +496,14 @@ function Panel({ menuFlag, onMenuChange }: any) {
       )}
       {language && (
         <div
-
-            onWheel={(e)=>{
-              e.stopPropagation()
-            }}
-            onTouchMove={(e)=>{
-              e.stopPropagation()
-            }}
-            className="absolute w-full h-screen select-none">
+          onWheel={(e) => {
+            e.stopPropagation();
+          }}
+          onTouchMove={(e) => {
+            e.stopPropagation();
+          }}
+          className="absolute w-full h-screen select-none"
+        >
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"></div>
             <div className="w-381px relative pl-33px  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
@@ -553,13 +542,17 @@ function Panel({ menuFlag, onMenuChange }: any) {
                   ></BaseImage>
                 </div>
               </div>
-              <div className="text-center not-italic font-medium font-GalanoGrotesque  text-22px pad:text-15px mobile:text-20px mt-68px pad:mt-48px mobile:mt-53px">
+              <div className="text-center not-italic font-medium text-[#000000] font-GalanoGrotesque  text-22px pad:text-16px mobile:text-20px mt-68px pad:mt-48px mobile:mt-53px">
                 Location And Language
               </div>
               <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
-                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-CN/${lastPathName}`}>
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/zh-CN/${lastPathName}`}
+                  >
+                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
                       <p>CHINA MAINLAND-</p>
                       <p>SIMPLIFIED CHINESE</p>
                     </div>
@@ -573,11 +566,14 @@ function Panel({ menuFlag, onMenuChange }: any) {
                       {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
-
                 </div>
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
-                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/zh-Hant-TW/${lastPathName}`}>
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/zh-Hant-TW/${lastPathName}`}
+                  >
+                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
                       <p>Taiwan region -</p>
                       <p>traditional Chinese</p>
                     </div>
@@ -591,11 +587,14 @@ function Panel({ menuFlag, onMenuChange }: any) {
                       {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
-
                 </div>
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
-                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/ko-KR/${lastPathName}`}>
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/ko-KR/${lastPathName}`}
+                  >
+                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
                       <p>Korea -</p>
                       <p>Korean</p>
                     </div>
@@ -609,11 +608,14 @@ function Panel({ menuFlag, onMenuChange }: any) {
                       {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
-
                 </div>
                 <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
-                  <BaseLink className={"flex justify-between items-center "} autoLanguage={false} link={`/en/${lastPathName}`}>
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
+                  <BaseLink
+                    className={"flex justify-between items-center "}
+                    autoLanguage={false}
+                    link={`/en/${lastPathName}`}
+                  >
+                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
                       <p>Singapore -</p>
                       <p>English</p>
                     </div>
@@ -627,10 +629,10 @@ function Panel({ menuFlag, onMenuChange }: any) {
                       {/*></BaseImage>*/}
                     </div>
                   </BaseLink>
-
                 </div>
               </div>
-              <div className="uppercase font-medium font-Grotesque-Medium text-14px pad:text-10px mobile:text-15px mt-68px pad:mt-48px mobile:mt-53px">
+
+              <div className="uppercase font-medium font-Grotesque-Medium tetx-[#000000]  not-italic text-15px pad:text-11px mobile:text-17px mt-68px pad:mt-48px mobile:mt-53px">
                 <p>United Kingdom -</p>
                 <p>English</p>
               </div>

@@ -377,7 +377,7 @@ function IntroduceCampaignComponent(props: propsContent) {
           loop={true}
           centeredSlides={centeredSlides}
           speed={1500}
-          allowTouchMove={false}
+          allowTouchMove={true}
           autoplay={{
             delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
             disableOnInteraction: false, // 用户互动后是否停止自动播放

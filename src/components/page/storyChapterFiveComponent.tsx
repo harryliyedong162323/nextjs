@@ -33,8 +33,8 @@ interface entryContent {
 }
 
 export interface propsContent {
-  getPageStore:Function,
-  updatePageStore:Function,
+  getPageStore: Function;
+  updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
   data: {
@@ -82,15 +82,15 @@ function StoryChapterFiveComponent(props: propsContent) {
       >
         <div className="absolute left-0 cursor-pointer z-10 w-630px h-500px pad:w-504px pad:h-400px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0">
           <BaseImage
-          mImg={data.storyChapterFiveComponentSmallImage?.imagemobile?.url}
-          pImg={data.storyChapterFiveComponentSmallImage?.imagepc?.url}
-          alt={data.storyChapterFiveComponentSmallImage?.altText}
+            mImg={data.storyChapterFiveComponentSmallImage?.imagemobile?.url}
+            pImg={data.storyChapterFiveComponentSmallImage?.imagepc?.url}
+            alt={data.storyChapterFiveComponentSmallImage?.altText}
             layout="fill"
             objectFit="cover"
             quality={100}
           ></BaseImage>
         </div>
-        <div className="absolute right-0 z-10 bg-white font-Grotesque-Regular text-dark-grey w-470px text-20px p-50px top-214px pad:w-376px pad:text-16px pad:p-40px pad:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
+        <div className="absolute right-0 z-10 bg-white not-italic font-Grotesque text-[#262627] w-470px text-18px p-50px top-214px pad:w-376px pad:text-13px pad:p-40px pad:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
           <div
             className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
           ></div>

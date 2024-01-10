@@ -26,8 +26,8 @@ interface entryContent {
 }
 
 export interface propsContent {
-  getPageStore:Function,
-  updatePageStore:Function,
+  getPageStore: Function;
+  updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
   data: {
@@ -81,7 +81,7 @@ function StoryChapterSixComponent(props: propsContent) {
         </span>
       </div>
       <div
-        className={`absolute bg-white font-Grotesque-Regular text-dark-grey w-900px left-100px text-20px p-50px pad:text-16px pad:p-40px pad:left-120px pad:w-880px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
+        className={`absolute bg-white font-Grotesque text-[#262627] not-italic w-900px left-100px text-18px p-50px pad:text-13px pad:p-40px pad:left-120px pad:w-880px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
             ? "top-450px pad:top-460px mobile:top-1/3 opacity-100"
             : "top-650px pad:top-660px mobile:top-2/3 opacity-0"
@@ -104,7 +104,7 @@ function StoryChapterSixComponent(props: propsContent) {
           {data.storyChapterSixComponentSlidingText}
         </div>
       </div>
-      <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-414px pad:h-331px mobile:h-0"></div>
+      {/* <div className="absolute z-10 top-0 left-0 w-full bg-gradient-to-b from-[#000000] to-[#28282800] h-414px pad:h-331px mobile:h-0"></div> */}
     </section>
   );
 }
