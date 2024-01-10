@@ -19,6 +19,8 @@ interface productFamilyComponentProductsCollectionContent{
 
 
 export interface propsContent{
+    getPageStore:Function,
+    updatePageStore:Function,
     changeNavStatus:Function,
     scrollToPage:Function,
 
@@ -198,10 +200,10 @@ function ProductFamilyComponent(props:propsContent) {
                     ></BaseImage>
 
 
-                    <div className="an-group-1  w-full  overflow-hidden  absolute left-[46%] z-30 top-[50%] translate-y-[-50%] mobile:hidden">
+                    <div className="an-group-1 w-full overflow-hidden absolute left-[46%] z-30 top-[50%] translate-y-[-50%] mobile:hidden">
 
                         <div className="an-bottle w-700px  flex flex-nowrap items-end">
-                            <div className="w-169px h-368px  relative mr-90px  pad:mr-64px pad:w-120px pad:h-262px  mobile:w-102px mobile:h-223px ">
+                            <div className="w-169px h-368px relative mr-90px pad:mr-64px mobile:w-102px mobile:h-223px ">
                                 <BaseImage
                                     mImg={currentBottleData.productImage.imagemobile.url}
                                     pImg={currentBottleData.productImage.imagepc.url}
@@ -212,17 +214,14 @@ function ProductFamilyComponent(props:propsContent) {
                                 ></BaseImage>
                             </div>
                             <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
-                                <div className="font-AlbertusNova-Regular pb-29px pad:pb-21px font-normal mobile:text-center mobile:w-full mobile:pb-20px flex items-center">
-                                    <div className="inline-block align-middle">
-                                        <div className="relative">
-                                            <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.age}</span>
-                                            <span className="text-11px font-AlbertusNova-Regular absolute bottom-0 left-0 w-full text-center pad:text-7px mobile:text-7px uppercase">{currentBottleData.unit}</span>
-                                        </div>
-                                        {/*<div className="text-11px font-bold">years old</div>*/}
+                                <div className="font-AlbertusNova-Regular pb-29px pad:pb-21px font-normal mobile:text-center mobile:w-full mobile:pb-20px flex items-center pad:min-w-64 pad:w-250px">
+                                    <div className="relative flex items-center pad:w-[40%] flex-nowrap">
+                                        <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">{currentBottleData.age}</span>
+                                        <p className="text-11px font-AlbertusNova-Regular absolute bottom-0 left-0 w-full text-center pad:text-left pad:whitespace-nowrap pad:text-7px mobile:text-7px uppercase">{currentBottleData.unit}</p>
                                     </div>
-                                    <div className="mr-16px ml-9px inline-block align-middle pad:translate-y-[5px] translate-y-[7px] h-70px w-2px bg-white pad:mr-11px pad:ml-6px pad:h-50px mobile:ml-10px mobile:mr-6px"></div>
+                                    <div className="mr-16px ml-9px pad:translate-y-[5px] translate-y-[7px] h-70px w-2px bg-white pad:mr-11px pad:ml-6px pad:h-50px mobile:ml-10px mobile:mr-6px"></div>
                                     <div className="flex flex-nowrap uppercase relative align-middle text-29px pt-20px   pad:text-20px pad:pt-14px mobile:text-19px mobile:w-125px">
-                                        <div className=" flex flex-nowrap items-end justify-start">
+                                        <div className="flex flex-nowrap items-end justify-start">
                                             <div className=" w-125px  paid:w-89px  relative ">
                                                 {currentBottleData.productName}
                                                 {

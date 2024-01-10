@@ -16,6 +16,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 interface entryContent{
     headStyle:string,
+    stores:locationInfoStore,
     locationInfoComponentTitle:string,
     locationInfoComponentRegionListCollection:locationInfoComponentRegionListCollectionContent,
     locationInfoComponentStoreListCollection:locationInfoComponentStoreListCollectionContent,
@@ -79,6 +80,8 @@ interface locationInfoStore{
 }
 
 interface propsContent{
+    getPageStore:Function,
+    updatePageStore:Function,
     changeNavStatus: Function;
     scrollToPage: Function;
     data:{
@@ -277,6 +280,9 @@ interface OptionType {
 }
 
 function LocationStoreList(props: any){
+
+    const getPageStore = props.getPageStore;
+    const updatePageStore = props.updatePageStore;
     const stores = props.store;
     const options = props.options;
     const location = props.location.location;
@@ -315,8 +321,11 @@ function LocationStoreList(props: any){
     const [swiper, setSwiper] = useState<any>(null);
     const [locationInfo,setLocationInfo] = useState(location);
     const [selectedOption, setSelectedOption] = useState(options[0] as OptionType);
+
+
     const [spaceBetween,setSpaceBetween] = useState(90);
     const [selectedReady,setSelectReady] = useState(false);
+    const [open,setOpen]=useState(false)
     useEffect(()=>{
 
         const currentLocation = options.filter((item:any)=>{
@@ -345,12 +354,17 @@ function LocationStoreList(props: any){
         if (selectedOption) {
             const value = (selectedOption as OptionType).value;
             console.log('Selected option:', value);
-
+            updatePageStore('IRLExperiencesComponent',{
+                regionId:value,
+            })
+            console.log(getPageStore('IRLExperiencesComponent'))
             setLocationInfo(stores.filter((item:any)=>{
                 if(item.howToBuyDetailComponentRegion.regionId == value){
                     return item;
                 }
             }))
+
+
 
             // 执行其他逻辑操作
         }
@@ -392,7 +406,13 @@ function LocationStoreList(props: any){
     return (
         <section className="pt-138px  pad:pt-98px   mobile:pt-112px">
 
-            <div className="pb-45px relative z-20 pad:pb-32px mobile:pb-35px">
+            <div className="pb-45px relative z-20 pad:pb-32px mobile:pb-35px" onClick={(e)=>{
+                if(open){
+                    setOpen(false)
+                }else{
+                    setOpen(true)
+                }
+            }}>
                 {
                     selectedReady ? <Select
                         styles={customStyles}
@@ -400,6 +420,7 @@ function LocationStoreList(props: any){
                         defaultValue={selectedOption}
                         options={options}
                         onChange={(e: SingleValue<{value: string, label: string} | null>)=>{handleChange(e)}}
+                        menuIsOpen={open}
                     /> : null
                 }
 
@@ -501,10 +522,13 @@ function LocationStoreList(props: any){
 
 function LocationInfoComponent(props: propsContent) {
 
-    console.log(props)
+    const getPageStore = props.getPageStore;
+    const updatePageStore = props.updatePageStore;
     const title = props.data.entry.locationInfoComponentTitle;
+    const stores = props.data.entry.stores;
     const locationInfoRegionData = props.data.entry.locationInfoComponentRegionListCollection.items;
-    const locationInfoStoreData = props.data.entry.locationInfoComponentStoreListCollection.items;
+    let locationInfoStoreData = props.data.entry.locationInfoComponentStoreListCollection.items;
+    locationInfoStoreData = [...stores];
     const regionOptions = locationInfoRegionData.map((location,index)=>{
         return {
             value:location.regionId,
@@ -558,7 +582,7 @@ function LocationInfoComponent(props: propsContent) {
                     <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-110px pad:text-23px mobile:pt-112px mobile:text-24px">{title}</div>
                     <div className=" ">
 
-                        <div className="w-full mt-145px   pad:mt-243px mobile:mt-72px  ">
+                        <div className="w-full mt-145px    mobile:mt-72px  ">
 
                             <Marquee play={play}>
                                 <div className="w-250px mobile:w-79px"></div>
@@ -666,7 +690,7 @@ function LocationInfoComponent(props: propsContent) {
                         </div>
                     </div>
 
-                </div> : <LocationStoreList location={locationInfo} options={regionOptions} store={locationInfoStoreData}></LocationStoreList>
+                </div> : <LocationStoreList location={locationInfo} options={regionOptions} store={locationInfoStoreData} updatePageStore={updatePageStore} getPageStore={getPageStore}></LocationStoreList>
 
             }
 

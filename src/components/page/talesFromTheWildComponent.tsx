@@ -149,11 +149,11 @@ function TalesFromTheWildComponent(props: any) {
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
       <input type="hidden" value={headStyle} />
-      <div className="flex h-screen flex-col">
-        <div className="font-AlbertusNova-Regular text-center uppercase text-33px pt-154px pad:text-27px pad:pt-124px mobile:text-20px mobile:pt-80px">
+      <div className="flex h-screen flex-col justify-center">
+        <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           Tales From The Wild
         </div>
-        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] h-516px pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
+        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
           {kolList?.length > 0 &&
             kolList.map((item, index) => {
               return (
@@ -164,7 +164,7 @@ function TalesFromTheWildComponent(props: any) {
                         className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           currentKol !== toKol
                             ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
-                            : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-360px"
+                            : "w-615px h-519px pad:w-595px pad:h-502px mobile:h-360px"
                         }`}
                       >
                         <BaseImage
@@ -191,7 +191,7 @@ function TalesFromTheWildComponent(props: any) {
                             quality={100}
                           ></BaseImage>
                         </div>
-                        <div className="text-white text-18px ml-10px pad:text-14px mobile:text-14px">
+                        <div className="text-white text-18px ml-10px pad:text-14px mobile:text-14px font-normal font-Grotesque-Regular">
                           {item.name}
                         </div>
                       </div>

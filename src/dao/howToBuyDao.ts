@@ -289,7 +289,7 @@ class HowToBuyDao {
                             name: "locationInfoComponent",
                             entry: {
                                 headStyle:'black',
-
+                                stores:HowToBuyModel.queryStores(result),
                                 ...HowToBuyModel.query('locationInfo',result)
                             },
                         },

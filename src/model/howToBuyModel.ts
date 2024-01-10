@@ -36,6 +36,22 @@ class HowToBuyModel extends CommonModel{
         return targetComponent;
     }
 
+
+    queryStores(json: pageLayout){
+        const currentPage:any = json.data;
+
+        let targetComponent;
+        for(let key in currentPage){
+            if('stores' == key){
+                targetComponent = currentPage[key].items
+                break;
+            }
+        }
+
+        return targetComponent;
+    }
+
+
 }
 
 

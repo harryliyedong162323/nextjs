@@ -102,7 +102,7 @@ function BottleConceptComponent(props: any) {
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px pad:top-84px mobile:top-82px">
           <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px pad:text-27px mobile:text-20px">
-            BOTTLE CONCEPT
+            The Story Behind our Bottle
           </div>
         </div>
         {hasWindow && !startVideoEnd && (

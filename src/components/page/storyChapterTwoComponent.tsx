@@ -52,6 +52,8 @@ interface entryContent {
 }
 
 export interface propsContent {
+  getPageStore:Function,
+  updatePageStore:Function,
   changeNavStatus: Function;
   scrollToPage: Function;
   data: {
@@ -62,36 +64,36 @@ export interface propsContent {
 }
 
 function StoryChapterTwoComponent(props: propsContent) {
-  console.log(props)
+  console.log(props);
   const [data, setData] = useState<entryContent>(props.data.entry);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
-  const [fadeLock, setFadeLock] = useState(true);
+  // const [fadeLock, setFadeLock] = useState(true);
   const [allowScroll, setAllowScroll] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-  useEffect(() => {
-    const fadeBox: HTMLElement = document.querySelector(
-      "#fadeBox"
-    ) as HTMLElement;
-    if (fadeBox) {
-      // fadeBox.onwheel = function (e) {
-      // if (fadeLock) {
-      //   e.stopPropagation();
-      // }
-      // };
-      document.ontouchmove = function (e) {
-        if (fadeLock && isCurrentPage) {
-          e.stopPropagation();
-        }
-      };
-    }
-  }, [fadeLock, isCurrentPage]);
+  // useEffect(() => {
+  //   const fadeBox: HTMLElement = document.querySelector(
+  //     "#fadeBox"
+  //   ) as HTMLElement;
+  //   if (fadeBox) {
+  //     // fadeBox.onwheel = function (e) {
+  //     // if (fadeLock) {
+  //     //   e.stopPropagation();
+  //     // }
+  //     // };
+  //     document.ontouchmove = function (e) {
+  //       if (fadeLock && isCurrentPage) {
+  //         e.stopPropagation();
+  //       }
+  //     };
+  //   }
+  // }, [fadeLock, isCurrentPage]);
 
   useEffect(() => {
     if (isFullPage) {
-      setFadeLock(true);
+      // setFadeLock(true);
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
         setIsCurrentPage(true);
         setTimeout(() => {
@@ -141,15 +143,17 @@ function StoryChapterTwoComponent(props: propsContent) {
           }}
           nested={true}
           direction="vertical"
-          mousewheel={true}
+          mousewheel={{
+            sensitivity: 0.1,
+          }}
           allowTouchMove={true}
           onSlideChangeTransitionEnd={() => {
-            setTimeout(() => {
-              setFadeLock(false);
-            }, 500);
+            // setTimeout(() => {
+            //   setFadeLock(false);
+            // }, 500);
           }}
           onSlideChangeTransitionStart={(e) => {
-            setFadeLock(true);
+            // setFadeLock(true);
             setCurrentSlideIndex(e.realIndex);
           }}
           allowSlideNext={allowScroll}
@@ -199,7 +203,9 @@ function StoryChapterTwoComponent(props: propsContent) {
                 } w-295px h-295px -ml-148px pad:w-300px pad:h-300px mobile:w-177px mobile:h-177px mobile:-ml-88px`}
               >
                 <BaseImage
-                  mImg={data.storyChapterTwoComponentFaceImage?.imagemobile?.url}
+                  mImg={
+                    data.storyChapterTwoComponentFaceImage?.imagemobile?.url
+                  }
                   pImg={data.storyChapterTwoComponentFaceImage?.imagepc?.url}
                   alt={data.storyChapterTwoComponentFaceImage?.altText}
                   layout="fill"
@@ -233,7 +239,7 @@ function StoryChapterTwoComponent(props: propsContent) {
                 ></BaseImage>
               </div>
               <div
-                className={`overflow-hidden absolute right-0 bottom-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px p-42px px-66px w-769px pad:text-16px pad:p-33px pad:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
+                className={`overflow-hidden absolute right-0 bottom-0 bg-white font-Grotesque-Light text-[#262627] leading-tight text-20px p-42px px-66px w-769px pad:text-16px pad:p-33px pad:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
               >
                 <div
                   className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-11500 delay-1000 ${

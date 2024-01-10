@@ -18,7 +18,9 @@ module.exports = postcss.plugin("postcss-px-to-vw", () => {
       if (
         rule.parent &&
         rule.parent.type === "atrule" &&
-        rule.parent.params.includes("(min-width: 769px) and (max-width: 1536px)")
+        rule.parent.params.includes(
+          "(min-width: 769px) and (max-width: 1536px)"
+        )
       ) {
         base = 1600;
       }
@@ -34,7 +36,9 @@ module.exports = postcss.plugin("postcss-px-to-vw", () => {
         let pxValue = /(-?\d*\.?\d+)px/.exec(decl.value);
         if (!pxValue) return;
 
-        let vwValue = Number(pxValue[1]) / base * 100;
+        if (Math.abs(Number(pxValue[1])) === 1) return;
+
+        let vwValue = (Number(pxValue[1]) / base) * 100;
 
         if (decl.prop === "min-height" && pxValue[1] === "700") {
           return;

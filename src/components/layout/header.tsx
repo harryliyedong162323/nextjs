@@ -102,7 +102,7 @@ function Header(props: any) {
       >
         <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         <div
-          className="bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
+          className="image-[rendering: pixelated] bg-[url('/assets/menu-white.png')] w-44px h-44px mobile:w-20px mobile:h-20px  absolute right-[45px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
             handleMenu();
           }}
@@ -282,11 +282,11 @@ function Panel({ menuFlag, onMenuChange }: any) {
         },
       ],
       list: [
-        {
-          id: 1311,
-          content: "Wildmoor House",
-          link: "/localMarketActivity?anchor=WildmoorHouse",
-        },
+        // {
+        //   id: 1311,
+        //   content: "Wildmoor House",
+        //   link: "/localMarketActivity?anchor=WildmoorHouse",
+        // },
         {
           id: 131,
           content: "Global News",

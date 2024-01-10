@@ -3,9 +3,25 @@
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
-import BaseVideo from "@/components/base/video";
 
-function IRLExperiencesComponent(props: any) {
+
+interface propsContent{
+    getPageStore:Function,
+    updatePageStore:Function,
+    changeNavStatus: Function;
+    scrollToPage: Function;
+    data:{
+        entry:any,
+        name:string,
+        type:string,
+    }
+}
+
+
+function IRLExperiencesComponent(props: propsContent) {
+
+    const getPageStore = props.getPageStore;
+
     const headStyle = props.data.entry.headStyle;
     // const block1Image = props.data.entry.fields.block1Image.sys.fields;
     const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -14,7 +30,7 @@ function IRLExperiencesComponent(props: any) {
         if (isFullPage) {
             if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
                 setIsCurrentPage(true);
-                console.log(2323)
+                console.log(getPageStore('IRLExperiencesComponent'))
             } else {
                 setIsCurrentPage(false);
             }

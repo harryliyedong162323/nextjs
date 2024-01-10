@@ -23,6 +23,8 @@ interface nearYouComponentStoresCollectionContent{
 
 
 export interface propsContent{
+    getPageStore:Function,
+    updatePageStore:Function,
     changeNavStatus:Function,
     scrollToPage:Function,
 

@@ -34,6 +34,8 @@ interface entryContent {
 }
 
 export interface propsContent {
+  getPageStore:Function,
+  updatePageStore:Function,
   changeNavStatus: Function;
   scrollToPage: Function;
 
@@ -132,7 +134,7 @@ function StoryOpeningComponent(props: propsContent) {
         </div>
         <div
           className={`overflow-hidden font-AlbertusNova-Light text-center uppercase transition-all ease-in-out duration-500 delay-1000 h-0 ${
-            isCurrentPage ? "h-52px pad:h-60px mobile:h-54px" : "h-0"
+            isCurrentPage ? "h-60px pad:h-60px mobile:h-54px" : "h-0"
           } text-40px pad:text-28px mobile:leading-[27px] mobile:w-300px mobile:text-20px`}
         >
           <div>{data.storyOpeningDescription}</div>

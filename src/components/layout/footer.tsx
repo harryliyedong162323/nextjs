@@ -191,11 +191,11 @@ function Footer(props: any) {
     setPanels(newPanels);
   };
   return (
-    <footer className="relative overflow-hidden select-none">
+    <footer className="relative overflow-hidden select-none mobile:h-[100%]">
       <input type="hidden" value={headStyle} />
       {/*h-900px*/}
-      <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-auto mobile:bg-[url('/assets/mask_footer_2.png')]">
-        <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-40px">
+      <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-[100%] mobile:pl-30px mobile:pr-30px mobile:bg-[url('/assets/mask_footer_2.png')] mobile:bg-contain mobile:flex mobile:flex-col mobile:items-center mobile:justify-between">
+        <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-30px mobile:w-[100%]">
           {/*mobile:w-274px mobile:h-44px*/}
           <div className="mobile:w-full mobile:order-2">
             <BaseLink link="/home">
@@ -204,14 +204,14 @@ function Footer(props: any) {
           </div>
           <div className="mobile:order-1 mobile:w-full">
             <div
-              className="w-44px h-46px bg-[url('/assets/scroll_top.svg')] bg-cover cursor-pointer mobile:mb-45px mobile:mx-auto mobile:w-40px mobile:h-42px"
+              className="w-44px h-46px bg-[url('/assets/scroll_top.svg')] bg-cover cursor-pointer mobile:mb-35px mobile:mx-auto mobile:w-40px mobile:h-42px"
               onClick={() => {
                 scrollToPage(0);
               }}
             ></div>
           </div>
         </div>
-        <div className="flex justify-between pt-50px mobile:pt-35px pb-50px mobile:flex-wrap mobile:justify-center">
+        <div className="flex justify-between pt-50px mobile:pt-30px pb-50px mobile:flex-wrap mobile:justify-center">
           {pannels.map((panel) => (
             <ul
               className="flex-auto mobile:w-full mobile:hidden"
@@ -243,9 +243,9 @@ function Footer(props: any) {
               className="flex-auto hidden mobile:w-full mobile:block"
               key={panel.id}
             >
-              <li className="flex justify-between pb-35px mobile:pb-40px items-center ">
+              <li className="flex justify-between pb-35px mobile:pb-25px items-center ">
                 <span className=" w-11/12  mobile:text-17px">
-                  <BaseLink link={panel.title[0].link} className="text-20px font-medium font-Grotesque-Regular dark-grey">
+                  <BaseLink link={panel.title[0].link} className="text-20px mobile:text-17px font-medium font-Grotesque-Medium dark-grey">
                     {panel.title[0].name}
                   </BaseLink>
                 </span>
@@ -296,7 +296,7 @@ function Footer(props: any) {
           ))}
         </div>
 
-        <div className="border-b-2 border-b-500 border-solid border-[#969797] pb-100px mobile:pb-50px">
+        <div className="border-b-2 border-b-500 border-solid border-[#969797] pb-100px mobile:pb-25px mobile:w-[100%]">
           <div className="text-[#262627] text-16px font-normal font-Grotesque-Regular pb-46px mobile:text-center mobile:text-14px mobile:23px">
             Join us for more from the Wild
           </div>
@@ -328,15 +328,15 @@ function Footer(props: any) {
               <li className="mr-84px text-[#696969] font-Grotesque-Regular mobile:hidden">
                 &copy; 2023 WILDMOOR All rights reserved
               </li>
-              <li className="mr-84px mobile:mr-0 mobile:w-full mobile:mb-25px">
+              <li className="mr-84px mobile:mr-0 mobile:w-full mobile:mb-15px">
                 <BaseLink link="/privacyPolicy" className="font-Grotesque-Regular text-black">Privacy policy</BaseLink>
               </li>
-              <li className="mobile:w-full mobile:mb-64px">
+              <li className="mobile:w-full mobile:mb-30px">
                 <BaseLink className="font-Grotesque-Regular text-black">Terms of Service</BaseLink>
               </li>
             </ul>
           </div>
-          <div className="pr-21px flex mobile:pr-0 mobile:w-full mobile:justify-center mobile:pb-53px items-center">
+          <div className="pr-21px flex mobile:pr-0 mobile:w-full mobile:justify-center mobile:pb-30px items-center">
             <div className="w-24px h-24px mr-10px mobile:w-24px mobile:h-24px  bg-cover bg-[url('/assets/language@4.png')]"></div>
             <div
               className=" font-Grotesque-Medium  text-black text-16px font-medium cursor-pointer"

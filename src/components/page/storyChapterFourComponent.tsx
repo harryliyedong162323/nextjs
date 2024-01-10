@@ -50,6 +50,8 @@ interface entryContent {
 }
 
 export interface propsContent {
+  getPageStore:Function,
+  updatePageStore:Function,
   changeNavStatus: Function;
   scrollToPage: Function;
   data: {
@@ -64,31 +66,31 @@ function StoryChapterFourComponent(props: propsContent) {
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
-  const [fadeLock, setFadeLock] = useState(true);
+  // const [fadeLock, setFadeLock] = useState(true);
   const [allowScroll, setAllowScroll] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
-  useEffect(() => {
-    const fadeBox: HTMLElement = document.querySelector(
-      "#fadeBox2"
-    ) as HTMLElement;
-    if (fadeBox) {
-      // fadeBox.onwheel = function (e) {
-      // if (fadeLock) {
-      //   e.stopPropagation();
-      // }
-      // };
-      document.ontouchmove = function (e) {
-        if (fadeLock && isCurrentPage) {
-          e.stopPropagation();
-        }
-      };
-    }
-  }, [fadeLock, isCurrentPage]);
+  // useEffect(() => {
+  //   const fadeBox: HTMLElement = document.querySelector(
+  //     "#fadeBox2"
+  //   ) as HTMLElement;
+  //   if (fadeBox) {
+  //     // fadeBox.onwheel = function (e) {
+  //     // if (fadeLock) {
+  //     //   e.stopPropagation();
+  //     // }
+  //     // };
+  //     document.ontouchmove = function (e) {
+  //       if (fadeLock && isCurrentPage) {
+  //         e.stopPropagation();
+  //       }
+  //     };
+  //   }
+  // }, [fadeLock, isCurrentPage]);
 
   useEffect(() => {
     if (isFullPage) {
-      setFadeLock(true);
+      // setFadeLock(true);
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
         setIsCurrentPage(true);
         setTimeout(() => {
@@ -137,12 +139,12 @@ function StoryChapterFourComponent(props: propsContent) {
           direction="vertical"
           mousewheel={true}
           onSlideChangeTransitionEnd={() => {
-            setTimeout(() => {
-              setFadeLock(false);
-            }, 500);
+            // setTimeout(() => {
+            //   setFadeLock(false);
+            // }, 500);
           }}
           onSlideChangeTransitionStart={(e) => {
-            setFadeLock(true);
+            // setFadeLock(true);
             setCurrentSlideIndex(e.realIndex);
           }}
           allowSlideNext={allowScroll}
@@ -171,7 +173,7 @@ function StoryChapterFourComponent(props: propsContent) {
               </div>
               <span
                 onClick={() => showIntroduce(true)}
-                className={`absolute cursor-pointer w-300px h-300px top-244px right-600px pad:w-340px pad:h-340px pad:right-580px pad:top-300px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
+                className={`absolute cursor-pointer w-433px h-433px top-244px right-403px pad:w-340px pad:h-340px pad:top-300px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
                   isCurrentPage && currentSlideIndex === 0
                     ? "opacity-100"
                     : "opacity-0"
@@ -191,13 +193,13 @@ function StoryChapterFourComponent(props: propsContent) {
 
           <SwiperSlide>
             <div
-              className={`absolute w-[1692px] left-1/2 -ml-900px top-174px h-496px pad:w-906px pad:-ml-453px pad:h-398px mobile:w-330px mobile:-ml-165px mobile:mt-88px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
+              className={`absolute w-[1692px] left-1/2 -ml-900px top-174px h-496px mobile:w-330px mobile:-ml-165px mobile:mt-88px mobile:pl-0 mobile:flex mobile:flex-col mobile:h-auto mobile:items-center`}
               data-swiper-parallax={100}
               data-swiper-parallax-opacity={0}
             >
               <div
                 onClick={() => showIntroduce(false)}
-                className={`absolute cursor-pointer z-20 right-0 w-828px h-558px pad:w-460px pad:h-310px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 mobile:top-0 transition-all ease-in-out duration-500 delay-1000 ${
+                className={`absolute cursor-pointer z-20 right-0 w-828px h-558px mobile:relative mobile:w-330px mobile:h-264px mobile:left-0 mobile:top-0 transition-all ease-in-out duration-500 delay-1000 ${
                   isCurrentPage && currentSlideIndex === 1
                     ? "opacity-100 top-100px pad:top-160px"
                     : "opacity-0 top-400px"
@@ -213,7 +215,7 @@ function StoryChapterFourComponent(props: propsContent) {
                 ></BaseImage>
               </div>
               <div
-                className={`overflow-hidden absolute left-0 top-0 bg-white font-GalanoGrotesque text-[#262627] leading-tight text-20px py-72px px-94px w-914px pad:text-16px pad:p-33px pad:w-512px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
+                className={`overflow-hidden absolute left-0 top-0 bg-white font-Grotesque-Light text-[#262627] leading-tight text-20px py-72px px-94px w-914px pad:text-16px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0`}
               >
                 <div
                   className={`h-full absolute z-10 right-0 top-0 bg-white transition-all ease-in-out duration-500 delay-1000 ${
