@@ -141,7 +141,7 @@ function Header(props: any) {
         >
           <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
           <div
-            className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
+            className="w-44px h-44px bg-contain bg-[url('/assets/more_menu_black.png')] cursor-pointer absolute right-45px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
             onClick={() => {
               handleMenu();
             }}

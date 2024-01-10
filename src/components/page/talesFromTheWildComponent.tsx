@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import BaseImage from "@/components/base/image";
 import Link from "../base/link";
+import BaseLink from "@/components/base/link";
 
 interface Kol {
   id: string;
@@ -100,11 +101,11 @@ const kols: Array<Kol> = [
 ];
 
 function isMobile() {
-  let ua = navigator.userAgent
+  let ua = navigator.userAgent;
   let iphone = ua.match(/(iPhone\sOS)\s([\d_]+)/),
-      android = ua.match(/(Android)\s+([\d.]+)/),
-      isMobile = iphone || android;
-  return isMobile
+    android = ua.match(/(Android)\s+([\d.]+)/),
+    isMobile = iphone || android;
+  return isMobile;
 }
 
 function TalesFromTheWildComponent(props: any) {
@@ -116,15 +117,15 @@ function TalesFromTheWildComponent(props: any) {
     props.data.entry.hasNavigation
   );
 
-  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false)
-  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false)
+  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+  const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
 
   useEffect(() => {
     if (isFullPage) {
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
-        setIsCurrentPage(true)
+        setIsCurrentPage(true);
       } else {
-        setIsCurrentPage(false)
+        setIsCurrentPage(false);
       }
     }
   }, [isFullPage, props]);
@@ -168,22 +169,24 @@ function TalesFromTheWildComponent(props: any) {
                 <div className="relative" key={index}>
                   {currentKol === index && (
                     <>
-                      <div
-                        className={`relative inline-block object-cover mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
-                          currentKol !== toKol
-                            ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
-                            : "w-615px h-519px pad:w-595px pad:h-502px mobile:h-360px"
-                        }`}
-                      >
-                        <BaseImage
-                          mImg={item.banner.mImg}
-                          pImg={item.banner.pImg}
-                          alt={""}
-                          layout="fill"
-                          objectFit="cover"
-                          quality={100}
-                        ></BaseImage>
-                      </div>
+                      <BaseLink link="/storiesDetail">
+                        <div
+                          className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                            currentKol !== toKol
+                              ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
+                              : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-360px"
+                          }`}
+                        >
+                          <BaseImage
+                            mImg={item.banner.mImg}
+                            pImg={item.banner.pImg}
+                            alt={""}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
+                        </div>
+                      </BaseLink>
                       <div
                         className={`${
                           currentKol !== toKol ? "hidden" : ""
@@ -254,7 +257,13 @@ function TalesFromTheWildComponent(props: any) {
                                 : "w-139px h-420px pad:w-139px pad:h-420px mobile:h-94px"
                             }`}
                           >
-                            <div className={`${toKol === index ? "w-full h-full" : "w-0 h-0 overflow-hidden"} relative`}>
+                            <div
+                              className={`${
+                                toKol === index
+                                  ? "w-full h-full"
+                                  : "w-0 h-0 overflow-hidden"
+                              } relative`}
+                            >
                               <BaseImage
                                 mImg={item.banner.mImg}
                                 pImg={item.banner.pImg}
@@ -264,7 +273,13 @@ function TalesFromTheWildComponent(props: any) {
                                 quality={100}
                               ></BaseImage>
                             </div>
-                            <div className={`${toKol === index ? "w-0 h-0 overflow-hidden" : "w-full h-full"} relative`}>
+                            <div
+                              className={`${
+                                toKol === index
+                                  ? "w-0 h-0 overflow-hidden"
+                                  : "w-full h-full"
+                              } relative`}
+                            >
                               <BaseImage
                                 mImg={item.banner.smImg}
                                 pImg={item.banner.spImg}

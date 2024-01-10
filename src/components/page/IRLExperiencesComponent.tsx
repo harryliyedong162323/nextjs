@@ -64,6 +64,28 @@ function IRLExperiencesComponent(props: any) {
 
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+  const [pageSwiper, setPageSwiper] = useState<any>(null);
+  const [swiperHeight, setSwiperHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setSwiperHeight(window.innerHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    const resizeHandler = () => {
+      setSwiperHeight(window.innerHeight);
+      pageSwiper && pageSwiper.update();
+    };
+
+    window.addEventListener("resize", resizeHandler);
+
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, [pageSwiper]);
+
   useEffect(() => {
     if (isFullPage) {
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
@@ -101,9 +123,15 @@ function IRLExperiencesComponent(props: any) {
       <input type="hidden" value={headStyle} />
       <Swiper
         modules={[FreeMode]}
+        freeMode={true}
         direction="vertical"
         nested={true}
         slidesPerView="auto"
+        height={swiperHeight}
+        resistanceRatio={0}
+        onSwiper={(e) => {
+          setPageSwiper(e);
+        }}
       >
         <SwiperSlide>
           <div className="relative">
@@ -115,16 +143,22 @@ function IRLExperiencesComponent(props: any) {
               <div className="grid grid-cols-2 justify-center gap-[41px] pad:gap-[29px] items-center mobile:grid-rows-2 mobile:grid-cols-none">
                 {currentStore[0] && (
                   <div className="pl-21px mobile:pl-0 mobile:w-325px mobile:mx-auto">
-                    <div className="relative h-405px pad:h-289px  mobile:h-217px  mobile:w-full">
-                      <BaseImage
-                        mImg={currentStore[0].howToBuyIrlImage.imagemobile.url}
-                        pImg={currentStore[0].howToBuyIrlImage.imagepc.url}
-                        alt={currentStore[0].howToBuyIrlImage.altText}
-                        layout="fill"
-                        objectFit="cover"
-                        quality={100}
-                      ></BaseImage>
-                    </div>
+                    <BaseLink
+                      link={`/howToBuyDetail?id=${currentStore[0].sys.id}`}
+                    >
+                      <div className="relative h-405px pad:h-289px cursor-pointer  mobile:h-217px  mobile:w-full">
+                        <BaseImage
+                          mImg={
+                            currentStore[0].howToBuyIrlImage.imagemobile.url
+                          }
+                          pImg={currentStore[0].howToBuyIrlImage.imagepc.url}
+                          alt={currentStore[0].howToBuyIrlImage.altText}
+                          layout="fill"
+                          objectFit="cover"
+                          quality={100}
+                        ></BaseImage>
+                      </div>
+                    </BaseLink>
                     <div className="pt-43px mobile:pt-15px">
                       <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-15px">
                         {currentStore[0].howToBuyDetailComponentStoreName}

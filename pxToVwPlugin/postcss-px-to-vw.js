@@ -33,6 +33,11 @@ module.exports = postcss.plugin("postcss-px-to-vw", () => {
           }
         }
 
+        if (decl.value.includes("!ignore")) {
+          decl.value = decl.value.replace("!ignore", "");
+          return;
+        }
+
         let pxValue = /(-?\d*\.?\d+)px/.exec(decl.value);
         if (!pxValue) return;
 

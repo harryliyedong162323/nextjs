@@ -58,7 +58,7 @@ interface ComponentData {
     flavourFinderComponentStartContent: string;
     dywfSeeYourFlavorProfile: string;
     dywfRedo: string;
-  }
+  };
   quizs: {
     q1: {
       id: number;
@@ -152,10 +152,13 @@ function genComponentData(data: any) {
       dywfResultContent: basic.dywfResultContent,
       dywfResultSubtitle: basic.dywfResultSubtitle,
       dywfSubmitContent: basic.dywfSubmitContent,
-      flavourFinderComponentDescription1: basic.flavourFinderComponentDescription1,
-      flavourFinderComponentDescription2: basic.flavourFinderComponentDescription2,
+      flavourFinderComponentDescription1:
+        basic.flavourFinderComponentDescription1,
+      flavourFinderComponentDescription2:
+        basic.flavourFinderComponentDescription2,
       flavourFinderComponentTitle: basic.flavourFinderComponentTitle,
-      flavourFinderComponentStartContent: basic.flavourFinderComponentStartContent,
+      flavourFinderComponentStartContent:
+        basic.flavourFinderComponentStartContent,
       dywfSeeYourFlavorProfile: basic.dywfSeeYourFlavorProfile,
       dywfRedo: basic.dywfRedo,
     },
@@ -578,12 +581,14 @@ function FlavourFinderComponent(props: any) {
   const [currentRecommend, setCurrentRecommend] = useState<number>(0);
   const [recommend, setRecommend] = useState<result>();
   const [swiper, setSwiper] = useState<any>(null);
-  const [popupPropsContent, setPopupPropsContent] = useState<PopupPropsContent>({
-    title: "success",
-    message: "Email sent successfully",
-    btnTxt: "OK",
-    visible: false
-  });
+  const [popupPropsContent, setPopupPropsContent] = useState<PopupPropsContent>(
+    {
+      title: "success",
+      message: "Email sent successfully",
+      btnTxt: "OK",
+      visible: false,
+    }
+  );
 
   const scrollTo = useCallback(
     (index: number) => {
@@ -613,7 +618,7 @@ function FlavourFinderComponent(props: any) {
   };
 
   const submit = () => {
-    const popupData = {...popupPropsContent, ...{ visible: true }}
+    const popupData = { ...popupPropsContent, ...{ visible: true } };
     setPopupPropsContent(popupData);
     grecaptcha.ready(function () {
       grecaptcha
@@ -671,26 +676,26 @@ function FlavourFinderComponent(props: any) {
               quality="100"
             ></Image>
           </div>
-          <div className="absolute right-0 bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover top-1/2 w-560px h-490px -mt-245px pad:w-448 pad:h-391px pad:-mt-196px mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
-            <div className="leading-6 font-AlbertusNova-Regular uppercase text-center text-28px mt-100px pad:text-24px pad:mt-80px mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
-              { data.basic.flavourFinderComponentTitle }
+          <div className="absolute right-0  bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover top-1/2 w-560px h-490px -mt-245px  pad:w-448 pad:h-391px pad:-mt-196px mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
+            <div className="leading-6 font-AlbertusNova-Regular uppercase text-center text-26px mt-100px pad:text-24px pad:mt-80px mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
+              {data.basic.flavourFinderComponentTitle}
             </div>
-            <div className="font-Grotesque-Regular text-[#696969] px-20px m-20px text-18px pad:text-16px mobile:text-14px">
-              <div className="text-center">
-              { data.basic.flavourFinderComponentDescription1 }
+            <div className="font-Grotesque pl-52px pr-52px text-[#696969] text-18px pad:text-16px pad:pr-36px pad:pl-36px mobile:text-14px mobile:pl-28px mobile:pr-28px ">
+              <div className="text-center mt-50px pad:mt-35px mobile:mt-19px mobile:leading-[1.5em]">
+                {data.basic.flavourFinderComponentDescription1}
               </div>
-              <div className="text-center mt-10px">
-              { data.basic.flavourFinderComponentDescription2 }
+              <div className="text-center mt-27px pad:mt-19px mobile:mt-18px mobile:leading-[1.5em]">
+                {data.basic.flavourFinderComponentDescription2}
               </div>
             </div>
             <div
-              className="cursor-pointer absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-50px w-225px h-55px leading-[55px] -ml-112px pad:w-180px pad:-ml-90px pad:bottom-40px pad:h-44px pad:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-30px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
+              className="cursor-pointer absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-65px w-225px h-55px leading-[55px] -ml-112px pad:w-180px pad:-ml-90px pad:bottom-46px pad:h-44px pad:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-38px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
               }}
             >
-              { data.basic.flavourFinderComponentStartContent }
+              {data.basic.flavourFinderComponentStartContent}
             </div>
           </div>
         </>
@@ -1078,7 +1083,7 @@ function FlavourFinderComponent(props: any) {
                         doRecommend();
                       }}
                     >
-                    { data.basic.dywfSeeYourFlavorProfile }
+                      {data.basic.dywfSeeYourFlavorProfile}
                     </div>
                   </div>
                 </div>
@@ -1212,7 +1217,7 @@ function FlavourFinderComponent(props: any) {
                       setQuizIndex(0);
                     }}
                   >
-                    { data.basic.dywfRedo }
+                    {data.basic.dywfRedo}
                   </span>
                 </div>
                 <div className="mx-auto mt-10px w-[1251px] pad:w-[1042px] mobile:w-330px">
@@ -1238,9 +1243,17 @@ function FlavourFinderComponent(props: any) {
                                 <div className="flex flex-col items-center justify-center">
                                   <div className="relative w-215px h-209px pad:w-180px pad:h-175px mobile:w-148px mobile:h-145px">
                                     <BaseImage
-                                      mImg={product.quizResultProductImage?.imagemobile?.url}
-                                      pImg={product.quizResultProductImage?.imagepc?.url}
-                                      alt={product.quizResultProductImage?.altText}
+                                      mImg={
+                                        product.quizResultProductImage
+                                          ?.imagemobile?.url
+                                      }
+                                      pImg={
+                                        product.quizResultProductImage?.imagepc
+                                          ?.url
+                                      }
+                                      alt={
+                                        product.quizResultProductImage?.altText
+                                      }
                                       layout="fill"
                                       objectFit="cover"
                                       quality={100}
@@ -1301,7 +1314,7 @@ function FlavourFinderComponent(props: any) {
                         </div>
                       </div>
                       <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px pad:text-12px mobile:text-10px">
-                        { data.basic.dywfResultSubtitle }
+                        {data.basic.dywfResultSubtitle}
                       </div>
                       <div className="font-Grotesque-Regular text-black mt-20px leading-normal text-22px opacity-50 pad:text-18px mobile:text-14px mobile:text-center">
                         {
@@ -1310,14 +1323,14 @@ function FlavourFinderComponent(props: any) {
                         }
                       </div>
                       <div className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px">
-                        { data.basic.dywfExploreContent }
+                        {data.basic.dywfExploreContent}
                       </div>
                     </div>
                   </div>
                   <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
                     <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
                       <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">
-                        { data.basic.dywfEmailContent }
+                        {data.basic.dywfEmailContent}
                       </div>
                     </div>
                     <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
@@ -1347,7 +1360,7 @@ function FlavourFinderComponent(props: any) {
                             submit();
                           }}
                         >
-                        { data.basic.dywfSubmitContent }
+                          {data.basic.dywfSubmitContent}
                         </div>
                       </div>
                     </div>

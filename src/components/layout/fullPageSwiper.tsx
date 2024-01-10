@@ -50,10 +50,11 @@ const FullPageSwiper = function (params: Params) {
       {/* <div>testing</div> */}
       <Swiper
         direction="vertical"
+        className="-mt-1px h-[100px!ignore]"
         modules={[Mousewheel]}
         mousewheel={{
-          sensitivity: 0.1,
-          thresholdDelta: 130,
+          sensitivity: 0.5,
+          thresholdDelta: 120,
         }}
         observer={true}
         observeParents={true}
@@ -68,6 +69,8 @@ const FullPageSwiper = function (params: Params) {
           onChange(e.realIndex);
         }}
         id="pageSwiper"
+        slidesPerView={"auto"}
+        spaceBetween={-1}
       >
         {slides.map((item: any, index: number) => (
           <SwiperSlide key={index} className="overflow-hidden">
