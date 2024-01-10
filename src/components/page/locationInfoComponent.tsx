@@ -524,7 +524,7 @@ function LocationInfoComponent(props: propsContent) {
     const getPageStore = props.getPageStore;
     const updatePageStore = props.updatePageStore;
     const title = props.data.entry.locationInfoComponentTitle;
-    const stores = props.data.entry.stores;
+    const stores:any = props.data.entry.stores;
     const locationInfoRegionData = props.data.entry.locationInfoComponentRegionListCollection.items;
     let locationInfoStoreData = props.data.entry.locationInfoComponentStoreListCollection.items;
     locationInfoStoreData = [...stores];

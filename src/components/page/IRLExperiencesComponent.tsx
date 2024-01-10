@@ -14,7 +14,7 @@ interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  stores: locationInfoStore;
+  stores: any;
   data: {
     entry: any;
     name: string;
@@ -55,7 +55,7 @@ interface locationInfoStore {
   showInHowToBuyIrl: boolean;
 }
 
-function IRLExperiencesComponent(props: propsContent) {
+function IRLExperiencesComponent(props: any) {
   const getPageStore = props.getPageStore;
   const stores = props.data.entry.stores;
   const headStyle = props.data.entry.headStyle;
@@ -82,7 +82,7 @@ function IRLExperiencesComponent(props: propsContent) {
   }, [isFullPage, props]);
 
   const filterStore = (id: number) => {
-    return stores.filter((item) => {
+    return stores.filter((item: any) => {
       if (
         item.howToBuyDetailComponentRegion.regionId == id &&
         (item.howToBuyIrlSort == 1 || item.howToBuyIrlSort == 2)

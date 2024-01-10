@@ -168,7 +168,7 @@ function getComponent(
 
 function FullPage(props: any) {
 
-  const [pageStore, setPageStore] = useState([]);
+  const [pageStore, setPageStore] = useState([] as any);
 
   const [isBrowser, setIsBrowser] = useState(false);
   const [slideFlag, setSliderFlag] = useState(true);
@@ -221,12 +221,12 @@ function FullPage(props: any) {
 
   const pageComponents = props.data.entry.children;
 
-  const updatePageStore = (pageName: string, content: object, cb: Function) => {
+  const updatePageStore = (pageName: any, content: any, cb: any) => {
     setPageStore([
       ...pageStore,
       pageStore
-        .filter((page) => page.name == pageName)
-        .map((item) => {
+        .filter((page: any) => page.name == pageName)
+        .map((item: any) => {
           item.data = {
             ...item.data,
             ...content,
@@ -240,14 +240,14 @@ function FullPage(props: any) {
 
   const getPageStore = (pageName?: string) => {
     if (pageName) {
-      return pageStore.filter((item) => item.name == pageName)[0];
+      return pageStore.filter((item: any) => item.name == pageName)[0];
     }
     return pageStore;
   };
 
   useEffect(() => {
-    let tmpPageStore = [];
-    props.data.entry.children.forEach((item) => {
+    let tmpPageStore: any = [];
+    props.data.entry.children.forEach((item: any) => {
       tmpPageStore.push({
         name: item.name,
         data: {},
@@ -443,7 +443,7 @@ function FullPage(props: any) {
               offset: 0.6, //0.6
               type: SlideParallaxType.reveal,
             }}
-            onChange={(e) => {
+            onChange={(e: any) => {
               handleSlideChange(e);
             }}
           />
