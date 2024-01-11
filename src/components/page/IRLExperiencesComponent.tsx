@@ -186,16 +186,22 @@ function IRLExperiencesComponent(props: propsContent) {
 
                 {currentStore[1] && (
                   <div className="pl-21px mobile:pl-0 mobile:w-325px mobile:mx-auto">
-                    <div className="relative h-405px pad:h-289px mobile:h-217px  mobile:w-full">
-                      <BaseImage
-                        mImg={currentStore[1].howToBuyIrlImage.imagemobile.url}
-                        pImg={currentStore[1].howToBuyIrlImage.imagepc.url}
-                        alt={currentStore[1].howToBuyIrlImage.altText}
-                        layout="fill"
-                        objectFit="cover"
-                        quality={100}
-                      ></BaseImage>
-                    </div>
+                    <BaseLink
+                      link={`/howToBuyDetail/${currentStore[1].sys.id}`}
+                    >
+                      <div className="relative h-405px cursor-pointer pad:h-289px mobile:h-217px  mobile:w-full">
+                        <BaseImage
+                          mImg={
+                            currentStore[1].howToBuyIrlImage.imagemobile.url
+                          }
+                          pImg={currentStore[1].howToBuyIrlImage.imagepc.url}
+                          alt={currentStore[1].howToBuyIrlImage.altText}
+                          layout="fill"
+                          objectFit="cover"
+                          quality={100}
+                        ></BaseImage>
+                      </div>
+                    </BaseLink>
                     <div className="pt-43px mobile:pt-15px">
                       <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-15px">
                         {currentStore[1].howToBuyDetailComponentStoreName}

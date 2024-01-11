@@ -626,7 +626,7 @@ class RangeDao {
               type: "flavourFinderComponent",
               name: "flavourFinderComponent",
               entry: {
-                headStyle: "black",
+                headStyle: "white",
                 ...quizResult,
                 ...PageModel.query("flavourFinder", result),
                 ...PageModel.query("productFamily", productFamilyResult),

@@ -329,9 +329,19 @@ function FullPage(props: any) {
     },
   ];
 
-  const setHeadStyle = (index: number): void => {
+  const setHeadStyle = (index: number) => {
     // const slide = document.querySelectorAll(".rps-slide");
-    const slide = document.querySelectorAll("#pageSwiper section");
+
+    const nav = document.getElementsByTagName("nav");
+    for (let i = 0; i < nav.length; i++) {
+      nav[i].style.display = "none";
+    }
+
+    if (index == slides.length - 1) {
+      return false;
+    }
+
+    const slide = document.querySelectorAll("section");
     const currentHead = slide[index].querySelector(
       'input[type="hidden"]'
     ) as HTMLInputElement;
@@ -340,11 +350,7 @@ function FullPage(props: any) {
     console.log(slide);
     const value: string = currentHead?.value || "white";
 
-    const nav = document.getElementsByTagName("nav");
-    for (let i = 0; i < nav.length; i++) {
-      nav[i].style.display = "none";
-    }
-    console.log("nav-" + value);
+
 
     let currentNav = document.getElementById(
       "nav-" + value
@@ -367,7 +373,9 @@ function FullPage(props: any) {
       }
     }
 
+
     currentNav && (currentNav.style.display = "block");
+
   };
 
   const handleSlideChange = (e: number): void => {
@@ -384,17 +392,8 @@ function FullPage(props: any) {
     const nav: any = document.getElementById("nav");
 
     setHeadStyle(e);
-    console.log(e);
-    console.log(slides.length - 1);
-    if (e == slides.length - 1) {
-      // setSliderFlag(false);
 
-      console.log("211122");
-      nav && (nav.style.display = "none");
-    } else {
-      // setSliderFlag(true);
-      nav && (nav.style.display = "block");
-    }
+
   };
 
   return (

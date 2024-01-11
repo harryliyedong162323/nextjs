@@ -307,8 +307,8 @@ function MobileCarousel(props: any) {
         </div>
       </div>
 
-      <div className="pt-43px pl-22px pr-25px">
-        <div className="select-none font-Grotesque-Medium font-medium text-18px pb-15px text-20px ">
+      <div className="pt-43px pl-22px pr-25px mobile:pl-25px  mobile:mt-10px">
+        <div className="select-none font-Grotesque-Medium font-medium text-18px pb-15px text-20px mobile:mb-5px ">
           {data.howToBuyDetailComponentStoreName}
         </div>
         <div
@@ -404,11 +404,18 @@ function NearYouComponent(props: propsContent) {
   const handleTouchEnd = () => {
     console.log("结束");
   };
+  let str = title;
+  let substr1 = str.substring(0, 14);
+  let substr2 = str.substring(15);
   return (
     <section className="w-full h-screen overflow-hidden bg-while relative select-none  ">
       <input type="hidden" value={headStyle} />
-      <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:text-20px mobile:pt-77px">
-        {title}
+      <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:hidden mobile:text-20px mobile:pt-77px">
+        {substr1} {substr2}
+      </div>
+      <div className="hidden mobile:block mobile:w-full mobile:text-24px mobile:pt-77px mobile:uppercase mobile:font-AlbertusNova-Regular mobile:font-normal">
+        <div className="text-center">{substr1}</div>
+        <div className="text-center">{substr2}</div>
       </div>
 
       <div className="w-full pt-20px hidden mobile:block mobile:pt-20px">
@@ -419,7 +426,7 @@ function NearYouComponent(props: propsContent) {
 
       {/*onTouchStart={handleTouchStart}*/}
       {/*onTouchEnd={handleTouchEnd}*/}
-      <div className="relative">
+      <div className="relative mobile:pl-25px">
         <div
           className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto"
           ref={emblaRef}
