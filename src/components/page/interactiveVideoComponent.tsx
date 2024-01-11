@@ -83,8 +83,8 @@ function InteractiveVideoComponent(props: propsContent) {
           The Wild Escape{" "}
         </div>
         <BaseLink link={interactiveVideoData.interactiveVideoComponentJumpUrl}>
-          <div className="text-[#FFFFFF]  text-20px font-AlbertusNova-Regular font-normal pad:text-14px mobile:text-12px hover:text-black ">
-            <div className="cursor-pointer relative w-334px h-65px mx-auto pad:w-238px pad:h-46px cursor-pointer hover:bg-cover  hover:bg-[url('/assets/interactiveVideo/wi.png')]   mobile:w-200px mobile:h-39px  ">
+          {/* 
+            <div className="cursor-pointer relative w-334px h-65px mx-auto pad:w-238px pad:h-46px   mobile:w-200px mobile:h-39px  ">
               <BaseImage
                 pImg={
                   interactiveVideoData.interactiveVideoComponentExploreMoreImage
@@ -106,7 +106,15 @@ function InteractiveVideoComponent(props: propsContent) {
                 EXPLORE MORE
               </div>
             </div>
+          */}
+
+          <div className="hover:bg-[url('/assets/interactiveVideo/CTZ.png')] cursor-pointer hover:text-black bg-[url('/assets/interactiveVideo/CTZ-Z.png')]   mx-auto w-333px h-73px mx-auto   cursor-pointer text-center leading-[73px] text-white text-20px pad:text-14px uppercase font-AlbertusNova-Light font-normal mobile:hidden">
+            EXPLORE MORE
           </div>
+          <div className="hidden mobile:block mobile:bg-[url('/assets/interactiveVideo/CTZ-Z.png')] mobile:mx-auto mobile:text-12px mobile:w-190px mobile:h-30px mobile:text-center mobile:leading-[30px] mobile:text-white mobile:font-AlbertusNova-Light mobile:font-normal">
+            EXPLORE MORE
+          </div>
+          {/* </div> */}
         </BaseLink>
       </div>
     </section>

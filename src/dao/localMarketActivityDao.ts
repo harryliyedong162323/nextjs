@@ -11,8 +11,9 @@ const query = `
 
     globalCampaigns:localMarketActivityCollection (limit:1 where:{internalName:"local market activity"},locale:"en" ) {
       items {
-            howToBuyDetailComponentBannerTitle
+           
             howToBuyDetailComponentScrollContent
+            howToBuyDetailComponentBannerSubTitle
             howToBuyDetailComponentBannerImage {
                       imagepc {
                           url

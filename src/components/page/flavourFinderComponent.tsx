@@ -19,7 +19,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Scrollbar } from "swiper/modules";
 import Popup, { propsContent as PopupPropsContent } from "../base/popup";
 import "swiper/css";
-import 'swiper/css/scrollbar';
+import "swiper/css/scrollbar";
 import eventbus from "@/utils/eventbus";
 
 declare const grecaptcha: any;
@@ -695,20 +695,20 @@ function FlavourFinderComponent(props: any) {
               quality="100"
             ></Image>
           </div>
-          <div className="absolute right-0  bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover top-1/2 w-560px h-490px -mt-245px  pad:w-448 pad:h-391px pad:-mt-196px mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
-            <div className="leading-6 font-AlbertusNova-Regular uppercase text-center text-26px mt-100px pad:text-24px pad:mt-80px mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
+          <div className="absolute right-0  bg-[url('/assets/range/favour_finder_text_bg.png')] bg-cover top-1/2 w-[35em] h-[29em] -mt-245px   mobile:w-325px mobile:h-365px mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
+            <div className="leading-6 font-AlbertusNova-Regular uppercase text-center text-26px mt-[4em]  mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
               {data.basic.flavourFinderComponentTitle}
             </div>
-            <div className="font-Grotesque pl-52px pr-52px text-[#696969] text-18px pad:text-16px pad:pr-36px pad:pl-36px mobile:text-14px mobile:pl-28px mobile:pr-28px ">
-              <div className="text-center mt-50px pad:mt-35px mobile:mt-19px mobile:leading-[1.5em]">
+            <div className="font-Grotesque pl-52px pr-52px text-[#696969] text-18px pad:text-16px  mobile:text-14px mobile:pl-28px mobile:pr-28px ">
+              <div className="text-center mt-[2em]  mobile:mt-19px mobile:leading-[1.5em]">
                 {data.basic.flavourFinderComponentDescription1}
               </div>
-              <div className="text-center mt-27px pad:mt-19px mobile:mt-18px mobile:leading-[1.5em]">
+              <div className="text-center mt-[2em]  mobile:mt-18px mobile:leading-[1.5em]">
                 {data.basic.flavourFinderComponentDescription2}
               </div>
             </div>
             <div
-              className="cursor-pointer absolute bg-[url('/assets/range/start_btn.png')] bg-cover uppercase text-center left-1/2 bottom-65px w-225px h-55px leading-[55px] -ml-112px pad:w-180px pad:-ml-90px pad:bottom-46px pad:h-44px pad:leading-[44px] mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-38px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
+              className="cursor-pointer absolute  bg-[url('/assets/range/start_btn.png')] bg-contain uppercase text-center left-1/2 bottom-[4em] w-225px h-55px leading-[55px] -ml-112px  mobile:bg-[url('/assets/range/start_btn_small.png')] mobile:w-139px mobile:-ml-70px mobile:bottom-38px mobile:h-44px mobile:leading-[50px] mobile:text-13px"
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
@@ -745,7 +745,11 @@ function FlavourFinderComponent(props: any) {
                           return (
                             <div
                               key={index}
-                              className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                              onClick={() => {
+                                setQuizOneSelected(index + 1);
+                                // setQuizIndex(1);
+                              }}
+                              className={`cursor-pointer mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                                 quizOneSelected === index + 1
                                   ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
                                   : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
@@ -766,15 +770,12 @@ function FlavourFinderComponent(props: any) {
                                   {answer.label}
                                 </div>
                                 <i
-                                  className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                                  className={` bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
                                     quizOneSelected === index + 1
                                       ? "bg-[url('/assets/range/icon_checked.png')]"
                                       : "bg-[url('/assets/range/icon_check.png')]"
                                   } `}
-                                  onClick={() => {
-                                    setQuizOneSelected(index + 1);
-                                    // setQuizIndex(1);
-                                  }}
+
                                 ></i>
                               </div>
                             </div>

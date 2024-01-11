@@ -11,6 +11,7 @@ const query = `
             howToBuyDetailComponentStoreAddress
             howToBuyDetailComponentStoreBusinessHours
             howToBuyDetailComponentStorePhone
+            howToBuyDetailComponentBannerSubTitle
             howToBuyDetailComponentBannerTitle
             howToBuyDetailComponentScrollContent
             howToBuyDetailComponentBannerImage {

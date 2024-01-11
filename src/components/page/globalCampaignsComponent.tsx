@@ -21,6 +21,7 @@ interface entryContent{
   currentPageNumber:number,
   pageNumber:number,
   headStyle:string,
+  howToBuyDetailComponentBannerSubTitle:string,
   howToBuyDetailComponentBannerImage:howToBuyDetailComponentBannerContent,
   howToBuyDetailComponentBannerTitle:string,
   howToBuyDetailComponentScrollContent:string,
@@ -49,8 +50,8 @@ function GlobalCampaignsComponent(props: propsContent) {
   // console.log(props)
   const headStyle = props.data.entry.headStyle;
   const globalCampaigns = props.data.entry;
-  const subTitle: string = globalCampaigns.howToBuyDetailComponentScrollContent;
-  const title: string = globalCampaigns.howToBuyDetailComponentBannerTitle;
+  const subTitle: string = globalCampaigns.howToBuyDetailComponentBannerTitle || '';
+  const title: string = globalCampaigns.howToBuyDetailComponentBannerSubTitle || '';
   const address:string = globalCampaigns.howToBuyDetailComponentStoreAddress;
   const time:string = globalCampaigns.howToBuyDetailComponentStoreBusinessHours;
   const phone:string = globalCampaigns.howToBuyDetailComponentStorePhone;

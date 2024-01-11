@@ -63,7 +63,11 @@ export interface propsContent {
 
 function StoryChapterFourComponent(props: propsContent) {
   const [data, setData] = useState<entryContent>(props.data.entry);
-
+  const [textGradient, setTextGradient] = useState({
+    background: "linear-gradient(to bottom, #ffbb56, #883a17)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  } as React.CSSProperties);
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
   // const [fadeLock, setFadeLock] = useState(true);
@@ -164,7 +168,7 @@ function StoryChapterFourComponent(props: propsContent) {
                 <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px pad:text-27px mobile:text-20px mobile:w-full">
                   {data.storyChapterFourComponentFirst}
                 </span>
-                <span className="text-[#d28656] font-AlbertusNova-Regular uppercase leading-none text-58px my-34px pad:text-46px pad:my-27px mobile:text-32px mobile:w-full mobile:my-20px">
+                <span style={textGradient} className="text-[#d28656] font-AlbertusNova-Regular uppercase leading-none text-58px my-34px pad:text-46px pad:my-27px mobile:text-32px mobile:w-full mobile:my-20px">
                   {data.storyChapterFourComponentSecond}
                 </span>
                 <span className="text-white font-AlbertusNova-Regular uppercase leading-none text-34px pad:text-27px mobile:text-20px mobile:w-full">

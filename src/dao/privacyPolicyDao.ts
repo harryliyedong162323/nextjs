@@ -13,7 +13,40 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 // fetch sharing footer
 // fetch sharing popups
 
-const query = ``;
+const query = `
+
+    query {
+  privacypolicy:pagePrivacyPolicyCollection (limit:1 where:{internalName:"Privacy Policy"} locale: "en") {
+      items {
+        detailCollection {
+            items {
+                ... on DataPrivacyPolicy {
+                      title
+                      content {
+                          json
+                          links {
+                              entries {
+                                  inline {
+                                      sys {
+                                          id
+                                      }
+                                  }
+                              }
+                          }
+                      }
+
+                  }
+                
+            }
+        }
+      }
+  }
+
+
+}
+
+
+`;
 
 
 class privacyPolicyDao{
@@ -36,7 +69,7 @@ class privacyPolicyDao{
                 entry: {
                     headStyle:'black',
 
-                    ...PrivacyPolicyModel.query("privacyPolicyComponent", result),
+                    ...PrivacyPolicyModel.query("privacypolicy", result),
 
                 },
             },

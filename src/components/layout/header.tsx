@@ -263,18 +263,18 @@ function Header(props: any) {
     e.stopPropagation();
   }
 
-  useEffect(() => {
-    const option: object = { passive: false };
-
-    setMenu(false);
-    document.addEventListener("wheel", wheelHandle, option);
-    document.addEventListener("keydown", keyDownHandle, option);
-
-    setTimeout(() => {
-      document.removeEventListener("wheel", wheelHandle, option);
-      document.removeEventListener("keydown", keyDownHandle, option);
-    }, 500);
-  }, [currentSlideIndex]);
+  // useEffect(() => {
+  //   const option: object = { passive: false };
+  //
+  //   setMenu(false);
+  //   document.addEventListener("wheel", wheelHandle, option);
+  //   document.addEventListener("keydown", keyDownHandle, option);
+  //
+  //   setTimeout(() => {
+  //     document.removeEventListener("wheel", wheelHandle, option);
+  //     document.removeEventListener("keydown", keyDownHandle, option);
+  //   }, 500);
+  // }, [currentSlideIndex]);
 
 
 
