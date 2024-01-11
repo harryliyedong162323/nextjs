@@ -12,7 +12,8 @@ interface entryContent {
   currentPageNumber: number;
   pageNumber: number;
   headStyle: string;
-  pageDetailComponentTitle: string;
+  sectionName: string;
+  activityDetailComponentTitle: string;
   pageDetailCollection: {
     items: Array<Collection>;
   };
@@ -103,15 +104,14 @@ function ActivityDetailComponent(props: propsContent) {
   return (
     <div className="pl-33px pr-33px overflow-hidden mobile:pl-0 mobile:pr-0">
       <div className="text-22px font-normal text-center text-dark-grey pt-95px pb-42px font-AlbertusNova-Regular mobile:pt-22px mobile:pb-20px mobile:text-14px uppercase pad:pt-150px">
-        the Wild Escape Journal
+        { data.sectionName }
       </div>
-      <div className="text-40px font-normal text-center w-623px mx-auto font-AlbertusNova-Regular pb-117px mobile:pl-45px mobile:pr-45px mobile:text-20px mobile:w-auto mobile:pb-40px uppercase">
-        Bring the drinking occasion to life in a way
+      <div className="text-40px font-normal text-center w-[623px!ignore] mx-auto font-AlbertusNova-Regular pb-117px mobile:pl-45px mobile:pr-45px mobile:text-20px mobile:w-auto mobile:pb-40px uppercase">
+       {data.activityDetailComponentTitle }
       </div>
       {
-          data.pageDetailCollection.items.map((item:any, key:number) => {
+          data.pageDetailCollection?.items.map((item:any, key:number) => {
             return <>
-            {/* {item.__typename} */}
               { item.__typename === "DataLocalMarketDetailMultipleContent" && <>
               <div key={key} className="text-dark-grey pl-53px pr-53px pb-67px text-22px color-dark-grey font-normal leading-[2em] font-Grotesque-Regular mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:pb-20px mobile:leading-[2em] mobile:flex mobile:flex-wrap">
                   { item.contentText?.json.content.map((paragraph: any, key2: number) => {
@@ -136,7 +136,7 @@ function ActivityDetailComponent(props: propsContent) {
                     {
                       item.imagesCollection?.items.map((image: any, key2:number) => {
                         return (
-                          <div key={key2} className="flex-grow-0 flex-shrink-0 basis-full relative h-420px">
+                          <div key={key2} className="flex-grow-0 flex-shrink-0 basis-full relative h-800px">
                             <BaseImage
                               mImg={image?.imagemobile?.url}
                               pImg={image?.imagepc?.url}
@@ -183,18 +183,17 @@ function ActivityDetailComponent(props: propsContent) {
                     <div className="color-dark-grey text-27px font-normal pb-33px font-AlbertusNova-Regular mobile:text-center mobile:text-16px mobile:pb-20px mobile:pt-20px">
                       { item.contentTitle }
                     </div>
-                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal pb-50px leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
-                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
+                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                      {
+                        return paragraph.content.map((row:any, key3:number) => {
+                          return <>
+                            <p key={key3} className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
+                            { row.value }
+                            </p>
+                          </>
+                        })
+                      }
+                    })}
                   </div>
                 </section>
               </>}
@@ -226,13 +225,21 @@ function ActivityDetailComponent(props: propsContent) {
                   </div>
 
                   <div className="pr-48px pl-48px pb-117px flex mobile:flex-wrap mobile:pr-25px mobile:pl-25px mobile:pb-40px">
-                    <div className="flex-shrink-0 w-238px pr-33px text-22px font-normal font-AlbertusNova-Regular mobile:font-Grotesque-Regular mobile:text-dark-grey mobile:text-14px mobile:leading-[22px] mobile:pr-0 mobile:w-full">
-                      Bring the drinking occasion to life
+                    <div className="flex-shrink-0 w-[238px!ignore] pr-33px text-22px font-normal font-AlbertusNova-Regular mobile:font-Grotesque-Regular mobile:text-dark-grey mobile:text-14px mobile:leading-[22px] mobile:pr-0 mobile:w-full">
+                      { item.title }
                     </div>
                     <div className=" pr-33px text-22px font-normal font-Grotesque-Regular text-dark-grey leading-[2em]  mobile:text-14px mobile:leading-[2em]  mobile:pr-0  mobile:w-full">
-                      The Wildmoor Wild Escape Experience includes a carefully curated
-                      stay within the Alladale estate lands, a 23,000-acre Wilderness
-                      Reserve, providing a luxury .
+                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                      {
+                        return paragraph.content.map((row:any, key3:number) => {
+                          return <>
+                            <p key={key3}>
+                            { row.value }
+                            </p>
+                          </>
+                        })
+                      }
+                    })}
                     </div>
                   </div>
                 </section>
@@ -243,28 +250,17 @@ function ActivityDetailComponent(props: propsContent) {
                     <div className="flex-shrink-0 pr-33px pb-33px text-27px font-normal font-AlbertusNova-Regular">
                       { item.contentTitle }
                     </div>
-                    <p className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
-                    <p className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
-                    <p className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.
-                    </p>
-                    <p className="pt-42px text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking.
-                    </p>
+                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                      {
+                        return paragraph.content.map((row:any, key3:number) => {
+                          return <>
+                            <p key={key3} className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
+                            { row.value }
+                            </p>
+                          </>
+                        })
+                      }
+                    })}
                   </div>
                   <div className="relative w-523px h-696px flex-shrink-0 block">
                       <BaseImage

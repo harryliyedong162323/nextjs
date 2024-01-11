@@ -126,9 +126,9 @@ function StoriesDetailComponent(props: propsContent) {
     <section>
       <div className="w-full h-407px overflow-hidden relative mobile:hidden">
         <BaseImage
-          mImg={data.storiesDetailComponentBackgroundImage.imagemobile.url}
-          pImg={data.storiesDetailComponentBackgroundImage.imagepc.url}
-          alt={data.storiesDetailComponentBackgroundImage.altText}
+          mImg={data?.storiesDetailComponentBackgroundImage?.imagemobile.url}
+          pImg={data?.storiesDetailComponentBackgroundImage?.imagepc.url}
+          alt={data?.storiesDetailComponentBackgroundImage?.altText}
           layout="fill"
           objectFit="cover"
           quality={100}
@@ -136,7 +136,7 @@ function StoriesDetailComponent(props: propsContent) {
 
         <div className="uppercase font-AlbertusNova-Regular pt-86px w-623px text-center text-[#E6E7E8] absolute z-10 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] text-40px pad:text-28px">
           <div className="flex flex-col justify-center items-center">
-            <p className="whitespace-nowrap">{ data.storiesDetailComponentTitle } </p>
+            <p className="whitespace-nowrap">{ data?.storiesDetailComponentTitle } </p>
           </div>
         </div>
       </div>
@@ -144,14 +144,14 @@ function StoriesDetailComponent(props: propsContent) {
       <div className="pl-33px pr-33px mobile:pt-100px mobile:pl-0 mobile:pr-0">
         <div className="hidden mobile:block">
           <div className="uppercase pl-25px pr-25px text-center pt-18px pb-33px text-20px font-AlbertusNova-Bold mobile:w-[80%] mobile:mx-auto mobile:pt-18px mobile:pb-33px">
-          { data.storiesDetailComponentTitle } 
+          { data?.storiesDetailComponentTitle } 
           </div>
 
           <div className="h-253px relative w-full mobile:h-253px">
             <BaseImage
-              mImg={data.storiesDetailComponentBackgroundImage.imagemobile.url}
-              pImg={data.storiesDetailComponentBackgroundImage.imagepc.url}
-              alt={data.storiesDetailComponentBackgroundImage.altText}
+              mImg={data?.storiesDetailComponentBackgroundImage?.imagemobile.url}
+              pImg={data?.storiesDetailComponentBackgroundImage?.imagepc.url}
+              alt={data?.storiesDetailComponentBackgroundImage?.altText}
               layout="fill"
               objectFit="cover"
               quality={100}
@@ -162,9 +162,9 @@ function StoriesDetailComponent(props: propsContent) {
         <div className="pt-26px relative pb-107px mobile:pt-65px mobile:pb-21px">
           <div className="z-40 w-158px h-158px absolute left-11px top-[-42px] mobile:w-90px mobile:h-90px mobile:top-[-45px]">
             <BaseImage
-              mImg={data.storiesDetailComponentAvatar.imagemobile.url}
-              pImg={data.storiesDetailComponentAvatar.imagepc.url}
-              alt={data.storiesDetailComponentAvatar.altText}
+              mImg={data?.storiesDetailComponentAvatar?.imagemobile.url}
+              pImg={data?.storiesDetailComponentAvatar?.imagepc.url}
+              alt={data?.storiesDetailComponentAvatar?.altText}
               layout="fill"
               objectFit="cover"
               quality={100}
@@ -172,17 +172,16 @@ function StoriesDetailComponent(props: propsContent) {
           </div>
 
           <div className="pl-196px pb-8px color-dark-grey text-23px font-bold  mobile:pl-25px mobile:text-14px">
-            { data.storiesDetailComponentName }
+            { data?.storiesDetailComponentName }
           </div>
           <div className="pl-196px text-[#969797] font-Grotesque-Regular font-medium text-23px mobile:pl-25px mobile:text-14px">
-          { data.storiesDetailComponentCareer }
+          { data?.storiesDetailComponentCareer }
           </div>
         </div>
         {
-          data.storiesDetailComponentDetailCollection.items.map((item, key) => {
+          data?.storiesDetailComponentDetailCollection?.items.map((item, key) => {
             return <>
-            {/* {item.__typename} */}
-              { item.__typename === "DataKolDetailMultipleContent" && <>
+            { item.__typename === "DataKolDetailMultipleContent" && <>
               <div key={key} className="text-dark-grey pl-53px pr-53px pb-67px text-22px color-dark-grey font-normal leading-[2em] font-Grotesque-Regular mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:pb-20px mobile:leading-[2em] mobile:flex mobile:flex-wrap">
                   { item.contentText?.json.content.map((paragraph: any, key2: number) => {
                     {
@@ -204,9 +203,9 @@ function StoriesDetailComponent(props: propsContent) {
                 >
                   <div className="flex">
                     {
-                      item.imagesCollection?.items.map((image, key2:number) => {
+                      item.imagesCollection?.items.map((image: any, key2:number) => {
                         return (
-                          <div key={key2} className="flex-grow-0 flex-shrink-0 basis-full relative h-420px">
+                          <div key={key2} className="flex-grow-0 flex-shrink-0 basis-full relative h-800px">
                             <BaseImage
                               mImg={image?.imagemobile?.url}
                               pImg={image?.imagepc?.url}
@@ -221,7 +220,7 @@ function StoriesDetailComponent(props: propsContent) {
                     }
                   </div>
                   <div className="absolute bottom-83px w-full flex items-center justify-center mobile:bottom-50px mobile:scale-50">
-                    {item.imagesCollection?.items.map((item, index) => {
+                    {item.imagesCollection?.items.map((item: any, index:number) => {
                       return (
                         <div
                           key={index}
@@ -253,18 +252,17 @@ function StoriesDetailComponent(props: propsContent) {
                     <div className="color-dark-grey text-27px font-normal pb-33px font-AlbertusNova-Regular mobile:text-center mobile:text-16px mobile:pb-20px mobile:pt-20px">
                       { item.contentTitle }
                     </div>
-                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal pb-50px leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
-                    <p className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
+                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                      {
+                        return paragraph.content.map((row:any, key3:number) => {
+                          return <>
+                            <p key={key3} className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
+                            { row.value }
+                            </p>
+                          </>
+                        })
+                      }
+                    })}
                   </div>
                 </section>
               </>}
@@ -277,7 +275,7 @@ function StoriesDetailComponent(props: propsContent) {
                     <div className="w-117px h-117px absolute inset-0 cursor-pointer z-10 top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] mobile:w-70px mobile:h-70px">
                       {/* <BaseImage
                         defaultImg={require("../../../public/assets/storiesDetail/player.png")}
-                        alt={""}
+                        alt={"}
                         objectFit="contain"
                         quality={100}
                       ></BaseImage> */}
@@ -296,13 +294,21 @@ function StoriesDetailComponent(props: propsContent) {
                   </div>
 
                   <div className="pr-48px pl-48px pb-117px flex mobile:flex-wrap mobile:pr-25px mobile:pl-25px mobile:pb-40px">
-                    <div className="flex-shrink-0 w-238px pr-33px text-22px font-normal font-AlbertusNova-Regular mobile:font-Grotesque-Regular mobile:text-dark-grey mobile:text-14px mobile:leading-[22px] mobile:pr-0 mobile:w-full">
-                      Bring the drinking occasion to life
+                    <div className="flex-shrink-0 w-[238px!ignore] pr-33px text-22px font-normal font-AlbertusNova-Regular mobile:font-Grotesque-Regular mobile:text-dark-grey mobile:text-14px mobile:leading-[22px] mobile:pr-0 mobile:w-full">
+                      { item.title }
                     </div>
                     <div className=" pr-33px text-22px font-normal font-Grotesque-Regular text-dark-grey leading-[2em]  mobile:text-14px mobile:leading-[2em]  mobile:pr-0  mobile:w-full">
-                      The Wildmoor Wild Escape Experience includes a carefully curated
-                      stay within the Alladale estate lands, a 23,000-acre Wilderness
-                      Reserve, providing a luxury .
+                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                      {
+                        return paragraph.content.map((row:any, key3:number) => {
+                          return <>
+                            <p key={key3}>
+                            { row.value }
+                            </p>
+                          </>
+                        })
+                      }
+                    })}
                     </div>
                   </div>
                 </section>
@@ -313,28 +319,17 @@ function StoriesDetailComponent(props: propsContent) {
                     <div className="flex-shrink-0 pr-33px pb-33px text-27px font-normal font-AlbertusNova-Regular">
                       { item.contentTitle }
                     </div>
-                    <p className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
-                    <p className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.{" "}
-                    </p>
-                    <p className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking. Bring the drinking occasion to
-                      life in a way that gives us a place in culture and gets people
-                      talking.
-                    </p>
-                    <p className="pt-42px text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
-                      Bring the drinking occasion to life in a way that gives us a place
-                      in culture and gets people talking.
-                    </p>
+                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                      {
+                        return paragraph.content.map((row:any, key3:number) => {
+                          return <>
+                            <p key={key3} className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
+                            { row.value }
+                            </p>
+                          </>
+                        })
+                      }
+                    })}
                   </div>
                   <div className="relative w-523px h-696px flex-shrink-0 block">
                       <BaseImage

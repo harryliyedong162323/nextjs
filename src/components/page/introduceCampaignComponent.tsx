@@ -496,7 +496,8 @@ function IntroduceCampaignComponent(props: propsContent) {
                   className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}
                 >
                   <div>
-                    <BaseLink link={`/activityDetail${item.sys?.id}`}>
+                    <BaseLink link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
+                    {/* <BaseLink link={`/activityDetail/${item.sys?.id}`}> */}
                       <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px cursor-pointer pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
                         <BaseImage
                           mImg={item.campaignImage.imagepc.url}
@@ -521,7 +522,8 @@ function IntroduceCampaignComponent(props: propsContent) {
                     <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px pad:w-200px mobile:text-center mobile:w-full">
                       {item.description}
                     </div>
-                    <BaseLink link="/activityDetail">
+                    {/* <BaseLink link="/activityDetail/${item.sys?.id}"> */}
+                    <BaseLink link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
                       <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
                     </BaseLink>
                   </div>

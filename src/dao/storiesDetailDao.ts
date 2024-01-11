@@ -4,8 +4,8 @@ import PageModel from "../model/pageModel";
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
-query {
-    storiesDetailCollection (limit:1 where:{pageName:"Bring the drinking occasion to life in a way"} locale: "en") {
+query($sysId:String!) {
+    storiesDetailCollection (limit:1 where:{sys:{id:$sysId}} locale: "en") {
         items {
             pageName
             storiesDetailComponentTitle
@@ -49,6 +49,18 @@ query {
   
                     ... on DataKolDetailOneImageContent1 {
                         contentTitle
+                        contentText {
+                            json
+                            links {
+                                entries {
+                                    inline {
+                                        sys {
+                                            id
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         image {
                             imagepc {
                                 url
@@ -62,6 +74,18 @@ query {
   
                     ... on DataKolDetailOneImageContent2 {
                         contentTitle
+                        contentText {
+                            json
+                            links {
+                                entries {
+                                    inline {
+                                        sys {
+                                            id
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         image {
                             imagepc {
                                 url
@@ -110,6 +134,11 @@ query {
                               url
                           }
                       }
+                      contentText {
+                            json
+                            
+                        }
+                      
                     }
   
                     __typename

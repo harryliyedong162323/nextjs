@@ -10,6 +10,8 @@ query($sysId:String!) {
             sys {
                 id
             }
+            sectionName
+            activityDetailComponentTitle
   
             pageDetailCollection(locale: "en") {              
                 items {
@@ -107,6 +109,10 @@ query($sysId:String!) {
                               url
                           }
                       }
+                      contentText {
+                            json
+                            
+                        }
                     }
   
   

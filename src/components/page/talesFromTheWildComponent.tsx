@@ -116,7 +116,8 @@ function TalesFromTheWildComponent(props: propsContent) {
                 <div className="relative" key={index}>
                   {currentKol === index && (
                     <>
-                      <BaseLink link={`/storiesDetail/${item.sys.id}`}>
+                      <BaseLink link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
+                      {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
                         <div
                           className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                             currentKol !== toKol
@@ -162,9 +163,10 @@ function TalesFromTheWildComponent(props: propsContent) {
                         <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
                           {item.listDescription}
                         </div>
-                        <Link link={`/storiesDetail/${item.sys.id}`}>
+                        <BaseLink link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
+                        {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
                           <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
-                        </Link>
+                        </BaseLink>
                       </div>
                     </>
                   )}

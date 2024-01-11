@@ -231,9 +231,9 @@ function ProductFamilyComponent(props: propsContent) {
             quality={100}
           ></BaseImage>
 
-          <div className="an-group-1 w-full overflow-hidden absolute left-[46%] z-30 top-[50%] translate-y-[-50%] mobile:hidden">
-            <div className="an-bottle w-700px  flex flex-nowrap items-end">
-              <div className="w-169px h-368px relative mr-90px pad:mr-64px mobile:w-102px mobile:h-223px ">
+          <div className="an-group-1 w-full overflow-hidden absolute left-[44%] z-30 top-[50%] translate-y-[-50%] mobile:hidden">
+            <div className="an-bottle w-989px  flex flex-nowrap items-start">
+              <div className="w-244px h-530px relative mr-130px pad:mr-64px mobile:w-102px mobile:h-223px ">
                 <BaseImage
                   mImg={currentBottleData.productImage.imagemobile.url}
                   pImg={currentBottleData.productImage.imagepc.url}
@@ -243,7 +243,7 @@ function ProductFamilyComponent(props: propsContent) {
                   quality={100}
                 ></BaseImage>
               </div>
-              <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full">
+              <div className="an-text text-white mobile:pl-23px mobile:pr-23px mobile:w-full mt-120px">
                 <div className="font-AlbertusNova-Regular pb-29px pad:pb-21px font-normal mobile:text-center mobile:w-full mobile:pb-20px flex items-center pad:min-w-64 pad:w-250px">
                   <div className="relative flex items-center pad:w-[40%] flex-nowrap">
                     <span className="text-60px font-light font-AlbertusNova-Light pb-8px pad:text-42px pad:pb-5px mobile:text-38px">
@@ -356,53 +356,53 @@ function ProductFamilyComponent(props: propsContent) {
 
               <div className="w-full relative after:content-[''] after:absolute after:top-1/2  after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full mobile:after:w-[85%] after:h-1px after:bg-[#696969] after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-1px before:h-full mobile:before:h-[80%] before:bg-[#696969]">
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center  w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center  w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 0
                       ? "shadow-[#B96566]-500 bg-[#588C96] text-[#fff]"
                       : "bg-[#CECECE] text-[#588C96]"
-                  }  bottom-0 left-1/4 translate-x-[-50%] translate-y-[-30%] pad:w-52px pad:h-52px mobile:w-28px mobile:h-28px`}
+                  }  bottom-0 left-1/4 translate-x-[-50%] translate-y-[-30%]  mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(0);
                   }}
                 >
-                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
                     {bottleData[0].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#5C829A] hover:text-[#fff] absolute z-20 rounded-full ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#5C829A] hover:text-[#fff] absolute z-20 rounded-full ${
                     currentBottleIndex == 1
                       ? "shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]"
                       : "bg-[#CECECE] text-[#5C829A]"
-                  } top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
+                  } top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%]  mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(1);
                   }}
                 >
-                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
                     {bottleData[1].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#779374] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#779374] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 2
                       ? "shadow-[#B96566]-500 bg-[#779374] text-[#fff]"
                       : "bg-[#CECECE] text-[#779374]"
-                  } top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
+                  } top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%]  mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
                   onClick={() => {
                     handleChooseBottle(2);
                   }}
                 >
-                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
                     {bottleData[2].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px  hover:shadow-[#B96566]-500 hover:bg-[url("/assets/productFamily/drop-bg.png")] hover:bg-contain hover:text-[#fff]  absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-[4em] h-[4em]  hover:shadow-[#B96566]-500 hover:bg-[url("/assets/productFamily/drop-bg.png")] hover:bg-contain hover:text-[#fff]  absolute z-20 rounded-full  ${
                     currentBottleIndex == 3
                       ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]'
                       : "bg-[#CECECE] text-[#af4f1f]"
-                  } top-0 right-1/4 translate-x-[50%] translate-y-[-10%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
+                  } top-0 right-1/4 translate-x-[50%] translate-y-[-10%]  mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(3);
                   }}
@@ -412,37 +412,37 @@ function ProductFamilyComponent(props: propsContent) {
                   onMouseLeave={handleMouseLeave}
                 >
                   <span
-                    className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px"
+                    className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px"
                     style={textGradient}
                   >
                     {bottleData[3].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#B96566] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#B96566] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 4
                       ? "shadow-[#B96566]-500 bg-[#B96566] text-[#fff]"
                       : "bg-[#CECECE] text-[#B96566]"
-                  }  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
+                  }  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%]  mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(4);
                   }}
                 >
-                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
                     {bottleData[4].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#96934C] hover:text-[#fff]  absolute z-20 rounded-full ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#96934C] hover:text-[#fff]  absolute z-20 rounded-full ${
                     currentBottleIndex == 5
                       ? "shadow-[#B96566]-500 bg-[#96934C] text-[#fff]"
                       : "bg-[#CECECE] text-[#96934C]"
-                  } top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
+                  } top-1/2 right-0 translate-x-[-100%] translate-y-[-65%]  mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(5);
                   }}
                 >
-                  <span className="text-32px font-AlbertusNova-Regular font-normal  pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
                     {bottleData[5].num}
                   </span>
                 </div>

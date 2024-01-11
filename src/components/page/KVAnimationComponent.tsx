@@ -183,7 +183,7 @@ function KVAnimationComponent(props: propsContent) {
         <BaseVideo
           src={
             supportsHEVCAlpha()
-              ? "/assets/video/bottle.mov"
+              ? "/assets/video/bottle.mov?v=2"
               : KVAnimationData.kvAnimationComponentProductVideo.video.url
           }
           className="h-full object-cover"
