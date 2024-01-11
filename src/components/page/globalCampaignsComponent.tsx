@@ -47,7 +47,7 @@ interface propsContent{
 
 
 function GlobalCampaignsComponent(props: propsContent) {
-  // console.log(props)
+  console.log(props)
   const headStyle = props.data.entry.headStyle;
   const globalCampaigns = props.data.entry;
   const subTitle: string = globalCampaigns.howToBuyDetailComponentBannerTitle || '';

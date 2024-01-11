@@ -87,6 +87,7 @@ const query = `
 
    talesFromTheWild:localMarketActivityCollection (limit:1 where:{internalName:"local market activity"} locale: "en") {
       items {
+            talesFromTheWildTitle
           talesFromTheWildListCollection (order:id_ASC, locale: "en") {
             items {
                 sys {
