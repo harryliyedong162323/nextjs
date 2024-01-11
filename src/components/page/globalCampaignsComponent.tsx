@@ -53,6 +53,7 @@ function GlobalCampaignsComponent(props: propsContent) {
   const address:string = globalCampaigns.howToBuyDetailComponentStoreAddress;
   const time:string = globalCampaigns.howToBuyDetailComponentStoreBusinessHours;
   const phone:string = globalCampaigns.howToBuyDetailComponentStorePhone;
+  const banner:object = globalCampaigns.howToBuyDetailComponentBannerImage;
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
@@ -78,8 +79,9 @@ function GlobalCampaignsComponent(props: propsContent) {
     >
       <input type="hidden" value={headStyle} />
       <BaseImage
-        defaultImg={require("../../../public/assets/howToBuyDetail/bg2.png")}
-        alt={""}
+        pImg={banner.imagepc.url}
+        mImg={banner.imagemobile.url}
+        alt={banner.altText}
         layout="fill"
         objectFit="cover"
         quality={100}
