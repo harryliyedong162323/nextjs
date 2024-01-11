@@ -395,6 +395,12 @@ function NearYouComponent(props: propsContent) {
     emblaApi?.on("select", onChangeScroll);
   }, [emblaApi, onChangeScroll]);
 
+  const handleTouchStart = () => {
+    console.log("开始了");
+  };
+  const handleTouchEnd = () => {
+    console.log("结束");
+  };
   return (
     <section className="w-full h-screen overflow-hidden bg-while relative select-none  ">
       <input type="hidden" value={headStyle} />
@@ -406,7 +412,11 @@ function NearYouComponent(props: propsContent) {
         {<MobileCarousel list={campaignData[0]}></MobileCarousel>}
       </div>
       <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:hidden"></div>
-      <div className="relative">
+      <div
+        className="relative"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto"
           ref={emblaRef}
