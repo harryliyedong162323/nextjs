@@ -71,7 +71,7 @@ function PrivacyPolicyComponent(props: any) {
     <section className="w-full h-auto overflow-hidden relative select-none ">
       <input type="hidden" value={headStyle} />
 
-      <div className="relative mt-155px pl-48px pr-48px pad:pl-35px pad:pr-35px mobile:pr-23px mobile:pl-23px">
+      <div className="relative mt-150px pl-48px pr-48px pad:pl-35px pad:pr-35px mobile:pr-23px mobile:pl-23px mobile:mt-70px">
         {/*{*/}
         {/*    data.detailCollection.length > 0 &&data.detailCollection.map((item:Collection,index:number)=>{*/}
         {/*        return (*/}
