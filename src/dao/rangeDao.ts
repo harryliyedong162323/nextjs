@@ -3,7 +3,6 @@ import PageModel from "../model/pageModel";
 // const BASE_URL = "https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss";
 
 const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
-  
 
 const query = `
 query {
@@ -544,7 +543,7 @@ query {
         }
     }
   }
-`
+`;
 
 class RangeDao {
   static async fetch<PageModel>() {
@@ -569,12 +568,12 @@ class RangeDao {
     const quizResult = await quizResponse.json();
 
     const productFamilyResponse = await fetch(BASE_URL, {
-        method: "POST",
-        cache: "no-store",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query: productFamilyQuery }),
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: productFamilyQuery }),
     });
     const productFamilyResult = await productFamilyResponse.json();
 
@@ -628,7 +627,7 @@ class RangeDao {
               name: "flavourFinderComponent",
               entry: {
                 headStyle: "black",
-                ...quizResult, 
+                ...quizResult,
                 ...PageModel.query("flavourFinder", result),
                 ...PageModel.query("productFamily", productFamilyResult),
               },

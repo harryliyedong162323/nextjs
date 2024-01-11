@@ -167,7 +167,6 @@ function getComponent(
 }
 
 function FullPage(props: any) {
-
   const [pageStore, setPageStore] = useState([] as any);
 
   const [isBrowser, setIsBrowser] = useState(false);
@@ -468,7 +467,7 @@ function FullPage(props: any) {
           scrollToPage={scrollToPage}
           isShowRangeNav={isShowRangeNav}
           onChangeStatus={changeNavStatus}
-          { ...rangeNavData }
+          {...rangeNavData}
         ></RangeNav>
       )}
     </div>

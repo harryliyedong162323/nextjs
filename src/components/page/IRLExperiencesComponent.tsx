@@ -91,14 +91,17 @@ function IRLExperiencesComponent(props: propsContent) {
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
         setIsCurrentPage(true);
 
-
         setCurrentStore(
           filterStore(
             getPageStore("IRLExperiencesComponent").data?.regionId || 0
           )
         );
 
-        console.log( filterStore(getPageStore("IRLExperiencesComponent").data?.regionId || 0));
+        console.log(
+          filterStore(
+            getPageStore("IRLExperiencesComponent").data?.regionId || 0
+          )
+        );
       } else {
         setIsCurrentPage(false);
       }
@@ -146,7 +149,7 @@ function IRLExperiencesComponent(props: propsContent) {
                 {currentStore[0] && (
                   <div className="pl-21px mobile:pl-0 mobile:w-325px mobile:mx-auto">
                     <BaseLink
-                        link={`/howToBuyDetail/${currentStore[0].sys.id}`}
+                      link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                     >
                       <div className="relative h-405px pad:h-289px cursor-pointer  mobile:h-217px  mobile:w-full">
                         <BaseImage
@@ -204,7 +207,7 @@ function IRLExperiencesComponent(props: propsContent) {
                       </div>
                       <div className="pt-31px pad:pt-22px">
                         <BaseLink
-                            link={`/howToBuyDetail/${currentStore[1].sys.id}`}
+                          link={`/howToBuyDetail/${currentStore[1].sys.id}`}
                         >
                           <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
                         </BaseLink>

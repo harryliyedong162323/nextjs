@@ -567,12 +567,13 @@ function genResultData(productList: Array<Product>) {
 }
 
 function FlavourFinderComponent(props: any) {
-
   const headStyle = props.data.entry.headStyle;
   const _componentData = genComponentData(props.data.entry.data);
-  const _productData = genProductData(props.data.entry.productFamilyComponentProductsCollection);
+  const _productData = genProductData(
+    props.data.entry.productFamilyComponentProductsCollection
+  );
   const _resultData = genResultData(_productData);
-  const _messageData = props.data.entry.data.quizMessage.items[0] as Message
+  const _messageData = props.data.entry.data.quizMessage.items[0] as Message;
 
   const [data, setData] = useState<ComponentData>(_componentData);
 
@@ -1338,9 +1339,15 @@ function FlavourFinderComponent(props: any) {
                             .value
                         }
                       </div>
-                      <div onClick={() => {
-                        eventbus.emit('selectProduct', recommend?.productList[currentRecommend].id)
-                      }} className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px">
+                      <div
+                        onClick={() => {
+                          eventbus.emit(
+                            "selectProduct",
+                            recommend?.productList[currentRecommend].id
+                          );
+                        }}
+                        className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
+                      >
                         {data.basic.dywfExploreContent}
                       </div>
                     </div>
