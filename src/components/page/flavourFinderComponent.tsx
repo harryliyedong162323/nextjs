@@ -16,6 +16,7 @@ import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper/modules";
 import Popup, { propsContent as PopupPropsContent } from "../base/popup";
 import "swiper/css";
 import eventbus from "@/utils/eventbus";
@@ -720,287 +721,323 @@ function FlavourFinderComponent(props: any) {
       {showQuiz && (
         <>
           <div
-            className={`relative bg-[url('/assets/range/bg_quiz.png')] bg-cover h-screen bg-[#E6E7E8]`}
+            className={`relative bg-[url('/assets/range/bg_quiz.png')] bg-cover h-screen bg-[#E6E7E8] mobile:h-screen mobile:flex mobile:flex-col`}
           >
             {quizIndex === 0 && (
               <>
                 <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px pad:text-28px pad:pt-100px mobile:text-15px mobile:pt-78px">
                   {data.quizs.q1.question}
                 </div>
-                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:-mt-24px mobile:flex-col mobile:mx-auto mobile:items-center mobile:scale-[0.8]">
-                  {data.quizs.q1.answers.map((answer, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
-                          quizOneSelected === index + 1
-                            ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
-                            : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
-                        }`}
-                      >
-                        <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-full mobile:h-125px">
-                          <BaseImage
-                            mImg={answer.mImg}
-                            pImg={answer.pImg}
-                            alt={""}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                          ></BaseImage>
-                        </div>
-                        <div className="flex justify-between items-center mt-10px mobile:pt-10px">
-                          <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
-                            {answer.label}
-                          </div>
-                          <i
-                            className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
-                              quizOneSelected === index + 1
-                                ? "bg-[url('/assets/range/icon_checked.png')]"
-                                : "bg-[url('/assets/range/icon_check.png')]"
-                            } `}
-                            onClick={() => {
-                              setQuizOneSelected(index + 1);
-                              // setQuizIndex(1);
-                            }}
-                          ></i>
-                        </div>
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:mt-24px mobile:flex-col mobile:flex-1 mobile:justify-start mobile:mx-auto mobile:items-center mobile:h-300px">
+                  <Swiper
+                    freeMode={true}
+                    modules={[FreeMode]}
+                    direction="vertical"
+                    slidesPerView="auto"
+                    resistanceRatio={0}
+                    className="mobile:h-full"
+                    nested={true}
+                  >
+                    <SwiperSlide>
+                      <div className="flex mobile:flex-col px-10px py-20px">
+                        {data.quizs.q1.answers.map((answer, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                                quizOneSelected === index + 1
+                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
+                                  : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                              }`}
+                            >
+                              <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-full mobile:h-125px">
+                                <BaseImage
+                                  mImg={answer.mImg}
+                                  pImg={answer.pImg}
+                                  alt={""}
+                                  layout="fill"
+                                  objectFit="cover"
+                                  quality={100}
+                                ></BaseImage>
+                              </div>
+                              <div className="flex justify-between items-center mt-10px mobile:pt-10px">
+                                <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
+                                  {answer.label}
+                                </div>
+                                <i
+                                  className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                                    quizOneSelected === index + 1
+                                      ? "bg-[url('/assets/range/icon_checked.png')]"
+                                      : "bg-[url('/assets/range/icon_check.png')]"
+                                  } `}
+                                  onClick={() => {
+                                    setQuizOneSelected(index + 1);
+                                    // setQuizIndex(1);
+                                  }}
+                                ></i>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
-                    );
-                  })}
+                    </SwiperSlide>
+                  </Swiper>
                 </div>
               </>
             )}
             {quizIndex === 1 && (
               <>
-                <div className="">
-                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-860px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
-                    {data.quizs.q2.question}
-                  </div>
-                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-910px text-34px pad:w-860px pad:text-28px mobile:w-325px mobile:text-15px">
-                    {data.quizs.q2.description}
-                  </div>
-                  <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-135px paid:-mt-87px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:-mt-24px mobile:flex-col mobile:mx-auto mobile:items-center mobile:scale-[0.8]">
-                    {data.quizs.q2.answers.map((answer, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:p-10px mobile:mx-0 mobile:my-5px mobile:flex ${
-                            quizTwoSelected === index + 1
-                              ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
-                              : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
-                          }`}
-                        >
-                          <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-150px mobile:h-150px mobile:mx-0">
-                            <ReactPlayer
-                              playing={
-                                index === 0
-                                  ? videoPlay1
-                                  : index === 1
-                                  ? videoPlay2
-                                  : videoPlay3
-                              }
-                              loop={true}
-                              muted={false}
-                              controls={false}
-                              controlsList="nodownload"
-                              onEnded={() => {}}
-                              width="100%"
-                              height="100%"
-                              url={answer.audio}
-                            ></ReactPlayer>
-                          </div>
-                          <div className="flex justify-between items-center mt-5px mobile:w-100px mobile:ml-20px">
-                            <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px pad:text-18px mobile:text-13px mobile:flex-col">
-                              <i
-                                className={`inline-block cursor-pointer ${
-                                  currentVideoPlay == index + 1
-                                    ? 'bg-[url("/assets/range/icon_playing.gif")]'
-                                    : 'bg-[url("/assets/range/icon_play.png")]'
-                                } bg-cover mr-5px w-40px h-40px pad:w-34px pad:h-34px mobile:w-26px mobile:h-26px`}
-                                onClick={() => {
-                                  if (currentVideoPlay === index + 1) {
-                                    setCurrentVideoPlay(0);
-                                  } else {
-                                    setCurrentVideoPlay(index + 1);
-                                  }
-                                  if (index === 0) {
-                                    setVideoPlay1(!videoPlay1);
-                                    setVideoPlay2(false);
-                                    setVideoPlay3(false);
-                                  } else if (index === 1) {
-                                    setVideoPlay1(false);
-                                    setVideoPlay2(!videoPlay2);
-                                    setVideoPlay3(false);
-                                  } else if (index === 2) {
-                                    setVideoPlay1(false);
-                                    setVideoPlay2(false);
-                                    setVideoPlay3(!videoPlay3);
-                                  }
-                                }}
-                              ></i>
-                              <span>{answer.label}</span>
-                            </div>
-                            <i
-                              className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-860px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
+                  {data.quizs.q2.question}
+                </div>
+                <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase w-910px text-34px pad:w-860px pad:text-28px mobile:w-325px mobile:text-15px">
+                  {data.quizs.q2.description}
+                </div>
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-135px pad:-mt-87px flex justify-center mobile:relative mobile:top-0 mobile:left-0 mobile:mt-0 mobile:flex-col mobile:mx-auto mobile:items-center mobile:flex-col mobile:flex-1 mobile:justify-start mobile:mx-auto mobile:items-center mobile:h-300px">
+                  <Swiper
+                    freeMode={true}
+                    modules={[FreeMode]}
+                    direction="vertical"
+                    slidesPerView="auto"
+                    resistanceRatio={0}
+                    className="mobile:h-full"
+                    nested={true}
+                  >
+                    <SwiperSlide>
+                      <div className="flex mobile:flex-col px-10px py-20px">
+                        {data.quizs.q2.answers.map((answer, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:p-10px mobile:mx-0 mobile:my-5px mobile:flex ${
                                 quizTwoSelected === index + 1
-                                  ? "bg-[url('/assets/range/icon_checked.png')]"
-                                  : "bg-[url('/assets/range/icon_check.png')]"
-                              } `}
-                              onClick={() => {
-                                setQuizTwoSelected(index + 1);
-                                // setQuizIndex(2);
-                              }}
-                            ></i>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
+                                  : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                              }`}
+                            >
+                              <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-150px mobile:h-150px mobile:mx-0">
+                                <ReactPlayer
+                                  playing={
+                                    index === 0
+                                      ? videoPlay1
+                                      : index === 1
+                                      ? videoPlay2
+                                      : videoPlay3
+                                  }
+                                  loop={true}
+                                  muted={false}
+                                  controls={false}
+                                  controlsList="nodownload"
+                                  onEnded={() => {}}
+                                  width="100%"
+                                  height="100%"
+                                  url={answer.audio}
+                                ></ReactPlayer>
+                              </div>
+                              <div className="flex justify-between items-center mt-5px mobile:w-100px mobile:ml-20px">
+                                <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px pad:text-18px mobile:text-13px mobile:flex-col">
+                                  <i
+                                    className={`inline-block cursor-pointer ${
+                                      currentVideoPlay == index + 1
+                                        ? 'bg-[url("/assets/range/icon_playing.gif")]'
+                                        : 'bg-[url("/assets/range/icon_play.png")]'
+                                    } bg-cover mr-5px w-40px h-40px pad:w-34px pad:h-34px mobile:w-26px mobile:h-26px`}
+                                    onClick={() => {
+                                      if (currentVideoPlay === index + 1) {
+                                        setCurrentVideoPlay(0);
+                                      } else {
+                                        setCurrentVideoPlay(index + 1);
+                                      }
+                                      if (index === 0) {
+                                        setVideoPlay1(!videoPlay1);
+                                        setVideoPlay2(false);
+                                        setVideoPlay3(false);
+                                      } else if (index === 1) {
+                                        setVideoPlay1(false);
+                                        setVideoPlay2(!videoPlay2);
+                                        setVideoPlay3(false);
+                                      } else if (index === 2) {
+                                        setVideoPlay1(false);
+                                        setVideoPlay2(false);
+                                        setVideoPlay3(!videoPlay3);
+                                      }
+                                    }}
+                                  ></i>
+                                  <span>{answer.label}</span>
+                                </div>
+                                <i
+                                  className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                                    quizTwoSelected === index + 1
+                                      ? "bg-[url('/assets/range/icon_checked.png')]"
+                                      : "bg-[url('/assets/range/icon_check.png')]"
+                                  } `}
+                                  onClick={() => {
+                                    setQuizTwoSelected(index + 1);
+                                    // setQuizIndex(2);
+                                  }}
+                                ></i>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
                 </div>
               </>
             )}
             {quizIndex === 2 && (
               <>
-                <div>
-                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-720px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
-                    {data.quizs.q3.question}
-                  </div>
-                  <div className="flex justify-between mt-50px mx-auto w-[1374px] pad:w-[1045px] mobile:w-300px mobile:flex-col mobile:mt-21px">
-                    <div className="relative w-600px pad:w-500px mobile:w-300px">
-                      <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px mb-20px pad:text-16px pad:mb-20px mobile:text-12px">
-                        {data.quizs.q3.step1.title}
-                      </div>
-                      <div
-                        className="relative overflow-y-auto max-h-[calc(50vh)] p-10px scrollbar mobile:p-5px"
-                        onWheel={(event) => {
-                          event.stopPropagation();
-                        }}
-                      >
-                        {data.quizs.q3.step1.answers.map((answer, index) => {
-                          return (
-                            <div
-                              key={index}
-                              className={`flex justify-between items-center px-40px py-18px mt-6px pad:px-30px pad:py-14px pad:mt-4px mobile:px-20px mobile:py-10px mobile:mt-5px ${
-                                quizThreeSelected1 === index + 1
-                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px] mobile:shadow-[0_2px_5px_0_rgba(0,0,0,0.4)]"
-                                  : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
-                              }`}
-                            >
-                              <div className="font-Grotesque-Regular text-[#262627] text-24px pad:text-18px mobile:text-12px">
-                                {answer.label}
-                              </div>
-                              <i
-                                className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
-                                  quizThreeSelected1 === index + 1
-                                    ? "bg-[url('/assets/range/icon_checked.png')]"
-                                    : "bg-[url('/assets/range/icon_check.png')]"
-                                } `}
-                                onClick={() => {
-                                  setQuizThreeSelected1(index + 1);
-                                  // if (quizThreeSelected2 !== 0) {
-                                  //   setQuizIndex(3);
-                                  // }
-                                }}
-                              ></i>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                    <div className="w-600px pad:w-500px mobile:w-310px mobile:mt-30px">
-                      <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center mb-10px text-20px pad:text-16px mobile:text-12px">
-                        {data.quizs.q3.step2.title}
-                      </div>
-                      <div className="w-[1200px] pad:w-[1000px] mobile:w-620px overflow-hidden mobile:scale-[0.8] mobile:-ml-60px">
+                <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase w-860px text-34px pad:w-720px pad:text-28px pad:pt-100px mobile:w-325px mobile:text-15px mobile:pt-78px">
+                  {data.quizs.q3.question}
+                </div>
+                <Swiper
+                  freeMode={true}
+                  modules={[FreeMode]}
+                  direction="vertical"
+                  slidesPerView="auto"
+                  resistanceRatio={0}
+                  className="mobile:h-full mobile:w-screen"
+                  nested={true}
+                >
+                  <SwiperSlide>
+                    <div className="flex justify-between mt-50px mx-auto w-[1374px] pad:w-[1045px] mobile:w-300px mobile:flex-col mobile:mt-21px">
+                      <div className="relative w-600px pad:w-500px mobile:w-300px">
+                        <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center text-20px mb-20px pad:text-16px pad:mb-20px mobile:text-12px">
+                          {data.quizs.q3.step1.title}
+                        </div>
                         <div
-                          className="relative"
-                          // ref={emblaRef}
+                          className="relative overflow-y-auto max-h-[calc(50vh)] p-10px scrollbar mobile:p-5px"
+                          onWheel={(event) => {
+                            event.stopPropagation();
+                          }}
                         >
-                          <Swiper
-                            modules={[Autoplay]}
-                            loop={true}
-                            speed={500}
-                            allowTouchMove={true}
-                            slidesPerView={2}
-                            autoplay={{
-                              delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
-                              disableOnInteraction: false, // 用户互动后是否停止自动播放
-                            }}
-                            onSlideChange={(e) => {
-                              setCurrentIndex(e.realIndex);
-                            }}
-                            onSwiper={(swiper) => {
-                              setSwiper(swiper);
-                            }}
-                          >
-                            {data.quizs.q3.step2.answers.map(
-                              (answer, index) => {
-                                return (
-                                  <SwiperSlide
-                                    key={index}
-                                    className="relative py-20px pad:py-15px mobile:py-10px"
-                                  >
-                                    <div
-                                      className={`mx-10px px-34px pt-34px pb-12px pad:px-26px pad:pt-26px pad:pb-10px mobile:px-18px mobile:pt-18px ${
-                                        quizThreeSelected2 === index + 1
-                                          ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid pad:border-[3px] mobile:border-[2px]"
-                                          : "border-[5px] border-[#C6C6C6] border-solid pad:border-[3px] mobile:border-[2px]"
-                                      }`}
-                                    >
-                                      <div className="relative h-300px pad:h-250px mobile:h-140px">
-                                        <BaseImage
-                                          mImg={answer.mImg}
-                                          pImg={answer.pImg}
-                                          alt={""}
-                                          layout="fill"
-                                          objectFit="cover"
-                                          quality={30}
-                                        ></BaseImage>
-                                      </div>
-                                      <div className="flex justify-between items-center mt-10px">
-                                        <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px pad:text-16px mobile:py-16px mobile:text-12px">
-                                          {answer.label}
-                                        </div>
-                                        <i
-                                          className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
-                                            quizThreeSelected2 === index + 1
-                                              ? "bg-[url('/assets/range/icon_checked.png')]"
-                                              : "bg-[url('/assets/range/icon_check.png')]"
-                                          }`}
-                                          onClick={() => {
-                                            setQuizThreeSelected2(index + 1);
-                                            // if (quizThreeSelected1 !== 0) {
-                                            //   setQuizIndex(3);
-                                            // }
-                                          }}
-                                        ></i>
-                                      </div>
-                                    </div>
-                                  </SwiperSlide>
-                                );
-                              }
-                            )}
-                          </Swiper>
+                          {data.quizs.q3.step1.answers.map((answer, index) => {
+                            return (
+                              <div
+                                key={index}
+                                className={`flex justify-between items-center px-40px py-18px mt-6px pad:px-30px pad:py-14px pad:mt-4px mobile:px-20px mobile:py-10px mobile:mt-5px ${
+                                  quizThreeSelected1 === index + 1
+                                    ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px] mobile:shadow-[0_2px_5px_0_rgba(0,0,0,0.4)]"
+                                    : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                                }`}
+                              >
+                                <div className="font-Grotesque-Regular text-[#262627] text-24px pad:text-18px mobile:text-12px">
+                                  {answer.label}
+                                </div>
+                                <i
+                                  className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                                    quizThreeSelected1 === index + 1
+                                      ? "bg-[url('/assets/range/icon_checked.png')]"
+                                      : "bg-[url('/assets/range/icon_check.png')]"
+                                  } `}
+                                  onClick={() => {
+                                    setQuizThreeSelected1(index + 1);
+                                    // if (quizThreeSelected2 !== 0) {
+                                    //   setQuizIndex(3);
+                                    // }
+                                  }}
+                                ></i>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
-                      <div className="w-full flex items-center justify-center">
-                        {data.quizs.q3.step2.answers.map((item, index) => {
-                          return (
-                            <div
-                              key={index}
-                              className={`h-5px mx-5px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
-                                currentIndex === index
-                                  ? "bg-white w-50px"
-                                  : "bg-gray-300 w-20px"
-                              }`}
-                              onClick={() => scrollTo(index)}
-                            ></div>
-                          );
-                        })}
+                      <div className="w-600px pad:w-500px mobile:w-310px mobile:mt-30px">
+                        <div className="font-Grotesque-Medium text-[#696969] mx-auto text-center mb-10px text-20px pad:text-16px mobile:text-12px">
+                          {data.quizs.q3.step2.title}
+                        </div>
+                        <div className="w-[1200px] pad:w-[1000px] mobile:w-620px overflow-hidden">
+                          <div
+                            className="relative"
+                            // ref={emblaRef}
+                          >
+                            <Swiper
+                              modules={[Autoplay]}
+                              loop={true}
+                              speed={500}
+                              allowTouchMove={true}
+                              slidesPerView={2}
+                              autoplay={{
+                                delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
+                                disableOnInteraction: false, // 用户互动后是否停止自动播放
+                              }}
+                              onSlideChange={(e) => {
+                                setCurrentIndex(e.realIndex);
+                              }}
+                              onSwiper={(swiper) => {
+                                setSwiper(swiper);
+                              }}
+                            >
+                              {data.quizs.q3.step2.answers.map(
+                                (answer, index) => {
+                                  return (
+                                    <SwiperSlide
+                                      key={index}
+                                      className="relative py-20px pad:py-15px mobile:py-10px"
+                                    >
+                                      <div
+                                        className={`mx-10px px-34px pt-34px pb-12px pad:px-26px pad:pt-26px pad:pb-10px mobile:px-18px mobile:pt-18px ${
+                                          quizThreeSelected2 === index + 1
+                                            ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid pad:border-[3px] mobile:border-[2px]"
+                                            : "border-[5px] border-[#C6C6C6] border-solid pad:border-[3px] mobile:border-[2px]"
+                                        }`}
+                                      >
+                                        <div className="relative h-300px pad:h-250px mobile:h-140px">
+                                          <BaseImage
+                                            mImg={answer.mImg}
+                                            pImg={answer.pImg}
+                                            alt={""}
+                                            layout="fill"
+                                            objectFit="cover"
+                                            quality={30}
+                                          ></BaseImage>
+                                        </div>
+                                        <div className="flex justify-between items-center mt-10px">
+                                          <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px pad:text-16px mobile:py-16px mobile:text-12px">
+                                            {answer.label}
+                                          </div>
+                                          <i
+                                            className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                                              quizThreeSelected2 === index + 1
+                                                ? "bg-[url('/assets/range/icon_checked.png')]"
+                                                : "bg-[url('/assets/range/icon_check.png')]"
+                                            }`}
+                                            onClick={() => {
+                                              setQuizThreeSelected2(index + 1);
+                                              // if (quizThreeSelected1 !== 0) {
+                                              //   setQuizIndex(3);
+                                              // }
+                                            }}
+                                          ></i>
+                                        </div>
+                                      </div>
+                                    </SwiperSlide>
+                                  );
+                                }
+                              )}
+                            </Swiper>
+                          </div>
+                        </div>
+                        <div className="w-full flex items-center justify-center">
+                          {data.quizs.q3.step2.answers.map((item, index) => {
+                            return (
+                              <div
+                                key={index}
+                                className={`h-5px mx-5px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
+                                  currentIndex === index
+                                    ? "bg-white w-50px"
+                                    : "bg-gray-300 w-20px"
+                                }`}
+                                onClick={() => scrollTo(index)}
+                              ></div>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </SwiperSlide>
+                </Swiper>
               </>
             )}
             {quizIndex === 3 && (
@@ -1008,46 +1045,60 @@ function FlavourFinderComponent(props: any) {
                 <div className="font-AlbertusNova-Regular text-black mx-auto text-center pt-150px uppercase text-34px pad:text-28px pad:pt-100px mobile:text-15px mobile:pt-78px">
                   {data.quizs.q4.question}
                 </div>
-                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:left-0 mobile:top-0 mobile:-mt-24px mobile:flex-col mobile:mx-auto mobile:items-center mobile:scale-[0.8]">
-                  {data.quizs.q4.answers.map((answer, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
-                          quizFourSelected === index + 1
-                            ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
-                            : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
-                        }`}
-                      >
-                        <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-full mobile:h-125px">
-                          <BaseImage
-                            mImg={answer.mImg}
-                            pImg={answer.pImg}
-                            alt={""}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                          ></BaseImage>
-                        </div>
-                        <div className="flex justify-between items-center mt-10px mobile:pt-10px">
-                          <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
-                            {answer.label}
-                          </div>
-                          <i
-                            className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
-                              quizFourSelected === index + 1
-                                ? "bg-[url('/assets/range/icon_checked.png')]"
-                                : "bg-[url('/assets/range/icon_check.png')]"
-                            } `}
-                            onClick={() => {
-                              setQuizFourSelected(index + 1);
-                              // setQuizIndex(4);
-                            }}
-                          ></i>
-                        </div>
+                <div className="absolute left-1/2 -ml-688px pad:-ml-523px top-1/2 -mt-235px paid:-mt-157px flex justify-center mobile:relative mobile:left-0 mobile:top-0 mobile:mt-0 mobile:flex-col mobile:mx-auto mobile:items-center mobile:flex-1 mobile:h-300px">
+                  <Swiper
+                    freeMode={true}
+                    modules={[FreeMode]}
+                    direction="vertical"
+                    slidesPerView="auto"
+                    resistanceRatio={0}
+                    className="mobile:h-full"
+                    nested={true}
+                  >
+                    <SwiperSlide>
+                      <div className="flex mobile:flex-col px-10px py-20px">
+                        {data.quizs.q4.answers.map((answer, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
+                                quizFourSelected === index + 1
+                                  ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[5px] border-white border-solid mobile:border-[2px]"
+                                  : "border-[5px] border-[#C6C6C6] border-solid mobile:border-[2px]"
+                              }`}
+                            >
+                              <div className="relative mx-auto w-350px h-350px pad:w-291px pad:h-291px mobile:w-full mobile:h-125px">
+                                <BaseImage
+                                  mImg={answer.mImg}
+                                  pImg={answer.pImg}
+                                  alt={""}
+                                  layout="fill"
+                                  objectFit="cover"
+                                  quality={100}
+                                ></BaseImage>
+                              </div>
+                              <div className="flex justify-between items-center mt-10px mobile:pt-10px">
+                                <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
+                                  {answer.label}
+                                </div>
+                                <i
+                                  className={`cursor-pointer bg-cover w-22px h-22px pad:w-18px pad:h-18px mobile:w-13px mobile:h-13px ${
+                                    quizFourSelected === index + 1
+                                      ? "bg-[url('/assets/range/icon_checked.png')]"
+                                      : "bg-[url('/assets/range/icon_check.png')]"
+                                  } `}
+                                  onClick={() => {
+                                    setQuizFourSelected(index + 1);
+                                    // setQuizIndex(4);
+                                  }}
+                                ></i>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
-                    );
-                  })}
+                    </SwiperSlide>
+                  </Swiper>
                 </div>
               </>
             )}
@@ -1106,6 +1157,7 @@ function FlavourFinderComponent(props: any) {
                 </div>
               </>
             )}
+            <div className="mobile:h-70px shrink-0"></div>
             {quizIndex !== 5 && (
               <>
                 <div className="absolute w-full bottom-50px pad:bottom-40px mobile:bottom-35px">
@@ -1113,7 +1165,7 @@ function FlavourFinderComponent(props: any) {
                     <div
                       className={`${
                         quizIndex === 0
-                          ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          ? "font-Grotesque-Medium border-[rgba(0,0,0,0)] text-[#696969]  mobile:before:hidden mobile:after:hidden before:content-[''] before:block before:w-[calc(50%_-_10px)] before:h-2px before:bg-[#828282] before:absolute before:left-0 before:-bottom-2px after:content-[''] after:block after:w-[calc(50%_-_10px)] after:h-2px after:bg-[#828282] after:absolute after:right-0 after:-bottom-2px"
                           : quizOneSelected !== 0
                           ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
@@ -1134,7 +1186,7 @@ function FlavourFinderComponent(props: any) {
                     <div
                       className={`${
                         quizIndex === 1
-                          ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          ? "font-Grotesque-Medium border-[rgba(0,0,0,0)] text-[#696969]  mobile:before:hidden mobile:after:hidden  before:content-[''] before:block before:w-[calc(50%_-_10px)] before:h-2px before:bg-[#828282] before:absolute before:left-0 before:-bottom-2px after:content-[''] after:block after:w-[calc(50%_-_10px)] after:h-2px after:bg-[#828282] after:absolute after:right-0 after:-bottom-2px"
                           : quizTwoSelected !== 0
                           ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
@@ -1149,13 +1201,13 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 1
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
                       ></div>
                     </div>
                     <div
                       className={`${
                         quizIndex === 2
-                          ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          ? "font-Grotesque-Medium border-[rgba(0,0,0,0)] text-[#696969]  mobile:before:hidden mobile:after:hidden  before:content-[''] before:block before:w-[calc(50%_-_10px)] before:h-2px before:bg-[#828282] before:absolute before:left-0 before:-bottom-2px after:content-[''] after:block after:w-[calc(50%_-_10px)] after:h-2px after:bg-[#828282] after:absolute after:right-0 after:-bottom-2px"
                           : quizThreeSelected1 !== 0 && quizThreeSelected2 !== 0
                           ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
@@ -1170,13 +1222,13 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 2
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
                       ></div>
                     </div>
                     <div
                       className={` ${
                         quizIndex === 3
-                          ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          ? "font-Grotesque-Medium border-[rgba(0,0,0,0)] text-[#696969]  mobile:before:hidden mobile:after:hidden  before:content-[''] before:block before:w-[calc(50%_-_10px)] before:h-2px before:bg-[#828282] before:absolute before:left-0 before:-bottom-2px after:content-[''] after:block after:w-[calc(50%_-_10px)] after:h-2px after:bg-[#828282] after:absolute after:right-0 after:-bottom-2px"
                           : quizFourSelected !== 0
                           ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
@@ -1191,13 +1243,13 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 3
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
                       ></div>
                     </div>
                     <div
                       className={`${
                         quizIndex === 4
-                          ? "font-Grotesque-Medium border-[#696969] text-[#696969]"
+                          ? "font-Grotesque-Medium border-[rgba(0,0,0,0)] text-[#696969] mobile:before:hidden mobile:after:hidden before:content-[''] before:block before:w-[calc(50%_-_10px)] before:h-2px before:bg-[#828282] before:absolute before:left-0 before:-bottom-2px after:content-[''] after:block after:w-[calc(50%_-_10px)] after:h-2px after:bg-[#828282] after:absolute after:right-0 after:-bottom-2px"
                           : quizFiveSelected !== 0
                           ? "font-Grotesque-Regular border-[#696969] text-[#696969]"
                           : "font-Grotesque-Regular border-[#AEAEAE] text-[#969797]"
@@ -1212,7 +1264,7 @@ function FlavourFinderComponent(props: any) {
                           quizIndex === 4
                             ? "bg-[url('/assets/range/icon_arrow_line.png')] mobile:bg-[url('/assets/range/icon_arrow_line_mobile.png')]"
                             : ""
-                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-4px`}
+                        } absolute bg-cover z-10 -bottom-8px left-1/2 w-101px -ml-50px h-8px mobile:w-58px mobile:-ml-29px mobile:h-5px mobile:-bottom-5px`}
                       ></div>
                     </div>
                   </div>
@@ -1221,176 +1273,191 @@ function FlavourFinderComponent(props: any) {
             )}
             {quizIndex === 5 && (
               <>
-                <div className="">
-                  <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase pt-135px w-708px text-30px pad:top-100px pad:w-590px pad:text-24px mobile:w-320px mobile:text-15px mobile:pt-85px">
-                    {data.quizs.q5.answers[quizFiveSelected - 1].value}
-                  </div>
-                </div>
-                <div className="text-center mx-auto flex items-center justify-center mt-10px">
-                  <i className="inline-block bg-[url('/assets/range/icon_redo.png')] bg-cover mr-5px w-25px h-25px pad:w-20px pad:h-20px mobile:w-15px mobile:h-15px"></i>
-                  <span
-                    className="font-Grotesque-Regular text-black cursor-pointer text-22px pad:text-18px mobile:text-13px"
-                    onClick={() => {
-                      setQuizIndex(0);
-                    }}
-                  >
-                    {data.basic.dywfRedo}
-                  </span>
-                </div>
-                <div className="mx-auto mt-10px w-[1251px] pad:w-[1042px] mobile:w-330px">
-                  <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
-                    <div className="w-234px pad:w-188px mobile:w-241px">
-                      {recommend && (
-                        <Swiper
-                          modules={[Autoplay]}
-                          loop={true}
-                          speed={500}
-                          allowTouchMove={true}
-                          autoplay={{
-                            delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
-                            disableOnInteraction: false, // 用户互动后是否停止自动播放
-                          }}
-                          onSlideChange={(e) => {
-                            setCurrentRecommend(e.realIndex);
-                          }}
-                        >
-                          {recommend.productList.map((product, index) => {
-                            return (
-                              <SwiperSlide key={index} className="relative">
-                                <div className="flex flex-col items-center justify-center">
-                                  <div className="relative w-215px h-209px pad:w-180px pad:h-175px mobile:w-148px mobile:h-145px">
-                                    <BaseImage
-                                      mImg={
-                                        product.quizResultProductImage
-                                          ?.imagemobile?.url
-                                      }
-                                      pImg={
-                                        product.quizResultProductImage?.imagepc
-                                          ?.url
-                                      }
-                                      alt={
-                                        product.quizResultProductImage?.altText
-                                      }
-                                      layout="fill"
-                                      objectFit="cover"
-                                      quality={100}
-                                    ></BaseImage>
-                                  </div>
-                                  <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px pad:text-16px mobile:text-14px">
-                                    {product.name}
-                                  </div>
-                                </div>
-                              </SwiperSlide>
-                            );
-                          })}
-                        </Swiper>
-                      )}
-                      <div className="flex justify-center mt-10px">
-                        {recommend &&
-                          recommend.productList.length > 1 &&
-                          recommend.productList.map((item, index) => {
-                            return (
-                              <div
-                                key={key}
-                                className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
-                                  currentRecommend === index
-                                    ? "bg-[#969797] w-50px"
-                                    : "bg-[#E6E7E8] w-20px"
-                                }`}
-                                // onClick={() => setCurrentRecommend(index)}
-                              ></div>
-                            );
-                          })}
+                <Swiper
+                  freeMode={true}
+                  modules={[FreeMode]}
+                  direction="vertical"
+                  slidesPerView="auto"
+                  resistanceRatio={0}
+                  className="mobile:h-full"
+                  nested={true}
+                >
+                  <SwiperSlide>
+                    <div className="">
+                      <div className="font-AlbertusNova-Regular text-black mx-auto text-center uppercase pt-135px w-708px text-30px pad:top-100px pad:w-590px pad:text-24px mobile:w-320px mobile:text-15px">
+                        {data.quizs.q5.answers[quizFiveSelected - 1].value}
                       </div>
                     </div>
-                    <div className="inline-flex flex-col ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
-                      <div className="inline-flex items-center">
-                        <div className="relative inline-block w-68px h-68px pad:w-54px pad:h-54px mobile:w-36px mobile:h-36px">
-                          <BaseImage
-                            mImg={
-                              data.quizs.q3.step1.answers[
-                                quizThreeSelected1 - 1
-                              ].icon.mImg
-                            }
-                            pImg={
-                              data.quizs.q3.step1.answers[
-                                quizThreeSelected1 - 1
-                              ].icon.pImg
-                            }
-                            alt={""}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                          ></BaseImage>
-                        </div>
-                        <div className="ml-10px font-AlbertusNova-Regular text-black text-34px pad:text-27px mobile:text-16px">
-                          {
-                            data.quizs.q3.step1.answers[quizThreeSelected1 - 1]
-                              .label
-                          }
-                        </div>
-                      </div>
-                      <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px pad:text-12px mobile:text-10px">
-                        {data.basic.dywfResultSubtitle}
-                      </div>
-                      <div className="font-Grotesque-Regular text-black mt-20px leading-normal text-22px opacity-50 pad:text-18px mobile:text-14px mobile:text-center">
-                        {
-                          data.quizs.q3.step1.answers[quizThreeSelected1 - 1]
-                            .value
-                        }
-                      </div>
-                      <div
+                    <div className="text-center mx-auto flex items-center justify-center mt-10px">
+                      <i className="inline-block bg-[url('/assets/range/icon_redo.png')] bg-cover mr-5px w-25px h-25px pad:w-20px pad:h-20px mobile:w-15px mobile:h-15px"></i>
+                      <span
+                        className="font-Grotesque-Regular text-black cursor-pointer text-22px pad:text-18px mobile:text-13px"
                         onClick={() => {
-                          eventbus.emit(
-                            "selectProduct",
-                            recommend?.productList[currentRecommend].id
-                          );
+                          setQuizIndex(0);
                         }}
-                        className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
                       >
-                        {data.basic.dywfExploreContent}
-                      </div>
+                        {data.basic.dywfRedo}
+                      </span>
                     </div>
-                  </div>
-                  <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
-                    <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
-                      <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">
-                        {data.basic.dywfEmailContent}
+                    <div className="mx-auto mt-10px w-[1251px] pad:w-[1042px] mobile:w-330px pb-30px">
+                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                        <div className="w-234px pad:w-188px mobile:w-241px">
+                          {recommend && (
+                            <Swiper
+                              modules={[Autoplay]}
+                              loop={true}
+                              speed={500}
+                              allowTouchMove={true}
+                              autoplay={{
+                                delay: 3000, // 自动播放的间隔时间（以毫秒为单位）
+                                disableOnInteraction: false, // 用户互动后是否停止自动播放
+                              }}
+                              onSlideChange={(e) => {
+                                setCurrentRecommend(e.realIndex);
+                              }}
+                            >
+                              {recommend.productList.map((product, index) => {
+                                return (
+                                  <SwiperSlide key={index} className="relative">
+                                    <div className="flex flex-col items-center justify-center">
+                                      <div className="relative w-215px h-209px pad:w-180px pad:h-175px mobile:w-148px mobile:h-145px">
+                                        <BaseImage
+                                          mImg={
+                                            product.quizResultProductImage
+                                              ?.imagemobile?.url
+                                          }
+                                          pImg={
+                                            product.quizResultProductImage
+                                              ?.imagepc?.url
+                                          }
+                                          alt={
+                                            product.quizResultProductImage
+                                              ?.altText
+                                          }
+                                          layout="fill"
+                                          objectFit="cover"
+                                          quality={100}
+                                        ></BaseImage>
+                                      </div>
+                                      <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px pad:text-16px mobile:text-14px">
+                                        {product.name}
+                                      </div>
+                                    </div>
+                                  </SwiperSlide>
+                                );
+                              })}
+                            </Swiper>
+                          )}
+                          <div className="flex justify-center mt-10px">
+                            {recommend &&
+                              recommend.productList.length > 1 &&
+                              recommend.productList.map((item, index) => {
+                                return (
+                                  <div
+                                    key={key}
+                                    className={`h-4px mx-4px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
+                                      currentRecommend === index
+                                        ? "bg-[#969797] w-50px"
+                                        : "bg-[#E6E7E8] w-20px"
+                                    }`}
+                                    // onClick={() => setCurrentRecommend(index)}
+                                  ></div>
+                                );
+                              })}
+                          </div>
+                        </div>
+                        <div className="inline-flex flex-col ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
+                          <div className="inline-flex items-center">
+                            <div className="relative inline-block w-68px h-68px pad:w-54px pad:h-54px mobile:w-36px mobile:h-36px">
+                              <BaseImage
+                                mImg={
+                                  data.quizs.q3.step1.answers[
+                                    quizThreeSelected1 - 1
+                                  ].icon.mImg
+                                }
+                                pImg={
+                                  data.quizs.q3.step1.answers[
+                                    quizThreeSelected1 - 1
+                                  ].icon.pImg
+                                }
+                                alt={""}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                              ></BaseImage>
+                            </div>
+                            <div className="ml-10px font-AlbertusNova-Regular text-black text-34px pad:text-27px mobile:text-16px">
+                              {
+                                data.quizs.q3.step1.answers[
+                                  quizThreeSelected1 - 1
+                                ].label
+                              }
+                            </div>
+                          </div>
+                          <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px pad:text-12px mobile:text-10px">
+                            {data.basic.dywfResultSubtitle}
+                          </div>
+                          <div className="font-Grotesque-Regular text-black mt-20px leading-normal text-22px opacity-50 pad:text-18px mobile:text-14px mobile:text-center">
+                            {
+                              data.quizs.q3.step1.answers[
+                                quizThreeSelected1 - 1
+                              ].value
+                            }
+                          </div>
+                          <div
+                            onClick={() => {
+                              eventbus.emit(
+                                "selectProduct",
+                                recommend?.productList[currentRecommend].id
+                              );
+                            }}
+                            className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
+                          >
+                            {data.basic.dywfExploreContent}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
-                      <div className="inline-flex items-center px-70px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
-                        <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px pad:w-15px pad:h-15px mobile:w-12px mobile:h-11px"></i>
-                        <input
-                          type="text"
-                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-224px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
-                          placeholder={data.basic.dywfEmailName}
-                        />
-                      </div>
-                      <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex items-center px-80px pad:px-80px mobile:py-20px mobile:px-20px">
-                        <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px pad:w-20px pad:h-15px mobile:w-15px mobile:h-11px"></i>
-                        <input
-                          type="text"
-                          className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-330px pad:w-270px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
-                          placeholder={data.basic.dywfEmailAddress}
-                        />
-                      </div>
-                      <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
-                      <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px mobile:flex-auto mobile:w-full">
-                        <div
-                          id="flavourFinderSubmit"
-                          className="inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase "
-                          onClick={() => {
-                            submit();
-                          }}
-                        >
-                          {data.basic.dywfSubmitContent}
+                      <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
+                        <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] mobile:bg-cover bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
+                          <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">
+                            {data.basic.dywfEmailContent}
+                          </div>
+                        </div>
+                        <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
+                          <div className="inline-flex items-center px-70px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
+                            <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px pad:w-15px pad:h-15px mobile:w-12px mobile:h-11px"></i>
+                            <input
+                              type="text"
+                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-224px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                              placeholder={data.basic.dywfEmailName}
+                            />
+                          </div>
+                          <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
+                          <div className="inline-flex items-center px-80px pad:px-80px mobile:py-20px mobile:px-20px">
+                            <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px pad:w-20px pad:h-15px mobile:w-15px mobile:h-11px"></i>
+                            <input
+                              type="text"
+                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-330px pad:w-270px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                              placeholder={data.basic.dywfEmailAddress}
+                            />
+                          </div>
+                          <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
+                          <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px mobile:flex-auto mobile:w-full">
+                            <div
+                              id="flavourFinderSubmit"
+                              className="inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase mobile:text-11px"
+                              onClick={() => {
+                                submit();
+                              }}
+                            >
+                              {data.basic.dywfSubmitContent}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </SwiperSlide>
+                </Swiper>
               </>
             )}
           </div>

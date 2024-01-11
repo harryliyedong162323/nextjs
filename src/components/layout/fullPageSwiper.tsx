@@ -53,7 +53,6 @@ const FullPageSwiper = function (params: Params) {
         className="-mt-1px"
         modules={[Mousewheel]}
         mousewheel={{
-          sensitivity: 0.5,
           thresholdDelta: 120,
         }}
         observer={true}

@@ -142,9 +142,7 @@ function StoryChapterTwoComponent(props: propsContent) {
           }}
           nested={true}
           direction="vertical"
-          mousewheel={{
-            sensitivity: 0.1,
-          }}
+          mousewheel={true}
           allowTouchMove={true}
           onSlideChangeTransitionEnd={() => {
             // setTimeout(() => {

@@ -48,10 +48,10 @@ async function getPageData(params: any) {
       result = await StoryDao.fetch();
       break;
     case "activityDetail":
-      result = await activityDetailDao.fetch();
+      result = await activityDetailDao.fetch(params?.slug[1]);
       break;
     case "storiesDetail":
-      result = await storiesDetailDao.fetch();
+      result = await storiesDetailDao.fetch(params?.slug[1]);
       break;
     case "range":
       result = await RangeDao.fetch();

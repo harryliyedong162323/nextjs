@@ -173,7 +173,7 @@ function StoryChapterFourComponent(props: propsContent) {
               </div>
               <span
                 onClick={() => showIntroduce(true)}
-                className={`absolute cursor-pointer w-433px h-433px top-244px right-403px pad:w-340px pad:h-340px pad:top-300px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
+                className={`absolute cursor-pointer w-433px h-433px top-244px right-403px pad:w-340px pad:h-340px pad:top-300px pad:right-250px mobile:left-1/2 mobile:top-1/2 mobile:-mt-88px mobile:w-177px mobile:h-177px mobile:-ml-88px transition-all ease-in-out duration-500 delay-1000 ${
                   isCurrentPage && currentSlideIndex === 0
                     ? "opacity-100"
                     : "opacity-0"

@@ -7,7 +7,47 @@ import BaseVideo from "@/components/base/video";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
-function StoriesDetailComponent(props: any) {
+
+interface entryContent{
+  isFullPage:boolean,
+  currentPageNumber:number,
+  pageNumber:number,
+  headStyle:string,
+  howToBuyDetailComponentServiceContent:string,
+  howToBuyDetailComponentServiceTitle:string,
+  serviceCarouselImageCollection:{
+    items:Array<carouselImage>
+  }
+}
+
+interface carouselImage{
+  sys:{
+    id:string,
+  },
+  altText:string,
+  imagemobile:{
+    url:string
+  },
+  imagepc:{
+    url:string
+  }
+}
+
+interface propsContent{
+  getPageStore:Function,
+  updatePageStore:Function,
+  changeNavStatus:Function,
+  scrollToPage:Function,
+
+  data:{
+    entry:entryContent,
+    name:string,
+    type:string,
+  }
+}
+
+function StoriesDetailComponent(props: propsContent) {
+  console.log(props)
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
