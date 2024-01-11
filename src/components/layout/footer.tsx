@@ -131,7 +131,7 @@ import { usePathname } from "next/navigation";
 interface groupItems {
   id: number;
   content: string;
-  link: string;
+  targetPage: string;
 }
 
 interface joinUsImagesContent {
@@ -283,7 +283,7 @@ function Footer(props: any) {
       return {
         id: index,
         content: item.content,
-        link: "/story?anchor=ADropOfWildness",
+        targetPage: item.targetPage,
       };
     }
   );
@@ -293,7 +293,7 @@ function Footer(props: any) {
       return {
         id: index,
         content: item.content,
-        link: "/story?anchor=ADropOfWildness",
+        targetPage: item.targetPage,
       };
     }
   );
@@ -302,7 +302,7 @@ function Footer(props: any) {
       return {
         id: index,
         content: item.content,
-        link: "/story?anchor=ADropOfWildness",
+        targetPage: item.targetPage,
       };
     }
   );
@@ -311,7 +311,7 @@ function Footer(props: any) {
       return {
         id: index,
         content: item.content,
-        link: "/story?anchor=ADropOfWildness",
+        targetPage: item.targetPage,
       };
     }
   );
@@ -471,7 +471,7 @@ function Footer(props: any) {
               {panel.list.map((item) => (
                 <li className="pb-17px mobile:hidden" key={item.id}>
                   <BaseLink
-                    link={item.link}
+                    link={item.targetPage}
                     hover="text-black-500"
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
                   >
@@ -487,8 +487,8 @@ function Footer(props: any) {
               className="flex-auto hidden mobile:w-full mobile:block"
               key={panel.id}
             >
-              <li className="flex justify-between pb-35px mobile:pb-25px items-center ">
-                <span className=" w-11/12  mobile:text-17px">
+              <li className="flex justify-between items-start pb-35px mobile:pb-25px  ">
+                <span className="w-10/12  mobile:text-17px">
                   <BaseLink
                     link={panel.title[0].link}
                     className="text-20px mobile:text-17px font-medium font-Grotesque-Medium dark-grey"
@@ -520,7 +520,10 @@ function Footer(props: any) {
                     >
                       <div className="flex  justify-between">
                         <div className="w-11/12">
-                          <BaseLink link={item.link} hover="text-black-500">
+                          <BaseLink
+                            link={item.targetPage}
+                            hover="text-black-500"
+                          >
                             {item.content}
                           </BaseLink>
                         </div>
@@ -557,7 +560,7 @@ function Footer(props: any) {
                       key={item.id}
                       className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px"
                     >
-                      <BaseLink hover="text-black-500" link={item.link}>
+                      <BaseLink hover="text-black-500" link={item.targetPage}>
                         {/*bg-[url('/assets/instagram.png')]*/}
                         <span className="block w-36px h-36px bg-cover relative mobile:w-25px mobile:h-25px">
                           <BaseImage

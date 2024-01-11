@@ -129,31 +129,30 @@ query($sysId:String!) {
 `;
 
 class ActivityDetailDao {
-    static async fetch<PageModel>(id: string) {
-        const variables = { sysId: id };
-    
-        const response = await fetch(GRAPHQL_URL, {
-          method: "POST",
-          cache: "no-store",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query, variables }),
-        });
-        const result = await response.json();
-        console.log(result)
-        return [
+  static async fetch<PageModel>(id: string) {
+    const variables = { sysId: id };
 
-            {
-                type: "activityDetailComponent",
-                name: "activityDetailComponent",
-                entry: {
-                    headStyle:'bg-white',
-                    ...PageModel.query("localMarketActivityDetailCollection", result),
-                },
-            },
-        ];
-    }
+    const response = await fetch(GRAPHQL_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+    const result = await response.json();
+    console.log(result);
+    return [
+      {
+        type: "activityDetailComponent",
+        name: "activityDetailComponent",
+        entry: {
+          headStyle: "bg-white",
+          ...PageModel.query("localMarketActivityDetailCollection", result),
+        },
+      },
+    ];
+  }
 }
 
 export default ActivityDetailDao;

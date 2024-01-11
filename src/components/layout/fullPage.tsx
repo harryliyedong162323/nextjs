@@ -350,12 +350,12 @@ function FullPage(props: any) {
     console.log(slide);
     const value: string = currentHead?.value || "white";
 
-
-
     let currentNav = document.getElementById(
       "nav-" + value
     ) as HTMLInputElement;
-
+    console.log("444");
+    console.log(currentNav);
+    console.log("444");
     if (index != 0) {
       let navChildren = document.getElementById("nav-large-content");
       navChildren && (navChildren.style.transform = "translateY(100%)");
@@ -373,9 +373,7 @@ function FullPage(props: any) {
       }
     }
 
-
     currentNav && (currentNav.style.display = "block");
-
   };
 
   const handleSlideChange = (e: number): void => {
@@ -392,8 +390,6 @@ function FullPage(props: any) {
     const nav: any = document.getElementById("nav");
 
     setHeadStyle(e);
-
-
   };
 
   return (

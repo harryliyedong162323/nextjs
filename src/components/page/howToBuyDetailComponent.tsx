@@ -162,7 +162,7 @@ function HowToBuyDetailComponent(props: propsContent) {
           {/*</div>*/}
         </div>
 
-        <div className="mt-25px bottom-83px w-full flex items-center justify-center mobile:bottom-50px mobile:scale-50">
+        <div className="block mobile:hidden  mt-25px bottom-83px w-full flex items-center justify-center mobile:bottom-50px mobile:scale-50">
           {serviceCarouselImage.length > 0 &&
             serviceCarouselImage.map((item, index) => {
               return (
@@ -177,6 +177,24 @@ function HowToBuyDetailComponent(props: propsContent) {
                 ></div>
               );
             })}
+        </div>
+        <div className="hidden mobile:block ">
+          <div className=" mt-25px bottom-83px w-full flex items-center justify-center mobile:bottom-50px mobile:scale-110  mobile:h-20px">
+            {serviceCarouselImage.length > 0 &&
+              serviceCarouselImage.map((item, index) => {
+                return (
+                  <div
+                    key={item.sys.id}
+                    className={`h-14px mx-20px inline-block rounded-tr-10px rounded-bl-10px cursor-pointer ${
+                      currentIndex === index
+                        ? "bg-[#696969] w-200px"
+                        : "bg-[#969797] w-80px"
+                    }`}
+                    onClick={() => scrollTo(index)}
+                  ></div>
+                );
+              })}
+          </div>
         </div>
       </div>
 

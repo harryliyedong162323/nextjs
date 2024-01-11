@@ -139,29 +139,29 @@ query getFooter {
 `;
 
 class FooterDao {
-    static async fetch<FooterModel>() {
-        const response = await fetch(GRAPHQL_URL, {
-            method: "POST",
-            cache: "no-store",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ query }),
-        });
-        const result = await response.json();
+  static async fetch<FooterModel>() {
+    const response = await fetch(GRAPHQL_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+    });
+    const result = await response.json();
 
-        // return FooterModel.fromJson(result);
-        // return result;
-        // if(response.code == 200){
-        //     return HomeModel.fromJson(result);
-        // }else{
-        //     throw Error('Failed to load home_page data');
-        // }
+    // return FooterModel.fromJson(result);
+    // return result;
+    // if(response.code == 200){
+    //     return HomeModel.fromJson(result);
+    // }else{
+    //     throw Error('Failed to load home_page data');
+    // }
 
-        return {
-            ...FooterModel.query("footerMenuCollection", result),
-        }
-    }
+    return {
+      ...FooterModel.query("footerMenuCollection", result),
+    };
+  }
 }
 
 export default FooterDao;

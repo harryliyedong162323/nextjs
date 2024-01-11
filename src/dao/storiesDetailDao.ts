@@ -154,33 +154,32 @@ query($sysId:String!) {
 `;
 
 class StoriesDetailDao {
-    static async fetch<PageModel>(id: string) {
-        const variables = { sysId: id };
-    
-        const response = await fetch(GRAPHQL_URL, {
-          method: "POST",
-          cache: "no-store",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query, variables }),
-        });
-        const result = await response.json();
-    
-        console.log(result);
-        
-        return [
+  static async fetch<PageModel>(id: string) {
+    const variables = { sysId: id };
 
-            {
-                type: "storiesDetailComponent",
-                name: "storiesDetailComponent",
-                entry: {
-                    headStyle:'bg-white',
-                    ...PageModel.query("storiesDetailCollection", result),
-                },
-            },
-        ];
-    }
+    const response = await fetch(GRAPHQL_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+    const result = await response.json();
+
+    console.log(result);
+
+    return [
+      {
+        type: "storiesDetailComponent",
+        name: "storiesDetailComponent",
+        entry: {
+          headStyle: "bg-white",
+          ...PageModel.query("storiesDetailCollection", result),
+        },
+      },
+    ];
+  }
 }
 
 export default StoriesDetailDao;
