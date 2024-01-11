@@ -423,14 +423,13 @@ function NearYouComponent(props: propsContent) {
       <div className="relative">
         <div
 
-            onDrag={(e)=>{
-              e.stopPropagation()
-              console.log(333)
-            }}
+
           className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto"
           ref={emblaRef}
         >
-          <div className="flex text-dark-grey items-end pb-40px pad:pb-28px">
+          <div
+
+              className="flex text-dark-grey items-end pb-40px pad:pb-28px">
             {campaignData.map((item: any, index: number) => {
               return (
                 <div
