@@ -225,7 +225,7 @@ export interface propsContent{
 }
 
 
-function Footer(props: propsContent) {
+function Footer(props: any) {
 
   // console.log(props)
 

@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
-import { getLastPathName } from "@/utils/common";
+import { getLocalPathName } from "@/utils/common";
 
 
 
@@ -153,6 +153,7 @@ interface locationAndLanguageContent{
   language:string,
   region:string,
   targetUrl:string,
+  path?:string,
 }
 
 interface propsContent {
@@ -212,7 +213,29 @@ interface propsContent {
 
 
 
+function getCurrentLocation(local:string,locationAndLanguage:any){
 
+    const currentData = locationAndLanguage.filter((item:locationAndLanguageContent)=>{
+      if(item.path == local){
+        return item
+      }
+    })[0];
+
+
+    if(local){
+      return (
+          <div>
+            <p>{currentData.region} {!currentData.language&&currentData.language == '' ? null : '-'}</p>
+
+            {
+              currentData.language&&currentData.language == '' ? null : <p>{currentData.language}</p>
+            }
+          </div>
+      )
+    }else{
+      return null;
+    }
+}
 
 
 function Header(props: any) {
@@ -377,10 +400,10 @@ function Header(props: any) {
 
 function Panel({ menuFlag, onMenuChange,headerData }: any) {
   const [menu, setMenu] = useState(false);
-  const lastPathName = getLastPathName(usePathname());
+  const localPathName = getLocalPathName(usePathname());
 
 
-
+  console.log(localPathName)
 
   const locationAndLanguage = headerData.locationAndLanguageCollection.items.map((item:locationAndLanguageContent,index:number)=>{
     return {
@@ -827,8 +850,12 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
               </div>
 
               <div className="uppercase font-medium font-Grotesque-Medium tetx-[#000000]  not-italic text-15px pad:text-11px mobile:text-17px mt-68px pad:mt-48px mobile:mt-53px">
-                <p>United Kingdom -</p>
-                <p>English</p>
+
+                {
+                  localPathName&&localPathName!='' ? getCurrentLocation(localPathName,locationAndLanguage):null
+                }
+
+
               </div>
             </div>
           </div>

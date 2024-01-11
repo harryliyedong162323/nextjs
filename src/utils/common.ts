@@ -13,6 +13,18 @@ export const getHash = (url:string):string=>{
     return hash
 }
 
+export const getLocalPathName = (url:string):string=>{
+    let path:string = '';
+    const splitPath = url.split('/');
+
+    if(splitPath.length > 0){
+        path = splitPath[1];
+    }
+
+    return path;
+}
+
+
 
 export const getLastPathName = (url:string):string=>{
     let path:string = '';
