@@ -1,5 +1,5 @@
 "use client";
-import { usePathname } from "next/navigation";
+import { usePathname,useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
@@ -241,14 +241,15 @@ function getCurrentLocation(local:string,locationAndLanguage:any){
 function Header(props: any) {
 
 
-  console.log(props)
   const headerData = props.data;
+  const slug = useParams().slug[0];
 
 
 
 
 
 
+  const [scrollNum,setScrollNum] = useState(0);
   const [menu, setMenu] = useState(false);
   const currentSlideIndex = props.currentSlideIndex;
 
@@ -274,6 +275,30 @@ function Header(props: any) {
       document.removeEventListener("keydown", keyDownHandle, option);
     }, 500);
   }, [currentSlideIndex]);
+
+
+
+  useEffect(() => {
+
+
+
+
+    function handleScroll(e:any) {
+      // 处理滚动事件的逻辑
+      if(slug == "howToBuyDetail"){
+        setScrollNum(window.scrollY)
+      }
+    }
+
+    // 添加滚动事件监听器
+    window.addEventListener('scroll', handleScroll);
+
+    // 在组件卸载时清除滚动事件监听器
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   // useEffect(() => {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
@@ -379,7 +404,7 @@ function Header(props: any) {
 
         <nav
             id="nav-bg-white"
-            className={`bg-white h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-60px ${
+            className={`${scrollNum > 20 ? 'bg-transparent' : 'bg-white'} h-85px w-full fixed left-0 top-0 z-50 transition-colors ease-in-out duration-500 opacity-0 animate-fadeIn mobile:h-60px ${
                 headStyle == "bg-white" ? "block" : "hidden"
             }`}
         >

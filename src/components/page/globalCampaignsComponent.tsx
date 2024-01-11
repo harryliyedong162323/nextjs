@@ -4,6 +4,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 
 
+
+
 interface howToBuyDetailComponentBannerContent{
   altText:string,
   imagemobile:{

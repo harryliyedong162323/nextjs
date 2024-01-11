@@ -178,6 +178,7 @@ function FullPage(props: any) {
   const footerData:FooterPropsContent = props.footerData;
   const headerData = props.headerData;
 
+
   const [pageStore, setPageStore] = useState([] as any);
 
   const [isBrowser, setIsBrowser] = useState(false);

@@ -2,7 +2,7 @@
 
 
 import React, { useEffect, useState } from "react";
-import BaseImage from "@/components/base/image";
+
 function PrivacyPolicyComponent(props: any) {
     const headStyle = props.data.entry.headStyle;
     useEffect(() => {

@@ -117,7 +117,7 @@ export default async function Page({
 
 
 
-        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} data={headerData}></Header> : null
+        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} data={headerData} ></Header> : null
       }
 
       <main>
