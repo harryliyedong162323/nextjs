@@ -391,6 +391,26 @@ function Header(props: any) {
             }}
           ></div>
 
+<<<<<<< HEAD
+        <nav
+            id="nav-bg-white"
+            className={`${scrollNum > 20 ? 'bg-white' : 'bg-transparent'} h-85px w-full fixed left-0 top-0 z-50 transition-colors ease-in-out duration-500 opacity-0 animate-fadeIn mobile:h-60px ${
+                headStyle == "bg-white" ? "block" : "hidden"
+            }`}
+        >
+          <BaseLink link="/home">
+            <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+          </BaseLink>
+          <div
+              className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
+              onClick={() => {
+                handleMenu();
+              }}
+          ></div>
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
+        </nav>
+      </div>
+=======
           {
             <Panel
               menuFlag={menu}
@@ -427,6 +447,7 @@ function Header(props: any) {
         }
       </nav>
     </div>
+>>>>>>> 238e8e7e6232b09ca43f48b3cac13f6d5e897762
   );
 }
 

@@ -40,7 +40,7 @@ export interface propsContent {
 function StoryChapterSixComponent(props: propsContent) {
   const [data, setData] = useState<entryContent>(props.data.entry);
   const [textGradient, setTextGradient] = useState({
-    background: "linear-gradient(to bottom, #ffbb56, #883a17)",
+    background: "linear-gradient(to left, #ffbb56, #883a17)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
   } as React.CSSProperties);
