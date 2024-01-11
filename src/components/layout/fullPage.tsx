@@ -14,7 +14,7 @@ import { getHash } from "@/utils/common";
 
 
 import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
+import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
 import RangeNav from "@/components/layout/rangeNav";
 
 import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
@@ -169,17 +169,14 @@ function getComponent(
 }
 
 
-interface fullpageContent {
-  footerData:any,
-  data:any,
-}
 
 
-function FullPage(props: fullpageContent) {
+
+function FullPage(props: any) {
 
 
-  const footerData = props.footerData;
-  console.log(footerData)
+  const footerData:FooterPropsContent = props.footerData;
+
   const [pageStore, setPageStore] = useState([] as any);
 
   const [isBrowser, setIsBrowser] = useState(false);

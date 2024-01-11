@@ -168,7 +168,7 @@ interface locationAndLanguageContent{
   targetUrl:string
 }
 
-interface propsContent{
+export interface propsContent{
   currentSlideIndex:number,
   getPageStore:Function,
   updatePageStore:Function,
@@ -226,7 +226,7 @@ interface propsContent{
 
 function Footer(props: propsContent) {
 
-  console.log(props)
+  // console.log(props)
 
   const footerData = props.data;
 
@@ -526,7 +526,7 @@ function Footer(props: propsContent) {
                 joinUsImages.length > 0 && joinUsImages.map((item,index)=>{
                   return (
 
-                      <li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">
+                      <li key={item.id} className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">
                         <BaseLink hover="text-black-500" link={item.link}>
                           {/*bg-[url('/assets/instagram.png')]*/}
                           <span className="block w-36px h-36px bg-cover relative mobile:w-25px mobile:h-25px">
@@ -638,7 +638,7 @@ function Footer(props: propsContent) {
 
                     return (
 
-                        <div className="mb-75px pad:mb-54px mobile:mb-60px">
+                        <div key={item.id} className="mb-75px pad:mb-54px mobile:mb-60px">
                           <BaseLink
                               className={"flex justify-between items-center "}
                               autoLanguage={false}

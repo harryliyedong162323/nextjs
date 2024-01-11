@@ -97,11 +97,11 @@ function IRLExperiencesComponent(props: propsContent) {
           )
         );
 
-        console.log(
-          filterStore(
-            getPageStore("IRLExperiencesComponent").data?.regionId || 0
-          )
-        );
+        // console.log(
+        //   filterStore(
+        //     getPageStore("IRLExperiencesComponent").data?.regionId || 0
+        //   )
+        // );
       } else {
         setIsCurrentPage(false);
       }

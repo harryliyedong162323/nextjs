@@ -1,4 +1,4 @@
-// import HeaderDao from '@/dao/headerDao'
+import HeaderDao from '@/dao/headerDao'
 import FooterDao from '@/dao/footerDao'
 
 
@@ -17,11 +17,11 @@ import dynamic from "next/dynamic";
 
 //layout
 import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
+import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
 
 
-function getDynamicComponent(data: any, k:number,footerData) {
+function getDynamicComponent(data: any, k:number,footerData:FooterPropsContent,headerData:any) {
   const props = { data : data };
 
   const Component = dynamic(() => import(`@/components/page/${data.name}`), {
@@ -91,7 +91,8 @@ export default async function Page({
 }) {
   const data: any = await getPageData(params);
 
-  const footerData: any = await FooterDao.fetch();
+  const footerData: FooterPropsContent = await FooterDao.fetch();
+  const headerData: any = await HeaderDao.fetch();
 
   // const footerData: any = await FooterDao.fetch();
 
@@ -112,13 +113,13 @@ export default async function Page({
 
 
 
-        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle}></Header> : null
+        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} data={headerData}></Header> : null
       }
 
       <main>
         <Suspense fallback={<div>Loading...</div>}>
           {componentsData.map((data, k) => (
-              getDynamicComponent(data, k, footerData)
+              getDynamicComponent(data, k, footerData, headerData)
           ))}
         </Suspense>
       </main>
