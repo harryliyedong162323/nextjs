@@ -50,7 +50,7 @@ const FullPageSwiper = function (params: Params) {
       {/* <div>testing</div> */}
       <Swiper
         direction="vertical"
-        className="-mt-1px h-[100px!ignore]"
+        className="-mt-1px"
         modules={[Mousewheel]}
         mousewheel={{
           sensitivity: 0.5,

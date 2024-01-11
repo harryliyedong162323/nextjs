@@ -50,8 +50,8 @@ interface entryContent {
 }
 
 export interface propsContent {
-  getPageStore:Function,
-  updatePageStore:Function,
+  getPageStore: Function;
+  updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
   data: {
@@ -224,7 +224,7 @@ function StoryChapterFourComponent(props: propsContent) {
                       : "w-1000px pad:w-1000px mobile:w-330px"
                   }`}
                 ></div>
-                <div>{data.storyChapterFourComponentDescription}</div>
+                <div>{data.storyChapterFourComponentDescription}"</div>
               </div>
             </div>
           </SwiperSlide>

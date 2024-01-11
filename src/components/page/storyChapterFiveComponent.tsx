@@ -90,7 +90,7 @@ function StoryChapterFiveComponent(props: propsContent) {
             quality={100}
           ></BaseImage>
         </div>
-        <div className="absolute right-0 z-10 bg-white not-italic font-Grotesque text-[#262627] w-470px text-18px p-50px top-214px pad:w-376px pad:text-13px pad:p-40px pad:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
+        <div className="absolute right-0 z-10 bg-white leading-tight font-Grotesque-Light text-[#262627] w-470px text-18px p-50px top-214px pad:w-376px pad:text-13px pad:p-40px pad:top-172px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:top-0">
           <div
             className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in-out duration-500 delay-1500`}
           ></div>

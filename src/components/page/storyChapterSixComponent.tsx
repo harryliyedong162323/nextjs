@@ -81,7 +81,7 @@ function StoryChapterSixComponent(props: propsContent) {
         </span>
       </div>
       <div
-        className={`absolute bg-white font-Grotesque text-[#262627] not-italic w-900px left-100px text-18px p-50px pad:text-13px pad:p-40px pad:left-120px pad:w-880px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
+        className={`absolute bg-white  leading-tight font-Grotesque-Light text-[#262627] w-900px left-100px text-18px p-50px pad:text-13px pad:p-40px pad:left-120px pad:w-880px mobile:w-330px mobile:px-25px mobile:py-30px mobile:text-14px mobile:left-1/2 mobile:-ml-165px transition-all ease-in-out duration-500 delay-1000 ${
           isCurrentPage
             ? "top-450px pad:top-460px mobile:top-1/3 opacity-100"
             : "top-650px pad:top-660px mobile:top-2/3 opacity-0"

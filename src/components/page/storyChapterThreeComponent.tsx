@@ -87,7 +87,8 @@ function StoryChapterThreeComponent(props: propsContent) {
             quality={100}
           ></BaseImage>
         </div>
-        <div className="relative bg-white font-Grotesque text-[#262627] not-italic w-825px text-18px p-50px pad:w-660px pad:text-13px pad:p-40px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0">
+
+        <div className="relative bg-white font-Grotesque-Light text-[#262627]  leading-tight w-825px text-18px p-50px pad:w-660px pad:text-13px pad:p-40px mobile:w-330px mobile:relative mobile:px-25px mobile:py-30px mobile:text-14px mobile:right-0">
           <div
             className={`w-full absolute z-10 left-0 bottom-0 bg-white transition-all ease-in duration-500 delay-1500`}
           ></div>
