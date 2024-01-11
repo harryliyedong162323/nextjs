@@ -4,23 +4,22 @@ import React, { useCallback, useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 
 
-
+interface howToBuyDetailComponentBannerContent{
+  altText:string,
+  imagemobile:{
+    url:string
+  },
+  imagepc:{
+    url:string
+  },
+}
 
 interface entryContent{
   isFullPage:boolean,
   currentPageNumber:number,
   pageNumber:number,
   headStyle:string,
-  howToBuyDetailComponentBannerImage:{
-    altText:string,
-    imagemobile:{
-      url:string
-    },
-    imagepc:{
-      url:string
-    },
-
-  }
+  howToBuyDetailComponentBannerImage:howToBuyDetailComponentBannerContent,
   howToBuyDetailComponentBannerTitle:string,
   howToBuyDetailComponentScrollContent:string,
   howToBuyDetailComponentStoreAddress:string,
@@ -53,7 +52,7 @@ function GlobalCampaignsComponent(props: propsContent) {
   const address:string = globalCampaigns.howToBuyDetailComponentStoreAddress;
   const time:string = globalCampaigns.howToBuyDetailComponentStoreBusinessHours;
   const phone:string = globalCampaigns.howToBuyDetailComponentStorePhone;
-  const banner:object = globalCampaigns.howToBuyDetailComponentBannerImage;
+  const banner:howToBuyDetailComponentBannerContent = globalCampaigns.howToBuyDetailComponentBannerImage;
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);

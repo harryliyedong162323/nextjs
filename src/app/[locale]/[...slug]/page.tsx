@@ -1,3 +1,7 @@
+// import HeaderDao from '@/dao/headerDao'
+import FooterDao from '@/dao/footerDao'
+
+
 import HomeDao from "@/dao/homeDao";
 import StoryDao from "@/dao/storyDao";
 import activityDetailDao from "@/dao/activityDetailDao";
@@ -87,6 +91,9 @@ export default async function Page({
 }) {
   const data: any = await getPageData(params);
 
+  const footerData: any = await FooterDao.fetch();
+
+  // const footerData: any = await FooterDao.fetch();
 
   let componentsData: any[] = [];
 
@@ -102,6 +109,9 @@ export default async function Page({
     <div>
 
       {
+
+
+
         isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle}></Header> : null
       }
 
@@ -113,7 +123,7 @@ export default async function Page({
         </Suspense>
       </main>
       {
-        isFullPageFlag ?  <Footer></Footer> : null
+        isFullPageFlag ?  <Footer data={footerData}></Footer> : null
       }
     </div>
 
