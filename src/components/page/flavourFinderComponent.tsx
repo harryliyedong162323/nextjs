@@ -764,7 +764,7 @@ function FlavourFinderComponent(props: any) {
                               key={index}
                               onClick={() => {
                                 setQuizOneSelected(index + 1);
-                                // setQuizIndex(1);
+                                setQuizIndex(1);
                               }}
                               className={`cursor-pointer mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                                 quizOneSelected === index + 1
@@ -852,6 +852,7 @@ function FlavourFinderComponent(props: any) {
                                 }
 
                                 setQuizTwoSelected(index + 1);
+                                setQuizIndex(2);
                               }}
                               className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:p-10px mobile:mx-0 mobile:my-5px mobile:flex ${
                                 quizTwoSelected === index + 1
@@ -954,11 +955,17 @@ function FlavourFinderComponent(props: any) {
                                   return (
                                     <div
                                       key={index}
-                                      className={`flex justify-between items-center px-40px py-18px mt-6px pad:px-30px pad:py-14px pad:mt-4px mobile:px-20px mobile:py-10px mobile:mt-5px ${
+                                      className={`flex cursor-pointer justify-between items-center px-40px py-18px mt-6px pad:px-30px pad:py-14px pad:mt-4px mobile:px-20px mobile:py-10px mobile:mt-5px ${
                                         quizThreeSelected1 === index + 1
                                           ? "bg-white shadow-[0_4px_10px_0_rgba(0,0,0,0.4)] border-[3px] border-white border-solid mobile:border-[2px] mobile:shadow-[0_2px_5px_0_rgba(0,0,0,0.4)]"
                                           : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                                       }`}
+                                      onClick={() => {
+                                        setQuizThreeSelected1(index + 1);
+                                        if (quizThreeSelected2 !== 0) {
+                                          setQuizIndex(3);
+                                        }
+                                      }}
                                     >
                                       <div className="font-Grotesque-Regular text-[#262627] text-24px pad:text-18px mobile:text-12px">
                                         {answer.label}
@@ -1019,9 +1026,9 @@ function FlavourFinderComponent(props: any) {
                                       className="cursor-pointer relative py-20px pad:py-15px mobile:py-10px"
                                       onClick={() => {
                                         setQuizThreeSelected2(index + 1);
-                                        // if (quizThreeSelected1 !== 0) {
-                                        //   setQuizIndex(3);
-                                        // }
+                                        if (quizThreeSelected1 !== 0) {
+                                          setQuizIndex(3);
+                                        }
                                       }}
                                     >
                                       <div
@@ -1106,7 +1113,7 @@ function FlavourFinderComponent(props: any) {
                               key={index}
                               onClick={() => {
                                 setQuizFourSelected(index + 1);
-                                // setQuizIndex(4);
+                                setQuizIndex(4);
                               }}
                               className={`mx-5px w-450px px-45px pt-20px pb-14px pad:w-341px pad:px-17px pad:pt-17px pad:pb-10px mobile:w-300px mobile:px-20px mobile:pt-17px mobile:pb-10px mobile:mx-0 mobile:my-5px ${
                                 quizFourSelected === index + 1
