@@ -31,6 +31,7 @@ query getHeader {
 
             group1TitleId
             group1Title
+            group1TargetPage
             group1ItemsCollection (limit:6,locale: "en") {
                 items {
                     sys {
@@ -42,6 +43,7 @@ query getHeader {
             }
             group2TitleId
             group2Title
+            group2TargetPage
             group2ItemsCollection (limit:6,locale: "en") {
                 items {
                     sys {
@@ -53,6 +55,7 @@ query getHeader {
             }
             group3TitleId
             group3Title
+            group3TargetPage
             group3ItemsCollection (limit:6,locale: "en") {
                 items {
                     sys {
@@ -64,6 +67,7 @@ query getHeader {
             }
             group4TitleId
             group4Title
+            group4TargetPage
             group4ItemsCollection (limit:6,locale: "en") {
                 items {
                     sys {
@@ -76,6 +80,7 @@ query getHeader {
 
             group5TitleId
             group5Title
+            group5TargetPage
             group5ItemsCollection (limit:6,locale: "en") {
                 items {
                     sys {

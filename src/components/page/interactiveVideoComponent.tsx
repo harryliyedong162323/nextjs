@@ -83,26 +83,28 @@ function InteractiveVideoComponent(props: propsContent) {
           The Wild Escape{" "}
         </div>
         <BaseLink link={interactiveVideoData.interactiveVideoComponentJumpUrl}>
-          <div className="cursor-pointer relative w-334px h-65px mx-auto pad:w-238px pad:h-46px cursor-pointer  hover:bg-[url('/assets/interactiveVideo/wi.png')] bg-[length:100%_100%]   mobile:w-200px mobile:h-39px  ">
-            <BaseImage
-              pImg={
-                interactiveVideoData.interactiveVideoComponentExploreMoreImage
-                  .imagepc.url
-              }
-              mImg={
-                interactiveVideoData.interactiveVideoComponentExploreMoreImage
-                  .imagemobile.url
-              }
-              alt={
-                interactiveVideoData.interactiveVideoComponentExploreMoreImage
-                  .altText
-              }
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-            ></BaseImage>
-            <div className="text-[#1f1] text-20px flex  h-65px  pad:h-46px pad:text-14px whitespace-nowrap  mobile:h-39px justify-center items-center ">
-              EXPLORE MORE
+          <div className="text-[#1f1]  text-20px font-AlbertusNova-Regular font-normal pad:text-14px hover:text-[#1f1]">
+            <div className="cursor-pointer relative w-334px h-65px mx-auto pad:w-238px pad:h-46px cursor-pointer hover:bg-cover hover:text-[#000000]  hover:bg-[url('/assets/interactiveVideo/wi.png')] bg-[length:100%_100%]   mobile:w-200px mobile:h-39px  ">
+              <BaseImage
+                pImg={
+                  interactiveVideoData.interactiveVideoComponentExploreMoreImage
+                    .imagepc.url
+                }
+                mImg={
+                  interactiveVideoData.interactiveVideoComponentExploreMoreImage
+                    .imagemobile.url
+                }
+                alt={
+                  interactiveVideoData.interactiveVideoComponentExploreMoreImage
+                    .altText
+                }
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              ></BaseImage>
+              <div className=" flex   h-65px  pad:h-46px  whitespace-nowrap  mobile:h-39px justify-center items-center hover:text-[#1f1] ">
+                EXPLORE MORE
+              </div>
             </div>
           </div>
         </BaseLink>

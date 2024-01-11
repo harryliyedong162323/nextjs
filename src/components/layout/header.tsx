@@ -4,7 +4,228 @@ import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLastPathName } from "@/utils/common";
+
+
+
+
+//
+// const [panels, setPanels] = useState([
+//   {
+//     id: 1,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 10,
+//         name: headerData.group2Title,
+//         link: "/story",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 20,
+//         content: "A Drop Of Wildness",
+//         link: "/story?anchor=ADropOfWildness",
+//       },
+//       {
+//         id: 21,
+//         content: "What Others Say",
+//         link: "/story?anchor=WhatOthersSay",
+//       },
+//       {
+//         id: 22,
+//         content: "View All",
+//         link: "/story?anchor=ViewAll",
+//       },
+//     ],
+//   },
+//   {
+//     id: 4,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 11,
+//         name: headerData.group3Title,
+//         link: "/range",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 7,
+//         content: "Products Family",
+//         link: "/range?anchor=ProductsFamily",
+//       },
+//       {
+//         id: 8,
+//         content: "Tales From The Wild",
+//         link: "/range?anchor=TalesFromTheWild",
+//       },
+//       {
+//         id: 9,
+//         content: "Serving Suggestion",
+//         link: "/range?anchor=ServingSuggestion",
+//       },
+//       {
+//         id: 10,
+//         content: "Bottle Concept",
+//         link: "/range?anchor=BottleConcept",
+//       },
+//       {
+//         id: 188,
+//         content: "Discover your Wild Flavour",
+//         link: "/range?anchor=DiscoverYourWildFlavour",
+//       },
+//     ],
+//   },
+//   {
+//     id: 5,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 110,
+//         name: headerData.group4Title,
+//         link: "/localMarketActivity",
+//       },
+//     ],
+//     list: [
+//       // {
+//       //   id: 1311,
+//       //   content: "Wildmoor House",
+//       //   link: "/localMarketActivity?anchor=WildmoorHouse",
+//       // },
+//       {
+//         id: 131,
+//         content: "Global News",
+//         link: "/localMarketActivity?anchor=GlobalNews",
+//       },
+//       {
+//         id: 140,
+//         content: "The Wild Escape",
+//         link: "/localMarketActivity?anchor=TheWildEscape",
+//       },
+//       {
+//         id: 152,
+//         content: "Tales From The Wild",
+//         link: "/localMarketActivity?anchor=TalesFromTheWild",
+//       },
+//     ],
+//   },
+//   {
+//     id: 300,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 101,
+//         name: headerData.group5Title,
+//         link: "/howToBuy",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 1300,
+//         content: "Region Select & Global Store Map",
+//         link: "/howToBuy?anchor=RegionSelect",
+//       },
+//       {
+//         id: 1400,
+//         content: "IRL Experiences",
+//         link: "/howToBuy?anchor=IRLExperiences",
+//       },
+//       {
+//         id: 1015,
+//         content: "Digital Experience",
+//         link: "/howToBuy?anchor=DigitalExperience",
+//       },
+//     ],
+//   },
+// ]);
+
+
+interface groupItems{
+  content:string,
+  sys:{
+    id:string
+  },
+  targetPage:string,
+}
+
+interface locationAndLanguageContent{
+  id?:number,
+  language:string,
+  region:string,
+  targetUrl:string,
+}
+
+interface propsContent {
+  currentSlideIndex:number,
+  getPageStore:Function,
+  updatePageStore:Function,
+  changeNavStatus:Function,
+  scrollToPage:Function,
+  data:{
+    group1TargetPage:string,
+    group2TargetPage:string,
+    group3TargetPage:string,
+    group4TargetPage:string,
+    group5TargetPage:string,
+
+
+    group1ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group1Title:string,
+    group1TitleId:number,
+    group2ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group2Title:string,
+    group2TitleId:number,
+    group3ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group3Title:string,
+    group3TitleId:number,
+    group4ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group4Title:string,
+    group4TitleId:number,
+    group5ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group5Title:string,
+    group5TitleId:number,
+    locationAndLanguageCollection:{
+      items:Array<locationAndLanguageContent>
+    },
+    logo:{
+      altText:string,
+      imagemobile:{
+        url:string,
+      },
+      imagepc:{
+        url:string
+      },
+    },
+    regionSwitchingPromptWords:string,
+  }
+}
+
+
+
+
+
+
 function Header(props: any) {
+
+
+  console.log(props)
+  const headerData = props.data;
+
+
+
+
+
+
   const [menu, setMenu] = useState(false);
   const currentSlideIndex = props.currentSlideIndex;
 
@@ -71,92 +292,136 @@ function Header(props: any) {
     // document.body.style.overflow = 'hidden';
   };
   return (
-    <div>
-      <nav
-        id="nav-white"
-        className={`h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-59px ${
-          headStyle == "white" ? "block" : "hidden"
-        }`}
-      >
-        <BaseLink link="/home">
-          <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 cursor-pointer translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-        </BaseLink>
-        <div
-          className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[55px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
-          onClick={() => {
-            handleMenu();
-          }}
-        ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
-      </nav>
-
-      <nav
-        id="nav-black"
-        className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
-          headStyle == "black" ? "block" : "hidden"
-        }`}
-      >
-        <BaseLink link="/home">
-          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  cursor-pointer left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-        </BaseLink>
-        <div
-          className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
-          onClick={() => {
-            handleMenu();
-          }}
-        ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
-      </nav>
-
-      <nav
-        id="nav-large"
-        className={` ${
-          menu == true ? "overflow-visible" : "overflow-hidden"
-        }  w-full fixed left-0 top-0 z-50   ${
-          headStyle == "large" ? "block" : "hidden"
-        }`}
-      >
-        {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
-        <div
-          id="nav-large-content"
-          className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px pad:h-118px mobile:h-85px `}
+      <div>
+        <nav
+            id="nav-white"
+            className={`h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-59px ${
+                headStyle == "white" ? "block" : "hidden"
+            }`}
         >
-          <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
+          <BaseLink link="/home">
+            <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 cursor-pointer translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+          </BaseLink>
           <div
-            className="w-34px h-34px bg-contain bg-[url('/assets/more_menu_black.png')] cursor-pointer absolute right-55px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
-            onClick={() => {
-              handleMenu();
-            }}
+              className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[55px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
+              onClick={() => {
+                handleMenu();
+              }}
           ></div>
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
+        </nav>
 
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
-        </div>
-      </nav>
+        <nav
+            id="nav-black"
+            className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
+                headStyle == "black" ? "block" : "hidden"
+            }`}
+        >
+          <BaseLink link="/home">
+            <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  cursor-pointer left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+          </BaseLink>
+          <div
+              className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
+              onClick={() => {
+                handleMenu();
+              }}
+          ></div>
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
+        </nav>
 
-      <nav
-        id="nav-bg-white"
-        className={`bg-white h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-60px ${
-          headStyle == "bg-white" ? "block" : "hidden"
-        }`}
-      >
-        <BaseLink link="/home">
-          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-        </BaseLink>
-        <div
-          className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
-          onClick={() => {
-            handleMenu();
-          }}
-        ></div>
-        {<Panel menuFlag={menu} onMenuChange={handleMenuChange}></Panel>}
-      </nav>
-    </div>
+        <nav
+            id="nav-large"
+            className={` ${
+                menu == true ? "overflow-visible" : "overflow-hidden"
+            }  w-full fixed left-0 top-0 z-50   ${
+                headStyle == "large" ? "block" : "hidden"
+            }`}
+        >
+          {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
+          <div
+              id="nav-large-content"
+              className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px pad:h-118px mobile:h-85px `}
+          >
+            <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
+            <div
+                className="w-34px h-34px bg-contain bg-[url('/assets/more_menu_black.png')] cursor-pointer absolute right-55px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
+                onClick={() => {
+                  handleMenu();
+                }}
+            ></div>
+
+            {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
+          </div>
+        </nav>
+
+        <nav
+            id="nav-bg-white"
+            className={`bg-white h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-60px ${
+                headStyle == "bg-white" ? "block" : "hidden"
+            }`}
+        >
+          <BaseLink link="/home">
+            <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+          </BaseLink>
+          <div
+              className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
+              onClick={() => {
+                handleMenu();
+              }}
+          ></div>
+          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
+        </nav>
+      </div>
   );
 }
 
-function Panel({ menuFlag, onMenuChange }: any) {
+function Panel({ menuFlag, onMenuChange,headerData }: any) {
   const [menu, setMenu] = useState(false);
   const lastPathName = getLastPathName(usePathname());
+
+
+
+
+  const locationAndLanguage = headerData.locationAndLanguageCollection.items.map((item:locationAndLanguageContent,index:number)=>{
+    return {
+      id: index,
+      language: item.language,
+      region: item.region,
+      targetUrl:item.targetUrl
+    }
+  });
+
+  const group2Items = headerData.group2ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: item.sys.id,
+      content: item.content,
+      link: item.targetPage,
+    }
+  });
+
+  const group3Items = headerData.group3ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: item.sys.id,
+      content: item.content,
+      link: item.targetPage,
+    }
+  });
+
+  const group4Items = headerData.group4ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: item.sys.id,
+      content: item.content,
+      link: item.targetPage,
+    }
+  });
+
+  const group5Items = headerData.group5ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: item.sys.id,
+      content: item.content,
+      link: item.targetPage,
+    }
+  });
 
   useEffect(() => {
     initPanel();
@@ -195,26 +460,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
       title: [
         {
           id: 10,
-          name: "OUR STORY",
-          link: "/story",
+          name: headerData.group2Title,
+          link: headerData.group2TargetPage,
         },
       ],
       list: [
-        {
-          id: 20,
-          content: "A Drop Of Wildness",
-          link: "/story?anchor=ADropOfWildness",
-        },
-        {
-          id: 21,
-          content: "What Others Say",
-          link: "/story?anchor=WhatOthersSay",
-        },
-        {
-          id: 22,
-          content: "View All",
-          link: "/story?anchor=ViewAll",
-        },
+        ...group2Items
       ],
     },
     {
@@ -223,36 +474,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
       title: [
         {
           id: 11,
-          name: "THE WILDMOOR RANGE",
-          link: "/range",
+          name: headerData.group3Title,
+          link: headerData.group3TargetPage,
         },
       ],
       list: [
-        {
-          id: 7,
-          content: "Products Family",
-          link: "/range?anchor=ProductsFamily",
-        },
-        {
-          id: 8,
-          content: "Tales From The Wild",
-          link: "/range?anchor=TalesFromTheWild",
-        },
-        {
-          id: 9,
-          content: "Serving Suggestion",
-          link: "/range?anchor=ServingSuggestion",
-        },
-        {
-          id: 10,
-          content: "Bottle Concept",
-          link: "/range?anchor=BottleConcept",
-        },
-        {
-          id: 188,
-          content: "Discover your Wild Flavour",
-          link: "/range?anchor=DiscoverYourWildFlavour",
-        },
+        ...group3Items
       ],
     },
     {
@@ -261,31 +488,12 @@ function Panel({ menuFlag, onMenuChange }: any) {
       title: [
         {
           id: 110,
-          name: "THE WILD ESCAPE",
-          link: "/localMarketActivity",
+          name: headerData.group4Title,
+          link: headerData.group4TargetPage,
         },
       ],
       list: [
-        // {
-        //   id: 1311,
-        //   content: "Wildmoor House",
-        //   link: "/localMarketActivity?anchor=WildmoorHouse",
-        // },
-        {
-          id: 131,
-          content: "Global News",
-          link: "/localMarketActivity?anchor=GlobalNews",
-        },
-        {
-          id: 140,
-          content: "The Wild Escape",
-          link: "/localMarketActivity?anchor=TheWildEscape",
-        },
-        {
-          id: 152,
-          content: "Tales From The Wild",
-          link: "/localMarketActivity?anchor=TalesFromTheWild",
-        },
+        ...group4Items
       ],
     },
     {
@@ -294,30 +502,15 @@ function Panel({ menuFlag, onMenuChange }: any) {
       title: [
         {
           id: 101,
-          name: "FIND A DROP OF WILDERNESS NEAR YOU",
-          link: "/howToBuy",
+          name: headerData.group5Title,
+          link: headerData.group5TargetPage,
         },
       ],
       list: [
-        {
-          id: 1300,
-          content: "Region Select & Global Store Map",
-          link: "/howToBuy?anchor=RegionSelect",
-        },
-        {
-          id: 1400,
-          content: "IRL Experiences",
-          link: "/howToBuy?anchor=IRLExperiences",
-        },
-        {
-          id: 1015,
-          content: "Digital Experience",
-          link: "/howToBuy?anchor=DigitalExperience",
-        },
+        ...group5Items
       ],
     },
   ]);
-
   const togglePanel = (id: number) => {
     const newPanels = panels.map((panel) => {
       if (panel.id === id) {
@@ -393,7 +586,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
           <div className="flex justify-between mb-91px pad:mb-65 px mobile:mb-75px">
             <div className="">
               <BaseLink
-                link={`/home`}
+                  link={`${headerData.group1TargetPage}`}
                 className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
               >
                 HOME
@@ -459,13 +652,6 @@ function Panel({ menuFlag, onMenuChange }: any) {
                         </BaseLink>
                       </div>
                       <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                        {/*<BaseImage*/}
-                        {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                        {/*  alt={""}*/}
-                        {/*  objectFit="contain"*/}
-                        {/*  quality={100}*/}
-                        {/*></BaseImage>*/}
                       </div>
                     </div>
                   ))}
@@ -492,7 +678,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
               className="ml-14px pad:ml-12px mobile:ml-10px text-[#000000]  cursor-pointer text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
               onClick={hanleLanguage}
             >
-              Location and Language
+              {headerData.regionSwitchingPromptWords}
             </div>
           </div>
         </div>
@@ -509,7 +695,7 @@ function Panel({ menuFlag, onMenuChange }: any) {
         >
           <div className="flex w-full justify-between h-screen">
             <div className="flex  flex-1"></div>
-            <div className="w-381px relative pl-33px  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
+            <div className="w-381px relative pl-33px pad:w-[300px!ignore]  overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-272px mobile:w-full mobile:pl-20px mobile:pr-18px bg-[#FFFFFF]">
               <div className="flex justify-between items-center  mt-25px pad:mt-18px mobile:mt-15px">
                 <div
                   className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative cursor-pointer "
@@ -546,93 +732,98 @@ function Panel({ menuFlag, onMenuChange }: any) {
                 </div>
               </div>
               <div className="text-center not-italic font-medium text-[#000000] font-GalanoGrotesque  text-22px pad:text-16px mobile:text-20px mt-68px pad:mt-48px mobile:mt-53px">
-                Location And Language
+                {headerData.regionSwitchingPromptWords}
               </div>
               <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
-                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/zh-CN/${lastPathName}`}
-                  >
-                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
-                      <p>CHINA MAINLAND-</p>
-                      <p>SIMPLIFIED CHINESE</p>
-                    </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    alt={""}*/}
-                      {/*    objectFit="contain"*/}
-                      {/*    quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
-                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/zh-Hant-TW/${lastPathName}`}
-                  >
-                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
-                      <p>Taiwan region -</p>
-                      <p>traditional Chinese</p>
-                    </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    alt={""}*/}
-                      {/*    objectFit="contain"*/}
-                      {/*    quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
-                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/ko-KR/${lastPathName}`}
-                  >
-                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
-                      <p>Korea -</p>
-                      <p>Korean</p>
-                    </div>
-                    <div className="w-13px h-25px  pad:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    alt={""}*/}
-                      {/*    objectFit="contain"*/}
-                      {/*    quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
-                <div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/en/${lastPathName}`}
-                  >
-                    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">
-                      <p>Singapore -</p>
-                      <p>English</p>
-                    </div>
-                    <div className="w-13px h-25px pad:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*    mImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    pImg={require("../../../public/assets/arrow-right.png")}*/}
-                      {/*    alt={""}*/}
-                      {/*    objectFit="contain"*/}
-                      {/*    quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
+                {
+                  locationAndLanguage.length > 0 && locationAndLanguage.map((item:locationAndLanguageContent,index:number)=>{
+                    return(
+                        <div key={item.id} className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
+                          <BaseLink
+                              className={"flex justify-between items-center "}
+                              autoLanguage={false}
+                              link={`${item.targetUrl}`}
+                          >
+                            <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px  w-4/5 truncate">
+                              <p>{item.region} {!item.language&&item.language == '' ? null : '-'}</p>
+
+                              {
+                                item.language&&item.language == '' ? null : <p>{item.language}</p>
+                              }
+
+                            </div>
+                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
+                            </div>
+                          </BaseLink>
+                        </div>
+                    )
+                  })
+                }
+                {/*<div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">*/}
+                {/*  <BaseLink*/}
+                {/*    className={"flex justify-between items-center "}*/}
+                {/*    autoLanguage={false}*/}
+                {/*    link={`/zh-Hant-TW/${lastPathName}`}*/}
+                {/*  >*/}
+                {/*    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">*/}
+                {/*      <p>Taiwan region -</p>*/}
+                {/*      <p>traditional Chinese</p>*/}
+                {/*    </div>*/}
+                {/*    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">*/}
+                {/*      /!*<BaseImage*!/*/}
+                {/*      /!*    mImg={require("../../../public/assets/arrow-right.png")}*!/*/}
+                {/*      /!*    pImg={require("../../../public/assets/arrow-right.png")}*!/*/}
+                {/*      /!*    alt={""}*!/*/}
+                {/*      /!*    objectFit="contain"*!/*/}
+                {/*      /!*    quality={100}*!/*/}
+                {/*      /!*></BaseImage>*!/*/}
+                {/*    </div>*/}
+                {/*  </BaseLink>*/}
+                {/*</div>*/}
+                {/*<div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">*/}
+                {/*  <BaseLink*/}
+                {/*    className={"flex justify-between items-center "}*/}
+                {/*    autoLanguage={false}*/}
+                {/*    link={`/ko-KR/${lastPathName}`}*/}
+                {/*  >*/}
+                {/*    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">*/}
+                {/*      <p>Korea -</p>*/}
+                {/*      <p>Korean</p>*/}
+                {/*    </div>*/}
+                {/*    <div className="w-13px h-25px  pad:w-9px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">*/}
+                {/*      /!*<BaseImage*!/*/}
+                {/*      /!*    mImg={require("../../../public/assets/arrow-right.png")}*!/*/}
+                {/*      /!*    pImg={require("../../../public/assets/arrow-right.png")}*!/*/}
+                {/*      /!*    alt={""}*!/*/}
+                {/*      /!*    objectFit="contain"*!/*/}
+                {/*      /!*    quality={100}*!/*/}
+                {/*      /!*></BaseImage>*!/*/}
+                {/*    </div>*/}
+                {/*  </BaseLink>*/}
+                {/*</div>*/}
+                {/*<div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer ">*/}
+                {/*  <BaseLink*/}
+                {/*    className={"flex justify-between items-center "}*/}
+                {/*    autoLanguage={false}*/}
+                {/*    link={`/en/${lastPathName}`}*/}
+                {/*  >*/}
+                {/*    <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px    w-4/5 truncate">*/}
+                {/*      <p>Singapore -</p>*/}
+                {/*      <p>English</p>*/}
+                {/*    </div>*/}
+                {/*    <div className="w-13px h-25px pad:w-9px  bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:h-17px mobile:w-15px mobile:h-17px reactive">*/}
+                {/*      /!*<BaseImage*!/*/}
+                {/*      /!*    mImg={require("../../../public/assets/arrow-right.png")}*!/*/}
+                {/*      /!*    pImg={require("../../../public/assets/arrow-right.png")}*!/*/}
+                {/*      /!*    alt={""}*!/*/}
+                {/*      /!*    objectFit="contain"*!/*/}
+                {/*      /!*    quality={100}*!/*/}
+                {/*      /!*></BaseImage>*!/*/}
+                {/*    </div>*/}
+                {/*  </BaseLink>*/}
+                {/*</div>*/}
+
+
               </div>
 
               <div className="uppercase font-medium font-Grotesque-Medium tetx-[#000000]  not-italic text-15px pad:text-11px mobile:text-17px mt-68px pad:mt-48px mobile:mt-53px">

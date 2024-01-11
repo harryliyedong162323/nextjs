@@ -175,7 +175,8 @@ function getComponent(
 function FullPage(props: any) {
 
 
-  const footerData:any = props.footerData;
+  const footerData:FooterPropsContent = props.footerData;
+  const headerData = props.headerData;
 
   const [pageStore, setPageStore] = useState([] as any);
 
@@ -434,6 +435,7 @@ function FullPage(props: any) {
       <Header
         scrollToPage={scrollToPage}
         currentSlideIndex={currentSlideIndex}
+        data={headerData}
       ></Header>
 
       {isBrowser == true ? (

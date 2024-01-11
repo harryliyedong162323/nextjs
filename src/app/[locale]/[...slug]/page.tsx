@@ -21,8 +21,8 @@ import Footer,{propsContent as FooterPropsContent} from "@/components/layout/foo
 import Popup from '@/components/layout/popup';
 
 
-function getDynamicComponent(data: any, k:number,footerData:any,headerData:any) {
-  const props = { data : data,footerData:footerData };
+function getDynamicComponent(data: any, k:number,footerData:FooterPropsContent,headerData:any) {
+  const props = { data : data,footerData:footerData,headerData };
 
   const Component = dynamic(() => import(`@/components/page/${data.name}`), {
     suspense: true,
@@ -91,11 +91,11 @@ export default async function Page({
 }) {
   const data: any = await getPageData(params);
 
-  const footerData: any = await FooterDao.fetch();
+  const footerData: FooterPropsContent = await FooterDao.fetch();
   const headerData: any = await HeaderDao.fetch();
 
 
-  const props = { footerData:footerData };
+
 
 
   // const footerData: any = await FooterDao.fetch();
@@ -117,7 +117,7 @@ export default async function Page({
 
 
 
-        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} ></Header> : null
+        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} data={headerData}></Header> : null
       }
 
       <main>
@@ -128,7 +128,7 @@ export default async function Page({
         </Suspense>
       </main>
       {
-        isFullPageFlag ?  <Footer {...props}></Footer> : null
+        isFullPageFlag ?  <Footer data={footerData}></Footer> : null
       }
     </div>
 
