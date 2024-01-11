@@ -99,6 +99,7 @@ query getHeader {
                         region
                         language
                         targetUrl
+                        path
                     }
                 }
             }

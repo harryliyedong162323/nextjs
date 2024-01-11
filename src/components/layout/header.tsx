@@ -222,7 +222,7 @@ function getCurrentLocation(local:string,locationAndLanguage:any){
     })[0];
 
 
-    if(local){
+    if(currentData){
       return (
           <div>
             <p>{currentData.region} {!currentData.language&&currentData.language == '' ? null : '-'}</p>
@@ -403,14 +403,15 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
   const localPathName = getLocalPathName(usePathname());
 
 
-  console.log(localPathName)
+
 
   const locationAndLanguage = headerData.locationAndLanguageCollection.items.map((item:locationAndLanguageContent,index:number)=>{
     return {
       id: index,
       language: item.language,
       region: item.region,
-      targetUrl:item.targetUrl
+      targetUrl:item.targetUrl,
+      path:item.path
     }
   });
 
@@ -612,7 +613,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
                   link={`${headerData.group1TargetPage}`}
                 className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
               >
-                HOME
+                {headerData.group1Title}
               </BaseLink>
             </div>
           </div>

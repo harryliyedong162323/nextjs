@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
-import { getLastPathName } from "@/utils/common";
+import { getLocalPathName } from "@/utils/common";
 import { usePathname } from "next/navigation";
 
 
@@ -166,7 +166,8 @@ interface locationAndLanguageContent{
   id?:number,
   language:string,
   region:string,
-  targetUrl:string
+  targetUrl:string,
+  path?:string
 }
 
 export interface propsContent{
@@ -225,6 +226,31 @@ export interface propsContent{
 }
 
 
+function getCurrentLocation(local:string,locationAndLanguage:any){
+  console.log(locationAndLanguage)
+  const currentData = locationAndLanguage.filter((item:locationAndLanguageContent)=>{
+    if(item.path == local){
+      return item
+    }
+  })[0];
+
+  console.log(currentData)
+  if(currentData){
+    return (
+        <div>
+          <p>{currentData.region} {!currentData.language&&currentData.language == '' ? null : '-'}</p>
+
+          {
+            currentData.language&&currentData.language == '' ? null : <p>{currentData.language}</p>
+          }
+        </div>
+    )
+  }else{
+    return null;
+  }
+}
+
+
 function Footer(props: any) {
 
   // console.log(props)
@@ -237,6 +263,7 @@ function Footer(props: any) {
       language: item.language,
       region: item.region,
       targetUrl: item.targetUrl,
+      path:item.path,
     }
   });
 
@@ -284,8 +311,9 @@ function Footer(props: any) {
 
   const headStyle = "none";
   const [language, setLanguage] = useState(false);
+  const localPathName = getLocalPathName(usePathname());
 
-  const lastPathName = getLastPathName(usePathname());
+
   const currentSlideIndex = props.currentSlideIndex;
 
   useEffect(() => {
@@ -732,8 +760,9 @@ function Footer(props: any) {
                     {/*</div>*/}
                   </div>
                   <div className="uppercase text-13px pad:text-9px text-black mobile:text-15px font-semibold">
-                    <p>United Kingdom -</p>
-                    <p>English</p>
+                    {
+                      localPathName&&localPathName!='' ? getCurrentLocation(localPathName,locationAndLanguage):null
+                    }
                   </div>
                 </div>
               </div>

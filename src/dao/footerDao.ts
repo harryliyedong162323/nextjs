@@ -54,28 +54,52 @@ query getFooter {
                 }
             }
            
+            group1TitleId
             group1Title
+            group1TitleTargetPage
             group1ItemsCollection (limit:6,locale: "en") {
                 items {
+                    sys {
+                        id
+                    }
                     content
+                    targetPage
                 }
             }
+            group2TitleId
             group2Title
+            group2TitleTargetPage
             group2ItemsCollection (limit:6,locale: "en") {
                 items {
+                    sys {
+                        id
+                    }
                     content
+                    targetPage
                 }
             }
+            group3TitleId
             group3Title
+            group3TitleTargetPage
             group3ItemsCollection (limit:6,locale: "en") {
                 items {
+                    sys {
+                        id
+                    }
                     content
+                    targetPage
                 }
             }
+            group4TitleId
             group4Title
+            group4TitleTargetPage
             group4ItemsCollection (limit:6,locale: "en") {
                 items {
+                    sys {
+                        id
+                    }
                     content
+                    targetPage
                 }
             }
 
@@ -102,6 +126,7 @@ query getFooter {
                         region
                         language
                         targetUrl
+                        path
                     }
                 }
             }
@@ -109,7 +134,6 @@ query getFooter {
         }
     }
 }
-
 
 
 `;
