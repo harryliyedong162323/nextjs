@@ -21,8 +21,8 @@ import Footer,{propsContent as FooterPropsContent} from "@/components/layout/foo
 import Popup from '@/components/layout/popup';
 
 
-function getDynamicComponent(data: any, k:number,footerData:FooterPropsContent,headerData:any) {
-  const props = { data : data };
+function getDynamicComponent(data: any, k:number,footerData:any,headerData:any) {
+  const props = { data : data,footerData:footerData };
 
   const Component = dynamic(() => import(`@/components/page/${data.name}`), {
     suspense: true,
@@ -31,7 +31,7 @@ function getDynamicComponent(data: any, k:number,footerData:FooterPropsContent,h
     suspense: true,
   });
 
-  return data.name == 'fullPage' ? <FullPage key={k} {...props} footerData={footerData} /> : <Component key={k} {...props} />;
+  return data.name == 'fullPage' ? <FullPage key={k} {...props}  /> : <Component key={k} {...props} />;
 }
 
 
@@ -91,8 +91,12 @@ export default async function Page({
 }) {
   const data: any = await getPageData(params);
 
-  const footerData: FooterPropsContent = await FooterDao.fetch();
+  const footerData: any = await FooterDao.fetch();
   const headerData: any = await HeaderDao.fetch();
+
+
+  const props = { footerData:footerData };
+
 
   // const footerData: any = await FooterDao.fetch();
 
@@ -113,7 +117,7 @@ export default async function Page({
 
 
 
-        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} data={headerData}></Header> : null
+        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} ></Header> : null
       }
 
       <main>
@@ -124,7 +128,7 @@ export default async function Page({
         </Suspense>
       </main>
       {
-        isFullPageFlag ?  <Footer data={footerData}></Footer> : null
+        isFullPageFlag ?  <Footer {...props}></Footer> : null
       }
     </div>
 

@@ -175,7 +175,7 @@ function getComponent(
 function FullPage(props: any) {
 
 
-  const footerData:FooterPropsContent = props.footerData;
+  const footerData:any = props.footerData;
 
   const [pageStore, setPageStore] = useState([] as any);
 

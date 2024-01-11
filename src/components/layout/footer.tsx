@@ -224,13 +224,13 @@ export interface propsContent{
 }
 
 
-function Footer(props: propsContent) {
+function Footer(props: any) {
 
   // console.log(props)
 
   const footerData = props.data;
 
-  const locationAndLanguage = props.data.locationAndLanguageCollection.items.map((item,index)=>{
+  const locationAndLanguage = props.data.locationAndLanguageCollection.items.map((item:locationAndLanguageContent,index:number)=>{
     return {
       id: index,
       language: item.language,
@@ -523,7 +523,7 @@ function Footer(props: propsContent) {
             <ul className="flex mobile:w-full mobile:justify-center">
 
               {
-                joinUsImages.length > 0 && joinUsImages.map((item,index)=>{
+                joinUsImages.length > 0 && joinUsImages.map((item:any,index:number)=>{
                   return (
 
                       <li key={item.id} className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">
@@ -634,7 +634,7 @@ function Footer(props: propsContent) {
 
                 {
 
-                  locationAndLanguage.length > 0 && locationAndLanguage.map((item,index)=>{
+                  locationAndLanguage.length > 0 && locationAndLanguage.map((item:any,index:number)=>{
 
                     return (
 
