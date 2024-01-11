@@ -123,7 +123,6 @@ query($sysId:String!) {
 `;
 
 class ActivityDetailDao {
-
     static async fetch<PageModel>(id: string) {
         const variables = { sysId: id };
     
@@ -136,9 +135,7 @@ class ActivityDetailDao {
           body: JSON.stringify({ query, variables }),
         });
         const result = await response.json();
-    
-        console.log(result);
-
+        console.log(result)
         return [
 
             {
@@ -146,7 +143,7 @@ class ActivityDetailDao {
                 name: "activityDetailComponent",
                 entry: {
                     headStyle:'bg-white',
-                    ...result
+                    ...PageModel.query("localMarketActivityDetailCollection", result),
                 },
             },
         ];

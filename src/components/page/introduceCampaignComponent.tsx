@@ -54,6 +54,10 @@ interface campaignsContent {
   description: string;
   location: string;
   year: string;
+  id: number;
+  sys: {
+    id: string;
+  }
 }
 
 //
@@ -109,7 +113,7 @@ const numberWithinRange = (number: number, min: number, max: number) =>
 
 function IntroduceCampaignComponent(props: propsContent) {
 
-  // console.log(props);
+  console.log(props);
 
   const headStyle = props.data.entry.headStyle;
 
@@ -492,7 +496,7 @@ function IntroduceCampaignComponent(props: propsContent) {
                   className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}
                 >
                   <div>
-                    <BaseLink link="/activityDetail">
+                    <BaseLink link={`/activityDetail${item.sys?.id}`}>
                       <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px cursor-pointer pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
                         <BaseImage
                           mImg={item.campaignImage.imagepc.url}

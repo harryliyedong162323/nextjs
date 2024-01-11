@@ -24,6 +24,10 @@ module.exports = postcss.plugin("postcss-px-to-vw", () => {
           decl.value = `${decl.value} no-repeat center/contain`;
         }
 
+        if (decl.prop === "font-size") {
+          return;
+        }
+
         let pxRegExp = /(-?\d*\.?\d+)px(!ignore)?/g;
         let declValue = decl.value;
         let matches = Array.from(decl.value.matchAll(pxRegExp));

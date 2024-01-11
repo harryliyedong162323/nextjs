@@ -84,14 +84,14 @@ function ProductFamilyComponent(props: propsContent) {
     bottle[0] as bottleContent
   );
 
-  eventbus.on('selectProduct', (value:number) => {
-    bottleData.map((item,index) => {
+  eventbus.on("selectProduct", (value: number) => {
+    bottleData.map((item, index) => {
       if (item.id === value) {
-        handleChooseBottle(index)
+        handleChooseBottle(index);
       }
-    })
+    });
     // setCurrentBottleData(bottleData.filter(item => item.id === value)[0])
-  })
+  });
 
   const handleChooseBottle = (index: number) => {
     if (animationReady) return false;
@@ -337,71 +337,72 @@ function ProductFamilyComponent(props: propsContent) {
             quality={100}
           ></BaseImage>
 
-          <div className="absolute container  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] leading-[20px] pad:leading-[14px] mobile:w-[80%] mobile:leading-[20px]">
-            <div className="text-center ml-17px font-AlbertusNova tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
+          <div className="absolute w-full pl-50px pr-50px  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]   mobile:w-full">
+            <div className="text-center ml-17px font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px  mobile:text-14px">
               SMOKY
             </div>
-            <div className="pb-11px text-center  ml-17px font-Grotesque tracking-[5px] text-[#696969] text-13px pad:text-9px pad:pb-7px mobile:text-10px">
+            <div className="pb-11px text-center  ml-17px font-Grotesque-Light tracking-[5px] text-[#696969] text-13px  pad:pb-7px mobile:text-10px">
               MALT
             </div>
-            <div className="flex justify-between text-center h-142px pb-11px pad:h-77px pad:pb-7px mobile:h-150px">
-              <div className="rotate-[-90deg] block">
-                <div className="font-AlbertusNova tracking-[5px] text-[#696969] font-normal  text-16px pad:text-11px mobile:text-14px">
+            <div className="flex justify-between  h-171px pad:h-171px pb-11px  mobile:h-110px">
+              <div className="flex flex-col justify-center items-center rotate-[-90deg]">
+                <div className="font-AlbertusNova-Regular leading-tight tracking-[5px] text-[#696969] font-normal  text-16px  mobile:text-14px">
                   LIGHT
                 </div>
-                <div className="pb-6px  font-normal font-Grotesque tracking-[2px] text-[#696969] text-13px pad:pb-4px pad:text-9px mobile:text-10px">
+                <div className="pb-6px  font-normal font-Grotesque-Light tracking-[2px] text-[#696969] text-13px pad:pb-4px  mobile:text-10px">
                   GRAIN
                 </div>
               </div>
-              <div className="w-full relative after:content-[''] after:absolute after:top-1/2  after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-[105%] after:h-2px after:bg-[#696969] after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-2px before:h-[80%] before:bg-[#696969]">
+
+              <div className="w-full relative after:content-[''] after:absolute after:top-1/2  after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full mobile:after:w-[85%] after:h-1px after:bg-[#696969] after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-1px before:h-full mobile:before:h-[80%] before:bg-[#696969]">
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center  w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center  w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 0
                       ? "shadow-[#B96566]-500 bg-[#588C96] text-[#fff]"
                       : "bg-[#CECECE] text-[#588C96]"
-                  }  bottom-0 left-1/4 translate-x-[-50%] translate-y-[-30%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`}
+                  }  bottom-0 left-1/4 translate-x-[-50%] translate-y-[-30%] pad:w-52px pad:h-52px mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(0);
                   }}
                 >
-                  <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
                     {bottleData[0].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#5C829A] hover:text-[#fff] absolute z-20 rounded-full ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#5C829A] hover:text-[#fff] absolute z-20 rounded-full ${
                     currentBottleIndex == 1
                       ? "shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]"
                       : "bg-[#CECECE] text-[#5C829A]"
-                  } top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`}
+                  } top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(1);
                   }}
                 >
-                  <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
                     {bottleData[1].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#779374] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#779374] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 2
                       ? "shadow-[#B96566]-500 bg-[#779374] text-[#fff]"
                       : "bg-[#CECECE] text-[#779374]"
-                  } top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
+                  } top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
                   onClick={() => {
                     handleChooseBottle(2);
                   }}
                 >
-                  <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
                     {bottleData[2].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px  hover:shadow-[#B96566]-500 hover:bg-[url("/assets/productFamily/drop-bg.png")] hover:bg-contain hover:text-[#fff]  absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px  hover:shadow-[#B96566]-500 hover:bg-[url("/assets/productFamily/drop-bg.png")] hover:bg-contain hover:text-[#fff]  absolute z-20 rounded-full  ${
                     currentBottleIndex == 3
                       ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]'
                       : "bg-[#CECECE] text-[#af4f1f]"
-                  } top-0 right-1/4 translate-x-[50%] translate-y-[-10%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`}
+                  } top-0 right-1/4 translate-x-[50%] translate-y-[-10%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(3);
                   }}
@@ -411,46 +412,48 @@ function ProductFamilyComponent(props: propsContent) {
                   onMouseLeave={handleMouseLeave}
                 >
                   <span
-                    className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px"
+                    className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px"
                     style={textGradient}
                   >
                     {bottleData[3].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#B96566] hover:text-[#fff] absolute z-20 rounded-full  ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#B96566] hover:text-[#fff] absolute z-20 rounded-full  ${
                     currentBottleIndex == 4
                       ? "shadow-[#B96566]-500 bg-[#B96566] text-[#fff]"
                       : "bg-[#CECECE] text-[#B96566]"
-                  }  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`}
+                  }  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(4);
                   }}
                 >
-                  <span className="text-26px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal pad:text-18px mobile:text-16px">
                     {bottleData[4].num}
                   </span>
                 </div>
                 <div
-                  className={`select-none cursor-pointer flex justify-center items-center w-60px h-60px hover:shadow-[#B96566]-500 hover:bg-[#96934C] hover:text-[#fff]  absolute z-20 rounded-full ${
+                  className={`select-none cursor-pointer flex justify-center items-center w-72px h-72px hover:shadow-[#B96566]-500 hover:bg-[#96934C] hover:text-[#fff]  absolute z-20 rounded-full ${
                     currentBottleIndex == 5
                       ? "shadow-[#B96566]-500 bg-[#96934C] text-[#fff]"
                       : "bg-[#CECECE] text-[#96934C]"
-                  } top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] pad:w-42px pad:h-42px mobile:w-28px mobile:h-28px`}
+                  } top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] pad:w-72px pad:h-72px mobile:w-28px mobile:h-28px`}
                   onClick={() => {
                     handleChooseBottle(5);
                   }}
                 >
-                  <span className="text-26px font-AlbertusNova-Regular font-normal  pad:text-18px mobile:text-16px">
+                  <span className="text-32px font-AlbertusNova-Regular font-normal  pad:text-18px mobile:text-16px">
                     {bottleData[5].num}
                   </span>
                 </div>
               </div>
-              <div className="rotate-[90deg] block font-AlbertusNova tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
-                <span className="rotate-[180deg] block">RICH</span>
+              <div className="flex flex-col items-center justify-center">
+                <div className="rotate-[-90deg]  font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px  mobile:text-14px ">
+                  RICH
+                </div>
               </div>
             </div>
-            <div className=" text-center ml-17px font-AlbertusNova tracking-[5px] text-[#696969] text-16px pad:text-11px mobile:text-14px">
+            <div className=" text-center ml-17px font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px mobile:text-14px">
               SWEET
             </div>
           </div>
