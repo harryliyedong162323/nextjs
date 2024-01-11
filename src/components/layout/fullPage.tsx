@@ -12,9 +12,10 @@ import { ISlideConfig, PageSlides, SlideParallaxType } from "react-page-slides";
 import FullPageSwiper from "./fullPageSwiper";
 import { getHash } from "@/utils/common";
 
-
 import Header from "@/components/layout/header";
-import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
+import Footer, {
+  propsContent as FooterPropsContent,
+} from "@/components/layout/footer";
 import RangeNav from "@/components/layout/rangeNav";
 
 import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
@@ -168,16 +169,9 @@ function getComponent(
   }
 }
 
-
-
-
-
 function FullPage(props: any) {
-
-
-  const footerData:FooterPropsContent = props.footerData;
+  const footerData: FooterPropsContent = props.footerData;
   const headerData = props.headerData;
-
 
   const [pageStore, setPageStore] = useState([] as any);
 
@@ -193,8 +187,6 @@ function FullPage(props: any) {
   const [isShowRangeNav, setIsShowRangeNav] = useState(true);
   const [rangeNavData, setRangeNavData] = useState(props.data?.rangeNavData);
   const [canScroll, setCanScroll] = useState<boolean>(true);
-
-
 
   // Debug Func
   function getHashParams() {
@@ -269,7 +261,6 @@ function FullPage(props: any) {
     setPageStore(tmpPageStore);
   }, [props]);
 
-
   const scrollToPage = (page: number) => {
     // console.l2og('currentPage:', page)
 
@@ -340,17 +331,20 @@ function FullPage(props: any) {
 
   const setHeadStyle = (index: number): void => {
     // const slide = document.querySelectorAll(".rps-slide");
-    const slide = document.querySelectorAll("#pageSwiper .swiper-slide");
+    const slide = document.querySelectorAll("#pageSwiper section");
     const currentHead = slide[index].querySelector(
       'input[type="hidden"]'
     ) as HTMLInputElement;
+
+    console.log(index);
+    console.log(slide);
     const value: string = currentHead?.value || "white";
 
     const nav = document.getElementsByTagName("nav");
     for (let i = 0; i < nav.length; i++) {
       nav[i].style.display = "none";
     }
-    // console.log('nav-'+value)
+    console.log("nav-" + value);
 
     let currentNav = document.getElementById(
       "nav-" + value
@@ -390,9 +384,12 @@ function FullPage(props: any) {
     const nav: any = document.getElementById("nav");
 
     setHeadStyle(e);
-
+    console.log(e);
+    console.log(slides.length - 1);
     if (e == slides.length - 1) {
       // setSliderFlag(false);
+
+      console.log("211122");
       nav && (nav.style.display = "none");
     } else {
       // setSliderFlag(true);

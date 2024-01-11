@@ -388,7 +388,7 @@ function ProductFamilyComponent(props: propsContent) {
                     currentBottleIndex == 2
                       ? "shadow-[#B96566]-500 bg-[#779374] text-[#fff]"
                       : "bg-[#CECECE] text-[#779374]"
-                  } top-1/2 left-1/2 translate-x-[200%] translate-y-[-50%]  mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
+                  } top-1/2 right-1/2  translate-x-[300%] pad:translate-x-[190%] translate-y-[-50%]  mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
                   onClick={() => {
                     handleChooseBottle(2);
                   }}

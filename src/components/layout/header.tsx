@@ -1,12 +1,9 @@
 "use client";
-import { usePathname,useParams } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
-
-
-
 
 //
 // const [panels, setPanels] = useState([
@@ -139,117 +136,108 @@ import { getLocalPathName } from "@/utils/common";
 //   },
 // ]);
 
-
-interface groupItems{
-  content:string,
-  sys:{
-    id:string
-  },
-  targetPage:string,
+interface groupItems {
+  content: string;
+  sys: {
+    id: string;
+  };
+  targetPage: string;
 }
 
-interface locationAndLanguageContent{
-  id?:number,
-  language:string,
-  region:string,
-  targetUrl:string,
-  path?:string,
+interface locationAndLanguageContent {
+  id?: number;
+  language: string;
+  region: string;
+  targetUrl: string;
+  path?: string;
 }
 
 interface propsContent {
-  currentSlideIndex:number,
-  getPageStore:Function,
-  updatePageStore:Function,
-  changeNavStatus:Function,
-  scrollToPage:Function,
-  data:{
-    group1TargetPage:string,
-    group2TargetPage:string,
-    group3TargetPage:string,
-    group4TargetPage:string,
-    group5TargetPage:string,
+  currentSlideIndex: number;
+  getPageStore: Function;
+  updatePageStore: Function;
+  changeNavStatus: Function;
+  scrollToPage: Function;
+  data: {
+    group1TargetPage: string;
+    group2TargetPage: string;
+    group3TargetPage: string;
+    group4TargetPage: string;
+    group5TargetPage: string;
 
+    group1ItemsCollection: {
+      items: Array<groupItems>;
+    };
+    group1Title: string;
+    group1TitleId: number;
+    group2ItemsCollection: {
+      items: Array<groupItems>;
+    };
+    group2Title: string;
+    group2TitleId: number;
+    group3ItemsCollection: {
+      items: Array<groupItems>;
+    };
+    group3Title: string;
+    group3TitleId: number;
+    group4ItemsCollection: {
+      items: Array<groupItems>;
+    };
+    group4Title: string;
+    group4TitleId: number;
+    group5ItemsCollection: {
+      items: Array<groupItems>;
+    };
+    group5Title: string;
+    group5TitleId: number;
+    locationAndLanguageCollection: {
+      items: Array<locationAndLanguageContent>;
+    };
+    logo: {
+      altText: string;
+      imagemobile: {
+        url: string;
+      };
+      imagepc: {
+        url: string;
+      };
+    };
+    regionSwitchingPromptWords: string;
+  };
+}
 
-    group1ItemsCollection:{
-      items:Array<groupItems>
-    },
-    group1Title:string,
-    group1TitleId:number,
-    group2ItemsCollection:{
-      items:Array<groupItems>
-    },
-    group2Title:string,
-    group2TitleId:number,
-    group3ItemsCollection:{
-      items:Array<groupItems>
-    },
-    group3Title:string,
-    group3TitleId:number,
-    group4ItemsCollection:{
-      items:Array<groupItems>
-    },
-    group4Title:string,
-    group4TitleId:number,
-    group5ItemsCollection:{
-      items:Array<groupItems>
-    },
-    group5Title:string,
-    group5TitleId:number,
-    locationAndLanguageCollection:{
-      items:Array<locationAndLanguageContent>
-    },
-    logo:{
-      altText:string,
-      imagemobile:{
-        url:string,
-      },
-      imagepc:{
-        url:string
-      },
-    },
-    regionSwitchingPromptWords:string,
+function getCurrentLocation(local: string, locationAndLanguage: any) {
+  const currentData = locationAndLanguage.filter(
+    (item: locationAndLanguageContent) => {
+      if (item.path == local) {
+        return item;
+      }
+    }
+  )[0];
+
+  if (currentData) {
+    return (
+      <div>
+        <p>
+          {currentData.region}{" "}
+          {!currentData.language && currentData.language == "" ? null : "-"}
+        </p>
+
+        {currentData.language && currentData.language == "" ? null : (
+          <p>{currentData.language}</p>
+        )}
+      </div>
+    );
+  } else {
+    return null;
   }
 }
 
-
-
-function getCurrentLocation(local:string,locationAndLanguage:any){
-
-    const currentData = locationAndLanguage.filter((item:locationAndLanguageContent)=>{
-      if(item.path == local){
-        return item
-      }
-    })[0];
-
-
-    if(currentData){
-      return (
-          <div>
-            <p>{currentData.region} {!currentData.language&&currentData.language == '' ? null : '-'}</p>
-
-            {
-              currentData.language&&currentData.language == '' ? null : <p>{currentData.language}</p>
-            }
-          </div>
-      )
-    }else{
-      return null;
-    }
-}
-
-
 function Header(props: any) {
-
-
   const headerData = props.data;
   const slug = useParams().slug[0];
 
-
-
-
-
-
-  const [scrollNum,setScrollNum] = useState(0);
+  const [scrollNum, setScrollNum] = useState(0);
   const [menu, setMenu] = useState(false);
   const currentSlideIndex = props.currentSlideIndex;
 
@@ -276,29 +264,22 @@ function Header(props: any) {
   //   }, 500);
   // }, [currentSlideIndex]);
 
-
-
   useEffect(() => {
-
-
-
-
-    function handleScroll(e:any) {
+    function handleScroll(e: any) {
       // 处理滚动事件的逻辑
-      if(slug == "howToBuyDetail"){
-        setScrollNum(window.scrollY)
+      if (slug == "howToBuyDetail") {
+        setScrollNum(window.scrollY);
       }
     }
 
     // 添加滚动事件监听器
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // 在组件卸载时清除滚动事件监听器
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   // useEffect(() => {
   //     setTimeout(()=>{setIsCurrentPage(true)},500)
@@ -340,137 +321,171 @@ function Header(props: any) {
     // document.body.style.overflow = 'hidden';
   };
   return (
-      <div>
-        <nav
-            id="nav-white"
-            className={`h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-59px ${
-                headStyle == "white" ? "block" : "hidden"
-            }`}
+    <div>
+      <nav
+        id="nav"
+        className={`h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-59px ${
+          headStyle == "white" ? "block" : "hidden"
+        }`}
+      >
+        <BaseLink link="/home">
+          <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 cursor-pointer translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        </BaseLink>
+        <div
+          className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[55px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
+          onClick={() => {
+            handleMenu();
+          }}
+        ></div>
+        {
+          <Panel
+            menuFlag={menu}
+            onMenuChange={handleMenuChange}
+            headerData={headerData}
+          ></Panel>
+        }
+      </nav>
+
+      <nav
+        id="nav-black"
+        className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
+          headStyle == "black" ? "block" : "hidden"
+        }`}
+      >
+        <BaseLink link="/home">
+          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  cursor-pointer left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        </BaseLink>
+        <div
+          className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
+          onClick={() => {
+            handleMenu();
+          }}
+        ></div>
+        {
+          <Panel
+            menuFlag={menu}
+            onMenuChange={handleMenuChange}
+            headerData={headerData}
+          ></Panel>
+        }
+      </nav>
+
+      <nav
+        id="nav-large"
+        className={` ${
+          menu == true ? "overflow-visible" : "overflow-hidden"
+        }  w-full fixed left-0 top-0 z-50   ${
+          headStyle == "large" ? "block" : "hidden"
+        }`}
+      >
+        {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
+        <div
+          id="nav-large-content"
+          className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px pad:h-118px mobile:h-85px `}
         >
-          <BaseLink link="/home">
-            <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 cursor-pointer translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-          </BaseLink>
+          <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
           <div
-              className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[55px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
-              onClick={() => {
-                handleMenu();
-              }}
+            className="w-34px h-34px bg-contain bg-[url('/assets/more_menu_black.png')] cursor-pointer absolute right-55px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
+            onClick={() => {
+              handleMenu();
+            }}
           ></div>
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
-        </nav>
 
-        <nav
-            id="nav-black"
-            className={`h-85px w-full fixed left-0 top-0 z-50 opacity-0 animate-fadeIn mobile:h-59px ${
-                headStyle == "black" ? "block" : "hidden"
-            }`}
-        >
-          <BaseLink link="/home">
-            <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  cursor-pointer left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-          </BaseLink>
-          <div
-              className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
-              onClick={() => {
-                handleMenu();
-              }}
-          ></div>
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
-        </nav>
+          {
+            <Panel
+              menuFlag={menu}
+              onMenuChange={handleMenuChange}
+              headerData={headerData}
+            ></Panel>
+          }
+        </div>
+      </nav>
 
-        <nav
-            id="nav-large"
-            className={` ${
-                menu == true ? "overflow-visible" : "overflow-hidden"
-            }  w-full fixed left-0 top-0 z-50   ${
-                headStyle == "large" ? "block" : "hidden"
-            }`}
-        >
-          {/*${isCurrentPage == true ? "translate-y-0" : "translate-y-full"}*/}
-          <div
-              id="nav-large-content"
-              className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px pad:h-118px mobile:h-85px `}
-          >
-            <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
-            <div
-                className="w-34px h-34px bg-contain bg-[url('/assets/more_menu_black.png')] cursor-pointer absolute right-55px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
-                onClick={() => {
-                  handleMenu();
-                }}
-            ></div>
-
-            {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
-          </div>
-        </nav>
-
-        <nav
-            id="nav-bg-white"
-            className={`${scrollNum > 20 ? 'bg-transparent' : 'bg-white'} h-85px w-full fixed left-0 top-0 z-50 transition-colors ease-in-out duration-500 opacity-0 animate-fadeIn mobile:h-60px ${
-                headStyle == "bg-white" ? "block" : "hidden"
-            }`}
-        >
-          <BaseLink link="/home">
-            <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-          </BaseLink>
-          <div
-              className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
-              onClick={() => {
-                handleMenu();
-              }}
-          ></div>
-          {<Panel menuFlag={menu} onMenuChange={handleMenuChange} headerData={headerData}></Panel>}
-        </nav>
-      </div>
+      <nav
+        id="nav-bg-white"
+        className={`${
+          scrollNum > 20 ? "bg-transparent" : "bg-white"
+        } h-85px w-full fixed left-0 top-0 z-50 transition-colors ease-in-out duration-500 opacity-0 animate-fadeIn mobile:h-60px ${
+          headStyle == "bg-white" ? "block" : "hidden"
+        }`}
+      >
+        <BaseLink link="/home">
+          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        </BaseLink>
+        <div
+          className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
+          onClick={() => {
+            handleMenu();
+          }}
+        ></div>
+        {
+          <Panel
+            menuFlag={menu}
+            onMenuChange={handleMenuChange}
+            headerData={headerData}
+          ></Panel>
+        }
+      </nav>
+    </div>
   );
 }
 
-function Panel({ menuFlag, onMenuChange,headerData }: any) {
+function Panel({ menuFlag, onMenuChange, headerData }: any) {
   const [menu, setMenu] = useState(false);
   const localPathName = getLocalPathName(usePathname());
 
+  const locationAndLanguage =
+    headerData.locationAndLanguageCollection.items.map(
+      (item: locationAndLanguageContent, index: number) => {
+        return {
+          id: index,
+          language: item.language,
+          region: item.region,
+          targetUrl: item.targetUrl,
+          path: item.path,
+        };
+      }
+    );
 
-
-
-  const locationAndLanguage = headerData.locationAndLanguageCollection.items.map((item:locationAndLanguageContent,index:number)=>{
-    return {
-      id: index,
-      language: item.language,
-      region: item.region,
-      targetUrl:item.targetUrl,
-      path:item.path
+  const group2Items = headerData.group2ItemsCollection.items.map(
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        content: item.content,
+        link: item.targetPage,
+      };
     }
-  });
+  );
 
-  const group2Items = headerData.group2ItemsCollection.items.map((item:groupItems,index:number)=>{
-    return {
-      id: item.sys.id,
-      content: item.content,
-      link: item.targetPage,
+  const group3Items = headerData.group3ItemsCollection.items.map(
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        content: item.content,
+        link: item.targetPage,
+      };
     }
-  });
+  );
 
-  const group3Items = headerData.group3ItemsCollection.items.map((item:groupItems,index:number)=>{
-    return {
-      id: item.sys.id,
-      content: item.content,
-      link: item.targetPage,
+  const group4Items = headerData.group4ItemsCollection.items.map(
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        content: item.content,
+        link: item.targetPage,
+      };
     }
-  });
+  );
 
-  const group4Items = headerData.group4ItemsCollection.items.map((item:groupItems,index:number)=>{
-    return {
-      id: item.sys.id,
-      content: item.content,
-      link: item.targetPage,
+  const group5Items = headerData.group5ItemsCollection.items.map(
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        content: item.content,
+        link: item.targetPage,
+      };
     }
-  });
-
-  const group5Items = headerData.group5ItemsCollection.items.map((item:groupItems,index:number)=>{
-    return {
-      id: item.sys.id,
-      content: item.content,
-      link: item.targetPage,
-    }
-  });
+  );
 
   useEffect(() => {
     initPanel();
@@ -513,9 +528,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
           link: headerData.group2TargetPage,
         },
       ],
-      list: [
-        ...group2Items
-      ],
+      list: [...group2Items],
     },
     {
       id: 4,
@@ -527,9 +540,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
           link: headerData.group3TargetPage,
         },
       ],
-      list: [
-        ...group3Items
-      ],
+      list: [...group3Items],
     },
     {
       id: 5,
@@ -541,9 +552,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
           link: headerData.group4TargetPage,
         },
       ],
-      list: [
-        ...group4Items
-      ],
+      list: [...group4Items],
     },
     {
       id: 300,
@@ -555,9 +564,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
           link: headerData.group5TargetPage,
         },
       ],
-      list: [
-        ...group5Items
-      ],
+      list: [...group5Items],
     },
   ]);
   const togglePanel = (id: number) => {
@@ -635,7 +642,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
           <div className="flex justify-between mb-91px pad:mb-65 px mobile:mb-75px">
             <div className="">
               <BaseLink
-                  link={`${headerData.group1TargetPage}`}
+                link={`${headerData.group1TargetPage}`}
                 className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium"
               >
                 {headerData.group1Title}
@@ -700,8 +707,7 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
                           {item.content}
                         </BaseLink>
                       </div>
-                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                      </div>
+                      <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive"></div>
                     </div>
                   ))}
                 </div>
@@ -784,30 +790,37 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
                 {headerData.regionSwitchingPromptWords}
               </div>
               <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
-                {
-                  locationAndLanguage.length > 0 && locationAndLanguage.map((item:locationAndLanguageContent,index:number)=>{
-                    return(
-                        <div key={item.id} className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">
+                {locationAndLanguage.length > 0 &&
+                  locationAndLanguage.map(
+                    (item: locationAndLanguageContent, index: number) => {
+                      return (
+                        <div
+                          key={item.id}
+                          className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer"
+                        >
                           <BaseLink
-                              className={"flex justify-between items-center "}
-                              autoLanguage={false}
-                              link={`${item.targetUrl}`}
+                            className={"flex justify-between items-center "}
+                            autoLanguage={false}
+                            link={`${item.targetUrl}`}
                           >
                             <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px  w-4/5 truncate">
-                              <p>{item.region} {!item.language&&item.language == '' ? null : '-'}</p>
+                              <p>
+                                {item.region}{" "}
+                                {!item.language && item.language == ""
+                                  ? null
+                                  : "-"}
+                              </p>
 
-                              {
-                                item.language&&item.language == '' ? null : <p>{item.language}</p>
-                              }
-
+                              {item.language && item.language == "" ? null : (
+                                <p>{item.language}</p>
+                              )}
                             </div>
-                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive">
-                            </div>
+                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive"></div>
                           </BaseLink>
                         </div>
-                    )
-                  })
-                }
+                      );
+                    }
+                  )}
                 {/*<div className="mb-75px pad:mb-54px mobile:mb-60px cursor-pointer">*/}
                 {/*  <BaseLink*/}
                 {/*    className={"flex justify-between items-center "}*/}
@@ -871,17 +884,12 @@ function Panel({ menuFlag, onMenuChange,headerData }: any) {
                 {/*    </div>*/}
                 {/*  </BaseLink>*/}
                 {/*</div>*/}
-
-
               </div>
 
               <div className="uppercase font-medium font-Grotesque-Medium tetx-[#000000]  not-italic text-15px pad:text-11px mobile:text-17px mt-68px pad:mt-48px mobile:mt-53px">
-
-                {
-                  localPathName&&localPathName!='' ? getCurrentLocation(localPathName,locationAndLanguage):null
-                }
-
-
+                {localPathName && localPathName != ""
+                  ? getCurrentLocation(localPathName, locationAndLanguage)
+                  : null}
               </div>
             </div>
           </div>

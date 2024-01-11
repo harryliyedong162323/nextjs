@@ -182,17 +182,13 @@ function NestedCarousel(props: any) {
 
   const data = props.list;
   return (
-
-      // ${
-      //
-      //   activeFlag == true && data.length != 1
-      //     ? "pointer-events-auto mobile:pointer-events-auto"
-      //     : "pointer-events-auto"
-      // }
-    <div
-      className={` overflow-hidden relative h-full w-full`}
-      ref={emblaRef}
-    >
+    // ${
+    //
+    //   activeFlag == true && data.length != 1
+    //     ? "pointer-events-auto mobile:pointer-events-auto"
+    //     : "pointer-events-auto"
+    // }
+    <div className={` overflow-hidden relative h-full w-full`} ref={emblaRef}>
       <div className="flex h-full w-full">
         {data.map((item: campaignsChildren, index: number) => {
           return (
@@ -332,11 +328,14 @@ function NearYouComponent(props: propsContent) {
   // console.log(props)
   const headStyle = props.data.entry.headStyle;
 
+  console.log("44444");
+  console.log(props);
+  console.log("44444");
   const campaigns = props.data.entry.nearYouComponentStoresCollection.items;
   const title = props.data.entry.nearYouContentTitle;
   // watchDrag: true
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { align: "start", loop: true,watchDrag:true },
+    { align: "start", loop: true, watchDrag: true },
     [Autoplay()]
   );
 
@@ -422,14 +421,10 @@ function NearYouComponent(props: propsContent) {
       {/*onTouchEnd={handleTouchEnd}*/}
       <div className="relative">
         <div
-
-
           className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto"
           ref={emblaRef}
         >
-          <div
-
-              className="flex text-dark-grey items-end pb-40px pad:pb-28px">
+          <div className="flex text-dark-grey items-end pb-40px pad:pb-28px">
             {campaignData.map((item: any, index: number) => {
               return (
                 <div
@@ -445,7 +440,7 @@ function NearYouComponent(props: propsContent) {
                     }`}
                   >
                     {/*link="/howToBuyDetail"*/}
-                    <BaseLink >
+                    <BaseLink>
                       <div
                         className={`relative transition-all  cursor-pointer ease-in-out  origin-left  duration-500 mb-40px pad:mb-28px ${
                           item.nearYouActive == true
@@ -488,7 +483,7 @@ function NearYouComponent(props: propsContent) {
                         {item.nearYouDes} + &quot;54545&ldquo;
                       </span>
                       {/*link="/howToBuyDetail"*/}
-                      <BaseLink >
+                      <BaseLink>
                         <div className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
                       </BaseLink>
                     </div>
