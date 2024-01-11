@@ -147,7 +147,7 @@ class StoriesDetailDao {
                 name: "storiesDetailComponent",
                 entry: {
                     headStyle:'bg-white',
-                    ...result
+                    ...PageModel.query("storiesDetailCollection", result),
                 },
             },
         ];

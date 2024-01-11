@@ -135,7 +135,7 @@ class FooterDao {
         // }
 
         return {
-            ...FooterModel.query("introduceCampaign", result),
+            ...FooterModel.query("footerMenuCollection", result),
         }
     }
 }

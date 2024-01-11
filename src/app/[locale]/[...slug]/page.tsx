@@ -21,7 +21,7 @@ import Footer from '@/components/layout/footer';
 import Popup from '@/components/layout/popup';
 
 
-function getDynamicComponent(data: any, k:number) {
+function getDynamicComponent(data: any, k:number,footerData) {
   const props = { data : data };
 
   const Component = dynamic(() => import(`@/components/page/${data.name}`), {
@@ -31,7 +31,7 @@ function getDynamicComponent(data: any, k:number) {
     suspense: true,
   });
 
-  return data.name == 'fullPage' ? <FullPage key={k} {...props} /> : <Component key={k} {...props} />;
+  return data.name == 'fullPage' ? <FullPage key={k} {...props} footerData={footerData} /> : <Component key={k} {...props} />;
 }
 
 
@@ -118,7 +118,7 @@ export default async function Page({
       <main>
         <Suspense fallback={<div>Loading...</div>}>
           {componentsData.map((data, k) => (
-              getDynamicComponent(data, k)
+              getDynamicComponent(data, k, footerData)
           ))}
         </Suspense>
       </main>

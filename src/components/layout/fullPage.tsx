@@ -11,6 +11,8 @@ import React, {
 import { ISlideConfig, PageSlides, SlideParallaxType } from "react-page-slides";
 import FullPageSwiper from "./fullPageSwiper";
 import { getHash } from "@/utils/common";
+
+
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import RangeNav from "@/components/layout/rangeNav";
@@ -166,7 +168,18 @@ function getComponent(
   }
 }
 
-function FullPage(props: any) {
+
+interface fullpageContent {
+  footerData:any,
+  data:any,
+}
+
+
+function FullPage(props: fullpageContent) {
+
+
+  const footerData = props.footerData;
+  console.log(footerData)
   const [pageStore, setPageStore] = useState([] as any);
 
   const [isBrowser, setIsBrowser] = useState(false);
@@ -181,6 +194,8 @@ function FullPage(props: any) {
   const [isShowRangeNav, setIsShowRangeNav] = useState(true);
   const [rangeNavData, setRangeNavData] = useState(props.data?.rangeNavData);
   const [canScroll, setCanScroll] = useState<boolean>(true);
+
+
 
   // Debug Func
   function getHashParams() {
@@ -255,13 +270,6 @@ function FullPage(props: any) {
     setPageStore(tmpPageStore);
   }, [props]);
 
-  // useEffect(()=>{
-  //   if(pageStore){
-  //     console.log(pageStore)
-  //   }
-  //
-  //
-  // },[pageStore])
 
   const scrollToPage = (page: number) => {
     // console.l2og('currentPage:', page)
@@ -326,7 +334,7 @@ function FullPage(props: any) {
       };
     }),
     {
-      content: <Footer scrollToPage={scrollToPage}></Footer>,
+      content: <Footer scrollToPage={scrollToPage} data={footerData}></Footer>,
       style: {},
     },
   ];

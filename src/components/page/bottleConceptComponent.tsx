@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import ReactPlayer from "react-player";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper/modules";
 import Draggable from "react-draggable";
 // import dynamic from 'next/dynamic';
 // const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
@@ -86,61 +88,94 @@ function BottleConceptComponent(props: propsContent) {
       data-anchor={3}
       className="relative overflow-hidden select-none"
     >
-      <div
-        ref={bottleRef}
-        className="cursor-[url('/assets/range/icon_pointer.cur'),_pointer] absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
-        onMouseDown={(event) => {
-          console.log("mouseup", event);
-          setIsMouseDown(true);
-          setStartX(event.clientX);
+      <Swiper
+        // virtualTranslate={true}
+        loop={true}
+        loopAdditionalSlides={5}
+        freeMode={true}
+        modules={[FreeMode]}
+        onTransitionStart={(e) => {
+          setStartX(e.touches.startX);
         }}
-        onTouchStart={(event) => {
-          event.stopPropagation();
-          console.log("touchStart", event);
-          setIsMouseDown(true);
-          setStartX(event.touches[0].clientX);
-        }}
-        onMouseMove={(event) => {
-          // console.log('isMouseDown', isMouseDown)
-          if (isMouseDown) {
-            let percent =
-              ((event.clientX - startX + 600 * endPercent) % 600) / 600;
-            console.log("percent:", percent);
-            if (percent < 0) {
-              percent = 1 + percent;
-            }
-            setCurrentPercent(percent);
-            bottlePlayingRef.current?.seekTo(percent);
+        onSliderMove={(e) => {
+          let percent =
+            ((e.touches.currentX - e.touches.startX + 600 * endPercent) % 600) /
+            600;
+          console.log("percent:", percent);
+          if (percent < 0) {
+            percent = 1 + percent;
           }
+          setCurrentPercent(percent);
+          bottlePlayingRef.current?.seekTo(percent);
         }}
-        onTouchMove={(event) => {
-          event.stopPropagation();
-          // console.log('touchMove isMouseDown', isMouseDown)
-          if (isMouseDown) {
-            let percent =
-              ((event.touches[0].clientX - startX + 375 * endPercent) % 375) /
-              375;
-            console.log("percent:", percent);
-            if (percent < 0) {
-              percent = 1 + percent;
-            }
-            setCurrentPercent(percent);
-            bottlePlayingRef.current?.seekTo(percent);
-          }
-        }}
-        onMouseUp={(event) => {
-          // console.log('mouseup', event);
-          setIsMouseDown(false);
+        onTouchEnd={(e) => {
           setEndPercent(currentPercent);
         }}
-        onTouchEnd={(event) => {
-          // console.log('touchEnd', event);
-          event.stopPropagation();
-          setIsMouseDown(false);
-          setEndPercent(currentPercent);
-          console.log(currentPercent);
-        }}
-      ></div>
+        height={1000}
+        className="h-screen !absolute w-screen"
+      >
+        {new Array(10).fill(0).map((_, index) => (
+          <SwiperSlide key={index}>
+            <div className="h-screen"></div>
+            {/* <div
+            ref={bottleRef}
+            className="cursor-[url('/assets/range/icon_pointer.cur'),_pointer] absolute w-full top-60px z-50 opacity-0 h-[calc(100vh-120px)] mobile:top-200px mobile:h-500px"
+            onMouseDown={(event) => {
+              console.log("mouseup", event);
+              setIsMouseDown(true);
+              setStartX(event.clientX);
+            }}
+            onTouchStart={(event) => {
+              event.stopPropagation();
+              console.log("touchStart", event);
+              setIsMouseDown(true);
+              setStartX(event.touches[0].clientX);
+            }}
+            onMouseMove={(event) => {
+              // console.log('isMouseDown', isMouseDown)
+              if (isMouseDown) {
+                let percent =
+                  ((event.clientX - startX + 600 * endPercent) % 600) / 600;
+                console.log("percent:", percent);
+                if (percent < 0) {
+                  percent = 1 + percent;
+                }
+                setCurrentPercent(percent);
+                bottlePlayingRef.current?.seekTo(percent);
+              }
+            }}
+            onTouchMove={(event) => {
+              event.stopPropagation();
+              // console.log('touchMove isMouseDown', isMouseDown)
+              if (isMouseDown) {
+                let percent =
+                  ((event.touches[0].clientX - startX + 375 * endPercent) %
+                    375) /
+                  375;
+                console.log("percent:", percent);
+                if (percent < 0) {
+                  percent = 1 + percent;
+                }
+                setCurrentPercent(percent);
+                bottlePlayingRef.current?.seekTo(percent);
+              }
+            }}
+            onMouseUp={(event) => {
+              // console.log('mouseup', event);
+              setIsMouseDown(false);
+              setEndPercent(currentPercent);
+            }}
+            onTouchEnd={(event) => {
+              // console.log('touchEnd', event);
+              event.stopPropagation();
+              setIsMouseDown(false);
+              setEndPercent(currentPercent);
+              console.log(currentPercent);
+            }}
+          ></div> */}
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <input type="hidden" value={headStyle} />
       <div className="flex h-screen flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px pad:top-84px mobile:top-82px">
@@ -183,7 +218,7 @@ function BottleConceptComponent(props: propsContent) {
               height="80%"
               url={data.bottleConceptComponentVideo2.video.url}
             ></ReactPlayer>
-            <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px pad:-ml-300px pad:w-600px pad:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px"></div>
+            <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px pad:-ml-300px pad:w-600px pad:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px pointer-events-none"></div>
             <div className="bg-[url('/assets/range/icon_360.png')] absolute bg-cover z-10 left-1/2 -ml-34px w-68px h-35px bottom-[7em] pad:bottom-5em mobile:w-34px mobile:h-18px "></div>
           </>
         )}

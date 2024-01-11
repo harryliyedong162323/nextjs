@@ -109,7 +109,7 @@ const numberWithinRange = (number: number, min: number, max: number) =>
 
 function IntroduceCampaignComponent(props: propsContent) {
 
-  console.log(props);
+  // console.log(props);
 
   const headStyle = props.data.entry.headStyle;
 

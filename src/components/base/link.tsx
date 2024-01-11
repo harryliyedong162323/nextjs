@@ -129,7 +129,10 @@ class BaseLink extends Component<propsContent,State>{
         let trimmedUrl: string;
         let trimmedLink:string;
         let targetUrl:string;
-        let link:string = this.props.link;
+        let link:string = this.props.link ?? '';
+
+        if(link == '') return link
+
         if (location) {
             trimmedUrl = location.replace(/^\/|\/$/g, '');
         } else {

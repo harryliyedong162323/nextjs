@@ -46,7 +46,7 @@ interface propsContent{
 }
 
 function ActivityDetailComponent(props: propsContent) {
-  console.log(props)
+  // console.log(props)
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
   const [currentIndex, setCurrentIndex] = useState(0);
 

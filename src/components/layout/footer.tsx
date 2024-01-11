@@ -5,7 +5,280 @@ import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLastPathName } from "@/utils/common";
 import { usePathname } from "next/navigation";
-function Footer(props: any) {
+
+
+
+
+// const [pannels, setPanels] = useState([
+//   {
+//     id: 1,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 2,
+//         name: footerData.group1Title,
+//         link: "/story",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 3,
+//         content: "A Drop Of Wilderness",
+//         link: "/story?anchor=ADropOfWildness",
+//       },
+//       {
+//         id: 4,
+//         content: "What Others Say",
+//         link: "/story?anchor=WhatOthersSay",
+//       },
+//     ],
+//   },
+//   {
+//     id: 5,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 6,
+//         name: footerData.group2Title,
+//         link: "/range",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 7,
+//         content: "Products Family",
+//         link: "/range?anchor=ProductsFamily",
+//       },
+//       {
+//         id: 8,
+//         content: "Tales From The Wild",
+//         link: "/range?anchor=TalesFromTheWild",
+//       },
+//       {
+//         id: 9,
+//         content: "Serving Suggestion",
+//         link: "/range?anchor=ServingSuggestion",
+//       },
+//       {
+//         id: 10,
+//         content: "The Story Behind our Bottle",
+//         link: "/range?anchor=BottleConcept",
+//       },
+//       {
+//         id: 99,
+//         content: "Discover your Wild Flavour",
+//         link: "/range?anchor=DiscoverYourWildFlavour",
+//       },
+//     ],
+//   },
+//   {
+//     id: 11,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 12,
+//         name: footerData.group3Title,
+//         link: "/localMarketActivity",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 1311,
+//         content: "Global News",
+//         link: "/localMarketActivity?anchor=WildmoorHouse",
+//       },
+//       {
+//         id: 13,
+//         content: "The Wild Escape",
+//         link: "/localMarketActivity?anchor=GlobalNews",
+//       },
+//       {
+//         id: 14,
+//         content: "Tales From The Wild",
+//         link: "/localMarketActivity?anchor=TheWildEscape",
+//       },
+//     ],
+//   },
+//   {
+//     id: 17,
+//     isExpanded: false,
+//     title: [
+//       {
+//         id: 18,
+//         name: footerData.group4Title,
+//         link: "/howToBuy",
+//       },
+//     ],
+//     list: [
+//       {
+//         id: 13,
+//         content: "Region Select & Global Store Map",
+//         link: "/howToBuy?anchor=RegionSelect",
+//       },
+//       {
+//         id: 191,
+//         content: "IRL Experiences",
+//         link: "/howToBuy?anchor=IRLExperiences",
+//       },
+//       {
+//         id: 6262,
+//         content: "Digital Experience",
+//         link: "/howToBuy?anchor=DigitalExperience",
+//       },
+//     ],
+//   },
+// ]);
+//
+//
+
+
+interface groupItems{
+  id:number,
+  content:string,
+  link:string,
+}
+
+interface joinUsImagesContent{
+  id:number,
+  qrCodeImage:null | {
+    altText:string,
+    imagemobile:{
+      url:string
+    },
+    imagepc:{
+      url:string
+    },
+  }
+  targetPage:string,
+  iconImage:{
+    altText:string,
+    imagemobile:{
+      url:string
+    },
+    imagepc:{
+      url:string
+    },
+
+  }
+}
+
+interface locationAndLanguageContent{
+  language:string,
+  region:string,
+  targetUrl:string
+}
+
+interface propsContent{
+  currentSlideIndex:number,
+  getPageStore:Function,
+  updatePageStore:Function,
+  changeNavStatus:Function,
+  scrollToPage:Function,
+  data:{
+    copyRightCta:{
+      content:string,
+      targetPage:string
+    },
+    group1ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group1Title:string,
+    group2ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group2Title:string,
+    group3Title:string,
+    group3ItemsCollection:{
+      items:Array<groupItems>
+    },
+    group4Title:string,
+    group4ItemsCollection:{
+      items:Array<groupItems>
+    },
+    joinUsImagesCollection:{
+      items:Array<joinUsImagesContent>
+    },
+    joinUsPromptWord:string,
+    locationAndLanguageCollection:{
+      items:Array<locationAndLanguageContent>
+    },
+    logo:{
+      altText:string,
+      imagemobile:{
+        url:string
+      },
+      imagepc:{
+        url:string
+      }
+    },
+    privacyPolicyCta:{
+      content:string,
+      targetPage:string,
+    },
+    regionSwitchingPromptWords:string,
+    termsOfServiceCta:{
+      content:string,
+      targetPage:string,
+    }
+  }
+}
+
+
+function Footer(props: propsContent) {
+
+  console.log(props)
+
+  const footerData = props.data;
+
+  const locationAndLanguage = props.data.locationAndLanguageCollection.items.map((item,index)=>{
+    return {
+      id: index,
+      language: item.language,
+      region: item.region,
+      link: item.targetUrl,
+    }
+  });
+
+  const joinUsImages = props.data.joinUsImagesCollection.items.map((item:joinUsImagesContent,index:number)=>{
+    return {
+      id: index,
+      qrCodeImage: item.qrCodeImage,
+      link: item.targetPage,
+      iconImage:item.iconImage
+
+    }
+  });
+
+  const group1Items = props.data.group1ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: index,
+      content: item.content,
+      link: "/story?anchor=ADropOfWildness",
+    }
+  });
+
+  const group2Items = props.data.group2ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: index,
+      content: item.content,
+      link: "/story?anchor=ADropOfWildness",
+    }
+  });
+  const group3Items = props.data.group3ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: index,
+      content: item.content,
+      link: "/story?anchor=ADropOfWildness",
+    }
+  });
+  const group4Items = props.data.group4ItemsCollection.items.map((item:groupItems,index:number)=>{
+    return {
+      id: index,
+      content: item.content,
+      link: "/story?anchor=ADropOfWildness",
+    }
+  });
+
   const scrollToPage = props.scrollToPage;
 
   const headStyle = "none";
@@ -57,21 +330,12 @@ function Footer(props: any) {
       title: [
         {
           id: 2,
-          name: "OUR STORY",
+          name: footerData.group1Title,
           link: "/story",
         },
       ],
       list: [
-        {
-          id: 3,
-          content: "A Drop Of Wilderness",
-          link: "/story?anchor=ADropOfWildness",
-        },
-        {
-          id: 4,
-          content: "What Others Say",
-          link: "/story?anchor=WhatOthersSay",
-        },
+          ...group1Items
       ],
     },
     {
@@ -80,36 +344,12 @@ function Footer(props: any) {
       title: [
         {
           id: 6,
-          name: "THE WILDMOOR RANGE",
+          name: footerData.group2Title,
           link: "/range",
         },
       ],
       list: [
-        {
-          id: 7,
-          content: "Products Family",
-          link: "/range?anchor=ProductsFamily",
-        },
-        {
-          id: 8,
-          content: "Tales From The Wild",
-          link: "/range?anchor=TalesFromTheWild",
-        },
-        {
-          id: 9,
-          content: "Serving Suggestion",
-          link: "/range?anchor=ServingSuggestion",
-        },
-        {
-          id: 10,
-          content: "The Story Behind our Bottle",
-          link: "/range?anchor=BottleConcept",
-        },
-        {
-          id: 99,
-          content: "Discover your Wild Flavour",
-          link: "/range?anchor=DiscoverYourWildFlavour",
-        },
+        ...group2Items
       ],
     },
     {
@@ -118,26 +358,12 @@ function Footer(props: any) {
       title: [
         {
           id: 12,
-          name: "THE WILD ESCAPE",
+          name: footerData.group3Title,
           link: "/localMarketActivity",
         },
       ],
       list: [
-        {
-          id: 1311,
-          content: "Global News",
-          link: "/localMarketActivity?anchor=WildmoorHouse",
-        },
-        {
-          id: 13,
-          content: "The Wild Escape",
-          link: "/localMarketActivity?anchor=GlobalNews",
-        },
-        {
-          id: 14,
-          content: "Tales From The Wild",
-          link: "/localMarketActivity?anchor=TheWildEscape",
-        },
+        ...group3Items
       ],
     },
     {
@@ -146,26 +372,12 @@ function Footer(props: any) {
       title: [
         {
           id: 18,
-          name: "FIND A DROP OF WILDERNESS NEAR YOU",
+          name: footerData.group4Title,
           link: "/howToBuy",
         },
       ],
       list: [
-        {
-          id: 13,
-          content: "Region Select & Global Store Map",
-          link: "/howToBuy?anchor=RegionSelect",
-        },
-        {
-          id: 191,
-          content: "IRL Experiences",
-          link: "/howToBuy?anchor=IRLExperiences",
-        },
-        {
-          id: 6262,
-          content: "Digital Experience",
-          link: "/howToBuy?anchor=DigitalExperience",
-        },
+        ...group4Items
       ],
     },
   ]);
@@ -189,7 +401,16 @@ function Footer(props: any) {
           {/*mobile:w-274px mobile:h-44px*/}
           <div className="mobile:w-full mobile:order-2">
             <BaseLink link="/home">
-              <div className="bg-[url('/assets/wildmoor_footer.png')] w-262px h-41px bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto"></div>
+              <div className="w-262px h-41px relative bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto">
+                <BaseImage
+                  mImg={footerData.logo.imagemobile.url}
+                  pImg={footerData.logo.imagepc.url}
+                  alt={footerData.logo.altText}
+                  layout="fill"
+                  objectFit="contain"
+                  quality={100}
+                ></BaseImage>
+              </div>
             </BaseLink>
           </div>
           <div className="mobile:order-1 mobile:w-full">
@@ -295,26 +516,47 @@ function Footer(props: any) {
 
         <div className="border-b-2 border-b-500 border-solid border-[#969797] pb-100px mobile:pb-25px mobile:w-[100%]">
           <div className="text-[#262627] text-16px font-normal font-Grotesque-Regular pb-46px mobile:text-center mobile:text-14px mobile:23px">
-            Join us for more from the Wild
+            {footerData.joinUsPromptWord}
           </div>
 
           <div>
             <ul className="flex mobile:w-full mobile:justify-center">
-              <li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">
-                <BaseLink hover="text-black-500">
-                  <span className="block w-36px h-36px bg-cover bg-[url('/assets/instagram.png')] mobile:w-25px mobile:h-25px"></span>
-                </BaseLink>
-              </li>
-              <li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">
-                <BaseLink hover="text-black-500">
-                  <span className="block w-36px h-36px bg-cover bg-[url('/assets/facebook.png')] mobile:w-25px mobile:h-25px"></span>
-                </BaseLink>
-              </li>
-              <li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-0">
-                <BaseLink hover="text-black-500">
-                  <span className="block w-36px h-36px bg-cover bg-[url('/assets/youtube.png')] mobile:w-25px mobile:h-25px"></span>
-                </BaseLink>
-              </li>
+
+              {
+                joinUsImages.length > 0 && joinUsImages.map((item,index)=>{
+                  return (
+
+                      <li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">
+                        <BaseLink hover="text-black-500" link={item.link}>
+                          {/*bg-[url('/assets/instagram.png')]*/}
+                          <span className="block w-36px h-36px bg-cover relative mobile:w-25px mobile:h-25px">
+                            <BaseImage
+                                mImg={item.iconImage.imagemobile.url}
+                                pImg={item.iconImage.imagepc.url}
+                                alt={item.iconImage.altText}
+                                objectFit="contain"
+                                layout="fill"
+                                quality={100}
+                            ></BaseImage>
+                          </span>
+                        </BaseLink>
+                      </li>
+                  )
+                })
+              }
+
+
+
+              {/*<li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-25px">*/}
+              {/*  <BaseLink hover="text-black-500">*/}
+              {/*    <span className="block w-36px h-36px bg-cover bg-[url('/assets/facebook.png')] mobile:w-25px mobile:h-25px"></span>*/}
+              {/*  </BaseLink>*/}
+              {/*</li>*/}
+              {/*<li className="w-36px h-36px cursor-pointer mr-36px mobile:w-25px mobile:h-25px mobile:mr-0">*/}
+              {/*  <BaseLink hover="text-black-500">*/}
+              {/*    <span className="block w-36px h-36px bg-cover bg-[url('/assets/youtube.png')] mobile:w-25px mobile:h-25px"></span>*/}
+              {/*  </BaseLink>*/}
+              {/*</li>*/}
             </ul>
           </div>
         </div>
@@ -323,19 +565,22 @@ function Footer(props: any) {
           <div className="text-16px  mobile:w-full">
             <ul className="flex mobile:flex-wrap mobile:justify-center mobile:text-center">
               <li className="mr-84px text-[#696969] font-Grotesque-Regular mobile:hidden">
-                &copy; 2023 WILDMOOR All rights reserved
+                <BaseLink link={footerData.copyRightCta.targetPage}>
+                  {footerData.copyRightCta.content}
+                </BaseLink>
+
               </li>
               <li className="mr-84px mobile:mr-0 mobile:w-full mobile:mb-15px">
                 <BaseLink
-                  link="/privacyPolicy"
+                  link={footerData.privacyPolicyCta.targetPage}
                   className="font-Grotesque-Regular text-black"
                 >
-                  Privacy policy
+                  {footerData.privacyPolicyCta.content}
                 </BaseLink>
               </li>
               <li className="mobile:w-full mobile:mb-30px">
-                <BaseLink className="font-Grotesque-Regular text-black">
-                  Terms of Service
+                <BaseLink className="font-Grotesque-Regular text-black" link={footerData.termsOfServiceCta.targetPage}>
+                  {footerData.termsOfServiceCta.content}
                 </BaseLink>
               </li>
             </ul>
@@ -346,12 +591,14 @@ function Footer(props: any) {
               className=" font-Grotesque-Medium  text-black text-16px font-medium cursor-pointer"
               onClick={hanleLanguage}
             >
-              Location and Language
+              {footerData.regionSwitchingPromptWords}
             </div>
           </div>
 
           <div className="text-[#696969] font-Grotesque-Regular hidden mobile:text-14px mobile:w-full mobile:text-center mobile:block">
-            <BaseLink>&copy; 2023 WILDMOOR All rights reserved</BaseLink>
+            <BaseLink link={footerData.copyRightCta.targetPage}>
+              {footerData.copyRightCta.content}
+            </BaseLink>
           </div>
         </div>
       </div>
@@ -384,90 +631,104 @@ function Footer(props: any) {
                 </div>
               </div>
               <div className="flex flex-col mt-67px pad:mt-48px mobile:mt-73px">
-                <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/zh-CN/${lastPathName}`}
-                  >
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-                      <p>CHINA MAINLAND -</p>
-                      <p>SIMPLIFIED CHINESE</p>
-                    </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  alt={""}*/}
-                      {/*  objectFit="contain"*/}
-                      {/*  quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
-                <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/zh-Hant-TW/${lastPathName}`}
-                  >
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                      <p>Taiwan region -</p>
-                      <p>traditional Chinese</p>
-                    </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  alt={""}*/}
-                      {/*  objectFit="contain"*/}
-                      {/*  quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
-                <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/ko-KR/${lastPathName}`}
-                  >
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                      <p>Korea -</p>
-                      <p>Korean</p>
-                    </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  alt={""}*/}
-                      {/*  objectFit="contain"*/}
-                      {/*  quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
-                <div className="mb-75px pad:mb-54px mobile:mb-60px">
-                  <BaseLink
-                    className={"flex justify-between items-center "}
-                    autoLanguage={false}
-                    link={`/en/${lastPathName}`}
-                  >
-                    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">
-                      <p>Singapore -</p>
-                      <p>English</p>
-                    </div>
-                    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
-                      {/*<BaseImage*/}
-                      {/*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*/}
-                      {/*  alt={""}*/}
-                      {/*  objectFit="contain"*/}
-                      {/*  quality={100}*/}
-                      {/*></BaseImage>*/}
-                    </div>
-                  </BaseLink>
-                </div>
+
+                {
+
+                  locationAndLanguage.length > 0 && locationAndLanguage.map((item,index)=>{
+
+                    return (
+
+                        <div className="mb-75px pad:mb-54px mobile:mb-60px">
+                          <BaseLink
+                              className={"flex justify-between items-center "}
+                              autoLanguage={false}
+                              link={`${item.link}`}
+                          >
+                            <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
+
+                              <p>{item.region} {!item.language&&item.language == '' ? null : '-'}</p>
+
+                              {
+                                item.language&&item.language == '' ? null : <p>{item.language}</p>
+                              }
+
+                            </div>
+                            <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">
+                            </div>
+                          </BaseLink>
+                    </div>)
+
+                  })
+
+
+
+                }
+
+
+
+                {/*<div className="mb-75px pad:mb-54px mobile:mb-60px">*/}
+                {/*  <BaseLink*/}
+                {/*    className={"flex justify-between items-center "}*/}
+                {/*    autoLanguage={false}*/}
+                {/*    link={`/zh-Hant-TW/${lastPathName}`}*/}
+                {/*  >*/}
+                {/*    <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">*/}
+                {/*      <p>Taiwan region -</p>*/}
+                {/*      <p>traditional Chinese</p>*/}
+                {/*    </div>*/}
+                {/*    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">*/}
+                {/*      /!*<BaseImage*!/*/}
+                {/*      /!*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*!/*/}
+                {/*      /!*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*!/*/}
+                {/*      /!*  alt={""}*!/*/}
+                {/*      /!*  objectFit="contain"*!/*/}
+                {/*      /!*  quality={100}*!/*/}
+                {/*      /!*></BaseImage>*!/*/}
+                {/*    </div>*/}
+                {/*  </BaseLink>*/}
+                {/*</div>*/}
+                {/*<div className="mb-75px pad:mb-54px mobile:mb-60px">*/}
+                {/*  <BaseLink*/}
+                {/*    className={"flex justify-between items-center "}*/}
+                {/*    autoLanguage={false}*/}
+                {/*    link={`/ko-KR/${lastPathName}`}*/}
+                {/*  >*/}
+                {/*    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">*/}
+                {/*      <p>Korea -</p>*/}
+                {/*      <p>Korean</p>*/}
+                {/*    </div>*/}
+                {/*    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">*/}
+                {/*      /!*<BaseImage*!/*/}
+                {/*      /!*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*!/*/}
+                {/*      /!*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*!/*/}
+                {/*      /!*  alt={""}*!/*/}
+                {/*      /!*  objectFit="contain"*!/*/}
+                {/*      /!*  quality={100}*!/*/}
+                {/*      /!*></BaseImage>*!/*/}
+                {/*    </div>*/}
+                {/*  </BaseLink>*/}
+                {/*</div>*/}
+                {/*<div className="mb-75px pad:mb-54px mobile:mb-60px">*/}
+                {/*  <BaseLink*/}
+                {/*    className={"flex justify-between items-center "}*/}
+                {/*    autoLanguage={false}*/}
+                {/*    link={`/en/${lastPathName}`}*/}
+                {/*  >*/}
+                {/*    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">*/}
+                {/*      <p>Singapore -</p>*/}
+                {/*      <p>English</p>*/}
+                {/*    </div>*/}
+                {/*    <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive">*/}
+                {/*      /!*<BaseImage*!/*/}
+                {/*      /!*  mImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*!/*/}
+                {/*      /!*  pImg={require("../../../public/assets/KVAnimation/arrow-right.png")}*!/*/}
+                {/*      /!*  alt={""}*!/*/}
+                {/*      /!*  objectFit="contain"*!/*/}
+                {/*      /!*  quality={100}*!/*/}
+                {/*      /!*></BaseImage>*!/*/}
+                {/*    </div>*/}
+                {/*  </BaseLink>*/}
+                {/*</div>*/}
               </div>
               <div className="uppercase text-13px pad:text-9px text-black mobile:text-15px font-semibold">
                 <p>United Kingdom -</p>
