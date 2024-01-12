@@ -94,7 +94,7 @@ function ProductFamilyComponent(props: propsContent) {
   });
 
   const handleChooseBottle = (index: number) => {
-    if (animationReady) return false;
+    // if (animationReady) return false;
 
     setAnimationReady(true);
 
@@ -126,11 +126,17 @@ function ProductFamilyComponent(props: propsContent) {
   };
 
   const handleMouseLeave = () => {
-    setTextGradient({
-      background: "linear-gradient(to bottom, #e9aa87, #953e1a)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-    });
+    if (currentBottleIndex == 3) {
+      setTextGradient({
+        color: "#fff",
+      });
+    } else {
+      setTextGradient({
+        background: "linear-gradient(to bottom, #e9aa87, #953e1a)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+      });
+    }
   };
   useGSAP(
     () => {

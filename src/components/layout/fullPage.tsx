@@ -353,9 +353,7 @@ function FullPage(props: any) {
     let currentNav = document.getElementById(
       "nav-" + value
     ) as HTMLInputElement;
-    console.log("444");
-    console.log(currentNav);
-    console.log("444");
+
     if (index != 0) {
       let navChildren = document.getElementById("nav-large-content");
       navChildren && (navChildren.style.transform = "translateY(100%)");

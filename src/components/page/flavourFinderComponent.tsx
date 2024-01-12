@@ -570,6 +570,11 @@ function genResultData(productList: Array<Product>) {
 
 function FlavourFinderComponent(props: any) {
   const headStyle = props.data.entry.headStyle;
+  const [nav, setNav] = useState(headStyle);
+  useEffect(() => {
+    // setNav(nav);
+  }, [nav]);
+
   const _componentData = genComponentData(props.data.entry.data);
   const _productData = genProductData(
     props.data.entry.productFamilyComponentProductsCollection
@@ -675,7 +680,7 @@ function FlavourFinderComponent(props: any) {
       data-anchor={4}
       className="relative overflow-hidden select-none"
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={nav} />
 
       {
         <Script
@@ -684,7 +689,6 @@ function FlavourFinderComponent(props: any) {
           defer
         />
       }
-
       {!showQuiz && (
         <>
           <div className="flex h-screen">
@@ -720,6 +724,7 @@ function FlavourFinderComponent(props: any) {
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
+                setNav("black");
               }}
             >
               {data.basic.flavourFinderComponentStartContent}
@@ -729,6 +734,7 @@ function FlavourFinderComponent(props: any) {
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
+                setNav("black");
               }}
             >
               {data.basic.flavourFinderComponentStartContent}
@@ -887,7 +893,6 @@ function FlavourFinderComponent(props: any) {
                                         ? 'bg-[url("/assets/range/icon_playing.gif")]'
                                         : 'bg-[url("/assets/range/icon_play.png")]'
                                     } bg-cover mr-5px w-40px h-40px pad:w-34px pad:h-34px mobile:w-26px mobile:h-26px`}
-
                                   ></i>
                                   <span>{answer.label}</span>
                                 </div>
@@ -1058,7 +1063,6 @@ function FlavourFinderComponent(props: any) {
                                                 ? "bg-[url('/assets/range/icon_checked.png')]"
                                                 : "bg-[url('/assets/range/icon_check.png')]"
                                             }`}
-
                                           ></i>
                                         </div>
                                       </div>
@@ -1141,7 +1145,6 @@ function FlavourFinderComponent(props: any) {
                                       ? "bg-[url('/assets/range/icon_checked.png')]"
                                       : "bg-[url('/assets/range/icon_check.png')]"
                                   } `}
-
                                 ></i>
                               </div>
                             </div>
@@ -1182,7 +1185,6 @@ function FlavourFinderComponent(props: any) {
                                 ? "bg-[url('/assets/range/icon_checked.png')]"
                                 : "bg-[url('/assets/range/icon_check.png')]"
                             } `}
-
                           ></i>
                         </div>
                       );
