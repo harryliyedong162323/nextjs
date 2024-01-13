@@ -332,7 +332,7 @@ function ProductFamilyComponent(props: propsContent) {
           </div>
         </div>
       </div>
-      <div className="h-[30vh] overflow-hidden">
+      <div className="h-[30vh] overflow-hidden pad:h-[35vh]">
         <div className="relative h-full w-full">
           <BaseImage
             mImg={require("../../../public/assets/productFamily/bg.png")}
@@ -343,14 +343,14 @@ function ProductFamilyComponent(props: propsContent) {
             quality={100}
           ></BaseImage>
 
-          <div className="absolute w-full pl-50px pr-50px  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]   mobile:w-full">
+          <div className="absolute w-full pl-50px pr-50px  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:translate-y-[-55%]  mobile:w-full">
             <div className="text-center ml-17px font-AlbertusNova-Regular tracking-[5px] text-[#696969] text-16px  mobile:text-14px">
               SMOKY
             </div>
             <div className="pb-11px text-center  ml-17px font-Grotesque-Light tracking-[5px] text-[#696969] text-13px  pad:pb-7px mobile:text-10px">
               MALT
             </div>
-            <div className="flex justify-between  h-171px pad:h-171px pb-11px  mobile:h-110px">
+            <div className="flex justify-between  h-171px pad:h-168px pb-11px  mobile:h-110px">
               <div className="flex flex-col justify-center items-center rotate-[-90deg]">
                 <div className="font-AlbertusNova-Regular leading-tight tracking-[5px] text-[#696969] font-normal  text-16px  mobile:text-14px">
                   LIGHT

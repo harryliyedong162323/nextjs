@@ -346,8 +346,6 @@ function FullPage(props: any) {
       'input[type="hidden"]'
     ) as HTMLInputElement;
 
-    console.log(index);
-    console.log(slide);
     const value: string = currentHead?.value || "white";
 
     let currentNav = document.getElementById(

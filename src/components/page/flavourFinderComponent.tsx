@@ -569,12 +569,21 @@ function genResultData(productList: Array<Product>) {
 }
 
 function FlavourFinderComponent(props: any) {
-  const headStyle = props.data.entry.headStyle;
-  const [nav, setNav] = useState(headStyle);
-  useEffect(() => {
-    // setNav(nav);
-  }, [nav]);
+  const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
+  const currNum = props.data.entry.currentPageNumber;
 
+  if (currNum == 4) {
+    let currentNav = document.getElementById(
+      "nav-" + headStyle
+    ) as HTMLInputElement;
+    if (headStyle == "black") {
+      let currentNav = document.getElementById(
+        "nav-" + "white"
+      ) as HTMLInputElement;
+      currentNav && (currentNav.style.display = "none");
+    }
+    currentNav && (currentNav.style.display = "block");
+  }
   const _componentData = genComponentData(props.data.entry.data);
   const _productData = genProductData(
     props.data.entry.productFamilyComponentProductsCollection
@@ -680,7 +689,7 @@ function FlavourFinderComponent(props: any) {
       data-anchor={4}
       className="relative overflow-hidden select-none"
     >
-      <input type="hidden" value={nav} />
+      <input type="hidden" value={headStyle} />
 
       {
         <Script
@@ -724,7 +733,7 @@ function FlavourFinderComponent(props: any) {
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
-                setNav("black");
+                setheadStyle("black");
               }}
             >
               {data.basic.flavourFinderComponentStartContent}
@@ -734,7 +743,7 @@ function FlavourFinderComponent(props: any) {
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
-                setNav("black");
+                setheadStyle("black");
               }}
             >
               {data.basic.flavourFinderComponentStartContent}
