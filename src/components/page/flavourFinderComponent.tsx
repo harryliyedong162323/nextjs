@@ -30,6 +30,7 @@ const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
 interface Product {
   id: number;
   name: string;
+  productName: string;
   productCode: string;
   quizResultProductImage: {
     altText: string;
@@ -584,6 +585,7 @@ export interface propsContent {
 }
 
 function FlavourFinderComponent(props: propsContent) {
+  console.log(props.data.entry)
   const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
   const currNum = props.data.entry.currentPageNumber;
   const [emailName, setEmailName] = useState<string>("");
@@ -678,6 +680,7 @@ function FlavourFinderComponent(props: propsContent) {
       data.quizs.q2.answers[quizTwoSelected - 1].value
     }${data.quizs.q3.step2.answers[quizThreeSelected2 - 1].value}`;
     const obj = _resultData.filter((item) => item.key === key)[0];
+    console.log('setRecommend', obj)
     setRecommend(obj);
     setQuizIndex(5);
   };
@@ -1439,7 +1442,7 @@ function FlavourFinderComponent(props: propsContent) {
                                         ></BaseImage>
                                       </div>
                                       <div className="font-AlbertusNova-Regular text-black uppercase mt-20px text-20px pad:text-16px mobile:text-14px">
-                                        {product.name}
+                                        {product.productName}
                                       </div>
                                     </div>
                                   </SwiperSlide>
