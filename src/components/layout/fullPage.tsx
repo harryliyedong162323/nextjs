@@ -60,6 +60,7 @@ import DigitalExperience, {
 } from "@/components/page/digitalExperienceComponent";
 import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
+import Popup from "./popup";
 
 function getComponent(
   data: any,
@@ -466,6 +467,7 @@ function FullPage(props: any) {
           {...rangeNavData}
         ></RangeNav>
       )}
+      <Popup></Popup>
     </div>
   );
 }

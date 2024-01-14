@@ -2,7 +2,7 @@ import ReactGA from 'react-ga4'
 
 export const initGA = () => {
   console.log('GA init')
-  ReactGA.initialize('your GA measurement id')
+  ReactGA.initialize('G-2HKP8KF0FX')
 }
 
 export const logPageView = () => {

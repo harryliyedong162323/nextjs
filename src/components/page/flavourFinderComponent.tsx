@@ -17,7 +17,7 @@ import ReactPlayer from "react-player";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Scrollbar } from "swiper/modules";
-import Popup, { propsContent as PopupPropsContent } from "../base/popup";
+import { PopupMessage } from "../layout/popup";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import eventbus from "@/utils/eventbus";
@@ -154,6 +154,8 @@ interface ComponentData {
     };
   };
 }
+
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 function genComponentData(data: any) {
   const Q1 = data.dataQuizQ1Collection.items[0];
@@ -568,9 +570,39 @@ function genResultData(productList: Array<Product>) {
   return _data;
 }
 
-function FlavourFinderComponent(props: any) {
+export interface propsContent {
+  getPageStore:Function,
+  updatePageStore:Function,
+  changeNavStatus: Function;
+  scrollToPage: Function;
+  data: {
+    entry: any;
+    name: string;
+    type: string;
+  };
+}
+
+function FlavourFinderComponent(props: propsContent) {
   const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
   const currNum = props.data.entry.currentPageNumber;
+  const [emailName, setEmailName] = useState<string>("");
+  const [emailAddress, setEmailAddress] = useState<string>("");
+  const [canSubmit, setCanSubmit] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (emailRegex.test(emailAddress) && emailName.length > 0) {
+      setCanSubmit(true)
+    } else {
+      setCanSubmit(false)
+    }
+  }, [emailName, emailAddress]);
+
+  const handleEmailName = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+    setEmailName(e.target.value)
+}
+  const handleEmailAddress = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+      setEmailAddress(e.target.value)
+  }
 
   if (currNum == 4) {
     let currentNav = document.getElementById(
@@ -614,12 +646,11 @@ function FlavourFinderComponent(props: any) {
   const [currentRecommend, setCurrentRecommend] = useState<number>(0);
   const [recommend, setRecommend] = useState<result>();
   const [swiper, setSwiper] = useState<any>(null);
-  const [popupPropsContent, setPopupPropsContent] = useState<PopupPropsContent>(
+  const [popupMessage, setPopupMessage] = useState<PopupMessage>(
     {
       title: _messageData.dywfMessageTitleSuccess,
       message: _messageData.dywfMessageSuccess,
       btnTxt: _messageData.dywfMessageBtnContent,
-      visible: false,
     }
   );
 
@@ -651,8 +682,8 @@ function FlavourFinderComponent(props: any) {
   };
 
   const submit = () => {
-    const popupData = { ...popupPropsContent, ...{ visible: true } };
-    setPopupPropsContent(popupData);
+    if (!canSubmit) return;
+    eventbus.emit("PopupBoxVisable", popupMessage)
     grecaptcha.ready(function () {
       grecaptcha
         .execute(key, { action: "submit" })
@@ -1208,7 +1239,7 @@ function FlavourFinderComponent(props: any) {
                         quizFourSelected === 0 ||
                         quizFiveSelected === 0
                           ? "bg-[url('/assets/range/result_btn_grey.png')] text-[#969797]"
-                          : "bg-[url('/assets/range/result_btn.png')] text-[#000000]"
+                          : "bg-[url('/assets/range/result_btn.png')] text-[#000000] hover:bg-[url('/assets/range/result_btn_hover.png')] hover:text-white"
                       }`}
                       onClick={() => {
                         doRecommend();
@@ -1473,8 +1504,9 @@ function FlavourFinderComponent(props: any) {
                                 "selectProduct",
                                 recommend?.productList[currentRecommend].id
                               );
+                              props.scrollToPage(0)
                             }}
-                            className="inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
+                            className="cursor-pointer inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] hover:bg-[url('/assets/range/bg_explore_btn_hover.png')] hover:text-white bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
                           >
                             {data.basic.dywfExploreContent}
                           </div>
@@ -1487,20 +1519,24 @@ function FlavourFinderComponent(props: any) {
                           </div>
                         </div>
                         <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
-                          <div className="inline-flex items-center px-70px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
+                          <div className="inline-flex items-center px-60px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
                             <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px pad:w-15px pad:h-15px mobile:w-12px mobile:h-11px"></i>
                             <input
                               type="text"
-                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-224px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                              value={emailName}
+                              onChange={handleEmailName}
+                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-244px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
                               placeholder={data.basic.dywfEmailName}
                             />
                           </div>
                           <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
-                          <div className="inline-flex items-center px-80px pad:px-80px mobile:py-20px mobile:px-20px">
+                          <div className="inline-flex items-center px-70px pad:px-70px mobile:py-20px mobile:px-20px">
                             <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px pad:w-20px pad:h-15px mobile:w-15px mobile:h-11px"></i>
                             <input
                               type="text"
-                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-330px pad:w-270px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                              value={emailAddress}
+                              onChange={handleEmailAddress}
+                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-350px pad:w-290px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
                               placeholder={data.basic.dywfEmailAddress}
                             />
                           </div>
@@ -1508,7 +1544,7 @@ function FlavourFinderComponent(props: any) {
                           <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px mobile:flex-auto mobile:w-full">
                             <div
                               id="flavourFinderSubmit"
-                              className="inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase mobile:text-11px"
+                              className={`inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase mobile:text-11px ${ canSubmit ? "text-[#000000]" : "text-[#696969]"}`}
                               onClick={() => {
                                 submit();
                               }}
@@ -1526,7 +1562,6 @@ function FlavourFinderComponent(props: any) {
           </div>
         </>
       )}
-      <Popup {...popupPropsContent}></Popup>
     </section>
   );
 }

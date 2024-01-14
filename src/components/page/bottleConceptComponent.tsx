@@ -219,9 +219,7 @@ function BottleConceptComponent(props: propsContent) {
               url={data.bottleConceptComponentVideo2.video.url}
             ></ReactPlayer>
             <div className="bg-[url('/assets/range/bg_around.png')] absolute bg-cover z-10 left-1/2 -ml-375px w-750px h-211px pad:-ml-300px pad:w-600px pad:h-169px mobile:-ml-160px mobile:w-320px mobile:h-90px pointer-events-none"></div>
-            <div className="bg-[url('/assets/range/icon_360.png')] absolute  z-10 left-1/2 -ml-[2em] w-[4em] h-[2em] bottom-[7em]  mobile:w-34px mobile:h-18px mobile:-ml-17px mobile:z-15 ">
-              111
-            </div>
+            <div className="bg-[url('/assets/range/icon_360.png')] absolute  z-10 left-1/2 -ml-[2em] w-[4em] h-[2em] bottom-[7em]  mobile:w-34px mobile:h-18px mobile:-ml-17px mobile:z-15 "></div>
           </>
         )}
       </div>
