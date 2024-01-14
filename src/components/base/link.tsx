@@ -28,7 +28,6 @@ class BaseLink extends Component<propsContent,State>{
         link:'',
         onMouseEnter:(()=>{}),
         onMouseLeave:(()=>{}),
-
     }
     state: State = {
         name:'base-link',

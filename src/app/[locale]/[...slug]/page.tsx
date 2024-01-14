@@ -19,7 +19,11 @@ import dynamic from "next/dynamic";
 import Header from '@/components/layout/header';
 import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
+import { initGA, logPageView } from "@/utils/analytics";
 
+function capitalizeFirstLetter(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 function getDynamicComponent(data: any, k:number,footerData:FooterPropsContent,headerData:any) {
   const props = { data : data,footerData:footerData,headerData };
@@ -89,14 +93,13 @@ export default async function Page({
 }: {
   params: { locale: string; slug: string[] };
 }) {
+  // init ga
+  initGA();
+  // send page
+  logPageView(`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : "" }`);
   const data: any = await getPageData(params);
-
   const footerData: FooterPropsContent = await FooterDao.fetch();
   const headerData: any = await HeaderDao.fetch();
-
-
-
-
 
   // const footerData: any = await FooterDao.fetch();
 
@@ -130,6 +133,7 @@ export default async function Page({
       {
         isFullPageFlag ?  <Footer data={footerData}></Footer> : null
       }
+      <Popup></Popup>
     </div>
 
 

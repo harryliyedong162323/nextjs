@@ -21,6 +21,7 @@ import { PopupMessage } from "../layout/popup";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import eventbus from "@/utils/eventbus";
+import BaseButton from "../base/button";
 
 declare const grecaptcha: any;
 
@@ -759,8 +760,10 @@ function FlavourFinderComponent(props: propsContent) {
                 setShowQuiz(true);
               }}
             > */}
-            <div
-              className="mt-88px mb-65px hover:bg-[url('/assets/range/start-T.png')] cursor-pointer hover:text-white  bg-[url('/assets/range/start_btn.png')]   mx-auto w-225px h-55px mx-auto  leading-[55px]  cursor-pointer text-center  text-black text-20px pad:text-14px uppercase font-AlbertusNova-Light font-normal mobile:hidden"
+            <BaseButton
+              className="block mt-88px mb-65px hover:bg-[url('/assets/range/start-T.png')] hover:text-white  bg-[url('/assets/range/start_btn.png')] w-225px h-55px mx-auto  leading-[55px]  cursor-pointer text-center  text-black text-20px pad:text-14px uppercase font-AlbertusNova-Light font-normal mobile:hidden"
+              category="Wildmoorrange"
+              action="Flavoursurvey"
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
@@ -768,9 +771,11 @@ function FlavourFinderComponent(props: propsContent) {
               }}
             >
               {data.basic.flavourFinderComponentStartContent}
-            </div>
-            <div
+            </BaseButton>
+            <BaseButton
               className="hidden mobile:block mobile:bg-[url('/assets/range/start_btn.png')] mobile:mx-auto mobile:text-12px mobile:w-138px mobile:h-44px mobile:text-center mobile:leading-[44px] mobile:text-black mobile:font-AlbertusNova-Light mobile:font-normal mobile:mt-45px mobile:mb-33px"
+              category="Wildmoorrange"
+              action="Flavoursurvey"
               onClick={() => {
                 props.changeNavStatus(false);
                 setShowQuiz(true);
@@ -778,7 +783,7 @@ function FlavourFinderComponent(props: propsContent) {
               }}
             >
               {data.basic.flavourFinderComponentStartContent}
-            </div>
+            </BaseButton>
           </div>
         </>
       )}

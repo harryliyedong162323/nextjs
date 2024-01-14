@@ -5,15 +5,17 @@ export const initGA = () => {
   ReactGA.initialize('G-2HKP8KF0FX')
 }
 
-export const logPageView = () => {
-  console.log(`Logging pageview for ${window.location.pathname}`)
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.send({ hitType: 'pageview', page: window.location.pathname })
+export const logPageView = (pageName: string) => {
+  console.log(`Logging pageview for ${pageName}`)
+  ReactGA.set({ page: pageName })
+  ReactGA.send({ hitType: 'pageview', page: pageName })
 }
 
 export const logEvent = (category = '', action = '') => {
+  console.log(`Logging button for category: ${category} && action: ${action}`)
   if (category && action) {
-    ReactGA.event({ category, action })
+    // ReactGA.event({ category, action })
+    ReactGA.event(`Click_${category}_${action}`)
   }
 }
 

@@ -467,7 +467,6 @@ function FullPage(props: any) {
           {...rangeNavData}
         ></RangeNav>
       )}
-      <Popup></Popup>
     </div>
   );
 }
