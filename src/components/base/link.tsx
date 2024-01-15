@@ -1,5 +1,7 @@
 import React,{Component} from "react";
 import Link from 'next/link';
+import {getLastPathName} from '@/utils/common'
+import { sendScrollEvent,TrackingType } from "@/utils/analytics";
 interface State {
     name:string
 }
@@ -55,6 +57,22 @@ class BaseLink extends Component<propsContent,State>{
         this.props.onClick&&this.props.onClick(e);
     }
 
+
+    leavePageAnalytics(){
+        const scrollDom = document.getElementById('currentScroll') as HTMLInputElement;
+        const scrollValue = scrollDom.value;
+        const scrollSlug = scrollDom.getAttribute('data-slug');
+
+        // console.log(scrollSlug);
+        // console.log(scrollValue);
+
+
+        sendScrollEvent(scrollValue, scrollSlug);
+
+    }
+
+
+
     handleMouseLeave(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>):void{
         if(typeof this.props.onHover === 'function'){
            // this.props.onHover&&this.props.onHover((e)=>{
@@ -83,8 +101,7 @@ class BaseLink extends Component<propsContent,State>{
     }
 
     init(){
-
-
+        this.leavePageAnalytics();
 
         setTimeout(()=>{document&&(document.body.style.overflow = 'auto');},0);
 

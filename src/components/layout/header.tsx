@@ -250,6 +250,13 @@ function Header(props: any) {
     e.preventDefault();
     e.stopPropagation();
   }
+  const [opc, setOpc] = useState(false); // 初始化 opc 状态为 false
+
+  useEffect(() => {
+    if (menu) {
+      setOpc(true); // 当菜单显示时，将 opc 状态设置为 true
+    }
+  }, [menu]);
 
   // useEffect(() => {
   //   const option: object = { passive: false };
@@ -496,7 +503,13 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
     setMenu(true);
     // document.body.style.overflow = 'hidden';
   };
+  const [opc, setOpc] = useState(false); // 初始化 opc 状态为 false
 
+  useEffect(() => {
+    if (menu) {
+      setOpc(true); // 当菜单显示时，将 opc 状态设置为 true
+    }
+  }, [menu]);
   const handleClose = () => {
     // setMenu(false);
     onMenuChange(false);
@@ -602,7 +615,11 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         </div>
       )}
       <div
-        className={`fixed w-381px translate-x-381px pad:translate-x-[300px!ignore] mobile:translate-x-[100vw] transition-transform ${
+        className={`fixed w-381px translate-x-381px ${
+          opc
+            ? "bg-opacity-100 text-opacity-100 pointer-events-auto"
+            : "bg-opacity-0 text-opacity-0 pointer-events-none"
+        }  pad:translate-x-[300px!ignore] mobile:translate-x-[100vw] transition-transform ${
           menu ? "!translate-x-0" : ""
         } duration-[650ms] h-screen right-0 top-0 pl-33px overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-[300px!ignore] mobile:w-screen mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)]`}
       >

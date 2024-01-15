@@ -98,7 +98,7 @@ function HowToBuyDetailComponent(props: propsContent) {
 
   return (
     <section className="w-full  relative mobile:h-auto overflow-hidden">
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
 
       {/*<section className="">*/}
       {/*${isCurrentPage ? 'translate-y-0 opacity-1' : 'translate-y-[-100%] opacity-0'}*/}

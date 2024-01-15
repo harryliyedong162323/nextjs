@@ -36,7 +36,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: entryContent;
     name: string;
@@ -55,7 +56,8 @@ function InteractiveVideoComponent(props: propsContent) {
       data-anchor={2}
       className="w-full h-screen relative overflow-hidden select-none"
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
+      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
       <BaseImage
         pImg={interactiveVideoData.interactiveVideoComponentImage.imagepc.url}
         mImg={

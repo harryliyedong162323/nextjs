@@ -1,29 +1,62 @@
-import ReactGA from 'react-ga4'
+import ReactGA from "react-ga4";
+
+export enum TrackingType {
+  viewPage = "Viewpage",
+  click = "Click",
+  scrollFull = "Scroll",
+  scroll25 = "25%Scroll",
+  scroll50 = "50%Scroll",
+  scroll75 = "75%Scroll",
+  play = "Play",
+}
+
+const TRACKING_ID = "G-2HKP8KF0FX";
+const isProduction = process.env.NODE_ENV === "production";
 
 export const initGA = () => {
-  console.log('GA init')
-  ReactGA.initialize('G-2HKP8KF0FX')
-}
+  console.log("GA init");
+  ReactGA.initialize(TRACKING_ID, { testMode: !isProduction });
+};
 
 export const logPageView = (pageName: string) => {
-  console.log(`Logging pageview for ${pageName}`)
-  ReactGA.set({ page: pageName })
-  ReactGA.send({ hitType: 'pageview', page: pageName })
-}
+  console.log(`Logging pageview for ${pageName}`);
+  ReactGA.set({ page: pageName });
+  ReactGA.send({ hitType: "pageview", page: pageName });
+};
 
-export const logEvent = (category = '', action = '') => {
-  console.log(`Logging button for category: ${category} && action: ${action}`)
+export const logEvent = (category = "", action = "") => {
+  console.log(`Logging button for category: ${category} && action: ${action}`);
   if (category && action) {
     // ReactGA.event({ category, action })
-    ReactGA.event(`Click_${category}_${action}`)
+    ReactGA.event(`Click_${category}_${action}`);
   }
-}
+};
 
-export const logException = (description = '', fatal = false) => {
+export const logException = (description = "", fatal = false) => {
   if (description) {
-    ReactGA.gtag('event', 'exception', {
+    ReactGA.gtag("event", "exception", {
       description,
       fatal, // set to true if the error is fatal
-    })
+    });
   }
+};
+
+export const sendScrollEvent = ( trackingType: string = '',pageName: string = '',)=>{
+
+  if(trackingType && pageName){
+    console.log(`${trackingType}_${pageName}page`);
+    ReactGA.event(`${trackingType}_${pageName}page`);
+  }
+
 }
+
+
+
+
+export const sendEvent = (
+  trackingType: TrackingType,
+  pageName: string,
+  eventVal: string
+) => {
+  ReactGA.event(`${trackingType}_${pageName}_${eventVal}`);
+};

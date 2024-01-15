@@ -11,7 +11,7 @@ import React, {
 import { ISlideConfig, PageSlides, SlideParallaxType } from "react-page-slides";
 import FullPageSwiper from "./fullPageSwiper";
 import { getHash } from "@/utils/common";
-
+import { useParams } from "next/navigation";
 import Header from "@/components/layout/header";
 import Footer, {
   propsContent as FooterPropsContent,
@@ -62,9 +62,13 @@ import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
 import Popup from "./popup";
 
+import { TrackingType } from "@/utils/analytics";
+
 function getComponent(
   data: any,
   k: number,
+  currentSlug: string,
+  TrackingType: TrackingType,
   scrollToPage: Function,
   changeNavStatus: Function,
   updatePageStore: Function,
@@ -72,6 +76,8 @@ function getComponent(
 ) {
   const props = {
     data: data,
+    currentSlug,
+    TrackingType,
     scrollToPage,
     changeNavStatus,
     updatePageStore,
@@ -173,6 +179,9 @@ function getComponent(
 function FullPage(props: any) {
   const footerData: FooterPropsContent = props.footerData;
   const headerData = props.headerData;
+  const params = useParams();
+  const [currentSlug, setCurrentSlug] = useState(params.slug[0]);
+  const [currentScroll, setCurrentScroll] = useState("");
 
   const [pageStore, setPageStore] = useState([] as any);
 
@@ -314,6 +323,8 @@ function FullPage(props: any) {
             {getComponent(
               data,
               k,
+              params.slug[0],
+              TrackingType,
               scrollToPage,
               changeNavStatus,
               updatePageStore,
@@ -344,10 +355,18 @@ function FullPage(props: any) {
 
     const slide = document.querySelectorAll("section");
     const currentHead = slide[index].querySelector(
-      'input[type="hidden"]'
+      'input[type="hidden"][data-style="headStyle"]'
+    ) as HTMLInputElement;
+
+    const currentScrollPage = slide[index].querySelector(
+      `input[type="hidden"][data-slug="${params.slug[0]}"]`
     ) as HTMLInputElement;
 
     const value: string = currentHead?.value || "white";
+
+    if (currentScrollPage) {
+      setCurrentScroll(currentScrollPage?.value || "");
+    }
 
     let currentNav = document.getElementById(
       "nav-" + value
@@ -467,6 +486,13 @@ function FullPage(props: any) {
           {...rangeNavData}
         ></RangeNav>
       )}
+
+      <input
+        id="currentScroll"
+        type="hidden"
+        value={currentScroll}
+        data-slug={currentSlug}
+      />
     </div>
   );
 }

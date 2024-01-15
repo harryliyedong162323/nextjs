@@ -56,7 +56,7 @@ function KVAnimationComponent(props: propsContent) {
   const KVAnimationData = props.data.entry;
   const container = useRef(null);
 
-  console.log(props);
+  // console.log(props);
 
   useEffect(() => {
     // setTimeout(()=>{setIsCurrentPage(true)},20);
@@ -87,7 +87,7 @@ function KVAnimationComponent(props: propsContent) {
       className="h-screen overflow-hidden relative select-none"
       ref={container}
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       {/*<div className="h-166px w-full relative pad:h-118px mobile:h-85px">*/}
       {/*    <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>*/}
       {/*    <div className="w-25px h-23px bg-contain bg-[url('/assets/KVAnimation/menu.png')] cursor-pointer absolute right-50px top-1/2 translate-y-[-50%] pad:w-17px pad:h-16px mobile:w-20px mobile:h-20px mobile:right-25px"></div>*/}

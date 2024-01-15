@@ -69,7 +69,7 @@ function PrivacyPolicyComponent(props: any) {
 
   return (
     <section className="w-full h-auto overflow-hidden relative select-none ">
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
 
       <div className="relative mt-150px pl-48px pr-48px pad:pl-35px pad:pr-35px mobile:pr-23px mobile:pl-23px mobile:mt-70px">
         {/*{*/}

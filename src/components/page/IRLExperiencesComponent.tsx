@@ -125,7 +125,7 @@ function IRLExperiencesComponent(props: propsContent) {
       data-anchor={props.data.entry.pageNumber}
       className="overflow-hidden h-screen container mx-auto pb-164px mobile:pb-67px select-none"
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       <Swiper
         modules={[FreeMode]}
         freeMode={true}
@@ -173,7 +173,7 @@ function IRLExperiencesComponent(props: propsContent) {
                           {currentStore[0].howToBuyDescription}
                         </div>
                       </div>
-                      <div className="pt-31px pad:pt-22px">
+                      <div className="pt-31px pad:pt-22px mobile:pt-10px mobile:pb-15px">
                         <BaseLink
                           link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                         >

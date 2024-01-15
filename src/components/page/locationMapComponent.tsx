@@ -132,7 +132,7 @@ function LocationMapComponent(props: any) {
 
     return (
         <section className="overflow-hidden">
-            <input type="hidden" value={headStyle}/>
+            <input type="hidden" value={headStyle} data-style="headStyle" />
             <div className="h-screen relative">
                 {  // @ts-ignore
                     browser ? <Baidu  info={selectedItem} location={selectLocation} zoomIn={selectZoomIn} zoomOut={selectZoomOut}></Baidu> : null

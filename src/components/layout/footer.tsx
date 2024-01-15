@@ -5,6 +5,7 @@ import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
 import { usePathname } from "next/navigation";
+import { sendEvent, TrackingType } from "@/utils/analytics";
 
 // const [pannels, setPanels] = useState([
 //   {
@@ -221,7 +222,7 @@ export interface propsContent {
 }
 
 function getCurrentLocation(local: string, locationAndLanguage: any) {
-  console.log(locationAndLanguage);
+  // console.log(locationAndLanguage);
   const currentData = locationAndLanguage.filter(
     (item: locationAndLanguageContent) => {
       if (item.path == local) {
@@ -230,7 +231,7 @@ function getCurrentLocation(local: string, locationAndLanguage: any) {
     }
   )[0];
 
-  console.log(currentData);
+  // console.log(currentData);
   if (currentData) {
     return (
       <div>
@@ -421,9 +422,13 @@ function Footer(props: any) {
     });
     setPanels(newPanels);
   };
+
+  const tracking = function (title: string, subTitle: string) {
+    sendEvent(TrackingType.click, "Footer", `Oursotry|${subTitle}`);
+  };
   return (
     <footer className="relative overflow-hidden bg-[#E6E7E8] select-none mobile:h-[100%]">
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       {/*h-900px*/}
       <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-[100%] mobile:pl-30px mobile:pr-30px mobile:bg-[url('/assets/mask_footer_2.png')] mobile:bg-contain mobile:flex mobile:flex-col mobile:items-center mobile:justify-between">
         <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-30px mobile:w-[100%]">
@@ -474,6 +479,7 @@ function Footer(props: any) {
                     link={item.targetPage}
                     hover="text-black-500"
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
+                    onClick={(e) => tracking(panel.title[0].name, item.content)}
                   >
                     {item.content}
                   </BaseLink>

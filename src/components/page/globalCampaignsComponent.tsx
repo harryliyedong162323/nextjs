@@ -79,7 +79,7 @@ function GlobalCampaignsComponent(props: propsContent) {
       data-anchor={0}
       className="w-full h-screen overflow-hidden relative select-none"
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       <BaseImage
         pImg={banner.imagepc.url}
         mImg={banner.imagemobile.url}

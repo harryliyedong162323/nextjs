@@ -122,7 +122,7 @@ function VIPClubComponent(props: propsContent) {
 
   return (
     <section className="relative h-screen bg-cover bg-[url('/assets/VIPClub/bg.png')] bg-black overflow-hidden select-none">
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       <div className="relative container mx-auto">
         <div className="pt-154px uppercase font-AlbertusNova-Regular pb-107px paid:pb-76px font-normal text-33px text-center mx-auto text-white  pad:pt-110px pad:text-23px mobile:text-20px mobile:leading-[30px] mobile:pt-90px mobile:w-325px mobile:mx-auto ">
           <p> {title[0] + ","}</p>

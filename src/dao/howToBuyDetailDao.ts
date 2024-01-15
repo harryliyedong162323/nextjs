@@ -87,7 +87,7 @@ class HowToBuyDetailDao {
         type: "globalCampaignsComponent",
         name: "globalCampaignsComponent",
         entry: {
-          headStyle: "bg-white",
+          headStyle: "white",
 
           ...HowToBuyDetailModel.query("globalCampaignsComponent", result),
         },

@@ -573,7 +573,7 @@ function LocationInfoComponent(props: propsContent) {
 
     return (
         <section id="RegionSelect" data-anchor={0} className="w-full h-screen overflow-hidden bg-cover bg-[url('/assets/howToBuy/bg.png')] bg-[#E6E7E8] relative select-none">
-            <input type="hidden" value={headStyle}/>
+            <input type="hidden" value={headStyle} data-style="headStyle" />
 
 
             {

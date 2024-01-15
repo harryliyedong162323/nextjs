@@ -65,6 +65,8 @@ export interface propsContent {
   updatePageStore:Function,
   changeNavStatus: Function;
   scrollToPage: Function;
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: entryContent;
     name: string;
@@ -91,6 +93,7 @@ function StoryChapterEndComponent(props: propsContent) {
 
   return (
     <section className="relative overflow-hidden select-none">
+      <input type="hidden" value={props.TrackingType.scrollFull} data-slug={props.currentSlug}/>
       <div className="flex h-screen">
         <BaseImage
           mImg={data.storyChapterEndComponentBackgroundImage.imagemobile.url}

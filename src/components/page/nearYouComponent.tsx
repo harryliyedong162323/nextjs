@@ -20,7 +20,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: entryContent;
     name: string;
@@ -328,9 +329,6 @@ function NearYouComponent(props: propsContent) {
   // console.log(props)
   const headStyle = props.data.entry.headStyle;
 
-  console.log("44444");
-  console.log(props);
-  console.log("44444");
   const campaigns = props.data.entry.nearYouComponentStoresCollection.items;
   const title = props.data.entry.nearYouContentTitle;
   // watchDrag: true
@@ -409,7 +407,8 @@ function NearYouComponent(props: propsContent) {
   let substr2 = str.substring(15);
   return (
     <section className="w-full h-screen overflow-hidden bg-while relative select-none  ">
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
+      <input type="hidden" value={props.TrackingType.scrollFull} data-slug={props.currentSlug}/>
       <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:hidden mobile:text-20px mobile:pt-77px">
         {substr1} {substr2}
       </div>

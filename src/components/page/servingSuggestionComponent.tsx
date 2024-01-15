@@ -65,7 +65,7 @@ function ServingSuggestionComponent(props: propsContent) {
       data-anchor={2}
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       <div className="flex h-screen flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           { title }

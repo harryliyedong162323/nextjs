@@ -20,7 +20,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-
+  TrackingType: object;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -59,7 +60,6 @@ interface bottleContent {
 }
 
 function ProductFamilyComponent(props: propsContent) {
-  // console.log(props)
   const headStyle = props.data.entry.headStyle;
 
   const bottle =
@@ -214,7 +214,14 @@ function ProductFamilyComponent(props: propsContent) {
       className="h-screen overflow-hidden select-none"
       ref={container}
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
+
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll25}
+        data-slug={props.currentSlug}
+      />
+
       <div className="h-[70vh] overflow-hidden">
         <div className="relative h-full w-full">
           <BaseImage

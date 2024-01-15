@@ -64,7 +64,7 @@ function DigitalExperienceComponent(props: propsContent) {
       data-anchor={2}
       className="overflow-hidden h-screen bg-[url('/assets/digitalExperience/bg.png')] bg-cover bg-repeat  select-none"
     >
-      <input type="hidden" value={headStyle} />
+      <input type="hidden" value={headStyle} data-style="headStyle" />
       <div className="relative container mx-auto">
         <div className="text-33px font-normal font-AlbertusNova-Regular text-center pt-84px pb-200px text-white mobile:pb-50px mobile:pt-50px mobile:text-20px ">
           DIGITAL EXPERIENCE

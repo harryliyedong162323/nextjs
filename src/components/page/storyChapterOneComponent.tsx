@@ -23,6 +23,8 @@ interface entryContent {
 export interface propsContent {
   changeNavStatus: Function;
   scrollToPage: Function;
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: entryContent;
     name: string;
@@ -52,6 +54,7 @@ function StoryChapterOneComponent(props: propsContent) {
       data-anchor={1}
       className="relative overflow-hidden select-none"
     >
+      <input type="hidden" value={props.TrackingType.scroll25} data-slug={props.currentSlug}/>
       <div className="flex -mt-1px h-[calc(100vh+1px)]">
         <BaseImage
             mImg={data.storyChapterOneComponentBackgroundImage.imagemobile.url}
