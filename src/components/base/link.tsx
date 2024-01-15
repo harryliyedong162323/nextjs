@@ -60,8 +60,8 @@ class BaseLink extends Component<propsContent,State>{
 
     leavePageAnalytics(){
         const scrollDom = document.getElementById('currentScroll') as HTMLInputElement;
-        const scrollValue = scrollDom.value;
-        const scrollSlug = scrollDom.getAttribute('data-slug');
+        const scrollValue:string | undefined = scrollDom.value || '';
+        const scrollSlug:string | undefined = scrollDom.getAttribute('data-slug') || '';
 
         // console.log(scrollSlug);
         // console.log(scrollValue);
