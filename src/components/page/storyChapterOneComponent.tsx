@@ -23,7 +23,7 @@ interface entryContent {
 export interface propsContent {
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:object,
+  TrackingType:any,
   currentSlug:string,
   data: {
     entry: entryContent;

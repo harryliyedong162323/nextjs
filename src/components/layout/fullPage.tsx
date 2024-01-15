@@ -68,7 +68,7 @@ function getComponent(
   data: any,
   k: number,
   currentSlug: string,
-  TrackingType: object,
+  TrackingType: any,
   scrollToPage: Function,
   changeNavStatus: Function,
   updatePageStore: Function,

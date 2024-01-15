@@ -56,7 +56,7 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:object,
+  TrackingType:any,
   currentSlug:string,
   data: {
     entry: entryContent;
