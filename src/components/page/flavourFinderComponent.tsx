@@ -577,6 +577,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: any;
     name: string;
@@ -727,6 +729,7 @@ function FlavourFinderComponent(props: propsContent) {
       className="relative overflow-hidden select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
+      <input type="hidden" value={props.TrackingType.scrollFull} data-slug={props.currentSlug}/>
 
       {
         <Script

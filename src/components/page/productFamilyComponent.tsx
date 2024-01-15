@@ -215,7 +215,7 @@ function ProductFamilyComponent(props: propsContent) {
       ref={container}
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-
+      <input type="hidden" value={props.TrackingType.scroll25} data-slug={'home'}/>
       <input
         type="hidden"
         value={props.TrackingType.scroll25}

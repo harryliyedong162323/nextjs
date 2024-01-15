@@ -9,6 +9,7 @@ interface propsContent {
     children?:any,
     category?: string,
     action?: string,
+    categorySub?:string,
     onClick?:(e: any) => void,
 }
 
@@ -30,7 +31,7 @@ class BaseButton extends Component<propsContent,State>{
 
     handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent> | React.MouseEvent<HTMLButtonElement, MouseEvent>){
         console.log('base button click')
-        logEvent(this.props.category, this.props.action)
+        logEvent(this.props.category, this.props.action, this.props.categorySub)
         this.props.onClick&&this.props.onClick(e);
     }
 
@@ -45,12 +46,11 @@ class BaseButton extends Component<propsContent,State>{
 
     render() {
         return (
-            <button
-                rel="preload"
+            <span
                 className={`${this.computedClassName()}`}
                 onClick={(e)=>{this.handleClick(e)}}>
                 {this.props.children}
-            </button>
+            </span>
         );
 
     }

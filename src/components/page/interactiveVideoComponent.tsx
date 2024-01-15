@@ -57,7 +57,8 @@ function InteractiveVideoComponent(props: propsContent) {
       className="w-full h-screen relative overflow-hidden select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
+      <input type="hidden" value={props.TrackingType.scroll50} data-slug={'home'}/>
+      <input type="hidden" value={props.TrackingType.scroll75} data-slug={'localMarketActivity'}/>
       <BaseImage
         pImg={interactiveVideoData.interactiveVideoComponentImage.imagepc.url}
         mImg={

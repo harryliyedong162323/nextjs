@@ -311,7 +311,8 @@ function IntroduceCampaignComponent(props: propsContent) {
       className={`w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none`}
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scroll75} data-slug={props.currentSlug}/>
+      <input type="hidden" value={props.TrackingType.scroll75} data-slug={'home'}/>
+      <input type="hidden" value={props.TrackingType.scroll25} data-slug={'localMarketActivity'}/>
       <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-90px pad:text-23px mobile:pt-84px mobile:text-24px">
         {title}
       </div>

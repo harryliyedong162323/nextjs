@@ -24,11 +24,16 @@ export const logPageView = (pageName: string) => {
   ReactGA.send({ hitType: "pageview", page: pageName });
 };
 
-export const logEvent = (category = "", action = "") => {
+export const logEvent = (category:string = "", action:string = "",categorySub:string = "") => {
   console.log(`Logging button for category: ${category} && action: ${action}`);
   if (category && action) {
     // ReactGA.event({ category, action })
-    ReactGA.event(`Click_${category}_${action}`);
+    if(categorySub){
+      ReactGA.event(`Click_${category}_${action}|${categorySub}`);
+    }else{
+      ReactGA.event(`Click_${category}_${action}`);
+    }
+
   }
 };
 
@@ -44,8 +49,8 @@ export const logException = (description = "", fatal = false) => {
 export const sendScrollEvent = ( trackingType: string = '',pageName: string = '',)=>{
 
   if(trackingType && pageName){
-    console.log(`${trackingType}_${pageName}page`);
-    ReactGA.event(`${trackingType}_${pageName}page`);
+    console.log(`${trackingType}_${pageName}Page`);
+    ReactGA.event(`${trackingType}_${pageName}Page`);
   }
 
 }

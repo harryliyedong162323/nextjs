@@ -42,7 +42,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: entryContent;
     name: string;
@@ -66,6 +67,7 @@ function ServingSuggestionComponent(props: propsContent) {
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
+      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
       <div className="flex h-screen flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           { title }

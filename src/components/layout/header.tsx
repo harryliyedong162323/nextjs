@@ -411,7 +411,7 @@ function Header(props: any) {
       <nav
         id="nav-bg-white"
         className={`${
-          scrollNum > 20 ? "bg-transparent" : "bg-white"
+          scrollNum > 20 ? "bg-white" : "bg-transparent"
         } h-85px w-full fixed left-0 top-0 z-50 transition-colors ease-in-out duration-500 opacity-0 animate-fadeIn mobile:h-60px ${
           headStyle == "bg-white" ? "block" : "hidden"
         }`}

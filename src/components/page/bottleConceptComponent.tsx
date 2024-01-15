@@ -32,7 +32,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-
+  TrackingType:object,
+  currentSlug:string,
   data: {
     entry: entryContent;
     name: string;
@@ -88,6 +89,7 @@ function BottleConceptComponent(props: propsContent) {
       data-anchor={3}
       className="relative overflow-hidden select-none"
     >
+      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
       <Swiper
         // virtualTranslate={true}
         loop={true}

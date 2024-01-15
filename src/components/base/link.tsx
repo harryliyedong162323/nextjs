@@ -176,7 +176,7 @@ class BaseLink extends Component<propsContent,State>{
             // this.state.name+' '+(this.hasHover())+' '
             return (
                 <Link
-                    rel="preload"
+
                     className={this.computedClassName()}
                     href={this.computedLink()}
                     onMouseLeave={(e)=>{this.handleMouseLeave(e)}}
