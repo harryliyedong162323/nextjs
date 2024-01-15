@@ -59,7 +59,7 @@ export const sendScrollEvent = ( trackingType: string = '',pageName: string = ''
 
 
 export const sendEvent = (
-  trackingType: TrackingType,
+  trackingType: any,
   pageName: string,
   eventVal: string
 ) => {
