@@ -5,7 +5,7 @@ import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
 import { usePathname } from "next/navigation";
-import { sendEvent, TrackingType } from "@/utils/analytics";
+// import { sendEvent, TrackingType } from "@/utils/analytics";
 
 // const [pannels, setPanels] = useState([
 //   {
@@ -423,9 +423,9 @@ function Footer(props: any) {
     setPanels(newPanels);
   };
 
-  const tracking = function (title: string, subTitle: string) {
-    sendEvent(TrackingType.click, "Footer", `Oursotry|${subTitle}`);
-  };
+  // const tracking = function (title: string, subTitle: string) {
+  //   sendEvent(TrackingType.click, "Footer", `Oursotry|${subTitle}`);
+  // };
   return (
     <footer className="relative overflow-hidden bg-[#E6E7E8] select-none mobile:h-[100%]">
       <input type="hidden" value={headStyle} data-style="headStyle" />
@@ -473,13 +473,14 @@ function Footer(props: any) {
                 </span>
                 <span className="text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
               </li>
+              {/*onClick={(e) => tracking(panel.title[0].name, item.content)}*/}
               {panel.list.map((item) => (
                 <li className="pb-17px mobile:hidden" key={item.id}>
                   <BaseLink
                     link={item.targetPage}
                     hover="text-black-500"
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
-                    onClick={(e) => tracking(panel.title[0].name, item.content)}
+
                   >
                     {item.content}
                   </BaseLink>
