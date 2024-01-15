@@ -1,13 +1,13 @@
 import ReactGA from "react-ga4";
 
-export enum TrackingType {
-  viewPage = "Viewpage",
-  click = "Click",
-  scrollFull = "Scroll",
-  scroll25 = "25%Scroll",
-  scroll50 = "50%Scroll",
-  scroll75 = "75%Scroll",
-  play = "Play",
+export const TrackingType:object = {
+  viewPage : "Viewpage",
+  click : "Click",
+  scrollFull : "Scroll",
+  scroll25 : "25%Scroll",
+  scroll50 : "50%Scroll",
+  scroll75 : "75%Scroll",
+  play : "Play",
 }
 
 const TRACKING_ID = "G-2HKP8KF0FX";
