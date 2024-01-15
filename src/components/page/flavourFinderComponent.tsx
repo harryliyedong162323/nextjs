@@ -1029,7 +1029,7 @@ function FlavourFinderComponent(props: propsContent) {
                                         }
                                       }}
                                     >
-                                      <div className="font-Grotesque-Regular text-[#262627] text-24px pad:text-18px mobile:text-12px">
+                                      <div className="font-Grotesque-Regular text-[#262627] text-22px  mobile:text-12px">
                                         {answer.label}
                                       </div>
                                       <i
