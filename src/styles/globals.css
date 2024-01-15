@@ -104,10 +104,6 @@ body {
 .slide-25-m {
   transform: translateY(25%) !important;
 }
-.swiper-slide section {
-  min-height: 1000px!ignore;
-  overflow: hidden;
-}
 
 .swiper {
   margin-left: 0 !important;

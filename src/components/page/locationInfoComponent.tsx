@@ -13,7 +13,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 
-
 interface entryContent{
     headStyle:string,
     stores:locationInfoStore,
@@ -339,12 +338,10 @@ function LocationStoreList(props: any){
     },[selectedOption])
     const scrollNext = ()=>{
 
-
         swiper?.slideNext();
 
     }
     const scrollPrev = ()=>{
-
 
         swiper?.slidePrev();
     }
@@ -402,10 +399,18 @@ function LocationStoreList(props: any){
         };
     }, []);
 
+    const needDepulicate = function (list = []){
+        if(list.length<6){
+            return [...list,...list]
+        }else{
+            return list
+        }
+    }
+
     return (
         <section className="pt-138px  pad:pt-98px   mobile:pt-112px">
 
-            <div className="pb-45px relative z-20 pad:pb-32px mobile:pb-35px" onClick={(e)=>{
+            <div className="pb-45px relative z-20 mobile:pb-35px" onClick={(e)=>{
                 if(open){
                     setOpen(false)
                 }else{
@@ -433,13 +438,14 @@ function LocationStoreList(props: any){
 
 
                     modules={[Autoplay]}
-                    loop={false}
+                    loop={true}
                     slidesPerView={slidesPerView}
                     spaceBetween={spaceBetween}
+                    centerInsufficientSlides={true}
 
-                    centeredSlides={centeredSlides}
+                    // centeredSlides={centeredSlides}
                     speed={1500}
-                    allowTouchMove={false}
+                    allowTouchMove={true}
                     autoplay={
                         {
 
@@ -463,13 +469,13 @@ function LocationStoreList(props: any){
                 >
 
                     {
-                        locationInfo.length>0 ? locationInfo.map((item:any,index:number)=>{
+                        locationInfo.length>0 ? needDepulicate(locationInfo).map((item:any,index:number)=>{
                             return (
-                                <div key={item.sys.id}>
-                                    <SwiperSlide key={item.sys.id} className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}>
+                                // <div key={item.sys.id}>
+                                    <SwiperSlide key={`${item.sys.id}_${index}`} className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}>
                                         <div className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}>
                                             <BaseLink link={`/howToBuyDetail/${item.sys.id}`} className="text-black">
-                                                <div className="relative w-full h-320px  pad:h-230px mobile:w-265px mobile:h-240px">
+                                                <div className="relative w-full h-360px mobile:w-265px mobile:h-240px">
                                                     <BaseImage
                                                         mImg={item.howToBuyDetailComponentBannerImage.imagemobile.url}
                                                         pImg={item.howToBuyDetailComponentBannerImage.imagepc.url}
@@ -488,7 +494,7 @@ function LocationStoreList(props: any){
                                             </BaseLink>
                                         </div>
                                     </SwiperSlide>
-                                </div>
+                                // </div>
                             )
                         }) : null//<div>暂无门店</div>
                     }
@@ -502,7 +508,7 @@ function LocationStoreList(props: any){
 
 
             {
-                locationInfo.length > 0 ? <div className="flex justify-end pr-10 pt-97px pad:pt-69px">
+                locationInfo.length > 3 ? <div className="flex justify-end pr-10 pt-97px pad:pt-69px">
                     <div>
 
                         <span className={`cursor-pointer bg-contain ${currentIndex == 0 ? "bg-[url('/assets/nearYou/prev.png')]" : "bg-[url('/assets/nearYou/prev-active.png')]"} w-44px h-44px inline-block align-middle mr-7px pad:w-31px pad:h-31px pad:mr-5px mobile:w-26px mobile:h-26px`} onClick={()=>{scrollPrev()}}></span>

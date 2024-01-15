@@ -94,9 +94,9 @@ export default async function Page({
   params: { locale: string; slug: string[] };
 }) {
   // init ga
-  initGA();
+  // initGA();
   // send page
-  logPageView(`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : "" }`);
+  // logPageView(`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : "" }`);
   const data: any = await getPageData(params);
   const footerData: FooterPropsContent = await FooterDao.fetch();
   const headerData: any = await HeaderDao.fetch();
