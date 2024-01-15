@@ -577,8 +577,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:any,
-  currentSlug:string,
+  TrackingType: any;
+  currentSlug: string;
   data: {
     entry: any;
     name: string;
@@ -729,7 +729,11 @@ function FlavourFinderComponent(props: propsContent) {
       className="relative overflow-hidden select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scrollFull} data-slug={props.currentSlug}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scrollFull}
+        data-slug={props.currentSlug}
+      />
 
       {
         <Script
@@ -1391,7 +1395,7 @@ function FlavourFinderComponent(props: propsContent) {
                 >
                   <SwiperSlide>
                     <div className="">
-                      <div className="font-AlbertusNova-Regular line-clamp-2 text-black mx-auto text-center uppercase pt-135px w-708px text-30px pad:top-100px pad:w-590px pad:text-24px mobile:w-320px mobile:text-15px">
+                      <div className="font-AlbertusNova-Regular line-clamp-2 text-black mx-auto text-center uppercase pt-135px w-800px text-30px pad:top-100px pad:w-590px pad:text-24px mobile:w-320px mobile:text-15px">
                         {data.quizs.q5.answers[quizFiveSelected - 1].value}
                       </div>
                     </div>

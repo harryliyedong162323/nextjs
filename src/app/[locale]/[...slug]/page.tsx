@@ -19,6 +19,7 @@ import dynamic from "next/dynamic";
 import Header from '@/components/layout/header';
 import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
+import Analytics from '@/components/layout/analytics';
 import { initGA, logPageView } from "@/utils/analytics";
 
 function capitalizeFirstLetter(str: string) {
@@ -115,6 +116,9 @@ export default async function Page({
   return (
       // className="w-[1920px] mx-auto relative"
     <div>
+
+      <Analytics></Analytics>
+
 
       {
 

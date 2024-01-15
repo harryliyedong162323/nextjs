@@ -15,12 +15,16 @@ const isProduction = process.env.NODE_ENV === "production";
 
 export const initGA = () => {
   console.log("GA init");
+  // window.ReactGA = ReactGA;
   ReactGA.initialize(TRACKING_ID, { testMode: !isProduction });
 };
 
 export const logPageView = (pageName: string) => {
   console.log(`Logging pageview for ${pageName}`);
+
   ReactGA.set({ page: pageName });
+
+
   ReactGA.send({ hitType: "pageview", page: pageName });
 };
 
