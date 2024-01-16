@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 import Select, { SingleValue } from "react-select";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {logEvent} from "@/utils/analytics";
+import { logEvent } from "@/utils/analytics";
 import BaseButton from "../base/button";
 interface entryContent {
   headStyle: string;
@@ -328,7 +328,7 @@ function LocationStoreList(props: any) {
       updatePageStore("IRLExperiencesComponent", {
         regionId: value,
       });
-      logEvent('Country','Nearyou',selectedOption.label)
+      logEvent("Country", "Nearyou", selectedOption.label);
       console.log(getPageStore("IRLExperiencesComponent"));
       setLocationInfo(
         stores.filter((item: any) => {
@@ -444,37 +444,40 @@ function LocationStoreList(props: any) {
                           link={`/howToBuyDetail/${item.sys.id}`}
                           className="text-black"
                         >
-                          <BaseButton action="Nearyou" category="Explore" categorySub={item.howToBuyDetailComponentStoreName}>
+                          <BaseButton
+                            action="Nearyou"
+                            category="Explore"
+                            categorySub={item.howToBuyDetailComponentStoreName}
+                          >
                             <div className="relative w-full h-360px mobile:w-265px mobile:h-240px">
                               <BaseImage
-                                  mImg={
-                                    item.howToBuyDetailComponentBannerImage
-                                        .imagemobile.url
-                                  }
-                                  pImg={
-                                    item.howToBuyDetailComponentBannerImage.imagepc
-                                        .url
-                                  }
-                                  alt={
-                                    item.howToBuyDetailComponentBannerImage.altText
-                                  }
-                                  layout="fill"
-                                  objectFit="cover"
-                                  quality={100}
+                                mImg={
+                                  item.howToBuyDetailComponentBannerImage
+                                    .imagemobile.url
+                                }
+                                pImg={
+                                  item.howToBuyDetailComponentBannerImage
+                                    .imagepc.url
+                                }
+                                alt={
+                                  item.howToBuyDetailComponentBannerImage
+                                    .altText
+                                }
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
                               ></BaseImage>
                             </div>
                             <div className="pt-25px pad:pt-17px  mobile:pt-29px">
                               <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular pad:text-22px pad:pb-11px w-auto mobile:text-16px mobile:pb-15px">
                                 {item.howToBuyDetailComponentStoreName}
                               </div>
-                              <div className="w-[85%]  text-15px font-Grotesque-Regular h-[3em]  font-normal  pad:text-10px mobile:h-[4em] mobile:text-11px ">
+                              <div className="w-[85%]  text-15px font-Grotesque-Regular line-clamp-3  font-normal  pad:text-10px mobile:h-[4em] mobile:text-11px ">
                                 {item.howToBuyDescription}
                               </div>
-                              <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]   mobile:mt-23px mobile:w-24px mobile:h-24px">
-                              </div>
                             </div>
+                            <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]   mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
                           </BaseButton>
-
                         </BaseLink>
                       </div>
                     </SwiperSlide>

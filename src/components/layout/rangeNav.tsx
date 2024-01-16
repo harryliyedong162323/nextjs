@@ -23,7 +23,6 @@ export interface propsContent {
 
 function RangeNav(props: propsContent) {
   const currentSlideIndex = props.currentSlideIndex;
-
   return (
     currentSlideIndex !== 0 &&
     currentSlideIndex !== 5 &&
@@ -31,7 +30,7 @@ function RangeNav(props: propsContent) {
       <div
         className={`w-full fixed bottom-20px z-20 font-Grotesque-Regular text-[#969797]}`}
       >
-        <div className="flex justify-between mx-auto w-[1250px] pad:w-[70%]  mobile:w-full text-center uppercase text-17px pad:text-12px mobile:text-9px">
+        <div className="flex justify-between mx-auto w-[1250px!ignore] pad:w-auto  mobile:w-full text-center uppercase text-17px pad:text-12px mobile:text-9px">
           <span
             className={`relative inline-block cursor-pointer ${
               currentSlideIndex === 0

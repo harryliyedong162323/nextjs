@@ -859,7 +859,7 @@ function FlavourFinderComponent(props: propsContent) {
                                   {answer.label}
                                 </div>
                                 <i
-                                  className={` bg-cover w-22px h-22px mobile:w-13px mobile:h-13px ${
+                                  className={` bg-cover  w-[22px!ignore] h-[22px!ignore] mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                                     quizOneSelected === index + 1
                                       ? "bg-[url('/assets/range/icon_checked.png')]"
                                       : "bg-[url('/assets/range/icon_check.png')]"
@@ -963,7 +963,7 @@ function FlavourFinderComponent(props: propsContent) {
                                   <span>{answer.label}</span>
                                 </div>
                                 <i
-                                  className={`cursor-pointer bg-cover w-22px h-22px  mobile:w-13px mobile:h-13px ${
+                                  className={`cursor-pointer bg-cover  w-[22px!ignore] h-[22px!ignore]  mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                                     quizTwoSelected === index + 1
                                       ? "bg-[url('/assets/range/icon_checked.png')]"
                                       : "bg-[url('/assets/range/icon_check.png')]"
@@ -1042,7 +1042,7 @@ function FlavourFinderComponent(props: propsContent) {
                                         {answer.label}
                                       </div>
                                       <i
-                                        className={`cursor-pointer bg-cover w-22px h-22px  mobile:w-13px mobile:h-13px ${
+                                        className={`cursor-pointer bg-cover  w-[22px!ignore] h-[22px!ignore]  mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                                           quizThreeSelected1 === index + 1
                                             ? "bg-[url('/assets/range/icon_checked.png')]"
                                             : "bg-[url('/assets/range/icon_check.png')]"
@@ -1124,7 +1124,7 @@ function FlavourFinderComponent(props: propsContent) {
                                             {answer.label}
                                           </div>
                                           <i
-                                            className={`bg-cover w-22px h-22px  mobile:w-13px mobile:h-13px ${
+                                            className={`bg-cover  w-[22px!ignore] h-[22px!ignore] mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                                               quizThreeSelected2 === index + 1
                                                 ? "bg-[url('/assets/range/icon_checked.png')]"
                                                 : "bg-[url('/assets/range/icon_check.png')]"
@@ -1206,7 +1206,7 @@ function FlavourFinderComponent(props: propsContent) {
                                   {answer.label}
                                 </div>
                                 <i
-                                  className={`bg-cover w-22px h-22px mobile:w-13px mobile:h-13px ${
+                                  className={`bg-cover  w-[22px!ignore] h-[22px!ignore] mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                                     quizFourSelected === index + 1
                                       ? "bg-[url('/assets/range/icon_checked.png')]"
                                       : "bg-[url('/assets/range/icon_check.png')]"
@@ -1246,7 +1246,7 @@ function FlavourFinderComponent(props: propsContent) {
                             {answer.label}
                           </div>
                           <i
-                            className={`bg-cover w-22px h-22px  mobile:w-13px mobile:h-13px ${
+                            className={`bg-cover w-[22px!ignore] h-[22px!ignore]  mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                               quizFiveSelected === index + 1
                                 ? "bg-[url('/assets/range/icon_checked.png')]"
                                 : "bg-[url('/assets/range/icon_check.png')]"
