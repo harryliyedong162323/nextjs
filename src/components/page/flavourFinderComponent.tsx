@@ -855,7 +855,7 @@ function FlavourFinderComponent(props: propsContent) {
                                 ></BaseImage>
                               </div>
                               <div className="flex justify-between items-center mt-10px mobile:pt-10px">
-                                <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
+                                <div className="font-Grotesque-Regular w-[calc(100%-22px!ignore)] mobile:w-[calc(100%-13px!ignore)] text-[#262627] text-22px pad:text-18px mobile:text-13px">
                                   {answer.label}
                                 </div>
                                 <i
@@ -952,7 +952,7 @@ function FlavourFinderComponent(props: propsContent) {
                                 ></ReactPlayer>
                               </div>
                               <div className="flex justify-between items-center mt-5px mobile:w-100px mobile:ml-20px">
-                                <div className="font-Grotesque-Regular text-[#262627] flex items-center text-22px pad:text-18px mobile:text-13px mobile:flex-col">
+                                <div className="font-Grotesque-Regular text-[#262627] w-[calc(100%-22px!ignore)] mobile:w-[calc(100%-13px!ignore)] flex items-center text-22px pad:text-18px mobile:text-13px mobile:flex-col">
                                   <i
                                     className={`inline-block  ${
                                       currentVideoPlay == index + 1
@@ -963,7 +963,7 @@ function FlavourFinderComponent(props: propsContent) {
                                   <span>{answer.label}</span>
                                 </div>
                                 <i
-                                  className={`cursor-pointer bg-cover  w-[22px!ignore] h-[22px!ignore]  mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
+                                  className={`cursor-pointer bg-cover w-[22px!ignore] h-[22px!ignore]  mobile:w-[13px!ignore] mobile:h-[13px!ignore] ${
                                     quizTwoSelected === index + 1
                                       ? "bg-[url('/assets/range/icon_checked.png')]"
                                       : "bg-[url('/assets/range/icon_check.png')]"
@@ -1038,7 +1038,7 @@ function FlavourFinderComponent(props: propsContent) {
                                         }
                                       }}
                                     >
-                                      <div className="font-Grotesque-Regular text-[#262627] text-22px  mobile:text-12px">
+                                      <div className="font-Grotesque-Regular w-[calc(100%-22px!ignore)] mobile:w-[calc(100%-13px!ignore)]  text-[#262627] text-22px  mobile:text-12px">
                                         {answer.label}
                                       </div>
                                       <i
@@ -1120,7 +1120,7 @@ function FlavourFinderComponent(props: propsContent) {
                                           ></BaseImage>
                                         </div>
                                         <div className="flex justify-between items-center mt-10px">
-                                          <div className="font-Grotesque-Regular text-[#262627] flex items-center text-20px py-20px pad:text-16px mobile:py-16px mobile:text-12px">
+                                          <div className="font-Grotesque-Regular w-[calc(100%-22px!ignore)] mobile:w-[calc(100%-13px!ignore)] text-[#262627] flex items-center text-20px py-20px pad:text-16px mobile:py-16px mobile:text-12px">
                                             {answer.label}
                                           </div>
                                           <i
@@ -1202,7 +1202,7 @@ function FlavourFinderComponent(props: propsContent) {
                                 ></BaseImage>
                               </div>
                               <div className="flex justify-between items-center mt-10px mobile:pt-10px">
-                                <div className="font-Grotesque-Regular text-[#262627] text-22px pad:text-18px mobile:text-13px">
+                                <div className="font-Grotesque-Regular w-[calc(100%-22px!ignore)] mobile:w-[calc(100%-13px!ignore)] text-[#262627] text-22px pad:text-18px mobile:text-13px">
                                   {answer.label}
                                 </div>
                                 <i
@@ -1242,7 +1242,7 @@ function FlavourFinderComponent(props: propsContent) {
                               : "border-[3px] border-[#C6C6C6] border-solid mobile:border-[2px]"
                           }`}
                         >
-                          <div className="font-Grotesque-Regular text-[#262627] text-24px pad:text-18px mobile:text-12px">
+                          <div className="font-Grotesque-Regular w-[calc(100%-22px!ignore)] mobile:w-[calc(100%-13px!ignore)] text-[#262627] text-24px pad:text-18px mobile:text-12px">
                             {answer.label}
                           </div>
                           <i

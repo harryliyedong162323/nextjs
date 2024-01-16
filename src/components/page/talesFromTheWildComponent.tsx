@@ -130,7 +130,7 @@ function TalesFromTheWildComponent(props: propsContent) {
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           { title }
         </div>
-        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
+        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] pad:w-auto pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
           {kolList?.length > 0 &&
             kolList.map((item, index) => {
               return (
