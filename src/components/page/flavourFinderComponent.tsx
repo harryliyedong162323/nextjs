@@ -690,12 +690,13 @@ function FlavourFinderComponent(props: propsContent) {
     setQuizIndex(5);
   };
 
-  useEffect(()=>{
-    if(quizIndex == 5){
-      ReactGA.event(`Viewpage_Flavourresult|${recommend?.productList[currentRecommend].productName}`);
+  useEffect(() => {
+    if (quizIndex == 5) {
+      ReactGA.event(
+        `Viewpage_Flavourresult|${recommend?.productList[currentRecommend].productName}`
+      );
     }
-  },[quizIndex]);
-
+  }, [quizIndex]);
 
   const submit = () => {
     if (!canSubmit) return;
@@ -1268,6 +1269,7 @@ function FlavourFinderComponent(props: propsContent) {
                       }`}
                       onClick={() => {
                         doRecommend();
+                        props.changeNavStatus(true);
                       }}
                     >
                       {data.basic.dywfSeeYourFlavorProfile}
@@ -1529,7 +1531,11 @@ function FlavourFinderComponent(props: propsContent) {
                                 "selectProduct",
                                 recommend?.productList[currentRecommend].id
                               );
-                              ReactGA.event(`Click_Flavourresult|${recommend?.productList.map(item=>item.productName).join(',')}_Explore`);
+                              ReactGA.event(
+                                `Click_Flavourresult|${recommend?.productList
+                                  .map((item) => item.productName)
+                                  .join(",")}_Explore`
+                              );
                               props.scrollToPage(0);
                             }}
                             className="cursor-pointer inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] hover:bg-[url('/assets/range/bg_explore_btn_hover.png')] hover:text-white bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
@@ -1575,7 +1581,9 @@ function FlavourFinderComponent(props: propsContent) {
                               }`}
                               onClick={() => {
                                 submit();
-                                ReactGA.event(`Click_Flavourresult|${recommend?.productList[currentRecommend].productName}_Submit`);
+                                ReactGA.event(
+                                  `Click_Flavourresult|${recommend?.productList[currentRecommend].productName}_Submit`
+                                );
                               }}
                             >
                               {data.basic.dywfSubmitContent}

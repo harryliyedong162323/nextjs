@@ -236,7 +236,8 @@ function getCurrentLocation(local: string, locationAndLanguage: any) {
   }
 }
 
-function Header(props: propsContent) {
+function Header(props: any) {
+  console.log(props);
   const headerData = props.data;
   const slug = useParams().slug[0];
 

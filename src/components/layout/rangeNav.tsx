@@ -23,6 +23,7 @@ export interface propsContent {
 
 function RangeNav(props: propsContent) {
   const currentSlideIndex = props.currentSlideIndex;
+
   return (
     currentSlideIndex !== 0 &&
     currentSlideIndex !== 5 &&
