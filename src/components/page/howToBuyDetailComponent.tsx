@@ -7,6 +7,7 @@ import BaseVideo from "@/components/base/video";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import dynamic from "next/dynamic";
+import ReactGA from "react-ga4";
 // const Baidu:React.ComponentType<{}> = dynamic(() => import('@/components/map/baidu'));
 
 interface entryContent {
@@ -62,6 +63,11 @@ function HowToBuyDetailComponent(props: propsContent) {
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
+
+
+  // useEffect(() => {
+  //   ReactGA.event(`Viewpage_Storedetailpage|${title}`);
+  // }, []);
 
   useEffect(() => {
     if (isFullPage) {

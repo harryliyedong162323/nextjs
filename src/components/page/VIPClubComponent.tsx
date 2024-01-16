@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 
 import BaseImage from "@/components/base/image";
+import BaseButton from "../base/button";
 
 interface entryContent {
   headStyle: string;
@@ -132,14 +133,16 @@ function VIPClubComponent(props: propsContent) {
         <div className="grid grid-cols-3 place-items-center mobile:grid-rows-3 mobile:grid-cols-none">
           <div className="self-center">
             <div className="w-323px h-285px relative pad:w-302px pad:h-275px mobile:w-295px mobile:h-109px mobile:mb-46px">
-              <BaseImage
-                mImg={VIPClubData.vipClubComponentLeftImage.imagemobile.url}
-                pImg={VIPClubData.vipClubComponentLeftImage.imagepc.url}
-                alt={VIPClubData.vipClubComponentLeftImage.altText}
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-              ></BaseImage>
+              <BaseButton action="Homepage" category="Joinus" categorySub="Instgram">
+                <BaseImage
+                    mImg={VIPClubData.vipClubComponentLeftImage.imagemobile.url}
+                    pImg={VIPClubData.vipClubComponentLeftImage.imagepc.url}
+                    alt={VIPClubData.vipClubComponentLeftImage.altText}
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                ></BaseImage>
+              </BaseButton>
             </div>
             <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')]  mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
               explore
@@ -148,14 +151,17 @@ function VIPClubComponent(props: propsContent) {
 
           <div className="self-center">
             <div className="w-323px h-285px relative pad:w-302px pad:h-275px mobile:w-295px mobile:h-109px mobile:mb-46px">
-              <BaseImage
-                mImg={VIPClubData.vipClubComponentMiddleImage.imagemobile.url}
-                pImg={VIPClubData.vipClubComponentMiddleImage.imagepc.url}
-                alt={VIPClubData.vipClubComponentMiddleImage.altText}
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-              ></BaseImage>
+              <BaseButton action="Homepage" category="Joinus" categorySub="facebook">
+                <BaseImage
+                    mImg={VIPClubData.vipClubComponentMiddleImage.imagemobile.url}
+                    pImg={VIPClubData.vipClubComponentMiddleImage.imagepc.url}
+                    alt={VIPClubData.vipClubComponentMiddleImage.altText}
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                ></BaseImage>
+              </BaseButton>
+
             </div>
             <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')]  mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
               explore
@@ -164,14 +170,17 @@ function VIPClubComponent(props: propsContent) {
 
           <div className="self-center">
             <div className="w-323px h-285px relative  pad:w-302px pad:h-275px mobile:w-295px mobile:h-109px">
-              <BaseImage
-                mImg={VIPClubData.vipClubComponentRightImage.imagemobile.url}
-                pImg={VIPClubData.vipClubComponentRightImage.imagepc.url}
-                alt={VIPClubData.vipClubComponentRightImage.altText}
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-              ></BaseImage>
+              <BaseButton action="Homepage" category="Joinus" categorySub="YouTube">
+                <BaseImage
+                    mImg={VIPClubData.vipClubComponentRightImage.imagemobile.url}
+                    pImg={VIPClubData.vipClubComponentRightImage.imagepc.url}
+                    alt={VIPClubData.vipClubComponentRightImage.altText}
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                ></BaseImage>
+              </BaseButton>
+
             </div>
             <div className="hover:bg-[url('/assets/VIPClub/CTA-A.png')] cursor-pointer hover:text-black bg-[url('/assets/VIPClub/CTA.png')]  mt-20px mx-auto w-150px h-36px text-center leading-[36px] text-white text-12px uppercase font-AlbertusNova-Regular font-normal pad:w-107px pad:h-25px pad:leading-[25px] pad:text-8px pad:mt-34px mobile:hidden">
               explore

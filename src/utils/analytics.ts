@@ -41,12 +41,14 @@ export const logPageView = (pageName: string) => {
 };
 
 export const logEvent = (category:string = "", action:string = "",categorySub:string = "") => {
-  console.log(`Logging button for category: ${category} && action: ${action}`);
+
   if (category && action) {
     // ReactGA.event({ category, action })
     if(categorySub){
+      console.log(`Logging button for category: ${category} && action: ${action} && categorySub: ${categorySub}`);
       ReactGA.event(`Click_${category}_${action}|${categorySub}`);
     }else{
+      console.log(`Logging button for category: ${category} && action: ${action}`);
       ReactGA.event(`Click_${category}_${action}`);
     }
 

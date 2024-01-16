@@ -53,6 +53,9 @@ const query = `
             }
             altText
           }
+          detailPage {
+            activityDetailComponentTitle
+          }
         }
       }
     }

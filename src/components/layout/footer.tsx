@@ -5,7 +5,7 @@ import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
 import { usePathname } from "next/navigation";
-// import { sendEvent, TrackingType } from "@/utils/analytics";
+import BaseButton from "@/components/base/button";
 
 // const [pannels, setPanels] = useState([
 //   {
@@ -130,6 +130,7 @@ import { usePathname } from "next/navigation";
 //
 
 interface groupItems {
+  categoryName?:string,
   id: number;
   content: string;
   targetPage: string;
@@ -147,7 +148,9 @@ interface joinUsImagesContent {
     };
   };
   targetPage: string;
+  channelName:string,
   iconImage: {
+
     altText: string;
     imagemobile: {
       url: string;
@@ -251,7 +254,7 @@ function getCurrentLocation(local: string, locationAndLanguage: any) {
 }
 
 function Footer(props: any) {
-  // console.log(props)
+  console.log(props)
 
   const footerData = props.data;
 
@@ -272,6 +275,7 @@ function Footer(props: any) {
     (item: joinUsImagesContent, index: number) => {
       return {
         id: index,
+        channelName:item.channelName,
         qrCodeImage: item.qrCodeImage,
         link: item.targetPage,
         iconImage: item.iconImage,
@@ -283,6 +287,7 @@ function Footer(props: any) {
     (item: groupItems, index: number) => {
       return {
         id: index,
+        categoryName:'Ourstory',
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -293,6 +298,7 @@ function Footer(props: any) {
     (item: groupItems, index: number) => {
       return {
         id: index,
+        categoryName:'Wildmoorrange',
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -302,6 +308,7 @@ function Footer(props: any) {
     (item: groupItems, index: number) => {
       return {
         id: index,
+        categoryName:'Wildescape',
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -311,6 +318,7 @@ function Footer(props: any) {
     (item: groupItems, index: number) => {
       return {
         id: index,
+        categoryName:'Nearyou',
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -369,6 +377,7 @@ function Footer(props: any) {
         {
           id: 2,
           name: footerData.group1Title,
+          categoryName:'Ourstory',
           link: "/story",
         },
       ],
@@ -381,6 +390,7 @@ function Footer(props: any) {
         {
           id: 6,
           name: footerData.group2Title,
+          categoryName:'Wildmoorrange',
           link: "/range",
         },
       ],
@@ -393,6 +403,7 @@ function Footer(props: any) {
         {
           id: 12,
           name: footerData.group3Title,
+          categoryName:'Wildescape',
           link: "/localMarketActivity",
         },
       ],
@@ -405,6 +416,7 @@ function Footer(props: any) {
         {
           id: 18,
           name: footerData.group4Title,
+          categoryName:'Nearyou',
           link: "/howToBuy",
         },
       ],
@@ -468,7 +480,9 @@ function Footer(props: any) {
                     link={panel.title[0].link}
                     className="text-20px font-medium font-Grotesque-Medium dark-grey"
                   >
-                    {panel.title[0].name}
+                    <BaseButton category={panel.title[0].categoryName} action="Footer">
+                      {panel.title[0].name}
+                    </BaseButton>
                   </BaseLink>
                 </span>
                 <span className="text-33px w-23px h-23px mobile:w-23px mobile:h-23px hidden bg-[url('/assets/add_footer.png')] bg-contain cursor-pointer mobile:block"></span>
@@ -482,7 +496,9 @@ function Footer(props: any) {
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
 
                   >
-                    {item.content}
+                    <BaseButton category={item.categoryName} action="Footer" categorySub={item.content}>
+                      {item.content}
+                    </BaseButton>
                   </BaseLink>
                 </li>
               ))}
@@ -569,16 +585,18 @@ function Footer(props: any) {
                     >
                       <BaseLink hover="text-black-500" link={item.targetPage}>
                         {/*bg-[url('/assets/instagram.png')]*/}
-                        <span className="block w-36px h-36px bg-cover relative mobile:w-25px mobile:h-25px">
+                        <BaseButton action="Footer" category="Joinus" categorySub={item.channelName}>
+                          <span className="block w-36px h-36px bg-cover relative mobile:w-25px mobile:h-25px">
                           <BaseImage
-                            mImg={item.iconImage.imagemobile.url}
-                            pImg={item.iconImage.imagepc.url}
-                            alt={item.iconImage.altText}
-                            objectFit="contain"
-                            layout="fill"
-                            quality={100}
+                              mImg={item.iconImage.imagemobile.url}
+                              pImg={item.iconImage.imagepc.url}
+                              alt={item.iconImage.altText}
+                              objectFit="contain"
+                              layout="fill"
+                              quality={100}
                           ></BaseImage>
                         </span>
+                        </BaseButton>
                       </BaseLink>
                     </li>
                   );
@@ -684,16 +702,20 @@ function Footer(props: any) {
                             link={`${item.targetUrl}`}
                           >
                             <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-                              <p>
-                                {item.region}{" "}
-                                {!item.language && item.language == ""
-                                  ? null
-                                  : "-"}
-                              </p>
 
-                              {item.language && item.language == "" ? null : (
-                                <p>{item.language}</p>
-                              )}
+                              <BaseButton action="Footer" category="Language" categorySub={item.region+'-'+item.language}>
+                                <p>
+                                  {item.region}{" "}
+                                  {!item.language && item.language == ""
+                                      ? null
+                                      : "-"}
+                                </p>
+
+                                {item.language && item.language == "" ? null : (
+                                    <p>{item.language}</p>
+                                )}
+                              </BaseButton>
+
                             </div>
                             <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive"></div>
                           </BaseLink>

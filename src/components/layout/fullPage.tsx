@@ -62,7 +62,7 @@ import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
 import Popup from "./popup";
 
-import { TrackingType,TrackingTypeContent } from "@/utils/analytics";
+import { TrackingType, TrackingTypeContent } from "@/utils/analytics";
 
 function getComponent(
   data: any,

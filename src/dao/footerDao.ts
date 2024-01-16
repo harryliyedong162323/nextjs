@@ -33,6 +33,7 @@ query getFooter {
                 items {
                   ... on DataFooterJoinUs {
                     targetPage
+                    channelName
                     iconImage {
                         imagepc {
                             url

@@ -164,20 +164,20 @@ function IRLExperiencesComponent(props: propsContent) {
                         ></BaseImage>
                       </div>
                     </BaseLink>
-                    <div className="pt-43px mobile:pt-15px">
-                      <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-15px">
+                    <div className="pt-43px ">
+                      <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular">
                         {currentStore[0].howToBuyDetailComponentStoreName}
                       </div>
-                      <div className="flex justify-between items-center">
+                      <div className="flex justify-between items-center mobile:mb-10px">
                         <div className="w-full  text-13px pad:text-9px font-Grotesque-Regular font-normal  mobile:text-11px ">
                           {currentStore[0].howToBuyDescription}
                         </div>
                       </div>
-                      <div className="pt-31px pad:pt-22px mobile:pt-10px mobile:pb-15px">
+                      <div className="pt-31px pad:pt-22px mobile:mb-25px">
                         <BaseLink
                           link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                         >
-                          <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                          <div className="w-40px h-40px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
                         </BaseLink>
                       </div>
                     </div>
@@ -202,20 +202,20 @@ function IRLExperiencesComponent(props: propsContent) {
                         ></BaseImage>
                       </div>
                     </BaseLink>
-                    <div className="pt-43px mobile:pt-15px">
+                    <div className="pt-43px ">
                       <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-15px">
                         {currentStore[1].howToBuyDetailComponentStoreName}
                       </div>
-                      <div className="flex justify-between items-center">
+                      <div className="flex justify-between items-center mobile:mb-10px">
                         <div className="text-13px pad:text-9px  font-Grotesque-Regular font-normal  mobile:text-11px ">
                           {currentStore[1].howToBuyDescription}
                         </div>
                       </div>
-                      <div className="pt-31px pad:pt-22px">
+                      <div className="pt-31px pad:pt-22px mobile:mb-25px">
                         <BaseLink
                           link={`/howToBuyDetail/${currentStore[1].sys.id}`}
                         >
-                          <div className="w-30px h-30px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
+                          <div className="w-40px h-40px bg-contain bg-[url('/assets/more.png')] cursor-pointer mobile:w-24px mobile:h-24px"></div>
                         </BaseLink>
                       </div>
                     </div>

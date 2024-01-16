@@ -2,6 +2,7 @@
 import { usePathname, useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
+import BaseButton from "@/components/base/button";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
 
@@ -137,6 +138,7 @@ import { getLocalPathName } from "@/utils/common";
 // ]);
 
 interface groupItems {
+  categoryName?:string,
   content: string;
   sys: {
     id: string;
@@ -153,6 +155,7 @@ interface locationAndLanguageContent {
 }
 
 interface propsContent {
+  headStyle:string,
   currentSlideIndex: number;
   getPageStore: Function;
   updatePageStore: Function;
@@ -233,14 +236,16 @@ function getCurrentLocation(local: string, locationAndLanguage: any) {
   }
 }
 
-function Header(props: any) {
+function Header(props: propsContent) {
   const headerData = props.data;
   const slug = useParams().slug[0];
 
   const [scrollNum, setScrollNum] = useState(0);
   const [menu, setMenu] = useState(false);
   const currentSlideIndex = props.currentSlideIndex;
-
+  useEffect(() => {
+    setScrollNum(30);
+  }, []);
   function wheelHandle(e: Event) {
     e.preventDefault();
     e.stopPropagation();
@@ -403,7 +408,7 @@ function Header(props: any) {
 
       <nav
         id="nav-bg-white"
-        className={`${
+        className={` ${
           scrollNum > 20 ? "bg-white" : "bg-transparent"
         } h-85px w-full fixed left-0 top-0 z-50 transition-colors ease-in-out duration-500 opacity-0 animate-fadeIn mobile:h-60px ${
           headStyle == "bg-white" ? "block" : "hidden"
@@ -435,56 +440,60 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
   const localPathName = getLocalPathName(usePathname());
 
   const locationAndLanguage =
-    headerData.locationAndLanguageCollection.items.map(
-      (item: locationAndLanguageContent, index: number) => {
-        return {
-          id: index,
-          language: item.language,
-          region: item.region,
-          targetUrl: item.targetUrl,
-          path: item.path,
-        };
-      }
-    );
+      headerData.locationAndLanguageCollection.items.map(
+          (item: locationAndLanguageContent, index: number) => {
+            return {
+              id: index,
+              language: item.language,
+              region: item.region,
+              targetUrl: item.targetUrl,
+              path: item.path,
+            };
+          }
+      );
 
   const group2Items = headerData.group2ItemsCollection.items.map(
-    (item: groupItems, index: number) => {
-      return {
-        id: item.sys.id,
-        content: item.content,
-        link: item.targetPage,
-      };
-    }
+      (item: groupItems, index: number) => {
+        return {
+          id: item.sys.id,
+          categoryName:'Ourstory',
+          content: item.content,
+          link: item.targetPage,
+        };
+      }
   );
 
   const group3Items = headerData.group3ItemsCollection.items.map(
-    (item: groupItems, index: number) => {
-      return {
-        id: item.sys.id,
-        content: item.content,
-        link: item.targetPage,
-      };
-    }
+      (item: groupItems, index: number) => {
+        return {
+          id: item.sys.id,
+          categoryName:'Wildmoorrange',
+          content: item.content,
+          link: item.targetPage,
+        };
+      }
   );
 
   const group4Items = headerData.group4ItemsCollection.items.map(
-    (item: groupItems, index: number) => {
-      return {
-        id: item.sys.id,
-        content: item.content,
-        link: item.targetPage,
-      };
-    }
+      (item: groupItems, index: number) => {
+        return {
+          id: item.sys.id,
+          categoryName:'Wildescape',
+          content: item.content,
+          link: item.targetPage,
+        };
+      }
   );
 
   const group5Items = headerData.group5ItemsCollection.items.map(
-    (item: groupItems, index: number) => {
-      return {
-        id: item.sys.id,
-        content: item.content,
-        link: item.targetPage,
-      };
-    }
+      (item: groupItems, index: number) => {
+        return {
+          id: item.sys.id,
+          categoryName:'Nearyou',
+          content: item.content,
+          link: item.targetPage,
+        };
+      }
   );
 
   useEffect(() => {
@@ -525,6 +534,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 10,
           name: headerData.group2Title,
+          categoryName:'Ourstory',
           link: headerData.group2TargetPage,
         },
       ],
@@ -537,6 +547,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 11,
           name: headerData.group3Title,
+          categoryName:'Wildmoorrange',
           link: headerData.group3TargetPage,
         },
       ],
@@ -549,6 +560,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 110,
           name: headerData.group4Title,
+          categoryName:'Wildescape',
           link: headerData.group4TargetPage,
         },
       ],
@@ -561,6 +573,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 101,
           name: headerData.group5Title,
+          categoryName:'Nearyou',
           link: headerData.group5TargetPage,
         },
       ],
@@ -604,8 +617,10 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
       <div
         className={`fixed w-381px translate-x-381px
           pad:translate-x-[300px!ignore] mobile:translate-x-[100vw] transition-transform-opacity ${
-          menu ? "!translate-x-0 opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } duration-[650ms] h-screen right-0 top-0 pl-33px overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-[300px!ignore] mobile:w-screen mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)]`}
+            menu
+              ? "!translate-x-0 opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          } duration-[650ms] h-screen right-0 top-0 pl-33px overflow-hidden pr-33px pad:pl-24px pad:pr-24px pad:w-[300px!ignore] mobile:w-screen mobile:pl-20px mobile:pr-18px bg-[#FFFFFF] shadow-[-7px_0_10px_0_rgba(0,0,0,0.05)]`}
       >
         <div className="mt-25px pad:mt-18px mobile:mt-15px   flex justify-end mobile:justify-between items-end  mobile:items-center ">
           <div className="w-33px h-17px pad:w-24px pad:h-12px mobile:w-28px mobile:h-13px relative"></div>
@@ -665,7 +680,9 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
                       handleClose();
                     }}
                   >
-                    {panel.title[0].name}
+                    <BaseButton category={panel.title[0].categoryName} action="Navigation">
+                      {panel.title[0].name}
+                    </BaseButton>
                   </BaseLink>
                 </div>
                 {!panel.isExpanded ? (
@@ -705,7 +722,9 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
                             handleClose();
                           }}
                         >
-                          {item.content}
+                          <BaseButton category={item.categoryName} action="Navigation" categorySub={item.content}>
+                            {item.content}
+                          </BaseButton>
                         </BaseLink>
                       </div>
                       <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive"></div>
@@ -805,16 +824,18 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
                             link={`${item.targetUrl}`}
                           >
                             <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px  w-4/5 truncate">
-                              <p>
-                                {item.region}{" "}
-                                {!item.language && item.language == ""
-                                  ? null
-                                  : "-"}
-                              </p>
+                              <BaseButton action="Navigation" category="Language" categorySub={item.region+'-'+item.language}>
+                                <p>
+                                  {item.region}{" "}
+                                  {!item.language && item.language == ""
+                                      ? null
+                                      : "-"}
+                                </p>
 
-                              {item.language && item.language == "" ? null : (
-                                <p>{item.language}</p>
-                              )}
+                                {item.language && item.language == "" ? null : (
+                                    <p>{item.language}</p>
+                                )}
+                              </BaseButton>
                             </div>
                             <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-9px  pad:h-17px mobile:w-15px mobile:h-17px reactive"></div>
                           </BaseLink>

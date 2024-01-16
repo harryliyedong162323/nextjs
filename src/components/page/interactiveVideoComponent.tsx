@@ -36,8 +36,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -57,8 +57,16 @@ function InteractiveVideoComponent(props: propsContent) {
       className="w-full h-screen relative overflow-hidden select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scroll50} data-slug={'home'}/>
-      <input type="hidden" value={props.TrackingType.scroll75} data-slug={'localMarketActivity'}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll50}
+        data-slug={"home"}
+      />
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll75}
+        data-slug={"localMarketActivity"}
+      />
       <BaseImage
         pImg={interactiveVideoData.interactiveVideoComponentImage.imagepc.url}
         mImg={
@@ -111,7 +119,7 @@ function InteractiveVideoComponent(props: propsContent) {
             </div>
           */}
 
-          <div className="hover:bg-[url('/assets/interactiveVideo/CTZ.png')]  hover:text-black bg-[url('/assets/interactiveVideo/CTZ-Z.png')]   mx-auto w-333px h-73px mx-auto   cursor-pointer text-center leading-[73px] text-white text-20px pad:text-14px uppercase font-AlbertusNova-Light font-normal mobile:hidden">
+          <div className="hover:bg-[url('/assets/interactiveVideo/CTZ.png')]  hover:text-black bg-[url('/assets/interactiveVideo/CTZ-Z.png')]   mx-auto w-333px h-73px    cursor-pointer text-center leading-[73px] text-white text-20px pad:text-14px uppercase font-AlbertusNova-Light font-normal mobile:hidden">
             EXPLORE MORE
           </div>
           <div className="hidden mobile:block mobile:cursor-default mobile:bg-[url('/assets/interactiveVideo/CTZ-Z.png')] mobile:mx-auto mobile:text-12px mobile:w-190px mobile:h-30px mobile:text-center mobile:leading-[30px] mobile:text-white mobile:font-AlbertusNova-Light mobile:font-normal">

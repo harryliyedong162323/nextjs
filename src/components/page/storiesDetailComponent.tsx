@@ -7,6 +7,7 @@ import BaseVideo from "@/components/base/video";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import ReactGA from "react-ga4";
 
 interface entryContent {
   isFullPage: boolean;
@@ -117,6 +118,11 @@ function StoriesDetailComponent(props: propsContent) {
     },
     [emblaApi]
   );
+
+
+  // useEffect(() => {
+  //   ReactGA.event(`Viewpage_Talesdetailpage|${data?.storiesDetailComponentTitle}`);
+  // }, [data]);
 
   useEffect(() => {
     emblaApi?.on("select", onChangeScroll);

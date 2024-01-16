@@ -5,7 +5,11 @@ import React, { useEffect, useState } from "react";
 import { initGA, logPageView } from "@/utils/analytics";
 
 
-function Analytics(props:any) {
+export interface propsContent {
+    pageView:string,
+}
+
+function Analytics(props:propsContent) {
     const [isBrowser, setIsBrowser] = useState(false);
     const pageView = props.pageView;
     useEffect(() => {

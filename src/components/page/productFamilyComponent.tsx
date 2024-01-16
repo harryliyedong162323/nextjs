@@ -5,7 +5,7 @@ import BaseImage from "@/components/base/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import eventbus from "@/utils/eventbus";
-
+import { useParams } from "next/navigation";
 interface entryContent {
   headStyle: string;
   selectedProductId?: number;
@@ -15,6 +15,8 @@ interface productFamilyComponentProductsCollectionContent {
   items: Array<bottleContent>;
 }
 import { TrackingTypeContent } from "@/utils/analytics";
+import BaseButton from "../base/button";
+
 export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
@@ -61,7 +63,7 @@ interface bottleContent {
 
 function ProductFamilyComponent(props: propsContent) {
   const headStyle = props.data.entry.headStyle;
-
+  const params = useParams();
   const bottle =
     props.data.entry.productFamilyComponentProductsCollection.items;
 
@@ -138,6 +140,24 @@ function ProductFamilyComponent(props: propsContent) {
       });
     }
   };
+
+  const checkCategoryType = (slug:string = '')=>{
+    let pageSlug:string = '';
+    switch (slug){
+      case 'home':
+        pageSlug = 'Homepage';
+        break;
+      case 'range':
+        pageSlug = 'Wildmoorrange';
+        break;
+      default:
+        break;
+    }
+
+    return pageSlug
+  }
+
+
   useGSAP(
     () => {
       gsap
@@ -378,9 +398,11 @@ function ProductFamilyComponent(props: propsContent) {
                     handleChooseBottle(0);
                   }}
                 >
-                  <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
-                    {bottleData[0].num}
-                  </span>
+                  <BaseButton action={checkCategoryType(params.slug[0])} category="Productfamily" categorySub={bottleData[0].productName}>
+                     <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
+                      {bottleData[0].num}
+                     </span>
+                  </BaseButton>
                 </div>
                 <div
                   className={`select-none cursor-pointer flex justify-center items-center w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#5C829A] hover:text-[#fff] absolute z-20 rounded-full ${
@@ -393,7 +415,9 @@ function ProductFamilyComponent(props: propsContent) {
                   }}
                 >
                   <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
-                    {bottleData[1].num}
+                    <BaseButton action={checkCategoryType(params.slug[0])} category="Productfamily" categorySub={bottleData[1].productName}>
+                      {bottleData[1].num}
+                    </BaseButton>
                   </span>
                 </div>
                 <div
@@ -407,7 +431,9 @@ function ProductFamilyComponent(props: propsContent) {
                   }}
                 >
                   <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
-                    {bottleData[2].num}
+                    <BaseButton action={checkCategoryType(params.slug[0])} category="Productfamily" categorySub={bottleData[2].productName}>
+                      {bottleData[2].num}
+                    </BaseButton>
                   </span>
                 </div>
                 <div
@@ -428,7 +454,9 @@ function ProductFamilyComponent(props: propsContent) {
                     className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px"
                     style={textGradient}
                   >
-                    {bottleData[3].num}
+                    <BaseButton action={checkCategoryType(params.slug[0])} category="Productfamily" categorySub={bottleData[3].productName}>
+                      {bottleData[3].num}
+                    </BaseButton>
                   </span>
                 </div>
                 <div
@@ -442,7 +470,9 @@ function ProductFamilyComponent(props: propsContent) {
                   }}
                 >
                   <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
-                    {bottleData[4].num}
+                    <BaseButton action={checkCategoryType(params.slug[0])} category="Productfamily" categorySub={bottleData[4].productName}>
+                      {bottleData[4].num}
+                    </BaseButton>
                   </span>
                 </div>
                 <div
@@ -456,7 +486,9 @@ function ProductFamilyComponent(props: propsContent) {
                   }}
                 >
                   <span className="text-32px font-AlbertusNova-Regular font-normal  mobile:text-16px">
-                    {bottleData[5].num}
+                    <BaseButton action={checkCategoryType(params.slug[0])} category="Productfamily" categorySub={bottleData[5].productName}>
+                      {bottleData[5].num}
+                    </BaseButton>
                   </span>
                 </div>
               </div>

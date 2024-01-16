@@ -28,6 +28,8 @@ interface introduceCampaignComponentCampaignsCollectionContent {
   items: Array<campaignsContent>;
 }
 import { TrackingTypeContent } from "@/utils/analytics";
+import BaseButton from "../base/button";
+import {useParams} from "next/navigation";
 export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
@@ -52,6 +54,9 @@ interface campaignsContent {
       url: string;
     };
   };
+  detailPage?:{
+    activityDetailComponentTitle:string,
+  },
   description: string;
   location: string;
   year: string;
@@ -115,7 +120,7 @@ const numberWithinRange = (number: number, min: number, max: number) =>
 function IntroduceCampaignComponent(props: propsContent) {
 
   // console.log(props);
-
+  const params = useParams();
   const headStyle = props.data.entry.headStyle;
 
   const title = props.data.entry.introduceCampaignComponentTitle;
@@ -248,6 +253,23 @@ function IntroduceCampaignComponent(props: propsContent) {
     // emblaApi?.scrollPrev();
     swiper?.slidePrev();
   };
+
+
+  const checkCategoryType = (slug:string = '')=>{
+    let pageSlug:string = '';
+    switch (slug){
+      case 'home':
+        pageSlug = 'Homepage';
+        break;
+      case 'localMarketActivity':
+        pageSlug = 'Wildescapepage';
+        break;
+      default:
+        break;
+    }
+
+    return pageSlug
+  }
 
   // useEffect(()=>{
   //     scrollNext();
@@ -500,16 +522,18 @@ function IntroduceCampaignComponent(props: propsContent) {
                   <div>
                     <BaseLink link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
                     {/* <BaseLink link={`/activityDetail/${item.sys?.id}`}> */}
-                      <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px cursor-pointer pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
-                        <BaseImage
-                          mImg={item.campaignImage.imagepc.url}
-                          pImg={item.campaignImage.imagemobile.url}
-                          alt={item.campaignImage.altText}
-                          layout="fill"
-                          objectFit="cover"
-                          quality={100}
-                        ></BaseImage>
-                      </div>
+                      <BaseButton action={checkCategoryType(params.slug[0])} category="Globalnews" categorySub={item.detailPage.activityDetailComponentTitle}>
+                        <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px cursor-pointer pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
+                          <BaseImage
+                              mImg={item.campaignImage.imagepc.url}
+                              pImg={item.campaignImage.imagemobile.url}
+                              alt={item.campaignImage.altText}
+                              layout="fill"
+                              objectFit="cover"
+                              quality={100}
+                          ></BaseImage>
+                        </div>
+                      </BaseButton>
                     </BaseLink>
                     <div className="text-center text-21px font-Grotesque-Medium font-medium pad:text-15px mobile:text-16px">
                       <span className="w-12px h-14px bg-contain bg-[url('/assets/introduceCampaign/subtract.png')] inline-block align-middle pad:w-8px pad:h-10px mobile:w-10px mobile:h-11px"></span>
@@ -524,9 +548,13 @@ function IntroduceCampaignComponent(props: propsContent) {
                     <div className="font-Grotesque-Regular font-medium truncate mx-auto w-280px pad:w-200px mobile:text-center mobile:w-full">
                       {item.description}
                     </div>
+                    {/*link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
                     {/* <BaseLink link="/activityDetail/${item.sys?.id}"> */}
-                    <BaseLink link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
-                      <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+                    <BaseLink link={`/activityDetail/${item.sys?.id}`}>
+                      <BaseButton action={checkCategoryType(params.slug[0])} category="Globalnews" categorySub={item.detailPage.activityDetailComponentTitle}>
+                        <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
+                      </BaseButton>
+
                     </BaseLink>
                   </div>
                 </SwiperSlide>

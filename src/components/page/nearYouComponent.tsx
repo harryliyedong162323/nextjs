@@ -15,6 +15,7 @@ interface nearYouComponentStoresCollectionContent {
   items: Array<campaignsContent>;
 }
 import { TrackingTypeContent } from "@/utils/analytics";
+import BaseButton from "../base/button";
 export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
@@ -464,14 +465,16 @@ function NearYouComponent(props: propsContent) {
                         {/*></BaseImage>*/}
 
                         {
-                          <NestedCarousel
-                            list={
-                              item
-                                .nearYouComponentNearYouCarouselImageCollection
-                                .items
-                            }
-                            activeFlag={item.nearYouActive}
-                          ></NestedCarousel>
+                          <BaseButton action="Homepage" category="Nearyou" categorySub={item.howToBuyDetailComponentStoreName}>
+                            <NestedCarousel
+                                list={
+                                  item
+                                      .nearYouComponentNearYouCarouselImageCollection
+                                      .items
+                                }
+                                activeFlag={item.nearYouActive}
+                            ></NestedCarousel>
+                          </BaseButton>
                         }
                       </div>
                     </BaseLink>
@@ -490,7 +493,9 @@ function NearYouComponent(props: propsContent) {
                       </span>
                       {/*link="/howToBuyDetail"*/}
                       <BaseLink>
-                        <div className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
+                        <BaseButton action="Homepage" category="Nearyou" categorySub={item.howToBuyDetailComponentStoreName}>
+                          <div className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
+                        </BaseButton>
                       </BaseLink>
                     </div>
                   </div>

@@ -6,7 +6,7 @@ import BaseLink from "@/components/base/link";
 import BaseVideo from "@/components/base/video";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-
+import ReactGA from "react-ga4";
 interface entryContent {
   isFullPage: boolean;
   currentPageNumber: number;
@@ -96,6 +96,10 @@ function ActivityDetailComponent(props: propsContent) {
     },
     [emblaApi]
   );
+
+  // useEffect(() => {
+  //   ReactGA.event(`Viewpage_Talesdetailpage|${data.sectionName}`);
+  // }, [data]);
 
   useEffect(() => {
     emblaApi?.on("select", onChangeScroll);

@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useEffect, useState, useCallback } from "react";
-import Image from "next/image";
 import BaseImage from "@/components/base/image";
-import Link from "../base/link";
 import BaseLink from "@/components/base/link";
 
-
+import { logEvent } from "@/utils/analytics";
 interface Kol {
   sys: {
     id: string;
@@ -51,6 +49,8 @@ interface entryContent {
   }
 }
 import { TrackingTypeContent } from "@/utils/analytics";
+import BaseButton from "../base/button";
+import {useParams} from "next/navigation";
 export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
@@ -77,11 +77,28 @@ function TalesFromTheWildComponent(props: propsContent) {
   const [currentKol, setCurrentKol] = useState<any>(isMobile() ? null : 0);
   const [toKol, setToKol] = useState<any>(isMobile() ? null : 0);
   const [kolList, setKolList] = useState<Array<Kol>>(props.data.entry.talesFromTheWildListCollection.items);
-
+  const params = useParams();
   // console.log(props);
   const headStyle = props.data.entry.headStyle;
   const title = props.data.entry.talesFromTheWildTitle;
   useEffect(() => {}, [currentKol, kolList]);
+
+
+  const checkCategoryType = (slug:string = '')=>{
+    let pageSlug:string = '';
+    switch (slug){
+      case 'home':
+        pageSlug = 'Homepage';
+        break;
+      case 'localMarketActivity':
+        pageSlug = 'Wildescapepage';
+        break;
+      default:
+        break;
+    }
+
+    return pageSlug
+  }
 
   const handleAnimation = (toKol: number) => {
     setToKol(toKol);
@@ -122,22 +139,24 @@ function TalesFromTheWildComponent(props: propsContent) {
                     <>
                       <BaseLink link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
                       {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
-                        <div
-                          className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
-                            currentKol !== toKol
-                              ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
-                              : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-360px"
-                          }`}
-                        >
-                          <BaseImage
-                            mImg={item.listImage.imagemobile.url}
-                            pImg={item.listImage.imagepc.url}
-                            alt={item.listImage.altText}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                          ></BaseImage>
-                        </div>
+                      {/*  <BaseButton action="Wildmoorrange" category="Tales" categorySub={item.listName}>*/}
+                          <div
+                              className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                                  currentKol !== toKol
+                                      ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
+                                      : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-360px"
+                              }`}
+                          >
+                            <BaseImage
+                                mImg={item.listImage.imagemobile.url}
+                                pImg={item.listImage.imagepc.url}
+                                alt={item.listImage.altText}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                            ></BaseImage>
+                          </div>
+                        {/*</BaseButton>*/}
                       </BaseLink>
                       <div
                         className={`${
@@ -200,6 +219,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                           </div>
                           <div
                             onClick={() => {
+                              logEvent('Tales',checkCategoryType(params.slug[0]),item.listName)
                               handleAnimation(index);
                             }}
                             className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px group-hover:bg-[url('/assets/range/icon_add.png')] group-hover:w-60px group-hover:h-60px group-hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:group-hover:w-48px pad:group-hover:h-48px pad:group-hover:-ml-30px mobile:w-20px mobile:h-20px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-20px mobile:hover:h-20px mobile:hover:mt-0px"
