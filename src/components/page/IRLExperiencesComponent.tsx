@@ -211,7 +211,7 @@ function IRLExperiencesComponent(props: propsContent) {
                           {currentStore[1].howToBuyDescription}
                         </div>
                       </div>
-                      <div className="pt-31px pad:pt-22px mobile:mb-30px">
+                      <div className="pt-31px pad:pt-22px mobile:mb-35px">
                         <BaseLink
                           link={`/howToBuyDetail/${currentStore[1].sys.id}`}
                         >
