@@ -19,9 +19,10 @@ import dynamic from "next/dynamic";
 import Header from '@/components/layout/header';
 import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
-import Analytics from '@/components/layout/analytics';
-import { initGA, logPageView } from "@/utils/analytics";
 
+const Analytics = dynamic(() => import(`@/components/layout/analytics`), {
+  suspense: true,
+});
 function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -87,6 +88,13 @@ async function getPageData(params: any) {
   return result;
 }
 
+
+
+
+
+
+
+
 // export const revalidate:boolean = false
 
 export default async function Page({
@@ -117,7 +125,7 @@ export default async function Page({
       // className="w-[1920px] mx-auto relative"
     <div>
 
-      <Analytics></Analytics>
+
 
 
       {
@@ -129,6 +137,7 @@ export default async function Page({
 
       <main>
         <Suspense fallback={<div>Loading...</div>}>
+          <Analytics pageView={`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : "" }`}></Analytics>
           {componentsData.map((data, k) => (
               getDynamicComponent(data, k, footerData, headerData)
           ))}

@@ -30,13 +30,13 @@ interface entryContent {
     };
   };
 }
-
+import { TrackingTypeContent } from "@/utils/analytics";
 export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:any,
+  TrackingType:TrackingTypeContent,
   currentSlug:string,
   data: {
     entry: entryContent;
@@ -86,7 +86,7 @@ function InteractiveVideoComponent(props: propsContent) {
           The Wild Escape{" "}
         </div>
         <BaseLink link={interactiveVideoData.interactiveVideoComponentJumpUrl}>
-          {/* 
+          {/*
             <div className=" relative w-334px h-65px mx-auto pad:w-238px pad:h-46px   mobile:w-200px mobile:h-39px  ">
               <BaseImage
                 pImg={

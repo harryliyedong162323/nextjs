@@ -1,6 +1,18 @@
 import ReactGA from "react-ga4";
+import exp from "constants";
 
-export const TrackingType:object = {
+
+export interface TrackingTypeContent {
+  viewPage : string,
+  click : string,
+  scrollFull : string,
+  scroll25 : string,
+  scroll50 : string,
+  scroll75 : string,
+  play : string,
+}
+
+export const TrackingType:TrackingTypeContent = {
   viewPage : "Viewpage",
   click : "Click",
   scrollFull : "Scroll",
@@ -63,7 +75,7 @@ export const sendScrollEvent = ( trackingType: string = '',pageName: string = ''
 
 
 export const sendEvent = (
-  trackingType: any,
+  trackingType: TrackingTypeContent,
   pageName: string,
   eventVal: string
 ) => {

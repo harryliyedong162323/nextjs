@@ -26,13 +26,13 @@ interface entryContent {
     };
   };
 }
-
+import { TrackingTypeContent } from "@/utils/analytics";
 export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:any,
+  TrackingType:TrackingTypeContent,
   currentSlug:string,
   data: {
     entry: entryContent;
