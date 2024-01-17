@@ -9,7 +9,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { logEvent } from "@/utils/analytics";
 import BaseButton from "../base/button";
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   stores: locationInfoStore;
   locationInfoComponentTitle: string;
@@ -107,141 +107,141 @@ interface ComponentData {
   }>;
 }
 
-const locationList: Array<locationData> = [
-  {
-    id: 0,
-    name: "The Wildmoor House Shanghai",
-    des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-    link: "/howToBuyDetail",
-    listImg: {
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-  },
-  {
-    id: 1,
-    name: "The Wildmoor House Shanghai",
-    des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-    link: "/howToBuyDetail",
-    listImg: {
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-  },
-  {
-    id: 2,
-    name: "The Wildmoor House Shanghai",
-    des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-    link: "/howToBuyDetail",
-    listImg: {
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-  },
-  {
-    id: 3,
-    name: "The Wildmoor House Shanghai",
-    des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-    link: "/howToBuyDetail",
-    listImg: {
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-  },
-  {
-    id: 4,
-    name: "The Wildmoor House Shanghai",
-    des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-    link: "/howToBuyDetail",
-    listImg: {
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-  },
-];
-
-const componentData: ComponentData = {
-  id: 1,
-
-  productList: [
-    {
-      id: 0,
-
-      location: [...locationList],
-      name: "CHINA MAINLAND",
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-    {
-      id: 1,
-      location: [...locationList],
-      name: "TAIWAN REGION",
-      mImg: require("../../../public/assets/howToBuy/list-2.png"),
-      pImg: require("../../../public/assets/howToBuy/list-2.png"),
-    },
-    {
-      id: 2,
-      location: [
-        {
-          id: 2,
-          name: "The Wildmoor House Shanghai",
-          des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-          link: "/howToBuyDetail",
-          listImg: {
-            mImg: require("../../../public/assets/howToBuy/list-1.png"),
-            pImg: require("../../../public/assets/howToBuy/list-1.png"),
-          },
-        },
-      ],
-      name: "SINGAPORE",
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-    {
-      id: 3,
-      location: [...locationList],
-      name: "KOREA",
-      mImg: require("../../../public/assets/howToBuy/list-2.png"),
-      pImg: require("../../../public/assets/howToBuy/list-2.png"),
-    },
-    {
-      id: 4,
-      location: [
-        {
-          id: 4,
-          name: "The Wildmoor House Shanghai",
-          des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-          link: "/howToBuyDetail",
-          listImg: {
-            mImg: require("../../../public/assets/howToBuy/list-1.png"),
-            pImg: require("../../../public/assets/howToBuy/list-1.png"),
-          },
-        },
-      ],
-      name: "UNITED KINGDOM",
-      mImg: require("../../../public/assets/howToBuy/list-1.png"),
-      pImg: require("../../../public/assets/howToBuy/list-1.png"),
-    },
-    {
-      id: 5,
-      location: [
-        {
-          id: 5,
-          name: "The Wildmoor House Shanghai",
-          des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
-          link: "/howToBuyDetail",
-          listImg: {
-            mImg: require("../../../public/assets/howToBuy/list-1.png"),
-            pImg: require("../../../public/assets/howToBuy/list-1.png"),
-          },
-        },
-      ],
-      name: "WAKING FOREST",
-      mImg: require("../../../public/assets/howToBuy/list-2.png"),
-      pImg: require("../../../public/assets/howToBuy/list-2.png"),
-    },
-  ],
-};
+// const locationList: Array<locationData> = [
+//   {
+//     id: 0,
+//     name: "The Wildmoor House Shanghai",
+//     des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//     link: "/howToBuyDetail",
+//     listImg: {
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//   },
+//   {
+//     id: 1,
+//     name: "The Wildmoor House Shanghai",
+//     des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//     link: "/howToBuyDetail",
+//     listImg: {
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//   },
+//   {
+//     id: 2,
+//     name: "The Wildmoor House Shanghai",
+//     des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//     link: "/howToBuyDetail",
+//     listImg: {
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//   },
+//   {
+//     id: 3,
+//     name: "The Wildmoor House Shanghai",
+//     des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//     link: "/howToBuyDetail",
+//     listImg: {
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//   },
+//   {
+//     id: 4,
+//     name: "The Wildmoor House Shanghai",
+//     des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//     link: "/howToBuyDetail",
+//     listImg: {
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//   },
+// ];
+//
+// const componentData: ComponentData = {
+//   id: 1,
+//
+//   productList: [
+//     {
+//       id: 0,
+//
+//       location: [...locationList],
+//       name: "CHINA MAINLAND",
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//     {
+//       id: 1,
+//       location: [...locationList],
+//       name: "TAIWAN REGION",
+//       mImg: require("../../../public/assets/howToBuy/list-2.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-2.png"),
+//     },
+//     {
+//       id: 2,
+//       location: [
+//         {
+//           id: 2,
+//           name: "The Wildmoor House Shanghai",
+//           des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//           link: "/howToBuyDetail",
+//           listImg: {
+//             mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//             pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//           },
+//         },
+//       ],
+//       name: "SINGAPORE",
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//     {
+//       id: 3,
+//       location: [...locationList],
+//       name: "KOREA",
+//       mImg: require("../../../public/assets/howToBuy/list-2.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-2.png"),
+//     },
+//     {
+//       id: 4,
+//       location: [
+//         {
+//           id: 4,
+//           name: "The Wildmoor House Shanghai",
+//           des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//           link: "/howToBuyDetail",
+//           listImg: {
+//             mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//             pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//           },
+//         },
+//       ],
+//       name: "UNITED KINGDOM",
+//       mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//     },
+//     {
+//       id: 5,
+//       location: [
+//         {
+//           id: 5,
+//           name: "The Wildmoor House Shanghai",
+//           des: "Step inside The Wildmoor House, where stories of the brand come to life and the art of whisky making finds its ultimate expression.",
+//           link: "/howToBuyDetail",
+//           listImg: {
+//             mImg: require("../../../public/assets/howToBuy/list-1.png"),
+//             pImg: require("../../../public/assets/howToBuy/list-1.png"),
+//           },
+//         },
+//       ],
+//       name: "WAKING FOREST",
+//       mImg: require("../../../public/assets/howToBuy/list-2.png"),
+//       pImg: require("../../../public/assets/howToBuy/list-2.png"),
+//     },
+//   ],
+// };
 
 // const options = [
 //     { value: '0', label: 'CHINA MAINLAND' },
@@ -256,7 +256,26 @@ interface OptionType {
   label: string;
 }
 
-function LocationStoreList(props: any) {
+interface LocationStoreListPropsContent {
+  getPageStore: Function;
+  updatePageStore: Function;
+
+  store: Array<locationInfoStore>;
+  options: Array<OptionType>;
+  location: {
+    location: Array<locationInfoStore>;
+    id: number;
+  };
+}
+interface SwiperContent {
+  slideNext(): void;
+  slidePrev(): void;
+  slideTo(index: number, speed?: number): void;
+  update(): void;
+  destroy(deleteInstance?: boolean, cleanStyles?: boolean): void;
+  // 其他 Swiper 相关的属性和方法
+}
+function LocationStoreList(props: LocationStoreListPropsContent) {
   const getPageStore = props.getPageStore;
   const updatePageStore = props.updatePageStore;
   const stores = props.store;
@@ -265,7 +284,7 @@ function LocationStoreList(props: any) {
   const id = props.location.id;
 
   const customStyles = {
-    control: (styles: any) => ({
+    control: (styles: object) => ({
       ...styles,
       backgroundColor: "transparent",
       color: "#000",
@@ -293,8 +312,10 @@ function LocationStoreList(props: any) {
   const [centeredSlides, setCenteredSlides] = useState(true);
   const [slidesPerView, setSlidesPerView] = useState<number>(3);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [swiper, setSwiper] = useState<any>(null);
-  const [locationInfo, setLocationInfo] = useState<any>(location);
+  const [swiper, setSwiper] = useState<SwiperContent | null>(null);
+  const [locationInfo, setLocationInfo] = useState(
+    location as locationInfoStore[]
+  );
   const [selectedOption, setSelectedOption] = useState(
     options[0] as OptionType
   );
@@ -331,8 +352,8 @@ function LocationStoreList(props: any) {
       logEvent("Country", "Nearyou", selectedOption.label);
       console.log(getPageStore("IRLExperiencesComponent"));
       setLocationInfo(
-        stores.filter((item: any) => {
-          if (item.howToBuyDetailComponentRegion.regionId == value) {
+        stores.filter((item: locationInfoStore) => {
+          if (item.howToBuyDetailComponentRegion.regionId.toString() == value) {
             return item;
           }
         })
@@ -369,7 +390,7 @@ function LocationStoreList(props: any) {
     };
   }, []);
 
-  const needDepulicate = function (list = []) {
+  const needDepulicate = function (list: Array<locationInfoStore> = []) {
     if (list.length < 6) {
       return [...list, ...list];
     } else {
@@ -430,60 +451,64 @@ function LocationStoreList(props: any) {
         >
           {
             locationInfo.length > 0
-              ? needDepulicate(locationInfo).map((item: any, index: number) => {
-                  return (
-                    // <div key={item.sys.id}>
-                    <SwiperSlide
-                      key={`${item.sys.id}_${index}`}
-                      className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}
-                    >
-                      <div
-                        className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}
+              ? needDepulicate(locationInfo).map(
+                  (item: locationInfoStore, index: number) => {
+                    return (
+                      // <div key={item.sys.id}>
+                      <SwiperSlide
+                        key={`${item.sys.id}_${index}`}
+                        className={`  pl-20px pr-20px  mobile:pl-0 mobile:pr-0`}
                       >
-                        <BaseLink
-                          link={`/howToBuyDetail/${item.sys.id}`}
-                          className="text-black"
+                        <div
+                          className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}
                         >
-                          <BaseButton
-                            action="Nearyou"
-                            category="Explore"
-                            categorySub={item.howToBuyDetailComponentStoreName}
+                          <BaseLink
+                            link={`/howToBuyDetail/${item.sys.id}`}
+                            className="text-black"
                           >
-                            <div className="relative w-full h-360px mobile:w-265px mobile:h-240px">
-                              <BaseImage
-                                mImg={
-                                  item.howToBuyDetailComponentBannerImage
-                                    .imagemobile.url
-                                }
-                                pImg={
-                                  item.howToBuyDetailComponentBannerImage
-                                    .imagepc.url
-                                }
-                                alt={
-                                  item.howToBuyDetailComponentBannerImage
-                                    .altText
-                                }
-                                layout="fill"
-                                objectFit="cover"
-                                quality={100}
-                              ></BaseImage>
-                            </div>
-                            <div className="pt-25px pad:pt-17px  mobile:pt-29px">
-                              <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular pad:text-22px pad:pb-11px w-auto mobile:text-16px mobile:pb-15px">
-                                {item.howToBuyDetailComponentStoreName}
+                            <BaseButton
+                              action="Nearyou"
+                              category="Explore"
+                              categorySub={
+                                item.howToBuyDetailComponentStoreName
+                              }
+                            >
+                              <div className="relative w-full h-360px mobile:w-265px mobile:h-240px">
+                                <BaseImage
+                                  mImg={
+                                    item.howToBuyDetailComponentBannerImage
+                                      .imagemobile.url
+                                  }
+                                  pImg={
+                                    item.howToBuyDetailComponentBannerImage
+                                      .imagepc.url
+                                  }
+                                  alt={
+                                    item.howToBuyDetailComponentBannerImage
+                                      .altText
+                                  }
+                                  layout="fill"
+                                  objectFit="cover"
+                                  quality={100}
+                                ></BaseImage>
                               </div>
-                              <div className="w-[85%]  text-15px font-Grotesque-Regular line-clamp-3  font-normal  pad:text-10px mobile:h-[4em] mobile:text-11px ">
-                                {item.howToBuyDescription}
+                              <div className="pt-25px pad:pt-17px  mobile:pt-29px">
+                                <div className="pb-16px font-medium text-31px font-AlbertusNova-Regular pad:text-22px pad:pb-11px w-auto mobile:text-16px mobile:pb-15px">
+                                  {item.howToBuyDetailComponentStoreName}
+                                </div>
+                                <div className="w-[85%]  text-15px font-Grotesque-Regular line-clamp-3  font-normal  pad:text-10px mobile:h-[4em] mobile:text-11px ">
+                                  {item.howToBuyDescription}
+                                </div>
                               </div>
-                            </div>
-                            <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]   mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
-                          </BaseButton>
-                        </BaseLink>
-                      </div>
-                    </SwiperSlide>
-                    // </div>
-                  );
-                })
+                              <div className="mt-25px w-40px h-40px bg-contain bg-[url('/assets/more.png')]   mobile:mt-23px mobile:w-24px mobile:h-24px"></div>
+                            </BaseButton>
+                          </BaseLink>
+                        </div>
+                      </SwiperSlide>
+                      // </div>
+                    );
+                  }
+                )
               : null //<div>暂无门店</div>
           }
         </Swiper>
@@ -520,19 +545,21 @@ function LocationStoreList(props: any) {
 }
 
 function LocationInfoComponent(props: propsContent) {
+
   const getPageStore = props.getPageStore;
   const updatePageStore = props.updatePageStore;
   const title = props.data.entry.locationInfoComponentTitle;
-  const stores: any = props.data.entry.stores;
+  const stores: locationInfoStore = props.data.entry.stores;
   const locationInfoRegionData =
     props.data.entry.locationInfoComponentRegionListCollection.items;
   let locationInfoStoreData =
     props.data.entry.locationInfoComponentStoreListCollection.items;
+  // @ts-ignore
   locationInfoStoreData = [...stores];
   const regionOptions = locationInfoRegionData.map((location, index) => {
     return {
-      value: location.regionId,
-      label: location.name,
+      value: location.regionId.toString(),
+      label: location.name.toString(),
     };
   });
 
@@ -548,15 +575,25 @@ function LocationInfoComponent(props: propsContent) {
 
   const [play, setPlay] = useState<boolean>(true);
   const [isChooseMarquee, setIsChooseMarquee] = useState<boolean>(false);
-  const [locationInfo, setLocationInfo] = useState({});
+  const [locationInfo, setLocationInfo] = useState(
+    {} as {
+      location: {
+        location: Array<locationInfoStore>;
+        id: number;
+      };
+    }
+  );
   const handleClick = (item: locationInfoRegion) => {
     setIsChooseMarquee(true);
 
     setLocationInfo({
-      id: item.regionId,
-      location: locationInfoStoreData.filter(
-        (store) => store.howToBuyDetailComponentRegion.regionId == item.regionId
-      ),
+      location: {
+        id: item.regionId,
+        location: locationInfoStoreData.filter(
+          (store) =>
+            store.howToBuyDetailComponentRegion.regionId == item.regionId
+        ),
+      },
     });
   };
   const handleMouseEnter = (
@@ -630,7 +667,7 @@ function LocationInfoComponent(props: propsContent) {
                             {item.name}
                           </div>
                           {/*pad:mt-11px*/}
-                          <div className="w-195px h-60px  font-AlbertusNova-Regular hover:bg-[url('/assets/howToBuy/HowToBtnMove.png')] hover:text-white text-14px pad:text-10px  bg-[url('/assets/howToBuy/HowToBtn.png')] mt-16px mx-auto text-[#000000] cursor-pointer text-center leading-[60px] mobile:hidden">
+                          <div className="w-195px h-60px  font-AlbertusNova-Regular hover:bg-[url('/assets/howToBuy/HowToBtnMove.png')] hover:text-white text-14px pad:text-10px  bg-[url('/assets/howToBuy/HowToBtn.png')] mt-16px  text-[#000000] cursor-pointer text-center leading-[60px] mobile:hidden">
                             EXPLORE MORE
                           </div>
                           <div className="hidden mobile:block mobile:w-128px mobile:font-AlbertusNova-Regular mobile:h-39px mobile:text-[#000000] mobile:text-center mobile:leading-[39px] mobile:text-10px mobile:mt-10px mobile:bg-[url('/assets/howToBuy/HowToBtn.png')]">
@@ -697,7 +734,7 @@ function LocationInfoComponent(props: propsContent) {
                             {item.name}
                           </div>
                           {/*pad:mt-11px*/}
-                          <div className="w-195px h-60px font-AlbertusNova-Regular hover:bg-[url('/assets/howToBuy/HowToBtnMove.png')] hover:text-white text-14px pad:text-10px  bg-[url('/assets/howToBuy/HowToBtn.png')] mt-16px mx-auto text-[#000000] cursor-pointer text-center leading-[60px] mobile:hidden">
+                          <div className="w-195px h-60px font-AlbertusNova-Regular hover:bg-[url('/assets/howToBuy/HowToBtnMove.png')] hover:text-white text-14px pad:text-10px  bg-[url('/assets/howToBuy/HowToBtn.png')] mt-16px  text-[#000000] cursor-pointer text-center leading-[60px] mobile:hidden">
                             EXPLORE MORE
                           </div>
                           <div className="hidden mobile:block mobile:w-128px mobile:font-AlbertusNova-Regular mobile:h-39px mobile:text-[#000000] mobile:text-center mobile:leading-[39px] mobile:text-10px mobile:mt-10px mobile:bg-[url('/assets/howToBuy/HowToBtn.png')]">
@@ -723,7 +760,7 @@ function LocationInfoComponent(props: propsContent) {
         </div>
       ) : (
         <LocationStoreList
-          location={locationInfo}
+          location={locationInfo.location}
           options={regionOptions}
           store={locationInfoStoreData}
           updatePageStore={updatePageStore}

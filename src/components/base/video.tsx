@@ -21,7 +21,7 @@ interface propsContent {
 class BaseVideo extends Component<propsContent,State>{
 
 
-    static defaultProps:any = {
+    static defaultProps = {
         display:true,
         src:'',
         className:'',
@@ -41,7 +41,7 @@ class BaseVideo extends Component<propsContent,State>{
     };
 
 
-    constructor(props:any) {
+    constructor(props:propsContent) {
         super(props);
         // this.state = {
         //     name:'base-video',

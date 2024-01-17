@@ -6,7 +6,7 @@ interface State {
 }
 interface propsContent {
     className?:string,
-    children?:any,
+    children?:React.ReactNode,
     category?: string,
     action?: string,
     categorySub?:string,
@@ -25,7 +25,7 @@ class BaseButton extends Component<propsContent,State>{
         name:'base-button',
     };
 
-    constructor(props:any) {
+    constructor(props:propsContent) {
         super(props);
     }
 

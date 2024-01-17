@@ -4,10 +4,10 @@ import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "../base/image";
 import eventbus from "@/utils/eventbus";
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   servingSuggestionComponentTitle: string;
-  productFamilyComponentProductsCollection: productFamilyComponentProductsCollection;
+  productFamilyComponentProducts: productFamilyComponentProductsCollection;
 }
 interface product {
   id: number;
@@ -37,7 +37,7 @@ interface productFamilyComponentProductsCollection {
   items: Array<product>;
 }
 import { TrackingTypeContent } from "@/utils/analytics";
-export interface propsContent {
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
@@ -52,12 +52,13 @@ export interface propsContent {
 }
 
 function ServingSuggestionComponent(props: propsContent) {
+  console.log(props)
   const headStyle = props.data.entry.headStyle;
   const title = props.data.entry.servingSuggestionComponentTitle;
-  const [data, setData] = useState<product>(props.data.entry.productFamilyComponentProductsCollection.items[0]);
+  const [data, setData] = useState<product>(props.data.entry.productFamilyComponentProducts.items[0]);
 
   eventbus.on('selectProduct', (value:number) => {
-    setData(props.data.entry.productFamilyComponentProductsCollection.items.filter(item => item.id === value)[0])
+    setData(props.data.entry.productFamilyComponentProducts.items.filter(item => item.id === value)[0])
   })
 
   return (

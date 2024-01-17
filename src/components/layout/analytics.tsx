@@ -11,7 +11,7 @@ export interface propsContent {
 
 function Analytics(props:propsContent) {
     const [isBrowser, setIsBrowser] = useState(false);
-    const pageView = props.pageView;
+    const pageView:string = props.pageView;
     useEffect(() => {
         if (isBrowser) {
             // 初始化 GA4

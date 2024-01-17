@@ -6,139 +6,16 @@ import BaseButton from "@/components/base/button";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
 
-//
-// const [panels, setPanels] = useState([
-//   {
-//     id: 1,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 10,
-//         name: headerData.group2Title,
-//         link: "/story",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 20,
-//         content: "A Drop Of Wildness",
-//         link: "/story?anchor=ADropOfWildness",
-//       },
-//       {
-//         id: 21,
-//         content: "What Others Say",
-//         link: "/story?anchor=WhatOthersSay",
-//       },
-//       {
-//         id: 22,
-//         content: "View All",
-//         link: "/story?anchor=ViewAll",
-//       },
-//     ],
-//   },
-//   {
-//     id: 4,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 11,
-//         name: headerData.group3Title,
-//         link: "/range",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 7,
-//         content: "Products Family",
-//         link: "/range?anchor=ProductsFamily",
-//       },
-//       {
-//         id: 8,
-//         content: "Tales From The Wild",
-//         link: "/range?anchor=TalesFromTheWild",
-//       },
-//       {
-//         id: 9,
-//         content: "Serving Suggestion",
-//         link: "/range?anchor=ServingSuggestion",
-//       },
-//       {
-//         id: 10,
-//         content: "Bottle Concept",
-//         link: "/range?anchor=BottleConcept",
-//       },
-//       {
-//         id: 188,
-//         content: "Discover your Wild Flavour",
-//         link: "/range?anchor=DiscoverYourWildFlavour",
-//       },
-//     ],
-//   },
-//   {
-//     id: 5,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 110,
-//         name: headerData.group4Title,
-//         link: "/localMarketActivity",
-//       },
-//     ],
-//     list: [
-//       // {
-//       //   id: 1311,
-//       //   content: "Wildmoor House",
-//       //   link: "/localMarketActivity?anchor=WildmoorHouse",
-//       // },
-//       {
-//         id: 131,
-//         content: "Global News",
-//         link: "/localMarketActivity?anchor=GlobalNews",
-//       },
-//       {
-//         id: 140,
-//         content: "The Wild Escape",
-//         link: "/localMarketActivity?anchor=TheWildEscape",
-//       },
-//       {
-//         id: 152,
-//         content: "Tales From The Wild",
-//         link: "/localMarketActivity?anchor=TalesFromTheWild",
-//       },
-//     ],
-//   },
-//   {
-//     id: 300,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 101,
-//         name: headerData.group5Title,
-//         link: "/howToBuy",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 1300,
-//         content: "Region Select & Global Store Map",
-//         link: "/howToBuy?anchor=RegionSelect",
-//       },
-//       {
-//         id: 1400,
-//         content: "IRL Experiences",
-//         link: "/howToBuy?anchor=IRLExperiences",
-//       },
-//       {
-//         id: 1015,
-//         content: "Digital Experience",
-//         link: "/howToBuy?anchor=DigitalExperience",
-//       },
-//     ],
-//   },
-// ]);
+interface CustomEventDetail {
+  scrollY: number;
+}
+
+interface CustomScrollEvent extends Event {
+  detail: CustomEventDetail;
+}
 
 interface groupItems {
-  categoryName?:string,
+  categoryName?: string;
   content: string;
   sys: {
     id: string;
@@ -154,62 +31,69 @@ interface locationAndLanguageContent {
   path?: string;
 }
 
-interface propsContent {
-  headStyle:string,
-  currentSlideIndex: number;
-  getPageStore: Function;
-  updatePageStore: Function;
-  changeNavStatus: Function;
-  scrollToPage: Function;
-  data: {
-    group1TargetPage: string;
-    group2TargetPage: string;
-    group3TargetPage: string;
-    group4TargetPage: string;
-    group5TargetPage: string;
+export interface headerDataContent {
+  group1TargetPage: string;
+  group2TargetPage: string;
+  group3TargetPage: string;
+  group4TargetPage: string;
+  group5TargetPage: string;
 
-    group1ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group1Title: string;
-    group1TitleId: number;
-    group2ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group2Title: string;
-    group2TitleId: number;
-    group3ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group3Title: string;
-    group3TitleId: number;
-    group4ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group4Title: string;
-    group4TitleId: number;
-    group5ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group5Title: string;
-    group5TitleId: number;
-    locationAndLanguageCollection: {
-      items: Array<locationAndLanguageContent>;
-    };
-    logo: {
-      altText: string;
-      imagemobile: {
-        url: string;
-      };
-      imagepc: {
-        url: string;
-      };
-    };
-    regionSwitchingPromptWords: string;
+  group1ItemsCollection: {
+    items: Array<groupItems>;
   };
+  group1Title: string;
+  group1TitleId: number;
+  group2ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group2Title: string;
+  group2TitleId: number;
+  group3ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group3Title: string;
+  group3TitleId: number;
+  group4ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group4Title: string;
+  group4TitleId: number;
+  group5ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group5Title: string;
+  group5TitleId: number;
+  locationAndLanguageCollection: {
+    items: Array<locationAndLanguageContent>;
+  };
+  logo: {
+    altText: string;
+    imagemobile: {
+      url: string;
+    };
+    imagepc: {
+      url: string;
+    };
+  };
+  regionSwitchingPromptWords: string;
 }
 
-function getCurrentLocation(local: string, locationAndLanguage: any) {
+interface propsContent {
+  headStyle?: string;
+  currentSlideIndex?: number;
+  getPageStore?: Function;
+  updatePageStore?: Function;
+  changeNavStatus?: Function;
+  scrollToPage?: Function;
+  data: headerDataContent;
+}
+
+interface locationAndLanguageContentArray {}
+
+function getCurrentLocation(
+  local: string,
+  locationAndLanguage: Array<locationAndLanguageContent>
+) {
   const currentData = locationAndLanguage.filter(
     (item: locationAndLanguageContent) => {
       if (item.path == local) {
@@ -236,10 +120,10 @@ function getCurrentLocation(local: string, locationAndLanguage: any) {
   }
 }
 
-function Header(props: any) {
-  console.log(props);
-  const headerData = props.data;
-  const slug = useParams().slug[0];
+function Header(props: propsContent) {
+  // console.log(props);
+  const headerData: headerDataContent = props.data;
+  const slug: string = useParams().slug[0];
 
   const [scrollNum, setScrollNum] = useState(0);
   const [menu, setMenu] = useState(false);
@@ -271,19 +155,25 @@ function Header(props: any) {
   // }, [currentSlideIndex]);
 
   useEffect(() => {
-    function handleScroll(e: any) {
+    function handleScroll(e: CustomScrollEvent) {
       // 处理滚动事件的逻辑
       if (slug == "howToBuyDetail") {
         setScrollNum(window.scrollY);
       }
+      if (slug == "howToBuy") {
+        setScrollNum(e.detail.scrollY);
+      }
     }
 
     // 添加滚动事件监听器
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll as (evt: Event) => void);
 
     // 在组件卸载时清除滚动事件监听器
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll as (evt: Event) => void
+      );
     };
   }, []);
 
@@ -307,7 +197,7 @@ function Header(props: any) {
   //     // },0)
   //   }
   //   return () => {
-  //     const option: any = { passive: false };
+  //     const option: object = { passive: false };
   //
   //     document.removeEventListener("wheel", wheelHandle, option);
   //     document.removeEventListener("keydown", keyDownHandle, option);
@@ -436,65 +326,71 @@ function Header(props: any) {
   );
 }
 
-function Panel({ menuFlag, onMenuChange, headerData }: any) {
+interface panelPropsContent {
+  menuFlag: boolean;
+  onMenuChange: Function;
+  headerData: headerDataContent;
+}
+
+function Panel({ menuFlag, onMenuChange, headerData }: panelPropsContent) {
   const [menu, setMenu] = useState(false);
   const localPathName = getLocalPathName(usePathname());
 
   const locationAndLanguage =
-      headerData.locationAndLanguageCollection.items.map(
-          (item: locationAndLanguageContent, index: number) => {
-            return {
-              id: index,
-              language: item.language,
-              region: item.region,
-              targetUrl: item.targetUrl,
-              path: item.path,
-            };
-          }
-      );
-
-  const group2Items = headerData.group2ItemsCollection.items.map(
-      (item: groupItems, index: number) => {
+    headerData.locationAndLanguageCollection.items.map(
+      (item: locationAndLanguageContent, index: number) => {
         return {
-          id: item.sys.id,
-          categoryName:'Ourstory',
-          content: item.content,
-          link: item.targetPage,
+          id: index,
+          language: item.language,
+          region: item.region,
+          targetUrl: item.targetUrl,
+          path: item.path,
         };
       }
+    );
+
+  const group2Items = headerData.group2ItemsCollection.items.map(
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        categoryName: "Ourstory",
+        content: item.content,
+        link: item.targetPage,
+      };
+    }
   );
 
   const group3Items = headerData.group3ItemsCollection.items.map(
-      (item: groupItems, index: number) => {
-        return {
-          id: item.sys.id,
-          categoryName:'Wildmoorrange',
-          content: item.content,
-          link: item.targetPage,
-        };
-      }
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        categoryName: "Wildmoorrange",
+        content: item.content,
+        link: item.targetPage,
+      };
+    }
   );
 
   const group4Items = headerData.group4ItemsCollection.items.map(
-      (item: groupItems, index: number) => {
-        return {
-          id: item.sys.id,
-          categoryName:'Wildescape',
-          content: item.content,
-          link: item.targetPage,
-        };
-      }
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        categoryName: "Wildescape",
+        content: item.content,
+        link: item.targetPage,
+      };
+    }
   );
 
   const group5Items = headerData.group5ItemsCollection.items.map(
-      (item: groupItems, index: number) => {
-        return {
-          id: item.sys.id,
-          categoryName:'Nearyou',
-          content: item.content,
-          link: item.targetPage,
-        };
-      }
+    (item: groupItems, index: number) => {
+      return {
+        id: item.sys.id,
+        categoryName: "Nearyou",
+        content: item.content,
+        link: item.targetPage,
+      };
+    }
   );
 
   useEffect(() => {
@@ -535,7 +431,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 10,
           name: headerData.group2Title,
-          categoryName:'Ourstory',
+          categoryName: "Ourstory",
           link: headerData.group2TargetPage,
         },
       ],
@@ -548,7 +444,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 11,
           name: headerData.group3Title,
-          categoryName:'Wildmoorrange',
+          categoryName: "Wildmoorrange",
           link: headerData.group3TargetPage,
         },
       ],
@@ -561,7 +457,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 110,
           name: headerData.group4Title,
-          categoryName:'Wildescape',
+          categoryName: "Wildescape",
           link: headerData.group4TargetPage,
         },
       ],
@@ -574,7 +470,7 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
         {
           id: 101,
           name: headerData.group5Title,
-          categoryName:'Nearyou',
+          categoryName: "Nearyou",
           link: headerData.group5TargetPage,
         },
       ],
@@ -681,7 +577,10 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
                       handleClose();
                     }}
                   >
-                    <BaseButton category={panel.title[0].categoryName} action="Navigation">
+                    <BaseButton
+                      category={panel.title[0].categoryName}
+                      action="Navigation"
+                    >
                       {panel.title[0].name}
                     </BaseButton>
                   </BaseLink>
@@ -723,7 +622,11 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
                             handleClose();
                           }}
                         >
-                          <BaseButton category={item.categoryName} action="Navigation" categorySub={item.content}>
+                          <BaseButton
+                            category={item.categoryName}
+                            action="Navigation"
+                            categorySub={item.content}
+                          >
                             {item.content}
                           </BaseButton>
                         </BaseLink>
@@ -825,16 +728,20 @@ function Panel({ menuFlag, onMenuChange, headerData }: any) {
                             link={`${item.targetUrl}`}
                           >
                             <div className="uppercase font-normal not-italic text-[#262627] text-15px font-Grotesque-Regular pad:text-11px mobile:text-17px  w-4/5 truncate">
-                              <BaseButton action="Navigation" category="Language" categorySub={item.region+'-'+item.language}>
+                              <BaseButton
+                                action="Navigation"
+                                category="Language"
+                                categorySub={item.region + "-" + item.language}
+                              >
                                 <p>
                                   {item.region}{" "}
                                   {!item.language && item.language == ""
-                                      ? null
-                                      : "-"}
+                                    ? null
+                                    : "-"}
                                 </p>
 
                                 {item.language && item.language == "" ? null : (
-                                    <p>{item.language}</p>
+                                  <p>{item.language}</p>
                                 )}
                               </BaseButton>
                             </div>

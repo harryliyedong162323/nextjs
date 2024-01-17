@@ -28,7 +28,7 @@ interface Collection {
         }>;
       }>;
     };
-    links: any;
+    links: string;
   };
   image?: {
     imagepc: {
@@ -47,12 +47,14 @@ interface Collection {
 }
 
 interface entryContent {
-  detailCollection: {
-    items: Array<Collection>;
-  };
+  headStyle:string,
+  // detailCollection: {
+  //   items: Array<Collection>;
+  // };
 }
 
 export interface propsContent {
+
   data: {
     entry: entryContent;
     name: string;
@@ -60,7 +62,7 @@ export interface propsContent {
   };
 }
 
-function PrivacyPolicyComponent(props: any) {
+function PrivacyPolicyComponent(props: propsContent) {
   const [data, setData] = useState<entryContent>(props.data.entry);
 
   console.log(data);

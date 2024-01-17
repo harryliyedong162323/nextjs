@@ -20,7 +20,7 @@ function supportsHEVCAlpha() {
   return isSafari && hasMediaCapabilities;
 }
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   kvAnimationComponentKvTitle: string;
   kvAnimationComponentScrollContent: string;

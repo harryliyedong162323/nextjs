@@ -13,7 +13,7 @@ interface howToBuyDetailComponentBannerContent {
   };
 }
 
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   currentPageNumber: number;
   pageNumber: number;

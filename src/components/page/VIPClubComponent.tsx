@@ -5,7 +5,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "@/components/base/image";
 import BaseButton from "../base/button";
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   joinUsLeftContent: string;
   joinUsLeftCtaAImage: {

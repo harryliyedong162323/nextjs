@@ -10,7 +10,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   introduceCampaignComponentTitle: string;
   introduceCampaignComponentBackgroundImage: {
@@ -30,7 +30,7 @@ interface introduceCampaignComponentCampaignsCollectionContent {
 import { TrackingTypeContent } from "@/utils/analytics";
 import BaseButton from "../base/button";
 import {useParams} from "next/navigation";
-export interface propsContent {
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
@@ -54,7 +54,7 @@ interface campaignsContent {
       url: string;
     };
   };
-  detailPage?:{
+  detailPage:{
     activityDetailComponentTitle:string,
   },
   description: string;
@@ -113,7 +113,14 @@ interface campaignsContent {
 //
 
 const TWEEN_FACTOR = 3;
-
+interface SwiperContent {
+  slideNext(): void;
+  slidePrev(): void;
+  slideTo(index: number, speed?: number): void;
+  update(): void;
+  destroy(deleteInstance?: boolean, cleanStyles?: boolean): void;
+  // 其他 Swiper 相关的属性和方法
+}
 const numberWithinRange = (number: number, min: number, max: number) =>
   Math.min(Math.max(number, min), max);
 
@@ -137,7 +144,7 @@ function IntroduceCampaignComponent(props: propsContent) {
   const [centeredSlides, setCenteredSlides] = useState(true);
   const [slidesPerView, setSlidesPerView] = useState(4);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [swiper, setSwiper] = useState<any>(null);
+  const [swiper, setSwiper] = useState<SwiperContent | null>(null);
   // const computedActiveDrop = (index:number)=>{
   //     let currentDom = null;
   //     if(index + 2 > campaigns.length){
@@ -511,7 +518,7 @@ function IntroduceCampaignComponent(props: propsContent) {
             setSwiper(swiper);
           }}
         >
-          {campaigns.map((item: any, index: number) => {
+          {campaigns.map((item: campaignsContent, index: number) => {
             return (
               // item.id
               <div key={index}>

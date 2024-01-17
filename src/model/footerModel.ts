@@ -1,11 +1,15 @@
 import CommonModel from './commonModel';
 
 
-
 interface pageLayout {
-    data:object
+    data:pageItem
 }
 
+interface pageItem {
+    [key: string]: {
+        items:Array<Object>
+    };
+}
 
 class FooterModel extends CommonModel{
 
@@ -14,20 +18,8 @@ class FooterModel extends CommonModel{
     }
 
 
-    // fromJson<T extends string | any[]>(json: any){
-    //     const currentPage = json.items[0];
-    //     const componentsEntry = json.includes.Entry;
-    //     const componentsAsset = json.includes.Asset;
-    //     this.setPageContent(currentPage.fields.pageContent,componentsEntry);
-    //
-    //     this.replaceComponentById(this.getPageContent(),componentsAsset)
-    //
-    //     return this.getPageContent();
-    // }
-
-
-    fromJson<T extends string | any[]>(json: pageLayout){
-        const currentPage = json.data;
+    fromJson(json: pageLayout):object | undefined{
+        const currentPage: pageItem = json.data;
         this.setPageContent(currentPage);
 
         return this.getPageContent();
@@ -35,13 +27,13 @@ class FooterModel extends CommonModel{
 
 
 
-    query(name:string,json: pageLayout){
-        const currentPage:any = json.data;
+    query(name: string, json: pageLayout):object | undefined {
+        const currentPage: pageItem = json.data;
 
         let targetComponent;
-        for(let key in currentPage){
-            if(name == key){
-                targetComponent = currentPage[key].items[0]
+        for (let key in currentPage) {
+            if (name === key) {
+                targetComponent = currentPage[key].items[0];
                 break;
             }
         }

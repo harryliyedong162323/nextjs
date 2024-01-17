@@ -308,12 +308,13 @@ class HowToBuyDao {
         type: "fullPage",
         name: "fullPage",
         entry: {
+          freeMode: true,
           children: [
             {
               type: "locationInfoComponent",
               name: "locationInfoComponent",
               entry: {
-                headStyle: "black",
+                headStyle: "bg-white",
                 stores: HowToBuyModel.queryStores(result),
                 ...HowToBuyModel.query("locationInfo", result),
               },
@@ -329,16 +330,15 @@ class HowToBuyDao {
               type: "IRLExperiencesComponent",
               name: "IRLExperiencesComponent",
               entry: {
-                headStyle: "none",
-                stores: HowToBuyModel.queryIrlstores(result),
+                headStyle: "bg-white",
+                storeList: HowToBuyModel.queryIrlstores(result),
               },
             },
             {
               type: "digitalExperienceComponent",
               name: "digitalExperienceComponent",
               entry: {
-                headStyle: "none",
-
+                headStyle: "bg-white",
                 ...HowToBuyModel.query("digitalExperience", result),
               },
             },

@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "../base/image";
 
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   pageNumber: number;
   currentPageNumber: number;
@@ -20,7 +20,7 @@ interface entryContent {
   }
 }
 import { TrackingTypeContent } from "@/utils/analytics";
-export interface propsContent {
+interface propsContent {
   changeNavStatus: Function;
   scrollToPage: Function;
   TrackingType:TrackingTypeContent,

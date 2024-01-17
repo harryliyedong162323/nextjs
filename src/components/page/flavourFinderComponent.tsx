@@ -577,6 +577,7 @@ export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
+  changeNavSubmit: Function;
   scrollToPage: Function;
   TrackingType: TrackingTypeContent;
   currentSlug: string;
@@ -761,7 +762,7 @@ function FlavourFinderComponent(props: propsContent) {
               quality="100"
             ></Image>
           </div>
-          <div className="absolute right-0 bg-[#1f1] bg-[url('/assets/range/favour_finder_text_bg.png')]   bg-contain top-1/2 w-[35em] pad:w-[23em]   -mt-245px   mobile:w-325px  mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:pr-22px mobile:pl-22px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
+          <div className="absolute right-0  bg-[url('/assets/range/favour_finder_text_bg.png')]   bg-contain top-1/2 w-[35em] pad:w-[23em]   -mt-245px   mobile:w-325px  mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:pr-22px mobile:pl-22px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
             <div className="leading-6 font-AlbertusNova-Regular  uppercase text-center text-26px mt-[4em] pad:text-18px  mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
               {data.basic.flavourFinderComponentTitle}
             </div>
@@ -1270,6 +1271,7 @@ function FlavourFinderComponent(props: propsContent) {
                       onClick={() => {
                         doRecommend();
                         props.changeNavStatus(true);
+                        props.changeNavSubmit("sumbit");
                       }}
                     >
                       {data.basic.dywfSeeYourFlavorProfile}
@@ -1420,8 +1422,8 @@ function FlavourFinderComponent(props: propsContent) {
                         {data.basic.dywfRedo}
                       </span>
                     </div>
-                    <div className="mx-auto mt-10px w-[1251px] pad:w-[1042px] mobile:w-330px pb-30px">
-                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover flex px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                    <div className="mx-auto mt-10px w-[1251px] bg-[4f1f1] pad:w-[1042px] mobile:w-330px pb-30px">
+                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover  flex  px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
                         <div className="w-280px   mobile:w-241px">
                           {recommend && (
                             <Swiper
@@ -1440,7 +1442,7 @@ function FlavourFinderComponent(props: propsContent) {
                               {recommend.productList.map((product, index) => {
                                 return (
                                   <SwiperSlide key={index} className="relative">
-                                    <div className="flex flex-col  items-center justify-center">
+                                    <div className="flex flex-col   items-center justify-center">
                                       <div className="relative w-215px h-209px mobile:w-148px mobile:h-145px">
                                         <BaseImage
                                           mImg={
@@ -1487,7 +1489,7 @@ function FlavourFinderComponent(props: propsContent) {
                               })}
                           </div>
                         </div>
-                        <div className="inline-flex flex-col justify-center   ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
+                        <div className="inline-flex  flex-col justify-center   ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
                           <div className="inline-flex items-center">
                             <div className="relative inline-block w-68px h-68px pad:w-54px pad:h-54px mobile:w-36px mobile:h-36px">
                               <BaseImage
@@ -1507,7 +1509,7 @@ function FlavourFinderComponent(props: propsContent) {
                                 quality={100}
                               ></BaseImage>
                             </div>
-                            <div className="ml-10px font-AlbertusNova-Regular text-black whitespace-nowrap text-30px pad:text-21px mobile:text-16px">
+                            <div className="ml-25px font-AlbertusNova-Regular text-black whitespace-nowrap text-30px pad:text-21px mobile:text-16px">
                               {
                                 data.quizs.q3.step1.answers[
                                   quizThreeSelected1 - 1

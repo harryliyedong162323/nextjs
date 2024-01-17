@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCreative, Parallax } from 'swiper/modules';
 import "swiper/css";
 
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   pageNumber: number;
   currentPageNumber: number;
@@ -33,7 +33,7 @@ interface entryContent {
   }
 }
 
-export interface propsContent {
+interface propsContent {
   getPageStore:Function,
   updatePageStore:Function,
   changeNavStatus: Function;
@@ -45,14 +45,23 @@ export interface propsContent {
     type: string;
   };
 }
-
+interface SwiperContent {
+  width:number,
+  slideToLoop(index: number, speed?: number,flag?:boolean):void;
+  slideNext(): void;
+  slidePrev(): void;
+  slideTo(index: number, speed?: number): void;
+  update(): void;
+  destroy(deleteInstance?: boolean, cleanStyles?: boolean): void;
+  // 其他 Swiper 相关的属性和方法
+}
 function StoryOpeningComponent(props: propsContent) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState<entryContent>(props.data.entry);
 
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
-  const [swiper, setSwiper] = useState<any>(null);
+  const [swiper, setSwiper] = useState<SwiperContent | null>(null);
 
   const parallaxAmount = swiper ? swiper.width * 1 : 0;
 
@@ -69,7 +78,7 @@ function StoryOpeningComponent(props: propsContent) {
   const scrollTo = useCallback(
     (index: number) => {
       setCurrentIndex(index);
-      swiper.slideToLoop(index, 500, true);
+      swiper?.slideToLoop(index, 500, true);
     },
     [swiper]
   );

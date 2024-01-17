@@ -1,76 +1,159 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import React, {
-  useEffect,
-  useState,
-  useCallback,
-  Suspense,
-  useRef,
-} from "react";
-// import ReactFullpage from '@fullpage/react-fullpage';
+import React, { useEffect, useState } from "react";
+
 import { ISlideConfig, PageSlides, SlideParallaxType } from "react-page-slides";
 import FullPageSwiper from "./fullPageSwiper";
-import { getHash } from "@/utils/common";
+
 import { useParams } from "next/navigation";
-import Header from "@/components/layout/header";
-import Footer, {
-  propsContent as FooterPropsContent,
-} from "@/components/layout/footer";
+
+import Header, { headerDataContent } from "@/components/layout/header";
+import Footer, { footerDataContent } from "@/components/layout/footer";
 import RangeNav from "@/components/layout/rangeNav";
 
-import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
+import GlobalCampaigns, {
+  entryContent as GlobalCampaignsEntryContent,
+} from "@/components/page/globalCampaignsComponent";
 import InteractiveVideo, {
-  propsContent as InteractiveVideoPropsContent,
+  entryContent as interactiveVideoEntryContent,
 } from "@/components/page/interactiveVideoComponent";
 import IntroduceCampaign, {
-  propsContent as IntroduceCampaignPropsContent,
+  entryContent as introduceCampaignEntryContent,
 } from "@/components/page/introduceCampaignComponent";
-import HeroBanner from "@/components/page/heroBannerComponent";
-import KVAnimation from "@/components/page/KVAnimationComponent";
+
+import KVAnimation, {
+  entryContent as KVAnimationEntryContent,
+} from "@/components/page/KVAnimationComponent";
 import NearYou, {
-  propsContent as NearYouPropsContent,
+  entryContent as NearYouEntryContent,
 } from "@/components/page/nearYouComponent";
 import VIPClub, {
-  propsContent as VIPClubPropsContent,
+  entryContent as VIPClubEntryContent,
 } from "@/components/page/VIPClubComponent";
 import ProductFamily, {
-  propsContent as ProductFamilyPropsContent,
+  entryContent as ProductFamilyEntryContent,
 } from "@/components/page/productFamilyComponent";
-import Quote from "@/components/page/quoteComponent";
-import TextBlock from "@/components/page/textBlockComponent";
-import StoryOpening from "@/components/page/storyOpeningComponent";
-import StoryChapterOne from "@/components/page/storyChapterOneComponent";
-import StoryChapterTwo from "@/components/page/storyChapterTwoComponent";
-import StoryChapterThree from "@/components/page/storyChapterThreeComponent";
-import StoryChapterFour from "@/components/page/storyChapterFourComponent";
-import StoryChapterFive from "@/components/page/storyChapterFiveComponent";
-import StoryChapterSix from "@/components/page/storyChapterSixComponent";
-import StoryChapterEnd from "@/components/page/storyChapterEndComponent";
-import ActivityDetail from "@/components/page/activityDetailComponent";
-import StoriesDetail from "@/components/page/storiesDetailComponent";
-import TalesFromTheWild from "@/components/page/talesFromTheWildComponent";
-import ServingSuggestion from "@/components/page/servingSuggestionComponent";
-import FlavourFinder from "@/components/page/flavourFinderComponent";
-import BottleConcept from "@/components/page/bottleConceptComponent";
-import LocationMap from "@/components/page/locationMapComponent";
-import LocationInfo from "@/components/page/locationInfoComponent";
-import IRLExperiences from "@/components/page/IRLExperiencesComponent";
+
+import StoryOpening, {
+  entryContent as StoryOpeningEntryContent,
+} from "@/components/page/storyOpeningComponent";
+import StoryChapterOne, {
+  entryContent as StoryChapterOneEntryContent,
+} from "@/components/page/storyChapterOneComponent";
+import StoryChapterTwo, {
+  entryContent as StoryChapterTwoEntryContent,
+} from "@/components/page/storyChapterTwoComponent";
+import StoryChapterThree, {
+  entryContent as StoryChapterThreeEntryContent,
+} from "@/components/page/storyChapterThreeComponent";
+import StoryChapterFour, {
+  entryContent as StoryChapterFourEntryContent,
+} from "@/components/page/storyChapterFourComponent";
+import StoryChapterFive, {
+  entryContent as StoryChapterFiveEntryContent,
+} from "@/components/page/storyChapterFiveComponent";
+import StoryChapterSix, {
+  entryContent as StoryChapterSixEntryContent,
+} from "@/components/page/storyChapterSixComponent";
+import StoryChapterEnd, {
+  entryContent as StoryChapterEndEntryContent,
+} from "@/components/page/storyChapterEndComponent";
+import ActivityDetail, {
+  entryContent as ActivityDetailEntryContent,
+} from "@/components/page/activityDetailComponent";
+import StoriesDetail, {
+  entryContent as StoriesDetailEntryContent,
+} from "@/components/page/storiesDetailComponent";
+import TalesFromTheWild, {
+  entryContent as TalesFromTheWildEntryContent,
+} from "@/components/page/talesFromTheWildComponent";
+import ServingSuggestion, {
+  entryContent as ServingSuggestionEntryContent,
+} from "@/components/page/servingSuggestionComponent";
+import FlavourFinder, {
+  propsContent as FlavourFinderEntryContent,
+} from "@/components/page/flavourFinderComponent";
+import BottleConcept, {
+  entryContent as BottleConceptEntryContent,
+} from "@/components/page/bottleConceptComponent";
+import LocationInfo, {
+  entryContent as LocationInfoEntryContent,
+} from "@/components/page/locationInfoComponent";
+import IRLExperiences, {
+  entryContent as IRLExperiencesEntryContent,
+} from "@/components/page/IRLExperiencesComponent";
 import DigitalExperience, {
-  propsContent as DigitalExperiencePropsContent,
+  entryContent as DigitalExperienceEntryContent,
 } from "@/components/page/digitalExperienceComponent";
 import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
-import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
+import HowToBuyDetail, {
+  entryContent as HowToBuyDetailEntryContent,
+} from "@/components/page/howToBuyDetailComponent";
 import Popup from "./popup";
+
+const checkComponentType = (componentName: string) => {
+  let constraintType: string = "";
+  switch (componentName) {
+    case "interactiveVideoComponent":
+      constraintType = "interactiveVideoEntryContent";
+      break;
+    case "introduceCampaignComponent":
+      constraintType = "introduceCampaignEntryContent";
+      break;
+    default:
+      break;
+  }
+
+  return constraintType;
+};
 
 import { TrackingType, TrackingTypeContent } from "@/utils/analytics";
 
+interface componentContent {
+  entry: CombinedInterface;
+  name: string;
+  type: string;
+  isFullPage: boolean;
+}
+interface CombinedInterface
+  extends interactiveVideoEntryContent,
+    introduceCampaignEntryContent,
+    GlobalCampaignsEntryContent,
+    KVAnimationEntryContent,
+    NearYouEntryContent,
+    VIPClubEntryContent,
+    ProductFamilyEntryContent,
+    StoryOpeningEntryContent,
+    StoryChapterOneEntryContent,
+    StoryChapterTwoEntryContent,
+    StoryChapterThreeEntryContent,
+    StoryChapterFourEntryContent,
+    StoryChapterFiveEntryContent,
+    StoryChapterSixEntryContent,
+    StoryChapterEndEntryContent,
+    ActivityDetailEntryContent,
+    StoriesDetailEntryContent,
+    TalesFromTheWildEntryContent,
+    ServingSuggestionEntryContent,
+    FlavourFinderEntryContent,
+    BottleConceptEntryContent,
+    LocationInfoEntryContent,
+    IRLExperiencesEntryContent,
+    DigitalExperienceEntryContent,
+    HowToBuyDetailEntryContent {
+  entry: {
+    currentPageNumber: number;
+  };
+}
+
 function getComponent(
-  data: any,
+  data: componentContent,
   k: number,
   currentSlug: string,
   TrackingType: TrackingTypeContent,
   scrollToPage: Function,
   changeNavStatus: Function,
+  changeNavSubmit: Function,
   updatePageStore: Function,
   getPageStore: Function
 ) {
@@ -80,49 +163,30 @@ function getComponent(
     TrackingType,
     scrollToPage,
     changeNavStatus,
+    changeNavSubmit,
     updatePageStore,
     getPageStore,
   };
-
   switch (data.name) {
     /** public components **/
 
     case "globalCampaignsComponent":
       return <GlobalCampaigns key={k} {...props} />;
     case "interactiveVideoComponent":
-      return (
-        <InteractiveVideo
-          key={k}
-          {...(props as InteractiveVideoPropsContent)}
-        />
-      );
+      return <InteractiveVideo key={k} {...props} />;
     case "introduceCampaignComponent":
-      return (
-        <IntroduceCampaign
-          key={k}
-          {...(props as IntroduceCampaignPropsContent)}
-        />
-      );
+      return <IntroduceCampaign key={k} {...props} />;
 
     /** page components  **/
 
-    case "heroBannerComponent":
-      return <HeroBanner key={k} {...props} />;
     case "KVAnimationComponent":
       return <KVAnimation key={k} {...props} />;
     case "nearYouComponent":
-      return <NearYou key={k} {...(props as NearYouPropsContent)} />;
+      return <NearYou key={k} {...props} />;
     case "VIPClubComponent":
-      return <VIPClub key={k} {...(props as VIPClubPropsContent)} />;
+      return <VIPClub key={k} {...props} />;
     case "productFamilyComponent":
-      return (
-        <ProductFamily key={k} {...(props as ProductFamilyPropsContent)} />
-      );
-    case "quoteComponent":
-      return <Quote key={k} {...props} />;
-    case "textBlockComponent":
-      return <TextBlock key={k} {...props} />;
-
+      return <ProductFamily key={k} {...props} />;
     case "storyOpeningComponent":
       return <StoryOpening key={k} {...props} />;
     case "storyChapterOneComponent":
@@ -139,12 +203,10 @@ function getComponent(
       return <StoryChapterSix key={k} {...props} />;
     case "storyChapterEndComponent":
       return <StoryChapterEnd key={k} {...props} />;
-
     case "ActivityDetailComponent":
       return <ActivityDetail key={k} {...props} />;
     case "StoriesDetailComponent":
       return <StoriesDetail key={k} {...props} />;
-
     case "talesFromTheWildComponent":
       return <TalesFromTheWild key={k} {...props} />;
     case "servingSuggestionComponent":
@@ -153,20 +215,14 @@ function getComponent(
       return <FlavourFinder key={k} {...props} />;
     case "bottleConceptComponent":
       return <BottleConcept key={k} {...props} />;
-
-    case "locationMapComponent":
-      return <LocationMap key={k} {...props} />;
+    // case "locationMapComponent":
+    //   return <LocationMap key={k} {...props} />;
     case "locationInfoComponent":
       return <LocationInfo key={k} {...props} />;
     case "IRLExperiencesComponent":
       return <IRLExperiences key={k} {...props} />;
     case "digitalExperienceComponent":
-      return (
-        <DigitalExperience
-          key={k}
-          {...(props as DigitalExperiencePropsContent)}
-        />
-      );
+      return <DigitalExperience key={k} {...props} />;
     case "privacyPolicyComponent":
       return <PrivacyPolicy key={k} {...props} />;
     case "howToBuyDetailComponent":
@@ -176,14 +232,44 @@ function getComponent(
   }
 }
 
-function FullPage(props: any) {
-  const footerData: FooterPropsContent = props.footerData;
+interface propsContent {
+  data: dataPageContent;
+  footerData: footerDataContent;
+  headerData: headerDataContent;
+}
+interface dataPageContent {
+  type: string;
+  name: string;
+  rangeNav?: boolean;
+  rangeNavData?: boolean;
+  entry: {
+    headStyle?: string;
+    freeMode?: boolean;
+    children: Array<CombinedInterface>;
+  };
+}
+
+interface pageComponentsContent {
+  [key: string]: any;
+}
+interface pageStoreContent {
+  name?: string;
+  content?: object;
+  data?: object;
+}
+
+function FullPage(props: propsContent) {
+  // console.log(props);
+
+  const footerData: footerDataContent = props.footerData;
   const headerData = props.headerData;
   const params = useParams();
   const [currentSlug, setCurrentSlug] = useState(params.slug[0]);
   const [currentScroll, setCurrentScroll] = useState("");
 
-  const [pageStore, setPageStore] = useState([] as any);
+  const [pageStore, setPageStore] = useState(
+    [] as Array<pageComponentsContent>
+  );
 
   const [isBrowser, setIsBrowser] = useState(false);
   const [slideFlag, setSliderFlag] = useState(true);
@@ -195,13 +281,14 @@ function FullPage(props: any) {
   // range nav
   const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav);
   const [isShowRangeNav, setIsShowRangeNav] = useState(true);
+  const [submit, setSubmit] = useState("");
   const [rangeNavData, setRangeNavData] = useState(props.data?.rangeNavData);
   const [canScroll, setCanScroll] = useState<boolean>(true);
 
   // Debug Func
   function getHashParams() {
     interface HashParams {
-      [key: string]: any;
+      [key: string]: string;
     }
     var hash = window.location.hash.substr(1); // 获取URL中的哈希部分（不包括#符号）
     var params = hash.split("&"); // 将哈希参数字符串分割成数组
@@ -236,12 +323,12 @@ function FullPage(props: any) {
 
   const pageComponents = props.data.entry.children;
 
-  const updatePageStore = (pageName: any, content: any, cb: any) => {
+  const updatePageStore = (pageName: string, content: object, cb: Function) => {
     setPageStore([
       ...pageStore,
       pageStore
-        .filter((page: any) => page.name == pageName)
-        .map((item: any) => {
+        .filter((page: pageStoreContent) => page.name == pageName)
+        .map((item: pageStoreContent) => {
           item.data = {
             ...item.data,
             ...content,
@@ -255,14 +342,16 @@ function FullPage(props: any) {
 
   const getPageStore = (pageName?: string) => {
     if (pageName) {
-      return pageStore.filter((item: any) => item.name == pageName)[0];
+      return pageStore.filter(
+        (item: pageStoreContent) => item.name == pageName
+      )[0];
     }
     return pageStore;
   };
 
   useEffect(() => {
-    let tmpPageStore: any = [];
-    props.data.entry.children.forEach((item: any) => {
+    let tmpPageStore: Array<pageStoreContent> = [];
+    props.data.entry.children.forEach((item: pageStoreContent) => {
       tmpPageStore.push({
         name: item.name,
         data: {},
@@ -280,7 +369,9 @@ function FullPage(props: any) {
   const changeNavStatus = (status: boolean) => {
     setIsShowRangeNav(status);
   };
-
+  const changeNavSubmit = (str: string) => {
+    setSubmit(str);
+  };
   const onScroll = (event: React.WheelEvent<HTMLDivElement>) => {
     if (!canScroll) {
       event.stopPropagation();
@@ -327,6 +418,7 @@ function FullPage(props: any) {
               TrackingType,
               scrollToPage,
               changeNavStatus,
+              changeNavSubmit,
               updatePageStore,
               getPageStore
             )}
@@ -401,52 +493,22 @@ function FullPage(props: any) {
     setTimeout(() => {
       setCanScroll(true);
     }, 1500);
-    pageComponents.map((item: any) => (item.entry.currentPageNumber = e));
+    pageComponents.map(
+      (item: CombinedInterface) => (item.entry.currentPageNumber = e)
+    );
 
-    const nav: any = document.getElementById("nav");
+    // const nav = document.getElementById("nav") as HTMLInputElement;
 
     setHeadStyle(e);
   };
 
   return (
     <div>
-      {/*好用但要收费*/}
-      {/*<ReactFullpage*/}
-      {/*    //fullpage options*/}
-      {/*    credits={{*/}
-      {/*        enabled:true,*/}
-      {/*        label:'fuck',*/}
-      {/*        position: "left"*/}
-      {/*    }}*/}
-      {/*    //fullpage options*/}
-      {/*    licenseKey = {''}*/}
-      {/*    scrollingSpeed = {1000} */}
-      {/*    scrollHorizontally = {true}  */}
-      {/*    scrollHorizontallyKey = {''}*/}
-      {/*    render={({ state, fullpageApi }) => {*/}
-      {/*        return (*/}
-      {/*            <ReactFullpage.Wrapper>*/}
-
-      {/*                {pageComponents.map((data:any, k:number)=>{*/}
-      {/*                    return(*/}
-      {/*                        <div className="section" key={k}>*/}
-      {/*                            {getComponent(data, k)}*/}
-      {/*                        </div>*/}
-      {/*                    )*/}
-      {/*                })}*/}
-
-      {/*            </ReactFullpage.Wrapper>*/}
-      {/*        );*/}
-      {/*    }}*/}
-      {/* />*/}
-      {/*currentSlideIndex={2}*/}
-
       <Header
         scrollToPage={scrollToPage}
         currentSlideIndex={currentSlideIndex}
         data={headerData}
       ></Header>
-
       {isBrowser == true ? (
         <div>
           <FullPageSwiper
@@ -454,11 +516,12 @@ function FullPage(props: any) {
             transitionSpeed={1500}
             currentSlideIndex={currentSlideIndex}
             slides={slides}
+            freeMode={!!props.data.entry.freeMode}
             parallax={{
               offset: 0.6, //0.6
               type: SlideParallaxType.reveal,
             }}
-            onChange={(e: any) => {
+            onChange={(e: number) => {
               handleSlideChange(e);
             }}
           />
@@ -482,8 +545,10 @@ function FullPage(props: any) {
           currentSlideIndex={currentSlideIndex}
           scrollToPage={scrollToPage}
           isShowRangeNav={isShowRangeNav}
+          submit={submit}
           onChangeStatus={changeNavStatus}
-          {...rangeNavData}
+          onChangeSubmit={changeNavSubmit}
+          rangeNavData={rangeNavData}
         ></RangeNav>
       )}
 

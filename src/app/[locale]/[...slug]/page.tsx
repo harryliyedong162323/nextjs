@@ -1,7 +1,5 @@
 import HeaderDao from '@/dao/headerDao'
 import FooterDao from '@/dao/footerDao'
-
-
 import HomeDao from "@/dao/homeDao";
 import StoryDao from "@/dao/storyDao";
 import activityDetailDao from "@/dao/activityDetailDao";
@@ -12,143 +10,143 @@ import HowToBuyDetailDao from "@/dao/howToBuyDetailDao";
 import LocalMarketActivityDao from "@/dao/localMarketActivityDao";
 import PrivacyPolicyDao from '@/dao/privacyPolicyDao'
 import ErrorDao from '@/dao/errorDao'
-import React, { Suspense } from "react";
+import React, {Suspense} from "react";
 import dynamic from "next/dynamic";
 
 //layout
-import Header from '@/components/layout/header';
-import Footer,{propsContent as FooterPropsContent} from "@/components/layout/footer";
+import Header, {headerDataContent} from '@/components/layout/header';
+import Footer, {footerDataContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
 
 const Analytics = dynamic(() => import(`@/components/layout/analytics`), {
-  suspense: true,
+    suspense: true,
 });
+
 function capitalizeFirstLetter(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function getDynamicComponent(data: any, k:number,footerData:FooterPropsContent,headerData:any) {
-  const props = { data : data,footerData:footerData,headerData };
+function getDynamicComponent(data: componentsDataContent, k: number, footerData: footerDataContent, headerData: headerDataContent) {
+    const props = {data: data, footerData: footerData, headerData};
 
-  const Component = dynamic(() => import(`@/components/page/${data.name}`), {
-    suspense: true,
-  });
-  const FullPage = dynamic(() => import(`@/components/layout/${data.name}`), {
-    suspense: true,
-  });
+    const Component:React.ComponentType<{}> = dynamic(() => import(`@/components/page/${data.name}`), {
+        suspense: true,
+    });
+    const FullPage:React.ComponentType<{}> = dynamic(() => import(`@/components/layout/${data.name}`), {
+        suspense: true,
+    });
 
-  return data.name == 'fullPage' ? <FullPage key={k} {...props}  /> : <Component key={k} {...props} />;
+    return data.name == 'fullPage' ? <FullPage key={k} {...props}  /> : <Component key={k} {...props} />;
 }
 
-
-
-async function getPageData(params: any) {
-  // params should be paased to fetch()
-  console.log(params)
-  let result = {}
-  switch (params?.slug[0]) {
-    case "home":
-      result = await HomeDao.fetch();
-      break;
-    case "story":
-      result = await StoryDao.fetch();
-      break;
-    case "activityDetail":
-      result = await activityDetailDao.fetch(params?.slug[1]);
-      break;
-    case "storiesDetail":
-      result = await storiesDetailDao.fetch(params?.slug[1]);
-      break;
-    case "range":
-      result = await RangeDao.fetch();
-      break;
-    case "howToBuy":
-      result = await HowToBuyDao.fetch();
-      break;
-    case "howToBuyDetail":
-      result = await HowToBuyDetailDao.fetch(params?.slug[1]);
-      break;
-    case "localMarketActivity":
-      result = await LocalMarketActivityDao.fetch();
-      break;
-    case "privacyPolicy":
-      result = await PrivacyPolicyDao.fetch();
-      break;
-    case "error":
-      result = await ErrorDao.fetch();
-      break;
-    default:
-      result = await HomeDao.fetch();
-      break;
-  }
-
-
-  // console.log(res);
-
-  return result;
+interface paramsContent {
+    slug: Array<string>
 }
 
+async function getPageData(params: paramsContent) {
+    // params should be paased to fetch()
+    console.log(params)
+    let result = {}
+    switch (params?.slug[0]) {
+        case "home":
+            result = await HomeDao.fetch();
+            break;
+        case "story":
+            result = await StoryDao.fetch();
+            break;
+        case "activityDetail":
+            result = await activityDetailDao.fetch(params?.slug[1]);
+            break;
+        case "storiesDetail":
+            result = await storiesDetailDao.fetch(params?.slug[1]);
+            break;
+        case "range":
+            result = await RangeDao.fetch();
+            break;
+        case "howToBuy":
+            result = await HowToBuyDao.fetch();
+            break;
+        case "howToBuyDetail":
+            result = await HowToBuyDetailDao.fetch(params?.slug[1]);
+            break;
+        case "localMarketActivity":
+            result = await LocalMarketActivityDao.fetch();
+            break;
+        case "privacyPolicy":
+            result = await PrivacyPolicyDao.fetch();
+            break;
+        case "error":
+            result = await ErrorDao.fetch();
+            break;
+        default:
+            result = await HomeDao.fetch();
+            break;
+    }
 
-
-
-
-
+    return result;
+}
 
 
 // export const revalidate:boolean = false
 
-export default async function Page({
-  params,
-}: {
-  params: { locale: string; slug: string[] };
-}) {
-  // init ga
-  // initGA();
-  // send page
-  // logPageView(`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : "" }`);
-  const data: any = await getPageData(params);
-  const footerData: FooterPropsContent = await FooterDao.fetch();
-  const headerData: any = await HeaderDao.fetch();
 
-  // const footerData: any = await FooterDao.fetch();
+interface dataPageContent{
+    type:string,
+    name:string,
+    entry:{
+        headStyle?:string,
+        children?: Array<object>;
+    }
+}
 
-  let componentsData: any[] = [];
+interface componentsDataContent{
+    type:string,
+    name:string,
+    entry:{
+        headStyle?:string
+    }
+}
 
-  data.forEach((componentData: any, i: number) => {
-    componentsData.push(componentData);
-  });
+export default async function Page({params}: { params: { locale: string; slug: string[] }}) {
 
-  let isFullPageFlag:boolean = componentsData[0].type != 'fullPage' ? true : false;
+    const data:dataPageContent[] = await getPageData(params) as dataPageContent[];
 
+    const footerData: footerDataContent = await FooterDao.fetch();
+    const headerData: headerDataContent = await HeaderDao.fetch();
 
-  return (
-      // className="w-[1920px] mx-auto relative"
-    <div>
+    let componentsData: Array<componentsDataContent> = [];
 
+    data.forEach((componentData: componentsDataContent, i: number) => {
+        componentsData.push(componentData);
+    });
 
-
-
-      {
-
-
-
-        isFullPageFlag ?  <Header headStyle={componentsData[0].entry.headStyle} data={headerData} ></Header> : null
-      }
-
-      <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Analytics pageView={`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : "" }`}></Analytics>
-          {componentsData.map((data, k) => (
-              getDynamicComponent(data, k, footerData, headerData)
-          ))}
-        </Suspense>
-      </main>
-      {
-        isFullPageFlag ?  <Footer data={footerData}></Footer> : null
-      }
-      <Popup></Popup>
-    </div>
+    let isFullPageFlag: boolean = componentsData[0].type != 'fullPage' ? true : false;
 
 
-  );
+    return (
+
+        <div>
+
+            {
+                isFullPageFlag ?
+                    <Header headStyle={componentsData[0].entry.headStyle}  data={headerData}></Header> : null
+            }
+
+            <main>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Analytics
+                        pageView={`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : ""}`}></Analytics>
+                    {componentsData.map((data, k) => (
+                        getDynamicComponent(data, k, footerData, headerData)
+                    ))}
+                </Suspense>
+            </main>
+            {
+                isFullPageFlag ? <Footer data={footerData}></Footer> : null
+            }
+            <Popup></Popup>
+        </div>
+
+
+    );
 }

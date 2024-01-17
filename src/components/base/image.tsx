@@ -48,7 +48,7 @@ class BaseImage extends Component<propsContent,State>{
         ready:false,
     };
 
-    constructor(props:any) {
+    constructor(props:propsContent) {
         super(props);
         // console.log(this.state.name)
         // this.init();

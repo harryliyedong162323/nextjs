@@ -5,7 +5,7 @@ import BaseImage from "@/components/base/image";
 import BaseVideo from "@/components/base/video";
 import BaseLink from "../base/link";
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   interactiveVideoComponentIsShow: boolean;
   interactiveVideoComponentTitle: string;
@@ -31,7 +31,7 @@ interface entryContent {
   };
 }
 import { TrackingTypeContent } from "@/utils/analytics";
-export interface propsContent {
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;

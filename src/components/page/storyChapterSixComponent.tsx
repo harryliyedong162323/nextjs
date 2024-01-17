@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import BaseImage from "../base/image";
 
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   pageNumber: number;
   currentPageNumber: number;
@@ -25,7 +25,7 @@ interface entryContent {
   };
 }
 
-export interface propsContent {
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;

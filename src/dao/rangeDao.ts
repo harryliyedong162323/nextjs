@@ -91,7 +91,7 @@ query {
     servingSuggestion:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
         items {
             servingSuggestionComponentTitle
-            productFamilyComponentProductsCollection(limit:10, order:id_ASC, locale: "en") {
+            productFamilyComponentProducts:productFamilyComponentProductsCollection(limit:10, order:id_ASC, locale: "en") {
                 items {
                     id
                     productName

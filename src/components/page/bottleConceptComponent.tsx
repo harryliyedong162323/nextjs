@@ -8,9 +8,9 @@ import Draggable from "react-draggable";
 // import dynamic from 'next/dynamic';
 // const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false });
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
-  isFullPage?: boolean;
+  isFullPage: boolean;
   pageNumber: number;
   currentPageNumber: number;
   bottleConceptComponentTitle: string;
@@ -27,7 +27,7 @@ interface entryContent {
   };
 }
 import { TrackingTypeContent } from "@/utils/analytics";
-export interface propsContent {
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;

@@ -9,7 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import ReactGA from "react-ga4";
 
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   currentPageNumber: number;
   pageNumber: number;
@@ -67,7 +67,7 @@ interface StoryCollection {
         }>
       }>
     };
-    links: any;
+    links: string;
   };
   image?: {
     imagepc: {
@@ -105,7 +105,7 @@ function StoriesDetailComponent(props: propsContent) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const onChangeScroll = useCallback(
-    (emblaApi: { selectedScrollSnap: () => any }) => {
+    (emblaApi: { selectedScrollSnap: () => number }) => {
       setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
     },
     []
@@ -150,7 +150,7 @@ function StoriesDetailComponent(props: propsContent) {
       <div className="pl-33px pr-33px mobile:pt-100px mobile:pl-0 mobile:pr-0">
         <div className="hidden mobile:block">
           <div className="uppercase pl-25px pr-25px text-center pt-18px pb-33px text-20px font-AlbertusNova-Bold mobile:w-[80%] mobile:mx-auto mobile:pt-18px mobile:pb-33px">
-          { data?.storiesDetailComponentTitle } 
+          { data?.storiesDetailComponentTitle }
           </div>
 
           <div className="h-253px relative w-full mobile:h-253px">
@@ -189,9 +189,18 @@ function StoriesDetailComponent(props: propsContent) {
             return <>
             { item.__typename === "DataKolDetailMultipleContent" && <>
               <div key={key} className="text-dark-grey pl-53px pr-53px pb-67px text-22px color-dark-grey font-normal leading-[2em] font-Grotesque-Regular mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:pb-20px mobile:leading-[2em] mobile:flex mobile:flex-wrap">
-                  { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                  { item.contentText?.json.content.map((paragraph: {
+                    nodeType: string;
+                    content: Array<{
+                      nodeType: string;
+                      value: string;
+                    }>
+                  }, key2: number) => {
                     {
-                      return paragraph.content.map((row:any, key3:number) => {
+                      return paragraph.content.map((row:{
+                        nodeType: string;
+                        value: string;
+                      }, key3:number) => {
                         return <>
                           <p key={key3} className="mobile:order-2 mobile:pb-20px">
                           { row.value }
@@ -209,7 +218,15 @@ function StoriesDetailComponent(props: propsContent) {
                 >
                   <div className="flex">
                     {
-                      item.imagesCollection?.items.map((image: any, key2:number) => {
+                      item.imagesCollection?.items.map((image: {
+                        imagepc: {
+                          url: string;
+                        };
+                        imagemobile: {
+                          url: string;
+                        };
+                        altText: string;
+                      }, key2:number) => {
                         return (
                           <div key={key2} className="flex-grow-0 flex-shrink-0 basis-full relative h-800px">
                             <BaseImage
@@ -226,7 +243,15 @@ function StoriesDetailComponent(props: propsContent) {
                     }
                   </div>
                   <div className="absolute bottom-83px w-full flex items-center justify-center mobile:bottom-50px mobile:scale-50">
-                    {item.imagesCollection?.items.map((item: any, index:number) => {
+                    {item.imagesCollection?.items.map((item: {
+                      imagepc: {
+                        url: string;
+                      };
+                      imagemobile: {
+                        url: string;
+                      };
+                      altText: string;
+                    }, index:number) => {
                       return (
                         <div
                           key={index}
@@ -258,9 +283,18 @@ function StoriesDetailComponent(props: propsContent) {
                     <div className="color-dark-grey text-27px font-normal pb-33px font-AlbertusNova-Regular mobile:text-center mobile:text-16px mobile:pb-20px mobile:pt-20px">
                       { item.contentTitle }
                     </div>
-                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                    { item.contentText?.json.content.map((paragraph: {
+                      nodeType: string;
+                      content: Array<{
+                        nodeType: string;
+                        value: string;
+                      }>
+                    }, key2: number) => {
                       {
-                        return paragraph.content.map((row:any, key3:number) => {
+                        return paragraph.content.map((row:{
+                          nodeType: string;
+                          value: string;
+                        }, key3:number) => {
                           return <>
                             <p key={key3} className="color-dark-grey font-Grotesque-Regular text-22px font-normal leading-[2em] mobile:pl-25px mobile:pr-25px mobile:pb-30px mobile:text-14px mobile:leading-[2em]">
                             { row.value }
@@ -304,9 +338,18 @@ function StoriesDetailComponent(props: propsContent) {
                       { item.title }
                     </div>
                     <div className=" pr-33px text-22px font-normal font-Grotesque-Regular text-dark-grey leading-[2em]  mobile:text-14px mobile:leading-[2em]  mobile:pr-0  mobile:w-full">
-                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                    { item.contentText?.json.content.map((paragraph: {
+                      nodeType: string;
+                      content: Array<{
+                        nodeType: string;
+                        value: string;
+                      }>
+                    }, key2: number) => {
                       {
-                        return paragraph.content.map((row:any, key3:number) => {
+                        return paragraph.content.map((row:{
+                          nodeType: string;
+                          value: string;
+                        }, key3:number) => {
                           return <>
                             <p key={key3}>
                             { row.value }
@@ -325,9 +368,18 @@ function StoriesDetailComponent(props: propsContent) {
                     <div className="flex-shrink-0 pr-33px pb-33px text-27px font-normal font-AlbertusNova-Regular">
                       { item.contentTitle }
                     </div>
-                    { item.contentText?.json.content.map((paragraph: any, key2: number) => {
+                    { item.contentText?.json.content.map((paragraph: {
+                      nodeType: string;
+                      content: Array<{
+                        nodeType: string;
+                        value: string;
+                      }>
+                    }, key2: number) => {
                       {
-                        return paragraph.content.map((row:any, key3:number) => {
+                        return paragraph.content.map((row:{
+                          nodeType: string;
+                          value: string;
+                        }, key3:number) => {
                           return <>
                             <p key={key3} className="text-22px font-normal font-Grotesque-Regular color-dark-grey leading-[2em]">
                             { row.value }

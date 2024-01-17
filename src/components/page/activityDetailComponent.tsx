@@ -7,7 +7,7 @@ import BaseVideo from "@/components/base/video";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import ReactGA from "react-ga4";
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   currentPageNumber: number;
   pageNumber: number;
@@ -45,7 +45,7 @@ interface Collection {
         }>;
       }>;
     };
-    links: any;
+    links: string;
   };
   image?: {
     imagepc: {
@@ -83,7 +83,7 @@ function ActivityDetailComponent(props: propsContent) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const onChangeScroll = useCallback(
-    (emblaApi: { selectedScrollSnap: () => any }) => {
+    (emblaApi: { selectedScrollSnap: () => number }) => {
       setCurrentIndex(emblaApi?.selectedScrollSnap() || 0);
     },
     []
@@ -113,20 +113,31 @@ function ActivityDetailComponent(props: propsContent) {
       <div className="text-40px font-normal text-center w-[623px!ignore] mx-auto font-AlbertusNova-Regular pb-117px mobile:pl-45px mobile:pr-45px mobile:text-20px mobile:w-auto mobile:pb-40px uppercase">
         {data.activityDetailComponentTitle}
       </div>
-      {data.pageDetailCollection?.items.map((item: any, key: number) => {
+      {data.pageDetailCollection?.items.map((item: Collection, key: number) => {
         return (
           <>
             {item.__typename === "DataLocalMarketDetailMultipleContent" && (
               <>
                 <div
                   key={key}
+
+
                   className="text-dark-grey pl-53px pr-53px pb-67px text-22px color-dark-grey font-normal leading-[2em] font-Grotesque-Regular mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:pb-20px mobile:leading-[2em] mobile:flex mobile:flex-wrap"
                 >
                   {item.contentText?.json.content.map(
-                    (paragraph: any, key2: number) => {
+                    (paragraph: {
+                      nodeType: string;
+                      content: Array<{
+                        nodeType: string;
+                        value: string;
+                      }>
+                    }, key2: number) => {
                       {
                         return paragraph.content.map(
-                          (row: any, key3: number) => {
+                          (row: {
+                            nodeType: string;
+                            value: string;
+                          }, key3: number) => {
                             return (
                               <>
                                 <p
@@ -153,7 +164,15 @@ function ActivityDetailComponent(props: propsContent) {
                 >
                   <div className="flex">
                     {item.imagesCollection?.items.map(
-                      (image: any, key2: number) => {
+                      (image: {
+                        imagepc: {
+                          url: string;
+                        };
+                        imagemobile: {
+                          url: string;
+                        };
+                        altText: string;
+                      }, key2: number) => {
                         return (
                           <div
                             key={key2}
@@ -174,7 +193,15 @@ function ActivityDetailComponent(props: propsContent) {
                   </div>
                   <div className="absolute bottom-83px w-full flex items-center justify-center mobile:bottom-50px mobile:scale-50">
                     {item.imagesCollection?.items.map(
-                      (item: any, index: number) => {
+                      (item: {
+                        imagepc: {
+                          url: string;
+                        };
+                        imagemobile: {
+                          url: string;
+                        };
+                        altText: string;
+                      }, index: number) => {
                         return (
                           <div
                             key={index}
@@ -210,10 +237,19 @@ function ActivityDetailComponent(props: propsContent) {
                       {item.contentTitle}
                     </div>
                     {item.contentText?.json.content.map(
-                      (paragraph: any, key2: number) => {
+                      (paragraph: {
+                        nodeType: string;
+                        content: Array<{
+                          nodeType: string;
+                          value: string;
+                        }>
+                      }, key2: number) => {
                         {
                           return paragraph.content.map(
-                            (row: any, key3: number) => {
+                            (row: {
+                              nodeType: string;
+                              value: string;
+                            }, key3: number) => {
                               return (
                                 <>
                                   <p
@@ -267,10 +303,19 @@ function ActivityDetailComponent(props: propsContent) {
                     </div>
                     <div className=" pr-33px text-22px font-normal font-Grotesque-Regular text-dark-grey leading-[2em]  mobile:text-14px mobile:leading-[2em]  mobile:pr-0  mobile:w-full">
                       {item.contentText?.json.content.map(
-                        (paragraph: any, key2: number) => {
+                        (paragraph: {
+                          nodeType: string;
+                          content: Array<{
+                            nodeType: string;
+                            value: string;
+                          }>
+                        }, key2: number) => {
                           {
                             return paragraph.content.map(
-                              (row: any, key3: number) => {
+                              (row: {
+                                nodeType: string;
+                                value: string;
+                              }, key3: number) => {
                                 return (
                                   <>
                                     <p key={key3}>{row.value}</p>
@@ -294,10 +339,19 @@ function ActivityDetailComponent(props: propsContent) {
                       {item.contentTitle}
                     </div>
                     {item.contentText?.json.content.map(
-                      (paragraph: any, key2: number) => {
+                      (paragraph: {
+                        nodeType: string;
+                        content: Array<{
+                          nodeType: string;
+                          value: string;
+                        }>
+                      }, key2: number) => {
                         {
                           return paragraph.content.map(
-                            (row: any, key3: number) => {
+                            (row: {
+                              nodeType: string;
+                              value: string;
+                            }, key3: number) => {
                               return (
                                 <>
                                   <p

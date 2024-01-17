@@ -8,7 +8,7 @@ import { Parallax, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-interface entryContent {
+export interface entryContent {
   isFullPage: boolean;
   pageNumber: number;
   currentPageNumber: number;
@@ -51,7 +51,7 @@ interface entryContent {
   };
 }
 
-export interface propsContent {
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;

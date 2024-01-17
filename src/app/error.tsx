@@ -3,7 +3,7 @@
 import BaseImage from "@/components/base/image";
 import Link from "next/link";
 import { useState } from "react";
-import BaseLink from '@/components/base/link';
+import BaseLink from "@/components/base/link";
 
 interface ComponentData {
   id: number;
@@ -42,7 +42,18 @@ const Custom500 = () => {
         <div className="text-36px mobile:text-18px mb-20px">500</div>
         <div>OOPS! </div>
         <div className="mb-40px">SOMETHING WENT WRONG</div>
-        <BaseLink link="/home" className="uppercase bg-[url('/assets/back_home_btn.png')] inline-block bg-cover w-295px h-72px leading-[72px] text-center text-16px mobile:w-148px mobile:h-36px mobile:leading-[36px] mobile:text-12px">back home</BaseLink>
+        <BaseLink
+          link="/home"
+          className="uppercase hover:bg-[url('/assets/back_home_white.png')] hover:text-black bg-[url('/assets/back_home_btn.png')] inline-block bg-cover w-295px h-72px leading-[72px] text-center text-16px mobile:hidden "
+        >
+          back home
+        </BaseLink>
+        <BaseLink
+          link="/home"
+          className="hidden mobile:uppercase  mobile:block mobile:bg-[url('/assets/back_home_btn.png')] mobile:inline-block mobile:bg-cover  mobile:text-center mobile:w-148px mobile:h-36px mobile:leading-[36px] mobile:text-12px"
+        >
+          back home
+        </BaseLink>
       </div>
     </section>
   );

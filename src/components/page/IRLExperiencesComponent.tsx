@@ -9,17 +9,25 @@ import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 
-interface propsContent {
+export interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  stores?: any;
+  // stores?: Array<locationInfoStore>;
   data: {
-    entry: any;
+    entry: entryContent;
     name: string;
     type: string;
   };
+}
+
+export interface entryContent {
+  storeList: Array<locationInfoStore>;
+  pageNumber: number;
+  isFullPage: boolean;
+  headStyle: string;
+  currentPageNumber: number;
 }
 
 interface locationInfoStore {
@@ -54,17 +62,26 @@ interface locationInfoStore {
   howToBuyJumpUrl: string;
   showInHowToBuyIrl: boolean;
 }
-
+interface SwiperContent {
+  slideNext(): void;
+  slidePrev(): void;
+  slideTo(index: number, speed?: number): void;
+  update(): void;
+  destroy(deleteInstance?: boolean, cleanStyles?: boolean): void;
+  // 其他 Swiper 相关的属性和方法
+}
 function IRLExperiencesComponent(props: propsContent) {
   const getPageStore = props.getPageStore;
-  const stores = props.data.entry.stores;
+  const stores = props.data.entry.storeList;
   const headStyle = props.data.entry.headStyle;
   // const block1Image = props.data.entry.fields.block1Image.sys.fields;
-  const [currentStore, setCurrentStore] = useState<any>([]);
+  const [currentStore, setCurrentStore] = useState<Array<locationInfoStore>>(
+    []
+  );
 
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
   const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
-  const [pageSwiper, setPageSwiper] = useState<any>(null);
+  const [pageSwiper, setPageSwiper] = useState<SwiperContent | null>(null);
   const [swiperHeight, setSwiperHeight] = useState(window.innerHeight);
 
   useEffect(() => {
@@ -109,7 +126,7 @@ function IRLExperiencesComponent(props: propsContent) {
   }, [isFullPage, props]);
 
   const filterStore = (id: number) => {
-    return stores.filter((item: any) => {
+    return stores.filter((item: locationInfoStore) => {
       if (
         item.howToBuyDetailComponentRegion.regionId == id &&
         (item.howToBuyIrlSort == 1 || item.howToBuyIrlSort == 2)

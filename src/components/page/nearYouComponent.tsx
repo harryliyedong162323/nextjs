@@ -6,7 +6,7 @@ import BaseLink from "@/components/base/link";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   nearYouContentTitle: string;
   nearYouComponentStoresCollection: nearYouComponentStoresCollectionContent;

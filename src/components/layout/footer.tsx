@@ -7,127 +7,6 @@ import { getLocalPathName } from "@/utils/common";
 import { usePathname } from "next/navigation";
 import BaseButton from "@/components/base/button";
 
-// const [pannels, setPanels] = useState([
-//   {
-//     id: 1,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 2,
-//         name: footerData.group1Title,
-//         link: "/story",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 3,
-//         content: "A Drop Of Wilderness",
-//         link: "/story?anchor=ADropOfWildness",
-//       },
-//       {
-//         id: 4,
-//         content: "What Others Say",
-//         link: "/story?anchor=WhatOthersSay",
-//       },
-//     ],
-//   },
-//   {
-//     id: 5,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 6,
-//         name: footerData.group2Title,
-//         link: "/range",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 7,
-//         content: "Products Family",
-//         link: "/range?anchor=ProductsFamily",
-//       },
-//       {
-//         id: 8,
-//         content: "Tales From The Wild",
-//         link: "/range?anchor=TalesFromTheWild",
-//       },
-//       {
-//         id: 9,
-//         content: "Serving Suggestion",
-//         link: "/range?anchor=ServingSuggestion",
-//       },
-//       {
-//         id: 10,
-//         content: "The Story Behind our Bottle",
-//         link: "/range?anchor=BottleConcept",
-//       },
-//       {
-//         id: 99,
-//         content: "Discover your Wild Flavour",
-//         link: "/range?anchor=DiscoverYourWildFlavour",
-//       },
-//     ],
-//   },
-//   {
-//     id: 11,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 12,
-//         name: footerData.group3Title,
-//         link: "/localMarketActivity",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 1311,
-//         content: "Global News",
-//         link: "/localMarketActivity?anchor=WildmoorHouse",
-//       },
-//       {
-//         id: 13,
-//         content: "The Wild Escape",
-//         link: "/localMarketActivity?anchor=GlobalNews",
-//       },
-//       {
-//         id: 14,
-//         content: "Tales From The Wild",
-//         link: "/localMarketActivity?anchor=TheWildEscape",
-//       },
-//     ],
-//   },
-//   {
-//     id: 17,
-//     isExpanded: false,
-//     title: [
-//       {
-//         id: 18,
-//         name: footerData.group4Title,
-//         link: "/howToBuy",
-//       },
-//     ],
-//     list: [
-//       {
-//         id: 13,
-//         content: "Region Select & Global Store Map",
-//         link: "/howToBuy?anchor=RegionSelect",
-//       },
-//       {
-//         id: 191,
-//         content: "IRL Experiences",
-//         link: "/howToBuy?anchor=IRLExperiences",
-//       },
-//       {
-//         id: 6262,
-//         content: "Digital Experience",
-//         link: "/howToBuy?anchor=DigitalExperience",
-//       },
-//     ],
-//   },
-// ]);
-//
-//
 
 interface groupItems {
   categoryName?:string,
@@ -137,7 +16,7 @@ interface groupItems {
 }
 
 interface joinUsImagesContent {
-  id: number;
+  id?: number;
   qrCodeImage: null | {
     altText: string;
     imagemobile: {
@@ -169,62 +48,64 @@ interface locationAndLanguageContent {
   path?: string;
 }
 
-export interface propsContent {
+export interface footerDataContent{
+  copyRightCta: {
+    content: string;
+    targetPage: string;
+  };
+  group1ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group1Title: string;
+  group2ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group2Title: string;
+  group3Title: string;
+  group3ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  group4Title: string;
+  group4ItemsCollection: {
+    items: Array<groupItems>;
+  };
+  joinUsImagesCollection: {
+    items: Array<joinUsImagesContent>;
+  };
+  joinUsPromptWord: string;
+  locationAndLanguageCollection: {
+    items: Array<locationAndLanguageContent>;
+  };
+  logo: {
+    altText: string;
+    imagemobile: {
+      url: string;
+    };
+    imagepc: {
+      url: string;
+    };
+  };
+  privacyPolicyCta: {
+    content: string;
+    targetPage: string;
+  };
+  regionSwitchingPromptWords: string;
+  termsOfServiceCta: {
+    content: string;
+    targetPage: string;
+  };
+}
+
+interface propsContent {
   currentSlideIndex?: number;
   getPageStore?: Function;
   updatePageStore?: Function;
   changeNavStatus?: Function;
   scrollToPage?: Function;
-  data: {
-    copyRightCta: {
-      content: string;
-      targetPage: string;
-    };
-    group1ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group1Title: string;
-    group2ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group2Title: string;
-    group3Title: string;
-    group3ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    group4Title: string;
-    group4ItemsCollection: {
-      items: Array<groupItems>;
-    };
-    joinUsImagesCollection: {
-      items: Array<joinUsImagesContent>;
-    };
-    joinUsPromptWord: string;
-    locationAndLanguageCollection: {
-      items: Array<locationAndLanguageContent>;
-    };
-    logo: {
-      altText: string;
-      imagemobile: {
-        url: string;
-      };
-      imagepc: {
-        url: string;
-      };
-    };
-    privacyPolicyCta: {
-      content: string;
-      targetPage: string;
-    };
-    regionSwitchingPromptWords: string;
-    termsOfServiceCta: {
-      content: string;
-      targetPage: string;
-    };
-  };
+  data: footerDataContent;
 }
 
-function getCurrentLocation(local: string, locationAndLanguage: any) {
+function getCurrentLocation(local: string, locationAndLanguage: Array<locationAndLanguageContent>) {
   // console.log(locationAndLanguage);
   const currentData = locationAndLanguage.filter(
     (item: locationAndLanguageContent) => {
@@ -253,10 +134,10 @@ function getCurrentLocation(local: string, locationAndLanguage: any) {
   }
 }
 
-function Footer(props: any) {
-  console.log(props)
+function Footer(props: propsContent) {
+  // console.log(props)
 
-  const footerData = props.data;
+  const footerData:footerDataContent = props.data;
 
   const locationAndLanguage =
     props.data.locationAndLanguageCollection.items.map(
@@ -277,7 +158,7 @@ function Footer(props: any) {
         id: index,
         channelName:item.channelName,
         qrCodeImage: item.qrCodeImage,
-        link: item.targetPage,
+        targetPage: item.targetPage,
         iconImage: item.iconImage,
       };
     }
@@ -325,7 +206,7 @@ function Footer(props: any) {
     }
   );
 
-  const scrollToPage = props.scrollToPage;
+  const scrollToPage:Function | undefined = props.scrollToPage;
 
   const headStyle = "none";
   const [language, setLanguage] = useState(false);
@@ -356,7 +237,7 @@ function Footer(props: any) {
   //     document.addEventListener("keydown", keyDownHandle, { passive: false });
   //   }
   //   return () => {
-  //     const option: any = { passive: false };
+  //     const option: object = { passive: false };
   //     document.removeEventListener("wheel", wheelHandle, option);
   //     document.removeEventListener("keydown", keyDownHandle, option);
   //   };
@@ -424,9 +305,9 @@ function Footer(props: any) {
     },
   ]);
 
-  const togglePanel = (id: any) => {
+  const togglePanel = (id: number) => {
     const newPanels = pannels.map((panel) => {
-      if (panel.id === id) {
+      if (panel.id == id) {
         return { ...panel, isExpanded: !panel.isExpanded };
       } else {
         return { ...panel, isExpanded: false }; // 关闭其他面板
@@ -463,7 +344,7 @@ function Footer(props: any) {
             <div
               className="w-44px h-46px bg-[url('/assets/scroll_top.svg')] bg-cover cursor-pointer mobile:mb-35px mobile:mx-auto mobile:w-40px mobile:h-42px"
               onClick={() => {
-                scrollToPage(0);
+                scrollToPage&&scrollToPage(0);
               }}
             ></div>
           </div>
@@ -577,7 +458,7 @@ function Footer(props: any) {
           <div>
             <ul className="flex mobile:w-full mobile:justify-center">
               {joinUsImages.length > 0 &&
-                joinUsImages.map((item: any, index: number) => {
+                joinUsImages.map((item: joinUsImagesContent, index: number) => {
                   return (
                     <li
                       key={item.id}

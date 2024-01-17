@@ -41,23 +41,23 @@ interface Kol {
   };
 }
 
-interface entryContent {
+export interface entryContent {
   headStyle: string;
   talesFromTheWildTitle: string;
   talesFromTheWildListCollection: {
-    items: Array<Kol>
-  }
+    items: Array<Kol>;
+  };
 }
 import { TrackingTypeContent } from "@/utils/analytics";
 import BaseButton from "../base/button";
-import {useParams} from "next/navigation";
-export interface propsContent {
+import { useParams } from "next/navigation";
+interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -74,31 +74,34 @@ function isMobile() {
 }
 
 function TalesFromTheWildComponent(props: propsContent) {
-  const [currentKol, setCurrentKol] = useState<any>(isMobile() ? null : 0);
-  const [toKol, setToKol] = useState<any>(isMobile() ? null : 0);
-  const [kolList, setKolList] = useState<Array<Kol>>(props.data.entry.talesFromTheWildListCollection.items);
+  const [currentKol, setCurrentKol] = useState<number | null>(
+    isMobile() ? null : 0
+  );
+  const [toKol, setToKol] = useState<number | null>(isMobile() ? null : 0);
+  const [kolList, setKolList] = useState<Array<Kol>>(
+    props.data.entry.talesFromTheWildListCollection.items
+  );
   const params = useParams();
   // console.log(props);
   const headStyle = props.data.entry.headStyle;
   const title = props.data.entry.talesFromTheWildTitle;
   useEffect(() => {}, [currentKol, kolList]);
 
-
-  const checkCategoryType = (slug:string = '')=>{
-    let pageSlug:string = '';
-    switch (slug){
-      case 'home':
-        pageSlug = 'Homepage';
+  const checkCategoryType = (slug: string = "") => {
+    let pageSlug: string = "";
+    switch (slug) {
+      case "home":
+        pageSlug = "Homepage";
         break;
-      case 'localMarketActivity':
-        pageSlug = 'Wildescapepage';
+      case "localMarketActivity":
+        pageSlug = "Wildescapepage";
         break;
       default:
         break;
     }
 
-    return pageSlug
-  }
+    return pageSlug;
+  };
 
   const handleAnimation = (toKol: number) => {
     setToKol(toKol);
@@ -124,11 +127,19 @@ function TalesFromTheWildComponent(props: propsContent) {
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scroll25} data-slug={'range'}/>
-      <input type="hidden" value={props.TrackingType.scrollFull} data-slug={'localMarketActivity'}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll25}
+        data-slug={"range"}
+      />
+      <input
+        type="hidden"
+        value={props.TrackingType.scrollFull}
+        data-slug={"localMarketActivity"}
+      />
       <div className="flex h-screen flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
-          { title }
+          {title}
         </div>
         <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] pad:w-auto pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
           {kolList?.length > 0 &&
@@ -138,24 +149,24 @@ function TalesFromTheWildComponent(props: propsContent) {
                   {currentKol === index && (
                     <>
                       <BaseLink link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
-                      {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
-                      {/*  <BaseButton action="Wildmoorrange" category="Tales" categorySub={item.listName}>*/}
-                          <div
-                              className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
-                                  currentKol !== toKol
-                                      ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
-                                      : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-360px"
-                              }`}
-                          >
-                            <BaseImage
-                                mImg={item.listImage.imagemobile.url}
-                                pImg={item.listImage.imagepc.url}
-                                alt={item.listImage.altText}
-                                layout="fill"
-                                objectFit="cover"
-                                quality={100}
-                            ></BaseImage>
-                          </div>
+                        {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
+                        {/*  <BaseButton action="Wildmoorrange" category="Tales" categorySub={item.listName}>*/}
+                        <div
+                          className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                            currentKol !== toKol
+                              ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
+                              : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-265px"
+                          }`}
+                        >
+                          <BaseImage
+                            mImg={item.listImage.imagemobile.url}
+                            pImg={item.listImage.imagepc.url}
+                            alt={item.listImage.altText}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
+                          ></BaseImage>
+                        </div>
                         {/*</BaseButton>*/}
                       </BaseLink>
                       <div
@@ -186,8 +197,10 @@ function TalesFromTheWildComponent(props: propsContent) {
                         <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
                           {item.listDescription}
                         </div>
-                        <BaseLink link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
-                        {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
+                        <BaseLink
+                          link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}
+                        >
+                          {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
                           <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
                         </BaseLink>
                       </div>
@@ -219,7 +232,11 @@ function TalesFromTheWildComponent(props: propsContent) {
                           </div>
                           <div
                             onClick={() => {
-                              logEvent('Tales',checkCategoryType(params.slug[0]),item.listName)
+                              logEvent(
+                                "Tales",
+                                checkCategoryType(params.slug[0]),
+                                item.listName
+                              );
                               handleAnimation(index);
                             }}
                             className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px group-hover:bg-[url('/assets/range/icon_add.png')] group-hover:w-60px group-hover:h-60px group-hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:group-hover:w-48px pad:group-hover:h-48px pad:group-hover:-ml-30px mobile:w-20px mobile:h-20px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-20px mobile:hover:h-20px mobile:hover:mt-0px"

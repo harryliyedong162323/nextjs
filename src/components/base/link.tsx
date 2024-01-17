@@ -12,7 +12,7 @@ interface propsContent {
     hover?:string,
     color?:string,
     link:string,
-    children?:any,
+    children?:React.ReactNode,
     onClick?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
     onMouseEnter?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
     onMouseLeave?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
@@ -35,7 +35,7 @@ class BaseLink extends Component<propsContent,State>{
         name:'base-link',
     };
 
-    constructor(props:any) {
+    constructor(props:propsContent) {
         super(props);
         this.location = '';
     }
