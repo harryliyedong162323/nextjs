@@ -18,14 +18,6 @@ class HeaderModel extends CommonModel{
         super();
     }
 
-    fromJson(json: pageLayout):object | undefined{
-        const currentPage: pageItem = json.data;
-        this.setPageContent(currentPage);
-
-        return this.getPageContent();
-    }
-
-
 
     query(name: string, json: pageLayout):object | undefined {
         const currentPage: pageItem = json.data;

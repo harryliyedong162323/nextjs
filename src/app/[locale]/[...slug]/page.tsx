@@ -107,12 +107,15 @@ interface componentsDataContent{
     }
 }
 
+
+
 export default async function Page({params}: { params: { locale: string; slug: string[] }}) {
 
     const data:dataPageContent[] = await getPageData(params) as dataPageContent[];
 
-    const footerData: footerDataContent = await FooterDao.fetch();
-    const headerData: headerDataContent = await HeaderDao.fetch();
+    const footerData: footerDataContent | {} = await FooterDao.fetch();
+
+    const headerData: headerDataContent | {} = await HeaderDao.fetch();
 
     let componentsData: Array<componentsDataContent> = [];
 
@@ -128,8 +131,7 @@ export default async function Page({params}: { params: { locale: string; slug: s
         <div>
 
             {
-                isFullPageFlag ?
-                    <Header headStyle={componentsData[0].entry.headStyle}  data={headerData}></Header> : null
+                isFullPageFlag ? <Header headStyle={componentsData[0].entry.headStyle}  data={headerData as headerDataContent}></Header> : null
             }
 
             <main>
@@ -137,12 +139,12 @@ export default async function Page({params}: { params: { locale: string; slug: s
                     <Analytics
                         pageView={`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : ""}`}></Analytics>
                     {componentsData.map((data, k) => (
-                        getDynamicComponent(data, k, footerData, headerData)
+                        getDynamicComponent(data, k, footerData as footerDataContent, headerData as headerDataContent)
                     ))}
                 </Suspense>
             </main>
             {
-                isFullPageFlag ? <Footer data={footerData}></Footer> : null
+                isFullPageFlag ? <Footer data={footerData as footerDataContent}></Footer> : null
             }
             <Popup></Popup>
         </div>

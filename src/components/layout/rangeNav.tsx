@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 
 export interface propsContent {
-  rangeNavData?: boolean;
+  rangeNavData?: any;
   onChangeStatus?: Function;
   onChangeSubmit?: Function;
   getPageStore?: Function;
@@ -26,6 +26,9 @@ export interface propsContent {
 }
 
 function RangeNav(props: propsContent) {
+  console.log("props");
+  console.log(props.rangeNavData.nav1Name);
+  console.log("props");
   const currentSlideIndex = props.currentSlideIndex;
   return (
     currentSlideIndex !== 0 &&
@@ -56,7 +59,7 @@ function RangeNav(props: propsContent) {
                 props.scrollToPage && props.scrollToPage(0);
               }}
             >
-              {props.nav1Name}
+              {props.rangeNavData.nav1Name}
             </span>
             <span
               className={`relative inline-block cursor-pointer
@@ -78,7 +81,7 @@ function RangeNav(props: propsContent) {
                 props.scrollToPage && props.scrollToPage(1);
               }}
             >
-              {props.nav2Name}
+              {props.rangeNavData.nav2Name}
               {currentSlideIndex === 1 && (
                 <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px bottom-0px -ml-95px pad:w-154px pad:h-6px pad:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
               )}
@@ -103,7 +106,7 @@ function RangeNav(props: propsContent) {
                 props.scrollToPage && props.scrollToPage(2);
               }}
             >
-              {props.nav3Name}
+              {props.rangeNavData.nav3Name}
               {currentSlideIndex === 2 && (
                 <div className="bg-[url('/assets/range/icon_nav_line.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px bottom-0px -ml-95px pad:w-154px pad:h-6px pad:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
               )}
@@ -128,7 +131,7 @@ function RangeNav(props: propsContent) {
                 props.scrollToPage && props.scrollToPage(3);
               }}
             >
-              {props.nav4Name}
+              {props.rangeNavData.nav4Name}
               {currentSlideIndex === 3 && (
                 <div className="bg-[url('/assets/range/icon_nav_line_white.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px bottom-0px -ml-95px pad:w-154px pad:h-6px pad:-ml-77px mobile:bottom-0px mobile:w-64px mobile:h-3px mobile:-ml-32px"></div>
               )}
@@ -155,7 +158,7 @@ function RangeNav(props: propsContent) {
                 props.scrollToPage && props.scrollToPage(4);
               }}
             >
-              {props.nav5Name}
+              {props.rangeNavData.nav5Name}
               {currentSlideIndex === 4 && (
                 <div
                   className={`bg-[url('/assets/range/icon_nav_line_white.png')] absolute bg-cover z-10 left-1/2 w-189px h-7px bottom-0px -ml-95px pad:w-154px pad:h-6px pad:-ml-77px mobile:top-36px mobile:w-64px mobile:h-3px mobile:-ml-32px`}

@@ -96,7 +96,7 @@ export interface footerDataContent{
   };
 }
 
-interface propsContent {
+export interface propsContent {
   currentSlideIndex?: number;
   getPageStore?: Function;
   updatePageStore?: Function;
