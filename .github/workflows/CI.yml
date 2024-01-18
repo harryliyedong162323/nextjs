@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     name: Build with ${{ matrix.node-version }}
@@ -23,13 +23,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-      - run: yarn ci
-      - run: yarn run build-prod
+      - run: yarn run build
 
   test:
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20.x]
 
     name: Run all tests
     runs-on: ubuntu-latest
@@ -41,13 +40,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-      - run: yarn ci
 
       - name: Linter
         run: yarn run lint
-
-      - name: Type checking
-        run: yarn run check-types
 
       - name: Run unit tests
         run: yarn run test

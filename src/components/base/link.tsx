@@ -1,5 +1,7 @@
 import React,{Component} from "react";
 import Link from 'next/link';
+import {getLastPathName} from '@/utils/common'
+import { sendScrollEvent,TrackingType } from "@/utils/analytics";
 interface State {
     name:string
 }
@@ -10,7 +12,7 @@ interface propsContent {
     hover?:string,
     color?:string,
     link:string,
-    children?:any,
+    children?:React.ReactNode,
     onClick?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
     onMouseEnter?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
     onMouseLeave?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
@@ -28,13 +30,12 @@ class BaseLink extends Component<propsContent,State>{
         link:'',
         onMouseEnter:(()=>{}),
         onMouseLeave:(()=>{}),
-
     }
     state: State = {
         name:'base-link',
     };
 
-    constructor(props:any) {
+    constructor(props:propsContent) {
         super(props);
         this.location = '';
     }
@@ -55,6 +56,22 @@ class BaseLink extends Component<propsContent,State>{
 
         this.props.onClick&&this.props.onClick(e);
     }
+
+
+    leavePageAnalytics(){
+        const scrollDom = document.getElementById('currentScroll') as HTMLInputElement;
+        const scrollValue:string | undefined = scrollDom.value || '';
+        const scrollSlug:string | undefined = scrollDom.getAttribute('data-slug') || '';
+
+        // console.log(scrollSlug);
+        // console.log(scrollValue);
+
+
+        sendScrollEvent(scrollValue, scrollSlug);
+
+    }
+
+
 
     handleMouseLeave(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>):void{
         if(typeof this.props.onHover === 'function'){
@@ -84,8 +101,7 @@ class BaseLink extends Component<propsContent,State>{
     }
 
     init(){
-
-
+        this.leavePageAnalytics();
 
         setTimeout(()=>{document&&(document.body.style.overflow = 'auto');},0);
 
@@ -129,7 +145,10 @@ class BaseLink extends Component<propsContent,State>{
         let trimmedUrl: string;
         let trimmedLink:string;
         let targetUrl:string;
-        let link:string = this.props.link;
+        let link:string = this.props.link ?? '';
+
+        if(link == '') return link
+
         if (location) {
             trimmedUrl = location.replace(/^\/|\/$/g, '');
         } else {
@@ -157,7 +176,7 @@ class BaseLink extends Component<propsContent,State>{
             // this.state.name+' '+(this.hasHover())+' '
             return (
                 <Link
-                    rel="preload"
+
                     className={this.computedClassName()}
                     href={this.computedLink()}
                     onMouseLeave={(e)=>{this.handleMouseLeave(e)}}

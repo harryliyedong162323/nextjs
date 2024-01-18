@@ -1,320 +1,565 @@
 "use client";
-import { useSearchParams } from 'next/navigation'
-import React, {useEffect, useState, useCallback, Suspense, useRef} from "react";
-// import ReactFullpage from '@fullpage/react-fullpage';
-import {ISlideConfig, PageSlides, SlideParallaxType} from 'react-page-slides';
-import {getHash} from "@/utils/common";
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
-import RangeNav from '@/components/layout/rangeNav';
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
-import GlobalCampaigns from "@/components/page/globalCampaignsComponent";
-import InteractiveVideo, { propsContent as InteractiveVideoPropsContent } from "@/components/page/interactiveVideoComponent";
-import IntroduceCampaign, { propsContent as IntroduceCampaignPropsContent } from "@/components/page/introduceCampaignComponent";
-import HeroBanner from "@/components/page/heroBannerComponent";
-import KVAnimation from "@/components/page/KVAnimationComponent";
-import NearYou, { propsContent as NearYouPropsContent } from "@/components/page/nearYouComponent";
-import VIPClub, { propsContent as VIPClubPropsContent } from "@/components/page/VIPClubComponent";
-import ProductFamily, { propsContent as ProductFamilyPropsContent } from "@/components/page/productFamilyComponent";
-import Quote from "@/components/page/quoteComponent";
-import TextBlock from "@/components/page/textBlockComponent";
-import StoryOpening from "@/components/page/storyOpeningComponent";
-import StoryChapterOne from "@/components/page/storyChapterOneComponent";
-import StoryChapterTwo from "@/components/page/storyChapterTwoComponent";
-import StoryChapterThree from "@/components/page/storyChapterThreeComponent";
-import StoryChapterFour from "@/components/page/storyChapterFourComponent";
-import StoryChapterFive from "@/components/page/storyChapterFiveComponent";
-import StoryChapterSix from "@/components/page/storyChapterSixComponent";
-import StoryChapterEnd from "@/components/page/storyChapterEndComponent";
-import ActivityDetail from "@/components/page/activityDetailComponent";
-import StoriesDetail from "@/components/page/storiesDetailComponent";
-import TalesFromTheWild from "@/components/page/talesFromTheWildComponent";
-import ServingSuggestion from "@/components/page/servingSuggestionComponent";
-import FlavourFinder from "@/components/page/flavourFinderComponent";
-import BottleConcept from "@/components/page/bottleConceptComponent";
-import LocationMap from "@/components/page/locationMapComponent";
-import LocationInfo from "@/components/page/locationInfoComponent";
-import IRLExperiences from "@/components/page/IRLExperiencesComponent";
-import DigitalExperience, { propsContent as DigitalExperiencePropsContent }  from "@/components/page/digitalExperienceComponent";
+import { ISlideConfig, PageSlides, SlideParallaxType } from "react-page-slides";
+import FullPageSwiper from "./fullPageSwiper";
+
+import { useParams } from "next/navigation";
+
+import Header, { headerDataContent } from "@/components/layout/header";
+import Footer, { footerDataContent } from "@/components/layout/footer";
+import RangeNav from "@/components/layout/rangeNav";
+
+import GlobalCampaigns, {
+  entryContent as GlobalCampaignsEntryContent,
+} from "@/components/page/globalCampaignsComponent";
+import InteractiveVideo, {
+  entryContent as interactiveVideoEntryContent,
+} from "@/components/page/interactiveVideoComponent";
+import IntroduceCampaign, {
+  entryContent as introduceCampaignEntryContent,
+} from "@/components/page/introduceCampaignComponent";
+
+import KVAnimation, {
+  entryContent as KVAnimationEntryContent,
+} from "@/components/page/KVAnimationComponent";
+import NearYou, {
+  entryContent as NearYouEntryContent,
+} from "@/components/page/nearYouComponent";
+import VIPClub, {
+  entryContent as VIPClubEntryContent,
+} from "@/components/page/VIPClubComponent";
+import ProductFamily, {
+  entryContent as ProductFamilyEntryContent,
+} from "@/components/page/productFamilyComponent";
+
+import StoryOpening, {
+  entryContent as StoryOpeningEntryContent,
+} from "@/components/page/storyOpeningComponent";
+import StoryChapterOne, {
+  entryContent as StoryChapterOneEntryContent,
+} from "@/components/page/storyChapterOneComponent";
+import StoryChapterTwo, {
+  entryContent as StoryChapterTwoEntryContent,
+} from "@/components/page/storyChapterTwoComponent";
+import StoryChapterThree, {
+  entryContent as StoryChapterThreeEntryContent,
+} from "@/components/page/storyChapterThreeComponent";
+import StoryChapterFour, {
+  entryContent as StoryChapterFourEntryContent,
+} from "@/components/page/storyChapterFourComponent";
+import StoryChapterFive, {
+  entryContent as StoryChapterFiveEntryContent,
+} from "@/components/page/storyChapterFiveComponent";
+import StoryChapterSix, {
+  entryContent as StoryChapterSixEntryContent,
+} from "@/components/page/storyChapterSixComponent";
+import StoryChapterEnd, {
+  entryContent as StoryChapterEndEntryContent,
+} from "@/components/page/storyChapterEndComponent";
+import ActivityDetail, {
+  entryContent as ActivityDetailEntryContent,
+} from "@/components/page/activityDetailComponent";
+import StoriesDetail, {
+  entryContent as StoriesDetailEntryContent,
+} from "@/components/page/storiesDetailComponent";
+import TalesFromTheWild, {
+  entryContent as TalesFromTheWildEntryContent,
+} from "@/components/page/talesFromTheWildComponent";
+import ServingSuggestion, {
+  entryContent as ServingSuggestionEntryContent,
+} from "@/components/page/servingSuggestionComponent";
+import FlavourFinder, {
+  propsContent as FlavourFinderEntryContent,
+} from "@/components/page/flavourFinderComponent";
+import BottleConcept, {
+  entryContent as BottleConceptEntryContent,
+} from "@/components/page/bottleConceptComponent";
+import LocationInfo, {
+  entryContent as LocationInfoEntryContent,
+} from "@/components/page/locationInfoComponent";
+import IRLExperiences, {
+  entryContent as IRLExperiencesEntryContent,
+} from "@/components/page/IRLExperiencesComponent";
+import DigitalExperience, {
+  entryContent as DigitalExperienceEntryContent,
+} from "@/components/page/digitalExperienceComponent";
 import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
-import HowToBuyDetail from "@/components/page/howToBuyDetailComponent";
+import HowToBuyDetail, {
+  entryContent as HowToBuyDetailEntryContent,
+} from "@/components/page/howToBuyDetailComponent";
+import Popup from "./popup";
 
-function getComponent(data: any, k:number, scrollToPage: Function, changeNavStatus: Function) {
-    const props = { data : data, scrollToPage, changeNavStatus }
+const checkComponentType = (componentName: string) => {
+  let constraintType: string = "";
+  switch (componentName) {
+    case "interactiveVideoComponent":
+      constraintType = "interactiveVideoEntryContent";
+      break;
+    case "introduceCampaignComponent":
+      constraintType = "introduceCampaignEntryContent";
+      break;
+    default:
+      break;
+  }
 
-    switch(data.name) {
-        /** public components **/
+  return constraintType;
+};
 
-        case "globalCampaignsComponent":  return <GlobalCampaigns key={k} {...props} />;
-        case "interactiveVideoComponent":  return <InteractiveVideo key={k} {...props as InteractiveVideoPropsContent } />;
-        case "introduceCampaignComponent":  return <IntroduceCampaign key={k} {...props as IntroduceCampaignPropsContent } />;
+import { TrackingType, TrackingTypeContent } from "@/utils/analytics";
 
-
-        /** page components  **/
-
-        case "heroBannerComponent":  return <HeroBanner key={k} {...props} />;
-        case "KVAnimationComponent":   return <KVAnimation key={k} {...props} />;
-        case "nearYouComponent":   return <NearYou key={k} {...props as NearYouPropsContent} />;
-        case "VIPClubComponent":   return <VIPClub key={k} {...props as VIPClubPropsContent} />;
-        case "productFamilyComponent":   return <ProductFamily key={k} {...props as ProductFamilyPropsContent} />;
-        case "quoteComponent":       return <Quote key={k} {...props} />;
-        case "textBlockComponent":   return <TextBlock key={k} {...props} />;
-
-        case "storyOpeningComponent":   return <StoryOpening key={k} {...props} />;
-        case "storyChapterOneComponent":   return <StoryChapterOne key={k} {...props} />;
-        case "storyChapterTwoComponent":   return <StoryChapterTwo key={k} {...props} />;
-        case "storyChapterThreeComponent":   return <StoryChapterThree key={k} {...props} />;
-        case "storyChapterFourComponent":   return <StoryChapterFour key={k} {...props} />;
-        case "storyChapterFiveComponent":   return <StoryChapterFive key={k} {...props} />;
-        case "storyChapterSixComponent":   return <StoryChapterSix key={k} {...props} />;
-        case "storyChapterEndComponent":   return <StoryChapterEnd key={k} {...props} />;
-
-        case "ActivityDetailComponent":   return <ActivityDetail key={k} {...props} />;
-        case "StoriesDetailComponent":   return <StoriesDetail key={k} {...props} />;
-
-        case "talesFromTheWildComponent":   return <TalesFromTheWild key={k} {...props} />;
-        case "servingSuggestionComponent":   return <ServingSuggestion key={k} {...props} />;
-        case "flavourFinderComponent":   return <FlavourFinder key={k} {...props} />;
-        case "bottleConceptComponent":   return <BottleConcept key={k} {...props} />;
-
-        case "locationMapComponent":   return <LocationMap key={k} {...props} />;
-        case "locationInfoComponent":   return <LocationInfo key={k} {...props} />;
-        case "IRLExperiencesComponent":   return <IRLExperiences key={k} {...props} />;
-        case "digitalExperienceComponent":   return <DigitalExperience key={k} {...props as DigitalExperiencePropsContent} />;
-        case "privacyPolicyComponent" : return <PrivacyPolicy key={k} {...props} />;
-        case "howToBuyDetailComponent":   return <HowToBuyDetail key={k} {...props} />;
-        default:      return <div></div>
-    }
+interface componentContent {
+  entry: CombinedInterface;
+  name: string;
+  type: string;
+  isFullPage: boolean;
+}
+interface CombinedInterface
+  extends interactiveVideoEntryContent,
+    introduceCampaignEntryContent,
+    GlobalCampaignsEntryContent,
+    KVAnimationEntryContent,
+    NearYouEntryContent,
+    VIPClubEntryContent,
+    ProductFamilyEntryContent,
+    StoryOpeningEntryContent,
+    StoryChapterOneEntryContent,
+    StoryChapterTwoEntryContent,
+    StoryChapterThreeEntryContent,
+    StoryChapterFourEntryContent,
+    StoryChapterFiveEntryContent,
+    StoryChapterSixEntryContent,
+    StoryChapterEndEntryContent,
+    ActivityDetailEntryContent,
+    StoriesDetailEntryContent,
+    TalesFromTheWildEntryContent,
+    ServingSuggestionEntryContent,
+    FlavourFinderEntryContent,
+    BottleConceptEntryContent,
+    LocationInfoEntryContent,
+    IRLExperiencesEntryContent,
+    DigitalExperienceEntryContent,
+    HowToBuyDetailEntryContent {
+  entry: {
+    currentPageNumber: number;
+  };
 }
 
+function getComponent(
+  data: componentContent,
+  k: number,
+  currentSlug: string,
+  TrackingType: TrackingTypeContent,
+  scrollToPage: Function,
+  changeNavStatus: Function,
+  changeNavSubmit: Function,
+  updatePageStore: Function,
+  getPageStore: Function
+) {
+  const props = {
+    data: data,
+    currentSlug,
+    TrackingType,
+    scrollToPage,
+    changeNavStatus,
+    changeNavSubmit,
+    updatePageStore,
+    getPageStore,
+  };
+  switch (data.name) {
+    /** public components **/
 
-function FullPage(props: any) {
+    case "globalCampaignsComponent":
+      return <GlobalCampaigns key={k} {...props} />;
+    case "interactiveVideoComponent":
+      return <InteractiveVideo key={k} {...props} />;
+    case "introduceCampaignComponent":
+      return <IntroduceCampaign key={k} {...props} />;
 
+    /** page components  **/
 
-    const [isBrowser, setIsBrowser] = useState(false);
-    const [slideFlag,setSliderFlag] = useState(true);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
-    const [currentPageNumber, setCurrentPageNumber] = useState<number>(0);
-    const [anchor, setAnchor] = useState<string|null>('');
-    const [isCurrentPage, setIsCurrentPage] = useState(false)
-    const searchParams = useSearchParams()
-    // range nav
-    const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav)
-    const [isShowRangeNav, setIsShowRangeNav] = useState(true)
-    const [canScroll, setCanScroll] = useState<boolean>(true)
+    case "KVAnimationComponent":
+      return <KVAnimation key={k} {...props} />;
+    case "nearYouComponent":
+      return <NearYou key={k} {...props} />;
+    case "VIPClubComponent":
+      return <VIPClub key={k} {...props} />;
+    case "productFamilyComponent":
+      return <ProductFamily key={k} {...props} />;
+    case "storyOpeningComponent":
+      return <StoryOpening key={k} {...props} />;
+    case "storyChapterOneComponent":
+      return <StoryChapterOne key={k} {...props} />;
+    case "storyChapterTwoComponent":
+      return <StoryChapterTwo key={k} {...props} />;
+    case "storyChapterThreeComponent":
+      return <StoryChapterThree key={k} {...props} />;
+    case "storyChapterFourComponent":
+      return <StoryChapterFour key={k} {...props} />;
+    case "storyChapterFiveComponent":
+      return <StoryChapterFive key={k} {...props} />;
+    case "storyChapterSixComponent":
+      return <StoryChapterSix key={k} {...props} />;
+    case "storyChapterEndComponent":
+      return <StoryChapterEnd key={k} {...props} />;
+    case "ActivityDetailComponent":
+      return <ActivityDetail key={k} {...props} />;
+    case "StoriesDetailComponent":
+      return <StoriesDetail key={k} {...props} />;
+    case "talesFromTheWildComponent":
+      return <TalesFromTheWild key={k} {...props} />;
+    case "servingSuggestionComponent":
+      return <ServingSuggestion key={k} {...props} />;
+    case "flavourFinderComponent":
+      return <FlavourFinder key={k} {...props} />;
+    case "bottleConceptComponent":
+      return <BottleConcept key={k} {...props} />;
+    // case "locationMapComponent":
+    //   return <LocationMap key={k} {...props} />;
+    case "locationInfoComponent":
+      return <LocationInfo key={k} {...props} />;
+    case "IRLExperiencesComponent":
+      return <IRLExperiences key={k} {...props} />;
+    case "digitalExperienceComponent":
+      return <DigitalExperience key={k} {...props} />;
+    case "privacyPolicyComponent":
+      return <PrivacyPolicy key={k} {...props} />;
+    case "howToBuyDetailComponent":
+      return <HowToBuyDetail key={k} {...props} />;
+    default:
+      return <div></div>;
+  }
+}
 
-    useEffect(() => {
-        setTimeout(()=>{
-            setAnchor(searchParams.get('anchor'))
-            analyzeURL(anchor);
-        },50)
-    }, [anchor,props]);
+interface propsContent {
+  data: dataPageContent;
+  footerData: footerDataContent;
+  headerData: headerDataContent;
+}
+interface dataPageContent {
+  type: string;
+  name: string;
+  rangeNav?: boolean;
+  rangeNavData?: boolean;
+  entry: {
+    headStyle?: string;
+    freeMode?: boolean;
+    children: Array<CombinedInterface>;
+  };
+}
 
-    useEffect(() => {
-        setTimeout(()=>{
-            setIsBrowser(true);
-        },50);
-    }, []);
+interface pageComponentsContent {
+  [key: string]: any;
+}
+interface pageStoreContent {
+  name?: string;
+  content?: object;
+  data?: object;
+}
 
-    useEffect(() => {
-        if(isBrowser){
-            setHeadStyle(0);
+function FullPage(props: propsContent) {
+  // console.log(props);
 
-        }
-    }, [isBrowser]);
+  const footerData: footerDataContent = props.footerData;
+  const headerData = props.headerData;
+  const params = useParams();
+  const [currentSlug, setCurrentSlug] = useState(params.slug[0]);
+  const [currentScroll, setCurrentScroll] = useState("");
 
-    const pageComponents = props.data.entry.children;
+  const [pageStore, setPageStore] = useState(
+    [] as Array<pageComponentsContent>
+  );
 
-    const scrollToPage = (page: number) => {
-        // console.l2og('currentPage:', page)
+  const [isBrowser, setIsBrowser] = useState(false);
+  const [slideFlag, setSliderFlag] = useState(true);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [currentPageNumber, setCurrentPageNumber] = useState<number>(0);
+  const [anchor, setAnchor] = useState<string | null>("");
+  const [isCurrentPage, setIsCurrentPage] = useState(false);
+  const searchParams = useSearchParams();
+  // range nav
+  const [hasRangeNav, setHasRangeNav] = useState(!!props.data.rangeNav);
+  const [isShowRangeNav, setIsShowRangeNav] = useState(true);
+  const [submit, setSubmit] = useState("");
+  const [rangeNavData, setRangeNavData] = useState(props.data?.rangeNavData);
+  const [canScroll, setCanScroll] = useState<boolean>(true);
 
-        setCurrentSlideIndex(page)
+  // Debug Func
+  function getHashParams() {
+    interface HashParams {
+      [key: string]: string;
     }
-
-    const changeNavStatus = (status: boolean) => {
-        setIsShowRangeNav(status)
+    var hash = window.location.hash.substr(1); // 获取URL中的哈希部分（不包括#符号）
+    var params = hash.split("&"); // 将哈希参数字符串分割成数组
+    var hashParams: HashParams = {};
+    for (var i = 0; i < params.length; i++) {
+      var param = params[i].split("="); // 将每个参数以等号分割成键和值
+      var key = decodeURIComponent(param[0]); // 解码键
+      var value = decodeURIComponent(param[1]); // 解码值
+      hashParams[key] = value; // 将键值对存入对象中
     }
+    return hashParams;
+  }
 
-    const onScroll = (event: React.WheelEvent<HTMLDivElement>) => {
-        if (!canScroll) {
-            event.stopPropagation()
-        }
+  useEffect(() => {
+    setTimeout(() => {
+      setAnchor(searchParams.get("anchor"));
+      analyzeURL(anchor);
+    }, 50);
+  }, [anchor, props]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsBrowser(true);
+    }, 50);
+  }, []);
+
+  useEffect(() => {
+    if (isBrowser) {
+      setHeadStyle(0);
     }
+  }, [isBrowser]);
 
-    const analyzeURL = (params:string | null):void=>{
-        if(params){
-            const anchorDom= document.getElementById(params) as HTMLInputElement;
-            if(anchorDom){
-                const currentSlideIndex:string | null = anchorDom.getAttribute(`data-anchor`);
-                if(currentSlideIndex){
-                    scrollToPage(parseInt(currentSlideIndex));
-                }
-            }
-        }else{
-            scrollToPage(0);
-        }
+  const pageComponents = props.data.entry.children;
 
-    }
-
-
-
-    const slides: ISlideConfig[] = [
-
-        ...pageComponents.map((data:any, k:number)=>{
-            data.entry.isFullPage = true
-            data.entry.pageNumber = k;
-            data.entry.currentPageNumber = currentPageNumber;
-            return(
-
-                {
-                    content: (
-                        <div onWheel={(event) => {
-                            onScroll(event)
-                        }}>
-                            {
-                                getComponent(data, k, scrollToPage, changeNavStatus)
-                            }
-                        </div>
-                    ),
-                    style: {}
-                }
-
-            )
+  const updatePageStore = (pageName: string, content: object, cb: Function) => {
+    setPageStore([
+      ...pageStore,
+      pageStore
+        .filter((page: pageStoreContent) => page.name == pageName)
+        .map((item: pageStoreContent) => {
+          item.data = {
+            ...item.data,
+            ...content,
+          };
+          return item;
         }),
-        {
-            content: <Footer scrollToPage={scrollToPage} currentSlideIndex={currentSlideIndex}></Footer>,
-            style: {}
-        },
-    ];
+    ]);
 
+    cb && cb(getPageStore(pageName));
+  };
 
+  const getPageStore = (pageName?: string) => {
+    if (pageName) {
+      return pageStore.filter(
+        (item: pageStoreContent) => item.name == pageName
+      )[0];
+    }
+    return pageStore;
+  };
 
+  useEffect(() => {
+    let tmpPageStore: Array<pageStoreContent> = [];
+    props.data.entry.children.forEach((item: pageStoreContent) => {
+      tmpPageStore.push({
+        name: item.name,
+        data: {},
+      });
+    });
+    setPageStore(tmpPageStore);
+  }, [props]);
 
-    const setHeadStyle = (index:number):void => {
-        const slide = document.querySelectorAll('.rps-slide');
-        const currentHead = slide[index].querySelector('input[type="hidden"]') as HTMLInputElement;
-        const value:string = currentHead?.value || 'white';
+  const scrollToPage = (page: number) => {
+    // console.l2og('currentPage:', page)
 
-        const nav = document.getElementsByTagName('nav');
-        for(let i=0;i<nav.length;i++){
-            nav[i].style.display = 'none';
+    setCurrentSlideIndex(page);
+  };
+
+  const changeNavStatus = (status: boolean) => {
+    setIsShowRangeNav(status);
+  };
+  const changeNavSubmit = (str: string) => {
+    setSubmit(str);
+  };
+  const onScroll = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (!canScroll) {
+      event.stopPropagation();
+    }
+  };
+
+  const analyzeURL = (params: string | null): void => {
+    const hashParams = getHashParams();
+
+    if (params) {
+      const anchorDom = document.getElementById(params) as HTMLInputElement;
+      if (anchorDom) {
+        const currentSlideIndex: string | null =
+          anchorDom.getAttribute(`data-anchor`);
+        if (currentSlideIndex) {
+          scrollToPage(parseInt(currentSlideIndex));
         }
-        // console.log('nav-'+value)
+      }
+    } else if (hashParams.debugPage) {
+      setTimeout(() => {
+        scrollToPage(parseInt(hashParams.debugPage));
+      }, 1000);
+    } else {
+      scrollToPage(0);
+    }
+  };
 
-        let currentNav = document.getElementById('nav-'+value) as HTMLInputElement;
+  const slides: ISlideConfig[] = [
+    ...pageComponents.map((data: any, k: number) => {
+      data.entry.isFullPage = true;
+      data.entry.pageNumber = k;
+      data.entry.currentPageNumber = currentPageNumber;
+      return {
+        content: (
+          <div
+            onWheel={(event) => {
+              onScroll(event);
+            }}
+          >
+            {getComponent(
+              data,
+              k,
+              params.slug[0],
+              TrackingType,
+              scrollToPage,
+              changeNavStatus,
+              changeNavSubmit,
+              updatePageStore,
+              getPageStore
+            )}
+          </div>
+        ),
+        style: {},
+      };
+    }),
+    {
+      content: <Footer scrollToPage={scrollToPage} data={footerData}></Footer>,
+      style: {},
+    },
+  ];
 
+  const setHeadStyle = (index: number) => {
+    // const slide = document.querySelectorAll(".rps-slide");
 
-        if(index != 0){
-            let navChildren = document.getElementById('nav-large-content');
-            navChildren&&(navChildren.style.transform = 'translateY(100%)');
-        }else{
-            let navChildren = document.getElementById('nav-large-content');
-            if(isCurrentPage){
-                setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},50)
-            }else{
-                setIsCurrentPage(true);
-                setTimeout(()=>{navChildren&&(navChildren.style.transform = 'translateY(0%)');},1500)
-            }
-
-        }
-
-        currentNav&&(currentNav.style.display = 'block');
-
+    const nav = document.getElementsByTagName("nav");
+    for (let i = 0; i < nav.length; i++) {
+      nav[i].style.display = "none";
     }
 
+    if (index == slides.length - 1) {
+      return false;
+    }
 
+    const slide = document.querySelectorAll("section");
+    const currentHead = slide[index].querySelector(
+      'input[type="hidden"][data-style="headStyle"]'
+    ) as HTMLInputElement;
 
+    const currentScrollPage = slide[index].querySelector(
+      `input[type="hidden"][data-slug="${params.slug[0]}"]`
+    ) as HTMLInputElement;
 
-    const handleSlideChange = (e:number):void=>{
-        // Used to monitor and determine whether to flip to the current page, to achieve animation effects
-        setCurrentPageNumber(e)
-        setCurrentSlideIndex(e)
+    const value: string = currentHead?.value || "white";
 
-        setCanScroll(false)
+    if (currentScrollPage) {
+      setCurrentScroll(currentScrollPage?.value || "");
+    }
+
+    let currentNav = document.getElementById(
+      "nav-" + value
+    ) as HTMLInputElement;
+
+    if (index != 0) {
+      let navChildren = document.getElementById("nav-large-content");
+      navChildren && (navChildren.style.transform = "translateY(100%)");
+    } else {
+      let navChildren = document.getElementById("nav-large-content");
+      if (isCurrentPage) {
         setTimeout(() => {
-            setCanScroll(true)
-        }, 1500)
-        pageComponents.map((item: any) => item.entry.currentPageNumber = e)
-
-        const nav:any = document.getElementById('nav');
-
-
-        setHeadStyle(e);
-
-        if(e == slides.length-1){
-            // setSliderFlag(false);
-            nav&&(nav.style.display = 'none');
-
-        }else{
-            // setSliderFlag(true);
-            nav&&(nav.style.display = 'block');
-        }
+          navChildren && (navChildren.style.transform = "translateY(0%)");
+        }, 50);
+      } else {
+        setIsCurrentPage(true);
+        setTimeout(() => {
+          navChildren && (navChildren.style.transform = "translateY(0%)");
+        }, 1500);
+      }
     }
 
+    currentNav && (currentNav.style.display = "block");
+  };
 
+  const handleSlideChange = (e: number): void => {
+    // Used to monitor and determine whether to flip to the current page, to achieve animation effects
+    setCurrentPageNumber(e);
+    setCurrentSlideIndex(e);
 
-    return (
-        <div>
-            {/*好用但要收费*/}
-            {/*<ReactFullpage*/}
-            {/*    //fullpage options*/}
-            {/*    credits={{*/}
-            {/*        enabled:true,*/}
-            {/*        label:'fuck',*/}
-            {/*        position: "left"*/}
-            {/*    }}*/}
-            {/*    //fullpage options*/}
-            {/*    licenseKey = {''}*/}
-            {/*    scrollingSpeed = {1000} */}
-            {/*    scrollHorizontally = {true}  */}
-            {/*    scrollHorizontallyKey = {''}*/}
-            {/*    render={({ state, fullpageApi }) => {*/}
-            {/*        return (*/}
-            {/*            <ReactFullpage.Wrapper>*/}
-
-            {/*                {pageComponents.map((data:any, k:number)=>{*/}
-            {/*                    return(*/}
-            {/*                        <div className="section" key={k}>*/}
-            {/*                            {getComponent(data, k)}*/}
-            {/*                        </div>*/}
-            {/*                    )*/}
-            {/*                })}*/}
-
-
-            {/*            </ReactFullpage.Wrapper>*/}
-            {/*        );*/}
-            {/*    }}*/}
-            {/* />*/}
-            {/*currentSlideIndex={2}*/}
-
-
-            <Header scrollToPage={scrollToPage} currentSlideIndex={currentSlideIndex}></Header>
-
-            {
-                isBrowser == true ?
-                <div>
-                    <PageSlides
-                        enableAutoScroll={slideFlag}
-                        transitionSpeed={1500}
-                        currentSlideIndex={currentSlideIndex}
-                        slides={slides}
-                        parallax={{
-                            offset: 0.60,    //0.6
-                            type: SlideParallaxType.reveal
-                        }}
-                        onChange={(e)=>{handleSlideChange(e)}}
-                    />
-                </div> : null
-            }
-            {
-                hasRangeNav && <RangeNav currentSlideIndex={currentSlideIndex} scrollToPage={scrollToPage} isShowRangeNav={isShowRangeNav} onChangeStatus={changeNavStatus}></RangeNav>
-            }
-
-
-
-
-        </div>
+    setCanScroll(false);
+    setTimeout(() => {
+      setCanScroll(true);
+    }, 1500);
+    pageComponents.map(
+      (item: CombinedInterface) => (item.entry.currentPageNumber = e)
     );
+
+    // const nav = document.getElementById("nav") as HTMLInputElement;
+
+    setHeadStyle(e);
+  };
+
+  return (
+    <div>
+      <Header
+        scrollToPage={scrollToPage}
+        currentSlideIndex={currentSlideIndex}
+        data={headerData}
+      ></Header>
+      {isBrowser == true ? (
+        <div>
+          <FullPageSwiper
+            enableAutoScroll={slideFlag}
+            transitionSpeed={1500}
+            currentSlideIndex={currentSlideIndex}
+            slides={slides}
+            freeMode={!!props.data.entry.freeMode}
+            parallax={{
+              offset: 0.6, //0.6
+              type: SlideParallaxType.reveal,
+            }}
+            onChange={(e: number) => {
+              handleSlideChange(e);
+            }}
+          />
+          {/* <PageSlides
+            enableAutoScroll={slideFlag}
+            transitionSpeed={1500}
+            currentSlideIndex={currentSlideIndex}
+            slides={slides}
+            parallax={{
+              offset: 0.6, //0.6
+              type: SlideParallaxType.reveal,
+            }}
+            onChange={(e) => {
+              handleSlideChange(e);
+            }}
+          /> */}
+        </div>
+      ) : null}
+      {hasRangeNav && (
+        <RangeNav
+          currentSlideIndex={currentSlideIndex}
+          scrollToPage={scrollToPage}
+          isShowRangeNav={isShowRangeNav}
+          submit={submit}
+          onChangeStatus={changeNavStatus}
+          onChangeSubmit={changeNavSubmit}
+          rangeNavData={rangeNavData}
+        ></RangeNav>
+      )}
+
+      <input
+        id="currentScroll"
+        type="hidden"
+        value={currentScroll}
+        data-slug={currentSlug}
+      />
+    </div>
+  );
 }
 
 export default FullPage;

@@ -1,29 +1,62 @@
 import React,{Component} from "react";
+import { logEvent } from "@/utils/analytics";
 
 interface State {
-    link:String,
-    text:String,
+    name:string
+}
+interface propsContent {
+    className?:string,
+    children?:React.ReactNode,
+    category?: string,
+    action?: string,
+    categorySub?:string,
+    onClick?:(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void,
 }
 
-class BaseImage extends Component<{},State>{
-    constructor(props:{}) {
+class BaseButton extends Component<propsContent,State>{
+    static defaultProps = {
+        className:'',
+        category: "",
+        action: "",
+        onMouseEnter:(()=>{}),
+        onMouseLeave:(()=>{}),
+    }
+    state: State = {
+        name:'base-button',
+    };
+
+    constructor(props:propsContent) {
         super(props);
-        this.state = {
-            link:'https://vd3.bdstatic.com/mda-pjfmbq3us8q1eq92/wzdash/bd265/1697482150021338695/mda-pjfmbq3us8q1eq92/dash-fhd.mp4?cr=3&cd=1&abtest=112954_2&logid=0310694009&pd=1&pt=3&vid=16956352271853885370',
-            text:'button'
-        }
     }
 
+    handleClick(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>){
+        console.log('base button click')
+        logEvent(this.props.category, this.props.action, this.props.categorySub)
+        this.props.onClick&&this.props.onClick(e);
+    }
+
+
+
+    computedClassName():string{
+        let className:string[] = [
+            this.state.name,
+            this.props.className || '',
+        ];
+        return className.filter(Boolean).join(' ') + '';
+    }
 
 
     render() {
         return (
-            <div className='base-button'>
-                <button>{this.state.text}</button>
-            </div>
+            <span
+                className={`${this.computedClassName()}`}
+                onClick={(e:React.MouseEvent<HTMLAnchorElement, MouseEvent>)=>{this.handleClick(e)}}>
+                {this.props.children}
+            </span>
         );
+
     }
 }
 
 
-export default BaseImage;
+export default BaseButton;

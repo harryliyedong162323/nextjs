@@ -2,9 +2,14 @@ import CommonModel from './commonModel';
 
 
 interface pageLayout {
-    data:object
+    data:pageItem
 }
 
+interface pageItem {
+    [key: string]: {
+        items:Array<Object>
+    };
+}
 
 class HowToBuyModel extends CommonModel{
 
@@ -13,8 +18,8 @@ class HowToBuyModel extends CommonModel{
     }
 
 
-    fromJson<T extends string | any[]>(json: pageLayout){
-        const currentPage = json.data;
+    fromJson(json: pageLayout):object | undefined{
+        const currentPage: pageItem = json.data;
         this.setPageContent(currentPage);
 
         return this.getPageContent();
@@ -22,19 +27,50 @@ class HowToBuyModel extends CommonModel{
 
 
 
-    query(name:string,json: pageLayout){
-        const currentPage:any = json.data;
+    query(name: string, json: pageLayout):object | undefined {
+        const currentPage: pageItem = json.data;
 
         let targetComponent;
-        for(let key in currentPage){
-            if(name == key){
-                targetComponent = currentPage[key].items[0]
+        for (let key in currentPage) {
+            if (name === key) {
+                targetComponent = currentPage[key].items[0];
                 break;
             }
         }
 
         return targetComponent;
     }
+
+
+    queryStores(json: pageLayout){
+        const currentPage:pageItem = json.data;
+
+        let targetComponent;
+        for(let key in currentPage){
+            if('stores' == key){
+                targetComponent = currentPage[key].items
+                break;
+            }
+        }
+
+        return targetComponent;
+    }
+
+
+    queryIrlstores(json: pageLayout){
+        const currentPage:pageItem = json.data;
+
+        let targetComponent;
+        for(let key in currentPage){
+            if('irlstores' == key){
+                targetComponent = currentPage[key].items
+                break;
+            }
+        }
+
+        return targetComponent;
+    }
+
 
 }
 

@@ -1,13 +1,157 @@
-import PageModel from "../model/pageModel";
+import LocalMarketActivityModel from "../model/localMarketActivityModel";
 
-const HOME_URL =
-    "https://cdn.contentful.com/spaces/zedtwknbsk02/entries?content_type=landingPage&fields.slug=test1&locale=en-US&include=4&access_token=5mGkIgazQQqwe9NykxKqitB0zopjFOvVHotuSM8GZvg";
+
+// const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
+const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
+//
+
+const query = `
+
+    query {
+
+    globalCampaigns:localMarketActivityCollection (limit:1 where:{internalName:"local market activity"},locale:"en" ) {
+      items {
+           
+            howToBuyDetailComponentScrollContent
+            howToBuyDetailComponentBannerSubTitle
+            howToBuyDetailComponentBannerImage {
+                      imagepc {
+                          url
+                      }
+                      imagemobile {
+                          url
+                      }
+                      altText
+            }
+    }
+}
+
+  introduceCampaign: localMarketActivityCollection(limit: 1, where: {internalName: "local market activity"},locale: "en") {
+    items {
+        introduceCampaignComponentTitle
+        introduceCampaignComponentBackgroundImage {
+        imagepc {
+          url
+        }
+        imagemobile {
+          url
+        }
+        altText
+      }
+      introduceCampaignComponentCampaignsCollection(limit: 10,order:id_DESC,locale: "en") {
+        items {
+          id  
+          location
+          year
+          description
+          campaignImage {
+            imagepc {
+              url
+            }
+            imagemobile {
+              url
+            }
+            altText
+          }
+          detailPage {
+            activityDetailComponentTitle
+          }
+        }
+      }
+    }
+  }
+
+   interactiveVideo: localMarketActivityCollection(limit: 1, where: {internalName: "local market activity"},locale: "en") {
+    items {
+      interactiveVideoComponentIsShow
+      interactiveVideoComponentJumpUrl
+      interactiveVideoComponentExploreMoreImage {
+          imagepc {
+          url
+        }
+        imagemobile {
+          url
+        }
+        altText
+      }
+      interactiveVideoComponentImage {
+        imagepc {
+          url
+        }
+        imagemobile {
+          url
+        }
+        altText
+      }
+      interactiveVideoComponentTitle
+      interactiveVideoComponentExploreMore
+    }
+  }
+
+   talesFromTheWild:localMarketActivityCollection (limit:1 where:{internalName:"local market activity"} locale: "en") {
+      items {
+            talesFromTheWildTitle
+          talesFromTheWildListCollection (order:id_ASC, locale: "en") {
+            items {
+                sys {
+                  id
+              }
+              id
+              listName
+              listDescription
+              listImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              listSmallImage {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+              listAvatar {
+                  imagepc {
+                      url
+                  }
+                  imagemobile {
+                      url
+                  }
+                  altText
+              }
+            }
+          }
+      }
+  }
+
+  
+}
+
+
+
+
+
+`
+
 
 class LocalMarketActivityDao {
-    static async fetch<PageModel>() {
-        // const response = await fetch(HOME_URL)
-        // const result = await response.json()
-        // return HomeModel.fromJson(result);
+    static async fetch<LocalMarketActivityModel>() {
+        const response = await fetch(GRAPHQL_URL, {
+            method: "POST",
+            cache: "no-store",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ query }),
+        });
+        const result = await response.json();
         return [
 
             {
@@ -20,6 +164,8 @@ class LocalMarketActivityDao {
                             name: "globalCampaignsComponent",
                             entry: {
                                 headStyle:'white',
+
+                                ...LocalMarketActivityModel.query("globalCampaigns", result),
                             },
                         },
                         {
@@ -27,6 +173,8 @@ class LocalMarketActivityDao {
                             name: "introduceCampaignComponent",
                             entry: {
                                 headStyle:'black',
+
+                                ...LocalMarketActivityModel.query("introduceCampaign", result),
                             },
                         },
                         {
@@ -34,6 +182,8 @@ class LocalMarketActivityDao {
                             name: "interactiveVideoComponent",
                             entry: {
                                 headStyle:'white',
+
+                                ...LocalMarketActivityModel.query("interactiveVideo", result),
                             },
                         },
                         {
@@ -41,44 +191,9 @@ class LocalMarketActivityDao {
                             name: "talesFromTheWildComponent",
                             entry: {
                                 headStyle:'black',
-                                hasNavigation: false,
-                                kols: [
-                                    {
-                                        id: "10086",
-                                        name: "NAME of KOL",
-                                        avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                                        banner:  `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_01.png?w=1000&h=1000`,
-                                        description: "Bring the drinking occasion to life in a way",
-                                    },
-                                    {
-                                        id: "10087",
-                                        name: "NAME of KOL",
-                                        avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                                        banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_02.png?w=1000&h=1000`,
-                                        description: "Bring the drinking occasion to life in a way",
-                                    },
-                                    {
-                                        id: "10088",
-                                        name: "NAME of KOL",
-                                        avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                                        banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_03.png?w=1000&h=1000`,
-                                        description: "Bring the drinking occasion to life in a way",
-                                    },
-                                    {
-                                        id: "10089",
-                                        name: "NAME of KOL",
-                                        avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                                        banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_04.png?w=1000&h=1000`,
-                                        description: "Bring the drinking occasion to life in a way",
-                                    },
-                                    {
-                                        id: "10090",
-                                        name: "NAME of KOL",
-                                        avatar: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_face.png?w=1000&h=1000`,
-                                        banner: `https://yumen-ali.oss-cn-beijing.aliyuncs.com/wild_05.png?w=1000&h=1000`,
-                                        description: "Bring the drinking occasion to life in a way",
-                                    },
-                                ],
+                                hasNavigation: true,
+                                isFullPage: true,
+                                ...LocalMarketActivityModel.query("talesFromTheWild", result),
                             },
                         },
                     ]
