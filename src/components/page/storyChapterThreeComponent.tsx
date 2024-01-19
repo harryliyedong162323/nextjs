@@ -90,7 +90,7 @@ function StoryChapterThreeComponent(props: propsContent) {
             pImg={data.storyChapterThreeComponentFaceImage.imagepc.url}
             alt={data.storyChapterThreeComponentFaceImage.altText}
             layout="fill"
-            objectFit="fill"
+            objectFit="cover"
             quality={100}
           ></BaseImage>
         </div>
