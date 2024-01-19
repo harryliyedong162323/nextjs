@@ -110,10 +110,10 @@ function HowToBuyDetailComponent(props: propsContent) {
         className={`w-[50%] pb-66px pad:w-[70%] mobile:w-auto  pb-47px mobile:pt-44px mx-auto   opacity-1 `}
       >
         <div className="text-33px font-normal font-AlbertusNova-Regular pb-64px text-center pt-143px pad:pb-45px pad:pt-102px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-27px uppercase">
-          {title} 标题
+          {title}
         </div>
         <div className="font-normal font-Grotesque-Regular text-22px text-center text-dark-grey leading-[1.5em] mobile:text-14px mobile:pl-25px mobile:pb-27px mobile:pr-25px mobile:leading-[2em] flex justify-center">
-          {des} 描述
+          {des}
         </div>
       </div>
 
