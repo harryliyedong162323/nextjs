@@ -15,6 +15,16 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 const query = `
 
     query {
+    
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Privacy Policy"},locale: "en") {
+      items {
+          title
+          keyWords
+          description
+      }
+    }
+    
+    
   privacypolicy:pagePrivacyPolicyCollection (limit:1 where:{internalName:"Privacy Policy"} locale: "en") {
       items {
         detailCollection {
@@ -59,17 +69,22 @@ class privacyPolicyDao {
     });
     const result = await response.json();
 
-    return [
-      {
-        type: "privacyPolicyComponent",
-        name: "privacyPolicyComponent",
-        entry: {
-          headStyle: "bg-white",
-
-          ...PrivacyPolicyModel.query("privacypolicy", result),
-        },
+    return {
+      seo:{
+        ...PrivacyPolicyModel.query("seo", result),
       },
-    ];
+      page:[
+        {
+          type: "privacyPolicyComponent",
+          name: "privacyPolicyComponent",
+          entry: {
+            headStyle: "bg-white",
+
+            ...PrivacyPolicyModel.query("privacypolicy", result),
+          },
+        },
+      ]
+    };
   }
 }
 

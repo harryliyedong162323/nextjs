@@ -146,8 +146,9 @@ function StoryChapterEndComponent(props: propsContent) {
                     <div className="h-[60px!ignore] w-[2px!ignore] bg-white mx-10px text-transparent pad:w-[2px!ignore] pad:h-[46px!ignore] pad:mx-8px mobile:mx-5px mobile:h-[40px!ignore] mobile:w-[1px!ignore]">
                       |
                     </div>
-                    <div className="leading-tight uppercase text-24px pad:text-20px mobile:text-16px">
-                      {item.productName}
+                    <div className="leading-tight flex flex-col uppercase text-24px pad:text-20px mobile:text-16px">
+                      <div>{item.productName.split(" ")[0]}</div>
+                      <div>{item.productName.split(" ")[1]}</div>
                     </div>
                   </div>
                 </div>
@@ -155,6 +156,18 @@ function StoryChapterEndComponent(props: propsContent) {
             }
           )}
         </Marquee>
+      </div>
+      <div
+        className={`absolute  z-10 w-full flex flex-col items-center justify-center transition-all ease-in-out duration-500 delay-1000 ${
+          isCurrentPage
+            ? "bottom-24px mobile:bottom-100px"
+            : "-bottom-48px mobile:-bottom-48px"
+        }`}
+      >
+        <div className="hidden mobile:block mobile:w-11px mobile:h-14px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px mobile:before:w-2px mobile:before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px mobile:before:left-4px mobile:before:top-3px before:animate-scrollMore"></div>
+        <div className="text-12px hidden mobile:block leading-tight text-white font-Grotesque-Regular">
+          {data.storyChapterEndComponentSlidingText}
+        </div>
       </div>
       <div className="absolute text-[#E6E7E8] font-Grotesque-Light text-22px bottom-[calc(11.5vh)] w-full mobile:text-14px mobile:bottom-150px">
         <div className="w-830px pad:w-664px m-auto mobile:w-300px">

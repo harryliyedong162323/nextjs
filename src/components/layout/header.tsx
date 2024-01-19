@@ -6,6 +6,7 @@ import BaseButton from "@/components/base/button";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
 
+
 interface CustomEventDetail {
   scrollY: number;
 }
@@ -156,9 +157,41 @@ function Header(props: propsContent) {
 
   useEffect(() => {
     function handleScroll(e: CustomScrollEvent) {
+      const footer = document.querySelector("footer");
+      const footerTop: any = footer?.getBoundingClientRect().top;
+      let currentNav = document.getElementById(
+        "nav-bg-white"
+      ) as HTMLInputElement;
+      console.log(footerTop);
       // 处理滚动事件的逻辑
       if (slug == "howToBuyDetail") {
         setScrollNum(window.scrollY);
+        if (footerTop >= 5) {
+          currentNav && (currentNav.style.display = "block");
+        } else {
+          currentNav && (currentNav.style.display = "none");
+        }
+      }
+      if (slug == "privacyPolicy") {
+        if (footerTop >= 5) {
+          currentNav && (currentNav.style.display = "block");
+        } else {
+          currentNav && (currentNav.style.display = "none");
+        }
+      }
+      if (slug == "activityDetail") {
+        if (footerTop >= 5) {
+          currentNav && (currentNav.style.display = "block");
+        } else {
+          currentNav && (currentNav.style.display = "none");
+        }
+      }
+      if (slug == "storiesDetail") {
+        if (footerTop >= 5) {
+          currentNav && (currentNav.style.display = "block");
+        } else {
+          currentNav && (currentNav.style.display = "none");
+        }
       }
       if (slug == "howToBuy") {
         setScrollNum(e.detail.scrollY);
@@ -218,6 +251,10 @@ function Header(props: propsContent) {
   };
   return (
     <div>
+
+
+
+
       <nav
         id="nav-white"
         className={`h-85px w-full fixed left-0 top-0 z-50  opacity-0 animate-fadeIn mobile:h-59px ${

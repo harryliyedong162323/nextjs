@@ -6,7 +6,13 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 const query = `
 
   query {
-  
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "HowToBuy"},locale: "en") {
+      items {
+          title
+          keyWords
+          description
+      }
+    }
   
   irlstores: dataStoreCollection( where: { showInHowToBuyIrl: true },order:howToBuyIrlSort_ASC,locale: "en"
  ) {
@@ -303,49 +309,54 @@ class HowToBuyDao {
     //     throw Error('Failed to load howToBuy_page data');
     // }
 
-    return [
-      {
-        type: "fullPage",
-        name: "fullPage",
-        entry: {
-          freeMode: true,
-          children: [
-            {
-              type: "locationInfoComponent",
-              name: "locationInfoComponent",
-              entry: {
-                headStyle: "bg-white",
-                stores: HowToBuyModel.queryStores(result),
-                ...HowToBuyModel.query("locationInfo", result),
-              },
-            },
-            // {
-            //     type: "locationMapComponent",
-            //     name: "locationMapComponent",
-            //     entry: {
-            //         headStyle:'black',
-            //     },
-            // },
-            {
-              type: "IRLExperiencesComponent",
-              name: "IRLExperiencesComponent",
-              entry: {
-                headStyle: "bg-white",
-                storeList: HowToBuyModel.queryIrlstores(result),
-              },
-            },
-            {
-              type: "digitalExperienceComponent",
-              name: "digitalExperienceComponent",
-              entry: {
-                headStyle: "bg-white",
-                ...HowToBuyModel.query("digitalExperience", result),
-              },
-            },
-          ],
-        },
+    return {
+      seo:{
+        ...HowToBuyModel.query("seo", result),
       },
-    ];
+      page:[
+        {
+          type: "fullPage",
+          name: "fullPage",
+          entry: {
+            freeMode: true,
+            children: [
+              {
+                type: "locationInfoComponent",
+                name: "locationInfoComponent",
+                entry: {
+                  headStyle: "bg-white",
+                  stores: HowToBuyModel.queryStores(result),
+                  ...HowToBuyModel.query("locationInfo", result),
+                },
+              },
+              // {
+              //     type: "locationMapComponent",
+              //     name: "locationMapComponent",
+              //     entry: {
+              //         headStyle:'black',
+              //     },
+              // },
+              {
+                type: "IRLExperiencesComponent",
+                name: "IRLExperiencesComponent",
+                entry: {
+                  headStyle: "bg-white",
+                  storeList: HowToBuyModel.queryIrlstores(result),
+                },
+              },
+              {
+                type: "digitalExperienceComponent",
+                name: "digitalExperienceComponent",
+                entry: {
+                  headStyle: "bg-white",
+                  ...HowToBuyModel.query("digitalExperience", result),
+                },
+              },
+            ],
+          },
+        },
+      ]
+    };
   }
 }
 

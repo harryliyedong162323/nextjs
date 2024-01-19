@@ -6,6 +6,16 @@ const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 query {
+
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Our Range"},locale: "en") {
+      items {
+          title
+          keyWords
+          description
+      }
+    } 
+
+
     productFamily:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
         items {
             productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: "en") {
@@ -577,65 +587,70 @@ class RangeDao {
     });
     const productFamilyResult = await productFamilyResponse.json();
 
-    return [
-      {
-        type: "fullPage",
-        name: "fullPage",
-        rangeNav: true,
-        rangeNavData: PageModel.query("rangeNav", result),
-        entry: {
-          children: [
-            {
-              type: "productFamilyComponent",
-              name: "productFamilyComponent",
-              entry: {
-                headStyle: "white",
-                hasNavigation: false,
-                ...PageModel.query("productFamily", result),
-              },
-            },
-            {
-              type: "talesFromTheWildComponent",
-              name: "talesFromTheWildComponent",
-              entry: {
-                headStyle: "black",
-                hasNavigation: true,
-                isFullPage: true,
-                ...PageModel.query("talesFromTheWild", result),
-              },
-            },
-            {
-              type: "servingSuggestionComponent",
-              name: "servingSuggestionComponent",
-              entry: {
-                headStyle: "black",
-                hasNavigation: true,
-                ...PageModel.query("servingSuggestion", result),
-              },
-            },
-            {
-              type: "bottleConceptComponent",
-              name: "bottleConceptComponent",
-              entry: {
-                headStyle: "white",
-                hasNavigation: true,
-                ...PageModel.query("bottleConcept", result),
-              },
-            },
-            {
-              type: "flavourFinderComponent",
-              name: "flavourFinderComponent",
-              entry: {
-                headStyle: "white",
-                ...quizResult,
-                ...PageModel.query("flavourFinder", result),
-                ...PageModel.query("productFamily", productFamilyResult),
-              },
-            },
-          ],
-        },
+    return {
+      seo:{
+        ...PageModel.query("seo", result)
       },
-    ];
+      page:[
+        {
+          type: "fullPage",
+          name: "fullPage",
+          rangeNav: true,
+          rangeNavData: PageModel.query("rangeNav", result),
+          entry: {
+            children: [
+              {
+                type: "productFamilyComponent",
+                name: "productFamilyComponent",
+                entry: {
+                  headStyle: "white",
+                  hasNavigation: false,
+                  ...PageModel.query("productFamily", result),
+                },
+              },
+              {
+                type: "talesFromTheWildComponent",
+                name: "talesFromTheWildComponent",
+                entry: {
+                  headStyle: "black",
+                  hasNavigation: true,
+                  isFullPage: true,
+                  ...PageModel.query("talesFromTheWild", result),
+                },
+              },
+              {
+                type: "servingSuggestionComponent",
+                name: "servingSuggestionComponent",
+                entry: {
+                  headStyle: "black",
+                  hasNavigation: true,
+                  ...PageModel.query("servingSuggestion", result),
+                },
+              },
+              {
+                type: "bottleConceptComponent",
+                name: "bottleConceptComponent",
+                entry: {
+                  headStyle: "white",
+                  hasNavigation: true,
+                  ...PageModel.query("bottleConcept", result),
+                },
+              },
+              {
+                type: "flavourFinderComponent",
+                name: "flavourFinderComponent",
+                entry: {
+                  headStyle: "white",
+                  ...quizResult,
+                  ...PageModel.query("flavourFinder", result),
+                  ...PageModel.query("productFamily", productFamilyResult),
+                },
+              },
+            ],
+          },
+        },
+      ]
+    };
   }
 }
 

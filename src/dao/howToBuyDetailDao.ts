@@ -5,6 +5,16 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
    query($sysId:String!) {
+   
+   seo:seoMetaTagsCollection(limit: 1, where: {name: "How To Buy Detail"},locale: "en") {
+      items {
+          title
+          keyWords
+          description
+      }
+    }
+   
+   
     globalCampaignsComponent:dataStoreCollection (limit:1 where:{sys:{id:$sysId}},locale:"en" ) {
       items {
             howToBuyDetailComponentStoreName
@@ -72,36 +82,41 @@ class HowToBuyDetailDao {
     // }else{
     //     throw Error('Failed to load howToBuy_page data');
     // }
-    return [
-      // {
-      //     type: "fullPage",
-      //     name: "fullPage",
-      //     entry: {
-      //         children:[
-      //
-      //         ]
-      //     }
-      // },
-
-      {
-        type: "globalCampaignsComponent",
-        name: "globalCampaignsComponent",
-        entry: {
-          headStyle: "bg-white",
-
-          ...HowToBuyDetailModel.query("globalCampaignsComponent", result),
-        },
+    return {
+      seo:{
+        ...HowToBuyDetailModel.query("seo", result),
       },
-      {
-        type: "howToBuyDetailComponent",
-        name: "howToBuyDetailComponent",
-        entry: {
-          headStyle: "black",
+      page:[
+        // {
+        //     type: "fullPage",
+        //     name: "fullPage",
+        //     entry: {
+        //         children:[
+        //
+        //         ]
+        //     }
+        // },
 
-          ...HowToBuyDetailModel.query("howToBuyDetailComponent", result),
+        {
+          type: "globalCampaignsComponent",
+          name: "globalCampaignsComponent",
+          entry: {
+            headStyle: "bg-white",
+
+            ...HowToBuyDetailModel.query("globalCampaignsComponent", result),
+          },
         },
-      },
-    ];
+        {
+          type: "howToBuyDetailComponent",
+          name: "howToBuyDetailComponent",
+          entry: {
+            headStyle: "black",
+
+            ...HowToBuyDetailModel.query("howToBuyDetailComponent", result),
+          },
+        },
+      ]
+    };
   }
 }
 
