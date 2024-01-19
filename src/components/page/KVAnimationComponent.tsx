@@ -178,7 +178,7 @@ function KVAnimationComponent(props: propsContent) {
       </div>
 
       <div
-        className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden pad:w-129px pad:h-281px pad:translate-y-[-21%] mobile:h-223px mobile:w-102px mobile:translate-y-[-30%]`}
+        className={`bottle pointer-events-none select-none w-181px h-394px absolute top-1/2 translate-y-[-30%] left-1/2 z-30 translate-x-[-50%] hidden pad:w-129px pad:h-281px pad:translate-y-[-21%] mobile:h-223px mobile:w-102px mobile:translate-y-[-40%]`}
       >
         <BaseVideo
           src={
@@ -195,7 +195,7 @@ function KVAnimationComponent(props: propsContent) {
       </div>
 
       <div
-        className={`absolute bottom-[5%] w-full left-1/2 z-30 mobile:w-[80%] mobile:bottom-[10%]`}
+        className={`absolute bottom-[5%] w-full left-1/2 z-30 mobile:w-[80%] mobile:bottom-[15%]`}
       >
         <div
           className={`text-group-4 translate-x-[-50%] translate-y-full transition-all ease-in-out duration-500 delay-1000`}

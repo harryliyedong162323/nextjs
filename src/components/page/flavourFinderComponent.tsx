@@ -1423,7 +1423,7 @@ function FlavourFinderComponent(props: propsContent) {
                       </span>
                     </div>
                     <div className="mx-auto mt-10px w-[1251px] bg-[4f1f1] pad:w-[1042px] mobile:w-330px pb-30px">
-                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover  flex  px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover  flex items-start  px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
                         <div className="w-280px   mobile:w-241px">
                           {recommend && (
                             <Swiper

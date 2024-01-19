@@ -180,10 +180,16 @@ function StoryChapterTwoComponent(props: propsContent) {
                     {data.storyChapterTwoComponentFirst}
                   </span>
                   <span className="flex justify-center items-baseline mx-10px mobile:mx-0">
-                    <span style={textGradient} className="font-AlbertusNova-Light text-[#d18350] text-[160px] leading-none mobile:text-[95px]">
+                    <span
+                      style={textGradient}
+                      className="font-AlbertusNova-Light text-[#d18350] text-[160px] leading-none mobile:text-[95px]"
+                    >
                       {data.storyChapterTwoComponentSecond}
                     </span>
-                    <span style={textGradient} className="font-AlbertusNova-Regular text-[#d18350] text-42px">
+                    <span
+                      style={textGradient}
+                      className="font-AlbertusNova-Regular text-[#d18350] text-42px"
+                    >
                       {" "}
                       {data.storyChapterTwoComponentThird}
                     </span>

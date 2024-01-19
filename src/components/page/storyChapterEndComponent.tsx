@@ -147,8 +147,12 @@ function StoryChapterEndComponent(props: propsContent) {
                       |
                     </div>
                     <div className="leading-tight flex flex-col uppercase text-24px pad:text-20px mobile:text-16px">
-                      <div>{item.productName.split(" ")[0]}</div>
-                      <div>{item.productName.split(" ")[1]}</div>
+                      <div className="whitespace-nowrap">
+                        {item.productName.split(" ")[0]}{" "}
+                      </div>
+                      <div className="whitespace-nowrap">
+                        {item.productName.split(" ")[1]}
+                      </div>
                     </div>
                   </div>
                 </div>

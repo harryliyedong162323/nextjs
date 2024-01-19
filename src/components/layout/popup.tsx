@@ -24,7 +24,9 @@ function Popup() {
 
   return (
     <div
-      className={`fixed w-screen h-screen overflow-hidden select-none bg-[#000000BF] top-0 z-50 ${ visible ? "block" : "hidden"}`}
+      className={`fixed w-screen h-screen overflow-hidden select-none bg-[#000000BF] top-0 z-50 ${
+        visible ? "block" : "hidden"
+      }`}
       onWheel={(event) => {
         event.stopPropagation();
       }}
@@ -42,7 +44,7 @@ function Popup() {
         <div
           className="bg-[url('/assets/bg_popup_btn.png')] w-197px h-78px mx-auto leading-[78px] text-center cursor-pointer mobile:w-98px mobile:h-39px mobile:leading-[39px]"
           onClick={() => {
-            setVisible(false)
+            setVisible(false);
           }}
         >
           {message?.btnTxt}
