@@ -17,9 +17,16 @@ import dynamic from "next/dynamic";
 import Header, {headerDataContent} from '@/components/layout/header';
 import Footer, {footerDataContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
+// import SeoMeta from '@/components/layout/seoMeta';
+import type { Metadata, ResolvingMetadata } from 'next'
+
+
 
 const Analytics = dynamic(() => import(`@/components/layout/analytics`), {
     suspense: true,
+});
+const SeoMeta = dynamic(() => import(`@/components/layout/seoMeta`), {
+    ssr: false
 });
 
 function capitalizeFirstLetter(str: string) {
@@ -83,20 +90,35 @@ async function getPageData(params: paramsContent) {
             break;
     }
 
-    return result;
+    return result
 }
 
 
 // export const revalidate:boolean = false
 
 
-interface dataPageContent{
+interface pageContent{
     type:string,
     name:string,
     entry:{
         headStyle?:string,
         children?: Array<object>;
     }
+}
+
+interface metaContent{
+    title:string,
+    description:string,
+    keyWords:string,
+}
+
+
+interface dataContent{
+
+    seo?:metaContent,
+    page:Array<pageContent>
+
+
 }
 
 interface componentsDataContent{
@@ -107,11 +129,22 @@ interface componentsDataContent{
     }
 }
 
+export async function generateMetadata({params}: { params: { locale: string; slug: string[] }}) {
+
+    const data:dataContent = await getPageData(params) as dataContent;
+
+    console.log(data.seo)
+    return {
+        title: data.seo?.title,
+        description: data.seo?.description,
+        keywords:data.seo?.keyWords,
+    }
+}
 
 
 export default async function Page({params}: { params: { locale: string; slug: string[] }}) {
 
-    const data:dataPageContent[] = await getPageData(params) as dataPageContent[];
+    const data:dataContent = await getPageData(params) as dataContent;
 
     const footerData: footerDataContent | {} = await FooterDao.fetch();
 
@@ -119,23 +152,22 @@ export default async function Page({params}: { params: { locale: string; slug: s
 
     let componentsData: Array<componentsDataContent> = [];
 
-    data.forEach((componentData: componentsDataContent, i: number) => {
+    data.page.forEach((componentData: componentsDataContent, i: number) => {
         componentsData.push(componentData);
     });
+
 
     let isFullPageFlag: boolean = componentsData[0].type != 'fullPage' ? true : false;
 
 
     return (
-
         <div>
-
             {
                 isFullPageFlag ? <Header headStyle={componentsData[0].entry.headStyle}  data={headerData as headerDataContent}></Header> : null
             }
-
             <main>
                 <Suspense fallback={<div>Loading...</div>}>
+
                     <Analytics
                         pageView={`Viewpage_${capitalizeFirstLetter(params.slug[0])}${params.slug[1] ? `|${capitalizeFirstLetter(params.slug[1])}` : ""}`}></Analytics>
                     {componentsData.map((data, k) => (
@@ -148,7 +180,6 @@ export default async function Page({params}: { params: { locale: string; slug: s
             }
             <Popup></Popup>
         </div>
-
 
     );
 }

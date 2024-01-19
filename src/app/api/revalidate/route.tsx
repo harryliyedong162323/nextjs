@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
   // revalidateTag(path)
   //
   // console.log('revalidateTag', path)
-
+  console.log(path);
   if (path) {
     revalidatePath(path)
     return Response.json({ revalidated: true, now: Date.now() })

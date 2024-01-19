@@ -5,7 +5,8 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 //
 // const path = '/' + params.locale + '/' + params.slug.join('/')
 // console.log(path)
-//
+
+
 // const response = await fetch(HOME_URL + '?path=' + path, { next: { tags: [path] }})
 
 // fetch sharing menu
@@ -15,6 +16,17 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 const query = `
 
    query {
+   
+   seo:seoMetaTagsCollection(limit: 1, where: {name: "Home"},locale: "en") {
+    items {
+        title
+        keyWords
+        description
+    }
+  }
+   
+   
+   
  KVAnimation: homeCollection(limit: 1, where: {pageName: "home"}) {
     items {
       kvAnimationComponentKvTitle
@@ -286,71 +298,80 @@ class HomeDao {
     //     throw Error('Failed to load home_page data');
     // }
 
-    return [
-      {
-        type: "fullPage",
-        name: "fullPage",
-        entry: {
-          children: [
-            {
-              type: "KVAnimationComponent",
-              name: "KVAnimationComponent",
-              entry: {
-                headStyle: "large", //large white black bg-white none
-
-                ...HomeModel.query("KVAnimation", result),
-              },
-            },
-            {
-              type: "productFamilyComponent",
-              name: "productFamilyComponent",
-              entry: {
-                headStyle: "white",
-
-                ...HomeModel.query("productFamily", result),
-              },
-            },
-            {
-              type: "interactiveVideoComponent",
-              name: "interactiveVideoComponent",
-              entry: {
-                headStyle: "white",
-
-                ...HomeModel.query("interactiveVideo", result),
-              },
-            },
-            {
-              type: "introduceCampaignComponent",
-              name: "introduceCampaignComponent",
-              entry: {
-                headStyle: "black",
-
-                ...HomeModel.query("introduceCampaign", result),
-              },
-            },
-            {
-              type: "nearYouComponent",
-              name: "nearYouComponent",
-              entry: {
-                headStyle: "black",
-
-                ...HomeModel.query("nearYou", result),
-              },
-            },
-
-            {
-              type: "VIPClubComponent",
-              name: "VIPClubComponent",
-              entry: {
-                headStyle: "white",
-
-                ...HomeModel.query("VIPClub", result),
-              },
-            },
-          ],
-        },
+    return {
+      seo:{
+        ...HomeModel.query("seo", result),
       },
-    ];
+      page:[
+        {
+          type: "fullPage",
+          name: "fullPage",
+          entry: {
+            children: [
+              {
+                type: "KVAnimationComponent",
+                name: "KVAnimationComponent",
+                entry: {
+                  headStyle: "large", //large white black bg-white none
+
+                  ...HomeModel.query("KVAnimation", result),
+                },
+              },
+              {
+                type: "productFamilyComponent",
+                name: "productFamilyComponent",
+                entry: {
+                  headStyle: "white",
+
+                  ...HomeModel.query("productFamily", result),
+                },
+              },
+              {
+                type: "interactiveVideoComponent",
+                name: "interactiveVideoComponent",
+                entry: {
+                  headStyle: "white",
+
+                  ...HomeModel.query("interactiveVideo", result),
+                },
+              },
+              {
+                type: "introduceCampaignComponent",
+                name: "introduceCampaignComponent",
+                entry: {
+                  headStyle: "black",
+
+                  ...HomeModel.query("introduceCampaign", result),
+                },
+              },
+              {
+                type: "nearYouComponent",
+                name: "nearYouComponent",
+                entry: {
+                  headStyle: "black",
+
+                  ...HomeModel.query("nearYou", result),
+                },
+              },
+
+              {
+                type: "VIPClubComponent",
+                name: "VIPClubComponent",
+                entry: {
+                  headStyle: "white",
+
+                  ...HomeModel.query("VIPClub", result),
+                },
+              },
+            ],
+          },
+        },
+      ]
+    }
+
+
+
+
   }
 }
 

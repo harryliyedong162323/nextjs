@@ -5,6 +5,15 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 query($sysId:String!) {
+    
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Stories Detail"},locale: "en") {
+      items {
+          title
+          keyWords
+          description
+      }
+    }
+    
     storiesDetailCollection (limit:1 where:{sys:{id:$sysId}} locale: "en") {
         items {
             pageName
@@ -169,16 +178,21 @@ class StoriesDetailDao {
 
     console.log(result);
 
-    return [
-      {
-        type: "storiesDetailComponent",
-        name: "storiesDetailComponent",
-        entry: {
-          headStyle: "bg-white",
-          ...PageModel.query("storiesDetailCollection", result),
-        },
+    return {
+      seo:{
+        ...PageModel.query("seo", result),
       },
-    ];
+      page:[
+        {
+          type: "storiesDetailComponent",
+          name: "storiesDetailComponent",
+          entry: {
+            headStyle: "bg-white",
+            ...PageModel.query("storiesDetailCollection", result),
+          },
+        },
+      ]
+    };
   }
 }
 

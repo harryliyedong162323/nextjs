@@ -112,7 +112,7 @@ function HowToBuyDetailComponent(props: propsContent) {
         <div className="text-33px font-normal font-AlbertusNova-Regular pb-64px text-center pt-143px pad:pb-45px pad:pt-102px mobile:pt-42px mobile:text-24px mobile:leading-[40px] mobile:pb-45px uppercase">
           {title}
         </div>
-        <div className="font-normal font-Grotesque-Regular text-22px text-center text-dark-grey leading-[1.5em] mobile:text-14px mobile:pl-25px mobile:pr-25px mobile:leading-[2em] flex justify-center">
+        <div className="font-normal font-Grotesque-Regular text-22px text-center text-dark-grey leading-[1.5em] mobile:text-14px mobile:pl-25px mobile:pb-45px mobile:pr-25px mobile:leading-[2em] flex justify-center">
           {des}
         </div>
       </div>

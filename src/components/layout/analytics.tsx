@@ -28,9 +28,9 @@ function Analytics(props:propsContent) {
     }, []);
 
     return (
-        <div>
+        <>
 
-        </div>
+        </>
     );
 }
 

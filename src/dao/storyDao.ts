@@ -6,6 +6,15 @@ const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 query {
+
+  seo:seoMetaTagsCollection(limit: 1, where: {name: "Story"},locale: "en") {
+    items {
+        title
+        keyWords
+        description
+    }
+  }
+
   storyOpening : storyCollection (limit:1 where:{pageName:"story"} ) {
      items {
          storyOpeningTitle
@@ -332,72 +341,77 @@ class StoryDao {
 
     console.log(result);
 
-    return [
-      {
-        type: "fullPage",
-        name: "fullPage",
-        entry: {
-          children: [
-            {
-              type: "storyOpeningComponent",
-              name: "storyOpeningComponent",
-              entry: {
-                ...PageModel.query("storyOpening", result),
-              },
-            },
-            {
-              type: "storyChapterOneComponent",
-              name: "storyChapterOneComponent",
-              entry: {
-                ...PageModel.query("storyChapterOne", result),
-              },
-            },
-            {
-              type: "storyChapterTwoComponent",
-              name: "storyChapterTwoComponent",
-              entry: {
-                ...PageModel.query("storyChapterTwo", result),
-              },
-            },
-            {
-              type: "storyChapterThreeComponent",
-              name: "storyChapterThreeComponent",
-              entry: {
-                ...PageModel.query("storyChapterThree", result),
-              },
-            },
-            {
-              type: "storyChapterFourComponent",
-              name: "storyChapterFourComponent",
-              entry: {
-                ...PageModel.query("storyChapterFour", result),
-              },
-            },
-            {
-              type: "storyChapterFiveComponent",
-              name: "storyChapterFiveComponent",
-              entry: {
-                ...PageModel.query("storyChapterFive", result),
-              },
-            },
-            {
-              type: "storyChapterSixComponent",
-              name: "storyChapterSixComponent",
-              entry: {
-                ...PageModel.query("storyChapterSix", result),
-              },
-            },
-            {
-              type: "storyChapterEndComponent",
-              name: "storyChapterEndComponent",
-              entry: {
-                ...PageModel.query("storyChapterEnd", result),
-              },
-            },
-          ],
-        },
+    return {
+      seo:{
+        ...PageModel.query("seo", result)
       },
-    ];
+      page:[
+        {
+          type: "fullPage",
+          name: "fullPage",
+          entry: {
+            children: [
+              {
+                type: "storyOpeningComponent",
+                name: "storyOpeningComponent",
+                entry: {
+                  ...PageModel.query("storyOpening", result),
+                },
+              },
+              {
+                type: "storyChapterOneComponent",
+                name: "storyChapterOneComponent",
+                entry: {
+                  ...PageModel.query("storyChapterOne", result),
+                },
+              },
+              {
+                type: "storyChapterTwoComponent",
+                name: "storyChapterTwoComponent",
+                entry: {
+                  ...PageModel.query("storyChapterTwo", result),
+                },
+              },
+              {
+                type: "storyChapterThreeComponent",
+                name: "storyChapterThreeComponent",
+                entry: {
+                  ...PageModel.query("storyChapterThree", result),
+                },
+              },
+              {
+                type: "storyChapterFourComponent",
+                name: "storyChapterFourComponent",
+                entry: {
+                  ...PageModel.query("storyChapterFour", result),
+                },
+              },
+              {
+                type: "storyChapterFiveComponent",
+                name: "storyChapterFiveComponent",
+                entry: {
+                  ...PageModel.query("storyChapterFive", result),
+                },
+              },
+              {
+                type: "storyChapterSixComponent",
+                name: "storyChapterSixComponent",
+                entry: {
+                  ...PageModel.query("storyChapterSix", result),
+                },
+              },
+              {
+                type: "storyChapterEndComponent",
+                name: "storyChapterEndComponent",
+                entry: {
+                  ...PageModel.query("storyChapterEnd", result),
+                },
+              },
+            ],
+          },
+        },
+      ]
+    };
   }
 }
 

@@ -8,6 +8,16 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 const query = `
 
     query {
+    
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Local Market Activity"},locale: "en") {
+        items {
+            title
+            keyWords
+            description
+        }
+    }
+    
+    
 
     globalCampaigns:localMarketActivityCollection (limit:1 where:{internalName:"local market activity"},locale:"en" ) {
       items {
@@ -152,56 +162,61 @@ class LocalMarketActivityDao {
             body: JSON.stringify({ query }),
         });
         const result = await response.json();
-        return [
-
-            {
-                type: "fullPage",
-                name: "fullPage",
-                entry: {
-                    children:[
-                        {
-                            type: "globalCampaignsComponent",
-                            name: "globalCampaignsComponent",
-                            entry: {
-                                headStyle:'white',
-
-                                ...LocalMarketActivityModel.query("globalCampaigns", result),
-                            },
-                        },
-                        {
-                            type: "introduceCampaignComponent",
-                            name: "introduceCampaignComponent",
-                            entry: {
-                                headStyle:'black',
-
-                                ...LocalMarketActivityModel.query("introduceCampaign", result),
-                            },
-                        },
-                        {
-                            type: "interactiveVideoComponent",
-                            name: "interactiveVideoComponent",
-                            entry: {
-                                headStyle:'white',
-
-                                ...LocalMarketActivityModel.query("interactiveVideo", result),
-                            },
-                        },
-                        {
-                            type: "talesFromTheWildComponent",
-                            name: "talesFromTheWildComponent",
-                            entry: {
-                                headStyle:'black',
-                                hasNavigation: true,
-                                isFullPage: true,
-                                ...LocalMarketActivityModel.query("talesFromTheWild", result),
-                            },
-                        },
-                    ]
-                }
+        console.log(result)
+        return {
+            seo:{
+                ...LocalMarketActivityModel.query("seo", result),
             },
+            page:[
+                {
+                    type: "fullPage",
+                    name: "fullPage",
+                    entry: {
+                        children:[
+                            {
+                                type: "globalCampaignsComponent",
+                                name: "globalCampaignsComponent",
+                                entry: {
+                                    headStyle:'white',
+
+                                    ...LocalMarketActivityModel.query("globalCampaigns", result),
+                                },
+                            },
+                            {
+                                type: "introduceCampaignComponent",
+                                name: "introduceCampaignComponent",
+                                entry: {
+                                    headStyle:'black',
+
+                                    ...LocalMarketActivityModel.query("introduceCampaign", result),
+                                },
+                            },
+                            {
+                                type: "interactiveVideoComponent",
+                                name: "interactiveVideoComponent",
+                                entry: {
+                                    headStyle:'white',
+
+                                    ...LocalMarketActivityModel.query("interactiveVideo", result),
+                                },
+                            },
+                            {
+                                type: "talesFromTheWildComponent",
+                                name: "talesFromTheWildComponent",
+                                entry: {
+                                    headStyle:'black',
+                                    hasNavigation: true,
+                                    isFullPage: true,
+                                    ...LocalMarketActivityModel.query("talesFromTheWild", result),
+                                },
+                            },
+                        ]
+                    }
+                },
 
 
-        ];
+            ]
+        };
     }
 }
 

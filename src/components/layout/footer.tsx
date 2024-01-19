@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { getLocalPathName } from "@/utils/common";
-import { usePathname } from "next/navigation";
+import { usePathname, useParams } from "next/navigation";
 import BaseButton from "@/components/base/button";
 
-
 interface groupItems {
-  categoryName?:string,
+  categoryName?: string;
   id: number;
   content: string;
   targetPage: string;
@@ -27,9 +26,8 @@ interface joinUsImagesContent {
     };
   };
   targetPage: string;
-  channelName:string,
+  channelName: string;
   iconImage: {
-
     altText: string;
     imagemobile: {
       url: string;
@@ -48,7 +46,7 @@ interface locationAndLanguageContent {
   path?: string;
 }
 
-export interface footerDataContent{
+export interface footerDataContent {
   copyRightCta: {
     content: string;
     targetPage: string;
@@ -105,7 +103,10 @@ export interface propsContent {
   data: footerDataContent;
 }
 
-function getCurrentLocation(local: string, locationAndLanguage: Array<locationAndLanguageContent>) {
+function getCurrentLocation(
+  local: string,
+  locationAndLanguage: Array<locationAndLanguageContent>
+) {
   // console.log(locationAndLanguage);
   const currentData = locationAndLanguage.filter(
     (item: locationAndLanguageContent) => {
@@ -137,7 +138,7 @@ function getCurrentLocation(local: string, locationAndLanguage: Array<locationAn
 function Footer(props: propsContent) {
   // console.log(props)
 
-  const footerData:footerDataContent = props.data;
+  const footerData: footerDataContent = props.data;
 
   const locationAndLanguage =
     props.data.locationAndLanguageCollection.items.map(
@@ -156,7 +157,7 @@ function Footer(props: propsContent) {
     (item: joinUsImagesContent, index: number) => {
       return {
         id: index,
-        channelName:item.channelName,
+        channelName: item.channelName,
         qrCodeImage: item.qrCodeImage,
         targetPage: item.targetPage,
         iconImage: item.iconImage,
@@ -168,7 +169,7 @@ function Footer(props: propsContent) {
     (item: groupItems, index: number) => {
       return {
         id: index,
-        categoryName:'Ourstory',
+        categoryName: "Ourstory",
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -179,7 +180,7 @@ function Footer(props: propsContent) {
     (item: groupItems, index: number) => {
       return {
         id: index,
-        categoryName:'Wildmoorrange',
+        categoryName: "Wildmoorrange",
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -189,7 +190,7 @@ function Footer(props: propsContent) {
     (item: groupItems, index: number) => {
       return {
         id: index,
-        categoryName:'Wildescape',
+        categoryName: "Wildescape",
         content: item.content,
         targetPage: item.targetPage,
       };
@@ -199,20 +200,67 @@ function Footer(props: propsContent) {
     (item: groupItems, index: number) => {
       return {
         id: index,
-        categoryName:'Nearyou',
+        categoryName: "Nearyou",
         content: item.content,
         targetPage: item.targetPage,
       };
     }
   );
 
-  const scrollToPage:Function | undefined = props.scrollToPage;
+  const scrollToPage: Function | undefined = props.scrollToPage;
 
   const headStyle = "none";
   const [language, setLanguage] = useState(false);
   const localPathName = getLocalPathName(usePathname());
 
   const currentSlideIndex = props.currentSlideIndex;
+  const slug: string = useParams().slug[0];
+
+  const showHeaderRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          let currentNav = document.getElementById(
+            "nav-bg-white"
+          ) as HTMLInputElement;
+          if (
+            slug == "howToBuyDetail" ||
+            slug == "privacyPolicy" ||
+            slug == "storiesDetail" ||
+            slug == "activityDetail"
+          ) {
+            currentNav && (currentNav.style.display = "none");
+          }
+        } else {
+          setIsVisible(false);
+          let currentNav = document.getElementById(
+            "nav-bg-white"
+          ) as HTMLInputElement;
+          if (
+            slug == "howToBuyDetail" ||
+            slug == "privacyPolicy" ||
+            slug == "storiesDetail" ||
+            slug == "activityDetail"
+          ) {
+            currentNav && (currentNav.style.display = "block");
+          }
+        }
+      });
+    });
+
+    if (showHeaderRef.current) {
+      observer.observe(showHeaderRef.current);
+    }
+
+    return () => {
+      if (showHeaderRef.current) {
+        observer.unobserve(showHeaderRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setLanguage(false);
@@ -258,7 +306,7 @@ function Footer(props: propsContent) {
         {
           id: 2,
           name: footerData.group1Title,
-          categoryName:'Ourstory',
+          categoryName: "Ourstory",
           link: "/story",
         },
       ],
@@ -271,7 +319,7 @@ function Footer(props: propsContent) {
         {
           id: 6,
           name: footerData.group2Title,
-          categoryName:'Wildmoorrange',
+          categoryName: "Wildmoorrange",
           link: "/range",
         },
       ],
@@ -284,7 +332,7 @@ function Footer(props: propsContent) {
         {
           id: 12,
           name: footerData.group3Title,
-          categoryName:'Wildescape',
+          categoryName: "Wildescape",
           link: "/localMarketActivity",
         },
       ],
@@ -297,7 +345,7 @@ function Footer(props: propsContent) {
         {
           id: 18,
           name: footerData.group4Title,
-          categoryName:'Nearyou',
+          categoryName: "Nearyou",
           link: "/howToBuy",
         },
       ],
@@ -322,6 +370,7 @@ function Footer(props: propsContent) {
   return (
     <footer className="relative overflow-hidden bg-[#E6E7E8] select-none mobile:h-[100%]">
       <input type="hidden" value={headStyle} data-style="headStyle" />
+
       {/*h-900px*/}
       <div className="w-full bg-[#E6E7E8] h-screen pt-100px pl-50px pr-50px pb-100px bg-[url('/assets/mask_footer.png')] bg-left-top bg-no-repeat mobile:bg-contain mobile:bg-center mobile:pt-31px mobile:pb-78px mobile:h-[100%] mobile:pl-30px mobile:pr-30px mobile:bg-[url('/assets/mask_footer_2.png')] mobile:bg-contain mobile:flex mobile:flex-col mobile:items-center mobile:justify-between">
         <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-30px mobile:w-[100%]">
@@ -344,7 +393,7 @@ function Footer(props: propsContent) {
             <div
               className="w-44px h-46px bg-[url('/assets/scroll_top.svg')] bg-cover cursor-pointer mobile:mb-35px mobile:mx-auto mobile:w-40px mobile:h-42px"
               onClick={() => {
-                scrollToPage&&scrollToPage(0);
+                scrollToPage && scrollToPage(0);
               }}
             ></div>
           </div>
@@ -361,7 +410,10 @@ function Footer(props: propsContent) {
                     link={panel.title[0].link}
                     className="text-20px font-medium font-Grotesque-Medium dark-grey"
                   >
-                    <BaseButton category={panel.title[0].categoryName} action="Footer">
+                    <BaseButton
+                      category={panel.title[0].categoryName}
+                      action="Footer"
+                    >
                       {panel.title[0].name}
                     </BaseButton>
                   </BaseLink>
@@ -375,9 +427,12 @@ function Footer(props: propsContent) {
                     link={item.targetPage}
                     hover="text-black-500"
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
-
                   >
-                    <BaseButton category={item.categoryName} action="Footer" categorySub={item.content}>
+                    <BaseButton
+                      category={item.categoryName}
+                      action="Footer"
+                      categorySub={item.content}
+                    >
                       {item.content}
                     </BaseButton>
                   </BaseLink>
@@ -466,17 +521,21 @@ function Footer(props: propsContent) {
                     >
                       <BaseLink hover="text-black-500" link={item.targetPage}>
                         {/*bg-[url('/assets/instagram.png')]*/}
-                        <BaseButton action="Footer" category="Joinus" categorySub={item.channelName}>
+                        <BaseButton
+                          action="Footer"
+                          category="Joinus"
+                          categorySub={item.channelName}
+                        >
                           <span className="block w-36px h-36px bg-cover relative mobile:w-25px mobile:h-25px">
-                          <BaseImage
+                            <BaseImage
                               mImg={item.iconImage.imagemobile.url}
                               pImg={item.iconImage.imagepc.url}
                               alt={item.iconImage.altText}
                               objectFit="contain"
                               layout="fill"
                               quality={100}
-                          ></BaseImage>
-                        </span>
+                            ></BaseImage>
+                          </span>
                         </BaseButton>
                       </BaseLink>
                     </li>
@@ -583,20 +642,22 @@ function Footer(props: propsContent) {
                             link={`${item.targetUrl}`}
                           >
                             <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
-
-                              <BaseButton action="Footer" category="Language" categorySub={item.region+'-'+item.language}>
+                              <BaseButton
+                                action="Footer"
+                                category="Language"
+                                categorySub={item.region + "-" + item.language}
+                              >
                                 <p>
                                   {item.region}{" "}
                                   {!item.language && item.language == ""
-                                      ? null
-                                      : "-"}
+                                    ? null
+                                    : "-"}
                                 </p>
 
                                 {item.language && item.language == "" ? null : (
-                                    <p>{item.language}</p>
+                                  <p>{item.language}</p>
                                 )}
                               </BaseButton>
-
                             </div>
                             <div className="w-13px h-25px bg-[url('/assets/arrow-right.png')] bg-contain bg-no-repeat pad:w-15px  pad:h-16px mobile:w-15px mobile:h-17px reactive"></div>
                           </BaseLink>
@@ -678,6 +739,7 @@ function Footer(props: propsContent) {
           </div>
         </div>
       )}
+      <div ref={showHeaderRef} className="w-full h-1px"></div>
     </footer>
   );
 }

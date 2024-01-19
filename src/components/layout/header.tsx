@@ -160,6 +160,7 @@ function Header(props: propsContent) {
       if (slug == "howToBuyDetail") {
         setScrollNum(window.scrollY);
       }
+
       if (slug == "howToBuy") {
         setScrollNum(e.detail.scrollY);
       }

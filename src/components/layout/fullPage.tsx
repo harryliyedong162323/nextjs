@@ -233,22 +233,33 @@ function getComponent(
 }
 
 interface propsContent {
-  data: dataPageContent;
+  data: dataPageContent<propsContentItem>;
   footerData: footerDataContent;
   headerData: headerDataContent;
 }
-interface dataPageContent {
+interface dataPageContent<T> {
   type: string;
   name: string;
   rangeNav?: boolean;
-  rangeNavData?: boolean;
+  rangeNavData?: T;
   entry: {
     headStyle?: string;
     freeMode?: boolean;
     children: Array<CombinedInterface>;
   };
 }
-
+interface propsContentItem {
+  nav1Name?: string;
+  nav1Render?: string;
+  nav2Name?: string;
+  nav2Render?: string;
+  nav3Name?: string;
+  nav3Render?: string;
+  nav4Name?: string;
+  nav4Render?: string;
+  nav5Name?: string;
+  nav5Render?: string;
+}
 interface pageComponentsContent {
   [key: string]: any;
 }
@@ -503,7 +514,7 @@ function FullPage(props: propsContent) {
   };
 
   return (
-    <div>
+    <>
       <Header
         scrollToPage={scrollToPage}
         currentSlideIndex={currentSlideIndex}
@@ -558,7 +569,7 @@ function FullPage(props: propsContent) {
         value={currentScroll}
         data-slug={currentSlug}
       />
-    </div>
+    </>
   );
 }
 

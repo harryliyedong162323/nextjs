@@ -1423,7 +1423,7 @@ function FlavourFinderComponent(props: propsContent) {
                       </span>
                     </div>
                     <div className="mx-auto mt-10px w-[1251px] bg-[4f1f1] pad:w-[1042px] mobile:w-330px pb-30px">
-                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover  flex  px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover  flex items-start  px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
                         <div className="w-280px   mobile:w-241px">
                           {recommend && (
                             <Swiper
@@ -1489,7 +1489,7 @@ function FlavourFinderComponent(props: propsContent) {
                               })}
                           </div>
                         </div>
-                        <div className="inline-flex  flex-col justify-center   ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
+                        <div className="inline-flex  flex-col justify-start pt-18px  ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
                           <div className="inline-flex items-center">
                             <div className="relative inline-block w-68px h-68px pad:w-54px pad:h-54px mobile:w-36px mobile:h-36px">
                               <BaseImage
@@ -1517,10 +1517,10 @@ function FlavourFinderComponent(props: propsContent) {
                               }
                             </div>
                           </div>
-                          <div className="font-Grotesque-Regular text-black uppercase mt-10px text-15px pad:text-12px mobile:text-10px">
+                          <div className="font-Grotesque-Regular text-black uppercase mt-[21px] text-17px pad:text-12px mobile:text-10px">
                             {data.basic.dywfResultSubtitle}
                           </div>
-                          <div className="font-Grotesque-Regular text-black mt-20px leading-normal text-22px pad:text-16px opacity-50  mobile:text-14px mobile:text-center">
+                          <div className="font-Grotesque-Regular text-black mt-[20px] leading-normal text-22px pad:text-16px opacity-50  mobile:text-14px mobile:text-center">
                             {
                               data.quizs.q3.step1.answers[
                                 quizThreeSelected1 - 1
@@ -1540,7 +1540,7 @@ function FlavourFinderComponent(props: propsContent) {
                               );
                               props.scrollToPage(0);
                             }}
-                            className="cursor-pointer inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] hover:bg-[url('/assets/range/bg_explore_btn_hover.png')] hover:text-white bg-cover text-black text-center uppercase mt-20px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
+                            className="cursor-pointer inline-block font-AlbertusNova-Regular bg-[url('/assets/range/bg_explore_btn.png')] hover:bg-[url('/assets/range/bg_explore_btn_hover.png')] hover:text-white bg-cover text-black text-center uppercase mt-45px w-167px h-55px leading-[60px] text-17px pad:w-134px pad:h-44px pad:leading-[50px] pad:text-14px mobile:w-134px mobile:h-44px mobile:leading-[50px] mobile:text-14px"
                           >
                             {data.basic.dywfExploreContent}
                           </div>

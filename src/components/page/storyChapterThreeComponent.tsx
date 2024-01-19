@@ -34,8 +34,8 @@ interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -61,7 +61,11 @@ function StoryChapterThreeComponent(props: propsContent) {
 
   return (
     <section className="relative overflow-hidden select-none">
-      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll50}
+        data-slug={props.currentSlug}
+      />
       <div className="flex h-screen">
         <BaseImage
           mImg={data.storyChapterThreeComponentBackgroundImage.imagemobile.url}
@@ -86,7 +90,7 @@ function StoryChapterThreeComponent(props: propsContent) {
             pImg={data.storyChapterThreeComponentFaceImage.imagepc.url}
             alt={data.storyChapterThreeComponentFaceImage.altText}
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
             quality={100}
           ></BaseImage>
         </div>
