@@ -148,7 +148,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                 <div className="relative" key={index}>
                   {currentKol === index && (
                     <>
-                      <BaseLink link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
+                      <BaseLink link={`${params.locale}/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
                         {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
                         {/*  <BaseButton action="Wildmoorrange" category="Tales" categorySub={item.listName}>*/}
                         <div
@@ -198,7 +198,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                           {item.listDescription}
                         </div>
                         <BaseLink
-                          link={`/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}
+                          link={`${params.locale}/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}
                         >
                           {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
                           <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
