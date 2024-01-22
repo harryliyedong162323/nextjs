@@ -376,7 +376,7 @@ function Footer(props: propsContent) {
         <div className="flex justify-between pb-50px border-b-2 border-b-500 border-solid border-dark-grey mobile:justify-center mobile:flex-wrap mobile:pb-30px mobile:w-[100%]">
           {/*mobile:w-274px mobile:h-44px*/}
           <div className="mobile:w-full mobile:order-2">
-            <BaseLink link="/home">
+            {/*<BaseLink link="/home">*/}
               <div className="w-262px h-41px relative bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto">
                 <BaseImage
                   mImg={footerData.logo.imagemobile.url}
@@ -387,7 +387,7 @@ function Footer(props: propsContent) {
                   quality={100}
                 ></BaseImage>
               </div>
-            </BaseLink>
+            {/*</BaseLink>*/}
           </div>
           <div className="mobile:order-1 mobile:w-full">
             <div
@@ -407,6 +407,7 @@ function Footer(props: propsContent) {
               <li className="flex justify-between pb-35px mobile:pb-40px items-center">
                 <span className="mobile:text-17px">
                   <BaseLink
+                     
                     link={panel.title[0].link}
                     className="text-20px font-medium font-Grotesque-Medium dark-grey"
                   >
@@ -424,6 +425,7 @@ function Footer(props: propsContent) {
               {panel.list.map((item) => (
                 <li className="pb-17px mobile:hidden" key={item.id}>
                   <BaseLink
+                     
                     link={item.targetPage}
                     hover="text-black-500"
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
@@ -449,6 +451,7 @@ function Footer(props: propsContent) {
               <li className="flex justify-between items-start pb-35px mobile:pb-25px  ">
                 <span className="w-10/12  mobile:text-17px">
                   <BaseLink
+                     
                     link={panel.title[0].link}
                     className="text-20px mobile:text-17px font-medium font-Grotesque-Medium dark-grey"
                   >
@@ -593,7 +596,7 @@ function Footer(props: propsContent) {
           </div>
 
           <div className="text-[#696969] font-Grotesque-Regular hidden mobile:text-14px mobile:w-full mobile:text-center mobile:block">
-            <BaseLink link={footerData.copyRightCta.targetPage}>
+            <BaseLink  link={footerData.copyRightCta.targetPage}>
               {footerData.copyRightCta.content}
             </BaseLink>
           </div>
@@ -638,7 +641,7 @@ function Footer(props: propsContent) {
                         >
                           <BaseLink
                             className={"flex justify-between items-center "}
-
+                           
                             link={`${item.targetUrl}`}
                           >
                             <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">
@@ -669,7 +672,7 @@ function Footer(props: propsContent) {
                 {/*<div className="mb-75px pad:mb-54px mobile:mb-60px">*/}
                 {/*  <BaseLink*/}
                 {/*    className={"flex justify-between items-center "}*/}
-                {/*    autoLanguage={false}*/}
+                {/*   */}
                 {/*    link={`/zh-Hant-TW/${lastPathName}`}*/}
                 {/*  >*/}
                 {/*    <div className="uppercase text-13px pad:text-10px mobile:text-15px  not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">*/}
@@ -690,7 +693,7 @@ function Footer(props: propsContent) {
                 {/*<div className="mb-75px pad:mb-54px mobile:mb-60px">*/}
                 {/*  <BaseLink*/}
                 {/*    className={"flex justify-between items-center "}*/}
-                {/*    autoLanguage={false}*/}
+                {/*   */}
                 {/*    link={`/ko-KR/${lastPathName}`}*/}
                 {/*  >*/}
                 {/*    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">*/}
@@ -711,7 +714,7 @@ function Footer(props: propsContent) {
                 {/*<div className="mb-75px pad:mb-54px mobile:mb-60px">*/}
                 {/*  <BaseLink*/}
                 {/*    className={"flex justify-between items-center "}*/}
-                {/*    autoLanguage={false}*/}
+                {/*   */}
                 {/*    link={`/en/${lastPathName}`}*/}
                 {/*  >*/}
                 {/*    <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular w-4/5 truncate">*/}

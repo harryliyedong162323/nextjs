@@ -812,7 +812,7 @@ function FlavourFinderComponent(props: propsContent) {
       {showQuiz && (
         <>
           <div
-            className={`relative bg-[url('/assets/range/bg_quiz.png')] min-h-[1000px] bg-cover h-screen bg-[#E6E7E8] mobile:h-screen mobile:flex mobile:flex-col`}
+            className={`relative bg-[url('/assets/range/bg_quiz.png')] min-h-[950px] bg-cover h-screen bg-[#E6E7E8] mobile:h-screen mobile:flex mobile:flex-col`}
           >
             {quizIndex === 0 && (
               <>
