@@ -9,6 +9,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { logEvent } from "@/utils/analytics";
 import BaseButton from "../base/button";
+import {useParams} from "next/navigation";
 export interface entryContent {
   headStyle: string;
   stores: locationInfoStore;
@@ -282,7 +283,7 @@ function LocationStoreList(props: LocationStoreListPropsContent) {
   const options = props.options;
   const location = props.location.location;
   const id = props.location.id;
-
+  const params = useParams();
   const customStyles = {
     control: (styles: object) => ({
       ...styles,
@@ -463,7 +464,7 @@ function LocationStoreList(props: LocationStoreListPropsContent) {
                           className={`w-full   mobile:w-265px mobile:pl-0 mobile:pr-0`}
                         >
                           <BaseLink
-                            link={`/howToBuyDetail/${item.sys.id}`}
+                            link={`${params.locale}/howToBuyDetail/${item.sys.id}`}
                             className="text-black"
                           >
                             <BaseButton
