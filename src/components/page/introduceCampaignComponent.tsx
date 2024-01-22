@@ -527,8 +527,8 @@ function IntroduceCampaignComponent(props: propsContent) {
                   className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}
                 >
                   <div>
-                    {/*<BaseLink link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>*/}
-                     <BaseLink link={`/activityDetail/${item.sys?.id}`}>
+                    <BaseLink link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
+                     {/*<BaseLink link={`/activityDetail/${item.sys?.id}`}>*/}
                       <BaseButton action={checkCategoryType(params.slug[0])} category="Globalnews" categorySub={item.detailPage.activityDetailComponentTitle}>
                         <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px cursor-pointer pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
                           <BaseImage
@@ -556,8 +556,8 @@ function IntroduceCampaignComponent(props: propsContent) {
                       {item.description}
                     </div>
                     {/*link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
-                    {/* <BaseLink link="/activityDetail/${item.sys?.id}"> */}
-                    <BaseLink link={`/activityDetail/${item.sys?.id}`}>
+                     <BaseLink link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
+                    {/*<BaseLink autoLanguage={false} link={`/activityDetail/${item.sys?.id}`}>*/}
                       <BaseButton action={checkCategoryType(params.slug[0])} category="Globalnews" categorySub={item.detailPage.activityDetailComponentTitle}>
                         <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
                       </BaseButton>

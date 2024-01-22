@@ -23,7 +23,7 @@ interface propsContent {
 class BaseLink extends Component<propsContent,State>{
     private location: string;
     static defaultProps = {
-        autoLanguage:false,
+        autoLanguage:true,
         className:'',
         display:true,
         color:'',
@@ -149,22 +149,24 @@ class BaseLink extends Component<propsContent,State>{
 
         if(link == '') return link
 
-        if (location) {
-            trimmedUrl = location.replace(/^\/|\/$/g, '');
-        } else {
-            trimmedUrl = '';
-        }
+        // if (location) {
+        //     trimmedUrl = location.replace(/^\/|\/$/g, '');
+        // } else {
+        //     trimmedUrl = '';
+        // }
+        //
+        // trimmedLink = (link.replace(/^\/|\/$/g, ''))
+        //
+        // if(trimmedLink == ''){
+        //    targetUrl = '/'
+        // }else{
+        //
+        //     targetUrl = this.props.autoLanguage ? (`/${trimmedUrl}/`) + trimmedLink : this.props.link;
+        // }
 
-        trimmedLink = (link.replace(/^\/|\/$/g, ''))
+        targetUrl = this.props.autoLanguage ? process.env.DOMAIN + this.props.link : this.props.link;
 
-        if(trimmedLink == ''){
-           targetUrl = '/'
-        }else{
 
-            targetUrl = this.props.autoLanguage ? (`/${trimmedUrl}/`) + trimmedLink : this.props.link;
-        }
-        console.log(this.props.autoLanguage)
-        console.log(targetUrl)
         return targetUrl;
 
 

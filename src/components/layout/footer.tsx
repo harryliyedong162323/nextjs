@@ -641,7 +641,7 @@ function Footer(props: propsContent) {
                         >
                           <BaseLink
                             className={"flex justify-between items-center "}
-                           
+                            autoLanguage={false}
                             link={`${item.targetUrl}`}
                           >
                             <div className="uppercase text-13px pad:text-10px mobile:text-15px not-italic text-[#262627]  font-normal font-Grotesque-Regular w-4/5 truncate">

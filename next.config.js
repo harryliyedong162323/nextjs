@@ -7,7 +7,8 @@ const nextConfig = {
   reactStrictMode: false,
 
   env:{
-    LOCATION:'en-GB'
+    LOCATION:'en-GB',
+    DOMAIN:'https://wildmoor.workbyus.cn/'
   },
 
 
