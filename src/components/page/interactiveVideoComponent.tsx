@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseVideo from "@/components/base/video";
 import BaseLink from "../base/link";
-
+import {useParams} from "next/navigation";
 export interface entryContent {
   headStyle: string;
   interactiveVideoComponentIsShow: boolean;
@@ -31,6 +31,7 @@ export interface entryContent {
   };
 }
 import { TrackingTypeContent } from "@/utils/analytics";
+import BaseButton from "../base/button";
 interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
@@ -45,11 +46,28 @@ interface propsContent {
   };
 }
 
+
+const checkCategoryType = (slug:string = '')=>{
+  let pageSlug:string = '';
+  switch (slug){
+    case 'home':
+      pageSlug = 'Homepage';
+      break;
+    case 'localMarketActivity':
+      pageSlug = 'Wildescapepage';
+      break;
+    default:
+      break;
+  }
+
+  return pageSlug
+}
+
 function InteractiveVideoComponent(props: propsContent) {
   const headStyle = props.data.entry.headStyle;
 
   const interactiveVideoData = props.data.entry;
-
+  const params = useParams();
   return (
     <section
       id="TheWildEscape"
@@ -91,7 +109,7 @@ function InteractiveVideoComponent(props: propsContent) {
 
       <div className="absolute z-20 left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%]">
         <div className="uppercase font-normal text-33px text-center font-AlbertusNova-Regular pb-56px text-white pad:text-23px pad:pb-40px mobile:pb-27px mobile:text-20px">
-          The Wild Escape{" "}
+          {interactiveVideoData.interactiveVideoComponentTitle}
         </div>
         <BaseLink link={interactiveVideoData.interactiveVideoComponentJumpUrl}>
           {/*
@@ -120,10 +138,14 @@ function InteractiveVideoComponent(props: propsContent) {
           */}
 
           <div className="hover:bg-[url('/assets/interactiveVideo/CTZ.png')]  hover:text-black bg-[url('/assets/interactiveVideo/CTZ-Z.png')]   mx-auto w-333px h-73px    cursor-pointer text-center leading-[73px] text-white text-20px pad:text-14px uppercase font-AlbertusNova-Light font-normal mobile:hidden">
-            EXPLORE MORE
+            <BaseButton action={checkCategoryType(params.slug[0])} category="Wildescapevideo">
+              {interactiveVideoData.interactiveVideoComponentExploreMore}
+            </BaseButton>
           </div>
           <div className="hidden mobile:block mobile:cursor-default mobile:bg-[url('/assets/interactiveVideo/CTZ-Z.png')] mobile:mx-auto mobile:text-12px mobile:w-190px mobile:h-30px mobile:text-center mobile:leading-[30px] mobile:text-white mobile:font-AlbertusNova-Light mobile:font-normal">
-            EXPLORE MORE
+            <BaseButton action={checkCategoryType(params.slug[0])} category="Wildescapevideo">
+              {interactiveVideoData.interactiveVideoComponentExploreMore}
+            </BaseButton>
           </div>
           {/* </div> */}
         </BaseLink>

@@ -1,7 +1,8 @@
 import React,{Component} from "react";
 import Link from 'next/link';
-import {getLastPathName} from '@/utils/common'
+
 import { sendScrollEvent,TrackingType } from "@/utils/analytics";
+
 interface State {
     name:string
 }
@@ -140,7 +141,6 @@ class BaseLink extends Component<propsContent,State>{
 
 
     computedLink():string{
-
         let location :string | undefined = this.getLocation() || process.env.LOCATION;
         let trimmedUrl: string;
         let trimmedLink:string;
@@ -148,7 +148,7 @@ class BaseLink extends Component<propsContent,State>{
         let link:string = this.props.link ?? '';
 
         if(link == '') return link
-
+        // console.log(this.props)
         if (location) {
             trimmedUrl = location.replace(/^\/|\/$/g, '');
         } else {
@@ -168,8 +168,6 @@ class BaseLink extends Component<propsContent,State>{
 
 
     }
-
-
 
     render() {
         if(this.props.display){

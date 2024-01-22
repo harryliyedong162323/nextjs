@@ -121,7 +121,7 @@ function getCurrentLocation(
 }
 
 function Header(props: propsContent) {
-  // console.log(props);
+  console.log(props);
   const headerData: headerDataContent = props.data;
   const slug: string = useParams().slug[0];
 
@@ -225,9 +225,9 @@ function Header(props: propsContent) {
           headStyle == "white" ? "block" : "hidden"
         }`}
       >
-        <BaseLink link="/home">
-          <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2 cursor-pointer translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-        </BaseLink>
+        {/*<BaseLink link="/home">*/}
+          <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2  translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        {/*</BaseLink>*/}
         <div
           className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[55px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
           onClick={() => {
@@ -249,9 +249,9 @@ function Header(props: propsContent) {
           headStyle == "black" ? "block" : "hidden"
         }`}
       >
-        <BaseLink link="/home">
-          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  cursor-pointer left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-        </BaseLink>
+        {/*<BaseLink >*/}
+          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        {/*</BaseLink>*/}
         <div
           className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
           onClick={() => {
@@ -280,7 +280,7 @@ function Header(props: propsContent) {
           id="nav-large-content"
           className={`w-full block translate-y-full transition-all ease-in-out duration-500 delay-1000 h-166px pad:h-118px mobile:h-85px `}
         >
-          <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
+          <div className="w-538px h-86px bg-contain bg-[url('/assets/KVAnimation/logo.png')] absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] pad:w-380px pad:h-61px mobile:w-186px mobile:h-30px mobile:bg-[url('/assets/KVAnimation/logo-m.png')]"></div>
           <div
             className="w-34px h-34px bg-contain bg-[url('/assets/more_menu_black.png')] cursor-pointer absolute right-55px top-1/2 translate-y-[-50%] mobile:w-20px mobile:h-20px mobile:right-25px"
             onClick={() => {
@@ -306,9 +306,9 @@ function Header(props: propsContent) {
           headStyle == "bg-white" ? "block" : "hidden"
         }`}
       >
-        <BaseLink link="/home">
-          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px cursor-pointer absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
-        </BaseLink>
+        {/*<BaseLink link={`${headerData.group1TargetPage}`}>*/}
+          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px  absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        {/*</BaseLink>*/}
         <div
           className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
           onClick={() => {

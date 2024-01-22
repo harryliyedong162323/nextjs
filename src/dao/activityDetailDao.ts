@@ -1,11 +1,11 @@
 import PageModel from "../model/pageModel";
-
+import {paramsContent} from "@/app/[locale]/[...slug]/page";
 // const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
-query($sysId:String!) {
-    localMarketActivityDetailCollection (limit:1 where:{sys:{id:$sysId}},locale: "en") {
+query($sysId:String!,$language:String!) {
+    localMarketActivityDetailCollection (limit:1 where:{sys:{id:$sysId}},locale: $language) {
         items {
             sys {
                 id
@@ -13,10 +13,10 @@ query($sysId:String!) {
             sectionName
             activityDetailComponentTitle
   
-            pageDetailCollection(locale: "en") {              
+            pageDetailCollection(locale: $language) {              
                 items {
                     ... on DataLocalMarketDetailCarouselImage {
-                        imagesCollection (limit : 10,locale: "en") {
+                        imagesCollection (limit : 10,locale: $language) {
                             items {
                                 imagepc {
                                     url
@@ -129,9 +129,8 @@ query($sysId:String!) {
 `;
 
 class ActivityDetailDao {
-  static async fetch<PageModel>(id: string) {
-    const variables = { sysId: id };
-
+  static async fetch<PageModel>(params: paramsContent) {
+    const variables = { sysId: params?.slug[1],language: params?.locale || process.env.LOCATION };
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",
@@ -141,17 +140,21 @@ class ActivityDetailDao {
       body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
-    console.log(result);
-    return [
-      {
-        type: "activityDetailComponent",
-        name: "activityDetailComponent",
-        entry: {
-          headStyle: "bg-white",
-          ...PageModel.query("localMarketActivityDetailCollection", result),
-        },
+    return {
+      seo:{
+
       },
-    ];
+      page:[
+        {
+          type: "activityDetailComponent",
+          name: "activityDetailComponent",
+          entry: {
+            headStyle: "bg-white",
+            ...PageModel.query("localMarketActivityDetailCollection", result),
+          },
+        },
+      ]
+    };
   }
 }
 

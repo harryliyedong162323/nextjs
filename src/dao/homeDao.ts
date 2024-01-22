@@ -1,5 +1,5 @@
 import HomeModel from "../model/homeModel";
-
+import {paramsContent} from "@/app/[locale]/[...slug]/page";
 // const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 //
@@ -15,9 +15,9 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 
-   query {
+   query($language:String!) {
    
-   seo:seoMetaTagsCollection(limit: 1, where: {name: "Home"},locale: "en") {
+   seo:seoMetaTagsCollection(limit: 1, where: {name: "Home"},locale: $language) {
     items {
         title
         keyWords
@@ -27,7 +27,7 @@ const query = `
    
    
    
- KVAnimation: homeCollection(limit: 1, where: {pageName: "home"}) {
+ KVAnimation: homeCollection(limit: 1, where: {pageName: "home"},locale: $language) {
     items {
       kvAnimationComponentKvTitle
       kvAnimationComponentScrollContent
@@ -44,9 +44,9 @@ const query = `
     }
   }
 
-  productFamily: homeCollection(limit: 1, where: {pageName: "home"}) {
+  productFamily: homeCollection(limit: 1, where: {pageName: "home"},locale: $language) {
     items {
-      productFamilyComponentProductsCollection(limit: 10, order:id_ASC) {
+      productFamilyComponentProductsCollection(limit: 10, order:id_ASC,locale: $language) {
         items {
             id
             active
@@ -81,7 +81,7 @@ const query = `
     }
   }
 
-  interactiveVideo: homeCollection(limit: 1, where: {pageName: "home"}) {
+  interactiveVideo: homeCollection(limit: 1, where: {pageName: "home"},locale: $language) {
     items {
       interactiveVideoComponentIsShow
       interactiveVideoComponentJumpUrl
@@ -108,7 +108,7 @@ const query = `
     }
   }
 
-  introduceCampaign: homeCollection(limit: 1, where: {pageName: "home"}) {
+  introduceCampaign: homeCollection(limit: 1, where: {pageName: "home"},locale: $language) {
     items {
         introduceCampaignComponentTitle
         introduceCampaignComponentBackgroundImage {
@@ -120,7 +120,7 @@ const query = `
         }
         altText
       }
-      introduceCampaignComponentCampaignsCollection(limit: 10,order:id_DESC) {
+      introduceCampaignComponentCampaignsCollection(limit: 10,order:id_DESC,locale: $language) {
         items {
           id  
           location
@@ -143,20 +143,20 @@ const query = `
     }
   }
 
-  nearYou: homeCollection(limit: 1, where: {pageName: "home"}) {
+  nearYou: homeCollection(limit: 1, where: {pageName: "home"},locale: $language) {
     items {
       nearYouContentTitle
-      nearYouComponentStoresCollection(limit: 10) {
+      nearYouComponentStoresCollection(limit: 10,locale: $language) {
         items {
             nearYouId
             nearYouActive
             howToBuyDetailComponentStoreName
             howToBuyDetailComponentStoreAddress
             nearYouDes
-            nearYouComponentNearYouCarouselImageCollection(limit:10,order:id_DESC) {
+            nearYouComponentNearYouCarouselImageCollection(limit:10,order:id_DESC,locale: $language) {
               items {
                   id
-                   imagesCollection(limit:10) {
+                   imagesCollection(limit:10,locale: $language) {
                        items {
                            imagepc {
                                url
@@ -176,7 +176,7 @@ const query = `
     }
   }
 
-  VIPClub: homeCollection(limit: 1, where: {pageName: "home"}) {
+  VIPClub: homeCollection(limit: 1, where: {pageName: "home"},locale: $language) {
     items {
       vipClubComponentJoinUsTitle
       vipClubComponentJoinUsSubTitle
@@ -272,21 +272,21 @@ const query = `
     }
   }
 }
-
-
-
-
 `;
 
+
+
+
 class HomeDao {
-  static async fetch<HomeModel>() {
+  static async fetch<HomeModel>(params:paramsContent) {
+    const variables = { language: params?.locale };
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
 

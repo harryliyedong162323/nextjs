@@ -1,5 +1,5 @@
 import PageModel from "../model/pageModel";
-
+import {paramsContent} from "@/app/[locale]/[...slug]/page";
 // const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
@@ -163,8 +163,8 @@ query($sysId:String!) {
 `;
 
 class StoriesDetailDao {
-  static async fetch<PageModel>(id: string) {
-    const variables = { sysId: id };
+  static async fetch<PageModel>(params: paramsContent) {
+    const variables = { sysId: params?.slug[1],language: params?.locale || process.env.LOCATION };
 
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",

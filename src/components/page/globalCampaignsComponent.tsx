@@ -130,7 +130,7 @@ function GlobalCampaignsComponent(props: propsContent) {
       <div className="absolute bottom-24px w-full flex flex-col items-center justify-center mobile:hidden z-30">
         <div className="w-18px h-24px border-white border-2 inline-block border-solid rounded-full mb-5px relative before:w-2px before:h-5px before:bg-white before:absolute before:content-[''] before:left-6px before:top-5px before:animate-scrollMore"></div>
         <div className="text-12px leading-tight text-white font-Grotesque-Regular">
-          Scroll to explore more
+          {globalCampaigns.howToBuyDetailComponentScrollContent}
         </div>
       </div>
     </section>

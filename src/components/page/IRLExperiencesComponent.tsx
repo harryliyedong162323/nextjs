@@ -140,7 +140,7 @@ function IRLExperiencesComponent(props: propsContent) {
     <section
       id="IRLExperiences"
       data-anchor={props.data.entry.pageNumber}
-      className="overflow-hidden h-screen container mx-auto pb-164px mobile:pb-67px select-none"
+      className="overflow-hidden h-screen w-[1534px]  mx-auto pb-164px mobile:w-full mobile:pb-67px select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
       <Swiper
@@ -162,13 +162,13 @@ function IRLExperiencesComponent(props: propsContent) {
             </div>
 
             {currentStore.length > 0 && (
-              <div className="grid grid-cols-2 justify-center gap-[41px] pad:gap-[29px] items-center mobile:grid-rows-2 mobile:grid-cols-none">
+              <div className="grid grid-cols-2 justify-center gap-[41px]  items-center mobile:grid-rows-2 mobile:grid-cols-none">
                 {currentStore[0] && (
                   <div className="pl-21px mobile:pl-0 mobile:w-325px mobile:mx-auto">
                     <BaseLink
                       link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                     >
-                      <div className="relative h-405px pad:h-289px cursor-pointer  mobile:h-217px  mobile:w-full">
+                      <div className="relative h-[405px]  cursor-pointer  mobile:h-217px  mobile:w-full">
                         <BaseImage
                           mImg={
                             currentStore[0].howToBuyIrlImage.imagemobile.url
@@ -182,15 +182,15 @@ function IRLExperiencesComponent(props: propsContent) {
                       </div>
                     </BaseLink>
                     <div className="pt-43px ">
-                      <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular">
+                      <div className="pb-25px  font-medium text-26px  font-AlbertusNova-Regular">
                         {currentStore[0].howToBuyDetailComponentStoreName}
                       </div>
                       <div className="flex justify-between items-center mobile:mb-10px">
-                        <div className="w-full  text-13px pad:text-9px font-Grotesque-Regular font-normal  mobile:text-11px ">
+                        <div className="w-full  text-13px  font-Grotesque-Regular font-normal  mobile:text-11px ">
                           {currentStore[0].howToBuyDescription}
                         </div>
                       </div>
-                      <div className="pt-31px pad:pt-22px mobile:mb-25px">
+                      <div className="pt-31px  mobile:mb-25px">
                         <BaseLink
                           link={`/howToBuyDetail/${currentStore[0].sys.id}`}
                         >
@@ -206,7 +206,7 @@ function IRLExperiencesComponent(props: propsContent) {
                     <BaseLink
                       link={`/howToBuyDetail/${currentStore[1].sys.id}`}
                     >
-                      <div className="relative h-405px cursor-pointer pad:h-289px mobile:h-217px  mobile:w-full">
+                      <div className="relative h-[405px] cursor-pointer mobile:h-217px  mobile:w-full">
                         <BaseImage
                           mImg={
                             currentStore[1].howToBuyIrlImage.imagemobile.url
@@ -220,15 +220,15 @@ function IRLExperiencesComponent(props: propsContent) {
                       </div>
                     </BaseLink>
                     <div className="pt-43px ">
-                      <div className="pb-25px pad:pb-17px font-medium text-26px pad:text-18px font-AlbertusNova-Regular mobile:text-16px mobile:pb-15px">
+                      <div className="pb-25px  font-medium text-26px  font-AlbertusNova-Regular mobile:text-16px mobile:pb-15px">
                         {currentStore[1].howToBuyDetailComponentStoreName}
                       </div>
                       <div className="flex justify-between items-center mobile:mb-10px">
-                        <div className="text-13px pad:text-9px  font-Grotesque-Regular font-normal  mobile:text-11px ">
+                        <div className="text-13px   font-Grotesque-Regular font-normal  mobile:text-11px ">
                           {currentStore[1].howToBuyDescription}
                         </div>
                       </div>
-                      <div className="pt-31px pad:pt-22px mobile:mb-35px">
+                      <div className="pt-31px  mobile:mb-35px">
                         <BaseLink
                           link={`/howToBuyDetail/${currentStore[1].sys.id}`}
                         >

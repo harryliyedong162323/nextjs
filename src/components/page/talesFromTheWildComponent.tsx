@@ -137,7 +137,7 @@ function TalesFromTheWildComponent(props: propsContent) {
         value={props.TrackingType.scrollFull}
         data-slug={"localMarketActivity"}
       />
-      <div className="flex h-screen flex-col justify-center mobile:justify-start">
+      <div className="flex h-screen  min-h-[950px]  flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           {title}
         </div>

@@ -754,7 +754,7 @@ function FlavourFinderComponent(props: propsContent) {
       }
       {!showQuiz && (
         <>
-          <div className="flex h-screen">
+          <div className="flex h-screen min-h-[750px]">
             <Image
               className="object-cover mobile:h-screen mobile:max-w-none mobile:-ml-160px"
               src={require("../../../public/assets/range/favour_finder_bg.png")}
@@ -812,7 +812,7 @@ function FlavourFinderComponent(props: propsContent) {
       {showQuiz && (
         <>
           <div
-            className={`relative bg-[url('/assets/range/bg_quiz.png')] bg-cover h-screen bg-[#E6E7E8] mobile:h-screen mobile:flex mobile:flex-col`}
+            className={`relative bg-[url('/assets/range/bg_quiz.png')] min-h-[1000px] bg-cover h-screen bg-[#E6E7E8] mobile:h-screen mobile:flex mobile:flex-col`}
           >
             {quizIndex === 0 && (
               <>
@@ -1489,7 +1489,7 @@ function FlavourFinderComponent(props: propsContent) {
                               })}
                           </div>
                         </div>
-                        <div className="inline-flex  flex-col justify-start pt-20px  ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
+                        <div className="inline-flex  flex-col justify-start pt-30px  ml-50px flex-1 mobile:w-241px mobile:ml-0 mobile:justify-center mobile:items-center mobile:border-t mobile:border-solid mobile:border-[#E6E7E8] mobile:mt-10px mobile:pt-10px">
                           <div className="inline-flex items-center">
                             <div className="relative inline-block w-68px h-68px pad:w-54px pad:h-54px mobile:w-36px mobile:h-36px">
                               <BaseImage

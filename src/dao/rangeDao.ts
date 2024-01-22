@@ -1,13 +1,13 @@
 import PageModel from "../model/pageModel";
-
+import {paramsContent} from "@/app/[locale]/[...slug]/page";
 // const BASE_URL = "https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss";
 
 const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
-query {
+query($language:String!) {
 
-    seo:seoMetaTagsCollection(limit: 1, where: {name: "Our Range"},locale: "en") {
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Our Range"},locale: $language) {
       items {
           title
           keyWords
@@ -16,9 +16,9 @@ query {
     } 
 
 
-    productFamily:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+    productFamily:rangeCollection (limit:1 where:{pageName:"range"} locale: $language) {
         items {
-            productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: "en") {
+            productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: $language) {
                 items {
                     id
                     active
@@ -53,11 +53,11 @@ query {
         }
     }
   
-    talesFromTheWild:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+    talesFromTheWild:rangeCollection (limit:1 where:{pageName:"range"} locale: $language) {
         items {
   
             talesFromTheWildTitle
-            talesFromTheWildListCollection (order:id_ASC, locale: "en") {
+            talesFromTheWildListCollection (order:id_ASC, locale: $language) {
               items {
                   sys {
                     id
@@ -98,10 +98,10 @@ query {
         }
     }
   
-    servingSuggestion:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+    servingSuggestion:rangeCollection (limit:1 where:{pageName:"range"} locale: $language) {
         items {
             servingSuggestionComponentTitle
-            productFamilyComponentProducts:productFamilyComponentProductsCollection(limit:10, order:id_ASC, locale: "en") {
+            productFamilyComponentProducts:productFamilyComponentProductsCollection(limit:10, order:id_ASC, locale: $language) {
                 items {
                     id
                     productName
@@ -130,7 +130,7 @@ query {
         }
     }
   
-    bottleConcept:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+    bottleConcept:rangeCollection (limit:1 where:{pageName:"range"} locale: $language) {
         items {
             bottleConceptComponentTitle
             bottleConceptComponentPrompttext
@@ -147,7 +147,7 @@ query {
         }
     }
   
-    flavourFinder:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+    flavourFinder:rangeCollection (limit:1 where:{pageName:"range"} locale: $language) {
         items {
             flavourFinderComponentTitle
             flavourFinderComponentDescription1
@@ -155,7 +155,7 @@ query {
         }
     }
   
-    rangeNav:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+    rangeNav:rangeCollection (limit:1 where:{pageName:"range"} locale: $language) {
         items {
             nav1Name
             nav1Render
@@ -506,10 +506,10 @@ query {
 `;
 
 const productFamilyQuery = `
-query {
-    productFamily:rangeCollection (limit:1 where:{pageName:"range"} locale: "en") {
+query($language:String!) {
+    productFamily:rangeCollection (limit:1 where:{pageName:"range"},locale: $language) {
         items {
-            productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: "en") {
+            productFamilyComponentProductsCollection(limit:10, order:id_ASC,locale: $language) {
                 items {
                     id
                     active
@@ -556,14 +556,15 @@ query {
 `;
 
 class RangeDao {
-  static async fetch<PageModel>() {
+  static async fetch<PageModel>(params:paramsContent) {
+    const variables = { language: params?.locale || process.env.LOCATION };
     const response = await fetch(BASE_URL, {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
 
@@ -573,17 +574,17 @@ class RangeDao {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQuery }),
+      body: JSON.stringify({ query: quizQuery, variables  }),
     });
     const quizResult = await quizResponse.json();
-
+    console.log(quizResult)
     const productFamilyResponse = await fetch(BASE_URL, {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: productFamilyQuery }),
+      body: JSON.stringify({ query: productFamilyQuery, variables  }),
     });
     const productFamilyResult = await productFamilyResponse.json();
 

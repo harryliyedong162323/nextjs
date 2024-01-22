@@ -32,8 +32,8 @@ interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -89,7 +89,11 @@ function BottleConceptComponent(props: propsContent) {
       data-anchor={3}
       className="relative overflow-hidden select-none"
     >
-      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll50}
+        data-slug={props.currentSlug}
+      />
       <Swiper
         // virtualTranslate={true}
         loop={true}
@@ -179,7 +183,7 @@ function BottleConceptComponent(props: propsContent) {
         ))}
       </Swiper>
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <div className="flex h-screen flex-col justify-center bg-black">
+      <div className="flex h-screen min-h-[900px]  flex-col justify-center bg-black">
         <div className="absolute w-full z-10 top-124px pad:top-84px mobile:top-82px">
           <div className="font-AlbertusNova-Regular text-white text-center uppercase text-33px pad:text-27px mobile:text-20px">
             {data.bottleConceptComponentTitle}

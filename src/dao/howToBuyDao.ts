@@ -1,12 +1,12 @@
 import HowToBuyModel from "../model/howToBuyModel";
-
+import {paramsContent} from "@/app/[locale]/[...slug]/page";
 // const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 
-  query {
-    seo:seoMetaTagsCollection(limit: 1, where: {name: "HowToBuy"},locale: "en") {
+  query($language:String!) {
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "HowToBuy"},locale: $language) {
       items {
           title
           keyWords
@@ -14,7 +14,7 @@ const query = `
       }
     }
   
-  irlstores: dataStoreCollection( where: { showInHowToBuyIrl: true },order:howToBuyIrlSort_ASC,locale: "en"
+  irlstores: dataStoreCollection( where: { showInHowToBuyIrl: true },order:howToBuyIrlSort_ASC,locale: $language
  ) {
               items {
                 sys {
@@ -42,7 +42,7 @@ const query = `
           }
   
   
-  stores: dataStoreCollection (limit:80){
+  stores: dataStoreCollection (limit:80,locale: $language){
               items {
                   sys {
                       id
@@ -81,7 +81,7 @@ const query = `
           }
   
   
-   locationInfo:howToBuyCollection (limit:1 where:{internalName:"howToBuy"} ) {
+   locationInfo:howToBuyCollection (limit:1 where:{internalName:"howToBuy"},locale: $language ) {
       items {
           locationInfoComponentTitle
           regionExploreMoreImage {
@@ -94,7 +94,7 @@ const query = `
               altText
           }
 
-          locationInfoComponentRegionListCollection(limit :10,order:regionId_ASC) {
+          locationInfoComponentRegionListCollection(limit :10,order:regionId_ASC,locale: $language) {
               items {
                   name
                   regionId
@@ -111,7 +111,7 @@ const query = `
               }
           }
 
-          locationInfoComponentStoreListCollection (limit:50){
+          locationInfoComponentStoreListCollection (limit:50,locale: $language){
               items {
                   sys {
                       id
@@ -152,10 +152,10 @@ const query = `
   }
 
 
-  IRLExperiences:howToBuyCollection (limit:1 where:{internalName:"howToBuy"} ) {
+  IRLExperiences:howToBuyCollection (limit:1 where:{internalName:"howToBuy"},locale: $language ) {
       items {
            irlExperiencesComponentIrlTitle
-          irlExperiencesComponentIrlStoresCollection {
+          irlExperiencesComponentIrlStoresCollection(locale: $language) {
               items {
                   howToBuyIrlImage {
                       imagepc {
@@ -185,7 +185,7 @@ const query = `
       }
   }
 
-  digitalExperience:howToBuyCollection (limit:1 where:{internalName:"howToBuy"} ) {
+  digitalExperience:howToBuyCollection (limit:1 where:{internalName:"howToBuy"},locale: $language ) {
       items {
           digitalExperienceComponentDigitalLeftImage {
               imagepc {
@@ -290,14 +290,15 @@ const query = `
 `;
 
 class HowToBuyDao {
-  static async fetch<HowToBuyModel>() {
+  static async fetch<HowToBuyModel>(params:paramsContent) {
+    const variables = { language: params?.locale || process.env.LOCATION };
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
     console.log(result);
@@ -310,10 +311,10 @@ class HowToBuyDao {
     // }
 
     return {
-      seo:{
+      seo: {
         ...HowToBuyModel.query("seo", result),
       },
-      page:[
+      page: [
         {
           type: "fullPage",
           name: "fullPage",
@@ -355,7 +356,7 @@ class HowToBuyDao {
             ],
           },
         },
-      ]
+      ],
     };
   }
 }

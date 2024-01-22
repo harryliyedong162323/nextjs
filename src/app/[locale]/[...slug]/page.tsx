@@ -13,20 +13,17 @@ import ErrorDao from '@/dao/errorDao'
 import React, {Suspense} from "react";
 import dynamic from "next/dynamic";
 
+import LOCALEMAP from "@/utils/locale";
+
 //layout
 import Header, {headerDataContent} from '@/components/layout/header';
 import Footer, {footerDataContent} from "@/components/layout/footer";
 import Popup from '@/components/layout/popup';
-// import SeoMeta from '@/components/layout/seoMeta';
-import type { Metadata, ResolvingMetadata } from 'next'
 
-
+import { notFound } from 'next/navigation'
 
 const Analytics = dynamic(() => import(`@/components/layout/analytics`), {
     suspense: true,
-});
-const SeoMeta = dynamic(() => import(`@/components/layout/seoMeta`), {
-    ssr: false
 });
 
 function capitalizeFirstLetter(str: string) {
@@ -46,38 +43,49 @@ function getDynamicComponent(data: componentsDataContent, k: number, footerData:
     return data.name == 'fullPage' ? <FullPage key={k} {...props}  /> : <Component key={k} {...props} />;
 }
 
-interface paramsContent {
+export interface paramsContent {
+    locale:string,
     slug: Array<string>
 }
 
 async function getPageData(params: paramsContent) {
     // params should be paased to fetch()
     console.log(params)
+    if(!LOCALEMAP.includes(params?.locale)){
+        notFound();
+        return false;
+    }
+
+    if(params?.locale == 'en-GB'){
+
+        params.locale = 'en';
+    }
+    console.log(params?.locale)
     let result = {}
     switch (params?.slug[0]) {
         case "home":
-            result = await HomeDao.fetch();
+            result = await HomeDao.fetch(params);
             break;
         case "story":
-            result = await StoryDao.fetch();
+            result = await StoryDao.fetch(params);
             break;
         case "activityDetail":
-            result = await activityDetailDao.fetch(params?.slug[1]);
+            result = await activityDetailDao.fetch(params);
             break;
         case "storiesDetail":
-            result = await storiesDetailDao.fetch(params?.slug[1]);
+            result = await storiesDetailDao.fetch(params);
             break;
         case "range":
-            result = await RangeDao.fetch();
+            result = await RangeDao.fetch(params);
             break;
         case "howToBuy":
-            result = await HowToBuyDao.fetch();
+            result = await HowToBuyDao.fetch(params);
             break;
         case "howToBuyDetail":
-            result = await HowToBuyDetailDao.fetch(params?.slug[1]);
+            result = await HowToBuyDetailDao.fetch(params);
             break;
         case "localMarketActivity":
-            result = await LocalMarketActivityDao.fetch();
+            result = await LocalMarketActivityDao.fetch(params);
             break;
         case "privacyPolicy":
             result = await PrivacyPolicyDao.fetch();
@@ -86,7 +94,8 @@ async function getPageData(params: paramsContent) {
             result = await ErrorDao.fetch();
             break;
         default:
-            result = await HomeDao.fetch();
+            notFound();
+            // result = await HomeDao.fetch(params);
             break;
     }
 
@@ -131,9 +140,16 @@ interface componentsDataContent{
 
 export async function generateMetadata({params}: { params: { locale: string; slug: string[] }}) {
 
-    const data:dataContent = await getPageData(params) as dataContent;
+    let data:dataContent;
 
-    console.log(data.seo)
+    try {
+        data = await getPageData(params) as dataContent
+    }catch (e){
+        notFound();
+    }
+
+
+    // console.log(data.seo)
     return {
         title: data.seo?.title,
         description: data.seo?.description,
@@ -144,21 +160,23 @@ export async function generateMetadata({params}: { params: { locale: string; slu
 
 export default async function Page({params}: { params: { locale: string; slug: string[] }}) {
 
-    const data:dataContent = await getPageData(params) as dataContent;
-
-    const footerData: footerDataContent | {} = await FooterDao.fetch();
-
-    const headerData: headerDataContent | {} = await HeaderDao.fetch();
-
+    let data:dataContent;
+    let footerData: footerDataContent | {} ;
+    let headerData: headerDataContent | {} ;
+    try {
+        data = await getPageData(params) as dataContent;
+        footerData = await FooterDao.fetch(params);
+        headerData = await HeaderDao.fetch(params);
+    }catch (e){
+        notFound();
+    }
     let componentsData: Array<componentsDataContent> = [];
 
     data.page.forEach((componentData: componentsDataContent, i: number) => {
         componentsData.push(componentData);
     });
 
-
     let isFullPageFlag: boolean = componentsData[0].type != 'fullPage' ? true : false;
-
 
     return (
         <div>

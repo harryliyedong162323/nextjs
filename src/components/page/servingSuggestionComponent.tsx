@@ -42,8 +42,8 @@ interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -52,14 +52,20 @@ interface propsContent {
 }
 
 function ServingSuggestionComponent(props: propsContent) {
-  console.log(props)
+  console.log(props);
   const headStyle = props.data.entry.headStyle;
   const title = props.data.entry.servingSuggestionComponentTitle;
-  const [data, setData] = useState<product>(props.data.entry.productFamilyComponentProducts.items[0]);
+  const [data, setData] = useState<product>(
+    props.data.entry.productFamilyComponentProducts.items[0]
+  );
 
-  eventbus.on('selectProduct', (value:number) => {
-    setData(props.data.entry.productFamilyComponentProducts.items.filter(item => item.id === value)[0])
-  })
+  eventbus.on("selectProduct", (value: number) => {
+    setData(
+      props.data.entry.productFamilyComponentProducts.items.filter(
+        (item) => item.id === value
+      )[0]
+    );
+  });
 
   return (
     <section
@@ -68,13 +74,17 @@ function ServingSuggestionComponent(props: propsContent) {
       className="relative overflow-hidden bg-[#E6E7E8] select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scroll50} data-slug={props.currentSlug}/>
-      <div className="flex h-screen flex-col justify-center mobile:justify-start">
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll50}
+        data-slug={props.currentSlug}
+      />
+      <div className="flex h-screen min-h-[950px]  flex-col justify-center mobile:justify-start">
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
-          { title }
+          {title}
         </div>
         <div className="font-Grotesque-Regular text-center text-[#696969] mt-20px mb-10px pad:mb-4px text-20px pad:text-16px mobile:text-14px mobile:mt-20px mobile:px-50px">
-          { data.servingSuggestionContentText }
+          {data.servingSuggestionContentText}
         </div>
         <div className="flex justify-between mx-auto mt-20px w-[1250px] pad:w-1200px pad:mt-[2%] mobile:w-full mobile:flex-col mobile:px-0">
           <div className="relative w-615px h-524px pad:w-550px pad:h-524px mobile:w-full mobile:h-265px mobile:mt-35px">
@@ -89,7 +99,7 @@ function ServingSuggestionComponent(props: propsContent) {
               ></BaseImage>
             </div>
             <div className="font-Grotesque-Regular text-20px text-[#696969] mt-20px pad:text-16px mobile:text-14px mobile:text-center mobile:px-25px mobile:mt-30px">
-            { data.servingSuggestionDescription }
+              {data.servingSuggestionDescription}
             </div>
           </div>
           <div className="relative w-593px h-524px pad:w-593px pad:h-524px mobile:w-full mobile:mt-20px">
