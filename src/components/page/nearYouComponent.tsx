@@ -21,8 +21,8 @@ export interface propsContent {
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -397,19 +397,17 @@ function NearYouComponent(props: propsContent) {
     emblaApi?.on("select", onChangeScroll);
   }, [emblaApi, onChangeScroll]);
 
-  const handleTouchStart = () => {
-    console.log("开始了");
-  };
-  const handleTouchEnd = () => {
-    console.log("结束");
-  };
   let str = title;
   let substr1 = str.substring(0, 14);
   let substr2 = str.substring(15);
   return (
     <section className="w-full h-screen overflow-hidden bg-while relative select-none  ">
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scrollFull} data-slug={props.currentSlug}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scrollFull}
+        data-slug={props.currentSlug}
+      />
       <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:hidden mobile:text-20px mobile:pt-77px">
         {substr1} {substr2}
       </div>
@@ -428,7 +426,7 @@ function NearYouComponent(props: propsContent) {
       {/*onTouchEnd={handleTouchEnd}*/}
       <div className="relative mobile:pl-25px">
         <div
-          className="relative  overflow-hidden ml-[10%] h-630px pt-80px pad:pt-57px pad:ml-[7%] pad:h-500px mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto"
+          className="relative  overflow-hidden ml-[10%]  pt-80px pad:pt-57px pad:ml-[7%]  mobile:ml-[0] mobile:pt-50px mobile:ml-22px mobile:h-auto"
           ref={emblaRef}
         >
           <div className="flex text-dark-grey items-end pb-40px pad:pb-28px">
@@ -465,14 +463,18 @@ function NearYouComponent(props: propsContent) {
                         {/*></BaseImage>*/}
 
                         {
-                          <BaseButton action="Homepage" category="Nearyou" categorySub={item.howToBuyDetailComponentStoreName}>
+                          <BaseButton
+                            action="Homepage"
+                            category="Nearyou"
+                            categorySub={item.howToBuyDetailComponentStoreName}
+                          >
                             <NestedCarousel
-                                list={
-                                  item
-                                      .nearYouComponentNearYouCarouselImageCollection
-                                      .items
-                                }
-                                activeFlag={item.nearYouActive}
+                              list={
+                                item
+                                  .nearYouComponentNearYouCarouselImageCollection
+                                  .items
+                              }
+                              activeFlag={item.nearYouActive}
                             ></NestedCarousel>
                           </BaseButton>
                         }
@@ -493,8 +495,12 @@ function NearYouComponent(props: propsContent) {
                       </span>
                       {/*link="/howToBuyDetail"*/}
                       <BaseLink>
-                        <BaseButton action="Homepage" category="Nearyou" categorySub={item.howToBuyDetailComponentStoreName}>
-                          <div className="cursor-pointer bg-cover bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
+                        <BaseButton
+                          action="Homepage"
+                          category="Nearyou"
+                          categorySub={item.howToBuyDetailComponentStoreName}
+                        >
+                          <div className="cursor-pointer bg-contain bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
                         </BaseButton>
                       </BaseLink>
                     </div>
