@@ -4,9 +4,9 @@ import {paramsContent} from "@/app/[locale]/[...slug]/page";
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
-   query($sysId:String!) {
+   query($sysId:String!,$language:String!) {
    
-   seo:seoMetaTagsCollection(limit: 1, where: {name: "How To Buy Detail"},locale: "en") {
+   seo:seoMetaTagsCollection(limit: 1, where: {name: "How To Buy Detail"},locale: $language) {
       items {
           title
           keyWords
@@ -15,7 +15,7 @@ const query = `
     }
    
    
-    globalCampaignsComponent:dataStoreCollection (limit:1 where:{sys:{id:$sysId}},locale:"en" ) {
+    globalCampaignsComponent:dataStoreCollection (limit:1 where:{sys:{id:$sysId}},locale:$language ) {
       items {
             howToBuyDetailComponentStoreName
             howToBuyDetailComponentStoreAddress
@@ -35,12 +35,12 @@ const query = `
             }
     }
 }
-  howToBuyDetailComponent:dataStoreCollection (limit:1 where:{sys:{id:$sysId}},locale:"en" ) {
+  howToBuyDetailComponent:dataStoreCollection (limit:1 where:{sys:{id:$sysId}},locale:$language ) {
       items {
             howToBuyDetailComponentServiceTitle
             howToBuyDetailComponentServiceContent
 
-            serviceCarouselImageCollection(limit : 10,locale: "en") {
+            serviceCarouselImageCollection(limit : 10,locale: $language) {
             items {
                 sys {
                     id
@@ -63,6 +63,8 @@ const query = `
 class HowToBuyDetailDao {
   static async fetch<HowToBuyDetailModel>(params: paramsContent) {
     const variables = { sysId: params?.slug[1],language: params?.locale || process.env.LOCATION };
+
+    console.log(variables)
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",
@@ -72,8 +74,6 @@ class HowToBuyDetailDao {
       body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
-
-    console.log(result);
     // return HomeModel.fromJson(result);
     // return result;
     // if(response.code == 200){

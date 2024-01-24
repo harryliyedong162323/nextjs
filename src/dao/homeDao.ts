@@ -279,7 +279,7 @@ const query = `
 
 class HomeDao {
   static async fetch<HomeModel>(params:paramsContent) {
-    const variables = { language: params?.locale };
+    const variables = { language: params?.locale || process.env.LOCATION };
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",
