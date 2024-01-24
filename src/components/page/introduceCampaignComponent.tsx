@@ -29,14 +29,14 @@ interface introduceCampaignComponentCampaignsCollectionContent {
 }
 import { TrackingTypeContent } from "@/utils/analytics";
 import BaseButton from "../base/button";
-import {useParams} from "next/navigation";
+import { useParams } from "next/navigation";
 interface propsContent {
   getPageStore: Function;
   updatePageStore: Function;
   changeNavStatus: Function;
   scrollToPage: Function;
-  TrackingType:TrackingTypeContent,
-  currentSlug:string,
+  TrackingType: TrackingTypeContent;
+  currentSlug: string;
   data: {
     entry: entryContent;
     name: string;
@@ -54,16 +54,16 @@ interface campaignsContent {
       url: string;
     };
   };
-  detailPage:{
-    activityDetailComponentTitle:string,
-  },
+  detailPage: {
+    activityDetailComponentTitle: string;
+  };
   description: string;
   location: string;
   year: string;
   id: number;
   sys: {
     id: string;
-  }
+  };
 }
 
 //
@@ -125,7 +125,6 @@ const numberWithinRange = (number: number, min: number, max: number) =>
   Math.min(Math.max(number, min), max);
 
 function IntroduceCampaignComponent(props: propsContent) {
-
   // console.log(props);
   const params = useParams();
   const headStyle = props.data.entry.headStyle;
@@ -261,22 +260,21 @@ function IntroduceCampaignComponent(props: propsContent) {
     swiper?.slidePrev();
   };
 
-
-  const checkCategoryType = (slug:string = '')=>{
-    let pageSlug:string = '';
-    switch (slug){
-      case 'home':
-        pageSlug = 'Homepage';
+  const checkCategoryType = (slug: string = "") => {
+    let pageSlug: string = "";
+    switch (slug) {
+      case "home":
+        pageSlug = "Homepage";
         break;
-      case 'localMarketActivity':
-        pageSlug = 'Wildescapepage';
+      case "localMarketActivity":
+        pageSlug = "Wildescapepage";
         break;
       default:
         break;
     }
 
-    return pageSlug
-  }
+    return pageSlug;
+  };
 
   // useEffect(()=>{
   //     scrollNext();
@@ -340,8 +338,16 @@ function IntroduceCampaignComponent(props: propsContent) {
       className={`w-full h-screen overflow-hidden bg-cover bg-[url('/assets/introduceCampaign/bg.png')] bg-[#E6E7E8] relative select-none`}
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
-      <input type="hidden" value={props.TrackingType.scroll75} data-slug={'home'}/>
-      <input type="hidden" value={props.TrackingType.scroll25} data-slug={'localMarketActivity'}/>
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll75}
+        data-slug={"home"}
+      />
+      <input
+        type="hidden"
+        value={props.TrackingType.scroll25}
+        data-slug={"localMarketActivity"}
+      />
       <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:pt-90px pad:text-23px mobile:pt-84px mobile:text-24px">
         {title}
       </div>
@@ -527,17 +533,25 @@ function IntroduceCampaignComponent(props: propsContent) {
                   className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}
                 >
                   <div>
-                    <BaseLink link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
-                     {/*<BaseLink link={`/activityDetail/${item.sys?.id}`}>*/}
-                      <BaseButton action={checkCategoryType(params.slug[0])} category="Globalnews" categorySub={item.detailPage.activityDetailComponentTitle}>
+                    <BaseLink
+                      link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}
+                    >
+                      {/*<BaseLink link={`/activityDetail/${item.sys?.id}`}>*/}
+                      <BaseButton
+                        action={checkCategoryType(params.slug[0])}
+                        category="Globalnews"
+                        categorySub={
+                          item.detailPage.activityDetailComponentTitle
+                        }
+                      >
                         <div className="relative mx-auto w-280px h-280px rounded-full overflow-hidden mb-25px cursor-pointer pad:w-200px pad:h-200px pad:mb-17px mobile:w-179px mobile:h-179px mobile:mb-25px pad:scale-125 pad:translate-y-[-10%]">
                           <BaseImage
-                              mImg={item.campaignImage.imagepc.url}
-                              pImg={item.campaignImage.imagemobile.url}
-                              alt={item.campaignImage.altText}
-                              layout="fill"
-                              objectFit="cover"
-                              quality={100}
+                            mImg={item.campaignImage.imagepc.url}
+                            pImg={item.campaignImage.imagemobile.url}
+                            alt={item.campaignImage.altText}
+                            layout="fill"
+                            objectFit="cover"
+                            quality={100}
                           ></BaseImage>
                         </div>
                       </BaseButton>
@@ -556,12 +570,19 @@ function IntroduceCampaignComponent(props: propsContent) {
                       {item.description}
                     </div>
                     {/*link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
-                     <BaseLink link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}>
-                    {/*<BaseLink autoLanguage={false} link={`/activityDetail/${item.sys?.id}`}>*/}
-                      <BaseButton action={checkCategoryType(params.slug[0])} category="Globalnews" categorySub={item.detailPage.activityDetailComponentTitle}>
+                    <BaseLink
+                      link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}
+                    >
+                      {/*<BaseLink autoLanguage={false} link={`/activityDetail/${item.sys?.id}`}>*/}
+                      <BaseButton
+                        action={checkCategoryType(params.slug[0])}
+                        category="Globalnews"
+                        categorySub={
+                          item.detailPage.activityDetailComponentTitle
+                        }
+                      >
                         <div className="cursor-pointer bg-contain bg-[url('/assets/introduceCampaign/more.png')] w-30px h-30px mx-auto mt-25px pad:w-21px pad:h-21px pad:mt-5px mobile:w-24px mobile:h-24px mobile:mt-15px"></div>
                       </BaseButton>
-
                     </BaseLink>
                   </div>
                 </SwiperSlide>

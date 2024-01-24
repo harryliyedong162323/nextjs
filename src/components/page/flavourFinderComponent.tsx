@@ -16,7 +16,7 @@ import Image from "next/image";
 // import Autoplay from "embla-carousel-autoplay";
 import ReactGA from "react-ga4";
 import Script from "next/script";
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
 import { Autoplay } from "swiper/modules";
@@ -27,7 +27,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import eventbus from "@/utils/eventbus";
 import BaseButton from "../base/button";
-
+import { useParams } from "next/navigation";
 declare const grecaptcha: any;
 
 const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
@@ -592,15 +592,21 @@ export interface propsContent {
   };
 }
 
-function FlavourFinderComponent(props: propsContent) {
+interface responseContent{
+  code:number,
+  data:object,
+  success:boolean
+}
 
+function FlavourFinderComponent(props: propsContent) {
+  const params = useParams();
   const [uid,setUid] = useState(uuidv4());
   const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
   const currNum = props.data.entry.currentPageNumber;
   const [emailName, setEmailName] = useState<string>("");
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
-
+  const [submitReady,setSubmitReady] = useState<boolean>(false);
 
 
   useEffect(() => {
@@ -683,7 +689,7 @@ function FlavourFinderComponent(props: propsContent) {
     [swiper]
   );
 
-  const doRecommend = () => {
+  const doRecommend = async () => {
     // todo
     if (
       quizOneSelected === 0 ||
@@ -694,6 +700,47 @@ function FlavourFinderComponent(props: propsContent) {
       quizFiveSelected === 0
     )
       return false;
+
+
+    const fromData = {
+      type:'add',
+      id:uid,
+      answers:{
+        q1:tranAnswer(quizOneSelected),
+        q2:tranAnswer(quizTwoSelected),
+        q3:{
+          a1:tranAnswer(quizThreeSelected1),
+          a2:tranAnswer(quizThreeSelected2),
+        },
+        q4:tranAnswer(quizFourSelected),
+        q5:tranAnswer(quizFiveSelected),
+      },
+      user:{
+        emailName,
+        emailAddress,
+      },
+      locale:params.locale,
+    }
+
+
+    const res = await axios.post('/api/answer',
+        {
+              ...fromData
+            }, {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+
+
+    if(!res.data.success){
+      alert('错误')
+      return false
+    }
+
+    setUid(res.data.data[0].unique_id)
+
+    console.log(uid)
     const key = `${data.quizs.q1.answers[quizOneSelected - 1].value}${
       data.quizs.q2.answers[quizTwoSelected - 1].value
     }${data.quizs.q3.step2.answers[quizThreeSelected2 - 1].value}`;
@@ -737,7 +784,7 @@ function FlavourFinderComponent(props: propsContent) {
         res = 'G';
         break;
       default:
-        res = num.toString();
+        res = '';
         break;
     }
 
@@ -747,11 +794,22 @@ function FlavourFinderComponent(props: propsContent) {
 
 
 
-  const submit = () => {
-    if (!canSubmit) return;
-    console.clear();
 
-    const res = {
+
+
+
+
+
+
+
+
+  const submit = () => {
+    if (!canSubmit && !submitReady) return;
+    console.clear();
+    setSubmitReady(true);
+    const fromData = {
+      type:'update',
+      id:uid,
       answers:{
         q1:tranAnswer(quizOneSelected),
         q2:tranAnswer(quizTwoSelected),
@@ -765,41 +823,68 @@ function FlavourFinderComponent(props: propsContent) {
       user:{
         emailName,
         emailAddress,
-      }
+      },
+      locale:params.locale,
     }
-
-    console.log(res);
-
-
-    eventbus.emit("PopupBoxVisable", popupMessage);
-    grecaptcha.ready(function () {
-      grecaptcha
-        .execute(key, { action: "submit" })
-        .then(async function (token: string) {
-          // Add your logic to submit to your backend server here.
-
-          console.log(token);
-          axios
-            .post(
-              "/api/recaptcha",
-              {
-                token: token,
-                cs: "cs",
+    console.log(fromData);
+    axios
+        .post(
+            '/api/answer',
+            {
+              ...fromData
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
               },
-              {
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            )
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        });
-    });
+            }
+        )
+        .then(function (response:AxiosResponse<responseContent>) {
+          console.log(response);
+          if(!response.data.success){
+            setSubmitReady(false);
+            alert('失败');
+            return false;
+          }
+          eventbus.emit("PopupBoxVisable", popupMessage);
+        })
+        .catch(function (error) {
+          setSubmitReady(false);
+          console.log(error);
+        })
+
+
+
+
+
+    // grecaptcha.ready(function () {
+    //   grecaptcha
+    //     .execute(key, { action: "submit" })
+    //     .then(async function (token: string) {
+    //       // Add your logic to submit to your backend server here.
+    //
+    //       console.log(token);
+    //       axios
+    //         .post(
+    //           "/api/recaptcha",
+    //           {
+    //             token: token,
+    //             cs: "cs",
+    //           },
+    //           {
+    //             headers: {
+    //               "Content-Type": "application/json",
+    //             },
+    //           }
+    //         )
+    //         .then(function (response) {
+    //           console.log(response);
+    //         })
+    //         .catch(function (error) {
+    //           console.log(error);
+    //         });
+    //     });
+    // });
   };
 
   return (

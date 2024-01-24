@@ -392,13 +392,13 @@ function ProductFamilyComponent(props: propsContent) {
                   </div>
                 </div>
 
-                <div className="w-full relative after:content-[''] after:absolute after:top-1/2  after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full mobile:after:w-[85%] after:h-1px after:bg-[#696969] after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-1px before:h-full mobile:before:h-[80%] before:bg-[#696969]">
+                <div className="w-full relative after:content-[''] after:absolute after:top-1/2  after:translate-y-[-50%] after:left-1/2 after:translate-x-[-50%] after:w-full mobile:after:w-[85%] after:h-[2px!ignore] after:bg-[#696969] after:content-[''] before:absolute before:top-1/2 before:translate-y-[-50%] before:left-1/2 before:translate-x-[-50%] before:w-[2px!ignore] mobile:after:opacity-60 mobile:before:opacity-60 before:h-full mobile:before:h-[80%] before:bg-[#696969]">
                   <div
                     className={`select-none cursor-pointer flex justify-center items-center  w-[4em] h-[4em] hover:shadow-[#B96566]-500 hover:bg-[#588C96] hover:text-[#fff] absolute z-20 rounded-full  ${
                       currentBottleIndex == 0
                         ? "shadow-[#B96566]-500 bg-[#588C96] text-[#fff]"
                         : "bg-[#CECECE] text-[#588C96]"
-                    }  bottom-0 left-1/4 translate-x-[-50%] translate-y-[-30%]  mobile:w-28px mobile:h-28px`}
+                    }  bottom-0 left-1/4 translate-x-[-50%] translate-y-[50%] mobile:left-[28%] mobile:translate-y-[-55%]  mobile:w-28px mobile:h-28px`}
                     onClick={() => {
                       handleChooseBottle(0);
                     }}
@@ -418,7 +418,7 @@ function ProductFamilyComponent(props: propsContent) {
                       currentBottleIndex == 1
                         ? "shadow-[#B96566]-500 bg-[#5C829A] text-[#fff]"
                         : "bg-[#CECECE] text-[#5C829A]"
-                    } top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%]  mobile:w-28px mobile:h-28px`}
+                    } top-1/2 left-1/2 translate-x-[-70%] translate-y-[-70%] mobile:translate-y-[-94%] mobile:translate-x-[-90%]  mobile:w-28px mobile:h-28px`}
                     onClick={() => {
                       handleChooseBottle(1);
                     }}
@@ -438,7 +438,7 @@ function ProductFamilyComponent(props: propsContent) {
                       currentBottleIndex == 2
                         ? "shadow-[#B96566]-500 bg-[#779374] text-[#fff]"
                         : "bg-[#CECECE] text-[#779374]"
-                    } top-1/2 right-1/2  translate-x-[300%] pad:translate-x-[190%] translate-y-[-50%]  mobile:w-28px mobile:h-28px mobile:translate-y-[50%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
+                    } top-1/2 right-1/2  translate-x-[300%] translate-y-[-50%]  mobile:w-28px mobile:h-28px mobile:translate-y-[-68%] mobile:translate-x-[150%] mobile:right-1/2 mobile:left-auto`}
                     onClick={() => {
                       handleChooseBottle(2);
                     }}
@@ -458,7 +458,7 @@ function ProductFamilyComponent(props: propsContent) {
                       currentBottleIndex == 3
                         ? 'shadow-[#B96566]-500 bg-[url("/assets/productFamily/drop-bg.png")] bg-contain text-[#fff]'
                         : "bg-[#CECECE] text-[#af4f1f]"
-                    } top-0 right-1/4 translate-x-[50%] translate-y-[-10%]  mobile:w-28px mobile:h-28px`}
+                    } top-0 right-1/4 translate-x-[50%] translate-y-[-50%] mobile:right-[31%] mobile:translate-y-[10%] mobile:w-28px mobile:h-28px`}
                     onClick={() => {
                       handleChooseBottle(3);
                     }}
@@ -485,7 +485,7 @@ function ProductFamilyComponent(props: propsContent) {
                       currentBottleIndex == 4
                         ? "shadow-[#B96566]-500 bg-[#B96566] text-[#fff]"
                         : "bg-[#CECECE] text-[#B96566]"
-                    }  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%]  mobile:w-28px mobile:h-28px`}
+                    }  top-1/2 right-1/4 translate-x-[200%] translate-y-[25%] mobile:right-[44%] mobile:translate-y-[50%] mobile:w-28px mobile:h-28px`}
                     onClick={() => {
                       handleChooseBottle(4);
                     }}
@@ -505,7 +505,7 @@ function ProductFamilyComponent(props: propsContent) {
                       currentBottleIndex == 5
                         ? "shadow-[#B96566]-500 bg-[#96934C] text-[#fff]"
                         : "bg-[#CECECE] text-[#96934C]"
-                    } top-1/2 right-0 translate-x-[-100%] translate-y-[-65%]  mobile:w-28px mobile:h-28px`}
+                    } top-1/2 right-0 translate-x-[-100%] translate-y-[-65%] mobile:right-[7%] mobile:translate-y-[-98%]  mobile:w-28px mobile:h-28px`}
                     onClick={() => {
                       handleChooseBottle(5);
                     }}
