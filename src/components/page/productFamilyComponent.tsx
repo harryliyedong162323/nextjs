@@ -244,7 +244,7 @@ function ProductFamilyComponent(props: propsContent) {
         value={props.TrackingType.scroll25}
         data-slug={props.currentSlug}
       />
-      <div className="w-full  min-h-[1000px] h-screen">
+      <div className="w-full  min-h-[800px] h-screen">
         <div className="h-[70%] overflow-hidden">
           <div className="relative h-full w-full">
             <BaseImage
