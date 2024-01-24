@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Parallax, Mousewheel, FreeMode } from "swiper/modules";
+import { Parallax, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { ISlideConfig } from "react-page-slides";
@@ -26,7 +26,6 @@ interface Params {
     offset: number;
     type: string;
   };
-  freeMode: boolean;
 }
 
 const FullPageSwiper = function (params: Params) {
@@ -37,13 +36,11 @@ const FullPageSwiper = function (params: Params) {
     slides,
     parallax,
     onChange,
-    freeMode,
   }: Params = params;
   const [pageSwiper, setPageSwiper] = useState<SwiperContent | null>(null);
   const [swiperHeight, setSwiperHeight] = useState(window.innerHeight);
 
   useEffect(() => {
-    if (freeMode) return;
     pageSwiper && pageSwiper.slideTo(params.currentSlideIndex);
   }, [params, pageSwiper]);
 
@@ -72,8 +69,7 @@ const FullPageSwiper = function (params: Params) {
       <Swiper
         direction="vertical"
         className="-mt-1px"
-        modules={[Mousewheel, FreeMode]}
-        freeMode={freeMode}
+        modules={[Mousewheel]}
         mousewheel={{
           thresholdDelta: 120,
         }}

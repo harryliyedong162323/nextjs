@@ -244,7 +244,6 @@ interface dataPageContent<T> {
   rangeNavData?: T;
   entry: {
     headStyle?: string;
-    freeMode?: boolean;
     children: Array<CombinedInterface>;
   };
 }
@@ -527,7 +526,6 @@ function FullPage(props: propsContent) {
             transitionSpeed={1500}
             currentSlideIndex={currentSlideIndex}
             slides={slides}
-            freeMode={!!props.data.entry.freeMode}
             parallax={{
               offset: 0.6, //0.6
               type: SlideParallaxType.reveal,

@@ -7,6 +7,10 @@ import React, {
   SyntheticEvent,
   useRef,
 } from "react";
+
+import { v4 as uuidv4 } from 'uuid';
+
+
 import Image from "next/image";
 // import useEmblaCarousel from "embla-carousel-react";
 // import Autoplay from "embla-carousel-autoplay";
@@ -589,12 +593,20 @@ export interface propsContent {
 }
 
 function FlavourFinderComponent(props: propsContent) {
-  console.log(props.data.entry);
+
+  const [uid,setUid] = useState(uuidv4());
   const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
   const currNum = props.data.entry.currentPageNumber;
   const [emailName, setEmailName] = useState<string>("");
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
+
+
+
+  useEffect(() => {
+    console.log(uid)
+  }, [uid]);
+
 
   useEffect(() => {
     if (emailRegex.test(emailAddress) && emailName.length > 0) {
@@ -699,8 +711,66 @@ function FlavourFinderComponent(props: propsContent) {
     }
   }, [quizIndex]);
 
+
+  const tranAnswer = (num:number) => {
+    let res = '';
+    switch (num){
+      case 1:
+        res = 'A';
+        break;
+      case 2:
+        res = 'B';
+        break;
+      case 3:
+        res = 'C';
+        break;
+      case 4:
+        res = 'D';
+        break;
+      case 5:
+        res = 'E';
+        break;
+      case 6:
+        res = 'F';
+        break;
+      case 7:
+        res = 'G';
+        break;
+      default:
+        res = num.toString();
+        break;
+    }
+
+    return res;
+
+  }
+
+
+
   const submit = () => {
     if (!canSubmit) return;
+    console.clear();
+
+    const res = {
+      answers:{
+        q1:tranAnswer(quizOneSelected),
+        q2:tranAnswer(quizTwoSelected),
+        q3:{
+          a1:tranAnswer(quizThreeSelected1),
+          a2:tranAnswer(quizThreeSelected2),
+        },
+        q4:tranAnswer(quizFourSelected),
+        q5:tranAnswer(quizFiveSelected),
+      },
+      user:{
+        emailName,
+        emailAddress,
+      }
+    }
+
+    console.log(res);
+
+
     eventbus.emit("PopupBoxVisable", popupMessage);
     grecaptcha.ready(function () {
       grecaptcha
@@ -1417,6 +1487,7 @@ function FlavourFinderComponent(props: propsContent) {
                         className="font-Grotesque-Regular text-black cursor-pointer text-22px pad:text-18px mobile:text-13px"
                         onClick={() => {
                           setQuizIndex(0);
+                          setUid(uuidv4());
                         }}
                       >
                         {data.basic.dywfRedo}
@@ -1582,6 +1653,7 @@ function FlavourFinderComponent(props: propsContent) {
                                 canSubmit ? "text-[#000000]" : "text-[#696969]"
                               }`}
                               onClick={() => {
+
                                 submit();
                                 ReactGA.event(
                                   `Click_Flavourresult|${recommend?.productList[currentRecommend].productName}_Submit`

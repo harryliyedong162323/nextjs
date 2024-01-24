@@ -121,7 +121,6 @@ function getCurrentLocation(
 }
 
 function Header(props: propsContent) {
-  console.log(props);
   const headerData: headerDataContent = props.data;
   const slug: string = useParams().slug[0];
 
@@ -162,7 +161,7 @@ function Header(props: propsContent) {
       }
 
       if (slug == "howToBuy") {
-        setScrollNum(e.detail.scrollY);
+        setScrollNum(window.scrollY);
       }
     }
 
@@ -226,7 +225,7 @@ function Header(props: propsContent) {
         }`}
       >
         {/*<BaseLink link="/home">*/}
-          <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2  translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        <div className="bg-[url('/assets/header_logo.png')] w-44px h-44px absolute left-1/2  translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         {/*</BaseLink>*/}
         <div
           className="bg-[url('/assets/menu-white.png')] w-34px h-34px mobile:w-20px mobile:h-20px  absolute right-[55px] mobile:right-[20px] top-1/2 translate-y-[-50%] cursor-pointer"
@@ -250,7 +249,7 @@ function Header(props: propsContent) {
         }`}
       >
         {/*<BaseLink >*/}
-          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px absolute  left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         {/*</BaseLink>*/}
         <div
           className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px]"
@@ -307,7 +306,7 @@ function Header(props: propsContent) {
         }`}
       >
         {/*<BaseLink link={`${headerData.group1TargetPage}`}>*/}
-          <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px  absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
+        <div className="bg-[url('/assets/header_logo_black.png')] w-44px h-44px  absolute left-1/2 translate-x-[-50%] top-1/2 translate-y-[-50%] mobile:w-28px mobile:h-28px "></div>
         {/*</BaseLink>*/}
         <div
           className="bg-[url('/assets/more_menu_black.png')] w-34px h-34px absolute right-[45px] top-1/2 translate-y-[-50%] cursor-pointer mobile:w-20px mobile:h-20px mobile:right-[20px] "
@@ -572,7 +571,6 @@ function Panel({ menuFlag, onMenuChange, headerData }: panelPropsContent) {
               <div className="flex justify-between items-center mb-33px pad:mb-27 px mobile:mb-31px cursor-pointer h-50px mobile:h-22px">
                 <div className="w-9/12 ">
                   <BaseLink
-                      
                     className="text-[#000000] text-15px pad:text-13px mobile:text-17px not-italic font-medium font-Grotesque-Medium "
                     link={panel.title[0].link}
                     onClick={(e) => {
@@ -618,7 +616,6 @@ function Panel({ menuFlag, onMenuChange, headerData }: panelPropsContent) {
                     >
                       <div className="w-4/5 truncate">
                         <BaseLink
-                            
                           className="text-14px pad:text-10px mobile:text-15px not-italic text-[#262627] font-normal font-Grotesque-Regular "
                           link={item.link}
                           onClick={(e) => {

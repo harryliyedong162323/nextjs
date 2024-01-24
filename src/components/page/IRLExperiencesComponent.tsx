@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 import BaseImage from "@/components/base/image";
 import BaseLink from "@/components/base/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
-
+import eventbus from "@/utils/eventbus";
 import "swiper/css";
 import "swiper/css/free-mode";
 
@@ -71,7 +70,25 @@ interface SwiperContent {
   // 其他 Swiper 相关的属性和方法
 }
 function IRLExperiencesComponent(props: propsContent) {
-  const getPageStore = props.getPageStore;
+  // const getPageStore = props.getPageStore;
+  const [regionId, setRegionId] = useState(0);
+  useEffect(() => {
+    const handleRegionId = (id: number) => {
+      setRegionId(id);
+    };
+
+    eventbus.on("regionId", handleRegionId);
+
+    return () => {
+      eventbus.off("regionId", handleRegionId);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(regionId);
+    setCurrentStore(filterStore(regionId));
+  }, [regionId]);
+
   const stores = props.data.entry.storeList;
   const headStyle = props.data.entry.headStyle;
   // const block1Image = props.data.entry.fields.block1Image.sys.fields;
@@ -80,39 +97,35 @@ function IRLExperiencesComponent(props: propsContent) {
   );
 
   const [isCurrentPage, setIsCurrentPage] = useState<boolean>(false);
-  const [isFullPage] = useState<boolean>(props.data.entry.isFullPage || false);
+  const [isFullPage] = useState<boolean>(false);
   const [pageSwiper, setPageSwiper] = useState<SwiperContent | null>(null);
-  const [swiperHeight, setSwiperHeight] = useState(window.innerHeight);
+  // const [swiperHeight, setSwiperHeight] = useState(window.innerHeight);
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     setSwiperHeight(window.innerHeight);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   const resizeHandler = () => {
+  //     setSwiperHeight(window.innerHeight);
+  //     pageSwiper && pageSwiper.update();
+  //   };
+
+  //   window.addEventListener("resize", resizeHandler);
+
+  //   return () => {
+  //     window.removeEventListener("resize", resizeHandler);
+  //   };
+  // }, [pageSwiper]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setSwiperHeight(window.innerHeight);
-    }
-  }, []);
-
-  useEffect(() => {
-    const resizeHandler = () => {
-      setSwiperHeight(window.innerHeight);
-      pageSwiper && pageSwiper.update();
-    };
-
-    window.addEventListener("resize", resizeHandler);
-
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, [pageSwiper]);
-
-  useEffect(() => {
-    if (isFullPage) {
+    if (!isFullPage) {
       if (props.data.entry.currentPageNumber === props.data.entry.pageNumber) {
         setIsCurrentPage(true);
 
-        setCurrentStore(
-          filterStore(
-            getPageStore("IRLExperiencesComponent").data?.regionId || 0
-          )
-        );
+        setCurrentStore(filterStore(regionId));
 
         // console.log(
         //   filterStore(
@@ -144,12 +157,10 @@ function IRLExperiencesComponent(props: propsContent) {
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
       <Swiper
-        modules={[FreeMode]}
-        freeMode={true}
         direction="vertical"
         nested={true}
         slidesPerView="auto"
-        height={swiperHeight}
+        // height={swiperHeight}
         resistanceRatio={0}
         onSwiper={(e) => {
           setPageSwiper(e);

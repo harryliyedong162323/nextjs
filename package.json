@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.0.2",
+    "@vercel/postgres": "^0.5.1",
     "axios": "^1.6.2",
     "embla-carousel-autoplay": "^8.0.0-rc14",
     "embla-carousel-react": "^8.0.0-rc14",
@@ -29,7 +30,8 @@
     "react-player": "^2.13.0",
     "react-select": "^5.8.0",
     "swiper": "^11.0.5",
-    "tiny-emitter": "^2.1.0"
+    "tiny-emitter": "^2.1.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",

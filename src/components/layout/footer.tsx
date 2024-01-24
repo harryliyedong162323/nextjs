@@ -230,7 +230,8 @@ function Footer(props: propsContent) {
             slug == "howToBuyDetail" ||
             slug == "privacyPolicy" ||
             slug == "storiesDetail" ||
-            slug == "activityDetail"
+            slug == "activityDetail" ||
+            slug == "howToBuy"
           ) {
             currentNav && (currentNav.style.display = "none");
           }
@@ -243,7 +244,8 @@ function Footer(props: propsContent) {
             slug == "howToBuyDetail" ||
             slug == "privacyPolicy" ||
             slug == "storiesDetail" ||
-            slug == "activityDetail"
+            slug == "activityDetail" ||
+            slug == "howToBuy"
           ) {
             currentNav && (currentNav.style.display = "block");
           }
@@ -377,16 +379,16 @@ function Footer(props: propsContent) {
           {/*mobile:w-274px mobile:h-44px*/}
           <div className="mobile:w-full mobile:order-2">
             {/*<BaseLink link="/home">*/}
-              <div className="w-262px h-41px relative bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto">
-                <BaseImage
-                  mImg={footerData.logo.imagemobile.url}
-                  pImg={footerData.logo.imagepc.url}
-                  alt={footerData.logo.altText}
-                  layout="fill"
-                  objectFit="contain"
-                  quality={100}
-                ></BaseImage>
-              </div>
+            <div className="w-262px h-41px relative bg-cover cursor-pointer mobile:h-27px mobile:w-173px mobile:mx-auto">
+              <BaseImage
+                mImg={footerData.logo.imagemobile.url}
+                pImg={footerData.logo.imagepc.url}
+                alt={footerData.logo.altText}
+                layout="fill"
+                objectFit="contain"
+                quality={100}
+              ></BaseImage>
+            </div>
             {/*</BaseLink>*/}
           </div>
           <div className="mobile:order-1 mobile:w-full">
@@ -407,7 +409,6 @@ function Footer(props: propsContent) {
               <li className="flex justify-between pb-35px mobile:pb-40px items-center">
                 <span className="mobile:text-17px">
                   <BaseLink
-                     
                     link={panel.title[0].link}
                     className="text-20px font-medium font-Grotesque-Medium dark-grey"
                   >
@@ -425,7 +426,6 @@ function Footer(props: propsContent) {
               {panel.list.map((item) => (
                 <li className="pb-17px mobile:hidden" key={item.id}>
                   <BaseLink
-                     
                     link={item.targetPage}
                     hover="text-black-500"
                     className="text-[#696969] text-16px font-normal font-Grotesque-Regular "
@@ -451,7 +451,6 @@ function Footer(props: propsContent) {
               <li className="flex justify-between items-start pb-35px mobile:pb-25px  ">
                 <span className="w-10/12  mobile:text-17px">
                   <BaseLink
-                     
                     link={panel.title[0].link}
                     className="text-20px mobile:text-17px font-medium font-Grotesque-Medium dark-grey"
                   >
@@ -596,7 +595,7 @@ function Footer(props: propsContent) {
           </div>
 
           <div className="text-[#696969] font-Grotesque-Regular hidden mobile:text-14px mobile:w-full mobile:text-center mobile:block">
-            <BaseLink  link={footerData.copyRightCta.targetPage}>
+            <BaseLink link={footerData.copyRightCta.targetPage}>
               {footerData.copyRightCta.content}
             </BaseLink>
           </div>

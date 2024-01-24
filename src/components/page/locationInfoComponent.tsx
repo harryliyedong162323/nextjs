@@ -9,7 +9,8 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { logEvent } from "@/utils/analytics";
 import BaseButton from "../base/button";
-import {useParams} from "next/navigation";
+import { useParams } from "next/navigation";
+import eventbus from "@/utils/eventbus";
 export interface entryContent {
   headStyle: string;
   stores: locationInfoStore;
@@ -347,11 +348,13 @@ function LocationStoreList(props: LocationStoreListPropsContent) {
     if (selectedOption) {
       const value = (selectedOption as OptionType).value;
       console.log("Selected option:", value);
-      updatePageStore("IRLExperiencesComponent", {
-        regionId: value,
-      });
+
+      eventbus.emit("regionId", value);
+      // updatePageStore("IRLExperiencesComponent", {
+      //   regionId: value,
+      // });
       logEvent("Country", "Nearyou", selectedOption.label);
-      console.log(getPageStore("IRLExperiencesComponent"));
+      // console.log(getPageStore("IRLExperiencesComponent"));
       setLocationInfo(
         stores.filter((item: locationInfoStore) => {
           if (item.howToBuyDetailComponentRegion.regionId.toString() == value) {
@@ -546,7 +549,6 @@ function LocationStoreList(props: LocationStoreListPropsContent) {
 }
 
 function LocationInfoComponent(props: propsContent) {
-
   const getPageStore = props.getPageStore;
   const updatePageStore = props.updatePageStore;
   const title = props.data.entry.locationInfoComponentTitle;
