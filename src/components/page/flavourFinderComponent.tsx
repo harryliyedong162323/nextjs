@@ -28,7 +28,11 @@ import "swiper/css/scrollbar";
 import eventbus from "@/utils/eventbus";
 import BaseButton from "../base/button";
 import { useParams } from "next/navigation";
+import signature from "@/utils/signature";
+
+
 declare const grecaptcha: any;
+
 
 const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
 
@@ -607,7 +611,7 @@ function FlavourFinderComponent(props: propsContent) {
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
   const [submitReady,setSubmitReady] = useState<boolean>(false);
-
+  const [repeatSubmit,setRepeatSubmit] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(uid)
@@ -690,6 +694,9 @@ function FlavourFinderComponent(props: propsContent) {
   );
 
   const doRecommend = async () => {
+
+    if(submitReady) return;
+    setSubmitReady(true);
     // todo
     if (
       quizOneSelected === 0 ||
@@ -722,23 +729,26 @@ function FlavourFinderComponent(props: propsContent) {
       locale:params.locale,
     }
 
+    const response = await fetch('/api/answer', {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+        "_sign":signature(fromData),
+      },
+      body: JSON.stringify({ ...fromData }),
+    });
+    setSubmitReady(false);
+    const res = await response.json();
 
-    const res = await axios.post('/api/answer',
-        {
-              ...fromData
-            }, {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            });
+    console.log(res)
+    if(!res.success){
 
-
-    if(!res.data.success){
       alert('错误')
       return false
     }
 
-    setUid(res.data.data[0].unique_id)
+    setUid(res.data[0].unique_id)
 
     console.log(uid)
     const key = `${data.quizs.q1.answers[quizOneSelected - 1].value}${
@@ -803,8 +813,13 @@ function FlavourFinderComponent(props: propsContent) {
 
 
 
-  const submit = () => {
-    if (!canSubmit && !submitReady) return;
+  const submit = async () => {
+
+    if(repeatSubmit){
+      alert('请勿重复提交')
+    }
+
+    if (!canSubmit || submitReady) return;
     console.clear();
     setSubmitReady(true);
     const fromData = {
@@ -827,31 +842,32 @@ function FlavourFinderComponent(props: propsContent) {
       locale:params.locale,
     }
     console.log(fromData);
-    axios
-        .post(
-            '/api/answer',
-            {
-              ...fromData
-            },
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-        )
-        .then(function (response:AxiosResponse<responseContent>) {
-          console.log(response);
-          if(!response.data.success){
-            setSubmitReady(false);
-            alert('失败');
-            return false;
-          }
-          eventbus.emit("PopupBoxVisable", popupMessage);
-        })
-        .catch(function (error) {
-          setSubmitReady(false);
-          console.log(error);
-        })
+
+
+    const response = await fetch('/api/answer', {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+        "_sign":signature(fromData),
+      },
+      body: JSON.stringify({ ...fromData }),
+    });
+
+    const res = await response.json();
+
+    console.log(res)
+    if(!res.success){
+      setSubmitReady(false);
+      alert('错误')
+      return false
+    }
+
+    setRepeatSubmit(true);
+
+    eventbus.emit("PopupBoxVisable", popupMessage);
+
+
 
 
 
@@ -1573,6 +1589,8 @@ function FlavourFinderComponent(props: propsContent) {
                         onClick={() => {
                           setQuizIndex(0);
                           setUid(uuidv4());
+                          setSubmitReady(false);
+                          setRepeatSubmit(false);
                         }}
                       >
                         {data.basic.dywfRedo}
@@ -1741,7 +1759,7 @@ function FlavourFinderComponent(props: propsContent) {
 
                                 submit();
                                 ReactGA.event(
-                                  `Click_Flavourresult|${recommend?.productList[currentRecommend].productName}_Submit`
+                                  `Click_Flavourresult|${recommend?.productList[currentRecommend]?.productName}_Submit`
                                 );
                               }}
                             >

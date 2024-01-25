@@ -219,7 +219,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                         }`}
                       >
                         <div
-                          className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px mobile:top-0 hover:top-0 ${
+                          className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px pad:top-98px mobile:top-0 hover:top-0 ${
                             toKol === index
                               ? "w-615px h-516px pad:w-615px pad:h-516px mobile:w-full mobile:h-360px text-white"
                               : "w-139px h-420px pad:w-139px pad:h-420px mobile:w-full mobile:h-94px"

@@ -36,7 +36,7 @@ const insertLocaleQuery = (answers:answerContent,user:userContent,time:string,id
             res = sql`INSERT INTO public.quiz_record_en (unique_id, q1, q2, q3_first, q3_second, q4, q5) VALUES (${id}, ${answers.q1}, ${answers.q2}, ${answers.q3.a1}, ${answers.q3.a2}, ${answers.q4}, ${answers.q5}) RETURNING *`;
             break;
         case 'en-GB':
-            res = sql`INSERT INTO public.quiz_record_en_bg (unique_id, q1, q2, q3_first, q3_second, q4, q5) VALUES (${id}, ${answers.q1}, ${answers.q2}, ${answers.q3.a1}, ${answers.q3.a2}, ${answers.q4}, ${answers.q5}) RETURNING *`;
+            res = sql`INSERT INTO public.quiz_record_en_gb (unique_id, q1, q2, q3_first, q3_second, q4, q5) VALUES (${id}, ${answers.q1}, ${answers.q2}, ${answers.q3.a1}, ${answers.q3.a2}, ${answers.q4}, ${answers.q5}) RETURNING *`;
             break;
         case 'en-SG':
             res = sql`INSERT INTO public.quiz_record_en_sg (unique_id, q1, q2, q3_first, q3_second, q4, q5) VALUES (${id}, ${answers.q1}, ${answers.q2}, ${answers.q3.a1}, ${answers.q3.a2}, ${answers.q4}, ${answers.q5}) RETURNING *`;
@@ -64,7 +64,7 @@ const updateLocaleQuery = (answers:answerContent,user:userContent,time:string,id
             res = sql`UPDATE public.quiz_record_en SET name=${user.emailName}, email_address=${user.emailAddress} ,updated_at = ${time} WHERE unique_id = ${id}`;
             break;
         case 'en-GB':
-            res = sql`UPDATE public.quiz_record_en-gb SET name=${user.emailName}, email_address=${user.emailAddress} ,updated_at = ${time} WHERE unique_id = ${id}`;
+            res = sql`UPDATE public.quiz_record_en_gb SET name=${user.emailName}, email_address=${user.emailAddress} ,updated_at = ${time} WHERE unique_id = ${id}`;
             break;
         case 'en-SG':
             res = sql`UPDATE public.quiz_record_en_sg SET name=${user.emailName}, email_address=${user.emailAddress} ,updated_at = ${time} WHERE unique_id = ${id}`;
