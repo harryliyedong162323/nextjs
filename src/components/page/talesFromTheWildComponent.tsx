@@ -141,7 +141,7 @@ function TalesFromTheWildComponent(props: propsContent) {
         <div className="font-AlbertusNova-Regular text-center uppercase text-33px pad:text-27px mobile:text-20px mobile:pt-80px">
           {title}
         </div>
-        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] pad:w-auto pad:mt-[5%] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
+        <div className="mx-auto inline-flex justify-between mt-84px w-[1250px] mobile:w-full mobile:flex-col mobile:px-0 mobile:mt-10px">
           {kolList?.length > 0 &&
             kolList.map((item, index) => {
               return (
@@ -156,8 +156,8 @@ function TalesFromTheWildComponent(props: propsContent) {
                         <div
                           className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                             currentKol !== toKol
-                              ? "w-139px h-420px mt-98px pad:w-139px pad:h-420px pad:mt-78px mobile:h-94px"
-                              : "w-615px h-519px pad:w-615px pad:h-519px mobile:h-265px"
+                              ? "w-139px h-420px mt-98px  mobile:h-94px"
+                              : "w-615px h-519px  mobile:h-265px"
                           }`}
                         >
                           <BaseImage
@@ -174,9 +174,9 @@ function TalesFromTheWildComponent(props: propsContent) {
                       <div
                         className={`${
                           currentKol !== toKol ? "hidden" : ""
-                        } absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px pad:px-27px pad:pt-27px mobile:px-20px mobile:mt-10px`}
+                        } absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px  mobile:px-20px mobile:mt-10px`}
                       >
-                        <div className="inline-block relative object-cover w-48px h-48px pad:w-39px pad:h-39px mobile:w-48px mobile:h-48px">
+                        <div className="inline-block relative object-cover w-48px h-48px  mobile:w-48px mobile:h-48px">
                           <BaseImage
                             className="rounded-t-full"
                             mImg={item.listAvatar.imagemobile.url}
@@ -212,17 +212,17 @@ function TalesFromTheWildComponent(props: propsContent) {
                     <>
                       <div
                         key={index}
-                        className={`relative group grayscale hover:grayscale-0 w-139px h-full pad:w-139px mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                        className={`relative group grayscale hover:grayscale-0 w-139px h-full  mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
                           toKol === index
-                            ? "w-615px pad:w-492px mobile:h-360px grayscale-0"
-                            : "w-139px pad:w-139px mobile:h-94px"
+                            ? "w-615px  mobile:h-360px grayscale-0"
+                            : "w-139px mobile:h-94px"
                         }`}
                       >
                         <div
-                          className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px pad:top-98px mobile:top-0 hover:top-0 ${
+                          className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px  mobile:top-0 hover:top-0 ${
                             toKol === index
-                              ? "w-615px h-516px pad:w-615px pad:h-516px mobile:w-full mobile:h-360px text-white"
-                              : "w-139px h-420px pad:w-139px pad:h-420px mobile:w-full mobile:h-94px"
+                              ? "w-615px h-516px  mobile:w-full mobile:h-360px text-white !top-0"
+                              : "w-139px h-420px  mobile:w-full mobile:h-94px"
                           }`}
                           onClick={() => {
                             logEvent(
@@ -236,7 +236,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                           <div
                             className={`${
                               toKol === index ? "hidden" : ""
-                            } absolute z-10 font-AlbertusNova-Regular text-18px rotate-90 top-90px left-13px pad:top-[30%] pad:-left-[46%] pad:w-250px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
+                            } absolute z-10 font-AlbertusNova-Regular text-18px rotate-90 top-90px left-13px pad:top-[35%] pad:-left-[60%] pad:w-250px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
                           >
                             {item.listName}
                           </div>
@@ -254,8 +254,8 @@ function TalesFromTheWildComponent(props: propsContent) {
                           <div
                             className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${
                               toKol === index
-                                ? "w-615px h-516px pad:w-615px pad:h-516px mobile:h-360px"
-                                : "w-139px h-420px pad:w-139px pad:h-420px mobile:h-94px"
+                                ? "w-615px h-516px   mobile:h-360px"
+                                : "w-139px h-420px  mobile:h-94px"
                             }`}
                           >
                             <div
