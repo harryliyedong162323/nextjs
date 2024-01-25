@@ -148,7 +148,9 @@ function TalesFromTheWildComponent(props: propsContent) {
                 <div className="relative" key={index}>
                   {currentKol === index && (
                     <>
-                      <BaseLink link={`${params.locale}/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}>
+                      <BaseLink
+                        link={`${params.locale}/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}
+                      >
                         {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
                         {/*  <BaseButton action="Wildmoorrange" category="Tales" categorySub={item.listName}>*/}
                         <div
@@ -217,11 +219,19 @@ function TalesFromTheWildComponent(props: propsContent) {
                         }`}
                       >
                         <div
-                          className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px hover:top-0 ${
+                          className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px mobile:top-0 hover:top-0 ${
                             toKol === index
                               ? "w-615px h-516px pad:w-615px pad:h-516px mobile:w-full mobile:h-360px text-white"
                               : "w-139px h-420px pad:w-139px pad:h-420px mobile:w-full mobile:h-94px"
                           }`}
+                          onClick={() => {
+                            logEvent(
+                              "Tales",
+                              checkCategoryType(params.slug[0]),
+                              item.listName
+                            );
+                            handleAnimation(index);
+                          }}
                         >
                           <div
                             className={`${
@@ -239,7 +249,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                               );
                               handleAnimation(index);
                             }}
-                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px group-hover:bg-[url('/assets/range/icon_add.png')] group-hover:w-60px group-hover:h-60px group-hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:group-hover:w-48px pad:group-hover:h-48px pad:group-hover:-ml-30px mobile:w-20px mobile:h-20px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-20px mobile:hover:h-20px mobile:hover:mt-0px"
+                            className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-22px mobile:h-22px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-22px mobile:hover:h-22px mobile:hover:mt-0px"
                           ></div>
                           <div
                             className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${
