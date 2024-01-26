@@ -460,9 +460,9 @@ function NearYouComponent(props: propsContent) {
           onSlideChange={(e) => {
             setCurrentIndex(e.realIndex);
             computedActiveDrop(e.realIndex);
-            // setTimeout(() => {
-            //     swiper?.updateSlides();
-            // }, 200);
+            setTimeout(() => {
+                swiper?.updateSlides();
+            }, 50);
           }}
           onSwiper={(swiper) => {
             console.log(swiper);
@@ -480,7 +480,7 @@ function NearYouComponent(props: propsContent) {
                 className={` w-[406px!ignore] ml-48px -mr-20px mobile:ml-0 mobile:-mr-0px pad:290px mobile:w-192px`}
                 key={item.nearYouId}
               >
-                <div className={`mr-25px  h-auto  relative mobile:mr-25px`}>
+                <div className={` h-auto  relative mobile:mr-25px`}>
                   {/*<div className={`float-left`}>*/}
 
                   <div
