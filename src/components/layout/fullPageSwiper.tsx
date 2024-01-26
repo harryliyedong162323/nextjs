@@ -73,6 +73,7 @@ const FullPageSwiper = function (params: Params) {
         mousewheel={{
           thresholdDelta: 120,
         }}
+        resistanceRatio={0}
         observer={true}
         observeParents={true}
         speed={transitionSpeed}
