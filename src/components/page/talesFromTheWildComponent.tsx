@@ -53,6 +53,12 @@ interface Kol {
     };
     altText: string;
   };
+  targetPage:{
+    sys:{
+      id:string
+    }
+  }
+
 }
 
 export interface entryContent {
@@ -118,7 +124,14 @@ function TalesFromTheWildComponent(props: propsContent) {
     return pageSlug;
   };
 
+  useEffect(() => {
+    setToKol(0);
+    setCurrentKol(0);
+  }, []);
   const handleAnimation = (toKol: number) => {
+    setTimeout(() => {
+      swiper?.updateSlides();
+    }, 800);
     setToKol(toKol);
     setTimeout(() => {
       setCurrentKol(toKol);
@@ -163,10 +176,6 @@ function TalesFromTheWildComponent(props: propsContent) {
             direction="vertical"
             slidesPerView="auto"
             onSwiper={(swiper) => {
-              setTimeout(() => {
-                swiper?.updateSlides();
-              }, 200);
-              console.log(swiper);
               setSwiper(swiper);
             }}
             className="mobile:h-[80vh]  mobile:overflow-hidden"
@@ -180,11 +189,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                       <div className="relative" key={index}>
                         {currentKol === index && (
                           <>
-                            <BaseLink
-                              link={`${params.locale}/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}
-                            >
-                              {/* <BaseLink link={`/storiesDetail/{item.sys.id}`}> */}
-                              {/*  <BaseButton action="Wildmoorrange" category="Tales" categorySub={item.listName}>*/}
+                            <BaseLink link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}>
                               <div
                                 className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                                   currentKol !== toKol
@@ -231,9 +236,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                               <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
                                 {item.listDescription}
                               </div>
-                              <BaseLink
-                                link={`${params.locale}/storiesDetail/3vDn9k3B9VI1RwW1Ks2Sqy`}
-                              >
+                              <BaseLink link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}>
                                 {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
                                 <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
                               </BaseLink>
@@ -262,6 +265,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                                     checkCategoryType(params.slug[0]),
                                     item.listName
                                   );
+
                                   handleAnimation(index);
                                 }}
                               >

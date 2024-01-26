@@ -126,9 +126,7 @@ const query = `
           location
           year
           description
-          sys {
-            id
-          }
+         
           campaignImage {
             imagepc {
               url
@@ -139,6 +137,9 @@ const query = `
             altText
           }
           detailPage {
+            sys {
+              id
+            }
             activityDetailComponentTitle
           }
         }
@@ -151,6 +152,9 @@ const query = `
       nearYouContentTitle
       nearYouComponentStoresCollection(limit: 10,locale: $language) {
         items {
+            sys{
+              id
+            }
             nearYouId
             nearYouActive
             howToBuyDetailComponentStoreName

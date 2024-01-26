@@ -56,14 +56,15 @@ interface campaignsContent {
   };
   detailPage: {
     activityDetailComponentTitle: string;
+    sys: {
+      id: string;
+    };
   };
   description: string;
   location: string;
   year: string;
   id: number;
-  sys: {
-    id: string;
-  };
+
 }
 
 //
@@ -536,7 +537,7 @@ function IntroduceCampaignComponent(props: propsContent) {
                     {/*<BaseLink*/}
                     {/*  link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
                     {/*>*/}
-                      <BaseLink link={`/activityDetail/${item.sys?.id}`}>
+                      <BaseLink link={`${params.locale}/activityDetail/${item.detailPage.sys.id}`}>
                       <BaseButton
                         action={checkCategoryType(params.slug[0])}
                         category="Globalnews"
@@ -573,7 +574,7 @@ function IntroduceCampaignComponent(props: propsContent) {
                     {/*<BaseLink*/}
                     {/*  link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
                     {/*>*/}
-                      <BaseLink autoLanguage={false} link={`/activityDetail/${item.sys?.id}`}>
+                    <BaseLink link={`${params.locale}/activityDetail/${item.detailPage.sys.id}`}>
                       <BaseButton
                         action={checkCategoryType(params.slug[0])}
                         category="Globalnews"

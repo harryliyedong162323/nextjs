@@ -54,9 +54,7 @@ const query = `
           location
           year
           description
-          sys {
-            id
-          }
+         
           campaignImage {
             imagepc {
               url
@@ -67,6 +65,9 @@ const query = `
             altText
           }
           detailPage {
+             sys {
+               id
+             }
             activityDetailComponentTitle
           }
         }
@@ -138,6 +139,11 @@ const query = `
                       url
                   }
                   altText
+              }
+              targetPage {
+                sys {
+                    id
+                }
               }
             }
           }

@@ -92,6 +92,11 @@ query($language:String!) {
                     }
                     altText
                 }
+                 targetPage {
+                  sys {
+                      id
+                  }
+                 }
               }
             }
   
