@@ -533,10 +533,10 @@ function IntroduceCampaignComponent(props: propsContent) {
                   className={`swiper-slide-introduce transition-all ease-in-out duration-500 `}
                 >
                   <div>
-                    <BaseLink
-                      link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}
-                    >
-                      {/*<BaseLink link={`/activityDetail/${item.sys?.id}`}>*/}
+                    {/*<BaseLink*/}
+                    {/*  link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
+                    {/*>*/}
+                      <BaseLink link={`/activityDetail/${item.sys?.id}`}>
                       <BaseButton
                         action={checkCategoryType(params.slug[0])}
                         category="Globalnews"
@@ -570,10 +570,10 @@ function IntroduceCampaignComponent(props: propsContent) {
                       {item.description}
                     </div>
                     {/*link={`/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
-                    <BaseLink
-                      link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}
-                    >
-                      {/*<BaseLink autoLanguage={false} link={`/activityDetail/${item.sys?.id}`}>*/}
+                    {/*<BaseLink*/}
+                    {/*  link={`${params.locale}/activityDetail/4BjySvcoWs6JVdlKpvFsOT`}*/}
+                    {/*>*/}
+                      <BaseLink autoLanguage={false} link={`/activityDetail/${item.sys?.id}`}>
                       <BaseButton
                         action={checkCategoryType(params.slug[0])}
                         category="Globalnews"

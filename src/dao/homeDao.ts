@@ -126,6 +126,9 @@ const query = `
           location
           year
           description
+          sys {
+            id
+          }
           campaignImage {
             imagepc {
               url

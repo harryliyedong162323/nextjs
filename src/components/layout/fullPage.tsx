@@ -85,7 +85,9 @@ import IRLExperiences, {
 import DigitalExperience, {
   entryContent as DigitalExperienceEntryContent,
 } from "@/components/page/digitalExperienceComponent";
-import PrivacyPolicy from "@/components/page/privacyPolicyComponent";
+import PrivacyPolicy, {
+  entryContent as PrivacyPolicyEntryContent,
+} from "@/components/page/privacyPolicyComponent";
 import HowToBuyDetail, {
   entryContent as HowToBuyDetailEntryContent,
 } from "@/components/page/howToBuyDetailComponent";
@@ -140,6 +142,7 @@ interface CombinedInterface
     LocationInfoEntryContent,
     IRLExperiencesEntryContent,
     DigitalExperienceEntryContent,
+      PrivacyPolicyEntryContent,
     HowToBuyDetailEntryContent {
   entry: {
     currentPageNumber: number;

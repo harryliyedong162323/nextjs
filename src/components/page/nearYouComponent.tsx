@@ -340,7 +340,7 @@ function MobileCarousel(props: any) {
 }
 
 function NearYouComponent(props: propsContent) {
-  // console.log(props)
+  console.log(props)
   const headStyle = props.data.entry.headStyle;
   const [swiper, setSwiper] = useState<SwiperContent | null>(null);
   const campaigns = props.data.entry.nearYouComponentStoresCollection.items;

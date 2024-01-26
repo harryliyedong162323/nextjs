@@ -173,10 +173,9 @@ query($language:String!) {
   }
 `;
 
-const quizQuery = `
-query {
-
-    dataQuizQ1Collection(locale: "en") {
+const quizQueryOne = `
+  query($language:String!) {
+    dataQuizQ1Collection(locale: $language) {
         items {
             id
              topicContent
@@ -218,8 +217,12 @@ query {
               }
         }
     }
+  }
+`
 
-    dataQuizQ2Collection(locale: "en") {
+const quizQueryTwo = `
+  query($language:String!) {
+    dataQuizQ2Collection(locale: $language) {
         items {
             id
             topicContent
@@ -282,8 +285,12 @@ query {
               }
         }
     }
+  }
+`
 
-    dataQuizQ3Collection(locale: "en") {
+const quizQueryThree = `
+  query($language:String!) {
+    dataQuizQ3Collection(locale: $language) {
         items {
             id
             topicContent
@@ -411,8 +418,12 @@ query {
               }
         }
     }
+  }
+`
 
-    dataQuizQ4Collection(locale: "en") {
+const quizQueryFour = `
+  query($language:String!) {
+    dataQuizQ4Collection(locale: $language) {
         items {
             id
             topicContent
@@ -454,8 +465,12 @@ query {
               }
         }
     }
+  }
+`
 
-    dataQuizQ5Collection(locale: "en") {
+const quizQueryFive = `
+  query($language:String!) {
+    dataQuizQ5Collection(locale: $language) {
         items {
              id
              topicContent
@@ -470,9 +485,15 @@ query {
               optionCContent
         }
     }
+  }
+`
 
 
-    rangeCollection (limit:1 where:{pageName:"range"},locale: "en" ) {
+const quizQuery = `
+query($language:String!) {
+
+
+    rangeCollection (limit:1 where:{pageName:"range"},locale: $language ) {
       items {
 
           flavourFinderComponentTitle
@@ -491,7 +512,7 @@ query {
       }
   }
 
-    quizMessage:rangeCollection (limit:1 where:{pageName:"range"},locale: "en" ) {
+    quizMessage:rangeCollection (limit:1 where:{pageName:"range"},locale: $language ) {
       items {
         dywfMessageTitleSuccess
         dywfMessageSuccess
@@ -568,6 +589,63 @@ class RangeDao {
     });
     const result = await response.json();
 
+
+
+
+    const quiz1 = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: quizQueryOne, variables  }),
+    });
+    const quiz1Result = await quiz1.json();
+
+    const quiz2 = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: quizQueryTwo, variables  }),
+    });
+    const quiz2Result = await quiz2.json();
+
+    const quiz3 = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: quizQueryThree, variables  }),
+    });
+    const quiz3Result = await quiz3.json();
+
+    const quiz4 = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: quizQueryFour, variables  }),
+    });
+    const quiz4Result = await quiz4.json();
+
+    const quiz5 = await fetch(BASE_URL, {
+      method: "POST",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: quizQueryFive, variables  }),
+    });
+    const quiz5Result = await quiz5.json();
+
+
+
+
+
     const quizResponse = await fetch(BASE_URL, {
       method: "POST",
       cache: "no-store",
@@ -576,8 +654,39 @@ class RangeDao {
       },
       body: JSON.stringify({ query: quizQuery, variables  }),
     });
-    const quizResult = await quizResponse.json();
-    console.log(quizResult)
+
+    const quizRes = await quizResponse.json();
+
+    let quizResult = {
+      data:{
+        dataQuizQ1Collection:{
+          ...quiz1Result.data.dataQuizQ1Collection
+        },
+        dataQuizQ2Collection:{
+          ...quiz2Result.data.dataQuizQ2Collection
+        },
+        dataQuizQ3Collection:{
+          ...quiz3Result.data.dataQuizQ3Collection
+        },
+        dataQuizQ4Collection:{
+          ...quiz4Result.data.dataQuizQ4Collection
+        },
+        dataQuizQ5Collection:{
+          ...quiz5Result.data.dataQuizQ5Collection
+        },
+        rangeCollection:{
+          ...quizRes.data.rangeCollection
+        },
+        quizMessage:{
+          ...quizRes.data.quizMessage
+        },
+
+
+      }
+    };
+
+
+
     const productFamilyResponse = await fetch(BASE_URL, {
       method: "POST",
       cache: "no-store",

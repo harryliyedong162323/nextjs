@@ -163,10 +163,13 @@ function TalesFromTheWildComponent(props: propsContent) {
             direction="vertical"
             slidesPerView="auto"
             onSwiper={(swiper) => {
+              setTimeout(() => {
+                swiper?.updateSlides();
+              }, 200);
               console.log(swiper);
               setSwiper(swiper);
             }}
-            className="mobile:h-[100vh]  mobile:overflow-hidden"
+            className="mobile:h-[80vh]  mobile:overflow-hidden"
             nested={true}
           >
             <SwiperSlide>
