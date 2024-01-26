@@ -14,9 +14,9 @@ const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 
-    query {
+     query($language:String!) {
     
-    seo:seoMetaTagsCollection(limit: 1, where: {name: "Privacy Policy"},locale: "en") {
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Privacy Policy"},locale: $language) {
       items {
           title
           keyWords
@@ -25,7 +25,7 @@ const query = `
     }
     
     
-  privacypolicy:pagePrivacyPolicyCollection (limit:1 where:{internalName:"Privacy Policy"} locale: "en") {
+  privacypolicy:pagePrivacyPolicyCollection (limit:1 where:{internalName:"Privacy Policy"} locale: $language) {
       items {
         detailCollection {
             items {
@@ -58,14 +58,16 @@ const query = `
 `;
 
 class privacyPolicyDao {
-  static async fetch<PrivacyPolicyModel>() {
+  static async fetch<PrivacyPolicyModel>(params: paramsContent) {
+    const variables = { sysId: params?.slug[1],language: params?.locale || process.env.LOCATION };
+
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query,variables }),
     });
     const result = await response.json();
 

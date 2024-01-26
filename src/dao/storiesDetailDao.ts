@@ -4,9 +4,9 @@ import {paramsContent} from "@/app/[locale]/[...slug]/page";
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
-query($sysId:String!) {
+query($sysId:String!,$language:String!) {
     
-    seo:seoMetaTagsCollection(limit: 1, where: {name: "Stories Detail"},locale: "en") {
+    seo:seoMetaTagsCollection(limit: 1, where: {name: "Stories Detail"},locale: $language) {
       items {
           title
           keyWords
@@ -14,7 +14,7 @@ query($sysId:String!) {
       }
     }
     
-    storiesDetailCollection (limit:1 where:{sys:{id:$sysId}} locale: "en") {
+    storiesDetailCollection (limit:1 where:{sys:{id:$sysId}} locale: $language) {
         items {
             pageName
             storiesDetailComponentTitle
@@ -39,10 +39,10 @@ query($sysId:String!) {
             }
             storiesDetailComponentCareer
   
-            storiesDetailComponentDetailCollection(locale: "en") {              
+            storiesDetailComponentDetailCollection(locale: $language) {              
                 items {
                     ... on DataKolDetailCarouselImage {
-                        imagesCollection (limit : 10,locale: "en") {
+                        imagesCollection (limit : 10,locale: $language) {
                             items {
                                 imagepc {
                                     url
@@ -165,7 +165,6 @@ query($sysId:String!) {
 class StoriesDetailDao {
   static async fetch<PageModel>(params: paramsContent) {
     const variables = { sysId: params?.slug[1],language: params?.locale || process.env.LOCATION };
-
     const response = await fetch(GRAPHQL_URL, {
       method: "POST",
       cache: "no-store",

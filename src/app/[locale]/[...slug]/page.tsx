@@ -88,7 +88,7 @@ async function getPageData(params: paramsContent) {
             result = await LocalMarketActivityDao.fetch(params);
             break;
         case "privacyPolicy":
-            result = await PrivacyPolicyDao.fetch();
+            result = await PrivacyPolicyDao.fetch(params);
             break;
         case "error":
             result = await ErrorDao.fetch();
