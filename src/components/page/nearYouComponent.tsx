@@ -14,6 +14,7 @@ interface SwiperContent {
   updateSlides(): void;
   slideNext(): void;
   slidePrev(): void;
+  slideToLoop(index: number, speed?: number): void;
   slideTo(index: number, speed?: number): void;
   update(): void;
   destroy(deleteInstance?: boolean, cleanStyles?: boolean): void;
@@ -400,11 +401,11 @@ function NearYouComponent(props: propsContent) {
   };
   const scrollPrev = () => {
     if (!campaignLoadFlag) return false;
-    // emblaApi?.scrollPrev();
+    // emblaApi?.scrollNext();
     swiper?.slidePrev();
     setCampaignLoadFlag(false);
   };
-
+  const isMobile = window.innerWidth <= 768; // 判断是否为手机端
   // useEffect(() => {
   //   if (!emblaApi) return;
   //   computedActiveDrop(0);
@@ -426,7 +427,7 @@ function NearYouComponent(props: propsContent) {
         data-slug={props.currentSlug}
       />
 
-      <div className="pt-104px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:hidden mobile:text-20px mobile:pt-77px">
+      <div className="pt-110px uppercase font-AlbertusNova-Regular font-normal text-33px text-center pad:text-23px mobile:hidden mobile:text-20px mobile:pt-77px">
         {substr1} {substr2}
       </div>
       <div className="hidden mobile:block mobile:w-full mobile:text-24px mobile:pt-77px mobile:uppercase mobile:font-AlbertusNova-Regular mobile:font-normal">
@@ -443,7 +444,7 @@ function NearYouComponent(props: propsContent) {
       {/*spaceBetween={15}*/}
       {/*freeMode={true}*/}
       {/*modules={[FreeMode]}*/}
-      <div className="relative z-20 pt-83px mobile:pl-25px ml-[10%] h-[700px] w-full mobile:ml-0 mobile:h-auto mobile:pt-25px">
+      <div className="relative z-20 pt-83px mobile:pl-25px ml-50px mobile:ml-0  h-[700px] w-full mobile:ml-0 mobile:h-auto mobile:pt-25px">
         <Swiper
           speed={1500}
           loop={true}
@@ -458,14 +459,16 @@ function NearYouComponent(props: propsContent) {
             }, 250);
           }}
           onSlideChange={(e) => {
+            console.log(e);
             setCurrentIndex(e.realIndex);
             computedActiveDrop(e.realIndex);
+            if (!isMobile) swiper?.slideToLoop(e.realIndex, 0);
+
             setTimeout(() => {
-                swiper?.updateSlides();
+              swiper?.updateSlides();
             }, 50);
           }}
           onSwiper={(swiper) => {
-            console.log(swiper);
             setSwiper(swiper);
             setTimeout(() => {
               swiper?.updateSlides();
@@ -477,7 +480,7 @@ function NearYouComponent(props: propsContent) {
           {campaignData.map((item: any, index: number) => {
             return (
               <SwiperSlide
-                className={` w-[406px!ignore] ml-48px -mr-20px mobile:ml-0 mobile:-mr-0px pad:290px mobile:w-192px`}
+                className={` w-[406px!ignore] mr-21px pad:mr-25px mobile:mr-0 mobile:ml-0  pad:290px mobile:w-192px`}
                 key={item.nearYouId}
               >
                 <div className={` h-auto  relative mobile:mr-25px`}>
@@ -537,10 +540,7 @@ function NearYouComponent(props: propsContent) {
                     {/*        : ""*/}
                     {/*}*/}
                     <div
-                      className={`w-500px select-none font-Grotesque-Medium  font-medium text-18px pad:text-12px mobile:w-500px mobile:text-16px
-                                            
-                                           
-                                            `}
+                      className={`w-500px select-none font-Grotesque-Medium pad:w-358px  font-medium text-27px text-[#000000] pad:text-19px mobile:w-500px mobile:text-16px `}
                     >
                       {item.howToBuyDetailComponentStoreName}
                     </div>
@@ -557,10 +557,7 @@ function NearYouComponent(props: propsContent) {
                       {/*        : ""*/}
                       {/*}*/}
                       <span
-                        className={`w-[70%] truncate pad:w-[50%]
-                                                  
-                                                 
-                                                  `}
+                        className={`w-[70%] truncate pad:w-[50%] font-Grotesque-Regular font-medium text-22px pad:text-16px text-[#262627]`}
                       >
                         {item.nearYouDes} + &quot;54545&ldquo;
                       </span>
@@ -585,8 +582,8 @@ function NearYouComponent(props: propsContent) {
             );
           })}
         </Swiper>
-        <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:hidden"></div>
-        <div className="absolute z-50 top-0 right-[0%] h-full w-[35%] bg-gradient-to-l from-[#f6f6f6f6] to-[transparent] mobile:from-[#ffffff94] mobile:block"></div>
+        <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#fffffff6] to-[transparent] mobile:hidden"></div>
+        <div className="hidden mobile:absolute mobile:z-10 mobile:top-0 mobile:right-[0%] mobile:h-full mobile:w-[40%] mobile:bg-gradient-to-l mobile:from-[#fffffff6] mobile:to-[transparent] mobile:block"></div>
       </div>
 
       {/*<div className="relative z-20 mobile:pl-25px h-full w-full">*/}
