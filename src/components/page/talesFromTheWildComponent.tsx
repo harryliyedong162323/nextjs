@@ -23,6 +23,7 @@ interface Kol {
   sys: {
     id: string;
   };
+  icon: boolean;
   id: string;
   listName: string;
   listDescription: string;
@@ -53,12 +54,11 @@ interface Kol {
     };
     altText: string;
   };
-  targetPage:{
-    sys:{
-      id:string
-    }
-  }
-
+  targetPage: {
+    sys: {
+      id: string;
+    };
+  };
 }
 
 export interface entryContent {
@@ -102,11 +102,30 @@ function TalesFromTheWildComponent(props: propsContent) {
   const [kolList, setKolList] = useState<Array<Kol>>(
     props.data.entry.talesFromTheWildListCollection.items
   );
+  useEffect(() => {
+    setKolList(
+      kolList.map((item) => {
+        return { ...item, icon: false };
+      })
+    );
+  }, []);
+
   const params = useParams();
   // console.log(props);
   const headStyle = props.data.entry.headStyle;
   const title = props.data.entry.talesFromTheWildTitle;
   useEffect(() => {}, [currentKol, kolList]);
+  const handleClick = (id: string) => {
+    const newKolList = kolList.map((item) => {
+      if (item.id == id) {
+        return { ...item, icon: !item.icon };
+      } else {
+        return { ...item, icon: false };
+      }
+    });
+    setKolList(newKolList);
+    console.log();
+  };
 
   const checkCategoryType = (slug: string = "") => {
     let pageSlug: string = "";
@@ -189,7 +208,9 @@ function TalesFromTheWildComponent(props: propsContent) {
                       <div className="relative" key={index}>
                         {currentKol === index && (
                           <>
-                            <BaseLink link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}>
+                            <BaseLink
+                              link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}
+                            >
                               <div
                                 className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
                                   currentKol !== toKol
@@ -236,7 +257,9 @@ function TalesFromTheWildComponent(props: propsContent) {
                               <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
                                 {item.listDescription}
                               </div>
-                              <BaseLink link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}>
+                              <BaseLink
+                                link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}
+                              >
                                 {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
                                 <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
                               </BaseLink>
@@ -260,6 +283,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                                     : "w-139px h-420px  mobile:w-full mobile:h-94px"
                                 }`}
                                 onClick={() => {
+                                  handleClick(item.id);
                                   logEvent(
                                     "Tales",
                                     checkCategoryType(params.slug[0]),
@@ -278,6 +302,7 @@ function TalesFromTheWildComponent(props: propsContent) {
                                 </div>
                                 <div
                                   onClick={() => {
+                                    handleClick(item.id);
                                     logEvent(
                                       "Tales",
                                       checkCategoryType(params.slug[0]),
@@ -285,7 +310,11 @@ function TalesFromTheWildComponent(props: propsContent) {
                                     );
                                     handleAnimation(index);
                                   }}
-                                  className="absolute cursor-pointer z-10 bottom-40px inline-block bg-cover left-1/2 bg-[url('/assets/range/icon_add_small.png')] w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-22px mobile:h-22px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-22px mobile:hover:h-22px mobile:hover:mt-0px"
+                                  className={`absolute cursor-pointer ${
+                                    item.icon == true
+                                      ? 'bg-[url("/assets/range/icon_add.png")] bg-[black]'
+                                      : 'bg-[url("/assets/range/icon_add_small.png")]'
+                                  } z-10 bottom-40px inline-block bg-cover left-1/2  w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-22px mobile:h-22px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-22px mobile:hover:h-22px mobile:hover:mt-0px`}
                                 ></div>
                                 <div
                                   className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${

@@ -171,9 +171,11 @@ interface campaignsContent {
 // ];
 
 function NestedCarousel(props: any) {
-  // Autoplay()
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  let autoPlay: any = null;
+  const activeFlag = props.activeFlag;
 
   const scrollTo = useCallback(
     (index: number) => {
@@ -190,22 +192,50 @@ function NestedCarousel(props: any) {
     []
   );
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    emblaApi?.on("select", onChangeScroll);
-  }, [emblaApi, onChangeScroll]);
+  const startAutoPlay = () => {
+    if (autoPlay || isMobile) {
+      return;
+    }
+    autoPlay = setInterval(() => {
+      emblaApi?.scrollNext();
+    }, 3000);
+  };
 
-  const activeFlag = props.activeFlag;
+  const stopAutoPlay = () => {
+    if (autoPlay) {
+      clearInterval(autoPlay);
+      autoPlay = null;
+    }
+  };
+
+  useEffect(() => {
+    if (!emblaApi || !activeFlag) return;
+
+    emblaApi.on("select", onChangeScroll);
+
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener("resize", checkIsMobile);
+
+    if (activeFlag && !isMobile) {
+      startAutoPlay();
+    }
+
+    return () => {
+      emblaApi.off("select", onChangeScroll);
+      stopAutoPlay();
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, [emblaApi, activeFlag, onChangeScroll, isMobile]);
 
   const data = props.list;
+
   return (
-    // ${
-    //
-    //   activeFlag == true && data.length != 1
-    //     ? "pointer-events-auto mobile:pointer-events-auto"
-    //     : "pointer-events-auto"
-    // }
-    <div className={` overflow-hidden relative h-full w-full`} ref={emblaRef}>
+    <div className={`overflow-hidden relative h-full w-full`} ref={emblaRef}>
       <div className="flex h-full w-full">
         {data.map((item: campaignsChildren, index: number) => {
           return (
@@ -227,11 +257,11 @@ function NestedCarousel(props: any) {
       </div>
 
       <div
-        className={` absolute mt-30px left-41px bottom-41px w-full items-center justify-start mobile:bottom-50px  pad:bottom-29px pad:left-29px  ${
-          activeFlag == true ? "flex mobile:hidden" : "hidden"
+        className={`absolute mt-30px left-41px bottom-41px w-full items-center justify-start mobile:bottom-50px pad:bottom-29px pad:left-29px ${
+          activeFlag === true ? "flex mobile:hidden" : "hidden"
         }`}
       >
-        {data.length == 1
+        {data.length === 1
           ? null
           : data.map((item: any, index: number) => {
               return (
@@ -250,7 +280,6 @@ function NestedCarousel(props: any) {
     </div>
   );
 }
-
 function MobileCarousel(props: any) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -459,14 +488,13 @@ function NearYouComponent(props: propsContent) {
             }, 250);
           }}
           onSlideChange={(e) => {
-            console.log(e);
             setCurrentIndex(e.realIndex);
             computedActiveDrop(e.realIndex);
-            if (!isMobile) swiper?.slideToLoop(e.realIndex, 0);
 
             setTimeout(() => {
+              if (!isMobile) swiper?.slideToLoop(e.realIndex, 0);
               swiper?.updateSlides();
-            }, 50);
+            }, 30);
           }}
           onSwiper={(swiper) => {
             setSwiper(swiper);
@@ -540,7 +568,11 @@ function NearYouComponent(props: propsContent) {
                     {/*        : ""*/}
                     {/*}*/}
                     <div
-                      className={`w-500px select-none font-Grotesque-Medium pad:w-358px  font-medium text-27px text-[#000000] pad:text-19px mobile:w-500px mobile:text-16px `}
+                      className={`w-500px select-none font-Grotesque-Medium pad:w-358px ${
+                        item.nearYouActive == true
+                          ? "text-27px pad:text-19px"
+                          : "text-18px pad:text-13px"
+                      }  font-medium  text-[#000000]  mobile:w-500px mobile:text-16px `}
                     >
                       {item.howToBuyDetailComponentStoreName}
                     </div>
