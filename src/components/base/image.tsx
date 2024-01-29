@@ -21,6 +21,7 @@ interface propsContent {
   layout?: string;
   pImg?: string; // pc img
   mImg?: string; // mobile img
+  lazy?: boolean; // lazy loading
 }
 
 class BaseImage extends Component<propsContent, State> {
@@ -39,6 +40,7 @@ class BaseImage extends Component<propsContent, State> {
     defaultImg: "",
     pImg: "",
     mImg: "",
+    lazy: true,
   };
 
   state: State = {
@@ -140,6 +142,7 @@ class BaseImage extends Component<propsContent, State> {
           objectPosition={this.props.objectPosition}
           objectFit={this.props.objectFit}
           alt={this.props.alt ?? ""}
+          loading={this.props.lazy ? "lazy" : "eager"}
         ></Image>
       );
     } else {

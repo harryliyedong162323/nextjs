@@ -206,82 +206,104 @@ function TalesFromTheWildComponent(props: propsContent) {
                   kolList.map((item, index) => {
                     return (
                       <div className="relative" key={index}>
-                        {currentKol === index && (
-                          <>
+                        <div
+                          className={currentKol === index ? "block" : "hidden"}
+                        >
+                          <BaseLink
+                            link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}
+                          >
+                            <div
+                              className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                                currentKol !== toKol
+                                  ? "w-139px h-420px mt-98px  mobile:h-94px"
+                                  : "w-615px h-519px  mobile:h-360px"
+                              }`}
+                            >
+                              <BaseImage
+                                mImg={item.listImage.imagemobile.url}
+                                pImg={item.listImage.imagepc.url}
+                                alt={item.listImage.altText}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                                lazy={false}
+                              ></BaseImage>
+                            </div>
+                            {/*</BaseButton>*/}
+                          </BaseLink>
+                          <div
+                            className={`${
+                              currentKol !== toKol ? "hidden" : ""
+                            } absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px  mobile:px-20px mobile:mt-10px`}
+                          >
+                            <div className="inline-block relative object-cover w-48px h-48px  mobile:w-48px mobile:h-48px">
+                              <BaseImage
+                                className="rounded-t-full"
+                                mImg={item.listAvatar.imagemobile.url}
+                                pImg={item.listAvatar.imagepc.url}
+                                alt={item.listAvatar.altText}
+                                layout="fill"
+                                objectFit="cover"
+                                quality={100}
+                                lazy={false}
+                              ></BaseImage>
+                            </div>
+                            <div className="text-white text-18px ml-10px pad:text-14px mobile:text-14px font-normal font-Grotesque-Regular">
+                              {item.listName}
+                            </div>
+                          </div>
+                          <div
+                            className={`${
+                              currentKol !== toKol ? "hidden" : ""
+                            } absolute left-0 inline-flex justify-between bottom-0 w-full bg-gradient-to-b from-[rgba(10, 22, 27, 0.75)] to-[rgba(0, 0, 0, 0)] px-33px pb-33px pad:px-27px pad:pb-27px mobile:px-24px mobile:pb-20px`}
+                          >
+                            <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
+                              {item.listDescription}
+                            </div>
                             <BaseLink
                               link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}
                             >
-                              <div
-                                className={`relative inline-block object-cover cursor-pointer mobile:flex mobile:w-full mobile:mt-2px transition-all ease-in-out duration-1000 ${
-                                  currentKol !== toKol
-                                    ? "w-139px h-420px mt-98px  mobile:h-94px"
-                                    : "w-615px h-519px  mobile:h-360px"
-                                }`}
-                              >
-                                <BaseImage
-                                  mImg={item.listImage.imagemobile.url}
-                                  pImg={item.listImage.imagepc.url}
-                                  alt={item.listImage.altText}
-                                  layout="fill"
-                                  objectFit="cover"
-                                  quality={100}
-                                ></BaseImage>
-                              </div>
-                              {/*</BaseButton>*/}
+                              {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
+                              <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
                             </BaseLink>
+                          </div>
+                        </div>
+                        <div
+                          className={currentKol !== index ? "block" : "hidden"}
+                        >
+                          <div
+                            key={index}
+                            className={`relative group grayscale hover:grayscale-0 w-139px h-full  mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
+                              toKol === index
+                                ? "w-615px  mobile:h-360px grayscale-0"
+                                : "w-139px mobile:h-94px"
+                            }`}
+                          >
                             <div
-                              className={`${
-                                currentKol !== toKol ? "hidden" : ""
-                              } absolute top-0 left-0 inline-flex flex-row items-center px-33px pt-33px  mobile:px-20px mobile:mt-10px`}
+                              className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px  mobile:top-0 hover:top-0 ${
+                                toKol === index
+                                  ? "w-615px h-516px  mobile:w-full mobile:h-360px text-white !top-0"
+                                  : "w-139px h-420px  mobile:w-full mobile:h-94px"
+                              }`}
+                              onClick={() => {
+                                handleClick(item.id);
+                                logEvent(
+                                  "Tales",
+                                  checkCategoryType(params.slug[0]),
+                                  item.listName
+                                );
+
+                                handleAnimation(index);
+                              }}
                             >
-                              <div className="inline-block relative object-cover w-48px h-48px  mobile:w-48px mobile:h-48px">
-                                <BaseImage
-                                  className="rounded-t-full"
-                                  mImg={item.listAvatar.imagemobile.url}
-                                  pImg={item.listAvatar.imagepc.url}
-                                  alt={item.listAvatar.altText}
-                                  layout="fill"
-                                  objectFit="cover"
-                                  quality={100}
-                                ></BaseImage>
-                              </div>
-                              <div className="text-white text-18px ml-10px pad:text-14px mobile:text-14px font-normal font-Grotesque-Regular">
+                              <div
+                                className={`${
+                                  toKol === index ? "hidden" : ""
+                                } absolute z-10 font-AlbertusNova-Regular text-18px rotate-90 top-90px left-13px pad:top-[35%] pad:-left-[60%] pad:w-250px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
+                              >
                                 {item.listName}
                               </div>
-                            </div>
-                            <div
-                              className={`${
-                                currentKol !== toKol ? "hidden" : ""
-                              } absolute left-0 inline-flex justify-between bottom-0 w-full bg-gradient-to-b from-[rgba(10, 22, 27, 0.75)] to-[rgba(0, 0, 0, 0)] px-33px pb-33px pad:px-27px pad:pb-27px mobile:px-24px mobile:pb-20px`}
-                            >
-                              <div className="text-white font-Grotesque-Medium text-20px pad:text-16px mobile:text-14px">
-                                {item.listDescription}
-                              </div>
-                              <BaseLink
-                                link={`${params.locale}/storiesDetail/${item.targetPage.sys.id}`}
-                              >
-                                {/* <BaseLink link={`/storiesDetail/${item.sys.id}`}> */}
-                                <div className="inline-block bg-[url('/assets/range/icon_arrow.png')] bg-cover cursor-pointer w-30px h-30px pad:w-24px pad:h-24px mobile:w-18px mobile:h-18px"></div>
-                              </BaseLink>
-                            </div>
-                          </>
-                        )}
-                        {currentKol !== index && (
-                          <>
-                            <div
-                              key={index}
-                              className={`relative group grayscale hover:grayscale-0 w-139px h-full  mobile:w-full mobile:pt-0 mobile:mt-2px transition-all ease-in-out duration-1000 ${
-                                toKol === index
-                                  ? "w-615px  mobile:h-360px grayscale-0"
-                                  : "w-139px mobile:h-94px"
-                              }`}
-                            >
                               <div
-                                className={`absolute w-full transition-all group-hover:text-white ease-in-out duration-1000 top-98px  mobile:top-0 hover:top-0 ${
-                                  toKol === index
-                                    ? "w-615px h-516px  mobile:w-full mobile:h-360px text-white !top-0"
-                                    : "w-139px h-420px  mobile:w-full mobile:h-94px"
-                                }`}
                                 onClick={() => {
                                   handleClick(item.id);
                                   logEvent(
@@ -289,77 +311,59 @@ function TalesFromTheWildComponent(props: propsContent) {
                                     checkCategoryType(params.slug[0]),
                                     item.listName
                                   );
-
                                   handleAnimation(index);
                                 }}
+                                className={`absolute cursor-pointer ${
+                                  item.icon == true
+                                    ? 'bg-[url("/assets/range/icon_add.png")] bg-[black]'
+                                    : 'bg-[url("/assets/range/icon_add_small.png")]'
+                                } z-10 bottom-40px inline-block bg-cover left-1/2  w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-22px mobile:h-22px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-22px mobile:hover:h-22px mobile:hover:mt-0px`}
+                              ></div>
+                              <div
+                                className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${
+                                  toKol === index
+                                    ? "w-615px h-516px   mobile:h-360px"
+                                    : "w-139px h-420px  mobile:h-94px"
+                                }`}
                               >
                                 <div
                                   className={`${
-                                    toKol === index ? "hidden" : ""
-                                  } absolute z-10 font-AlbertusNova-Regular text-18px rotate-90 top-90px left-13px pad:top-[35%] pad:-left-[60%] pad:w-250px mobile:text-14px mobile:rotate-0 mobile:text-white mobile:ml-20px mobile:top-40px`}
+                                    toKol === index
+                                      ? "w-full h-full"
+                                      : "w-0 h-0 overflow-hidden"
+                                  } relative`}
                                 >
-                                  {item.listName}
+                                  <BaseImage
+                                    mImg={item.listImage.imagemobile.url}
+                                    pImg={item.listImage.imagepc.url}
+                                    alt={item.listImage.altText}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    quality={100}
+                                    lazy={false}
+                                  ></BaseImage>
                                 </div>
                                 <div
-                                  onClick={() => {
-                                    handleClick(item.id);
-                                    logEvent(
-                                      "Tales",
-                                      checkCategoryType(params.slug[0]),
-                                      item.listName
-                                    );
-                                    handleAnimation(index);
-                                  }}
-                                  className={`absolute cursor-pointer ${
-                                    item.icon == true
-                                      ? 'bg-[url("/assets/range/icon_add.png")] bg-[black]'
-                                      : 'bg-[url("/assets/range/icon_add_small.png")]'
-                                  } z-10 bottom-40px inline-block bg-cover left-1/2  w-30px h-30px -ml-19px hover:bg-[url('/assets/range/icon_add.png')] hover:w-60px hover:h-60px hover:-ml-34px pad:w-24px pad:h-24px pad:-mt-16px pad:hover:w-48px pad:hover:h-48px pad:hover:-ml-30px mobile:w-22px mobile:h-22px mobile:left-auto mobile:top-40px mobile:right-20px mobile:hover:w-22px mobile:hover:h-22px mobile:hover:mt-0px`}
-                                ></div>
-                                <div
-                                  className={`absolute inline-block object-cover mobile:w-full transition-all ease-in-out duration-1000 ${
+                                  className={`${
                                     toKol === index
-                                      ? "w-615px h-516px   mobile:h-360px"
-                                      : "w-139px h-420px  mobile:h-94px"
-                                  }`}
+                                      ? "w-0 h-0 overflow-hidden"
+                                      : "w-full h-full"
+                                  } relative`}
                                 >
-                                  <div
-                                    className={`${
-                                      toKol === index
-                                        ? "w-full h-full"
-                                        : "w-0 h-0 overflow-hidden"
-                                    } relative`}
-                                  >
-                                    <BaseImage
-                                      mImg={item.listImage.imagemobile.url}
-                                      pImg={item.listImage.imagepc.url}
-                                      alt={item.listImage.altText}
-                                      layout="fill"
-                                      objectFit="cover"
-                                      quality={100}
-                                    ></BaseImage>
-                                  </div>
-                                  <div
-                                    className={`${
-                                      toKol === index
-                                        ? "w-0 h-0 overflow-hidden"
-                                        : "w-full h-full"
-                                    } relative`}
-                                  >
-                                    <BaseImage
-                                      mImg={item.listSmallImage.imagemobile.url}
-                                      pImg={item.listSmallImage.imagepc.url}
-                                      alt={item.listSmallImage.altText}
-                                      layout="fill"
-                                      objectFit="cover"
-                                      quality={100}
-                                    ></BaseImage>
-                                  </div>
+                                  <BaseImage
+                                    mImg={item.listSmallImage.imagemobile.url}
+                                    pImg={item.listSmallImage.imagepc.url}
+                                    alt={item.listSmallImage.altText}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    quality={100}
+                                    lazy={false}
+                                  ></BaseImage>
                                 </div>
                               </div>
                             </div>
-                          </>
-                        )}
+                          </div>
+                        </div>
                       </div>
                     );
                   })}
