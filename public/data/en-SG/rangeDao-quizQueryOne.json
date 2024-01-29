@@ -1,0 +1,48 @@
+{
+    "data": {
+        "dataQuizQ1Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q1. Which food is your favorite？",
+                    "optionAId": 0,
+                    "optionAValue": "A",
+                    "optionAContent": "Rich and Spicy",
+                    "optionBId": 1,
+                    "optionBValue": "B",
+                    "optionBContent": "Light and Sweet",
+                    "optionCId": 2,
+                    "optionCValue": "C",
+                    "optionCContent": "Smoky and Mellow",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_25/3dc0792c62ed3b68b63e3ac589431498/range_image25.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_26/ab1eca6f5ce183a7e7e89b685cf8c604/range_image26.png"
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_27/d824c1c01c131293f181c7f04fa02441/range_image27.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_28/04a1901470f45f53232aa476184eff60/range_image28.png"
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_29/4aab087d742706a688aac38440febabe/range_image29.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_30/570322adefbbcf57e934e4e63fe5bb7d/range_image30.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

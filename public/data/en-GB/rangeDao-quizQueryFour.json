@@ -1,0 +1,48 @@
+{
+    "data": {
+        "dataQuizQ4Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q4. Which one is yours ?",
+                    "optionAId": 1,
+                    "optionAValue": "A",
+                    "optionAContent": "A",
+                    "optionBId": 1,
+                    "optionBValue": "B",
+                    "optionBContent": "B",
+                    "optionCId": 2,
+                    "optionCValue": "C",
+                    "optionCContent": "C",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_46/56ae6a37d37201b893b6ed55d0049f3f/range_image46.png"
+                        },
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_45/b074d939792bcc47e07ebbbaba128e2a/range_image45.png"
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_48/c80afe900812aba1bde99a603ac0ccdc/range_image48.png"
+                        },
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_47/c3597a267f804d99e7e548ca884637e5/range_image47.png"
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_50/4a8425315aa9c72dd7858f335e1cfba2/range_image50.png"
+                        },
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_49/332081db7db0c39b603b6360e6ab664c/range_image49.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,8 +1,10 @@
 import PageModel from "../model/pageModel";
 import {paramsContent} from "@/app/[locale]/[...slug]/page";
+import { headers } from 'next/headers';
+
 // const BASE_URL = "https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss";
 
-const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
+//const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
 
 const query = `
 query($language:String!) {
@@ -584,66 +586,99 @@ query($language:String!) {
 class RangeDao {
   static async fetch<PageModel>(params:paramsContent) {
     const variables = { language: params?.locale || process.env.LOCATION };
-    const response = await fetch(BASE_URL, {
-      method: "POST",
+
+    const headersList = headers();
+    let url_query :string
+    let url_quizQueryOne :string
+    let url_quizQueryTwo :string
+    let url_quizQueryThree :string
+    let url_quizQueryFour :string
+    let url_quizQueryFive :string
+    let url_quizQuery :string
+    let url_productFamilyQuery :string
+
+
+    if (process.env.NODE_ENV === 'development') {
+      // 在开发模式下执行的代码
+      url_query = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-query.json`;
+      url_quizQueryOne = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-quizQueryOne.json`;
+      url_quizQueryTwo = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-quizQueryTwo.json`;
+      url_quizQueryThree = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-quizQueryThree.json`;
+      url_quizQueryFour = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-quizQueryFour.json`;
+      url_quizQueryFive = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-quizQueryFive.json`;
+      url_quizQuery = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-quizQuery.json`;
+      url_productFamilyQuery = `http://${headersList.get('host')}/data/${params?.locale}/rangeDao-productFamilyQuery.json`;
+    } else {
+      // 在生产模式下执行的代码
+      url_query = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-query.json`;
+      url_quizQueryOne = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-quizQueryOne.json`;
+      url_quizQueryTwo = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-quizQueryTwo.json`;
+      url_quizQueryThree = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-quizQueryThree.json`;
+      url_quizQueryFour = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-quizQueryFour.json`;
+      url_quizQueryFive = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-quizQueryFive.json`;
+      url_quizQuery = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-quizQuery.json`;
+      url_productFamilyQuery = `${process.env.DOMAIN}data/${params?.locale}/rangeDao-productFamilyQuery.json`;
+    }
+    const response = await fetch(url_query, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query, variables }),
+      // body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
 
 
 
 
-    const quiz1 = await fetch(BASE_URL, {
-      method: "POST",
+    const quiz1 = await fetch(url_quizQueryOne, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQueryOne, variables  }),
+      // body: JSON.stringify({ query: quizQueryOne, variables  }),
     });
     const quiz1Result = await quiz1.json();
 
-    const quiz2 = await fetch(BASE_URL, {
-      method: "POST",
+    const quiz2 = await fetch(url_quizQueryTwo, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQueryTwo, variables  }),
+      // body: JSON.stringify({ query: quizQueryTwo, variables  }),
     });
     const quiz2Result = await quiz2.json();
 
-    const quiz3 = await fetch(BASE_URL, {
-      method: "POST",
+    const quiz3 = await fetch(url_quizQueryThree, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQueryThree, variables  }),
+      // body: JSON.stringify({ query: quizQueryThree, variables  }),
     });
     const quiz3Result = await quiz3.json();
 
-    const quiz4 = await fetch(BASE_URL, {
-      method: "POST",
+    const quiz4 = await fetch(url_quizQueryFour, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQueryFour, variables  }),
+      // body: JSON.stringify({ query: quizQueryFour, variables  }),
     });
     const quiz4Result = await quiz4.json();
 
-    const quiz5 = await fetch(BASE_URL, {
-      method: "POST",
+    const quiz5 = await fetch(url_quizQueryFive, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQueryFive, variables  }),
+      // body: JSON.stringify({ query: quizQueryFive, variables  }),
     });
     const quiz5Result = await quiz5.json();
 
@@ -651,13 +686,13 @@ class RangeDao {
 
 
 
-    const quizResponse = await fetch(BASE_URL, {
-      method: "POST",
+    const quizResponse = await fetch(url_quizQuery, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: quizQuery, variables  }),
+      // body: JSON.stringify({ query: quizQuery, variables  }),
     });
 
     const quizRes = await quizResponse.json();
@@ -692,13 +727,13 @@ class RangeDao {
 
 
 
-    const productFamilyResponse = await fetch(BASE_URL, {
-      method: "POST",
+    const productFamilyResponse = await fetch(url_productFamilyQuery, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query: productFamilyQuery, variables  }),
+      // body: JSON.stringify({ query: productFamilyQuery, variables  }),
     });
     const productFamilyResult = await productFamilyResponse.json();
 

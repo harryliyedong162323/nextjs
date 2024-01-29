@@ -1,0 +1,64 @@
+{
+    "data": {
+        "dataQuizQ2Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q2. NOW LISTEN VERY CAREFULLY...",
+                    "description": "IMAGINE YOU ARE RETIRED FROM WORK NOW, WHERE DO YOU WANT TO VISIT MOST?",
+                    "optionAId": 0,
+                    "optionAValue": "A",
+                    "optionAContent": "Play",
+                    "optionBId": 0,
+                    "optionBValue": "B",
+                    "optionBContent": "Play",
+                    "optionCId": 0,
+                    "optionCValue": "C",
+                    "optionCContent": "Play",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_31/dffa191b0a264f027bfea75cb502f38a/range_image31.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_32/27e70fd0db839c12397f19a777113bb7/range_image32.png"
+                        }
+                    },
+                    "optionAAudio": {
+                        "video": {
+                            "url": "https://videos.ctfassets.net/zedtwknbsk02/5oPGFFdSOXfjn2LId5KSXi/3b4d9ce7f2341b4d69772902813d4a87/video01.mp4"
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_33/5d34f6ed9960be926fe53ded7937d714/range_image33.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_34/3465a0f6279e04b8c7448959e5c06cbd/range_image34.png"
+                        }
+                    },
+                    "optionBAudio": {
+                        "video": {
+                            "url": "https://videos.ctfassets.net/zedtwknbsk02/emLVjEpeG9JOZ3SfzJXAT/d2e59a55d0cd4169a0431aaabf525dfb/video02.mp4"
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_35/1119e662707d929505ae38d161d05fcf/range_image35.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_36/0c46e6a0da97d24912e104571dec3d11/range_image36.png"
+                        }
+                    },
+                    "optionCAudio": {
+                        "video": {
+                            "url": "https://videos.ctfassets.net/zedtwknbsk02/3LMjeT0TdDfgrY4MBFTfZ0/e3c3f08985a6138c55aa1347ed744dde/video03.mp4"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "data": {
+        "dataQuizQ5Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q5. 你觉得自己是哪一类人？",
+                    "optionAId": 0,
+                    "optionAValue": null,
+                    "optionAContent": "纯粹主义者",
+                    "optionBId": 0,
+                    "optionBValue": null,
+                    "optionBContent": "破局者",
+                    "optionCId": 0,
+                    "optionCValue": null,
+                    "optionCContent": "革新传统派"
+                }
+            ]
+        }
+    }
+}

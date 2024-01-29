@@ -1,0 +1,48 @@
+{
+    "data": {
+        "dataQuizQ1Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q1.选择你偏爱的风味？",
+                    "optionAId": 0,
+                    "optionAValue": "A",
+                    "optionAContent": "浓郁辛辣",
+                    "optionBId": 1,
+                    "optionBValue": "B",
+                    "optionBContent": "醇厚烟熏",
+                    "optionCId": 2,
+                    "optionCValue": "C",
+                    "optionCContent": "轻甜记忆",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_25/4dd2a2abb174e293227eeaa2671c1bec/range_image105.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_26/6fe609e98b8004d5d6f496dff002e88e/range_image106.png"
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_27/dba0cc89e79d2dd9b5f07fd1f8f986a4/range_image107.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_28/9ef6867ec61035b337d5b5d5d87338b4/range_image108.png"
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_29/335c1e7698983e71e300d83837422434/range_image109.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_30/200a6e6e4fef8897f56d135c2c1b7a10/range_image110.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "data": {
+        "dataQuizQ4Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q4.哪一杯，是你的那一杯？",
+                    "optionAId": 1,
+                    "optionAValue": "A",
+                    "optionAContent": "A",
+                    "optionBId": 1,
+                    "optionBValue": "B",
+                    "optionBContent": "B",
+                    "optionCId": 2,
+                    "optionCValue": "C",
+                    "optionCContent": "C",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_46/d79db83e6415c9da9966c5066ab16563/range_image126.png"
+                        },
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_45/b811c995b690342815cf65d88a6569e2/range_image125.png"
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_48/841755b266c450c5720d77f3bb77dd99/q4_pic_02_m.png"
+                        },
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_47/f8ceb150c1aad0dbc67cd9dcd61936d3/range_image127.png"
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_50/2d13bc01ba67271b19e2c901d4e5c572/range_image130.png"
+                        },
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_49/9611d45d95bcb9a6590f8938e27162cc/range_image129.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

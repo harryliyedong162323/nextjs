@@ -1,0 +1,64 @@
+{
+    "data": {
+        "dataQuizQ2Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q2. 此刻，仔细聆听...",
+                    "description": "想象你正在享受自己的悠长假日，你最希望自己身处何方?",
+                    "optionAId": 0,
+                    "optionAValue": "A",
+                    "optionAContent": "点此聆听",
+                    "optionBId": 0,
+                    "optionBValue": "B",
+                    "optionBContent": "点此聆听",
+                    "optionCId": 0,
+                    "optionCValue": "C",
+                    "optionCContent": "点此聆听",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_31/4c5eb79888b66fe234ce3db02925b399/range_image111.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_32/6a234a5137677db62cdcce54837107da/range_image112.png"
+                        }
+                    },
+                    "optionAAudio": {
+                        "video": {
+                            "url": null
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_33/87492e1048adc15839ded65b232417a2/range_image113.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_34/56ae0e010e59ba427dc763025ad76770/range_image114.png"
+                        }
+                    },
+                    "optionBAudio": {
+                        "video": {
+                            "url": null
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_35/e7d12eab906a60f1a043a744baf97fc9/range_image115.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_36/8c166d1490a8580f21af1ef315c7aba5/range_image116.png"
+                        }
+                    },
+                    "optionCAudio": {
+                        "video": {
+                            "url": null
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

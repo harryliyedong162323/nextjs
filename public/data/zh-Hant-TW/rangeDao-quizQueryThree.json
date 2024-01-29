@@ -1,0 +1,132 @@
+{
+    "data": {
+        "dataQuizQ3Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q3. 你会如何享用你的威士忌？",
+                    "question1Id": 0,
+                    "question1Content": "你会在哪种情况下享用威士忌？",
+                    "option1AId": 0,
+                    "option1AContent": "朋友聚会时",
+                    "option1AValue": "何不与挚友，共饮远方？",
+                    "option1BId": 0,
+                    "option1BContent": "商务场合时",
+                    "option1BValue": "谈商论道，怎舍远慕？",
+                    "option1CId": 0,
+                    "option1CContent": "独自宅家时",
+                    "option1CValue": "每一杯，都是对宅家时光的尊重。",
+                    "option1DId": 0,
+                    "option1DContent": "办公室工作时",
+                    "option1DValue": "每一个进步，都有远慕。",
+                    "option1EId": 0,
+                    "option1EContent": "露营/户外野餐时",
+                    "option1EValue": "准备好了吗？和远慕“野”一下。",
+                    "option1FId": 0,
+                    "option1FContent": "纪念场合 & 庆祝时",
+                    "option1FValue": "别忘了，与远慕，共庆祝。",
+                    "question2Id": 0,
+                    "question2Content": "如果可以，你想在哪里享用威士忌？",
+                    "option2AId": 0,
+                    "option2AValue": "A",
+                    "option2AContent": "山峦之巅",
+                    "option2BId": 0,
+                    "option2BValue": "B",
+                    "option2BContent": "阳光沙滩",
+                    "option2CId": 0,
+                    "option2CValue": "C",
+                    "option2CContent": "卷风海岸",
+                    "option2DId": 0,
+                    "option2DValue": "D",
+                    "option2DContent": "山谷密行",
+                    "option1AIcon": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_85/6e4ae8ed21f5df6bfbfc93d6592be37f/icon_friend.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_86/4f2ccd693dca6d134abb431da6094a2c/range_image194.png"
+                        }
+                    },
+                    "option1BIcon": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_87/373ac17e9b23a7e659533e718f65105a/icon_business_meal.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_88/215927c913ae794100c252adfb4db203/range_image196.png"
+                        }
+                    },
+                    "option1CIcon": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_89/9244894d42d55cc23fc15f38ff155395/range_image197.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_90/59bfb15c06afb7cedb702150bd2e534d/range_image198.png"
+                        }
+                    },
+                    "option1DIcon": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_91/9819cbde47af1b875d5793560d3c474f/icon_working.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_92/af472aea46ab91b09c9b537f89e2b7b5/range_image200.png"
+                        }
+                    },
+                    "option1EIcon": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_93/5eee96f92b339e6f122c36f8431dc3bb/range_image201.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_94/c1c5d6db00aa1d6438562ef246eb7ec9/range_image202.png"
+                        }
+                    },
+                    "option1FIcon": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_95/879f02b768bacac3ae9e28c516e2edae/range_image203.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_96/f7102cc5ea16768d5ef84a08fd1a3f16/range_image204.png"
+                        }
+                    },
+                    "option2AImage": {
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_37/d8cec4df9129c669a3ac2359e478a9a2/range_image117.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_38/dc98f086c983ba0df1951944bb1da5e0/range_image118.png"
+                        }
+                    },
+                    "option2BImage": {
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_39/a712c022e3c74ad8d7296046dea31072/range_image119.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_40/e6ec81b3a7ed38b6c5f742216f7fc1bc/range_image120.png"
+                        }
+                    },
+                    "option2CImage": {
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_41/9d37bc13ba555a892da31df8fdc4c341/range_image121.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_42/68f6855da674dc12ef654ea067e70909/range_image122.png"
+                        }
+                    },
+                    "option2DImage": {
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_43/a11b463fbc65bce079b50a2a1421ea0c/range_image123.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_44/a58114be21967a724c54aa219709e40d/range_image124.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
