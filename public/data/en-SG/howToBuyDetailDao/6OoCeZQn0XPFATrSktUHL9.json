@@ -1,0 +1,83 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "How To Buy Detail",
+                    "keyWords": "wildmoor",
+                    "description": "wildmoor description"
+                }
+            ]
+        },
+        "globalCampaignsComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentStoreName": "The Wildmoor House2",
+                    "howToBuyDetailComponentStoreAddress": "4326 Glenwood AvenueRaleigh, NC 27612",
+                    "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+                    "howToBuyDetailComponentStorePhone": "000-1234567891",
+                    "howToBuyDetailComponentBannerSubTitle": "SHENZHEN NANJING ROAD2",
+                    "howToBuyDetailComponentBannerTitle": "WILDMOOR HOUSE",
+                    "howToBuyDetailComponentScrollContent": "Scroll to explore more",
+                    "howToBuyDetailComponentBannerImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_19/e7598c4b78b0dbdfc15240adab5dcd74/how_to_buy_image19.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_20/a1b9daf6b6f1be2f5ba44f6d2a02625c/bg.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "howToBuyDetailComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentServiceTitle": "SERVICING",
+                    "howToBuyDetailComponentServiceContent": "The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and maintained over 6 decades by the Grant family. It includes casks from every region of Scotland, including some notable ghost distillery stocks.",
+                    "serviceCarouselImageCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "4KnAbtdi1OttWYr7enaEGQ"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_23/d4f82ec80a17cdc9ccb505ab0646db1a/how_to_buy_image23.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_24/15da7975e37a662a6460abee5a33e9e5/how_to_buy_image24.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "7giKufa5gAhmnOYlS5EdOv"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_21/010861325c1b5ca350c8e3e8da8de7f1/kv-1.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_22/a80abcba493b3c3a8db6684130c28c4f/how_to_buy_image22.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "6OmmapFSosJPzbD9ZO9VLx"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_25/edb300b67a152b450ae8f5b21156d011/how_to_buy_image25.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_26/58fe54dea9131089562f255aa8253286/kv-1.png"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

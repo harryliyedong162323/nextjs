@@ -1,0 +1,83 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "How To Buy Detail",
+                    "keyWords": "远慕",
+                    "description": "远慕远慕远慕"
+                }
+            ]
+        },
+        "globalCampaignsComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentStoreName": "远慕上海门店10",
+                    "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                    "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+                    "howToBuyDetailComponentStorePhone": "000-1234567893",
+                    "howToBuyDetailComponentBannerSubTitle": "远慕上海门店",
+                    "howToBuyDetailComponentBannerTitle": "Wildmoor远慕线下门店",
+                    "howToBuyDetailComponentScrollContent": "滚动探索更多",
+                    "howToBuyDetailComponentBannerImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_19/cdc9ccd5050ba2c8fd1d3760150f1a1d/bg.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_20/e76352064964d5c8749ca3aad839e436/bg.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "howToBuyDetailComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentServiceTitle": "门店服务",
+                    "howToBuyDetailComponentServiceContent": "服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容",
+                    "serviceCarouselImageCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "65OPIyc1PKfv3SQRuoiLPJ"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_39/9eff770a805ce8a9445b49e617a60d47/how_to_buy_image127.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_40/f74b4dc2f3f48037b6e666eceed83369/how_to_buy_image128.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "68rhrE28PvDk14JxgQwdm4"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_41/bd15454631042c1b1d661b9eeba4e3b6/how_to_buy_image129.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_42/970f2d22ef914371c419e98a8865d480/how_to_buy_image130.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "5nFDDr6Of8NMaS7uBZBplD"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_43/f4dce50e804ec717857446014feefa27/how_to_buy_image131.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_44/99f0b88a998d2b9cf9df51e24cfa0650/kv-1.png"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

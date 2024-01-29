@@ -603,6 +603,8 @@ function FlavourFinderComponent(props: propsContent) {
   const params = useParams();
   const [locale, setLocale] = useState(params.locale);
 
+  const china = "zh-CN"; // 判断是否为中文域名
+
   const [uid, setUid] = useState(uuidv4());
   const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
   const currNum = props.data.entry.currentPageNumber;
@@ -692,6 +694,7 @@ function FlavourFinderComponent(props: propsContent) {
   );
 
   const doRecommend = async () => {
+    if (locale == china) return;
     if (submitReady) return;
     setSubmitReady(true);
     // todo
@@ -797,6 +800,7 @@ function FlavourFinderComponent(props: propsContent) {
   };
 
   const submit = async () => {
+    if (locale == china) return;
     if (repeatSubmit) {
       alert("请勿重复提交");
     }
@@ -1563,7 +1567,11 @@ function FlavourFinderComponent(props: propsContent) {
                         {data.quizs.q5.answers[quizFiveSelected - 1].value}
                       </div>
                     </div>
-                    <div className="text-center mx-auto flex items-center justify-center mt-10px">
+                    <div
+                      className={`text-center mx-auto flex items-center justify-center  ${
+                        locale == china ? "mt-87px" : "mt-10px"
+                      }`}
+                    >
                       <i className="inline-block bg-[url('/assets/range/icon_redo.png')] bg-cover mr-5px w-25px h-25px pad:w-20px pad:h-20px mobile:w-15px mobile:h-15px"></i>
                       <span
                         className="font-Grotesque-Regular text-black cursor-pointer text-22px pad:text-18px mobile:text-13px"
@@ -1579,8 +1587,19 @@ function FlavourFinderComponent(props: propsContent) {
                         {data.basic.dywfRedo}
                       </span>
                     </div>
-                    <div className="mx-auto mt-10px w-[1251px] bg-[4f1f1] pad:w-[1042px] mobile:w-330px pb-30px">
-                      <div className="bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')] bg-cover  flex items-start  px-153px pt-42px w-[1251px] h-404px pad:w-[1042px] pad:h-336px pad:px-130px pad:pt-34px mobile:w-330px mobile:h-361px mobile:flex-col mobile:px-45px mobile:pt-25px">
+                    <div
+                      className={`mx-auto ${
+                        locale == china ? "mt-32px" : "mt-10px"
+                      }  w-[1251px] bg-[4f1f1] pad:w-[1042px] mobile:w-330px pb-30px`}
+                    >
+                      <div
+                        className={`bg-[url('/assets/range/bg_result.png')] mobile:bg-[url('/assets/range/bg_result_m.png')]  flex items-start  px-153px pt-42px w-[1251px] h-405px pad:w-[1042px] pad:h-400px pad:px-130px pad:pt-34px mobile:w-330px ${
+                          locale == china ? "mobile:h-461px" : "mobile:h-361px"
+                        }  mobile:flex-col mobile:px-45px mobile:pt-25px`}
+                        style={{
+                          backgroundSize: "100% 100%",
+                        }}
+                      >
                         <div className="w-280px   mobile:w-241px">
                           {recommend && (
                             <Swiper
@@ -1703,7 +1722,7 @@ function FlavourFinderComponent(props: propsContent) {
                           </div>
                         </div>
                       </div>
-                      {locale !== "zh-CN" && (
+                      {locale !== china && (
                         <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
                           <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] mobile:bg-cover bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
                             <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">

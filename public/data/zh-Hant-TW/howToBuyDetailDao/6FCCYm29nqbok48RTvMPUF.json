@@ -1,0 +1,83 @@
+{
+    "data": {
+        "globalCampaignsComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentStoreName": "远慕上海门店8",
+                    "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                    "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+                    "howToBuyDetailComponentStorePhone": "000-1234567894",
+                    "howToBuyDetailComponentBannerSubTitle": "远慕上海门店",
+                    "howToBuyDetailComponentBannerTitle": "Wildmoor远慕线下门店",
+                    "howToBuyDetailComponentScrollContent": "远慕上海门店",
+                    "howToBuyDetailComponentBannerImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_55/218a82cbb270c0f6a60745bd370cfeb8/how_to_buy_image143.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_56/40343600d2ec0d13c93bdfcc5df48309/how_to_buy_image144.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "howToBuyDetailComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentServiceTitle": "门店服务",
+                    "howToBuyDetailComponentServiceContent": "服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容",
+                    "serviceCarouselImageCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "3NPz7ynqpE5QbYSjmrmHyT"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_57/745a6373f2c2b386ac322e9e87339102/kv-1.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_58/6c25a8b27cba7ddabc0d22f4ca62a21e/how_to_buy_image146.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "WkoFltsg4mNiXx9Aq4mxm"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_59/574101fbbd92a7d5160cba9d46d160d1/how_to_buy_image147.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_60/30e3fca769fbef634d5b0c8765e6e95a/how_to_buy_image148.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "2PkYknsO0XhnuP529d9qyj"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_61/6c3586e9e8bc292b7772faf2d4a7f56d/how_to_buy_image149.png"
+                                },
+                                "imagemobile": {
+                                    "url": "https://images.ctfassets.net/zedtwknbsk02/asset_how_to_buy_62/04e9704f12832739ae15da40881e4929/how_to_buy_image150.png"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "seo": {
+            "items": [
+                {
+                    "title": "How To Buy Detail",
+                    "keyWords": "远慕",
+                    "description": "远慕远慕远慕"
+                }
+            ]
+        }
+    }
+}
