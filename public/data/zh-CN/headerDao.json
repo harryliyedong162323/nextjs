@@ -1,0 +1,179 @@
+{
+    "data": {
+        "headerMenuCollection": {
+            "items": [
+                {
+                    "group1TitleId": 1,
+                    "group1Title": "首页",
+                    "group1TargetPage": "zh-CN/home",
+                    "group1ItemsCollection": {
+                        "items": []
+                    },
+                    "group2TitleId": 2,
+                    "group2Title": "远慕故事",
+                    "group2TargetPage": "zh-CN/story",
+                    "group3TitleId": 3,
+                    "group3Title": "远慕系列",
+                    "group3TargetPage": "zh-CN/range",
+                    "group4TitleId": 4,
+                    "group4Title": "远慕近事",
+                    "group4TargetPage": "zh-CN/localMarketActivity",
+                    "group5TitleId": 5,
+                    "group5Title": "远慕若比邻",
+                    "group5TargetPage": "zh-CN/howToBuy",
+                    "regionSwitchingPromptWords": "国家和语言",
+                    "group2ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "41QBJC679EBtMNL0tXZlq8"
+                                },
+                                "content": "启程远方",
+                                "targetPage": "zh-CN/story?anchor=ADropOfWildness"
+                            },
+                            {
+                                "sys": {
+                                    "id": "1uoC4A9G3IDSAc6XknX5qe"
+                                },
+                                "content": "远慕之道",
+                                "targetPage": "zh-CN/story?anchor=WhatOthersSay"
+                            }
+                        ]
+                    },
+                    "group3ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "5zyPOo92GzNVllWuRISdts"
+                                },
+                                "content": "家族窖藏",
+                                "targetPage": "zh-CN/range?anchor=ProductsFamily"
+                            },
+                            {
+                                "sys": {
+                                    "id": "7JIeCBoyMFF9W2HuxRo5WJ"
+                                },
+                                "content": "他们说",
+                                "targetPage": "zh-CN/localMarketActivity?anchor=TheWildEscape"
+                            },
+                            {
+                                "sys": {
+                                    "id": "36chYnjMcsMCW2gnggB3Vr"
+                                },
+                                "content": "品鉴建议",
+                                "targetPage": "zh-CN/range?anchor=ServingSuggestion"
+                            },
+                            {
+                                "sys": {
+                                    "id": "4IOZYBTuyfEMSDdRA9KpHf"
+                                },
+                                "content": "瓶身巧思",
+                                "targetPage": "zh-CN/range?anchor=BottleConcept"
+                            },
+                            {
+                                "sys": {
+                                    "id": "4hWnPlT8MeqOX5F3E53Pv1"
+                                },
+                                "content": "寻味测试",
+                                "targetPage": "zh-CN/range?anchor=DiscoverYourWildFlavour"
+                            }
+                        ]
+                    },
+                    "group4ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "2Fkvk6R45QkFkc80MWbNsc"
+                                },
+                                "content": "全球活动",
+                                "targetPage": "zh-CN/localMarketActivity?anchor=GlobalNews"
+                            },
+                            {
+                                "sys": {
+                                    "id": "k18jPrvgrb0IdYTzzx0tC"
+                                },
+                                "content": "远慕近事",
+                                "targetPage": "zh-CN/localMarketActivity?anchor=TheWildEscape"
+                            },
+                            {
+                                "sys": {
+                                    "id": "1CdaN1kbFZSSZfydHjpErv"
+                                },
+                                "content": "他们说",
+                                "targetPage": "zh-CN/localMarketActivity?anchor=TalesFromTheWild"
+                            }
+                        ]
+                    },
+                    "group5ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "1kLFW0N719FThrNOV1MYHO"
+                                },
+                                "content": "地区&全球店铺",
+                                "targetPage": "zh-CN/howToBuy?anchor=RegionSelect"
+                            },
+                            {
+                                "sys": {
+                                    "id": "3aaurDsTBz0m7gAwLhRLLk"
+                                },
+                                "content": "线下体验",
+                                "targetPage": "zh-CN/howToBuy?anchor=IRLExperiences"
+                            },
+                            {
+                                "sys": {
+                                    "id": "O06BsvaUDHFwJOJmHdxON"
+                                },
+                                "content": "线上体验",
+                                "targetPage": "zh-CN/howToBuy?anchor=DigitalExperience"
+                            }
+                        ]
+                    },
+                    "locationAndLanguageCollection": {
+                        "items": [
+                            {
+                                "region": "中国大陆",
+                                "language": "简体中文",
+                                "targetUrl": "https://wildmoor.workbyus.cn/zh-CN/home",
+                                "path": "zh-CN"
+                            },
+                            {
+                                "region": "中国台湾",
+                                "language": "中国台湾",
+                                "targetUrl": "https://wildmoor.workbyus.cn/zh-Hant-TW/home",
+                                "path": "zh-Hant-TW"
+                            },
+                            {
+                                "region": "韩国",
+                                "language": "韩文",
+                                "targetUrl": "https://wildmoor.workbyus.cn/ko-KR/home",
+                                "path": "ko-KR"
+                            },
+                            {
+                                "region": "新加坡",
+                                "language": "英文",
+                                "targetUrl": "https://wildmoor.workbyus.cn/en-SG/home",
+                                "path": "en-SG"
+                            },
+                            {
+                                "region": "英国",
+                                "language": "英文",
+                                "targetUrl": "https://wildmoor.workbyus.cn/en-GB/home",
+                                "path": "en-GB"
+                            }
+                        ]
+                    },
+                    "logo": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/header_asset1/9db5cbffdbdaaf2f2bb83e9701328765/header_image3.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/header_asset2/907ef1acf9fb6aff7cfee15867319842/header_image4.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

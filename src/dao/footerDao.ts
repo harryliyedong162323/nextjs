@@ -1,8 +1,11 @@
 import FooterModel from "../model/footerModel";
 import HomeModel from "../model/homeModel";
 import {paramsContent} from "@/app/[locale]/[...slug]/page";
+import { headers } from 'next/headers';
+
 // const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
-const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
+//const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
+const GRAPHQL_URL = "http://localhost:3000/data/en/footerDao.json?v=0129";
 //
 // const path = '/' + params.locale + '/' + params.slug.join('/')
 // console.log(path)
@@ -141,15 +144,28 @@ query getFooter($language:String!) {
 
 class FooterDao {
   static async fetch<FooterModel>(params:paramsContent) {
+    const headersList = headers();
+    let url :string
+    //console.log(params);
+    //
+    if (process.env.NODE_ENV === 'development') {
+      // 在开发模式下执行的代码
+      url = `http://${headersList.get('host')}/data/${params?.locale}/footerDao.json?v=0129`;
+    } else {
+      // 在生产模式下执行的代码
+      url = `${process.env.DOMAIN}data/${params?.locale}/footerDao.json?v=0129`;
+    }
+
+
     const variables = { language: params?.locale || process.env.LOCATION };
 
-    const response = await fetch(GRAPHQL_URL, {
-      method: "POST",
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query, variables }),
+    const response = await fetch(url, {
+      // method: "POST",
+      // cache: "no-store",
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
+      // body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
 

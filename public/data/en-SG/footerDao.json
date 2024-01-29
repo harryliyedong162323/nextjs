@@ -1,0 +1,232 @@
+{
+    "data": {
+        "footerMenuCollection": {
+            "items": [
+                {
+                    "joinUsPromptWord": "Join us for more from the Wild ",
+                    "group1TitleId": 1,
+                    "group1Title": "OUR STORY",
+                    "group1TitleTargetPage": "en/story",
+                    "group2TitleId": 2,
+                    "group2Title": "THE WILDMOOR RANGE",
+                    "group2TitleTargetPage": "en/range",
+                    "group3TitleId": 3,
+                    "group3Title": "THE WILD ESCAPE",
+                    "group3TitleTargetPage": "en/localMarketActivity",
+                    "group4TitleId": 4,
+                    "group4Title": "FIND A DROP OF WILDERNESS NEAR YOU",
+                    "group4TitleTargetPage": "en/howToBuy",
+                    "regionSwitchingPromptWords": "Location and Language",
+                    "privacyPolicyCta": {
+                        "content": "Privacy Policy",
+                        "targetPage": "en/privacyPolicy"
+                    },
+                    "termsOfServiceCta": {
+                        "content": "Terms of Service",
+                        "targetPage": "#"
+                    },
+                    "copyRightCta": {
+                        "content": "© 2023 WILDMOOR All rights reserved",
+                        "targetPage": null
+                    },
+                    "group1ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "3e5E8yhwip3ZH3GAFx5eql"
+                                },
+                                "content": "A Drop Of Wilderness",
+                                "targetPage": "en/story?anchor=ADropOfWildness"
+                            },
+                            {
+                                "sys": {
+                                    "id": "1uoC4A9G3IDSAc6XknX5qe"
+                                },
+                                "content": "What Others Say",
+                                "targetPage": "en/story?anchor=WhatOthersSay"
+                            }
+                        ]
+                    },
+                    "group2ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "5zyPOo92GzNVllWuRISdts"
+                                },
+                                "content": "Products Family",
+                                "targetPage": "en/range?anchor=ProductsFamily"
+                            },
+                            {
+                                "sys": {
+                                    "id": "1QfX3LCdT5dSnT4awtk194"
+                                },
+                                "content": "Tales From The Wild",
+                                "targetPage": "en/range?anchor=TalesFromTheWild"
+                            },
+                            {
+                                "sys": {
+                                    "id": "36chYnjMcsMCW2gnggB3Vr"
+                                },
+                                "content": "Serving Suggestion",
+                                "targetPage": "en/range?anchor=ServingSuggestion"
+                            },
+                            {
+                                "sys": {
+                                    "id": "4IOZYBTuyfEMSDdRA9KpHf"
+                                },
+                                "content": "The Story Behind our Bottle",
+                                "targetPage": "en/range?anchor=BottleConcept"
+                            },
+                            {
+                                "sys": {
+                                    "id": "4hWnPlT8MeqOX5F3E53Pv1"
+                                },
+                                "content": "Discover your Wild Flavour",
+                                "targetPage": "en/range?anchor=DiscoverYourWildFlavour"
+                            }
+                        ]
+                    },
+                    "group3ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "23A9F9oBe49xkRg9QAyJIO"
+                                },
+                                "content": "Global News",
+                                "targetPage": "en/localMarketActivity?anchor=WildmoorHouse"
+                            },
+                            {
+                                "sys": {
+                                    "id": "6CKdBwcHwiU3bRkSu0Duz0"
+                                },
+                                "content": "The Wild Escape",
+                                "targetPage": "en/localMarketActivity?anchor=GlobalNews"
+                            },
+                            {
+                                "sys": {
+                                    "id": "7JIeCBoyMFF9W2HuxRo5WJ"
+                                },
+                                "content": "Tales From The Wild",
+                                "targetPage": "en/localMarketActivity?anchor=TheWildEscape"
+                            }
+                        ]
+                    },
+                    "group4ItemsCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "5nDtwnTRPlq0C6F2va5DsP"
+                                },
+                                "content": "Region Select & Global Store Map",
+                                "targetPage": "en/howToBuy?anchor=RegionSelect"
+                            },
+                            {
+                                "sys": {
+                                    "id": "2I02m3Xsr5DpRVrgSiEm9S"
+                                },
+                                "content": "IRL Experiences",
+                                "targetPage": "en/howToBuy?anchor=IRLExperiences"
+                            },
+                            {
+                                "sys": {
+                                    "id": "2ynHhlxJXNohoiQaw8du5M"
+                                },
+                                "content": "Digital Experience",
+                                "targetPage": "en/howToBuy?anchor=IRLExperiences"
+                            }
+                        ]
+                    },
+                    "locationAndLanguageCollection": {
+                        "items": [
+                            {
+                                "region": "CHINA MAINLAND ",
+                                "language": "SIMPLIFIED CHINESE",
+                                "targetUrl": "https://wildmoor.workbyus.cn/zh-CN/home",
+                                "path": "zh-CN"
+                            },
+                            {
+                                "region": "TAIWAN REGION",
+                                "language": "TRADITIONAL CHINESE",
+                                "targetUrl": "https://wildmoor.workbyus.cn/zh-Hant-TW/home",
+                                "path": "zh-Hant-TW"
+                            },
+                            {
+                                "region": "KOREA",
+                                "language": "KOREAN",
+                                "targetUrl": "https://wildmoor.workbyus.cn/ko-KR/home",
+                                "path": "ko-KR"
+                            },
+                            {
+                                "region": "SINGAPORE",
+                                "language": "ENGLISH",
+                                "targetUrl": "https://wildmoor.workbyus.cn/en-SG/home",
+                                "path": "en-SG"
+                            },
+                            {
+                                "region": "UNITED KINGDOM",
+                                "language": "ENGLISH",
+                                "targetUrl": "https://wildmoor.workbyus.cn/en-GB/home",
+                                "path": "en-GB"
+                            }
+                        ]
+                    },
+                    "logo": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset7/88ca91cd3f61b6618fef82ce6506b3a1/header_image13.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset8/c732f4d2780e6f00183483a6572876e5/header_image14.png"
+                        }
+                    },
+                    "joinUsImagesCollection": {
+                        "items": [
+                            {
+                                "targetPage": "#",
+                                "channelName": "Instgram",
+                                "qrCodeImage": null,
+                                "iconImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/header_image1.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset2/67129e01d7159b734acf9bc5427ee61d/header_image2.png"
+                                    }
+                                }
+                            },
+                            {
+                                "targetPage": "#",
+                                "channelName": "Facebook",
+                                "qrCodeImage": null,
+                                "iconImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset3/32dc735f3bb363162bfca77e0aaae7ad/header_image3.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset4/dc4dfccaffa7468a6fbe5ab04d6a8748/header_image4.png"
+                                    }
+                                }
+                            },
+                            {
+                                "targetPage": "#",
+                                "channelName": "Youtube",
+                                "qrCodeImage": null,
+                                "iconImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset5/8aa69e2860fa93d49cfc46eb7b6e1204/header_image5.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/footer_asset6/c7295582368e7bfdb3a9d3ca29adfdda/header_image6.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

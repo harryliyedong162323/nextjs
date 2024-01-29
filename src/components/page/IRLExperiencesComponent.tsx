@@ -153,7 +153,7 @@ function IRLExperiencesComponent(props: propsContent) {
     <section
       id="IRLExperiences"
       data-anchor={props.data.entry.pageNumber}
-      className="overflow-hidden h-screen w-[1534px]  mx-auto pb-164px mobile:w-full mobile:pb-67px select-none"
+      className="overflow-hidden  w-[1534px]  mx-auto pb-164px mobile:w-full mobile:pb-0 select-none"
     >
       <input type="hidden" value={headStyle} data-style="headStyle" />
       <Swiper
