@@ -1,5 +1,7 @@
 import PageModel from "../model/pageModel";
 import {paramsContent} from "@/app/[locale]/[...slug]/page";
+import { headers } from 'next/headers';
+
 // const BASE_URL = "https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss";
 
 const BASE_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
@@ -330,13 +332,24 @@ query($language:String!) {
 class StoryDao {
   static async fetch<PageModel>(params:paramsContent) {
     const variables = { language: params?.locale || process.env.LOCATION };
-    const response = await fetch(BASE_URL, {
-      method: "POST",
+
+    const headersList = headers();
+    let url :string
+    if (process.env.NODE_ENV === 'development') {
+      // 在开发模式下执行的代码
+      url = `http://${headersList.get('host')}/data/${params?.locale}/storyDao.json`;
+    } else {
+      // 在生产模式下执行的代码
+      url = `${process.env.DOMAIN}data/${params?.locale}/storyDao.json`;
+    }
+
+    const response = await fetch(url, {
+      method: "GET",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query, variables }),
+      // body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();
 

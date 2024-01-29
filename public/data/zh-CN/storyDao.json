@@ -1,0 +1,477 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "远慕",
+                    "keyWords": "远慕远慕",
+                    "description": "远慕远慕远慕"
+                }
+            ]
+        },
+        "storyOpening": {
+            "items": [
+                {
+                    "storyOpeningTitle": "远慕故事，尽藏于此",
+                    "storyOpeningDescription": "杯中尽是远方事",
+                    "storyOpeningScrollText": "滑动探索更多",
+                    "storyOpeningComponentCarouselCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "78A9eiFxV0bOCH25syiUg9"
+                                },
+                                "backgroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_27/26d1a28f05171f448514f596e483cb68/os_image67.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_28/2eb106a7c004b38b05b553d2dd009be0/os_image68.png"
+                                    }
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "3QXIvVkxT9tps9mhxtuuBg"
+                                },
+                                "backgroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_23/2746c779d81b5a56509f52d656225708/os_image63.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_24/ffd459be8c4bb16ae0966c5e62a103d4/os_image64.png"
+                                    }
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "3iNQDMAkvyiEqpctxMqgGm"
+                                },
+                                "backgroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_25/6bb2df8d7583cba1ddc5bb690e45ac9f/os_image65.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_26/7f9df26b3584f45a20eeb5aa7b8e21c8/os_image66.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "storyChapterOne": {
+            "items": [
+                {
+                    "storyChapterOneComponentTextContent": "那些珍稀的古老苏格兰威士忌窖藏，让今天的年份调和麦芽威士忌，得以问世。 这，便是故事的开始。",
+                    "storyChapterOneComponentSlidingText": "滑动探索更多",
+                    "storyChapterOneComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_1/20a83cd2333746d4f042ebe5875ace43/os_image41.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_2/d27ebd7e19710f26a02feb5d51e6caa4/os_image42.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "storyChapterTwo": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "19jQTLNMk2GuSdzyiTT0mo"
+                    },
+                    "storyChapterTwoComponentDescription": "源自格兰特·戈登家族的陈年储备，历经数十余载的岁月，汇集珍稀原料，而这，便是远慕之使命。",
+                    "storyChapterTwoComponentFirst": "珍惜家族窖藏，和他们的",
+                    "storyChapterTwoComponentSecond": "60",
+                    "storyChapterTwoComponentThird": "载",
+                    "storyChapterTwoComponentFourth": "的心血。",
+                    "storyChapterTwoComponentFifth": "从来私有，此刻愿你拥有。",
+                    "storyChapterTwoComponentSlidingText": "滑动探索更多",
+                    "storyChapterTwoComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_3/823f5fc5a95857f9d337b16c991b3055/os_image43.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_4/1348fb4c5481ece086d17729a0f2bfa6/os_image44.png"
+                        }
+                    },
+                    "storyChapterTwoComponentFaceImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_5/6d0b3ee2f9605788cebf846e252e7be4/os_image45.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_6/4047cf81b910bf17708eef3c324916f3/os_image46.png"
+                        }
+                    },
+                    "chapterTwoFaceImageTwo": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_41/1a6cca51e7302aece63c19db5a830c41/os_image83.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_42/229ce9fcdab238a16bbe832f87fd2529/os_image84.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "storyChapterThree": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "19jQTLNMk2GuSdzyiTT0mo"
+                    },
+                    "storyChapterThreeComponentDescription": "在苏格兰原生态地区采取原料，再将其送往著名酿酒厂，最后再由首席酿酒师布莱恩·金斯曼亲自调配，这一切，都是我们酿造优质苏格兰威士忌的最好证明。",
+                    "storyChapterThreeComponentSlidingText": "滑动探索更多",
+                    "storyChapterThreeComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_7/1302542d2ff241b38c89f5063caf7646/os_image47.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_8/237490c0303673253e27b0f8bbee4d9b/os_image48.png"
+                        }
+                    },
+                    "storyChapterThreeComponentFaceImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_9/94b7782be52226caeb7a922ab920082d/chapter_three_face_pc.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_10/261e2f48e1fec78b9a33ee1b6bb0e075/chapter_three_face_mobile.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "storyChapterFour": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "19jQTLNMk2GuSdzyiTT0mo"
+                    },
+                    "storyChapterFourComponentDescription": "谈及远方，脑海里总会浮现苏格兰的风貌，又或许是坐落在斯佩塞德中心-达夫镇的古老酿酒库房。 别忘了，还有艾尔郡海岸，这里曾激发了格兰父子与首席酿酒师布莱恩·金斯曼的无限灵感。让他们从此创造出了一系列不甘平凡寻常，而令人惊叹的苏格兰威士忌。",
+                    "storyChapterFourComponentFirst": "源自远方",
+                    "storyChapterFourComponentSecond": "不止远方",
+                    "storyChapterFourComponentThird": null,
+                    "storyChapterFourComponentSlidingText": "滑动探索更多",
+                    "chapterFourFaceImageTwo": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_43/816de783c4c559d114b35e7858cf6af5/os_image87.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_44/5b039be83701684689c6756177346fd5/os_image88.png"
+                        }
+                    },
+                    "storyChapterFourComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_11/ff6811c22f4b285aa80a36e160f2b152/os_image51.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_12/8f872b3ee1b2b65f33702e82dfc45f2f/os_image52.png"
+                        }
+                    },
+                    "storyChapterFourComponentFaceImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_13/db2ef15bf526500374a1c46e6937430c/os_image53.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_14/7560acde73eab5a3d9ee673282a7539a/brand_story_chatper_04_face_mobile.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "storyChapterFive": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "19jQTLNMk2GuSdzyiTT0mo"
+                    },
+                    "storyChapterFiveComponentDescription": "这一切就如峻风呼啸，穿过荒野; 波浪汹涌拍打礁石;被迷雾覆盖的山脉，连绵不绝。",
+                    "storyChapterFiveComponentSlidingText": "滑动探索更多",
+                    "storyChapterFiveComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_15/9a9aae42b4bb9a34de9c031aa512b73f/os_image55.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_16/14d3f8fdc6039a979e5b796c913034bc/os_image56.png"
+                        }
+                    },
+                    "storyChapterFiveComponentSmallImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_17/3b32a048897d9ecef3e435661e47cbef/os_image57.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_18/4e52c664348d6e2915377e297a279141/os_image58.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "storyChapterSix": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "19jQTLNMk2GuSdzyiTT0mo"
+                    },
+                    "storyChapterSixComponentFirst": "风味，",
+                    "storyChapterSixComponentSecond": "从未被定义",
+                    "storyChapterSixComponentDescription": "金斯曼从未被传统与过去所束缚，他不断从苏格兰令人震撼的风貌中汲取灵感，始终创新，打造出全新风味。",
+                    "storyChapterSixComponentSlidingText": "滑动探索更多",
+                    "storyChapterSixComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_19/928638b0e57e87209248dfcd29afcbfc/os_image59.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_20/98fec91ac06d6a922f6eb5dcd5248d25/os_image60.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "storyChapterEnd": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "19jQTLNMk2GuSdzyiTT0mo"
+                    },
+                    "storyChapterEndComponentDescription": "汲灵感于金斯曼的私人回忆和他近30年的酿酒经历其中包含了大名鼎鼎的单一麦芽格兰菲迪。这让每一瓶，乃至每一滴远慕威士忌都能为您带来无尽的远方遐想。",
+                    "storyChapterEndComponentSlidingText": "滑动探索更多",
+                    "storyChapterEndComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_21/6cf984764a8cc28317e958ba6347d15b/os_image61.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_22/4563985a3ce081ad89e168cf04d50094/os_image62.png"
+                        }
+                    },
+                    "storyChapterEndComponentProductListCollection": {
+                        "items": [
+                            {
+                                "id": 0,
+                                "productName": "TROPICAL COAST",
+                                "age": "30",
+                                "unit": "年份",
+                                "description": "取灵感于自苏格兰西北部群岛的白沙滩。充满强烈而灿烂的水果气息，尾韵如丝绸般顺滑。",
+                                "productImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset3/6fbed4188d94ede9c56020d2c59872e5/image69.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset4/b73cbdd6f5dca8ef113aedf9a786d42e/image70.png"
+                                    }
+                                },
+                                "backGroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/10R7wvvjDbfaNq7mz8HyWA/846018f4db2657d382b7df8b61b38a4a/kv.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/5747BGHeIyJ4fOoZjoHZQc/b34262b727f8405d3133787aadcf114f/kv-m.png"
+                                    }
+                                },
+                                "ourStoryListImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_29/c07fd61ef4889bf9efac32c7ce44a9d8/os_image69.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_30/877048dbc1c94b15936b6a895de865fd/os_image70.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "productName": "RUGGED COAST",
+                                "age": "30",
+                                "unit": "年份",
+                                "description": "灵感取自苏格兰崎岖的海岸线。 带你领略烟熏，海盐和香草风味的三重和谐奏鸣。 过雪莉桶，口感平衡。",
+                                "productImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset7/20fcc999c859dbf62de44482eb087ab1/image73.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset8/de3c09eab0278f90abdb3628c6e46bf5/image74.png"
+                                    }
+                                },
+                                "backGroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/10R7wvvjDbfaNq7mz8HyWA/846018f4db2657d382b7df8b61b38a4a/kv.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/5747BGHeIyJ4fOoZjoHZQc/b34262b727f8405d3133787aadcf114f/kv-m.png"
+                                    }
+                                },
+                                "ourStoryListImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_31/ed9f04ddc48b4b44a95a2e71e333ade8/os_image71.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_32/78b829be8adc49c53f421b3c9c008746/os_image72.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "productName": "WAKING FOREST",
+                                "age": "23",
+                                "unit": "年份",
+                                "description": "取灵感于苏格兰的广阔林地。 组合了强烈的香草橡木香气以及微妙的雪莉桶风味， 整体口感 层次丰富，活跃生动。",
+                                "productImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset11/30e55ebd1946ff13ac6b455a394b8190/image77.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset12/a6a3f49103c9ee933e798e951bd614b3/image78.png"
+                                    }
+                                },
+                                "backGroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/6KJpbZzU9znyJsTNuhDDeb/76bd7dc7a450997af28c7ca3cb7e50dd/kv-3.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/1yx1UM6fOlfktry2Gvi2KD/8badc848f84eb7df6eef8c5d5b3627a3/kv-m.png"
+                                    }
+                                },
+                                "ourStoryListImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_33/de6dd9616d8f82e95d14075b02fb138a/os_image73.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_34/7eb2642135969326c703733f7a24d7af/os_image74.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "productName": "BLACK MOUNTAIN",
+                                "age": "40",
+                                "unit": "年份",
+                                "description": "站在风味之巅，俯瞰世界，本品是为远慕窖藏之最。  过雪莉桶，香草和焦糖风味和谐交融， 为味蕾奏出华丽乐章。",
+                                "productImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset15/e70de524bda474c2651b8810a50401cd/image81.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset16/e892d3b02eef1b1769646c1192accbc4/image82.png"
+                                    }
+                                },
+                                "backGroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/2044a83e48fb14400ee3280f7cdb3fe4/kv-4.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/a54179e2eedd0d25882afff44e65c02e/kv-m.png"
+                                    }
+                                },
+                                "ourStoryListImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_35/21bebd72c9af54260fdb78b2fc29eba0/os_image75.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_36/782c9872600408e85ed0cda2fc497e51/os_image76.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 4,
+                                "productName": "ANCIENT MOORLAND",
+                                "age": "23",
+                                "unit": "年份",
+                                "description": "灵感取自苏格兰高沼地。本品的橡木风味，独具特色。 其香草气息浓郁，与雪莉桶的醇厚香味相得益彰，为你缔造挚甄之味。",
+                                "productImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset19/fd17491c850ab55e9b1ae5eb2c445d81/image85.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset20/9d20677c1ca7764aae14bff95011a2a6/image86.png"
+                                    }
+                                },
+                                "backGroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/acb22a49041e8a596bcff36ab29e24ce/kv-5.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/cea9c0bd66565687d82b0578a59fe045/kv-m.png"
+                                    }
+                                },
+                                "ourStoryListImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_37/3ad4aa3f33587e4376a64f976c371109/os_image77.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_38/b6df57fc92d0661c87b5778b9e735502/os_image78.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 5,
+                                "productName": "DARK MOORLAND",
+                                "age": "23",
+                                "unit": "年份",
+                                "description": "灵感取自被阵风扫过的苏格兰高沼地。 其橡木香味独特，香草气息浓郁，过雪莉桶，香味醇厚。",
+                                "productImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset23/33d4b776674a7e8060e8d227653dfd62/image89.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset24/be928ed2f712f669af2b661617559914/image90.png"
+                                    }
+                                },
+                                "backGroundImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/10SvVveQeYUzubWNQwRB3O/cb24777719cbf8031992bd0caf6bd488/kv-6.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/6MZ3ckPT17mkuffKcxMYqq/d17aebfc0b8198bf3220dd7681a70abf/kv-m.png"
+                                    }
+                                },
+                                "ourStoryListImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_39/84230fbf8ef52738032c8cc148bf556d/os_image79.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_os_40/241b38242d723fa0802ca72d0648e4f2/os_image80.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

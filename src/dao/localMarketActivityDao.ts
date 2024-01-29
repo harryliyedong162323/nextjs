@@ -1,5 +1,7 @@
 import LocalMarketActivityModel from "../model/localMarketActivityModel";
 import {paramsContent} from "@/app/[locale]/[...slug]/page";
+import { headers } from 'next/headers';
+
 
 // const GRAPHQL_URL = 'https://graphql.contentful.com/content/v1/spaces/zedtwknbsk02/environments/staging?access_token=DO_VJeQwGw6xpl4gkcC5xey6o0Yx8zCfOdS6JbJqFss';
 const GRAPHQL_URL = "https://uat-lamerqixi.workbyus.cn/px.php";
@@ -162,14 +164,24 @@ const query = `
 
 class LocalMarketActivityDao {
     static async fetch<LocalMarketActivityModel>(params:paramsContent) {
+        const headersList = headers();
+        let url :string
+        if (process.env.NODE_ENV === 'development') {
+            // 在开发模式下执行的代码
+            url = `http://${headersList.get('host')}/data/${params?.locale}/localMarketActivityDao.json`;
+        } else {
+            // 在生产模式下执行的代码
+            url = `${process.env.DOMAIN}data/${params?.locale}/localMarketActivityDao.json`;
+        }
+
         const variables = { language: params?.locale || process.env.LOCATION };
-        const response = await fetch(GRAPHQL_URL, {
-            method: "POST",
+        const response = await fetch(url, {
+            method: "GET",
             cache: "no-store",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ query, variables }),
+            // body: JSON.stringify({ query, variables }),
         });
         const result = await response.json();
         console.log(result)

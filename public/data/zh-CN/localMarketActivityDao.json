@@ -1,0 +1,394 @@
+{
+    "data": {
+        "globalCampaigns": {
+            "items": [
+                {
+                    "howToBuyDetailComponentScrollContent": "滚动探索更多",
+                    "howToBuyDetailComponentBannerSubTitle": "远慕近事",
+                    "howToBuyDetailComponentBannerImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_localMarketActivity_1/6adc52e0b0dbdac3c99bd14fed3292b2/bg.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_localMarketActivity_2/e651ce5a8e7dba43ec94ce664ce7ee89/localMarketActivity_image4.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "interactiveVideo": {
+            "items": [
+                {
+                    "interactiveVideoComponentIsShow": null,
+                    "interactiveVideoComponentJumpUrl": "zh-CN/localMarketActivity",
+                    "interactiveVideoComponentTitle": "远慕近事",
+                    "interactiveVideoComponentExploreMore": "探索更多",
+                    "interactiveVideoComponentExploreMoreImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset69/3448bc41eaf3ba52bdba54c477f6dec8/image139.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset70/343226379a429bd3fa455756c975a601/image140.png"
+                        }
+                    },
+                    "interactiveVideoComponentImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset67/7c5f6e6826f0e137d4d6423bae60902e/image135.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset68/e84488c570edf4cb8eafaa0523f6450c/image136.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "seo": {
+            "items": [
+                {
+                    "title": "远慕",
+                    "keyWords": "远慕远慕",
+                    "description": "远慕远慕远慕"
+                }
+            ]
+        },
+        "talesFromTheWild": {
+            "items": [
+                {
+                    "talesFromTheWildTitle": "他们说",
+                    "talesFromTheWildListCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "2KxFquRbFJTL8DuUe6cqQs"
+                                },
+                                "id": 10086,
+                                "listName": "ID 名字1",
+                                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                                "targetPage": {
+                                    "sys": {
+                                        "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                                    }
+                                },
+                                "listImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_3/5971d28ba7bad16c5eaeb8fe50266401/wild_01.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_4/829365e88b2d5eabc4fd6c3332b35972/range_image84.png"
+                                    }
+                                },
+                                "listSmallImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_111/553a679cf615584cb1ab8b96a867f132/range_image231.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_112/9fe1ba370ecaa06d581f61d1c2e29186/wild_01_m.png"
+                                    }
+                                },
+                                "listAvatar": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_1/e6ee7691e29915d5d4be48ba09301486/wild_face.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_2/4604a132199b2131cda76c7bde32fb9e/wild_face.png"
+                                    }
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "2vIdClbAAgcpnbF2iT2MxO"
+                                },
+                                "id": 10087,
+                                "listName": "ID 名字2",
+                                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                                "targetPage": {
+                                    "sys": {
+                                        "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                                    }
+                                },
+                                "listImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_7/45ca62bf87a16e0edb9390f22a6ff3f4/range_image87.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_8/7276bfe050dbc8c686ce8e63727f4c0f/wild_02_m.png"
+                                    }
+                                },
+                                "listSmallImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_113/dbbeecd35f074f71bb6a871c6954d175/wild_02_small.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_114/85ba8c019d62da26c70cb09a1b7d2d38/wild_02_m.png"
+                                    }
+                                },
+                                "listAvatar": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_5/7ae42a82f808136735422f2d86e43bb6/range_image85.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_6/e7ef01d58d15fe7cf674c2cf34eef262/range_image86.png"
+                                    }
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "6oC1zaN3Dr6mIH9ZAGaYnb"
+                                },
+                                "id": 10088,
+                                "listName": "ID 名字3",
+                                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                                "targetPage": {
+                                    "sys": {
+                                        "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                                    }
+                                },
+                                "listImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_11/d2be4a274fb47044ac7f74501ed66108/range_image91.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_12/4d30c5b2493c67d4534e74cc380d8615/wild_03_m.png"
+                                    }
+                                },
+                                "listSmallImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_115/52a15b85a2aad5d8865984e4874c428c/range_image235.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_116/3f324cc850afda6dac4e715a9b4956d3/range_image236.png"
+                                    }
+                                },
+                                "listAvatar": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_9/fdaffb8ddbce7c871c5a2d48043de5ad/range_image89.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_10/fd09605a1300fde34cb34e7c04a1a8e2/range_image90.png"
+                                    }
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "au4pgwTmg45AYsgInYa9d"
+                                },
+                                "id": 10089,
+                                "listName": "ID 名字4",
+                                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                                "targetPage": {
+                                    "sys": {
+                                        "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                                    }
+                                },
+                                "listImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_15/fd326e48e4bd2f2ce3d6bec9a78be21d/range_image95.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_16/977e840f0135e27544338b17daf29402/range_image96.png"
+                                    }
+                                },
+                                "listSmallImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_117/957c796c44d07669049ef430ef1db5e1/range_image237.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_118/35a446ca826752a395887f7f33df0f14/wild_04_m.png"
+                                    }
+                                },
+                                "listAvatar": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_13/467ffdce33d241f2efa4e0355190b237/range_image93.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_14/8ac6198d44ec787703c75af1c0ca1303/range_image94.png"
+                                    }
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "1HkRFv8fBbu285CWlkoMH8"
+                                },
+                                "id": 10090,
+                                "listName": "ID 名字5",
+                                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                                "targetPage": {
+                                    "sys": {
+                                        "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                                    }
+                                },
+                                "listImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_19/960cf2e7d2b4ee6e51d122c46e66c5a8/range_image99.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_20/e48f3ea56cfda56bdbca59098abaf6ff/range_image100.png"
+                                    }
+                                },
+                                "listSmallImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_119/9b19407b7a6afb2f0df85017a1cc9e48/range_image239.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_120/a47967eb46c1af5c6b071c0d7224d55a/range_image240.png"
+                                    }
+                                },
+                                "listAvatar": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_17/89bfe806bbf157c304e70cab2fcc6f6a/range_image97.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_range_18/39b2d7524b98b63765c6b4d438f1aa5f/wild_face.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "introduceCampaign": {
+            "items": [
+                {
+                    "introduceCampaignComponentTitle": "全球活动",
+                    "introduceCampaignComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset1/9f7cd1b8246d803dfcf1e1c64a7d80e4/image67.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset2/77bfd7fc8f15c8ffd32163807d058bef/image68.png"
+                        }
+                    },
+                    "introduceCampaignComponentCampaignsCollection": {
+                        "items": [
+                            {
+                                "id": 4,
+                                "location": "Beijing",
+                                "year": "2023-11-11",
+                                "description": "思索是一道大门，通向世界上没有...",
+                                "detailPage": {
+                                    "sys": {
+                                        "id": "4BjySvcoWs6JVdlKpvFsOT"
+                                    },
+                                    "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                                },
+                                "campaignImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset31/713d88d3be27f433a70954cfcaf133c5/image97.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset32/c36397ed22a687c00ab89b100ffa9520/image98.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "location": "Shanghai",
+                                "year": "2023-11-13",
+                                "description": "思索是一道大门，通向世界上没有...",
+                                "detailPage": {
+                                    "sys": {
+                                        "id": "4BjySvcoWs6JVdlKpvFsOT"
+                                    },
+                                    "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                                },
+                                "campaignImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset33/403fbcb50fa13d95b8ca9418fadf54d2/image99.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset34/491fb55179bfee1ef43f6c28317e0b47/image100.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "location": "上海",
+                                "year": "2023-11-15",
+                                "description": "思索是一道大门，通向世界上没有...",
+                                "detailPage": {
+                                    "sys": {
+                                        "id": "4BjySvcoWs6JVdlKpvFsOT"
+                                    },
+                                    "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                                },
+                                "campaignImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset35/9e9a19ee33be086b9e0e9310b174eb56/image101.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset36/5ad701030223f8ada9ff408ec7868bbf/kv-3.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 1,
+                                "location": "伦敦",
+                                "year": "2023-11-12",
+                                "description": "所谓辉煌的人生，不过是欲望的囚...",
+                                "detailPage": {
+                                    "sys": {
+                                        "id": "4BjySvcoWs6JVdlKpvFsOT"
+                                    },
+                                    "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                                },
+                                "campaignImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset29/64af29e899a98fcb9b3b3d0243dddcc8/image95.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset30/53207b25fded66d4bfb1567c2852b329/image96.png"
+                                    }
+                                }
+                            },
+                            {
+                                "id": 0,
+                                "location": "纽约",
+                                "year": "2023-11-11",
+                                "description": "我们登上并非我们所选择的舞台...",
+                                "detailPage": {
+                                    "sys": {
+                                        "id": "4BjySvcoWs6JVdlKpvFsOT"
+                                    },
+                                    "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                                },
+                                "campaignImage": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset27/579b69a44e6bc52f61e1dab2ccf8a16b/image93.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset28/d83447f048caea560e6fd440112065b2/image94.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

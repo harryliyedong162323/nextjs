@@ -1,0 +1,155 @@
+{
+    "data": {
+        "privacypolicy": {
+            "items": [
+                {
+                    "detailCollection": {
+                        "items": [
+                            {
+                                "title": "网站使用条款和条件",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "任何人（“您”）访问、浏览、使用本网站，需均遵守以下法律条款（“法律条款”）。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "本法律条款于本网站公示，请您在使用本网站进行任何操作前仔细阅读并充分理解以下法律条款内容。访问、浏览、使用本网站即表示您已阅读、理解并同意本法律条款的所有内容。本法律条款的版权由公司所有，公司保留在符合适用法律的前提下随时修改本法律条款的权利，并将在本网站公示。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "若本网站功能发生重大变化，致使我们有法定义务对您的操作进行超出本法律条款所述的监管要求、或我们与您之间的法律关系发生变化，我们将以更明显的方式提醒您查看更新后的法律条款。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "法定饮酒年龄",
+                                "content": {
+                                    "json": {
+                                        "nodeType": "document",
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "请您注意，本网站仅向法律允许酒精饮料消费与宣传的国家和地区提供，且仅向达到国籍国及所居住地消费和/或购买酒精饮料法定年龄（以较高者为准，若无此类规定则以21周岁为准）的个人提供服务（根据中华人民共和国相关法律法规，消费和/或购买酒精饮料法定年龄为18周岁）。",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "若您不符合此条件，请您停止浏览与使用本网站。本网站提供品牌与商品介绍信息（可能包含参考市场价）并非向您发出购买要约。您对本法律条款之同意，以及您对本网站的访问、浏览与使用，均不应视为您以任何方式成为公司及其子公司、关联方及各自的股东、管理人员、董事或员工之代表或代理。",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "本网站的使用",
+                                "content": {
+                                    "json": {
+                                        "nodeType": "document",
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "访问本网站所需的硬件和软件由您自行负责。公司保留自行暂停或终止向公众提供访问或导航全部或部分本网站和/或其内容和/或可用服务的权利，且不另行通知，您无权就此向我们索取任何赔偿或补偿。但若该等暂停或终止服务影响到公司及MoëtHennessyDiageo集团其他关联方已向您提供的用户注册及线上订购服务时，向您提供该等服务的一方将通过适当渠道向您告知后续处理方式。",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "seo": {
+            "items": [
+                {
+                    "title": "远慕",
+                    "keyWords": "远慕远慕",
+                    "description": "远慕远慕远慕"
+                }
+            ]
+        }
+    }
+}

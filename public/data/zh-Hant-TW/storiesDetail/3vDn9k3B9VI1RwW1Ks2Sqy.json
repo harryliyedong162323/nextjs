@@ -1,0 +1,242 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "远慕",
+                    "keyWords": "远慕远慕",
+                    "description": "远慕远慕远慕"
+                }
+            ]
+        },
+        "storiesDetailCollection": {
+            "items": [
+                {
+                    "pageName": "Bring the drinking occasion to life in a way",
+                    "storiesDetailComponentTitle": "探访神秘的塞内冈比石圈",
+                    "storiesDetailComponentName": "任尘世繁华",
+                    "storiesDetailComponentCareer": "专业旅游博主",
+                    "storiesDetailComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_localMarketActivity_1/6adc52e0b0dbdac3c99bd14fed3292b2/bg.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_localMarketActivity_2/e651ce5a8e7dba43ec94ce664ce7ee89/localMarketActivity_image4.png"
+                        }
+                    },
+                    "storiesDetailComponentAvatar": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_3/5d66b81ac86a4e63bbac927e0eae7539/storiesDetail_image17.png"
+                        },
+                        "imagemobile": {
+                            "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_4/836cabe2fbd680abb073860330ae43d5/avatar.png"
+                        }
+                    },
+                    "storiesDetailComponentDetailCollection": {
+                        "items": [
+                            {
+                                "__typename": "DataKolDetailMultipleContent",
+                                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1",
+                                "contentText": {
+                                    "json": {
+                                        "nodeType": "document",
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "沿冈比亚河350公里长、100公里宽的地带集中了1000多座神秘的巨石石圈，大体可以分成四个石圈组，其中Sine Ngayène、Wanar两个石圈组在塞内加尔境内，另两个石圈组在冈比亚的Wassu和Kerbatch。这些石圈是古坟和墓冢的标志，其中一些已经被挖掘。出土实物证明，这些遗迹可追溯到公元前3世纪至公元16世纪。红石立柱构成的石圈与周围的墓冢展现了1500多年前盛大而神圣的景象，反映了一个繁荣、组织完备、持久的社会。这些石头是用铁制工具采得，被巧妙地雕琢成了大约七吨重、平均两米高、几乎完全一样的圆柱或多边形立柱。每一个石圈直径4到6米，有8到14根立柱。所有立柱均矗立在墓冢附近。这一杰出遗址代表了该地区更大范围的巨石带，不论是规模、一致性，还是复杂度在全世界都无与伦比。雕琢细致的独立石柱体现了精细、巧妙的雕刻技术，增强了整个石圈群的宏伟气势。",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailCarouselImage",
+                                "imagesCollection": {
+                                    "items": [
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_5/e6b0567d4570c0ef6f0101462e54f9d2/storiesDetail_image19.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_6/9b22b6772b78d56429c71f733a234d03/storiesDetail_image20.png"
+                                            }
+                                        },
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_7/a0676a8532c54db3951da0cbb6a2662b/storiesDetail_image21.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_8/d1fb767b12bbcee1f2c7a74b6d9f41dc/storiesDetail_image22.png"
+                                            }
+                                        },
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_9/e1da5bfa13bdcc97e753b5887cce8208/storiesDetail_image23.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_10/228bce2b41ab7e788f6036e2b94542e4/storiesDetail_image24.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailMultipleContent",
+                                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1-2",
+                                "contentText": {
+                                    "json": {
+                                        "nodeType": "document",
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneImageContent1",
+                                "contentTitle": "WUSSU石圈",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。\nWUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_11/fb1800e90f0837f30549bba79af9418c/storiesDetail_image25.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_12/bbfacefcc11017b398dcf554caa0d769/storiesDetail_image26.png"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneVideo",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    }
+                                },
+                                "title": "WUSSU石圈",
+                                "video": {
+                                    "video": {
+                                        "url": null
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneImageContent2",
+                                "contentTitle": "探访神秘的塞内冈比石圈",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "沿冈比亚河350公里长、100公里宽的地带集中了1000多座神秘的巨石石圈，大体可以分成四个石圈组，其中Sine Ngayène、Wanar两个石圈组在塞内加尔境内，另两个石圈组在冈比亚的Wassu和Kerbatch。这些石圈是古坟和墓冢的标志，其中一些已经被挖掘。出土实物证明，这些遗迹可追溯到公元前3世纪至公元16世纪。红石立柱构成的石圈与周围的墓冢展现了1500多年前盛大而神圣的景象，反映了一个繁荣、组织完备、持久的社会。这些石头是用铁制工具采得，被巧妙地雕琢成了大约七吨重、平均两米高、几乎完全一样的圆柱或多边形立柱。每一个石圈直径4到6米，有8到14根立柱。所有立柱均矗立在墓冢附近。这一杰出遗址代表了该地区更大范围的巨石带，不论是规模、一致性，还是复杂度在全世界都无与伦比。雕琢细致的独立石柱体现了精细、巧妙的雕刻技术，增强了整个石圈群的宏伟气势。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_13/7ecc0dd68ffd89b95bec52b63705f6c7/storiesDetail_image27.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "https://images.ctfassets.net/zedtwknbsk02/asset_stories_detail_14/73ca797cc5db18940bc81cbdd3d21096/storiesDetail_image28.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
