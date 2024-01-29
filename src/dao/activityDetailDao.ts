@@ -137,26 +137,20 @@ class ActivityDetailDao {
 
     const headersList = headers();
     let url :string
-    //console.log(params);
-    //
     if (process.env.NODE_ENV === 'development') {
       // 在开发模式下执行的代码
-      url = `http://${headersList.get('host')}/data/${params?.locale}/activitDetailDao/${variables.sysId}.json?v=0129`;
+      url = `http://${headersList.get('host')}/data/${params?.locale}/activitDetailDao/${variables.sysId}.json`;
     } else {
       // 在生产模式下执行的代码
-      url = `${process.env.DOMAIN}data/${params?.locale}/activitDetailDao/${variables.sysId}.json?v=0129`;
+      url = `${process.env.DOMAIN}data/${params?.locale}/activitDetailDao/${variables.sysId}.json`;
     }
 
-
-
-
-
     const response = await fetch(url, {
-      // method: "POST",
-      // cache: "no-store",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
+      method: "GET",
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+      },
       // body: JSON.stringify({ query, variables }),
     });
     const result = await response.json();

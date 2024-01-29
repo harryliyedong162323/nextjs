@@ -8,15 +8,14 @@ import React, {
   useRef,
 } from "react";
 
-import { v4 as uuidv4 } from 'uuid';
-
+import { v4 as uuidv4 } from "uuid";
 
 import Image from "next/image";
 // import useEmblaCarousel from "embla-carousel-react";
 // import Autoplay from "embla-carousel-autoplay";
 import ReactGA from "react-ga4";
 import Script from "next/script";
-import axios, {AxiosResponse} from "axios";
+import axios, { AxiosResponse } from "axios";
 import BaseImage from "../base/image";
 import ReactPlayer from "react-player";
 import { Autoplay } from "swiper/modules";
@@ -30,9 +29,7 @@ import BaseButton from "../base/button";
 import { useParams } from "next/navigation";
 import signature from "@/utils/signature";
 
-
 declare const grecaptcha: any;
-
 
 const key: string = "6LdUqy4pAAAAALX0zqKELaTvN8z0s0VhlY_DKaTj";
 
@@ -596,27 +593,28 @@ export interface propsContent {
   };
 }
 
-interface responseContent{
-  code:number,
-  data:object,
-  success:boolean
+interface responseContent {
+  code: number;
+  data: object;
+  success: boolean;
 }
 
 function FlavourFinderComponent(props: propsContent) {
   const params = useParams();
-  const [uid,setUid] = useState(uuidv4());
+  const [locale, setLocale] = useState(params.locale);
+
+  const [uid, setUid] = useState(uuidv4());
   const [headStyle, setheadStyle] = useState(props.data.entry.headStyle);
   const currNum = props.data.entry.currentPageNumber;
   const [emailName, setEmailName] = useState<string>("");
   const [emailAddress, setEmailAddress] = useState<string>("");
   const [canSubmit, setCanSubmit] = useState<boolean>(false);
-  const [submitReady,setSubmitReady] = useState<boolean>(false);
-  const [repeatSubmit,setRepeatSubmit] = useState<boolean>(false);
+  const [submitReady, setSubmitReady] = useState<boolean>(false);
+  const [repeatSubmit, setRepeatSubmit] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log(uid)
+    console.log(uid);
   }, [uid]);
-
 
   useEffect(() => {
     if (emailRegex.test(emailAddress) && emailName.length > 0) {
@@ -694,8 +692,7 @@ function FlavourFinderComponent(props: propsContent) {
   );
 
   const doRecommend = async () => {
-
-    if(submitReady) return;
+    if (submitReady) return;
     setSubmitReady(true);
     // todo
     if (
@@ -708,49 +705,48 @@ function FlavourFinderComponent(props: propsContent) {
     )
       return false;
 
-
     const fromData = {
-      type:'add',
-      id:uid,
-      answers:{
-        q1:tranAnswer(quizOneSelected),
-        q2:tranAnswer(quizTwoSelected),
-        q3:{
-          a1:tranAnswer(quizThreeSelected1),
-          a2:tranAnswer(quizThreeSelected2),
+      type: "add",
+      id: uid,
+      answers: {
+        q1: tranAnswer(quizOneSelected),
+        q2: tranAnswer(quizTwoSelected),
+        q3: {
+          a1: tranAnswer(quizThreeSelected1),
+          a2: tranAnswer(quizThreeSelected2),
         },
-        q4:tranAnswer(quizFourSelected),
-        q5:tranAnswer(quizFiveSelected),
+        q4: tranAnswer(quizFourSelected),
+        q5: tranAnswer(quizFiveSelected),
       },
-      user:{
+      user: {
         emailName,
         emailAddress,
       },
-      locale:params.locale,
-    }
+      locale: params.locale,
+    };
 
-    const response = await fetch('/api/answer', {
+    const response = await fetch("/api/answer", {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
-        "_sign":signature(fromData),
+        _sign: signature(fromData),
       },
       body: JSON.stringify({ ...fromData }),
     });
     setSubmitReady(false);
     const res = await response.json();
 
-    console.log(res)
-    if(!res.success){
-
-      alert('错误')
-      return false
+    console.log(res);
+    if (!res.success) {
+      alert("错误");
+      return false;
     }
 
-    setUid(res.data[0].unique_id)
-
-    console.log(uid)
+    setUid(res.data[0].unique_id);
+    props.changeNavStatus(true);
+    props.changeNavSubmit("sumbit");
+    console.log(uid);
     const key = `${data.quizs.q1.answers[quizOneSelected - 1].value}${
       data.quizs.q2.answers[quizTwoSelected - 1].value
     }${data.quizs.q3.step2.answers[quizThreeSelected2 - 1].value}`;
@@ -768,110 +764,89 @@ function FlavourFinderComponent(props: propsContent) {
     }
   }, [quizIndex]);
 
-
-  const tranAnswer = (num:number) => {
-    let res = '';
-    switch (num){
+  const tranAnswer = (num: number) => {
+    let res = "";
+    switch (num) {
       case 1:
-        res = 'A';
+        res = "A";
         break;
       case 2:
-        res = 'B';
+        res = "B";
         break;
       case 3:
-        res = 'C';
+        res = "C";
         break;
       case 4:
-        res = 'D';
+        res = "D";
         break;
       case 5:
-        res = 'E';
+        res = "E";
         break;
       case 6:
-        res = 'F';
+        res = "F";
         break;
       case 7:
-        res = 'G';
+        res = "G";
         break;
       default:
-        res = '';
+        res = "";
         break;
     }
 
     return res;
-
-  }
-
-
-
-
-
-
-
-
-
-
-
+  };
 
   const submit = async () => {
-
-    if(repeatSubmit){
-      alert('请勿重复提交')
+    if (repeatSubmit) {
+      alert("请勿重复提交");
     }
 
     if (!canSubmit || submitReady) return;
     console.clear();
     setSubmitReady(true);
     const fromData = {
-      type:'update',
-      id:uid,
-      answers:{
-        q1:tranAnswer(quizOneSelected),
-        q2:tranAnswer(quizTwoSelected),
-        q3:{
-          a1:tranAnswer(quizThreeSelected1),
-          a2:tranAnswer(quizThreeSelected2),
+      type: "update",
+      id: uid,
+      answers: {
+        q1: tranAnswer(quizOneSelected),
+        q2: tranAnswer(quizTwoSelected),
+        q3: {
+          a1: tranAnswer(quizThreeSelected1),
+          a2: tranAnswer(quizThreeSelected2),
         },
-        q4:tranAnswer(quizFourSelected),
-        q5:tranAnswer(quizFiveSelected),
+        q4: tranAnswer(quizFourSelected),
+        q5: tranAnswer(quizFiveSelected),
       },
-      user:{
+      user: {
         emailName,
         emailAddress,
       },
-      locale:params.locale,
-    }
+      locale: params.locale,
+    };
     console.log(fromData);
 
-
-    const response = await fetch('/api/answer', {
+    const response = await fetch("/api/answer", {
       method: "POST",
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
-        "_sign":signature(fromData),
+        _sign: signature(fromData),
       },
       body: JSON.stringify({ ...fromData }),
     });
 
     const res = await response.json();
 
-    console.log(res)
-    if(!res.success){
+    console.log(res);
+    if (!res.success) {
       setSubmitReady(false);
-      alert('错误')
-      return false
+      alert("错误");
+      return false;
     }
 
     setRepeatSubmit(true);
 
     eventbus.emit("PopupBoxVisable", popupMessage);
-
-
-
-
-
-
 
     // grecaptcha.ready(function () {
     //   grecaptcha
@@ -933,15 +908,21 @@ function FlavourFinderComponent(props: propsContent) {
               quality="100"
             ></Image>
           </div>
-          <div className="absolute right-0  bg-[url('/assets/range/favour_finder_text_bg.png')]   bg-contain top-1/2 w-[35em] pad:w-[23em]   -mt-245px   mobile:w-325px  mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:pr-22px mobile:pl-22px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] ">
+
+          <div
+            className={`absolute right-0  bg-[url('/assets/range/favour_finder_text_bg.png')]   top-1/2 w-[35em] pad:w-[23em]   -mt-245px   mobile:w-325px  mobile:left-1/2 mobile:-ml-163px mobile:-mt-183px mobile:pr-22px mobile:pl-22px mobile:bg-[url('/assets/range/favour_finder_text_m.png')] `}
+            style={{
+              backgroundSize: "100% 100%",
+            }}
+          >
             <div className="leading-6 font-AlbertusNova-Regular  uppercase text-center text-26px mt-[4em] pad:text-18px  mobile:text-20px mobile:mt-60px mobile:w-200px mobile:mx-auto">
               {data.basic.flavourFinderComponentTitle}
             </div>
-            <div className="font-Grotesque pl-52px pr-52px whitespace-normal text-[#696969] text-16px pad:text-12px  mobile:text-14px mobile:ml-15px mobile:mr-15px ">
-              <div className="text-center mt-[2em]  mobile:mt-19px mobile:leading-[2em]">
+            <div className="font-Grotesque pl-52px pr-52px whitespace-normal text-[#696969] text-16px pad:text-12px mobile:pr-0 mobile:pl-0  mobile:text-14px">
+              <div className="text-center mt-[2em]  mobile:mt-19px mobile:leading-[1.5em]">
                 {data.basic.flavourFinderComponentDescription1}
               </div>
-              <div className="text-center mt-[2em]  mobile:mt-18px mobile:leading-[2em]">
+              <div className="text-center mt-[2em]  mobile:mt-18px mobile:leading-[1.5em]">
                 {data.basic.flavourFinderComponentDescription2}
               </div>
             </div>
@@ -1441,8 +1422,8 @@ function FlavourFinderComponent(props: propsContent) {
                       }`}
                       onClick={() => {
                         doRecommend();
-                        props.changeNavStatus(true);
-                        props.changeNavSubmit("sumbit");
+                        // props.changeNavStatus(true);
+                        // props.changeNavSubmit("sumbit");
                       }}
                     >
                       {data.basic.dywfSeeYourFlavorProfile}
@@ -1591,6 +1572,8 @@ function FlavourFinderComponent(props: propsContent) {
                           setUid(uuidv4());
                           setSubmitReady(false);
                           setRepeatSubmit(false);
+                          props.changeNavStatus(false);
+                          props.changeNavSubmit("");
                         }}
                       >
                         {data.basic.dywfRedo}
@@ -1720,54 +1703,57 @@ function FlavourFinderComponent(props: propsContent) {
                           </div>
                         </div>
                       </div>
-                      <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
-                        <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] mobile:bg-cover bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
-                          <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">
-                            {data.basic.dywfEmailContent}
+                      {locale !== "zh-CN" && (
+                        <div className="border border-solid border-black w-[1251px] pad:w-[1042px] mobile:w-330px">
+                          <div className="bg-[url('/assets/range/bg_result_02.png')] mobile:bg-[url('/assets/range/bg_result_02_m.png')] mobile:bg-cover bg-cover w-[1251px] h-113px pad:w-[1042px] pad:h-94px mobile:w-330px mobile:h-56px">
+                            <div className="font-Grotesque-Regular text-[#E6E7E8] text-center pt-20px text-30px pad:pt-24px pad:text-16px mobile:pt-10px mobile:text-12px">
+                              {data.basic.dywfEmailContent}
+                            </div>
                           </div>
-                        </div>
-                        <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
-                          <div className="inline-flex items-center px-60px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
-                            <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px pad:w-15px pad:h-15px mobile:w-12px mobile:h-11px"></i>
-                            <input
-                              type="text"
-                              value={emailName}
-                              onChange={handleEmailName}
-                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-244px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
-                              placeholder={data.basic.dywfEmailName}
-                            />
-                          </div>
-                          <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
-                          <div className="inline-flex items-center px-70px pad:px-70px mobile:py-20px mobile:px-20px">
-                            <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px pad:w-20px pad:h-15px mobile:w-15px mobile:h-11px"></i>
-                            <input
-                              type="text"
-                              value={emailAddress}
-                              onChange={handleEmailAddress}
-                              className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-350px pad:w-290px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
-                              placeholder={data.basic.dywfEmailAddress}
-                            />
-                          </div>
-                          <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
-                          <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px mobile:flex-auto mobile:w-full">
-                            <div
-                              id="flavourFinderSubmit"
-                              className={`inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase mobile:text-11px ${
-                                canSubmit ? "text-[#000000]" : "text-[#696969]"
-                              }`}
-                              onClick={() => {
-
-                                submit();
-                                ReactGA.event(
-                                  `Click_Flavourresult|${recommend?.productList[currentRecommend]?.productName}_Submit`
-                                );
-                              }}
-                            >
-                              {data.basic.dywfSubmitContent}
+                          <div className="flex items-center pb-17px pad:pb-14px mobile:flex-col mobile:items-start mobile:pb-0">
+                            <div className="inline-flex items-center px-60px pad:px-60px mobile:pt-10px mobile:pb-20px mobile:px-20px">
+                              <i className="inline-block bg-[url('/assets/range/icon_account.png')] bg-cover mr-14px w-18px h-18px pad:w-15px pad:h-15px mobile:w-12px mobile:h-11px"></i>
+                              <input
+                                type="text"
+                                value={emailName}
+                                onChange={handleEmailName}
+                                className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-244px pad:w-184px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                                placeholder={data.basic.dywfEmailName}
+                              />
+                            </div>
+                            <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
+                            <div className="inline-flex items-center px-70px pad:px-70px mobile:py-20px mobile:px-20px">
+                              <i className="inline-block bg-[url('/assets/range/icon_email.png')] bg-cover mr-10px w-24px h-18px pad:w-20px pad:h-15px mobile:w-15px mobile:h-11px"></i>
+                              <input
+                                type="text"
+                                value={emailAddress}
+                                onChange={handleEmailAddress}
+                                className="font-Grotesque-Regular bg-transparent focus-visible:border-0 outline-none text-black text-20px placeholder:text-[#969797] placeholder:text-20px placeholder:font-Grotesque-Regular placeholder:leading-[20px] placeholder:uppercase w-350px pad:w-290px pad:text-16px pad:placeholder:text-16px pad:placeholder:leading-[16px] mobile:text-13px mobile:placeholder:text-13px mobile:placeholder:leading-[13px] mobile:w-250px"
+                                placeholder={data.basic.dywfEmailAddress}
+                              />
+                            </div>
+                            <div className="w-1px bg-black h-57px pad:h-45px mobile:h-1px mobile:w-330px"></div>
+                            <div className="inline-flex flex-1 justify-center items-center px-15px mobile:h-60px mobile:flex-auto mobile:w-full">
+                              <div
+                                id="flavourFinderSubmit"
+                                className={`inline-block cursor-pointer font-AlbertusNova-Regular text-22px uppercase mobile:text-11px ${
+                                  canSubmit
+                                    ? "text-[#000000]"
+                                    : "text-[#696969]"
+                                }`}
+                                onClick={() => {
+                                  submit();
+                                  ReactGA.event(
+                                    `Click_Flavourresult|${recommend?.productList[currentRecommend]?.productName}_Submit`
+                                  );
+                                }}
+                              >
+                                {data.basic.dywfSubmitContent}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </SwiperSlide>
                 </Swiper>

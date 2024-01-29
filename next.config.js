@@ -8,7 +8,8 @@ const nextConfig = {
 
   env:{
     LOCATION:'en-GB',
-    DOMAIN:'https://wildmoor.workbyus.cn/'
+    DOMAIN:'https://wildmoor.workbyus.cn/',
+    POSTGRES_URL:'postgres://default:1ctZazxLmN6U@ep-rough-shape-04457397-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb',
   },
 
 

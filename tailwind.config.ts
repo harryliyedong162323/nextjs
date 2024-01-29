@@ -22,6 +22,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      backgroundSize: {
+        "100%": "100%",
+      },
       screens: {
         mobile: { max: "768px" }, // size / 2
         pad: { min: "769px", max: "1536px" }, // pc(size / 1.2) / 1.4

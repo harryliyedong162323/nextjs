@@ -475,26 +475,28 @@ function NearYouComponent(props: propsContent) {
       {/*modules={[FreeMode]}*/}
       <div className="relative z-20 pt-83px mobile:pl-25px ml-50px mobile:ml-0  h-[700px] w-full mobile:ml-0 mobile:h-auto mobile:pt-25px">
         <Swiper
-          speed={1500}
+          speed={1000}
           loop={true}
           direction="horizontal"
           slidesPerView="auto"
-          onBeforeInit={(e) => {
-            setTimeout(() => {
-              const slides = e.slides;
-              slides.forEach((item) => {
-                item.style.width = "auto";
-              });
-            }, 250);
-          }}
-          onSlideChange={(e) => {
+          spaceBetween={20}
+          slidesOffsetBefore={18}
+          // onBeforeInit={(e) => {
+          //   setTimeout(() => {
+          //     const slides = e.slides;
+          //     slides.forEach((item) => {
+          //       item.style.width = "auto";
+          //     });
+          //   }, 250);
+          // }}
+          onTransitionEnd={(e) => {
             setCurrentIndex(e.realIndex);
             computedActiveDrop(e.realIndex);
 
-            setTimeout(() => {
-              if (!isMobile) swiper?.slideToLoop(e.realIndex, 0);
-              swiper?.updateSlides();
-            }, 30);
+            // setTimeout(() => {
+            //   if (!isMobile) swiper?.slideToLoop(e.realIndex, 0);
+            //   swiper?.updateSlides();
+            // }, 30);
           }}
           onSwiper={(swiper) => {
             setSwiper(swiper);
@@ -502,119 +504,128 @@ function NearYouComponent(props: propsContent) {
               swiper?.updateSlides();
             }, 200);
           }}
+          observeSlideChildren={true}
+          observer={true}
           className=" w-full overflow-hidden"
           nested={true}
+          longSwipes={false}
+          touchRatio={0.5}
+          preventInteractionOnTransition={false}
         >
-          {campaignData.map((item: any, index: number) => {
-            return (
-              <SwiperSlide
-                className={` w-[406px!ignore] mr-21px pad:mr-25px mobile:mr-0 mobile:ml-0  pad:290px mobile:w-192px`}
-                key={item.nearYouId}
-              >
-                <div className={` h-auto  relative mobile:mr-25px`}>
-                  {/*<div className={`float-left`}>*/}
+          {[...campaignData, ...campaignData].map(
+            (item: any, index: number) => {
+              return (
+                <SwiperSlide
+                  className={` !w-[auto] mobile:mr-0 mobile:ml-0  pad:290px mobile:w-192px`}
+                  key={`${item.nearYouId}_${index}`}
+                >
+                  <div className={` h-auto  relative mobile:mr-25px`}>
+                    {/*<div className={`float-left`}>*/}
 
-                  <div
-                    className={`transition-all delay-1000 ease-in-out duration-1000   relative 
+                    <div
+                      className={`transition-w linear duration-500 relative transform-gpu	
                                             
                                              ${
-                                               item.nearYouActive == true
+                                               currentIndex === index
                                                  ? "w-615px pad:w-439px mobile:w-192px"
                                                  : "w-406px pad:290px mobile:w-192px"
                                              }
                                             
                                           `}
-                  >
-                    {/*link="/howToBuyDetail"*/}
-                    <BaseLink
-                      link={`${params.locale}/howToBuyDetail/${item.sys.id}`}
                     >
-                      <div
-                        className={`relative transition-all delay-1000  cursor-pointer ease-in-out  ${
-                          item.nearYouActive == true
-                            ? "h-455px pad:h-325px mobile:h-166px"
-                            : "h-406px pad:h-290px mobile:h-166px"
-                        } duration-500 mb-40px pad:mb-28px `}
-                      >
-                        <NestedCarousel
-                          list={
-                            item.nearYouComponentNearYouCarouselImageCollection
-                              .items
-                          }
-                          activeFlag={item.nearYouActive}
-                        ></NestedCarousel>
+                      {/*link="/howToBuyDetail"*/}
 
-                        {/*{*/}
-                        {/*    <BaseButton*/}
-                        {/*        action="Homepage"*/}
-                        {/*        category="Nearyou"*/}
-                        {/*        categorySub={item.howToBuyDetailComponentStoreName}*/}
-                        {/*    >*/}
-                        {/*        <NestedCarousel*/}
-                        {/*            list={*/}
-                        {/*                item*/}
-                        {/*                    .nearYouComponentNearYouCarouselImageCollection*/}
-                        {/*                    .items*/}
-                        {/*            }*/}
-                        {/*            activeFlag={item.nearYouActive}*/}
-                        {/*        ></NestedCarousel>*/}
-                        {/*    </BaseButton>*/}
-                        {/*}*/}
-                      </div>
-                    </BaseLink>
-                    {/*    ${*/}
-                    {/*    item.nearYouActive == true*/}
-                    {/*        ? "translate-x-[2.5vw]"*/}
-                    {/*        : ""*/}
-                    {/*}*/}
-                    <div
-                      className={`w-500px select-none font-Grotesque-Medium pad:w-358px ${
-                        item.nearYouActive == true
-                          ? "text-27px pad:text-19px"
-                          : "text-18px pad:text-13px"
-                      }  font-medium  text-[#000000]  mobile:w-500px mobile:text-16px `}
-                    >
-                      {item.howToBuyDetailComponentStoreName}
-                    </div>
-                    <div
-                      className={`select-none font-Grotesque-Regular font-medium w-full justify-between items-center pad:bottom-[-25px]  ${
-                        item.nearYouActive == true
-                          ? "flex mobile:hidden"
-                          : "hidden"
-                      }`}
-                    >
+                      <BaseLink
+                        link={`${params.locale}/howToBuyDetail/${item.sys.id}`}
+                      >
+                        <div
+                          className={`relative transition-all  cursor-pointer linear  ${
+                            currentIndex === index
+                              ? "h-455px pad:h-325px mobile:h-166px"
+                              : "h-406px pad:h-290px mobile:h-166px"
+                          } duration-500 mb-40px pad:mb-28px `}
+                        >
+                          <NestedCarousel
+                            list={
+                              item
+                                .nearYouComponentNearYouCarouselImageCollection
+                                .items
+                            }
+                            activeFlag={currentIndex === index}
+                          ></NestedCarousel>
+
+                          {/*{*/}
+                          {/*    <BaseButton*/}
+                          {/*        action="Homepage"*/}
+                          {/*        category="Nearyou"*/}
+                          {/*        categorySub={item.howToBuyDetailComponentStoreName}*/}
+                          {/*    >*/}
+                          {/*        <NestedCarousel*/}
+                          {/*            list={*/}
+                          {/*                item*/}
+                          {/*                    .nearYouComponentNearYouCarouselImageCollection*/}
+                          {/*                    .items*/}
+                          {/*            }*/}
+                          {/*            activeFlag={item.nearYouActive}*/}
+                          {/*        ></NestedCarousel>*/}
+                          {/*    </BaseButton>*/}
+                          {/*}*/}
+                        </div>
+                      </BaseLink>
                       {/*    ${*/}
                       {/*    item.nearYouActive == true*/}
                       {/*        ? "translate-x-[2.5vw]"*/}
                       {/*        : ""*/}
                       {/*}*/}
-                      <span
-                        className={`w-[70%] truncate pad:w-[50%] font-Grotesque-Regular font-medium text-22px pad:text-16px text-[#262627]`}
+                      <div
+                        className={`w-500px select-none font-Grotesque-Medium pad:w-358px ${
+                          currentIndex === index
+                            ? "text-27px pad:text-19px"
+                            : "text-18px pad:text-13px"
+                        }  font-medium  text-[#000000]  mobile:w-500px mobile:text-16px `}
                       >
-                        {item.nearYouDes} + &quot;54545&ldquo;
-                      </span>
-                      {/*link="/howToBuyDetail"*/}
-                      <BaseLink
-                        link={`${params.locale}/howToBuyDetail/${item.sys.id}`}
+                        {item.howToBuyDetailComponentStoreName}
+                      </div>
+                      <div
+                        className={`select-none font-Grotesque-Regular font-medium w-full justify-between items-center pad:bottom-[-25px]  ${
+                          currentIndex === index
+                            ? "flex mobile:hidden"
+                            : "hidden"
+                        }`}
                       >
-                        <BaseButton
-                          action="Homepage"
-                          category="Nearyou"
-                          categorySub={item.howToBuyDetailComponentStoreName}
+                        {/*    ${*/}
+                        {/*    item.nearYouActive == true*/}
+                        {/*        ? "translate-x-[2.5vw]"*/}
+                        {/*        : ""*/}
+                        {/*}*/}
+                        <span
+                          className={`w-[70%] truncate pad:w-[50%] font-Grotesque-Regular font-medium text-22px pad:text-16px text-[#262627]`}
                         >
-                          <div className="cursor-pointer bg-contain bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
-                        </BaseButton>
-                      </BaseLink>
+                          {item.nearYouDes} + &quot;54545&ldquo;
+                        </span>
+                        {/*link="/howToBuyDetail"*/}
+                        <BaseLink
+                          link={`${params.locale}/howToBuyDetail/${item.sys.id}`}
+                        >
+                          <BaseButton
+                            action="Homepage"
+                            category="Nearyou"
+                            categorySub={item.howToBuyDetailComponentStoreName}
+                          >
+                            <div className="cursor-pointer bg-contain bg-[url('/assets/nearYou/more.png')] w-30px h-30px pad:w-21px pad:h-21px"></div>
+                          </BaseButton>
+                        </BaseLink>
+                      </div>
                     </div>
-                  </div>
 
-                  {/*</div>*/}
-                </div>
-              </SwiperSlide>
-            );
-          })}
+                    {/*</div>*/}
+                  </div>
+                </SwiperSlide>
+              );
+            }
+          )}
         </Swiper>
-        <div className="absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#fffffff6] to-[transparent] mobile:hidden"></div>
+        <div className="pointer-events-none absolute z-10 top-0 right-[0%] h-full w-[30%] bg-gradient-to-l from-[#fffffff6] to-[transparent] mobile:hidden"></div>
         <div className="hidden mobile:absolute mobile:z-10 mobile:top-0 mobile:right-[0%] mobile:h-full mobile:w-[40%] mobile:bg-gradient-to-l mobile:from-[#fffffff6] mobile:to-[transparent] mobile:block"></div>
       </div>
 
@@ -634,7 +645,7 @@ function NearYouComponent(props: propsContent) {
       {/*                    >*/}
       {/*                        /!*<div className={`float-left`}>*!/*/}
       {/*                        <div*/}
-      {/*                            className={`transition-all ease-in-out origin-left duration-1000  relative ${*/}
+      {/*                            className={`transition-all ease-in-out origin-left duration-200  relative ${*/}
       {/*                                item.nearYouActive == true*/}
       {/*                                    ? "w-615px pad:w-439px mobile:w-192px"*/}
       {/*                                    : "w-406px pad:290px mobile:w-192px"*/}
