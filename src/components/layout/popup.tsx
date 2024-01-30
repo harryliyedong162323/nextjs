@@ -7,6 +7,12 @@ export interface PopupMessage {
   title: string;
   message: string;
   btnTxt: string;
+  dywfMessageStatus:{
+    rejected:string,
+    resolved:string,
+    pending:string,
+    repeat:string
+  }
 }
 
 function Popup() {
@@ -15,6 +21,12 @@ function Popup() {
     title: "",
     message: "",
     btnTxt: "OK",
+    dywfMessageStatus:{
+      rejected: "",
+      resolved: "",
+      pending: "",
+      repeat: ""
+    }
   });
 
   eventbus.on("PopupBoxVisable", (message: PopupMessage) => {

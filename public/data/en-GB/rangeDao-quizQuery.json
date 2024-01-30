@@ -26,7 +26,13 @@
                     "dywfMessageSuccess": "Email sent successfully",
                     "dywfMessageTitleFail": "fail",
                     "dywfMessageFail": "Email sent failed",
-                    "dywfMessageBtnContent": "OK"
+                    "dywfMessageBtnContent": "OK",
+                    "dywfMessageStatus": {
+                        "rejected": "error",
+                        "resolved": "success",
+                        "pending": "loading",
+                        "repeat": "Please do not resubmit"
+                    }
                 }
             ]
         }

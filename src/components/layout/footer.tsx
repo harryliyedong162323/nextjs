@@ -230,53 +230,53 @@ function Footer(props: propsContent) {
   const currentSlideIndex = props.currentSlideIndex;
   const slug: string = useParams().slug[0];
 
-  const showHeaderRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          let currentNav = document.getElementById(
-            "nav-bg-white"
-          ) as HTMLInputElement;
-          if (
-            slug == "howToBuyDetail" ||
-            slug == "privacyPolicy" ||
-            slug == "storiesDetail" ||
-            slug == "activityDetail" ||
-            slug == "howToBuy"
-          ) {
-            currentNav && (currentNav.style.display = "none");
-          }
-        } else {
-          setIsVisible(false);
-          let currentNav = document.getElementById(
-            "nav-bg-white"
-          ) as HTMLInputElement;
-          if (
-            slug == "howToBuyDetail" ||
-            slug == "privacyPolicy" ||
-            slug == "storiesDetail" ||
-            slug == "activityDetail" ||
-            slug == "howToBuy"
-          ) {
-            currentNav && (currentNav.style.display = "block");
-          }
-        }
-      });
-    });
+  // const showHeaderRef = useRef(null);
+  // const [isVisible, setIsVisible] = useState(false);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         setIsVisible(true);
+  //         let currentNav = document.getElementById(
+  //           "nav-bg-white"
+  //         ) as HTMLInputElement;
+  //         if (
+  //           slug == "howToBuyDetail" ||
+  //           slug == "privacyPolicy" ||
+  //           slug == "storiesDetail" ||
+  //           slug == "activityDetail" ||
+  //           slug == "howToBuy"
+  //         ) {
+  //           currentNav && (currentNav.style.display = "none");
+  //         }
+  //       } else {
+  //         setIsVisible(false);
+  //         let currentNav = document.getElementById(
+  //           "nav-bg-white"
+  //         ) as HTMLInputElement;
+  //         if (
+  //           slug == "howToBuyDetail" ||
+  //           slug == "privacyPolicy" ||
+  //           slug == "storiesDetail" ||
+  //           slug == "activityDetail" ||
+  //           slug == "howToBuy"
+  //         ) {
+  //           currentNav && (currentNav.style.display = "block");
+  //         }
+  //       }
+  //     });
+  //   });
 
-    if (showHeaderRef.current) {
-      observer.observe(showHeaderRef.current);
-    }
+  //   if (showHeaderRef.current) {
+  //     observer.observe(showHeaderRef.current);
+  //   }
 
-    return () => {
-      if (showHeaderRef.current) {
-        observer.unobserve(showHeaderRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (showHeaderRef.current) {
+  //       observer.unobserve(showHeaderRef.current);
+  //     }
+  //   };
+  // }, []);
 
   useEffect(() => {
     setLanguage(false);
@@ -369,6 +369,49 @@ function Footer(props: propsContent) {
     },
   ]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.querySelector("footer");
+      if (!footer) {
+        return;
+      }
+
+      const footerTop = footer.getBoundingClientRect().top;
+      if (footerTop <= 50) {
+        let currentNav = document.getElementById(
+          "nav-bg-white"
+        ) as HTMLInputElement;
+        if (
+          slug == "howToBuyDetail" ||
+          slug == "privacyPolicy" ||
+          slug == "storiesDetail" ||
+          slug == "activityDetail" ||
+          slug == "howToBuy"
+        ) {
+          currentNav && (currentNav.style.display = "none");
+        }
+      } else {
+        let currentNav = document.getElementById(
+          "nav-bg-white"
+        ) as HTMLInputElement;
+        if (
+          slug == "howToBuyDetail" ||
+          slug == "privacyPolicy" ||
+          slug == "storiesDetail" ||
+          slug == "activityDetail" ||
+          slug == "howToBuy"
+        ) {
+          currentNav && (currentNav.style.display = "block");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const togglePanel = (id: number) => {
     setTimeout(() => {
       swiper?.updateSlides();
@@ -783,7 +826,7 @@ function Footer(props: propsContent) {
 
           {/*h-900px*/}
 
-          <div ref={showHeaderRef} className="w-full h-1px"></div>
+          {/* <div ref={showHeaderRef} className="w-full h-1px"></div> */}
         </footer>
       ) : (
         <footer className="relative overflow-hidden bg-[#E6E7E8] select-none mobile:h-[100vh]">
@@ -1200,7 +1243,7 @@ function Footer(props: propsContent) {
 
           {/*h-900px*/}
 
-          <div ref={showHeaderRef} className="w-full h-1px"></div>
+          {/* <div ref={showHeaderRef} className="w-full h-1px"></div> */}
         </footer>
       )}
     </div>

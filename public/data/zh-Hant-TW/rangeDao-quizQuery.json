@@ -26,7 +26,13 @@
                     "dywfMessageSuccess": null,
                     "dywfMessageTitleFail": null,
                     "dywfMessageFail": null,
-                    "dywfMessageBtnContent": null
+                    "dywfMessageBtnContent": null,
+                    "dywfMessageStatus": {
+                        "rejected": "错误",
+                        "resolved": "成功",
+                        "pending": "提交中",
+                        "repeat": "请勿重复提交"
+                    }
                 }
             ]
         }

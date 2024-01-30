@@ -64,6 +64,12 @@ interface Message {
   dywfMessageTitleFail: string;
   dywfMessageFail: string;
   dywfMessageBtnContent: string;
+  dywfMessageStatus:{
+    rejected:string,
+    resolved:string,
+    pending:string,
+    repeat:string
+  }
 }
 
 interface result {
@@ -683,6 +689,7 @@ function FlavourFinderComponent(props: propsContent) {
     title: _messageData.dywfMessageTitleSuccess,
     message: _messageData.dywfMessageSuccess,
     btnTxt: _messageData.dywfMessageBtnContent,
+    dywfMessageStatus: _messageData.dywfMessageStatus,
   });
 
   const scrollTo = useCallback(
