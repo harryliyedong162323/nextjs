@@ -694,7 +694,6 @@ function FlavourFinderComponent(props: propsContent) {
   );
 
   const doRecommend = async () => {
-    if (locale == china) return;
     if (submitReady) return;
     setSubmitReady(true);
     // todo
