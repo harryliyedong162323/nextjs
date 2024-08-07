@@ -1,0 +1,83 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "WILDMOOR Whisky -- a drop of Wilderness in Every Glass",
+                    "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky, WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky, WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,  WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky, WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+                    "description": "WILDMOOR is a new and epic range of blended Scotch whiskies from William Grant & Sons, inspired by the Scottish wilderness."
+                }
+            ]
+        },
+        "globalCampaignsComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentStoreName": "The Wildmoor House7",
+                    "howToBuyDetailComponentStoreAddress": "4326 Glenwood AvenueRaleigh, NC 27613",
+                    "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+                    "howToBuyDetailComponentStorePhone": "000-1234567893",
+                    "howToBuyDetailComponentBannerSubTitle": "SHENZHEN NANJING ROAD3",
+                    "howToBuyDetailComponentBannerTitle": "WILDMOOR HOUSE",
+                    "howToBuyDetailComponentScrollContent": "Scroll to explore more",
+                    "howToBuyDetailComponentBannerImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_19/e7598c4b78b0dbdfc15240adab5dcd74/how_to_buy_image19.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_20/a1b9daf6b6f1be2f5ba44f6d2a02625c/bg.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "howToBuyDetailComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentServiceTitle": "SERVICING",
+                    "howToBuyDetailComponentServiceContent": "The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and maintained over 6 decades by the Grant family. It includes casks from every region of Scotland, including some notable ghost distillery stocks.",
+                    "serviceCarouselImageCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "65OPIyc1PKfv3SQRuoiLPJ"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_39/e7756a281519d7c213567d4dff1aef96/how_to_buy_image39.png"
+                                },
+                                "imagemobile": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_40/4de583084d6fad30db56bbddcb1c3f67/how_to_buy_image40.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "68rhrE28PvDk14JxgQwdm4"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_41/762019ace00b4ef500bcd991100cdbbd/how_to_buy_image41.png"
+                                },
+                                "imagemobile": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_42/73cfb5e227b97ec895cd8dd4a2ab64d7/how_to_buy_image42.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "5nFDDr6Of8NMaS7uBZBplD"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_43/e011594c4175cc56e49942a147fa182d/how_to_buy_image43.png"
+                                },
+                                "imagemobile": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_44/5ce9ca30218f1c9cd861ab9615c31670/how_to_buy_image44.png"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

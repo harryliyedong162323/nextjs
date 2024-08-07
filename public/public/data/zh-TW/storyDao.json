@@ -1,0 +1,446 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky TW - Our Story",
+          "keyWords": "wildmoor,远慕",
+          "description": "wildmoor,远慕"
+        }
+      ]
+    },
+    "storyOpening": {
+      "items": [
+        {
+          "storyOpeningTitle": "遠慕故事",
+          "storyOpeningDescription": "一切故事，由世界上最龐大的威士忌收藏而始",
+          "storyOpeningScrollText": "滑動探索更多",
+          "showStoryLogo": false,
+          "storyOpeningComponentCarouselCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "78A9eiFxV0bOCH25syiUg9"
+                },
+                "backgroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_27/1c70d7b72c01f087b8eec101f80b5840/os_image27.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_28/35614cb2cc424b8597b0d3fc6385e3bf/os_image28.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "3QXIvVkxT9tps9mhxtuuBg"
+                },
+                "backgroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_23/8339cb8fa75afd7ca39bf43e8a6ab3cd/os_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_24/206983723c4859b3037863d9630d5fd6/os_image24.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "3iNQDMAkvyiEqpctxMqgGm"
+                },
+                "backgroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_25/a6c77cfa2f33ddd637a3a172f90f2fc9/os_image25.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_26/db7ab03be54e72d18c4f9cc0c7d657f6/os_image26.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "storyChapterOne": {
+      "items": [
+        {
+          "storyChapterOneComponentTextContent": "源自世上最廣泛且古老的蘇格蘭威士忌窖藏，一系列珍稀高年份威士忌由此誕生。",
+          "storyChapterOneComponentSlidingText": "滑動探索更多",
+          "storyChapterOneComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_1/41db8dac07b309604333339d9b3b0e42/os_image1.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_2/d1f2456307cacb7c205e3e7706cfa4f6/os_image2.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterTwo": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterTwoComponentDescription": "取自格蘭父子家族收集及珍藏超過60年的窖藏老酒；",
+          "storyChapterTwoComponentDescription1": "歷經數六十年歲月，彙集世上最珍稀老酒打造而成，",
+          "storyChapterTwoComponentDescription2": "格蘭父子家族鉅獻- 遠慕Wildmoor蘇格蘭威士忌。",
+          "storyChapterTwoComponentFirst": "格蘭父子家族窖藏，",
+          "storyChapterTwoComponentTwo": "",
+          "storyChapterTwoComponentSecond": "60",
+          "storyChapterTwoComponentThird": "年",
+          "storyChapterTwoComponentFourth": "的沉澱，",
+          "storyChapterTwoComponentFifth": " 曾經私藏，如今正式問世。",
+          "storyChapterTwoComponentSlidingText": "滑動探索更多",
+          "storyChapterTwoComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_3/b9a0ea9646e5c5205b3a208baef6e643/os_image3.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_4/d09de88cd367cc1fb9e1cfafc34c16c7/os_image4.png"
+            }
+          },
+          "storyChapterTwoComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_5/5b478fbb9ff2c2b0700305a2585ba0c1/os_image5.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_5/5b478fbb9ff2c2b0700305a2585ba0c1/os_image5.png"
+            }
+          },
+          "chapterTwoFaceImageTwo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/4BrI84nlltleK8toexKdev/6e58c438de67b6256353b04ea59fcbde/brand_story_chatper_02_face_big.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/2DQ4BjDjK33dmKITTWtclC/f0c304bba618b94a927d35ec6b59d15b/brand_story_chatper_02_face_big.png"
+            }
+          },
+          "chapterTwoFaceVideoPcTwo": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/5lZdkpbuI54g7pkefqdBRR/9b455123721c924f014fa30a80e4b560/story_zhTW.mp4"
+            }
+          },
+          "chapterTwoFaceVideoMobileTwo": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/5lZdkpbuI54g7pkefqdBRR/9b455123721c924f014fa30a80e4b560/story_bg.mp4"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterThree": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterThreeComponentDescription": "匯聚橫跨蘇格蘭無數間指標性酒廠的威士忌，其中包括知名的消逝酒廠；經由獲獎無",
+          "storyChapterThreeComponentDescription1": "數的格蘭父子總調酒師布萊恩金斯曼(Brian Kinsman)親自調和，創作出「遠慕」系列",
+          "storyChapterThreeComponentDescription2": "威士忌。",
+          "storyChapterThreeComponentDescription3": "",
+          "storyChapterThreeComponentSlidingText": "滑動探索更多",
+          "storyChapterThreeComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_7/d2b46486ed3905c3876c55113d8a10ab/os_image7.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_8/872f00acae428043d05f957ae72ee5c5/os_image8.png"
+            }
+          },
+          "storyChapterThreeComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_9/a064c6ce922cf414d3b11b141b6ed9f6/chapter_three_face_pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_10/a6ac4dc065770b36ae03a35397f26756/chapter_three_face_mobile.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterFour": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterFourComponentDescription": "談及遠方，腦海裡總會浮現蘇格蘭的曠野景致，",
+          "storyChapterFourComponentDescription1": "又或許是坐落在斯貝賽(Speyside)達夫鎮的古老酒窖。",
+          "storyChapterFourComponentDescription2": "這些激發了格蘭父子總調酒師布萊恩·金斯曼(Brian Kinsman)",
+          "storyChapterFourComponentDescription3": "的無限靈感，從此創造出了「遠慕」，一系列不甘平凡尋常，",
+          "storyChapterFourComponentDescription4": "而令人驚歎的蘇格蘭威士忌。",
+          "storyChapterFourComponentDescription5": "",
+          "storyChapterFourComponentFirst": "源自遠方，",
+          "storyChapterFourComponentSecond": "不只遠方",
+          "storyChapterFourComponentThird": null,
+          "storyChapterFourComponentSlidingText": "滑動探索更多",
+          "chapterFourFaceImageTwo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/4k1sQHNitzRtDkDEJmkUlC/a5533fea466998660da5ae1f9a631455/brand_story_chatper_04_face_big-pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/7pa26cBQbqmFxijol2hCwD/6535cd286cbb9ae85ce1d6516a2a77dc/brand_story_chatper_04_face_big-m.png"
+            }
+          },
+          "storyChapterFourComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_11/572459f7ed6567f1c2ef9c2663e4c59e/os_image11.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_12/ec718876c478498f09084cea3e300d4f/os_image12.png"
+            }
+          },
+          "storyChapterFourComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_13/37499471095e00dd6ab576794b53c153/pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_14/9cc27395ac70355f02821bba123a69b2/mobile.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterFive": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterFiveComponentDescription": "這一切就如峻風呼嘯，穿過荒野;",
+          "storyChapterFiveComponentDescription1": "波浪洶湧，拍打礁石;",
+          "storyChapterFiveComponentDescription2": "被迷霧覆蓋的山脈，連綿不絕。",
+          "storyChapterFiveComponentSlidingText": "滑動探索更多",
+          "storyChapterFiveComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_15/aee27f72d9800d3c9593ebea1053687e/os_image15.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_16/f606048fb5e59d905ac6a1ff60377cab/os_image16.png"
+            }
+          },
+          "storyChapterFiveComponentSmallImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_17/3353263fb2c64b3c878a60ff728f42c6/os_image17.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_18/807fda9fe89160ee292e3b2c748eab62/os_image18.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterSix": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterSixComponentFirst": "一趟",
+          "storyChapterSixComponentSecond": "無拘無束的味覺體驗。",
+          "storyChapterSixComponentDescription": "布萊恩·金斯曼(Brian Kinsman)從未被傳統與過去所束縛，",
+          "storyChapterSixComponentDescription1": "他不斷從蘇格蘭令人震撼的風貌中汲取靈感，",
+          "storyChapterSixComponentDescription2": "始終創新，為全球威士忌愛好者，打造全新風味體驗。",
+          "storyChapterSixComponentSlidingText": "滑動探索更多",
+          "storyChapterSixComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_19/bb9b282b8a5ef0b5f9f09fc17bccc32f/os_image19.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_20/3f588a6d1cfcc225b0531fcd4b493dc4/os_image20.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterEnd": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterEndComponentDescription": "汲布萊恩·金斯曼(Brian Kinsman)近30年的製酒經歷，其中包含了享譽全球的格蘭菲迪單一麥芽威士忌；",
+          "storyChapterEndComponentDescription1": "與對於蘇格蘭恢弘之美的個人回憶——",
+          "storyChapterEndInfo": "這讓每一瓶，乃至每一滴遠慕威士忌，",
+          "storyChapterEndInfo1": "都能為您帶來無盡的遠方綺想，與意料之外的風味體驗。",
+          "storyChapterEndComponentSlidingText": "滑動探索更多",
+          "storyChapterEndComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_21/96919dae247cecea9574e24e83b26d71/os_image21.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_22/995851051ebfdc96e1f993961df775ac/os_image22.png"
+            }
+          },
+          "storyChapterEndComponentProductListCollection": {
+            "items": [
+              {
+                "id": 1,
+                "productCode": "pd002",
+                "productName": "RUGGED COAST",
+                "link": "/zh-TW/range",
+                "age": "30",
+                "unit": "年",
+                "description": "灵感取自苏格兰崎岖的海岸线。 带你领略烟熏，海盐和香草风味的三重和谐奏鸣。 过雪莉桶，口感平衡。",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_31/ae87515dd992d1970f48b6f039d43dcf/os_image31.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_32/2decca844ff1ef56c9a4d4b1620a9142/os_image32.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd004",
+                "productName": "BLACK MOUNTAIN",
+                "link": "/zh-TW/range",
+                "age": "40",
+                "unit": "年",
+                "description": "站在风味之巅，俯瞰世界，本品是为远慕窖藏之最。  过雪莉桶，香草和焦糖风味和谐交融， 为味蕾奏出华丽乐章。",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_35/b335e37bf1177544359eae469d2bf7b2/os_image35.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_36/2095d6735f7922c3bc6c8a5fd6a721bb/os_image36.png"
+                  }
+                }
+              },
+              {
+                "id": 4,
+                "productCode": "pd005",
+                "productName": "ANCIENT MOORLAND",
+                "link": "/zh-TW/range",
+                "age": "23",
+                "unit": "年",
+                "description": "灵感取自苏格兰高沼地。本品的橡木风味，独具特色。 其香草气息浓郁，与雪莉桶的醇厚香味相得益彰，为你缔造挚甄之味。",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset19/533c116b893b60ffe5e2380444909412/image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset20/a502b0ee80a0fd98699091da4d00c16e/image20.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/4ed72d0f1ce6858b037921aa4645f12c/Wildmoor_Ancient_Moorland_Landscape_2__7_.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/c304e5054e15a2bbafc4cf13d11fdc33/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_37/cff8b9888e7d4002fa5e2eaf918fa984/os_image37.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_38/009a22c9ca6fd595ad826df9cce78541/os_image38.png"
+                  }
+                }
+              },
+              {
+                "id": 4,
+                "productCode": "pd007",
+                "productName": "HEATHER VALLEY",
+                "link": "/zh-TW/range",
+                "age": "21",
+                "unit": "年",
+                "description": "灵感取自苏格兰高沼地。本品的橡木风味，独具特色。 其香草气息浓郁，与雪莉桶的醇厚香味相得益彰，为你缔造挚甄之味。",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/productFamily/bottle-7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/productFamily/bottle-7-m.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/4ed72d0f1ce6858b037921aa4645f12c/Wildmoor_Ancient_Moorland_Landscape_2__7_.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/c304e5054e15a2bbafc4cf13d11fdc33/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_37/cff8b9888e7d4002fa5e2eaf918fa984/tw-hv-pc.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_37/cff8b9888e7d4002fa5e2eaf918fa984/tw-hv-pc.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

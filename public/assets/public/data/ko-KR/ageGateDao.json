@@ -1,0 +1,67 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky KR - AgeGate",
+          "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky, WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky, WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,  WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky, WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+          "description": "WILDMOOR is a new and epic range of blended Scotch whiskies from William Grant & Sons, inspired by the Scottish wilderness."
+        }
+      ]
+    },
+    "ageGateComponent": {
+      "items": [
+        {
+          "title": "WE ALL GET BETTER WITH AGE",
+          "description1": "You must be at least ",
+          "description2": " years old to enter",
+          "confirmButton": "Enter",
+          "acceptCookieContent": "By clicking“Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.",
+          "acceptCookies": "Accept All Cookies",
+          "acceptCookieCookiesSettings": "Cookies Settings",
+          "monthChoose": "YYYY",
+          "promptContentCollection": {
+            "items": [
+              {
+                "content": "You must have cookies enabled to use this website. For more information on using and deleting cookies, visit ",
+                "targetPage": null
+              },
+              {
+                "content": "www.aboutcookies.org. ",
+                "targetPage": "https://www.aboutcookies.org"
+              },
+              {
+                "content": "By entering this site you agree to our ",
+                "targetPage": null
+              },
+              {
+                "content": "Terms & Conditions ",
+                "targetPage": "/ko-KR/termsConditions"
+              },
+              {
+                "content": "and ",
+                "targetPage": null
+              },
+              {
+                "content": "Privacy & Cookies Notice",
+                "targetPage": "/ko-KR/privacyPolicy"
+              }
+            ]
+          },
+          "promptContentCollection1": {
+            "items": []
+          },
+          "logoImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/logo.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/logo.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

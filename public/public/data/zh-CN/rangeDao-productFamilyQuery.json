@@ -1,0 +1,302 @@
+{
+  "data": {
+    "productFamily": {
+      "items": [
+        {
+          "selectedProductId": 3,
+          "productScrollText": "滑动探索更多",
+          "productFamilyComponentProductsCollection": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd001",
+                "nickname": "途经 热带",
+                "inspired": "灵感取自苏格兰西北部群岛夏日的白沙滩",
+                "seeMoreDetail": "查看更多",
+                "active": true,
+                "num": "30",
+                "tag": "免税店专享",
+                "productName": "TROPICAL COAST",
+                "productInfo": {
+                  "productName": "TROPICAL COAST",
+                  "product_text": ""
+                },
+                "age": "30",
+                "unit": "年份",
+                "description": "灵感取自苏格兰西北部群岛的白沙滩。",
+                "description1": "充满强烈而灿烂的水果气息，尾韵如丝绸般顺滑。",
+                "descriptionmoble": "灵感取自苏格兰西北部群岛的白沙滩。",
+                "descriptionmoble1": "充满强烈而灿烂的水果气息， 尾韵如丝绸般顺滑。",
+                "inspiredmoble": "灵感取自苏格兰西北部群岛夏日的白沙滩",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_105/ad56378b05196e180c4333d9232df40d/product_05.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_106/6142d4c655374f35a7a36f798ea8286c/product_05.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset3/fe1cdfa29dfd2944c2207b83d326686e/image3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset4/9310aed1e77c42c6da6c9efa29399819/image4.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10R7wvvjDbfaNq7mz8HyWA/801a4ff3d207ba6ae7c7e5b9d78da643/Wildmoor_Tropical_Coast_Texture_2_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset5/ab96879f5ca03bd9061354e068a9b558/image5.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd002",
+                "nickname": "柔和 雪莉 烟熏",
+                "inspired": "灵感取自苏格兰崎岖的海岸线",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "30",
+                "tag": null,
+                "productName": "海岸",
+                "productInfo": {
+                  "productName": "海岸",
+                  "product_text": "RUGGED COAST"
+                },
+                "age": "30",
+                "unit": "年份",
+                "description": "灵感取自苏格兰崎岖的海岸线。",
+                "description1": "带你领略烟熏，海盐和香草风味的三重和谐奏鸣。",
+                "description2": "过雪莉桶，口感平衡。",
+                "descriptionmoble": "灵感取自苏格兰崎岖的海岸线。",
+                "descriptionmoble1": "带你领略烟熏，海盐和香草风味的三重和谐奏鸣。",
+                "descriptionmoble2": "过雪莉桶，口感平衡。",
+                "inspiredmoble": "灵感取自苏格兰崎岖的海岸线",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_103/2952507c08c46241b3a092c83aeeaf50/product_04.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_104/444f0cd7bb26b28a6360b33b674dc993/product_04.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd003",
+                "nickname": "橡木 协鸣",
+                "inspired": "灵感取自苏格兰青翠密林",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "23",
+                "tag": "免税店专享",
+                "productName": "WAKING FOREST",
+                "productInfo": {
+                  "productName": "WAKING FOREST",
+                  "product_text": ""
+                },
+                "age": "23",
+                "unit": "年份",
+                "description": "灵感取自苏格兰的广阔林地。",
+                "description1": "组合了强烈的香草橡木香气以及微妙的雪莉桶风味，",
+                "description2": "整体口感层次丰富，活跃生动。",
+                "descriptionmoble": "灵感取自苏格兰的广阔林地。",
+                "descriptionmoble1": "组合了强烈的香草橡木香气以及微妙的雪莉桶风",
+                "descriptionmoble2": "味， 整体口感层次丰富，活跃生动。",
+                "inspiredmoble": "灵感取自苏格兰青翠密林",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_107/af26770a004f98e2f0f42ec9e420db28/product_06.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_108/055e2981937d8cfa3a1f2cbc26d42690/product_06.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset11/d4ef817abb334b434c0e6f4ba8e51ce7/image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset12/c6bcb9e58e0a36327738287d91a2a546/image12.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/6KJpbZzU9znyJsTNuhDDeb/0101ed8f329e859877d6f760c4b8e24b/Wildmoor_Waking_Forest_Landscape_2.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset14/29c9b9ce8e4b7924a0888c92ae81a4bf/image14.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd004",
+                "nickname": "深邃 升级",
+                "inspired": "灵感取自苏格兰北部的黑色山脉",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "40",
+                "tag": null,
+                "productName": "黑山",
+                "productInfo": {
+                  "productName": "黑山",
+                  "product_text": "BLACK MOUNTAIN"
+                },
+                "age": "40",
+                "unit": "年份",
+                "description": "站在风味之巅，俯瞰世界，本品是为远慕窖藏之最。",
+                "description1": "过雪莉桶，香草和焦糖风味和谐交融， 为味蕾奏出",
+                "description2": "华丽乐章。",
+                "descriptionmoble": "站在风味之巅，俯瞰世界，本品是为远慕窖藏之最。",
+                "descriptionmoble1": "过雪莉桶，香草和焦糖风味和谐交融， 为味蕾奏出华",
+                "descriptionmoble2": "丽乐章。",
+                "inspiredmoble": "灵感取自苏格兰北部的黑色山脉",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_99/58671c1660bc98ecb26cb7530b6e37c1/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_100/1403a3a6bce1e109ecf86c377f6d30f9/product_01.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 4,
+                "productCode": "pd005",
+                "nickname": "浓郁 雪莉 麦芽",
+                "inspired": "灵感取自苏格兰高沼地",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "23",
+                "tag": null,
+                "productName": "高沼地",
+                "productInfo": {
+                  "productName": "高沼地",
+                  "product_text": "ANCIENT MOORLAND"
+                },
+                "age": "23",
+                "unit": "年份",
+                "description": "灵感取自苏格兰高沼地。本品的橡木风味，独具特色。",
+                "description1": "其香草气息浓郁，与雪莉桶的醇厚香味相得益彰，为你",
+                "description2": "缔造挚甄之味。",
+                "descriptionmoble": "灵感取自苏格兰高沼地。本品的橡木风味，独具特色。",
+                "descriptionmoble1": "其香草气息浓郁，与雪莉桶的醇厚香味相得益彰，为你",
+                "descriptionmoble2": "缔造挚甄之味。",
+                "inspiredmoble": "灵感取自苏格兰高沼地",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_97/15746911f6e5bb952126cbb95cd7058c/product_AM.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_98/61b178afd43904ea006d1d04f044de7d/product_AM.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset19/533c116b893b60ffe5e2380444909412/image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset20/a502b0ee80a0fd98699091da4d00c16e/image20.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/4ed72d0f1ce6858b037921aa4645f12c/pc.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/c304e5054e15a2bbafc4cf13d11fdc33/mobile.png"
+                  }
+                }
+              }
+            ],
+            "menuCue": {
+              "menuLeft": "清淡",
+              "menuLeftText": "谷物",
+              "menuTop": "烟熏",
+              "menuTopText": "麦芽",
+              "menuRight": "醇厚",
+              "menBottom": "轻甜"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

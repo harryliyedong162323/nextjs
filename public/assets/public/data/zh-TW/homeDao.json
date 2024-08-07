@@ -1,0 +1,1231 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky TW - Home",
+          "keyWords": "wildmoor,远慕",
+          "description": "wildmoor,远慕"
+        }
+      ]
+    },
+    "KVAnimation": {
+      "items": [
+        {
+          "kvAnimationComponentKvTitle": "入口  即是遼闊",
+          "kvAnimationComponentScrollContent": "滑動探索更多",
+          "kvAnimationComponentBackgroundVideo": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/5lZdkpbuI54g7pkefqdBRR/9b455123721c924f014fa30a80e4b560/bg.mp4"
+            }
+          },
+          "kvAnimationComponentProductVideo": {
+            "video": {
+              "url": "/assets/video/zh-tw/HV.webm",
+              "mobileUrl": "/assets/video/zh-tw/HV.mov?v=2"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterTwoHome": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterTwoComponentDescription": "源自格兰特·戈登家族的陈年储备，历经数十余载的岁月，汇集珍稀原料，而这，便是远慕之使命。",
+          "storyChapterTwoComponentFirst": "格蘭父子家族窖藏，",
+          "storyChapterTwoComponentTwo": "",
+          "storyChapterTwoComponentSecond": "60",
+          "storyChapterTwoComponentThird": "年",
+          "storyChapterTwoComponentFourth": "的沉澱，",
+          "storyChapterTwoComponentFifth": "曾經私藏，如今正式問世。",
+          "storyChapterTwoComponentSlidingText": "滑動探索更多",
+          "storyChapterTwoComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/storyChapterTwoHome/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/storyChapterTwoHome/bg-m.png"
+            }
+          },
+          "storyChapterTwoComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_5/5b478fbb9ff2c2b0700305a2585ba0c1/os_image5.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_6/968c78ae41b40b140e307ab4e7cb4900/os_image6.png"
+            }
+          },
+          "chapterTwoFaceImageTwo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/4BrI84nlltleK8toexKdev/6e58c438de67b6256353b04ea59fcbde/brand_story_chatper_02_face_big.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/2DQ4BjDjK33dmKITTWtclC/f0c304bba618b94a927d35ec6b59d15b/brand_story_chatper_02_face_big.png"
+            }
+          }
+        }
+      ]
+    },
+    "interactiveVideo": {
+      "items": [
+        {
+          "noShow": true,
+          "interactiveVideoComponentIsShow": true,
+          "interactiveVideoComponentJumpUrl": "localMarketActivity",
+          "interactiveVideoComponentTitle": "远慕近事",
+          "interactiveVideoComponentExploreMore": "探索更多",
+          "interactiveVideoComponentExploreMoreImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset69/ccc3ffc7fa409f93a37944c496c8c004/image137.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset70/b33b098d98f32fbef9e4249aa36ed1c1/image138.png"
+            }
+          },
+          "interactiveVideoComponentImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset67/0198911439cbc07aa2774ab1b5b1ec4f/image133.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset68/c9b3591561c5e120d5725f1d297cdf36/image134.png"
+            }
+          }
+        }
+      ]
+    },
+    "VIPClub": {
+      "items": [
+        {
+          "vipClubComponentJoinUsTitle": "下一段冒險，由此啟程",
+          "vipClubComponentJoinUsSubTitle": "由此啟程",
+          "joinUsLeftContent": "開始探索",
+          "vipSlidingText": "滑動探索更多",
+          "vipClubComponentJoinUsLeftJumpUrl": "https://www.instagram.com/wildmoorwhisky",
+          "joinUsMiddleContent": "開始探索",
+          "joinUsRightContent": "開始探索",
+          "vipClubComponentLeftImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset71/89a0062c5bf9494af701f7a6cddd1430/image141.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset72/6f67e40dcced13dd0fd806cc34d19027/image142.png"
+            }
+          },
+          "joinUsLeftCtaImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset73/7856fdb89060696ae81f80291fefe19a/image143.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset74/b4ee3cb4c8d908d39d82ee546c7e98b9/image144.png"
+            }
+          },
+          "joinUsLeftCtaAImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset75/60b0c78419a609e9308b31bd0c503e5b/image145.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset76/12bb43f0c289140c8c98cc203e0aa447/image146.png"
+            }
+          }
+        }
+      ]
+    },
+    "nearYou": {
+      "items": [
+        {
+          "nearYouContentTitle": "远慕若比邻",
+          "nearYouComponentStoresCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "7zkqj2Gr6gt5VCIs7Filbc"
+                },
+                "nearYouId": 0,
+                "nearYouActive": null,
+                "howToBuyDetailComponentStoreName": "远慕上海门店1",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_17/00ac33121bc18f052c6f09b09462aaa6/how_to_buy_image17.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_18/42b34691f53965c35c539b2045d86e36/kv-3.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_15/457605e3c222e75d3006758a7b5fecfe/how_to_buy_image15.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_16/805e95673a69174d982fe5e4cafd0d9b/how_to_buy_image16.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_13/2b002d324c5bdffd57a672852bcb0598/how_to_buy_image13.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_14/60ed31dd3d52ec23ec504c91c00c754f/how_to_buy_image14.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "6OoCeZQn0XPFATrSktUHL9"
+                },
+                "nearYouId": 1,
+                "nearYouActive": null,
+                "howToBuyDetailComponentStoreName": "远慕上海门店2",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_33/480308668477e8da4dd856f7ea1d2b72/how_to_buy_image33.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_34/2e4cace3a8cae405846202b2504244eb/kv-2.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_31/70f61be77b37275ca22e22623e35d692/how_to_buy_image31.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_32/3c343cd18bb092040b6e45986e94a70c/how_to_buy_image32.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_35/d06b7c0d9adcb2714d9dc485ffed8f33/how_to_buy_image35.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_36/cf40b10ada66e209f9342a0aa801a6a4/how_to_buy_image36.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "4rEMJ5bKXCoWLW4Z8mcl7n"
+                },
+                "nearYouId": 2,
+                "nearYouActive": null,
+                "howToBuyDetailComponentStoreName": "远慕上海门店3",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_49/6ec9a50983978fa9f6fcbad24d89a1df/how_to_buy_image49.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_50/08e4dd111048c027393a1ff79d5ac175/how_to_buy_image50.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_51/401737f6b077ce2ff15610c2ad246c49/how_to_buy_image51.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_52/6b6f88d189050b379a0ba6d37742b7c7/how_to_buy_image52.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_53/f961fe82ee1626c6964ee7a4d1ab2563/kv-3.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_54/c81262bd02d68529642a4848bdd75b0d/how_to_buy_image54.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "1fzt3HL7cspgyqhj05086B"
+                },
+                "nearYouId": 3,
+                "nearYouActive": null,
+                "howToBuyDetailComponentStoreName": "远慕上海门店4",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_67/8db99be60c37bf58b5dbb11da177555a/how_to_buy_image67.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_68/fc635ac3a5fedd7b71454a2cd8353009/how_to_buy_image68.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_69/d483b611ba267feb2f55f537d59e72c0/how_to_buy_image69.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_70/7c061926220bba8e450f57653d485994/how_to_buy_image70.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_71/7a9a3b37d91ebfe7d3c0a659dbacacae/how_to_buy_image71.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_72/d8eb007e9242bdfa89c18c3a1975aa02/how_to_buy_image72.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "EEWEiijrprE8F8BNSVN28"
+                },
+                "nearYouId": 4,
+                "nearYouActive": false,
+                "howToBuyDetailComponentStoreName": "远慕上海门店5",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_17/00ac33121bc18f052c6f09b09462aaa6/how_to_buy_image17.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_18/42b34691f53965c35c539b2045d86e36/kv-3.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_15/457605e3c222e75d3006758a7b5fecfe/how_to_buy_image15.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_16/805e95673a69174d982fe5e4cafd0d9b/how_to_buy_image16.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_13/2b002d324c5bdffd57a672852bcb0598/how_to_buy_image13.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_14/60ed31dd3d52ec23ec504c91c00c754f/how_to_buy_image14.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "3ta35FEd54IsrUacX4fSnx"
+                },
+                "nearYouId": 5,
+                "nearYouActive": false,
+                "howToBuyDetailComponentStoreName": "远慕上海门店6",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_33/480308668477e8da4dd856f7ea1d2b72/how_to_buy_image33.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_34/2e4cace3a8cae405846202b2504244eb/kv-2.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_31/70f61be77b37275ca22e22623e35d692/how_to_buy_image31.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_32/3c343cd18bb092040b6e45986e94a70c/how_to_buy_image32.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_35/d06b7c0d9adcb2714d9dc485ffed8f33/how_to_buy_image35.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_36/cf40b10ada66e209f9342a0aa801a6a4/how_to_buy_image36.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "3qi1N0GguoyiTYl7eOGvDH"
+                },
+                "nearYouId": 6,
+                "nearYouActive": false,
+                "howToBuyDetailComponentStoreName": "远慕上海门店7",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_49/6ec9a50983978fa9f6fcbad24d89a1df/how_to_buy_image49.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_50/08e4dd111048c027393a1ff79d5ac175/how_to_buy_image50.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_51/401737f6b077ce2ff15610c2ad246c49/how_to_buy_image51.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_52/6b6f88d189050b379a0ba6d37742b7c7/how_to_buy_image52.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_53/f961fe82ee1626c6964ee7a4d1ab2563/kv-3.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_54/c81262bd02d68529642a4848bdd75b0d/how_to_buy_image54.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "sys": {
+                  "id": "6FCCYm29nqbok48RTvMPUF"
+                },
+                "nearYouId": 7,
+                "nearYouActive": false,
+                "howToBuyDetailComponentStoreName": "远慕上海门店8",
+                "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+                "nearYouDes": "过去都是假的，回忆是一条没有归途的路，以往的一切春天都无法复原，即使最狂热最坚贞的爱情，归根结底也不过是一种瞬息即逝的现实，唯有孤独永恒。",
+                "nearYouComponentNearYouCarouselImageCollection": {
+                  "items": [
+                    {
+                      "id": 2,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_67/8db99be60c37bf58b5dbb11da177555a/how_to_buy_image67.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_68/fc635ac3a5fedd7b71454a2cd8353009/how_to_buy_image68.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 1,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_69/d483b611ba267feb2f55f537d59e72c0/how_to_buy_image69.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_70/7c061926220bba8e450f57653d485994/how_to_buy_image70.png"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 0,
+                      "imagesCollection": {
+                        "items": [
+                          {
+                            "altText": null,
+                            "imagepc": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_71/7a9a3b37d91ebfe7d3c0a659dbacacae/how_to_buy_image71.png"
+                            },
+                            "imagemobile": {
+                              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_72/d8eb007e9242bdfa89c18c3a1975aa02/how_to_buy_image72.png"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "introduceCampaign": {
+      "items": [
+        {
+          "noShow": true,
+          "introduceCampaignComponentTitle": "全球活动",
+          "introduceCampaignComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset1/eb6e958b2fbe0ea5a2b5d77772739341/image1.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset2/fa0bda22a11db9fab816be521d039c90/image2.png"
+            }
+          },
+          "introduceCampaignComponentCampaignsCollection": {
+            "items": [
+              {
+                "id": 4,
+                "location": "Beijing",
+                "year": "2023-11-11",
+                "description": "思索是一道大门，通向世界上没有...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset31/a455ac8a67dc35bba3ce5579afbf4a67/image31.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset32/2387c0f75bfef11cfcaf6373037d9f68/image32.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "location": "Shanghai",
+                "year": "2023-11-13",
+                "description": "思索是一道大门，通向世界上没有...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset33/eff91c4dcb2641b01ca5a820d04b095c/image33.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset34/50ed3d86dcb7c2b89e3555885663c43c/image34.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "location": "上海",
+                "year": "2023-11-15",
+                "description": "思索是一道大门，通向世界上没有...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset35/b770fc2e0a7f62bc9bd8ec64107f410a/image35.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset36/636a4d98135d48658a7081f3555593a2/image36.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "location": "伦敦",
+                "year": "2023-11-12",
+                "description": "所谓辉煌的人生，不过是欲望的囚...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset29/a5c014e8c697b9e7ab26e1d644d5aa8f/image29.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset30/dda3a2d1eb39b953f67057b2c7cb859a/image30.png"
+                  }
+                }
+              },
+              {
+                "id": 0,
+                "location": "纽约",
+                "year": "2023-11-11",
+                "description": "我们登上并非我们所选择的舞台...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset27/9481c9f1dddd4511a809d11bed05689a/image27.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset28/e609117e2ac0503dd247241addd34b77/image28.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "productFamily": {
+      "items": [
+        {
+          "selectedProductId": 1,
+          "productScrollText": "滑動探索更多",
+          "productFamilyComponentProductsCollection": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd002",
+                "nickname": "Delicate Sherry Matured Smoke",
+                "inspired": "細膩的煙燻雪莉風味，",
+                "inspired1": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "30",
+                "tag": null,
+                "productName": "RUGGED COAST",
+                "age": "30",
+                "unit": "年",
+                "prodInfo": "雪莉風味桶蘇格蘭威士忌",
+                "description": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "description1": "帶你領略以煙燻、海鹽和甜美香草氣息，",
+                "description2": "與辛香雪莉桶風味譜成的和諧奏鳴。",
+                "inspiredmoble": "細膩的煙燻雪莉風味，",
+                "inspiredmoble2": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "descriptionmoble": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "descriptionmoble1": "帶你領略以煙燻、海鹽和甜美香草氣息，",
+                "descriptionmoble2": "與辛香雪莉桶風味譜成的和諧奏鳴。",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_103/2952507c08c46241b3a092c83aeeaf50/product_04.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_104/444f0cd7bb26b28a6360b33b674dc993/product_04.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd004",
+                "nickname": "Elevated Depth",
+                "inspired": "靈感源自矗立於蘇格蘭北部的黑山之巔，",
+                "inspired1": "遠慕系列之最。",
+                "seeMoreDetail": "查看更多",
+                "active": false,
+                "num": "40",
+                "tag": null,
+                "productName": "BLACK MOUNTAIN",
+                "age": "40",
+                "unit": "年",
+                "prodInfo": "PX雪莉風味桶蘇格蘭威士忌",
+                "description": "年分與風味的顛峰，香草和焦糖的味道在此與奢華的雪莉",
+                "description1": "醇厚完美融合。",
+                "description2": "這是遠慕Wildmoor系列的頂峰。",
+                "descriptionmoble": "年分與風味的顛峰，香草和焦糖的味道在此與奢華的雪莉",
+                "descriptionmoble1": "醇厚完美融合。",
+                "descriptionmoble2": "這是遠慕Wildmoor系列的頂峰。",
+                "inspiredmoble": "靈感源自矗立於蘇格蘭北部的黑山之巔，",
+                "inspiredmoble2": "遠慕系列之最。",
+                "price": "£750 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_99/58671c1660bc98ecb26cb7530b6e37c1/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_100/1403a3a6bce1e109ecf86c377f6d30f9/product_01.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd005",
+                "nickname": "Rich Sherry Matured Malt",
+                "inspired": "濃郁雪莉風味的調和麥芽威士忌，",
+                "inspired1": "靈感源自蘇格蘭廣闊的高沼地。",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "23",
+                "tag": null,
+                "productName": "ANCIENT MOORLAND",
+                "age": "23",
+                "unit": "年",
+
+                "prodInfo": "雪莉風味桶麥芽威士忌",
+                "description": "靈感源自蘇格蘭遼闊的高沼地(Moorland)，",
+                "description1": "獨具特色的橡木風味，",
+                "description2": "濃郁香草氣息與雪莉桶的甜美醇香相得益彰。",
+                "descriptionmoble": "靈感源自蘇格蘭遼闊的高沼地(Moorland)，",
+                "descriptionmoble1": "獨具特色的橡木風味，",
+                "descriptionmoble2": "缔濃郁香草氣息與雪莉桶的甜美醇香相得益彰。",
+                "inspiredmoble": "濃郁雪莉風味的調和麥芽威士忌，",
+                "inspiredmoble2": "靈感源自蘇格蘭廣闊的高沼地。",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_97/15746911f6e5bb952126cbb95cd7058c/product_AM.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_98/61b178afd43904ea006d1d04f044de7d/product_AM.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset19/533c116b893b60ffe5e2380444909412/image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset20/a502b0ee80a0fd98699091da4d00c16e/image20.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/4ed72d0f1ce6858b037921aa4645f12c/pc.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/c304e5054e15a2bbafc4cf13d11fdc33/mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd007",
+                "nickname": "Triple Oak",
+                "inspired": "三種美國橡木桶熟成，",
+                "inspired1": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "seeMoreDetail": "查看更多",
+                "active": false,
+                "num": "21",
+                "tag": null,
+                "productName": "HEATHER VALLEY",
+                "age": "21",
+                "unit": "年",
+                "prodInfo": "三桶熟成蘇格蘭威士忌",
+                "description": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "description1": "明亮的烘烤橡木氣息，伴隨水果、香草與太妃糖風味交疊",
+                "description2": "的豐富層次，口感如絲緞般滑順。",
+                "inspiredmoble": "三種美國橡木桶熟成，",
+                "inspiredmoble2": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "descriptionmoble": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "descriptionmoble1": "明亮的烘烤橡木氣息，伴隨水果、香草與太妃糖風味交疊的",
+                "descriptionmoble2": "豐富層次，口感如絲緞般滑順。",
+                "price": "",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": ""
+                  },
+                  "imagemobile": {
+                    "url": ""
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/productFamily/bottle-7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/productFamily/bottle-7-m.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/productFamily/kv-tw.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/productFamily/kv-tw-m.png"
+                  }
+                }
+              }
+            ],
+            "menuCue": {
+              "menuLeft": "柔順",
+              "menuLeftText": "穀物",
+              "menuTop": "煙燻",
+              "menuTopText": "麥芽",
+              "menuRight": "醇厚",
+              "menBottom": "香甜"
+            }
+          }
+        }
+      ]
+    },
+    "talesFromTheWild": {
+      "items": [
+        {
+          "talesFromTheWildTitle": "關於遠方的故事",
+          "talesFromTheWildListCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "2KxFquRbFJTL8DuUe6cqQs"
+                },
+                "id": 10086,
+                "listName": "鳳小岳",
+                "listDescription": "「如果有人邀請你去蘇格蘭高地，一定要馬上放下一切出發。」",
+                "targetPage": {
+                  "sys": {
+                    "id": "1vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_3/0a66ba46d48baaa3f269616418c9c8b3/wild_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_4/26075ea74eb65f3fb72cdb5520542c15/range_image4.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_111/494772749068d91fe70a99625d6492eb/range_image221.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_112/8f5bc30114dfffa7d10fec09899a3c2a/wild_01_m.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_1/d34559197fc78e8dc0edc76e4edbdf32/wild_face.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_2/0c11ceb5fe399331775c27086cc3fba6/wild_face.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "2vIdClbAAgcpnbF2iT2MxO"
+                },
+                "id": 10087,
+                "listName": "Birdy Nio ",
+                "listName1": "邱柏昶",
+                "listDescription": "「遠慕WILDMOOR對我來說，會讓人一直想探索下去，永遠保持新鮮感，就像蘇格蘭多變的天氣一樣。」",
+                "targetPage": {
+                  "sys": {
+                    "id": "2vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_7/d25434e4ffa1472ef36a98ec060d8cd9/range_image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_8/ed2346282718c4914f4d952035d70ef8/wild_02_m.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_113/7def28d3bf1add3b8ddb591e788719e2/wild_02_small.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_114/cc1db4f62e081b2ed8fe69962f166e8a/range_image224.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_5/a8d9b4f16b2916e93c4d100e358b2384/range_image5.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_6/cd61b0a95a60c0d4fba9a57e3d4a3829/range_image6.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6oC1zaN3Dr6mIH9ZAGaYnb"
+                },
+                "id": 10088,
+                "listName": "",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_11/17b3978b4ddae4fe94edc0255ce2d9f2/range_image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_12/cce7334444312207429cb2b392512552/range_image12.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_115/1c92da7d15a39fbc57a1bb51c6813c46/range_image225.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_116/01c5a326074c10dbda6c104fde476980/wild_03_m.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_9/bdedd4e8b860dd15fc520f178e9ea4e1/wild_face.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_10/e9a833df92d271dca45e6a4f09a952f9/range_image10.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "au4pgwTmg45AYsgInYa9d"
+                },
+                "id": 10089,
+                "listName": "",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_15/a12bb473657d07ad48ff40ea380b13d0/range_image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_16/511dd7cbc0e53d0583740eae606dab82/range_image16.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_117/60a846fd6d522f1126164993542e8d06/range_image227.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_118/3309e55a97984daeb5578514f564ceee/range_image228.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_13/16e48c21c0a7ba68bd27c976748873b4/range_image13.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_14/c75275c3d437e4ad6b7c58b70351ae9b/range_image14.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "1HkRFv8fBbu285CWlkoMH8"
+                },
+                "id": 10090,
+                "listName": "",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_19/f18341b208fe5fdc738b1784a4db6a63/range_image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_20/220ed3ff3b366d192a197bd857be10a2/range_image20.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_119/985f5a7f315ec0a227269dc5e09640b0/wild_05_small.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_120/d5ea54f6ab04ea8149ab8766b672438b/range_image230.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_17/5ea1e718b17eb582c253cd69c1c85a86/range_image17.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_18/13986b5285fa1bcab8fb0800cb8543f7/wild_face.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

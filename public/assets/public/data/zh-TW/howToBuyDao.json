@@ -1,0 +1,1715 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky TW - How To Buy",
+          "keyWords": "远慕",
+          "description": "远慕"
+        }
+      ]
+    },
+    "irlstores": {
+      "items": [
+        {
+          "sys": {
+            "id": "6XNhuF8A3aP9eRazZv8Vrj"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentStoreName": "远慕上海门店12",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 1,
+            "name": "英国"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4IFQUPsG80HqDaBqy9Q6mC"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentStoreName": "远慕上海门店9",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 2,
+            "name": "韩国"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "3ta35FEd54IsrUacX4fSnx"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentStoreName": "远慕上海门店6",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 3,
+            "name": "中国台湾"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "5IW3jNtupqag9P3VKcTStb"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentStoreName": "远慕上海门店15",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "7zkqj2Gr6gt5VCIs7Filbc"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentStoreName": "远慕上海门店1",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 4,
+            "name": "中国大陆"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4z1YQ8RzH1FGVduOzjRLIb"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentStoreName": "远慕上海门店13",
+          "howToBuyDescription": "服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "n5GMXYxM3GraN6LtSN3Js"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentStoreName": "远慕上海门店10",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 1,
+            "name": "英国"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "EEWEiijrprE8F8BNSVN28"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentStoreName": "远慕上海门店5",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 3,
+            "name": "中国台湾"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "1fzt3HL7cspgyqhj05086B"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentStoreName": "远慕上海门店4",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 3,
+            "name": "中国台湾"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "3qi1N0GguoyiTYl7eOGvDH"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentStoreName": "远慕上海门店7",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4C9xsPd9yX2Tbm0SyvWZ89"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentStoreName": "远慕上海门店14",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4rEMJ5bKXCoWLW4Z8mcl7n"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentStoreName": "远慕上海门店3",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 4,
+            "name": "中国大陆"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6OoCeZQn0XPFATrSktUHL9"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentStoreName": "远慕上海门店2",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 4,
+            "name": "中国大陆"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6NN4pOIerx8uoq0morIJ5h"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentStoreName": "远慕上海门店11",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 1,
+            "name": "英国"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6FCCYm29nqbok48RTvMPUF"
+          },
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentStoreName": "远慕上海门店8",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyDetailComponentRegion": {
+            "regionId": 2,
+            "name": "韩国"
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        }
+      ]
+    },
+    "stores": {
+      "items": [
+        {
+          "sys": {
+            "id": "7zkqj2Gr6gt5VCIs7Filbc"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店1",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 4,
+            "name": "中国大陆"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "5IW3jNtupqag9P3VKcTStb"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店15",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4C9xsPd9yX2Tbm0SyvWZ89"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店14",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4z1YQ8RzH1FGVduOzjRLIb"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店13",
+          "howToBuyDescription": "服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6XNhuF8A3aP9eRazZv8Vrj"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店12",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 1,
+            "name": "英国"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6NN4pOIerx8uoq0morIJ5h"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店11",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 1,
+            "name": "英国"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "n5GMXYxM3GraN6LtSN3Js"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店10",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 1,
+            "name": "英国"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4IFQUPsG80HqDaBqy9Q6mC"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店9",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 2,
+            "name": "韩国"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6FCCYm29nqbok48RTvMPUF"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店8",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 2,
+            "name": "韩国"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "3qi1N0GguoyiTYl7eOGvDH"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店7",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 0,
+            "name": "新加坡"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "3ta35FEd54IsrUacX4fSnx"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店6",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 0,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 3,
+            "name": "中国台湾"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "EEWEiijrprE8F8BNSVN28"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店5",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 3,
+            "name": "中国台湾"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "1fzt3HL7cspgyqhj05086B"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店4",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 1,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 3,
+            "name": "中国台湾"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "4rEMJ5bKXCoWLW4Z8mcl7n"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店3",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 4,
+            "name": "中国大陆"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        },
+        {
+          "sys": {
+            "id": "6OoCeZQn0XPFATrSktUHL9"
+          },
+          "howToBuyDetailComponentStoreName": "远慕上海门店2",
+          "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+          "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+          "showInHowToBuyIrl": true,
+          "howToBuyIrlSort": 2,
+          "howToBuyDetailComponentRegion": {
+            "regionId": 4,
+            "name": "中国大陆"
+          },
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+            }
+          },
+          "howToBuyIrlImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+            }
+          }
+        }
+      ]
+    },
+    "digitalExperience": {
+      "items": [
+        {
+          "noShow": true,
+          "digitalleftContent": "探索更多",
+          "digitalMiddleContent": "扫码关注 WILDMOOR远慕",
+          "digitalRightContent": "探索更多",
+          "digitalleftChannel": "JD.COM",
+          "digitalMiddChannel": "MINIPROGRAM",
+          "digitalRightChannel": "TMALL",
+          "digitaLeftIsQrCode": false,
+          "digitaMiddleIsQrCode": true,
+          "digitaRightIsQrCode": false,
+          "digitalExperienceComponentDigitalLeftImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset89/5c70d729cccb97faeb02a7d4b38d92cc/image159.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset92/59c18be2c89e6f614589505428bfb652/list-1-m.png"
+            }
+          },
+          "digitalLeftCtaImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset91/6ba7cdf0f9690896d28acf363380c78a/image161.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset92/59c18be2c89e6f614589505428bfb652/list-1-m.png"
+            }
+          },
+          "digitalLeftCtaAImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset93/dd20d3cef65ce0f5e16a08e2f16618a3/image163.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset94/a3808822c4d6c300584a2aa8d1d06f56/image164.png"
+            }
+          },
+          "digitalExperienceComponentDigitalMiddleImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset95/af633ebdff4285f07d9fb8f4444571c3/image165.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset96/19e5fc2982f5d5de758e545cb7c34672/image166.png"
+            }
+          },
+          "digitalMiddleCtaImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset97/17e93b5aded1da18f7c8c5e2bab8dd0a/image167.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset98/ad406f8d556b0eb677a3b32958fe4f56/image168.png"
+            }
+          },
+          "digitalMiddleCtaAImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset99/81cec9d2bbb3a3cd75d0ed0f05ac4581/image169.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset100/0a7c049aeafd1f4e4e4b14e7ce0bc90c/image170.png"
+            }
+          },
+          "digitalExperienceComponentDigitalRightImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset101/e8566e92686e3e861d213ed75a36e7e1/image171.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset102/b959fb8830810d3a671bf46eb7d6ba71/image172.png"
+            }
+          },
+          "digitalRightCtaImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset103/43169f255c2f47b00bd2b951b8b20fd3/image173.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset104/6744c32fbb53145a006091acd0c4bf5a/image174.png"
+            }
+          },
+          "digitalRightCtaAImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset105/f579be32c0c0cce532ff54d6d2772114/image175.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset106/06fbe3985cb06fc4e910ba1d6d0aa701/image176.png"
+            }
+          }
+        }
+      ]
+    },
+    "IRLExperiences": {
+      "items": [
+        {
+          "noShow": true,
+          "irlExperiencesComponentIrlTitle": "线下体验",
+          "irlExperiencesComponentDigitalTitle": "线上体验",
+          "digitalExperienceComponentDigitalLeftImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_73/15444764863ec670918e1b584d07e4b4/how_to_buy_image161.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_74/3fafb25870ef51c83a7ef4fd49773afc/how_to_buy_image162.png"
+            }
+          },
+          "irlExperiencesComponentIrlStoresCollection": {
+            "items": [
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "locationInfo": {
+      "items": [
+        {
+          "locationInfoComponentTitle": "远慕若比邻",
+          "regionExploreMoreImage": {
+            "imagepc": null,
+            "imagemobile": null,
+            "altText": null
+          },
+          "locationInfoComponentStoreListCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "7zkqj2Gr6gt5VCIs7Filbc"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店1",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 4,
+                  "name": "中国大陆"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6OoCeZQn0XPFATrSktUHL9"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店2",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 4,
+                  "name": "中国大陆"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "4rEMJ5bKXCoWLW4Z8mcl7n"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店3",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 4,
+                  "name": "中国大陆"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "1fzt3HL7cspgyqhj05086B"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店4",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 3,
+                  "name": "中国台湾"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "EEWEiijrprE8F8BNSVN28"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店5",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 3,
+                  "name": "中国台湾"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "3ta35FEd54IsrUacX4fSnx"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店6",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 3,
+                  "name": "中国台湾"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "3qi1N0GguoyiTYl7eOGvDH"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店7",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 0,
+                  "name": "新加坡"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6FCCYm29nqbok48RTvMPUF"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店8",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 2,
+                  "name": "韩国"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "4IFQUPsG80HqDaBqy9Q6mC"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店9",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 2,
+                  "name": "韩国"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "n5GMXYxM3GraN6LtSN3Js"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店10",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 1,
+                  "name": "英国"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6NN4pOIerx8uoq0morIJ5h"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店11",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 1,
+                  "name": "英国"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6XNhuF8A3aP9eRazZv8Vrj"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店12",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 1,
+                  "name": "英国"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "4z1YQ8RzH1FGVduOzjRLIb"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店13",
+                "howToBuyDescription": "服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 1,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 0,
+                  "name": "新加坡"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "4C9xsPd9yX2Tbm0SyvWZ89"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店14",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 2,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 0,
+                  "name": "新加坡"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "5IW3jNtupqag9P3VKcTStb"
+                },
+                "howToBuyDetailComponentStoreName": "远慕上海门店15",
+                "howToBuyDescription": "门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍门店介绍...",
+                "howToBuyJumpUrl": "zh-TW/howToBuyDetail",
+                "showInHowToBuyIrl": true,
+                "howToBuyIrlSort": 0,
+                "howToBuyDetailComponentRegion": {
+                  "regionId": 0,
+                  "name": "新加坡"
+                },
+                "howToBuyDetailComponentBannerImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_1/2aaf851fb2cbd34b9b8829b00dc9196a/bg.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_2/b01bf2a7156bd21faf8d01f110490070/bg.png"
+                  }
+                },
+                "howToBuyIrlImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_47/44cc56a4b061a9232e4860aefc6a53af/how_to_buy_image47.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_48/86adb9a2282bd9dfc5669bbe963e7d59/how_to_buy_image48.png"
+                  }
+                }
+              }
+            ]
+          },
+          "locationInfoComponentRegionListCollection": {
+            "items": [
+              {
+                "name": "新加坡",
+                "regionId": 0,
+                "exploreMoreContent": "探索更多",
+                "image": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_87/6e468a458d4d96bb7b0765287a62eb78/how_to_buy_image87.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_88/9760a0607be643ada33ef95f94f78a22/list-1.png"
+                  }
+                }
+              },
+              {
+                "name": "英国",
+                "regionId": 1,
+                "exploreMoreContent": "探索更多",
+                "image": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_85/21817383893cbfee63ad0f8f2b9c9b61/how_to_buy_image85.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_86/99d6c2dc38791043f4aeba90802876b6/how_to_buy_image86.png"
+                  }
+                }
+              },
+              {
+                "name": "韩国",
+                "regionId": 2,
+                "exploreMoreContent": "探索更多",
+                "image": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_83/81e3210f43d4aefcba0aa34d845e19cd/how_to_buy_image83.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_84/8a5fcf61b40a24d3b1e70fd919ec192b/how_to_buy_image84.png"
+                  }
+                }
+              },
+              {
+                "name": "中国台湾",
+                "regionId": 3,
+                "exploreMoreContent": "探索更多",
+                "image": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_81/a9c3fc0c233b104546c481bc01511a38/list-2.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_82/b413e2f913415d05ecc2bdc48f5fe197/how_to_buy_image82.png"
+                  }
+                }
+              },
+              {
+                "name": "中国大陆",
+                "regionId": 4,
+                "exploreMoreContent": "探索更多",
+                "image": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_79/d545401f71017f2ce5af28e468bed5f1/how_to_buy_image79.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_80/56d00e0f4880ec62dd3f0ced2914c8d5/how_to_buy_image80.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

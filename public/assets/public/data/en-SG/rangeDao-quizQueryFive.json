@@ -1,0 +1,21 @@
+{
+    "data": {
+        "dataQuizQ5Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q5. Which best describes you？",
+                    "optionAId": 0,
+                    "optionAValue": "Classy, with a taste for the classics.",
+                    "optionAContent": "The Purist",
+                    "optionBId": 0,
+                    "optionBValue": "Why follow the crowd, when you can follow your great taste?",
+                    "optionBContent": "The Rule Breaker",
+                    "optionCId": 0,
+                    "optionCValue": "Just because you respect tradition, doesn’t mean you can’t have a wild side.",
+                    "optionCContent": "The Open-Minded Traditionalist"
+                }
+            ]
+        }
+    }
+}

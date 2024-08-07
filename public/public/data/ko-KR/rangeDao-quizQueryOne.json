@@ -1,0 +1,48 @@
+{
+    "data": {
+        "dataQuizQ1Collection": {
+            "items": [
+                {
+                    "id": 0,
+                    "topicContent": "Q1. Which of these flavour types do you prefer?",
+                    "optionAId": 0,
+                    "optionAValue": "A",
+                    "optionAContent": "Rich and Spicy",
+                    "optionBId": 1,
+                    "optionBValue": "B",
+                    "optionBContent": "Light and Sweet",
+                    "optionCId": 2,
+                    "optionCValue": "C",
+                    "optionCContent": "Smoky and Mellow",
+                    "optionAImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/quiz/q1/pc1.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/quiz/q1/m1.png"
+                        }
+                    },
+                    "optionBImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/quiz/q1/pc2.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/quiz/q1/m2.png"
+                        }
+                    },
+                    "optionCImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/quiz/q1/pc3.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/quiz/q1/m3.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

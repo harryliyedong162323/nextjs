@@ -1,0 +1,64 @@
+{
+  "data": {
+    "dataQuizQ2Collection": {
+      "items": [
+        {
+          "id": 0,
+          "topicContent": "Q2. WHICH OF THESE DO YOU FIND MOST SOOTHING?",
+          "description": "",
+          "optionAId": 0,
+          "optionAValue": "A",
+          "optionAContent": "Play",
+          "optionBId": 0,
+          "optionBValue": "B",
+          "optionBContent": "Play",
+          "optionCId": 0,
+          "optionCValue": "C",
+          "optionCContent": "Play",
+          "optionAImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/quiz/q2/pc1.png"
+            },
+            "imagemobile": {
+              "url": "/assets/quiz/q2/m1.png"
+            }
+          },
+          "optionAAudio": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/5oPGFFdSOXfjn2LId5KSXi/3b4d9ce7f2341b4d69772902813d4a87/video01.mp4"
+            }
+          },
+          "optionBImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/quiz/q2/pc2.png"
+            },
+            "imagemobile": {
+              "url": "/assets/quiz/q2/m2.png"
+            }
+          },
+          "optionBAudio": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/emLVjEpeG9JOZ3SfzJXAT/d2e59a55d0cd4169a0431aaabf525dfb/video02.mp4"
+            }
+          },
+          "optionCImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/quiz/q2/pc3.png"
+            },
+            "imagemobile": {
+              "url": "/assets/quiz/q2/m3.png"
+            }
+          },
+          "optionCAudio": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/3LMjeT0TdDfgrY4MBFTfZ0/e3c3f08985a6138c55aa1347ed744dde/video03.mp4"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

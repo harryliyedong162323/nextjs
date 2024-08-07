@@ -1,0 +1,83 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "How To Buy Detail",
+          "keyWords": "远慕",
+          "description": "远慕远慕远慕"
+        }
+      ]
+    },
+    "globalCampaignsComponent": {
+      "items": [
+        {
+          "howToBuyDetailComponentStoreName": "远慕上海门店9",
+          "howToBuyDetailComponentStoreAddress": "上海市静安区南京西路 9999 号",
+          "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+          "howToBuyDetailComponentStorePhone": "000-1234567894",
+          "howToBuyDetailComponentBannerSubTitle": "远慕上海门店",
+          "howToBuyDetailComponentBannerTitle": "Wildmoor远慕线下门店",
+          "howToBuyDetailComponentScrollContent": "滑动探索更多",
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_55/15465ecfd877107ff8fb6bebd946be5a/how_to_buy_image55.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_56/ae45ef51e98acc9a22685f058f1222f1/bg.png"
+            }
+          }
+        }
+      ]
+    },
+    "howToBuyDetailComponent": {
+      "items": [
+        {
+          "howToBuyDetailComponentServiceTitle": "门店服务",
+          "howToBuyDetailComponentServiceContent": "服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容服务内容",
+          "serviceCarouselImageCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "3NPz7ynqpE5QbYSjmrmHyT"
+                },
+                "altText": null,
+                "imagepc": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_57/1405fab9781a26293aab6b1c5b47b3f0/kv-1.png"
+                },
+                "imagemobile": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_58/2ce40f66533b19e7d6ed3ef11ba748de/how_to_buy_image58.png"
+                }
+              },
+              {
+                "sys": {
+                  "id": "WkoFltsg4mNiXx9Aq4mxm"
+                },
+                "altText": null,
+                "imagepc": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_59/77cc3dadd11027b3cf76d0515a73a002/how_to_buy_image59.png"
+                },
+                "imagemobile": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_60/d87a18b347d82c7f87f30f144e6e0045/how_to_buy_image60.png"
+                }
+              },
+              {
+                "sys": {
+                  "id": "2PkYknsO0XhnuP529d9qyj"
+                },
+                "altText": null,
+                "imagepc": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_61/e73d829a6a4dfc073c52286f1d7335c5/how_to_buy_image61.png"
+                },
+                "imagemobile": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_62/d1e10302683b1e711fa88d5b9ad9cf06/how_to_buy_image62.png"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

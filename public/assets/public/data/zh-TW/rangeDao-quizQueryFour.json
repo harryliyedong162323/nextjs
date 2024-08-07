@@ -1,0 +1,48 @@
+{
+  "data": {
+    "dataQuizQ4Collection": {
+      "items": [
+        {
+          "id": 0,
+          "topicContent": "Q4.哪一杯，最接近您的那一杯？",
+          "optionAId": 1,
+          "optionAValue": "A",
+          "optionAContent": "A",
+          "optionBId": 1,
+          "optionBValue": "B",
+          "optionBContent": "B",
+          "optionCId": 2,
+          "optionCValue": "C",
+          "optionCContent": "C",
+          "optionAImage": {
+            "altText": null,
+            "imagemobile": {
+              "url": "/assets/quiz/q4/m1.png"
+            },
+            "imagepc": {
+              "url": "/assets/quiz/q4/pc1.png"
+            }
+          },
+          "optionBImage": {
+            "altText": null,
+            "imagemobile": {
+              "url": "/assets/quiz/q4/m2.png"
+            },
+            "imagepc": {
+              "url": "/assets/quiz/q4/pc2.png"
+            }
+          },
+          "optionCImage": {
+            "altText": null,
+            "imagemobile": {
+              "url": "/assets/quiz/q4/m3.png"
+            },
+            "imagepc": {
+              "url": "/assets/quiz/q4/pc3.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

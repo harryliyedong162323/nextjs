@@ -1,0 +1,40 @@
+{
+    "data": {
+        "rangeCollection": {
+            "items": [
+                {
+                    "flavourFinderComponentTitle": "寻味测试",
+                    "flavourFinderComponentStartContent": "开始测试",
+                    "flavourFinderComponentDescription1": "常说人如其食",
+                    "flavourFinderComponentDescription2": "你偏爱的威士忌以及饮用方式，体现了你的独到品味。 我们为你准备了5个有趣的问题，帮助你找到你的专属远慕。",
+                    "dywfResultSubtitle": "送礼场合建议",
+                    "dywfResultContent": "何不与挚友，共饮远方？",
+                    "dywfExploreContent": "前往购买",
+                    "dywfEmailContent": null,
+                    "dywfEmailName": null,
+                    "dywfEmailAddress": null,
+                    "dywfSubmitContent": null,
+                    "dywfSeeYourFlavorProfile": "查看你的测试结果",
+                    "dywfRedo": "重新测试"
+                }
+            ]
+        },
+        "quizMessage": {
+            "items": [
+                {
+                    "dywfMessageTitleSuccess": null,
+                    "dywfMessageSuccess": null,
+                    "dywfMessageTitleFail": null,
+                    "dywfMessageFail": null,
+                    "dywfMessageBtnContent": null,
+                    "dywfMessageStatus": {
+                        "rejected": "error",
+                        "resolved": "success",
+                        "pending": "loading",
+                        "repeat": "please do not resubmit"
+                    }
+                }
+            ]
+        }
+    }
+}

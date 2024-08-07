@@ -1,0 +1,21 @@
+{
+  "data": {
+    "dataQuizQ5Collection": {
+      "items": [
+        {
+          "id": 0,
+          "topicContent": "Q5.您認為哪個敘述最適合您？",
+          "optionAId": 0,
+          "optionAValue": "恭喜你，自成經典",
+          "optionAContent": "純粹主義者、不輕易妥協",
+          "optionBId": 0,
+          "optionBValue": "不拘一格，所以獨具一格。",
+          "optionBContent": "打破常規者",
+          "optionCId": 0,
+          "optionCValue": "恭喜你，為經典翻開新篇章。",
+          "optionCContent": "革新保守派"
+        }
+      ]
+    }
+  }
+}

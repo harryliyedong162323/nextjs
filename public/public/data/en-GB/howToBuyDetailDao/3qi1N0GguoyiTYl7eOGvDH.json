@@ -1,0 +1,92 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky UK - Selfridges How To Buy",
+          "keyWords": "wildmoor",
+          "description": "wildmoor description"
+        }
+      ]
+    },
+    "globalCampaignsComponent": {
+      "items": [
+        {
+          "howToBuyDetailComponentStoreName": "The Wildmoor House7",
+          "howToBuyDetailComponentStoreAddress": "400 Oxford St, London W1A 1AB, United Kingdom",
+          "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+          "howToBuyDetailComponentStorePhone": "+44 20 7160 6222",
+          "howToBuyDetailComponentBannerSubTitle": "SELFRIDGES",
+          "howToBuyDetailComponentBannerTitle": "WILDMOOR HOUSE",
+          "howToBuyDetailComponentScrollContent": "Scroll to explore more",
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_19/e7598c4b78b0dbdfc15240adab5dcd74/19copy.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_20/a1b9daf6b6f1be2f5ba44f6d2a02625c/20copy.png"
+            }
+          }
+        }
+      ]
+    },
+    "howToBuyDetailComponent": {
+      "items": [
+        {
+          "howToBuyDetailComponentServiceTitle": "SERVICING",
+          "howToBuyDetailComponentServiceContent": "Upscale department store stocking designer & popular clothing brands plus housewares & gifts.",
+          "Hours": "Hours:",
+          "am": "Monday 10 am–10 pm",
+          "Tuesday": "Tuesday 10 am–10 pm",
+          "Wednesday": "Wednesday 10 am–10 pm",
+          "Thursday": "Thursday 10 am–10 pm",
+          "Friday": "Friday (Good Friday) 10 am–10 pm",
+          "differ": "Holiday opening hours:",
+          "Saturday": "Saturday 10 am–9 pm",
+          "Sunday": "Sunday 11:30 am–6 pm",
+          "serviceCarouselImageCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "65OPIyc1PKfv3SQRuoiLPJ"
+                },
+                "altText": null,
+                "imagepc": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_39/e7756a281519d7c213567d4dff1aef96/how_to_buy_image39.png"
+                },
+                "imagemobile": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_40/4de583084d6fad30db56bbddcb1c3f67/how_to_buy_image40.png"
+                }
+              },
+              {
+                "sys": {
+                  "id": "68rhrE28PvDk14JxgQwdm4"
+                },
+                "altText": null,
+                "imagepc": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_41/762019ace00b4ef500bcd991100cdbbd/how_to_buy_image41.png"
+                },
+                "imagemobile": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_42/73cfb5e227b97ec895cd8dd4a2ab64d7/how_to_buy_image42.png"
+                }
+              },
+              {
+                "sys": {
+                  "id": "5nFDDr6Of8NMaS7uBZBplD"
+                },
+                "altText": null,
+                "imagepc": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_43/e011594c4175cc56e49942a147fa182d/how_to_buy_image43.png"
+                },
+                "imagemobile": {
+                  "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_44/5ce9ca30218f1c9cd861ab9615c31670/how_to_buy_image44.png"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

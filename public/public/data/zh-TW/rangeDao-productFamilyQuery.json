@@ -1,0 +1,248 @@
+{
+  "data": {
+    "productFamily": {
+      "items": [
+        {
+          "selectedProductId": 1,
+          "productScrollText": "滑動探索更多",
+          "productFamilyComponentProductsCollection": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd002",
+                "nickname": "Delicate Sherry Matured Smoke",
+                "inspired": "細膩的煙燻雪莉風味，",
+                "inspired1": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "30",
+                "tag": null,
+                "productName": "RUGGED COAST",
+                "recommendation": "遠慕30年",
+                "age": "30",
+                "unit": "年",
+                "prodInfo": "雪莉風味桶蘇格蘭威士忌",
+                "description": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "description1": "帶你領略以煙燻、海鹽和甜美香草氣息，",
+                "description2": "與辛香雪莉桶風味譜成的和諧奏鳴。",
+                "inspiredmoble": "細膩的煙燻雪莉風味，",
+                "inspiredmoble2": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "descriptionmoble": "靈感源自綿長蜿蜒的蘇格蘭海岸線。",
+                "descriptionmoble1": "帶你領略以煙燻、海鹽和甜美香草氣息，",
+                "descriptionmoble2": "與辛香雪莉桶風味譜成的和諧奏鳴。",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_103/2952507c08c46241b3a092c83aeeaf50/product_04.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_104/444f0cd7bb26b28a6360b33b674dc993/product_04.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd004",
+                "nickname": "Elevated Depth",
+                "inspired": "靈感源自矗立於蘇格蘭北部的黑山之巔，",
+                "inspired1": "遠慕系列之最。",
+                "seeMoreDetail": "查看更多",
+                "active": false,
+                "num": "40",
+                "tag": null,
+                "productName": "BLACK MOUNTAIN",
+                "recommendation": "遠慕40年",
+                "age": "40",
+                "unit": "年",
+                "prodInfo": "PX雪莉風味桶蘇格蘭威士忌",
+                "description": "年分與風味的顛峰，香草和焦糖的味道在此與奢華的雪莉",
+                "description1": "醇厚完美融合。",
+                "description2": "這是遠慕Wildmoor系列的頂峰。",
+                "descriptionmoble": "年分與風味的顛峰，香草和焦糖的味道在此與奢華的雪莉",
+                "descriptionmoble1": "醇厚完美融合。",
+                "descriptionmoble2": "這是遠慕Wildmoor系列的頂峰。",
+                "inspiredmoble": "靈感源自矗立於蘇格蘭北部的黑山之巔，",
+                "inspiredmoble2": "遠慕系列之最。",
+                "price": "£750 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_99/58671c1660bc98ecb26cb7530b6e37c1/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_100/1403a3a6bce1e109ecf86c377f6d30f9/product_01.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd005",
+                "nickname": "Rich Sherry Matured Malt",
+                "inspired": "濃郁雪莉風味的調和麥芽威士忌，",
+                "inspired1": "靈感源自蘇格蘭廣闊的高沼地。",
+                "seeMoreDetail": "查看更多",
+                "active": null,
+                "num": "23",
+                "tag": null,
+                "productName": "ANCIENT MOORLAND",
+                "recommendation": "遠慕23年",
+                "age": "23",
+                "unit": "年",
+                "prodInfo": "雪莉風味桶麥芽威士忌",
+                "description": "靈感源自蘇格蘭遼闊的高沼地(Moorland)，",
+                "description1": "獨具特色的橡木風味，",
+                "description2": "濃郁香草氣息與雪莉桶的甜美醇香相得益彰。",
+                "descriptionmoble": "靈感源自蘇格蘭遼闊的高沼地(Moorland)，",
+                "descriptionmoble1": "獨具特色的橡木風味，",
+                "descriptionmoble2": "缔濃郁香草氣息與雪莉桶的甜美醇香相得益彰。",
+                "inspiredmoble": "濃郁雪莉風味的調和麥芽威士忌，",
+                "inspiredmoble2": "靈感源自蘇格蘭廣闊的高沼地。",
+                "price": "£750",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_97/15746911f6e5bb952126cbb95cd7058c/product_AM.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_98/61b178afd43904ea006d1d04f044de7d/product_AM.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset19/533c116b893b60ffe5e2380444909412/image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset20/a502b0ee80a0fd98699091da4d00c16e/image20.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/4ed72d0f1ce6858b037921aa4645f12c/pc.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/c304e5054e15a2bbafc4cf13d11fdc33/mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd007",
+                "nickname": "Triple Oak",
+                "inspired": "三種美國橡木桶熟成，",
+                "inspired1": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "seeMoreDetail": "查看更多",
+                "active": false,
+                "num": "21",
+                "tag": null,
+                "productName": "HEATHER VALLEY",
+                "recommendation": "遠慕21年",
+                "age": "21",
+                "unit": "年",
+                "prodInfo": "三桶熟成蘇格蘭威士忌",
+                "description": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "description1": "明亮的烘烤橡木氣息，伴隨水果、香草與太妃糖風味交疊",
+                "description2": "的豐富層次，口感如絲緞般滑順。",
+                "inspiredmoble": "三種美國橡木桶熟成，",
+                "inspiredmoble2": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "descriptionmoble": "靈感源自石楠花盛開時的蘇格蘭高沼地。",
+                "descriptionmoble1": "明亮的烘烤橡木氣息，伴隨水果、香草與太妃糖風味交疊的",
+                "descriptionmoble2": "豐富層次，口感如絲緞般滑順。",
+                "price": "",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_97/15746911f6e5bb952126cbb95cd7058c/prod7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_97/15746911f6e5bb952126cbb95cd7058c/prod7.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/productFamily/bottle-7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/productFamily/bottle-7-m.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/productFamily/kv-tw.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/productFamily/kv-tw-m.png"
+                  }
+                }
+              }
+            ],
+            "menuCue": {
+              "menuLeft": "柔順",
+              "menuLeftText": "穀物",
+              "menuTop": "煙燻",
+              "menuTopText": "麥芽",
+              "menuRight": "醇厚",
+              "menBottom": "香甜"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

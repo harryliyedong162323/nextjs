@@ -1,0 +1,216 @@
+{
+  "data": {
+    "footerMenuCollection": {
+      "items": [
+        {
+          "joinUsPromptWord": "Join us for more from the Wild ",
+          "group1TitleId": 1,
+          "group1Title": "OUR STORY",
+          "group1TitleTargetPage": "/en-SG/story",
+          "group2TitleId": 2,
+          "group2Title": "THE WILDMOOR RANGE",
+          "group2TitleTargetPage": "/en-SG/range",
+          "group3TitleId": 3,
+          "group3Title": "THE WILD ESCAPE",
+          "group3TitleTargetPage": "/en-SG/localMarketActivity",
+          "group4TitleId": 4,
+          "group4Title": "",
+          "group4TitleTargetPage": "",
+          "regionLanguage": "Location and Language",
+          "regionSwitchingPromptWords": "Location and Language",
+          "drinkawareLink": "https://www.responsibility.org",
+          "privacyPolicyCta": {
+            "content": "Privacy Policy",
+            "targetPage": "/en-SG/privacyPolicy"
+          },
+          "termsOfServiceCta": {
+            "content": "Terms & Conditions",
+            "targetPage": "/en-SG/termsConditions"
+          },
+          "cookiesPolicy": {
+            "content": "Cookies Policy",
+            "targetPage": "/en-SG/cookieSetting"
+          },
+          "copyRightCta": {
+            "content": "© 2023 WILDMOOR All rights reserved",
+            "targetPage": null
+          },
+          "group1ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "3e5E8yhwip3ZH3GAFx5eql"
+                },
+                "content": "A Drop Of Wilderness",
+                "targetPage": "/en-SG/story?anchor=ADropOfWildness"
+              }
+            ]
+          },
+          "group2ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "5zyPOo92GzNVllWuRISdts"
+                },
+                "content": "Products Family",
+                "targetPage": "/en-SG/range?anchor=ProductsFamily"
+              },
+              {
+                "sys": {
+                  "id": "36chYnjMcsMCW2gnggB3Vr"
+                },
+                "content": "Serving Suggestion",
+                "targetPage": "/en-SG/range?anchor=ServingSuggestion"
+              },
+              {
+                "sys": {
+                  "id": "4IOZYBTuyfEMSDdRA9KpHf"
+                },
+                "content": "The Story Behind Our Bottle",
+                "targetPage": "/en-SG/range?anchor=BottleConcept"
+              },
+              {
+                "sys": {
+                  "id": "4hWnPlT8MeqOX5F3E53Pv1"
+                },
+                "content": "Discover Your Wild Flavour",
+                "targetPage": "/en-SG/range?anchor=DiscoverYourWildFlavour"
+              }
+            ]
+          },
+          "group3ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "23A9F9oBe49xkRg9QAyJIO"
+                },
+                "content": "Global News",
+                "targetPage": "/en-SG/localMarketActivity?anchor=WildmoorHouse"
+              },
+              {
+                "sys": {
+                  "id": "6CKdBwcHwiU3bRkSu0Duz0"
+                },
+                "content": "The Wild Escape",
+                "targetPage": "/en-SG/localMarketActivity?anchor=GlobalNews"
+              },
+              {
+                "sys": {
+                  "id": "7JIeCBoyMFF9W2HuxRo5WJ"
+                },
+                "content": "Tales From The Wild",
+                "targetPage": "/en-SG/localMarketActivity?anchor=TheWildEscape"
+              }
+            ]
+          },
+          "group4ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "5nDtwnTRPlq0C6F2va5DsP"
+                },
+                "content": "",
+                "targetPage": "/en-SG/howToBuy?anchor=RegionSelect"
+              },
+              {
+                "sys": {
+                  "id": "2I02m3Xsr5DpRVrgSiEm9S"
+                },
+                "content": "",
+                "targetPage": "/en-SG/howToBuy?anchor=IRLExperiences"
+              },
+              {
+                "sys": {
+                  "id": "2ynHhlxJXNohoiQaw8du5M"
+                },
+                "content": "",
+                "targetPage": "/en-SG/howToBuy?anchor=IRLExperiences"
+              }
+            ]
+          },
+          "locationAndLanguageCollection": {
+            "items": [
+              {
+                "region": "CHINA MAINLAND",
+                "language": "SIMPLIFIED CHINESE",
+                "domain": "http://www.wildmoorwhisky.com.cn/",
+                "redirectPath": "/zh-CN/home",
+                "path": "zh-CN"
+              },
+              {
+                "region": "TAIWAN REGION",
+                "language": "TRADITIONAL CHINESE",
+                "domain": "",
+                "redirectPath": "/zh-TW/home",
+                "path": "zh-TW"
+              },
+              {
+                "region": "SINGAPORE",
+                "language": "ENGLISH",
+                "domain": "",
+                "redirectPath": "/en-SG/home",
+                "path": "en-SG"
+              },
+              {
+                "region": "UNITED KINGDOM",
+                "language": "ENGLISH",
+                "domain": "",
+                "redirectPath": "/en-GB/home",
+                "path": "en-GB"
+              },
+              {
+                "region": "GLOBAL",
+                "language": "ENGLISH",
+                "domain": "",
+                "redirectPath": "/en/home",
+                "path": "en"
+              }
+            ]
+          },
+          "logo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset7/88ca91cd3f61b6618fef82ce6506b3a1/header_image13.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset8/c732f4d2780e6f00183483a6572876e5/header_image14.png"
+            },
+            "imagebeian": {
+              "url": "/assets/footer/beianlogo.png"
+            }
+          },
+          "drinkawareImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/footer/footerlogo.png"
+            },
+            "imagebeian": {
+              "url": "/assets/footer/beianlogo.png"
+            },
+            "imagemobile": {
+              "url": "/assets/footer/footerlogo-m.png"
+            }
+          },
+          "joinUsImagesCollection": {
+            "items": [
+              {
+                "targetPage": "https://www.instagram.com/wildmoorwhisky",
+                "channelName": "Instgram",
+                "qrCodeImage": null,
+                "iconImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/header_image1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset2/67129e01d7159b734acf9bc5427ee61d/header_image2.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

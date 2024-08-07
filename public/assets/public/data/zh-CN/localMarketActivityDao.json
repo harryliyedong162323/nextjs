@@ -1,0 +1,394 @@
+{
+  "data": {
+    "globalCampaigns": {
+      "items": [
+        {
+          "howToBuyDetailComponentScrollContent": "滑动探索更多",
+          "howToBuyDetailComponentBannerSubTitle": "远慕近事",
+          "howToBuyDetailComponentBannerImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_1/bb03d917189eaaee13935e63d91b1e8f/Wildmoor_Black_Mountain_Landscape_2.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_2/89ae5bd2b25d5ab259089554a29c3035/Wildmoor_Black_Mountain_Landscape_2.png"
+            }
+          }
+        }
+      ]
+    },
+    "interactiveVideo": {
+      "items": [
+        {
+          "interactiveVideoComponentIsShow": null,
+          "interactiveVideoComponentJumpUrl": "zh-CN/localMarketActivity",
+          "interactiveVideoComponentTitle": "远慕近事",
+          "interactiveVideoComponentExploreMore": "探索更多",
+          "interactiveVideoComponentExploreMoreImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset69/ccc3ffc7fa409f93a37944c496c8c004/image137.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset70/b33b098d98f32fbef9e4249aa36ed1c1/image138.png"
+            }
+          },
+          "interactiveVideoComponentImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset67/0198911439cbc07aa2774ab1b5b1ec4f/image133.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset68/c9b3591561c5e120d5725f1d297cdf36/image134.png"
+            }
+          }
+        }
+      ]
+    },
+    "seo": {
+      "items": [
+        {
+          "title": "WILDMOOR Whisky -- a drop of Wilderness in Every Glass",
+          "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky,WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky,WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky,WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+          "description": "WILDMOOR is a new and epic range of blended Scotch whiskies from William Grant & Sons, inspired by the Scottish wilderness."
+        }
+      ]
+    },
+    "talesFromTheWild": {
+      "items": [
+        {
+          "talesFromTheWildTitle": "他们说",
+          "talesFromTheWildListCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "2KxFquRbFJTL8DuUe6cqQs"
+                },
+                "id": 10086,
+                "listName": "ID 名字1",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_3/0a66ba46d48baaa3f269616418c9c8b3/wild_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_4/26075ea74eb65f3fb72cdb5520542c15/range_image4.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_111/494772749068d91fe70a99625d6492eb/range_image221.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_112/8f5bc30114dfffa7d10fec09899a3c2a/wild_01_m.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_1/d34559197fc78e8dc0edc76e4edbdf32/wild_face.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_2/0c11ceb5fe399331775c27086cc3fba6/wild_face.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "2vIdClbAAgcpnbF2iT2MxO"
+                },
+                "id": 10087,
+                "listName": "ID 名字2",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_7/d25434e4ffa1472ef36a98ec060d8cd9/range_image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_8/ed2346282718c4914f4d952035d70ef8/wild_02_m.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_113/7def28d3bf1add3b8ddb591e788719e2/wild_02_small.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_114/cc1db4f62e081b2ed8fe69962f166e8a/range_image224.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_5/a8d9b4f16b2916e93c4d100e358b2384/range_image5.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_6/cd61b0a95a60c0d4fba9a57e3d4a3829/range_image6.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6oC1zaN3Dr6mIH9ZAGaYnb"
+                },
+                "id": 10088,
+                "listName": "ID 名字3",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_11/17b3978b4ddae4fe94edc0255ce2d9f2/range_image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_12/cce7334444312207429cb2b392512552/range_image12.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_115/1c92da7d15a39fbc57a1bb51c6813c46/range_image225.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_116/01c5a326074c10dbda6c104fde476980/wild_03_m.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_9/bdedd4e8b860dd15fc520f178e9ea4e1/wild_face.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_10/e9a833df92d271dca45e6a4f09a952f9/range_image10.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "au4pgwTmg45AYsgInYa9d"
+                },
+                "id": 10089,
+                "listName": "ID 名字4",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_15/a12bb473657d07ad48ff40ea380b13d0/range_image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_16/511dd7cbc0e53d0583740eae606dab82/range_image16.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_117/60a846fd6d522f1126164993542e8d06/range_image227.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_118/3309e55a97984daeb5578514f564ceee/range_image228.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_13/16e48c21c0a7ba68bd27c976748873b4/range_image13.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_14/c75275c3d437e4ad6b7c58b70351ae9b/range_image14.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "1HkRFv8fBbu285CWlkoMH8"
+                },
+                "id": 10090,
+                "listName": "ID 名字5",
+                "listDescription": "一年中和一生中的秋天，时光很短暂，但是...",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_19/f18341b208fe5fdc738b1784a4db6a63/range_image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_20/220ed3ff3b366d192a197bd857be10a2/range_image20.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_119/985f5a7f315ec0a227269dc5e09640b0/wild_05_small.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_120/d5ea54f6ab04ea8149ab8766b672438b/range_image230.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_17/5ea1e718b17eb582c253cd69c1c85a86/range_image17.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_18/13986b5285fa1bcab8fb0800cb8543f7/wild_face.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "introduceCampaign": {
+      "items": [
+        {
+          "introduceCampaignComponentTitle": "全球活动",
+          "introduceCampaignComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset1/eb6e958b2fbe0ea5a2b5d77772739341/image1.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset2/fa0bda22a11db9fab816be521d039c90/image2.png"
+            }
+          },
+          "introduceCampaignComponentCampaignsCollection": {
+            "items": [
+              {
+                "id": 4,
+                "location": "Beijing",
+                "year": "2023-11-11",
+                "description": "思索是一道大门，通向世界上没有...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset31/a455ac8a67dc35bba3ce5579afbf4a67/image31.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset32/2387c0f75bfef11cfcaf6373037d9f68/image32.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "location": "Shanghai",
+                "year": "2023-11-13",
+                "description": "思索是一道大门，通向世界上没有...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset33/eff91c4dcb2641b01ca5a820d04b095c/image33.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset34/50ed3d86dcb7c2b89e3555885663c43c/image34.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "location": "上海",
+                "year": "2023-11-15",
+                "description": "思索是一道大门，通向世界上没有...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset35/b770fc2e0a7f62bc9bd8ec64107f410a/image35.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset36/636a4d98135d48658a7081f3555593a2/image36.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "location": "伦敦",
+                "year": "2023-11-12",
+                "description": "所谓辉煌的人生，不过是欲望的囚...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset29/a5c014e8c697b9e7ab26e1d644d5aa8f/image29.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset30/dda3a2d1eb39b953f67057b2c7cb859a/image30.png"
+                  }
+                }
+              },
+              {
+                "id": 0,
+                "location": "纽约",
+                "year": "2023-11-11",
+                "description": "我们登上并非我们所选择的舞台...",
+                "detailPage": {
+                  "sys": {
+                    "id": "4BjySvcoWs6JVdlKpvFsOT"
+                  },
+                  "activityDetailComponentTitle": "探访神秘的塞内冈比石圈"
+                },
+                "campaignImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset27/9481c9f1dddd4511a809d11bed05689a/image27.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset28/e609117e2ac0503dd247241addd34b77/image28.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

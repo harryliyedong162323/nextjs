@@ -1,0 +1,435 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "Wildmoor Whisky TW - T&Cs",
+                    "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky, WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky, WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,  WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky, WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+                    "description": "WILDMOOR is a new and epic range of blended Scotch whiskies from William Grant & Sons, inspired by the Scottish wilderness."
+                }
+            ]
+        },
+        "termsConditions": {
+            "items": [
+                {
+                    "detailCollection": {
+                        "items": [
+                            {
+                                "title": "簡介",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "1.您若未註冊您的詳細資訊，仍得存取本網站大部分區域。本網站的特定區域僅開放給註冊者使用。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "2.本公司得藉由更新本聲明，修改這些條款及條件。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "3.您有責定期檢閱本頁面，確認這些條款及條件是否有更新內容，更新內容於張貼後即生效。您若繼續使用本網站，即代表您接受這些條款及條件，包括我們的隱私權和 Cookie 聲明。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "智慧財產",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "4.除非有另外規定，否則本網站上所有材料的版權和其他智慧財產權 (包括但不限於商標、設計、標誌、文字、圖片、音訊和影片材料和瓶身設計) 皆為本公司所擁有或授權。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "5.不限於商標和所有相關標誌、標籤、瓶身設計和與百富品牌相關的所有其他智慧財產權皆為本公司所擁有。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "6.在不損及這些條款與條件第 4 條的情況下，本網站所使用的任何其他產品名稱和圖片皆為識別目的所使用。上述產品名稱和圖片所包括的所有商標和註冊商標皆為其各自擁有者的財產。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "7.除非經本公司事先書面同意，否則不得以任何方式複製、重製、重新發行、上傳、張貼、傳送、散佈、商業開發、改編本網站的材料。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "8.保留這些條款及條件未明確授予的任何權利。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "服務存取權和合理使用",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "9.對於本網站出於任何原因無法於任何時間或期間使用之情形，本公司毋須負責。本網站之存取權得遭暫停或終止，而不另行通知。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "10.若違反這些條款及條件，本公司在不損及第 9 條的情況下保留暫停、終止或限制網站存取權的權利。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "11.您應對於所使用的任何密碼和使用者名稱負保密義務，且若本公司懷疑您未遵守這些條款及條件，本公司保留暫停或終止使用者名稱和密碼之權利。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "12.您只能因合法目的使用本網站。下列情況您不得使用本網站：以任何方式違反任何適用當地、國家或國際法律或法規；以任何非法、欺詐或會造成非法或欺詐影響的方式傳輸或發送任何未經請求或未經授權的廣告或宣傳材料，或任何形式的垃圾郵件；故意傳輸任何資料、傳送或上傳包含病毒或相似電腦代碼的任何材料，以惡意影響任何電腦軟體或硬體的運作；從事違反 1990 英國電腦濫用法的任何其他活動。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "貢獻",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "13.我們的隱私權和 Cookie 聲明所述的個人可識別資訊以外，當您受邀對本網站作出任何貢獻時 (包括但不限於任何文字、圖表、影片或音訊) 表示您就任何該等作品和/或任何現在已知或未來發展的媒體中的其他作品合作，授予本公司永久、全球性、免權利金、非獨家、可再授權的權利和許可以使用、重製、修改、改編、翻譯、從其創建衍生作品、散佈、表演、播放、公開通訊和行使所有版權和公開權，以保留此類內容中可能存在的任何權利之完整期限，並依循本公司隱私權和 Cookie 聲明中所規定的隱私限制。若您不希望將此類權利授予本公司，您不應對於本網站作出貢獻。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "14.您若向本網站提交同意，即表示您也同意下列事項：",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "保證該等貢獻為您本身的原始作品，並且您有權提供讓本公司出於上述所有目的使用；以及同意出於其在網站中提交和發表目的，以及其他上述原因放棄您的貢獻中之任何著作人格權。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "15.您同意不提交非原始，或以其他方式侵犯權利、限制或禁止任何第三方使用或享受本網站的任何貢獻。您的使用和貢獻不可為非法，或騷擾或對任何人造成損害或不便，並且不會包含淫穢或冒犯性內容，或破壞網站中的正常對話流程。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "16.您不會自己或鼓勵任何其他一方做出聲明或貢獻，包括：宣誓和/或不可接受、猥褻、誹謗、威脅、暴力或歧視 (基於種族、宗教、生理性別、性別認同、國籍、年齡或身心障礙) 的語言；進行鼓勵、宣傳或提供非法或犯罪活動資訊的討論 (包括但不限於色情言論、爆炸物、武器、暴力、毒品、程式病毒、電腦入侵和版權侵害)；張貼侵犯任何第三方智慧財產權的其他網站或內容地址；交換電話號碼或住家地址、騷擾其他網站使用者 (私下或於公開平台) 或假冒我們的員工、名人或任何其他角色；做出可能破壞或損害網站功能、穩定性或安全性的行動 (包括但不限於引入病毒、臭蟲、蠕蟲、特洛伊木馬或任何其他形式的汙染)；廣告、宣傳、未經請求的方式或基於未經授權的商業目的而使用網站的任何其他方式，以及以任何貶抑方式提及本公司或網站。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "17.您同意就您違反或遭懷疑違反任何條款或任何第三方權利或任何違法行為賠償本公司所有可能的法律費用、損害和其他支出。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "18.您瞭解儘管我們要求所有網站使用者遵循這些條款，其他使用者仍可能提交您認為冒犯性或令人反感的材料。本公司對於個人使用者提交給網站的內容不承擔責任或義務，且此類貢獻並不代表本公司的觀點。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "19.您對於我們網站作出貢獻時，即代表您同意授予我們免權利金、非獨家的權利以發佈或在全球任何媒體中以我們所希望的其他方式使用材料。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "連結至其他網站",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "20.本網站中引導至第三方網站的連結僅為您的便利而提供。若您使用這些連結，您會離開本網站。本公司並無審閱所有這些第三方網站，且無法控制這些網站或其內容或可用性，也對此不負責任。因此，本公司不會背書或擔保這些網站或其中的任何材料，或因使用這些網站而得到的任何結果。若您決定存取本網站中所連結到的任何第三方網站，則須自行承擔一切風險",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "責任限制",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "21.本公司會盡力確保網站中的資訊正確性，但本公司不保證網站材料之精確性和完整性。本公司可能會隨時對於網站中的材料或所描述的產品和價格作出變更，而不另行通知。網站上的材料有可能已過期，且本公司不保證會更新此類材料。在法律允許的最大範圍內，本公司在排除所有聲明、保證、條件和其他條款 (包括但不限於法律默示的條款) 的條件下向您提供網站。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "22.根據第 23 條，本公司、任何其他一方 (不論是否參與創造、製造、維護或交付網站) 和任何本公司的集團公司和其中的人員、主管、員工、股東或代理人皆排除於任何可能影響您或第三方的類似損失或損害 (包括但不限於任何直接、間接、懲罰性或衍生性損失或損害，或任何收入、利潤、商譽、資料、合約、金錢使用的損失，或因營業中斷引起或相關聯的損失或損害，和無論係因侵權 (包括但不限於疏忽)、合約或其他事項) 的所有義務和責任。無論這些損失或損害以任何方式與本網站相關，或與本網站、與本網站連接的任何網站或此類網站上的材料使用、無法使用或使用結果有關，包括但不限於因可能感染電腦設備、軟體、資料，或其他供您存取、使用、瀏覽網站或下載任何網站材料，或任何連結至本網站之網站的財產之病毒所造成的損失或損害。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "23.這些條款及條件的任何部分皆不應限制本公司之以下義務：因本公司、其主管、代理人、人員或代表的疏忽所造成的死亡或個人傷害；詐騙或欺詐性不實陳述；或法律無法排除或限制的任何其他義務。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "title": "管轄法律",
+                                "content": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "24.這些條款及條件應受蘇格蘭法律約束，並依其解釋。這些條款及條件所引發的爭議皆由蘇格蘭法院管轄，即使本公司保留您在您居住國家/地區或任何其他相關國家/地區違反這些條款及條件時對您發起訴訟之權利。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

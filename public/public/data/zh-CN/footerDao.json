@@ -1,0 +1,239 @@
+{
+  "data": {
+    "footerMenuCollection": {
+      "items": [
+        {
+          "joinUsPromptWord": "",
+          "group1TitleId": 1,
+          "group1Title": "远慕故事",
+          "group1TitleTargetPage": "/zh-CN/story",
+          "group2TitleId": 2,
+          "group2Title": "远慕系列",
+          "group2TitleTargetPage": "/zh-CN/range",
+          "group3TitleId": 3,
+          "group3Title": "远慕近事",
+          "group3TitleTargetPage": "/zh-CN/localMarketActivity",
+          "group4TitleId": 4,
+          "group4Title": "",
+          "group4TitleTargetPage": "",
+          "regionLanguage": "区域/语言",
+          "regionSwitchingPromptWords": "区域/语言",
+          "drinkawareLink": "https://www.responsibility.org",
+          "privacyPolicyCta": {
+            "content": "隐私政策",
+            "targetPage": "/zh-CN/privacyPolicy"
+          },
+          "termsOfServiceCta": {
+            "content": "条款&条件",
+            "targetPage": "/zh-CN/termsConditions"
+          },
+          "cookiesPolicy": {
+            "content": "Cookies政策",
+            "targetPage": "/zh-CN/cookieSetting"
+          },
+          "copyRightCta": {
+            "content": "© 2023  WILDMOOR,远慕版权所有",
+            "targetPage": null
+          },
+          "group1ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "3e5E8yhwip3ZH3GAFx5eql"
+                },
+                "content": "启程远方",
+                "targetPage": "/zh-CN/story?anchor=ADropOfWildness"
+              }
+            ]
+          },
+          "group2ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "5zyPOo92GzNVllWuRISdts"
+                },
+                "content": "家族窖藏",
+                "targetPage": "/zh-CN/range?anchor=ProductsFamily"
+              },
+              {
+                "sys": {
+                  "id": "36chYnjMcsMCW2gnggB3Vr"
+                },
+                "content": "品鉴建议",
+                "targetPage": "/zh-CN/range?anchor=ServingSuggestion"
+              },
+              {
+                "sys": {
+                  "id": "4IOZYBTuyfEMSDdRA9KpHf"
+                },
+                "content": "瓶身巧思",
+                "targetPage": "/zh-CN/range?anchor=BottleConcept"
+              }
+            ]
+          },
+          "group3ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "2Fkvk6R45QkFkc80MWbNsc"
+                },
+                "content": "全球活动",
+                "targetPage": "/zh-CN/localMarketActivity?anchor=GlobalNews"
+              },
+              {
+                "sys": {
+                  "id": "k18jPrvgrb0IdYTzzx0tC"
+                },
+                "content": "远慕近事",
+                "targetPage": "/zh-CN/localMarketActivity?anchor=TheWildEscape"
+              },
+              {
+                "sys": {
+                  "id": "7JIeCBoyMFF9W2HuxRo5WJ"
+                },
+                "content": "他们说",
+                "targetPage": "/zh-CN/localMarketActivity?anchor=TheWildEscape"
+              }
+            ]
+          },
+          "group4ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "5nDtwnTRPlq0C6F2va5DsP"
+                },
+                "content": "",
+                "targetPage": "/zh-CN/howToBuy?anchor=RegionSelect"
+              },
+              {
+                "sys": {
+                  "id": "2I02m3Xsr5DpRVrgSiEm9S"
+                },
+                "content": "",
+                "targetPage": "/zh-CN/howToBuy?anchor=IRLExperiences"
+              },
+              {
+                "sys": {
+                  "id": "2ynHhlxJXNohoiQaw8du5M"
+                },
+                "content": "",
+                "targetPage": "/zh-CN/howToBuy?anchor=IRLExperiences"
+              }
+            ]
+          },
+          "locationAndLanguageCollection": {
+            "items": [
+              {
+                "region": "中国大陆 - 简体中文",
+                "language": "",
+                "domain": "http://www.wildmoorwhisky.com.cn/",
+                "redirectPath": "/zh-CN/home",
+                "path": "zh-CN"
+              },
+              {
+                "region": "中国台湾 - 繁体中文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/zh-TW/home",
+                "path": "zh-TW"
+              },
+              {
+                "region": "新加坡 - 英文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/en-SG/home",
+                "path": "en-SG"
+              },
+              {
+                "region": "英国 - 英文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/en-GB/home",
+                "path": "en-GB"
+              },
+              {
+                "region": "全球 - 英文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/en/home",
+                "path": "en"
+              }
+            ]
+          },
+          "logo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset7/88ca91cd3f61b6618fef82ce6506b3a1/footer_pc_logo.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset8/c732f4d2780e6f00183483a6572876e5/footer_m_logo.png"
+            },
+            "imagebeian": {
+              "url": "/assets/footer/beianlogo.png"
+            }
+          },
+          "drinkawareImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/footer/footerlogo.png"
+            },
+            "imagebeian": {
+              "url": "/assets/footer/beianlogo.png"
+            },
+            "imagemobile": {
+              "url": "/assets/footer/footerlogo-m.png"
+            }
+          },
+          "joinUsImagesCollection": {
+            "items": [
+              {
+                "targetPage": "#",
+                "channelName": "Instgram",
+                "qrCodeImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/pc-x.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/m-x.png"
+                  }
+                },
+                "iconImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/pc_icon.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset2/67129e01d7159b734acf9bc5427ee61d/m_icon.png"
+                  }
+                }
+              },
+              {
+                "targetPage": "#",
+                "channelName": "Facebook",
+                "qrCodeImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/pc-w.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/m-w.png"
+                  }
+                },
+                "iconImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset3/32dc735f3bb363162bfca77e0aaae7ad/w-pc_icon.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/footer_asset4/dc4dfccaffa7468a6fbe5ab04d6a8748/w_m_icon.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "data": {
+    "dataQuizQ5Collection": {
+      "items": [
+        {
+          "id": 0,
+          "topicContent": "Q5. 你觉得自己是哪一类人？",
+          "optionAId": 0,
+          "optionAValue": "恭喜你，自成经典。",
+          "optionAContent": "纯粹主义者",
+          "optionBId": 0,
+          "optionBValue": "不拘一格，所以独具一格。",
+          "optionBContent": "破局者",
+          "optionCId": 0,
+          "optionCValue": "恭喜你，为旧经典翻开新篇章。",
+          "optionCContent": "革新传统派"
+        }
+      ]
+    }
+  }
+}

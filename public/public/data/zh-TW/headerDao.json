@@ -1,0 +1,149 @@
+{
+  "data": {
+    "headerMenuCollection": {
+      "items": [
+        {
+          "group1TitleId": 1,
+          "group1Title": "首頁",
+          "group1TargetPage": "/zh-TW/home",
+          "group1ItemsCollection": {
+            "items": []
+          },
+          "group2TitleId": 2,
+          "group2Title": "遠慕故事",
+          "group2TargetPage": "/zh-TW/story",
+          "group3TitleId": 3,
+          "group3Title": "遠慕蘇格蘭威士忌",
+          "group3TargetPage": "/zh-TW/range",
+          "group4TitleId": 4,
+          "group4Title": "远慕近事",
+          "group4TargetPage": "/zh-TW/localMarketActivity",
+          "group5TitleId": 5,
+          "group5Title": "尋找銷售據點",
+          "group5TargetPage": "/zh-TW/howToBuy",
+          "regionSwitchingPromptWords": "區域/語言",
+          "regionLanguage": "區域/語言",
+          "group2ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "41QBJC679EBtMNL0tXZlq8"
+                },
+                "content": "啟程遠方",
+                "targetPage": "/zh-TW/story?anchor=ADropOfWildness"
+              }
+            ]
+          },
+          "group3ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "5zyPOo92GzNVllWuRISdts"
+                },
+                "content": "遠慕系列威士忌",
+                "targetPage": "/zh-TW/range?anchor=ProductsFamily"
+              },
+              {
+                "sys": {
+                  "id": "36chYnjMcsMCW2gnggB3Vr"
+                },
+                "content": "品酩建議",
+                "targetPage": "/zh-TW/range?anchor=ServingSuggestion"
+              },
+              {
+                "sys": {
+                  "id": "4IOZYBTuyfEMSDdRA9KpHf"
+                },
+                "content": "瓶身故事",
+                "targetPage": "/zh-TW/range?anchor=BottleConcept"
+              },
+              {
+                "sys": {
+                  "id": "4hWnPlT8MeqOX5F3E53Pv1"
+                },
+                "content": "尋味測試",
+                "targetPage": "/zh-TW/range?anchor=DiscoverYourWildFlavour"
+              }
+            ]
+          },
+          "group4ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "2Fkvk6R45QkFkc80MWbNsc"
+                },
+                "content": "全球活动",
+                "targetPage": "/zh-TW/localMarketActivity?anchor=GlobalNews"
+              },
+              {
+                "sys": {
+                  "id": "k18jPrvgrb0IdYTzzx0tC"
+                },
+                "content": "远慕近事",
+                "targetPage": "/zh-TW/localMarketActivity?anchor=TheWildEscape"
+              },
+              {
+                "sys": {
+                  "id": "1CdaN1kbFZSSZfydHjpErv"
+                },
+                "content": "他们说",
+                "targetPage": "/zh-TW/localMarketActivity?anchor=TalesFromTheWild"
+              }
+            ]
+          },
+          "group5ItemsCollection": {
+            "items": []
+          },
+          "locationAndLanguageCollection": {
+            "items": [
+              {
+                "region": "中國大陸 - 簡體中文",
+                "language": "",
+                "domain": "http://www.wildmoorwhisky.com.cn/",
+                "redirectPath": "/zh-CN/home",
+                "path": "zh-CN"
+              },
+              {
+                "region": "台灣地區 - 繁體中文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/zh-TW/home",
+                "path": "zh-TW"
+              },
+              {
+                "region": "新加坡 - 英文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/en-SG/home",
+                "path": "en-SG"
+              },
+              {
+                "region": "英國 - 英文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/en-GB/home",
+                "path": "en-GB"
+              },
+              {
+                "region": "全球 - 英文",
+                "language": "",
+                "domain": "",
+                "redirectPath": "/en/home",
+                "path": "en"
+              }
+            ]
+          },
+          "logo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/header_asset1/4749a6a07bb0bb5077ff995d7843b01e/tw-logo-pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/header_asset2/2586161d7abc49575d37cfb507498691/tw-logo-mobile.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

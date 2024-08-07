@@ -1,0 +1,541 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky KR - Our Story",
+          "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky, WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky, WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,  WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky, WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+          "description": "WILDMOOR  is the cumulation of six decade -long mission to collect the rarest and most prestigious of aged whiskies.  Curated by Master Blender Brian Kinsman and sourced from Scotland's untamed regions and leading distilleries."
+        }
+      ]
+    },
+    "storyChapterOne": {
+      "items": [
+        {
+          "storyChapterOneComponentTextContent": "From the widest ranging ancient reserve of Scotch Whisky in the world, a new range of high-aged blended whiskies is born.",
+          "storyChapterOneComponentSlidingText": "Scroll to explore more",
+          "storyChapterOneComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_1/41db8dac07b309604333339d9b3b0e42/os_image1.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_2/d1f2456307cacb7c205e3e7706cfa4f6/os_image2.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterTwo": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterTwoComponentDescription": "Drawn from the William Grant & Sons Family Collection, ",
+          "storyChapterTwoComponentDescription1": "Wildmoor is the cumulation of six decade-long mission to",
+          "storyChapterTwoComponentDescription2": "collect the rarest and most prestigious of aged whiskies",
+          "storyChapterTwoComponentFirst": "THE WILLIAM GRANT",
+          "storyChapterTwoComponentTwo": " & SONS FAMILY COLLECTION,",
+          "storyChapterTwoComponentSecond": "SIX DECADES",
+          "storyChapterTwoComponentThird": "",
+          "storyChapterTwoComponentFourth": "IN THE MAKING,",
+          "storyChapterTwoComponentFifth": "Once kept private, now released.",
+          "storyChapterTwoComponentSlidingText": "Scroll to explore more",
+          "storyChapterTwoComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_3/b9a0ea9646e5c5205b3a208baef6e643/os_image3.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_4/d09de88cd367cc1fb9e1cfafc34c16c7/os_image4.png"
+            }
+          },
+          "storyChapterTwoComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_5/5b478fbb9ff2c2b0700305a2585ba0c1/os_image5.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_5/5b478fbb9ff2c2b0700305a2585ba0c1/os_image5.png"
+            }
+          },
+          "chapterTwoFaceImageTwo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/4BrI84nlltleK8toexKdev/6e58c438de67b6256353b04ea59fcbde/brand_story_chatper_02_face_big.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/2DQ4BjDjK33dmKITTWtclC/f0c304bba618b94a927d35ec6b59d15b/brand_story_chatper_02_face_big.png"
+            }
+          },
+          "chapterTwoFaceVideoPcTwo": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/5lZdkpbuI54g7pkefqdBRR/9b455123721c924f014fa30a80e4b560/story_bg.mp4"
+            }
+          },
+          "chapterTwoFaceVideoMobileTwo": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/5lZdkpbuI54g7pkefqdBRR/9b455123721c924f014fa30a80e4b560/story_bg.mp4"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterThree": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterThreeComponentDescription": "Curated under the watchful eye of award winning William Grant & Sons Master",
+          "storyChapterThreeComponentDescription1": "Blender Brian Kinsman and sourced from across Scotland's untamed regions",
+          "storyChapterThreeComponentDescription2": "and leading distilleries – including notable ghost distillery stocks – this is widely",
+          "storyChapterThreeComponentDescription3": "considered the finest and most diverse collection of aged Scotch Whisky ever",
+          "storyChapterThreeComponentDescription4": "assembled.",
+          "storyChapterThreeComponentSlidingText": "Scroll to explore more",
+          "storyChapterThreeComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_7/d2b46486ed3905c3876c55113d8a10ab/os_image7.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_8/872f00acae428043d05f957ae72ee5c5/os_image8.png"
+            }
+          },
+          "storyChapterThreeComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_9/a064c6ce922cf414d3b11b141b6ed9f6/chapter_three_face_pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_10/a6ac4dc065770b36ae03a35397f26756/chapter_three_face_mobile.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterFour": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterFourComponentDescription": "Drawn from the historic William Grant & Sons ",
+          "storyChapterFourComponentDescription1": "warehouses in Dufftown in the heart of Speyside and ",
+          "storyChapterFourComponentDescription2": "Girvan on the Ayrshire coast;  Brian Kinsman has",
+          "storyChapterFourComponentDescription3": "created a range of Scotch whiskies that invoke not",
+          "storyChapterFourComponentDescription4": "gentle, picturesque glens, but the epic awe-inspiring",
+          "storyChapterFourComponentDescription5": "landscapes of Scotland.",
+          "storyChapterFourComponentFirst": "Inspired by, ",
+          "storyChapterFourComponentSecond": "Wild Landscapes,",
+          "storyChapterFourComponentThird": "unbound by region.",
+          "storyChapterFourComponentSlidingText": "Scroll to explore more",
+          "chapterFourFaceImageTwo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/4k1sQHNitzRtDkDEJmkUlC/a5533fea466998660da5ae1f9a631455/brand_story_chatper_04_face_big-pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/7pa26cBQbqmFxijol2hCwD/6535cd286cbb9ae85ce1d6516a2a77dc/brand_story_chatper_04_face_big-m.png"
+            }
+          },
+          "storyChapterFourComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_11/572459f7ed6567f1c2ef9c2663e4c59e/os_image11.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_12/ec718876c478498f09084cea3e300d4f/os_image12.png"
+            }
+          },
+          "storyChapterFourComponentFaceImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_13/37499471095e00dd6ab576794b53c153/pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_14/9cc27395ac70355f02821bba123a69b2/mobile.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterFive": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterFiveComponentDescription": "Wild wind-swept moorlands, savage",
+          "storyChapterFiveComponentDescription1": "waves breaking across jagged",
+          "storyChapterFiveComponentDescription2": "shorelines. And rolling mountains",
+          "storyChapterFiveComponentDescription3": "shrouded in mist.",
+          "storyChapterFiveComponentSlidingText": "Scroll to explore more",
+          "storyChapterFiveComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_15/aee27f72d9800d3c9593ebea1053687e/os_image15.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_16/f606048fb5e59d905ac6a1ff60377cab/os_image16.png"
+            }
+          },
+          "storyChapterFiveComponentSmallImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_17/3353263fb2c64b3c878a60ff728f42c6/os_image17.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_18/807fda9fe89160ee292e3b2c748eab62/os_image18.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterSix": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterSixComponentFirst": "An unrestrained",
+          "storyChapterSixComponentSecond": "flavour experience",
+          "storyChapterSixComponentDescription": "Taking from  the William Grant & Sons family vault of prized liquids.",
+          "storyChapterSixComponentDescription1": "Kinsman has crafted liquids unbound by the established flavour",
+          "storyChapterSixComponentDescription2": "profiles of the traditional Scotch whisky regions  to create a new",
+          "storyChapterSixComponentDescription3": "taste experience inspired by Scotland's epic wilderness.",
+          "storyChapterSixComponentSlidingText": "Scroll to explore more",
+          "storyChapterSixComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_19/bb9b282b8a5ef0b5f9f09fc17bccc32f/os_image19.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_20/3f588a6d1cfcc225b0531fcd4b493dc4/os_image20.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyChapterEnd": {
+      "items": [
+        {
+          "sys": {
+            "id": "19jQTLNMk2GuSdzyiTT0mo"
+          },
+          "storyChapterEndComponentDescription": "Drawing from his personal memories and over 25 years experience including leading the world’s most awarded single malt Glenfiddich, each Wildmoor whisky brings a taste of this epic wilderness in every drop.",
+          "storyChapterEndComponentSlidingText": "Scroll to explore more",
+          "storyChapterEndComponentProductListCollection": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd001",
+                "productName": "TROPICAL COAST",
+                "link": "/ko-KR/range",
+                "age": "30",
+                "unit": "YEARS OLD",
+                "description": "A whisky of deep fruit and zesty spice",
+                "description1": "with a smooth finish, inspired by the",
+                "description2": "white sandy beaches of Scotland’s",
+                "description3": "northwestern islands.",
+                "descriptionmoble": "A whisky of deep fruit and zesty spice with a smooth finish, inspired by the white sandy beaches of Scotland’s northwestern islands.",
+                "inspiredmoble": "Inspired by the northwest islands of Scotland and their white sandy beaches in summer",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset3/fe1cdfa29dfd2944c2207b83d326686e/image3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset4/9310aed1e77c42c6da6c9efa29399819/image4.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10R7wvvjDbfaNq7mz8HyWA/801a4ff3d207ba6ae7c7e5b9d78da643/Wildmoor_Tropical_Coast_Texture_2_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset5/ab96879f5ca03bd9061354e068a9b558/image5.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_29/ea854dc69e6f70f163628308a501a7b8/os_image29.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_30/b64b7ba4cd8227d611db4da701c07b02/os_image30.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd002",
+                "productName": "RUGGED COAST",
+                "link": "/ko-KR/range",
+                "age": "30",
+                "unit": "YEARS OLD",
+                "description": "Experience waves of bonfire smoke, sea",
+                "description1": "salt and vanilla sweetness, balanced with",
+                "description2": "sherry spice. A whisky inspired by",
+                "description3": "Scotland’s rugged coastlines.",
+                "descriptionmoble": "Experience waves of bonfire smoke, sea salt and vanilla sweetness, balanced with sherry spice. A whisky inspired by Scotland’s rugged coastlines.",
+                "inspiredmoble": "Inspired by the rugged Coastlines of Scotland",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_31/ae87515dd992d1970f48b6f039d43dcf/os_image31.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_32/2decca844ff1ef56c9a4d4b1620a9142/os_image32.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd003",
+                "productName": "WAKING FOREST",
+                "link": "/ko-KR/range",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "A vibrant combination of deep vanilla",
+                "description1": "oak and subtle sherry spice, inspired",
+                "description2": "by Scotland’s vast ancient woodlands.",
+                "descriptionmoble": "A vibrant combination of deep vanilla oak and subtle sherry spice, inspired by Scotland’s vast ancient woodlands.",
+                "inspiredmoble": "Inspired by the verdant forests of Scotland",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset11/d4ef817abb334b434c0e6f4ba8e51ce7/image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset12/c6bcb9e58e0a36327738287d91a2a546/image12.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/6KJpbZzU9znyJsTNuhDDeb/0101ed8f329e859877d6f760c4b8e24b/Wildmoor_Waking_Forest_Landscape_2.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset14/29c9b9ce8e4b7924a0888c92ae81a4bf/image14.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_33/e6a958dd14e8314a9cd9800c6a460f8d/os_image33.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_34/1f690977b14de1fd28042922578049dd/os_image34.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd004",
+                "productName": "BLACK MOUNTAIN",
+                "link": "/ko-KR/range",
+                "age": "40",
+                "unit": "YEARS OLD",
+                "description": "A towering peak of flavour, where vanilla",
+                "description1": "and caramel notes meet an indulgent",
+                "description2": "sherry richness. The pinnacle of the",
+                "description3": "Wildmoor range.",
+                "descriptionmoble": "A towering peak of flavour, where vanilla and caramel notes meet an indulgent sherry richness. The pinnacle of the Wildmoor range.",
+                "inspiredmoble": "Inspired by the great dark mountain peaks of Scotland’s north.  The Summit of the range.",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_35/b335e37bf1177544359eae469d2bf7b2/os_image35.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_36/2095d6735f7922c3bc6c8a5fd6a721bb/os_image36.png"
+                  }
+                }
+              },
+              {
+                "id": 4,
+                "productCode": "pd005",
+                "productName": "ANCIENT MOORLAND",
+                "link": "/ko-KR/range",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "An epic landscape of rich oak, deep vanilla, mellow sherry spice and sweetness, inspired by Scotland’s heather-covered moorlands in full bloom.",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset19/533c116b893b60ffe5e2380444909412/image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset20/a502b0ee80a0fd98699091da4d00c16e/image20.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/4dCjrl3Blj1NkBDyk9Fgnv/4ed72d0f1ce6858b037921aa4645f12c/Wildmoor_Ancient_Moorland_Landscape_2__7_.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/5e1NazIqhxBSJkJH6cmyoc/c304e5054e15a2bbafc4cf13d11fdc33/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_37/cff8b9888e7d4002fa5e2eaf918fa984/os_image37.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_38/009a22c9ca6fd595ad826df9cce78541/os_image38.png"
+                  }
+                }
+              },
+              {
+                "id": 5,
+                "productCode": "pd006",
+                "productName": "DARK MOORLAND",
+                "link": "/ko-KR/range",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "A vibrant combination of deep vanilla",
+                "description1": "oak and subtle sherry spice, inspired",
+                "description2": "by Scotland’s vast ancient woodlands.",
+                "descriptionmoble": "A vibrant combination of deep vanilla oak and subtle sherry spice, inspired by Scotland’s vast ancient woodlands.",
+                "inspiredmoble": "Inspired by the verdant forests of Scotland",
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset23/887866da55fb642b25a06d8a05375bf1/image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset24/bc6e936d7153810063cd2ce5cd61904f/image24.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10SvVveQeYUzubWNQwRB3O/9b9271eee6b9effcf3dfb97d8c01ac77/Wildmoor_Master_KV_Dark_Moorland_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6MZ3ckPT17mkuffKcxMYqq/9e8144e14dff6de690185888fbddadd5/kv-m.png"
+                  }
+                },
+                "ourStoryListImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_39/cc631ae2f7ad191f93cb51ad650b4d5d/os_image39.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_40/0f7509493a33f3837d101511f0ed8a0f/os_image40.png"
+                  }
+                }
+              }
+            ]
+          },
+          "storyChapterEndComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_21/96919dae247cecea9574e24e83b26d71/os_image21.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_os_22/995851051ebfdc96e1f993961df775ac/os_image22.png"
+            }
+          }
+        }
+      ]
+    },
+    "storyOpening": {
+      "items": [
+        {
+          "storyOpeningTitle": "OUR STORY",
+          "storyOpeningDescription": "From the most extensive whisky collection in the world",
+          "storyOpeningScrollText": "Scroll to explore more",
+          "showStoryLogo": false,
+          "storyOpeningComponentCarouselCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "78A9eiFxV0bOCH25syiUg9"
+                },
+                "backgroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_27/1c70d7b72c01f087b8eec101f80b5840/os_image27.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_28/35614cb2cc424b8597b0d3fc6385e3bf/os_image28.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "3QXIvVkxT9tps9mhxtuuBg"
+                },
+                "backgroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_23/8339cb8fa75afd7ca39bf43e8a6ab3cd/os_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_24/206983723c4859b3037863d9630d5fd6/os_image24.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "3iNQDMAkvyiEqpctxMqgGm"
+                },
+                "backgroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_25/a6c77cfa2f33ddd637a3a172f90f2fc9/os_image25.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_os_26/db7ab03be54e72d18c4f9cc0c7d657f6/os_image26.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

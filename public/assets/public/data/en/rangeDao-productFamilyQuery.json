@@ -1,0 +1,285 @@
+{
+  "data": {
+    "productFamily": {
+      "items": [
+        {
+          "selectedProductId": 3,
+          "productScrollText": "Scroll to explore more",
+          "productFamilyComponentProductsCollection": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd001",
+                "nickname": "Unexpected Tropical Notes",
+                "inspired": "Inspired by the northwest islands",
+                "inspired1": "of Scotland and their white",
+                "inspired2": "sandy beaches in summer",
+                "seeMoreDetail": "See More Detail",
+                "active": true,
+                "num": "30",
+                "tag": "TRAVEL RETAIL  EXCLUSIVE",
+                "productName": "TROPICAL COAST",
+                "age": "30",
+                "unit": "YEARS OLD",
+                "description": "A whisky of deep fruit and zesty spice",
+                "description1": "with a smooth finish, inspired by the",
+                "description2": "white sandy beaches of Scotland’s",
+                "description3": "northwestern islands.",
+                "descriptionmoble": "A whisky of deep fruit and zesty spice with a smooth finish, inspired by the white sandy beaches of Scotland’s northwestern islands.",
+                "inspiredmoble": "Inspired by the northwest islands of Scotland and their white sandy beaches in summer",
+                "price": "£350 RRP ",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_105/ad56378b05196e180c4333d9232df40d/product_05.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_106/6142d4c655374f35a7a36f798ea8286c/product_05.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset3/fe1cdfa29dfd2944c2207b83d326686e/image3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset4/9310aed1e77c42c6da6c9efa29399819/image4.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10R7wvvjDbfaNq7mz8HyWA/801a4ff3d207ba6ae7c7e5b9d78da643/Wildmoor_Tropical_Coast_Texture_2_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset5/ab96879f5ca03bd9061354e068a9b558/image5.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd002",
+                "nickname": "Delicate Sherry Matured Smoke",
+                "inspired": "Inspired by the rugged",
+                "inspired1": "Coastlines of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "30",
+                "tag": null,
+                "productName": "RUGGED COAST",
+                "age": "30",
+                "unit": "YEARS OLD",
+                "description": "Experience waves of bonfire smoke, sea",
+                "description1": "salt and vanilla sweetness, balanced with",
+                "description2": "sherry spice. A whisky inspired by",
+                "description3": "Scotland’s rugged coastlines.",
+                "descriptionmoble": "Experience waves of bonfire smoke, sea salt and vanilla sweetness, balanced with sherry spice. A whisky inspired by Scotland’s rugged coastlines.",
+                "inspiredmoble": "Inspired by the rugged Coastlines of Scotland",
+                "price": "£350 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_103/2952507c08c46241b3a092c83aeeaf50/product_04.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_104/444f0cd7bb26b28a6360b33b674dc993/product_04.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd003",
+                "nickname": "Finely Balanced Oak",
+                "inspired": "Inspired by the verdant",
+                "inspired1": "forests of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "23",
+                "tag": "TRAVEL RETAIL EXCLUSIVE",
+                "productName": "WAKING FOREST",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "A vibrant combination of deep vanilla",
+                "description1": "oak and subtle sherry spice, inspired",
+                "description2": "by Scotland’s vast ancient woodlands.",
+                "descriptionmoble": "A vibrant combination of deep vanilla oak and subtle sherry spice, inspired by Scotland’s vast ancient woodlands.",
+                "inspiredmoble": "Inspired by the verdant forests of Scotland",
+                "price": "£175 RRP ",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_107/af26770a004f98e2f0f42ec9e420db28/product_06.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_108/055e2981937d8cfa3a1f2cbc26d42690/product_06.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset11/d4ef817abb334b434c0e6f4ba8e51ce7/image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset12/c6bcb9e58e0a36327738287d91a2a546/image12.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/6KJpbZzU9znyJsTNuhDDeb/0101ed8f329e859877d6f760c4b8e24b/Wildmoor_Waking_Forest_Landscape_2.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset14/29c9b9ce8e4b7924a0888c92ae81a4bf/image14.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd004",
+                "nickname": "Elevated Depth",
+                "inspired": "Inspired by the great dark",
+                "inspired1": "mountain peaks of",
+                "inspired2": "Scotland’s north. ",
+                "inspired3": "The Summit of the range.",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "40",
+                "tag": null,
+                "productName": "BLACK MOUNTAIN",
+                "age": "40",
+                "unit": "YEARS OLD",
+                "description": "A towering peak of flavour, where vanilla",
+                "description1": "and caramel notes meet an indulgent",
+                "description2": "sherry richness. The pinnacle of the",
+                "description3": "Wildmoor range.",
+                "descriptionmoble": "A towering peak of flavour, where vanilla and caramel notes meet an indulgent sherry richness. The pinnacle of the Wildmoor range.",
+                "inspiredmoble": "Inspired by the great dark mountain peaks of Scotland’s north.  The Summit of the range.",
+                "price": "£750 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_99/58671c1660bc98ecb26cb7530b6e37c1/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_100/1403a3a6bce1e109ecf86c377f6d30f9/product_01.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                }
+              },
+
+              {
+                "id": 5,
+                "productCode": "pd006",
+                "nickname": "Dark Sherry Matured Depth",
+                "inspired": "Inspired by the darker wintered Moorlands of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "23",
+                "tag": "",
+                "productName": "DARK MOORLAND",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "An epic landscape of rich oak, deep vanilla",
+                "description1": "and mellow sherry spice, inspired by",
+                "description2": "Scotland's wind-swept moorlands.",
+                "descriptionmoble": "An epic landscape of rich oak, deep vanilla and mellow sherry spice, inspired by Scotland's wind-swept moorlands.",
+                "inspiredmoble": "Inspired by the darker wintered Moorlands of Scotland",
+                "price": "£175 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "quizResultProductImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_101/fe94830477873e15f6146fa6a92ea21e/product_03.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_102/cd465435ea2f43537aaa9e679ab07f02/product_03.png"
+                  }
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset23/887866da55fb642b25a06d8a05375bf1/image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset24/bc6e936d7153810063cd2ce5cd61904f/image24.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10SvVveQeYUzubWNQwRB3O/9b9271eee6b9effcf3dfb97d8c01ac77/pc.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6MZ3ckPT17mkuffKcxMYqq/9e8144e14dff6de690185888fbddadd5/mobile.png"
+                  }
+                }
+              }
+            ],
+            "menuCue": {
+              "menuLeft": "LIGHT",
+              "menuLeftText": "GRAIN",
+              "menuTop": "SMOKY",
+              "menuTopText": "MALT",
+              "menuRight": "RICH",
+              "menBottom": "SWEET"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

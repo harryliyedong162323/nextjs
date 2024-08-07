@@ -1,0 +1,742 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky SG - Our Range",
+          "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky, WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky, WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,  WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky, WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+          "description": "Considered one of the finest collections of rare whiskies in the world, WILDMOOR is a collection of the finest and most diverse collection of aged Scotch Whisky ever assembled.   The range is made up of seven expressions, ranging from 21YO to 40Y Blended Scotch Whisky."
+        }
+      ]
+    },
+    "flavourFinder": {
+      "items": [
+        {
+          "flavourFinderComponentTitle": "Discover Your Wild Flavour",
+          "flavourFinderComponentDescription1": "The whisky you choose to drink, and how you drink it, can reveal a lot about your character",
+          "flavourFinderComponentStartContent": "START"
+        }
+      ]
+    },
+    "rangeNav": {
+      "items": [
+        {
+          "nav1Name": "PRODUCTS FAMILY",
+          "nav1Render": "productFamily",
+          "nav2Name": "SERVING SUGGESTION",
+          "nav2Render": "servingSuggestion",
+          "nav3Name": "THE STORY BEHIND OUR BOTTLE",
+          "nav3Render": "bottleConcept",
+          "nav4Name": "DISCOVER YOUR WILD FLAVOUR",
+          "nav4Render": "flavourFinder"
+        }
+      ]
+    },
+    "bottleConcept": {
+      "items": [
+        {
+          "bottleConceptComponentTitle": "THE STORY BEHIND OUR BOTTLE",
+          "bottleConceptComponentPrompttext": "Swipe to explore",
+          "BottleStopperText": "Our stopper features the  Scottish pinecone roundel and  complementary type of 'Decades  in the making. Now Set free.'Along with the makers  signature around the rim.",
+          "BottleBodyText": "Geological  'slice' of the  Glen Coe  region.",
+          "BottleStopperPrompt": "BOTTLE STOPPER",
+          "BottleBodyPrompt": "Geological  'slice' of the  Glen Coe  region.",
+          "BottleStopperImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_7/d25434e4ffa1472ef36a98ec060d8cd9/range_image7.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_8/ed2346282718c4914f4d952035d70ef8/wild_02_m.png"
+            }
+          },
+          "BottleBodyImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_7/d25434e4ffa1472ef36a98ec060d8cd9/range_image7.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_8/ed2346282718c4914f4d952035d70ef8/wild_02_m.png"
+            }
+          },
+          "bottleConceptComponentVideo1": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/7j5L45iUZ5B9khLt1N3iG7/997ff856b4f4408484ddc14616b0766c/video_bg.mp4"
+            }
+          },
+          "bottleConceptComponentVideo2": {
+            "video": {
+              "url": "/assets/contentful/zedtwknbsk02/2b0nhr4qvxszf83B43s6Hk/e67cba495ca1fef09538dd7da00085d3/23_AM.mp4"
+            }
+          }
+        }
+      ]
+    },
+    "talesFromTheWild": {
+      "items": [
+        {
+          "noShow": true,
+          "talesFromTheWildTitle": "TALES FROM THE WILD",
+          "talesFromTheWildListCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "2KxFquRbFJTL8DuUe6cqQs"
+                },
+                "id": 10086,
+                "listName": "NAME of KOL1",
+                "listDescription": "Bring the drinking occasion to life in a way",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_3/0a66ba46d48baaa3f269616418c9c8b3/wild_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_4/26075ea74eb65f3fb72cdb5520542c15/range_image4.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_111/494772749068d91fe70a99625d6492eb/range_image221.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_112/8f5bc30114dfffa7d10fec09899a3c2a/wild_01_m.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_1/d34559197fc78e8dc0edc76e4edbdf32/wild_face.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_2/0c11ceb5fe399331775c27086cc3fba6/wild_face.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "2vIdClbAAgcpnbF2iT2MxO"
+                },
+                "id": 10087,
+                "listName": "NAME of KOL2",
+                "listDescription": "Bring the drinking occasion to life in a way",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_7/d25434e4ffa1472ef36a98ec060d8cd9/range_image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_8/ed2346282718c4914f4d952035d70ef8/wild_02_m.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_113/7def28d3bf1add3b8ddb591e788719e2/wild_02_small.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_114/cc1db4f62e081b2ed8fe69962f166e8a/range_image224.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_5/a8d9b4f16b2916e93c4d100e358b2384/range_image5.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_6/cd61b0a95a60c0d4fba9a57e3d4a3829/range_image6.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "6oC1zaN3Dr6mIH9ZAGaYnb"
+                },
+                "id": 10088,
+                "listName": "NAME of KOL3",
+                "listDescription": "Bring the drinking occasion to life in a way",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_11/17b3978b4ddae4fe94edc0255ce2d9f2/range_image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_12/cce7334444312207429cb2b392512552/range_image12.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_115/1c92da7d15a39fbc57a1bb51c6813c46/range_image225.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_116/01c5a326074c10dbda6c104fde476980/wild_03_m.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_9/bdedd4e8b860dd15fc520f178e9ea4e1/wild_face.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_10/e9a833df92d271dca45e6a4f09a952f9/range_image10.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "au4pgwTmg45AYsgInYa9d"
+                },
+                "id": 10089,
+                "listName": "NAME of KOL4",
+                "listDescription": "Bring the drinking occasion to life in a way",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_15/a12bb473657d07ad48ff40ea380b13d0/range_image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_16/511dd7cbc0e53d0583740eae606dab82/range_image16.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_117/60a846fd6d522f1126164993542e8d06/range_image227.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_118/3309e55a97984daeb5578514f564ceee/range_image228.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_13/16e48c21c0a7ba68bd27c976748873b4/range_image13.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_14/c75275c3d437e4ad6b7c58b70351ae9b/range_image14.png"
+                  }
+                }
+              },
+              {
+                "sys": {
+                  "id": "1HkRFv8fBbu285CWlkoMH8"
+                },
+                "id": 10090,
+                "listName": "NAME of KOL5",
+                "listDescription": "DATA Tales From The Wild List5-List Avatar Image US",
+                "targetPage": {
+                  "sys": {
+                    "id": "3vDn9k3B9VI1RwW1Ks2Sqy"
+                  }
+                },
+                "listImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_19/f18341b208fe5fdc738b1784a4db6a63/range_image19.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_20/220ed3ff3b366d192a197bd857be10a2/range_image20.png"
+                  }
+                },
+                "listSmallImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_119/985f5a7f315ec0a227269dc5e09640b0/wild_05_small.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_120/d5ea54f6ab04ea8149ab8766b672438b/range_image230.png"
+                  }
+                },
+                "listAvatar": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_17/5ea1e718b17eb582c253cd69c1c85a86/range_image17.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_18/13986b5285fa1bcab8fb0800cb8543f7/wild_face.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "productFamily": {
+      "items": [
+        {
+          "productFamilyComponentProductsCollection": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd001",
+                "nickname": "Unexpected Tropical Notes",
+                "inspired": "Inspired by the northwest islands",
+                "inspired1": "of Scotland and their white",
+                "inspired2": "sandy beaches in summer",
+                "seeMoreDetail": "See More Detail",
+                "active": true,
+                "num": "30",
+                "tag": "TRAVEL RETAIL  EXCLUSIVE",
+                "productName": "TROPICAL COAST",
+                "age": "30",
+                "unit": "YEARS OLD",
+                "description": "A whisky of deep fruit and zesty spice",
+                "description1": "with a smooth finish, inspired by the",
+                "description2": "white sandy beaches of Scotland’s",
+                "description3": "northwestern islands.",
+                "descriptionmoble": "A whisky of deep fruit and zesty spice with a smooth finish, inspired by the white sandy beaches of Scotland’s northwestern islands.",
+                "inspiredmoble": "Inspired by the northwest islands of Scotland and their white sandy beaches in summer",
+                "price": "£350 RRP ",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset3/fe1cdfa29dfd2944c2207b83d326686e/image3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset4/9310aed1e77c42c6da6c9efa29399819/image4.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10R7wvvjDbfaNq7mz8HyWA/801a4ff3d207ba6ae7c7e5b9d78da643/Wildmoor_Tropical_Coast_Texture_2_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset5/ab96879f5ca03bd9061354e068a9b558/image5.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd002",
+                "nickname": "Delicate Sherry Matured Smoke",
+                "inspired": "Inspired by the rugged",
+                "inspired1": "Coastlines of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "30",
+                "tag": null,
+                "productName": "RUGGED COAST",
+                "age": "30",
+                "unit": "YEARS OLD",
+                "description": "Experience waves of bonfire smoke, sea",
+                "description1": "salt and vanilla sweetness, balanced with",
+                "description2": "sherry spice. A whisky inspired by",
+                "description3": "Scotland’s rugged coastlines.",
+                "descriptionmoble": "Experience waves of bonfire smoke, sea salt and vanilla sweetness, balanced with sherry spice. A whisky inspired by Scotland’s rugged coastlines.",
+                "inspiredmoble": "Inspired by the rugged Coastlines of Scotland",
+                "price": "£350 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset7/9d50ef599c1c4830fd60267760de34dc/image7.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset8/9306717e979b212e81e6c00acf1532a9/image8.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2HX6g9DwcLGAyFRTsybdQj/f3b32aa16a83dfabafd51684b9fa72ba/Wildmoor_Rugged_Coast_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6IVybuahFiiPtRXmy81G8v/5a7a27136e0e9204ec9855b941efe7fa/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd003",
+                "nickname": "Finely Balanced Oak",
+                "inspired": "Inspired by the verdant",
+                "inspired1": "forests of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "23",
+                "tag": null,
+                "productName": "WAKING FOREST",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "A vibrant combination of deep vanilla",
+                "description1": "oak and subtle sherry spice, inspired",
+                "description2": "by Scotland’s vast ancient woodlands.",
+                "descriptionmoble": "A vibrant combination of deep vanilla oak and subtle sherry spice, inspired by Scotland’s vast ancient woodlands.",
+                "inspiredmoble": "Inspired by the verdant forests of Scotland",
+                "price": "£175 RRP ",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset11/d4ef817abb334b434c0e6f4ba8e51ce7/image11.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset12/c6bcb9e58e0a36327738287d91a2a546/image12.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/6KJpbZzU9znyJsTNuhDDeb/0101ed8f329e859877d6f760c4b8e24b/Wildmoor_Waking_Forest_Landscape_2.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset14/29c9b9ce8e4b7924a0888c92ae81a4bf/image14.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd004",
+                "nickname": "Elevated Depth",
+                "inspired": "Inspired by the great dark mountain",
+                "inspired1": "peaks of Scotland’s north.",
+                "inspired2": "The Summit of the range.",
+
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "40",
+                "tag": null,
+                "productName": "BLACK MOUNTAIN",
+                "age": "40",
+                "unit": "YEARS OLD",
+                "description": "A towering peak of flavour, where vanilla",
+                "description1": "and caramel notes meet an indulgent",
+                "description2": "sherry richness. The pinnacle of the",
+                "description3": "Wildmoor range.",
+                "descriptionmoble": "A towering peak of flavour, where vanilla and caramel notes meet an indulgent sherry richness. The pinnacle of the Wildmoor range.",
+                "inspiredmoble": "Inspired by the great dark mountain peaks of Scotland’s north.  The Summit of the range.",
+                "price": "£750 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset15/a8ea25972a730247d9938e885e0ac4fa/image15.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset16/f2459e02ad396699955145d7a47db3c4/image16.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/2nTTqzEvonBvtQRKlkf9tD/c7ed9db462e74cd3b35d051d1d44bdac/Wildmoor_Black_Mountain_Landscape_3.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/306YDtad8JPrclA3JE7cYE/dab29231458f41d5cc6d8b2657821a9b/kv-m.png"
+                  }
+                }
+              },
+              {
+                "id": 5,
+                "productCode": "pd006",
+                "nickname": "Dark Sherry Matured Depth",
+                "inspired": "Inspired by the darker wintered Moorlands of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "active": false,
+                "num": "23",
+                "tag": "TRAVEL RETAIL  EXCLUSIVE",
+                "productName": "DARK MOORLAND",
+                "age": "23",
+                "unit": "YEARS OLD",
+                "description": "A vibrant combination of deep vanilla",
+                "description1": "oak and subtle sherry spice, inspired",
+                "description2": "by Scotland’s vast ancient woodlands.",
+                "descriptionmoble": "A vibrant combination of deep vanilla oak and subtle sherry spice, inspired by Scotland’s vast ancient woodlands.",
+                "inspiredmoble": "Inspired by the verdant forests of Scotland",
+                "price": "£175 RRP",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "productImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset23/887866da55fb642b25a06d8a05375bf1/image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset24/bc6e936d7153810063cd2ce5cd61904f/image24.png"
+                  }
+                },
+                "backGroundImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/10SvVveQeYUzubWNQwRB3O/9b9271eee6b9effcf3dfb97d8c01ac77/Wildmoor_Master_KV_Dark_Moorland_Landscape_1.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/6MZ3ckPT17mkuffKcxMYqq/9e8144e14dff6de690185888fbddadd5/kv-m.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "servingSuggestion": {
+      "items": [
+        {
+          "servingSuggestionComponentTitle": "SERVING SUGGESTION",
+          "productFamilyComponentProducts": {
+            "items": [
+              {
+                "id": 0,
+                "productCode": "pd001",
+                "nickname": "Unexpected Tropical Notes",
+                "inspired": "Inspired by the northwest islands",
+                "inspired1": "of Scotland and their white",
+                "inspired2": "sandy beaches in summer",
+                "seeMoreDetail": "See More Detail",
+                "productName": "TROPICAL COAST",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "servingSuggestionContentText": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy.",
+                "servingSuggestionDescription": "Wildmoor 23YO's blend of aged single malt and grain whiskies finished",
+                "servingSuggestionContentText3": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy. ",
+                "servingSuggestionDescription1": "in oloroso sherry cask brings flavours of toffee, sweet fruit, and spice",
+                "servingSuggestionDescription2": "that blend beautifully with sweet vermouth and bitters to make the ",
+                "servingSuggestionDescription3": "perfect sipping whisky cocktail.",
+                "servingSuggestionLeftImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_21/7a9554c41e412915be05bc916ddfeb6b/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_22/fd5bbc4451f0af8f3969b92aaa7e689b/range_image22.png"
+                  }
+                },
+                "servingSuggestionRightImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_23/be813ec854e76b0efe7bbbea5dbaedcc/range_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_24/ffd8fcd77e18942179f7812db5a3c1a2/product_02_mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "productCode": "pd002",
+                "nickname": "Delicate Sherry Matured Smoke",
+                "inspired": "Inspired by the rugged",
+                "inspired1": "Coastlines of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "productName": "RUGGED COAST",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "servingSuggestionContentText": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy.",
+                "servingSuggestionDescription": "Wildmoor 23YO's blend of aged single malt and grain whiskies finished",
+                "servingSuggestionDescription1": "in oloroso sherry cask brings flavours of toffee, sweet fruit, and spice",
+                "servingSuggestionDescription2": "that blend beautifully with sweet vermouth and bitters to make the ",
+                "servingSuggestionDescription3": "perfect sipping whisky cocktail.",
+                "servingSuggestionLeftImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_21/7a9554c41e412915be05bc916ddfeb6b/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_22/fd5bbc4451f0af8f3969b92aaa7e689b/range_image22.png"
+                  }
+                },
+                "servingSuggestionRightImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_23/be813ec854e76b0efe7bbbea5dbaedcc/range_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_24/ffd8fcd77e18942179f7812db5a3c1a2/product_02_mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 2,
+                "productCode": "pd003",
+                "nickname": "Finely Balanced Oak",
+                "inspired": "Inspired by the verdant",
+                "inspired1": "forests of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "productName": "WAKING FOREST",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "servingSuggestionContentText": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy.",
+                "servingSuggestionDescription": "Wildmoor 23YO's blend of aged single malt and grain whiskies finished",
+                "servingSuggestionDescription1": "in oloroso sherry cask brings flavours of toffee, sweet fruit, and spice",
+                "servingSuggestionDescription2": "that blend beautifully with sweet vermouth and bitters to make the ",
+                "servingSuggestionDescription3": "perfect sipping whisky cocktail.",
+                "servingSuggestionLeftImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_21/7a9554c41e412915be05bc916ddfeb6b/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_22/fd5bbc4451f0af8f3969b92aaa7e689b/range_image22.png"
+                  }
+                },
+                "servingSuggestionRightImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_23/be813ec854e76b0efe7bbbea5dbaedcc/range_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_24/ffd8fcd77e18942179f7812db5a3c1a2/product_02_mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 3,
+                "productCode": "pd004",
+                "nickname": "Elevated Depth",
+                "inspired": "Inspired by the great dark mountain",
+                "inspired1": "peaks of Scotland’s north.",
+                "inspired2": "The Summit of the range.",
+
+                "seeMoreDetail": "See More Detail",
+                "productName": "BLACK MOUNTAIN",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "servingSuggestionContentText": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy.",
+                "servingSuggestionDescription": "Wildmoor 23YO's blend of aged single malt and grain whiskies finished",
+                "servingSuggestionDescription1": "in oloroso sherry cask brings flavours of toffee, sweet fruit, and spice",
+                "servingSuggestionDescription2": "that blend beautifully with sweet vermouth and bitters to make the ",
+                "servingSuggestionDescription3": "perfect sipping whisky cocktail.",
+                "servingSuggestionLeftImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_21/7a9554c41e412915be05bc916ddfeb6b/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_22/fd5bbc4451f0af8f3969b92aaa7e689b/range_image22.png"
+                  }
+                },
+                "servingSuggestionRightImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_23/be813ec854e76b0efe7bbbea5dbaedcc/range_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_24/ffd8fcd77e18942179f7812db5a3c1a2/product_02_mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 4,
+                "productCode": "pd005",
+                "nickname": "Dark Sherry Matured Depth",
+                "inspired": "Inspired by the darker wintered Moorlands of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "productName": "DARK MOORLAND",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "servingSuggestionContentText": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy.",
+                "servingSuggestionDescription": "Wildmoor 23YO's blend of aged single malt and grain whiskies finished",
+                "servingSuggestionDescription1": "in oloroso sherry cask brings flavours of toffee, sweet fruit, and spice",
+                "servingSuggestionDescription2": "that blend beautifully with sweet vermouth and bitters to make the ",
+                "servingSuggestionDescription3": "perfect sipping whisky cocktail.",
+                "servingSuggestionLeftImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_21/7a9554c41e412915be05bc916ddfeb6b/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_22/fd5bbc4451f0af8f3969b92aaa7e689b/range_image22.png"
+                  }
+                },
+                "servingSuggestionRightImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_23/be813ec854e76b0efe7bbbea5dbaedcc/range_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_24/ffd8fcd77e18942179f7812db5a3c1a2/product_02_mobile.png"
+                  }
+                }
+              },
+              {
+                "id": 6,
+                "productCode": "pd007",
+                "nickname": "Triple Oak",
+                "inspired": "Inspired by Heathered Valleys of Scotland",
+                "seeMoreDetail": "See More Detail",
+                "productName": "HEATHER VALLEY",
+                "purchaseCta": {
+                  "content": "purchase",
+                  "targetPage": "https://www.google.com"
+                },
+                "servingSuggestionContentText": "Ideally enjoyed neat or with ice. For those more adventurous, we recommend a classic Rob Roy.",
+                "servingSuggestionDescription": "Wildmoor 23YO's blend of aged single malt and grain whiskies finished",
+                "servingSuggestionDescription1": "in oloroso sherry cask brings flavours of toffee, sweet fruit, and spice",
+                "servingSuggestionDescription2": "that blend beautifully with sweet vermouth and bitters to make the ",
+                "servingSuggestionDescription3": "perfect sipping whisky cocktail.",
+                "servingSuggestionLeftImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_21/7a9554c41e412915be05bc916ddfeb6b/product_01.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_22/fd5bbc4451f0af8f3969b92aaa7e689b/range_image22.png"
+                  }
+                },
+                "servingSuggestionRightImage": {
+                  "altText": null,
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_23/be813ec854e76b0efe7bbbea5dbaedcc/range_image23.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_range_24/ffd8fcd77e18942179f7812db5a3c1a2/product_02_mobile.png"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

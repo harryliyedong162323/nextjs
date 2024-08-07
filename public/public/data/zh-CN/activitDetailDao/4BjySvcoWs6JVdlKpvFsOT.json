@@ -1,0 +1,224 @@
+{
+    "data": {
+        "localMarketActivityDetailCollection": {
+            "items": [
+                {
+                    "sys": {
+                        "id": "4BjySvcoWs6JVdlKpvFsOT"
+                    },
+                    "sectionName": "远慕近事",
+                    "activityDetailComponentTitle": "探访神秘的塞内冈比石圈",
+                    "pageDetailCollection": {
+                        "items": [
+                            {
+                                "__typename": "DataLocalMarketDetailMultipleContent",
+                                "contentTitle": "DATA Local Market Detail - Multiple Content - kNews1",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "沿冈比亚河350公里长、100公里宽的地带集中了1000多座神秘的巨石石圈，大体可以分成四个石圈组，其中Sine Ngayène、Wanar两个石圈组在塞内加尔境内，另两个石圈组在冈比亚的Wassu和Kerbatch。这些石圈是古坟和墓冢的标志，其中一些已经被挖掘。出土实物证明，这些遗迹可追溯到公元前3世纪至公元16世纪。红石立柱构成的石圈与周围的墓冢展现了1500多年前盛大而神圣的景象，反映了一个繁荣、组织完备、持久的社会。这些石头是用铁制工具采得，被巧妙地雕琢成了大约七吨重、平均两米高、几乎完全一样的圆柱或多边形立柱。每一个石圈直径4到6米，有8到14根立柱。所有立柱均矗立在墓冢附近。这一杰出遗址代表了该地区更大范围的巨石带，不论是规模、一致性，还是复杂度在全世界都无与伦比。雕琢细致的独立石柱体现了精细、巧妙的雕刻技术，增强了整个石圈群的宏伟气势。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataLocalMarketDetailCarouselImage",
+                                "imagesCollection": {
+                                    "items": [
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_1/8aa1843a690c23a287bc3e85619516f5/kv.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_2/3c52e90a3b489ac76e7d014897aad948/kv-m.png"
+                                            }
+                                        },
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_3/ce40060fe81d92df2245ee42e8e13a1a/kv.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_2/3c52e90a3b489ac76e7d014897aad948/kv-m.png"
+                                            }
+                                        },
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_5/8d601ee3a032cf0039c00e0ae4ecf659/kv.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_6/686c9779c606855eb336e0f4eee218a4/localMarketActivity_image6.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "__typename": "DataLocalMarketDetailMultipleContent",
+                                "contentTitle": "DATA Local Market Detail - Multiple Content - kNews1-2",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataLocalMarketDetailOneImage",
+                                "internalName": "DATA Local Market Detail - One Image aNews1",
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "/assets/contentful/zedtwknbsk02/6BKfQHLYCiwUKegpVWU7oJ/56b9a7267fcd7baafccc15a4f93bc8a4/kv-3.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "/assets/contentful/zedtwknbsk02/4M8SZc6Cm332C7i9mscDf1/3add082f40003602acc30beb89b9d3da/kv-3.png"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataLocalMarketDetailOneImageContent1",
+                                "contentTitle": "WUSSU石圈",
+                                "contentText": {
+                                    "json": {
+                                        "nodeType": "document",
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。\nWUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_7/0f7f21c7fefdd7793343db694f5f32f2/localMarketActivity_image7.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_8/15a0456a054dfbb0761dd7d61102b3a7/pic-1-m.png"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataLocalMarketDetailOneVideo",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "WUSSU是冈比亚的两处石圈中较大的一处，有10多个石圈组，最高的石柱也在这里，有人管理收门票，还有一个小博物馆，大体介绍石圈的历史和建造过程, 还有一些墓冢里的出土文物。",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    }
+                                },
+                                "title": "WUSSU石圈",
+                                "video": {
+                                    "video": {
+                                        "url": "/assets/contentful/zedtwknbsk02/3cwOtRE3iT88WVysYit6rJ/5a6bbed0e43006d2c0df72a10caec6c6/bg.mp4"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataLocalMarketDetailOneImageContent2",
+                                "contentText": {
+                                    "json": {
+                                        "nodeType": "document",
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "nodeType": "paragraph",
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "nodeType": "text",
+                                                        "value": "沿冈比亚河350公里长、100公里宽的地带集中了1000多座神秘的巨石石圈，大体可以分成四个石圈组，其中Sine Ngayène、Wanar两个石圈组在塞内加尔境内，另两个石圈组在冈比亚的Wassu和Kerbatch。这些石圈是古坟和墓冢的标志，其中一些已经被挖掘。出土实物证明，这些遗迹可追溯到公元前3世纪至公元16世纪。红石立柱构成的石圈与周围的墓冢展现了1500多年前盛大而神圣的景象，反映了一个繁荣、组织完备、持久的社会。这些石头是用铁制工具采得，被巧妙地雕琢成了大约七吨重、平均两米高、几乎完全一样的圆柱或多边形立柱。每一个石圈直径4到6米，有8到14根立柱。所有立柱均矗立在墓冢附近。这一杰出遗址代表了该地区更大范围的巨石带，不论是规模、一致性，还是复杂度在全世界都无与伦比。雕琢细致的独立石柱体现了精细、巧妙的雕刻技术，增强了整个石圈群的宏伟气势。",
+                                                        "marks": [],
+                                                        "data": {}
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                "contentTitle": "探访神秘的塞内冈比石圈",
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_9/df1073f87f1bd6b439631acbd4670d3b/pic-3.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_activity_detail_10/7d5334838524e5d19bd238dca33e929f/localMarketActivity_image10.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

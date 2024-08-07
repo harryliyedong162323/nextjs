@@ -1,0 +1,73 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky TW - AgeGate",
+          "keyWords": "wildmoor,远慕",
+          "description": "wildmoor,远慕"
+        }
+      ]
+    },
+    "ageGateComponent": {
+      "items": [
+        {
+          "title": "隨著年歲的增長，我們都變得越來越好…",
+          "description1": "您必須年滿 ",
+          "description2": "歲才能進入",
+          "confirmButton": "開始探索",
+          "acceptCookieContent": "單擊“接受所有 Cookies”，即表示您同意在您的設備上存儲 Cookies，以增強網站導航、分析網站使用情況並協助我們的行銷工作。",
+          "acceptCookies": "接受所有Cookies",
+          "acceptCookieCookiesSettings": "Cookies 設置",
+          "monthChoose": "出生年月",
+          "promptContentCollection": {
+            "items": [
+              {
+                "content": "您必須啟用 Cookie 功能才能使用本網站。 有關使用和刪除 Cookie 的更多資訊，請造訪 ",
+                "targetPage": null
+              },
+              {
+                "content": "www.aboutcookies.org",
+                "targetPage": "https://www.aboutcookies.org"
+              }
+            ]
+          },
+          "promptContentCollection1": {
+            "items": [
+              {
+                "content": "進入本網站即表示您同意我們的",
+                "targetPage": null
+              },
+              {
+                "content": "條款和條件",
+                "targetPage": "/zh-TW/termsConditions"
+              },
+
+              {
+                "content": "以及",
+                "targetPage": null
+              },
+              {
+                "content": "隱私和Cookies聲明",
+                "targetPage": "/zh-TW/privacyPolicy"
+              },
+              {
+                "content": "。",
+                "targetPage": null
+              }
+            ]
+          },
+          "logoImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/ageGate_tw.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/footer_asset1/00fc80860c33fd553a37e853d42a31c6/ageGate_tw.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "远慕",
+          "keyWords": "远慕远慕",
+          "description": "远慕远慕远慕"
+        }
+      ]
+    },
+    "storiesDetailCollection": {
+      "items": [
+        {
+          "videoDetails": {
+            "pcVideo": "/assets/contentful/zedtwknbsk02/7xDtDsVjIN0XbEzgtcB77n/eb93ee7c2fc30aa6ccb1651a1dd774be/video02.mov",
+            "mobileVideo": "/assets/storiesDetail/fist_3.mov"
+          },
+          "pageName": "Bring the drinking occasion to life in a way",
+          "storiesDetailComponentTitle": "探访神秘的塞内冈比石圈",
+          "storiesDetailComponentName": "Birdy Nio 邱柏昶",
+          "storiesDetailComponentCareer": "遠慕遠行者",
+          "storiesDetailComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_1/bb03d917189eaaee13935e63d91b1e8f/dscape_2.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_2/89ae5bd2b25d5ab259089554a29c3035/m_dscape_2.png"
+            }
+          },
+          "storiesDetailComponentAvatar": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_3/67d653dcec998c2454f6e0d0335fb5a5/avatar_2.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_4/41ece6e7f62ce5516245ffccba1ccde9/m_avatar_2.png"
+            }
+          },
+          "storiesDetailComponentDetailCollection": {
+            "items": [
+              {
+                "__typename": "DataKolDetailMultipleContent",
+                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1",
+                "contentText": {
+                  "json": {
+                    "nodeType": "document",
+                    "data": {},
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {},
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "value": "Birdy Nio，三度入圍金曲獎最佳音樂錄影帶獎項，人稱山海系導演的他堅信著「用心流浪，那每一次出發都會是一場冒",
+                            "value1": "險。保持浪漫，那每一趟旅程都將是一場電影。」",
+                            "value2": "",
+                            "marks": [],
+                            "data": {}
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "links": {
+                    "entries": {
+                      "inline": []
+                    }
+                  }
+                }
+              },
+              {
+                "__typename": "DataKolDetailCarouselImage",
+                "imagesMiddle": {
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_5/22c9cbab14b4634d8fccaafea3c309c1/detail_2.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_6/95792fd9d9445adbda3ad99697f15f34/m_detail_2.png"
+                  },
+                  "altText": null
+                }
+              },
+              {
+                "__typename": "DataKolDetailMultipleContent",
+                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1-2",
+                "contentText": {
+                  "json": {
+                    "nodeType": "document",
+                    "data": {},
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {},
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "valueBottom": "他是導演、是旅人，他熱愛戶外冒險，不是在拍攝就是在遠行的路上。擅長在生活中的細節裡尋找靈感，以影像文字和音",
+                            "valueBottom1": "以影像文字和音樂交織而成，創作寫實魔幻和公路風格的作品。",
+                            "marks": [],
+                            "data": {}
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "links": {
+                    "entries": {
+                      "inline": []
+                    }
+                  }
+                }
+              },
+              {
+                "__typename": "DataKolDetailOneImageContent1",
+                "contentTitle": "「遠慕WILDMOOR的精神就是出走」",
+                "contentText": {
+                  "json": {
+                    "data": {},
+                    "content": [
+                      {
+                        "data": {},
+                        "content": [
+                          {
+                            "data": {},
+                            "marks": [],
+                            "value": "Birdy回憶遠慕WILDMOOR蘇格蘭遠旅，「遠慕WILDMOOR的精神就是出走，我覺得這也是為什麼我們會來這裡的原因，我的創作路上，威士忌一直是很重要的陪伴角色，我覺得威士忌可以帶我到另一個地方。」",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "document"
+                  },
+                  "links": {
+                    "entries": {
+                      "inline": []
+                    }
+                  }
+                },
+                "imagesCollection": {
+                  "items": [
+                    {
+                      "altText": null,
+                      "imagepc": {
+                        "url": "/assets/storiesDetail/two/pc_1.png"
+                      },
+                      "imagemobile": {
+                        "url": "/assets/storiesDetail/two/m_1.png"
+                      }
+                    },
+                    {
+                      "altText": null,
+                      "imagepc": {
+                        "url": "/assets/storiesDetail/two/pc_2.png"
+                      },
+                      "imagemobile": {
+                        "url": "/assets/storiesDetail/two/m_2.png"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "__typename": "DataKolDetailOneVideo",
+                "contentText": {
+                  "json": {
+                    "data": {},
+                    "content": [
+                      {
+                        "data": {},
+                        "content": [
+                          {
+                            "data": {},
+                            "marks": [],
+                            "value": "對Birdy來說，遠慕WILDMOOR是源自一種對生活品味的追求，能帶你從城市踏上一場未知的荒野冒險，受蘇格蘭高地啟",
+                            "value1": "發的調和威士忌，就像是一個充滿故事的詩人，每一口，都值得被細心理解。",
+                            "value2": "",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "document"
+                  }
+                },
+                "title": "WUSSU石圈",
+                "video": {
+                  "video": {
+                    "url": "/assets/contentful/zedtwknbsk02/7xDtDsVjIN0XbEzgtcB77n/eb93ee7c2fc30aa6ccb1651a1dd774be/video02.mp4"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

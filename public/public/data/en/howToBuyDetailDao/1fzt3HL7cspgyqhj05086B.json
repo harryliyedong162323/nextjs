@@ -1,0 +1,83 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "How To Buy Detail",
+                    "keyWords": "wildmoor",
+                    "description": "wildmoor description"
+                }
+            ]
+        },
+        "globalCampaignsComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentStoreName": "The Wildmoor House4",
+                    "howToBuyDetailComponentStoreAddress": "4326 Glenwood AvenueRaleigh, NC 27614",
+                    "howToBuyDetailComponentStoreBusinessHours": "10:00-24:00",
+                    "howToBuyDetailComponentStorePhone": "000-1234567894",
+                    "howToBuyDetailComponentBannerSubTitle": "SHENZHEN NANJING ROAD4",
+                    "howToBuyDetailComponentBannerTitle": "WILDMOOR HOUSE",
+                    "howToBuyDetailComponentScrollContent": "Scroll to explore more",
+                    "howToBuyDetailComponentBannerImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_55/15465ecfd877107ff8fb6bebd946be5a/how_to_buy_image55.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_56/ae45ef51e98acc9a22685f058f1222f1/bg.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "howToBuyDetailComponent": {
+            "items": [
+                {
+                    "howToBuyDetailComponentServiceTitle": "SERVICING",
+                    "howToBuyDetailComponentServiceContent": "The Ancient Reserve is a diverse collection of rare, high-aged whiskies sourced and maintained over 6 decades by the Grant family. It includes casks from every region of Scotland, including some notable ghost distillery stocks.",
+                    "serviceCarouselImageCollection": {
+                        "items": [
+                            {
+                                "sys": {
+                                    "id": "3NPz7ynqpE5QbYSjmrmHyT"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_57/1405fab9781a26293aab6b1c5b47b3f0/kv-1.png"
+                                },
+                                "imagemobile": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_58/2ce40f66533b19e7d6ed3ef11ba748de/how_to_buy_image58.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "WkoFltsg4mNiXx9Aq4mxm"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_59/77cc3dadd11027b3cf76d0515a73a002/how_to_buy_image59.png"
+                                },
+                                "imagemobile": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_60/d87a18b347d82c7f87f30f144e6e0045/how_to_buy_image60.png"
+                                }
+                            },
+                            {
+                                "sys": {
+                                    "id": "2PkYknsO0XhnuP529d9qyj"
+                                },
+                                "altText": null,
+                                "imagepc": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_61/e73d829a6a4dfc073c52286f1d7335c5/how_to_buy_image61.png"
+                                },
+                                "imagemobile": {
+                                    "url": "/assets/contentful/zedtwknbsk02/asset_how_to_buy_62/d1e10302683b1e711fa88d5b9ad9cf06/how_to_buy_image62.png"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

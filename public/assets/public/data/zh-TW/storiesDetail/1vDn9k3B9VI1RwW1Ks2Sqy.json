@@ -1,0 +1,249 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "远慕",
+          "keyWords": "远慕远慕",
+          "description": "远慕远慕远慕"
+        }
+      ]
+    },
+    "storiesDetailCollection": {
+      "items": [
+        {
+          "pageName": "Bring the drinking occasion to life in a way",
+          "storiesDetailComponentTitle": "「如果有人邀請你去蘇格蘭高地，一定要馬上放下一切出發。」",
+          "storiesDetailComponentTitle1": "家鄉在英國的遠慕遠行者鳳小岳這樣說。",
+          "mobileTitle": "「如果有人邀請你去蘇格蘭高地，",
+          "mobileTitle1": "一定要馬上放下一切出發。」",
+          "mobileTitle2": "家鄉在英國的遠慕遠行者鳳小岳這樣說。",
+          "storiesDetailComponentName": "鳳小岳",
+          "storiesDetailComponentCareer": "遠慕遠行者",
+          "storiesDetailComponentBackgroundImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_1/bb03d917189eaaee13935e63d91b1e8f/Wildmoor_Black_Mountain_Landscape_2.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_2/89ae5bd2b25d5ab259089554a29c3035/Wildmoor_Black_Mountain_Landscape_2.png"
+            }
+          },
+          "storiesDetailComponentAvatar": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_3/67d653dcec998c2454f6e0d0335fb5a5/storiesDetail_image3.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_4/41ece6e7f62ce5516245ffccba1ccde9/avatar.png"
+            }
+          },
+          "storiesDetailComponentDetailCollection": {
+            "items": [
+              {
+                "__typename": "DataKolDetailMultipleContent",
+                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1",
+                "contentText": {
+                  "json": {
+                    "nodeType": "document",
+                    "data": {},
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {},
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "value": "大家熟知的鳳小岳是一位演員、一位歌手，於英國出生、台灣長大。",
+                            "value1": "出道便參與知名電影《艋舺》演出；因熱愛音樂，2023年推出第一張同名專輯『柒』即獲得入圍金曲獎的肯定。私下的鳳",
+                            "value2": "小岳，與太太都熱愛戶外活動，在閒暇之餘經常與家人遠離都市生活，探索自然，在旅行中尋找新靈感。",
+                            "mobileValue1": "大家熟知的鳳小岳是一位演員、一位歌手，於英國出",
+                            "mobileValue2": "生、台灣長大。",
+                            "mobileValue3": "出道便參與知名電影《艋舺》演出；因熱愛音樂，",
+                            "mobileValue4": "2023年推出第一張同名專輯『柒』即獲得入圍金曲獎",
+                            "mobileValue5": "的肯定。私下的鳳小岳，與太太都熱愛戶外活動，在",
+                            "mobileValue6": "閒暇之餘經常與家人遠離都市生活，探索自然，在旅",
+                            "mobileValue7": "行中尋找新靈感。",
+                            "marks": [],
+                            "data": {}
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "links": {
+                    "entries": {
+                      "inline": []
+                    }
+                  }
+                }
+              },
+              {
+                "__typename": "DataKolDetailCarouselImage",
+                "imagesMiddle": {
+                  "imagepc": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_5/22c9cbab14b4634d8fccaafea3c309c1/storiesDetail_image5.png"
+                  },
+                  "imagemobile": {
+                    "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_6/95792fd9d9445adbda3ad99697f15f34/storiesDetail_image6.png"
+                  },
+                  "altText": null
+                }
+              },
+              {
+                "__typename": "DataKolDetailMultipleContent",
+                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1-2",
+                "contentText": {
+                  "json": {
+                    "nodeType": "document",
+                    "data": {},
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {},
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "valueBottom": "四月初，鳳小岳受邀前往蘇格蘭高地，以全世界首批「遠慕遠行者」的身分見證遠慕WILDMOOR於荒野中正式問世。",
+                            "mobileValueBottom1": "四月初，鳳小岳受邀前往蘇格蘭高地，以全世界首批",
+                            "mobileValueBottom2": "「遠慕遠行者」的身分見證遠慕WILDMOOR於荒野中",
+                            "mobileValueBottom3": "正式問世。",
+                            "marks": [],
+                            "data": {}
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "links": {
+                    "entries": {
+                      "inline": []
+                    }
+                  }
+                }
+              },
+              {
+                "__typename": "DataKolDetailOneImageContent1",
+                "contentTitle": "「讓人既熟悉又想重新探索。」",
+                "contentText": {
+                  "json": {
+                    "data": {},
+                    "content": [
+                      {
+                        "data": {},
+                        "content": [
+                          {
+                            "data": {},
+                            "marks": [],
+                            "value1": "「讓人既熟悉又想重新探索。」他說，「遠慕WILDMOOR",
+                            "value2": "集結一群來自世界各地並熱愛生命的遠行者，以探究威士",
+                            "value3": "忌及自然環境的相息關係，引領我們進入這段美好的旅",
+                            "value4": "程。」回憶在Alladale Wilderness Reserve草原上搭建",
+                            "value5": "的餐廳裡，喝著遠慕，看著星星，享受著美食與營火，是",
+                            "value6": "非常難忘的體驗。",
+                            "mobileValue1": "「讓人既熟悉又想重新探索。」他說，「遠慕",
+                            "mobileValue2": "WILDMOOR集結一群來自世界各地並熱愛生命的遠行",
+                            "mobileValue3": "，以探究威士忌及自然環境的相息關係，引領我們",
+                            "mobileValue4": "進入這段美好的旅程。」回憶在Alladale Wilderness",
+                            "mobileValue5": "Reserve草原上搭建的餐廳裡，喝著遠慕，看著星",
+                            "mobileValue6": "星，享受著美食與營火，是非常難忘的體驗。",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "document"
+                  },
+                  "links": {
+                    "entries": {
+                      "inline": []
+                    }
+                  }
+                },
+                "imagesCollection": {
+                  "items": [
+                    {
+                      "altText": null,
+                      "imagepc": {
+                        "url": "/assets/storiesDetail/first/pc_1.png"
+                      },
+                      "imagemobile": {
+                        "url": "/assets/storiesDetail/first/m_1.png"
+                      }
+                    },
+                    {
+                      "altText": null,
+                      "imagepc": {
+                        "url": "/assets/storiesDetail/first/pc_2.png"
+                      },
+                      "imagemobile": {
+                        "url": "/assets/storiesDetail/first/m_2.png"
+                      }
+                    },
+                    {
+                      "altText": null,
+                      "imagepc": {
+                        "url": "/assets/storiesDetail/first/pc_3.png"
+                      },
+                      "imagemobile": {
+                        "url": "/assets/storiesDetail/first/m_3.png"
+                      }
+                    },
+                    {
+                      "altText": null,
+                      "imagepc": {
+                        "url": "/assets/storiesDetail/first/pc_4.png"
+                      },
+                      "imagemobile": {
+                        "url": "/assets/storiesDetail/first/m_4.png"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "__typename": "DataKolDetailOneVideo",
+                "contentText": {
+                  "json": {
+                    "data": {},
+                    "content": [
+                      {
+                        "data": {},
+                        "content": [
+                          {
+                            "data": {},
+                            "marks": [],
+                            "value": "「遠慕WILDMOOR一開始給人的感覺像是一瓶很沉的威士忌，但後面會迸發新鮮感，非常奇妙。」",
+                            "value1": "對鳳小岳來說，遠慕與過去品飲威士忌的體驗截然不同，有著花香與果香，也有陳年酒的厚度，同時也帶著一種青澀的奔",
+                            "value2": "放，十分可口。",
+                            "mobileValue1": "「遠慕WILDMOOR一開始給人的感覺像是一瓶",
+                            "mobileValue2": "很沉的威士忌，但後面會迸發新鮮感，非常奇",
+                            "mobileValue3": "妙。」",
+                            "mobileValue4": "對鳳小岳來說，遠慕與過去品飲威士忌的體驗截然不",
+                            "mobileValue5": "同，有著花香與果香，也有陳年酒的厚度，同時也帶",
+                            "mobileValue6": "著一種青澀的奔放，十分可口。",
+                            "nodeType": "text"
+                          }
+                        ],
+                        "nodeType": "paragraph"
+                      }
+                    ],
+                    "nodeType": "document"
+                  }
+                },
+                "title": "WUSSU石圈",
+                "video": {
+                  "video": {
+                    "url": "/assets/contentful/zedtwknbsk02/7xDtDsVjIN0XbEzgtcB77n/eb93ee7c2fc30aa6ccb1651a1dd774be/video02.mov",
+                    "mobileUrl": "/assets/storiesDetail/fist_1.mov"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

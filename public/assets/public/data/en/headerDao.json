@@ -1,0 +1,164 @@
+{
+  "data": {
+    "headerMenuCollection": {
+      "items": [
+        {
+          "group1TitleId": 1,
+          "group1Title": "HOME",
+          "group1TargetPage": "/en/home",
+          "group1ItemsCollection": {
+            "items": []
+          },
+          "group2TitleId": 2,
+          "group2Title": "OUR STORY",
+          "group2TargetPage": "/en/story",
+          "group3TitleId": 3,
+          "group3Title": "THE WILDMOOR RANGE",
+          "group3TargetPage": "/en/range",
+          "group4TitleId": 4,
+          "group4Title": "THE WILD ESCAPE",
+          "group4TargetPage": "/en/localMarketActivity",
+          "group5TitleId": 5,
+          "group5Title": "",
+          "group5TargetPage": "/en/howToBuy",
+          "regionSwitchingPromptWords": "Location and Language",
+          "regionLanguage": "Location And Language",
+          "group2ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "41QBJC679EBtMNL0tXZlq8"
+                },
+                "content": "A Drop Of Wilderness",
+                "targetPage": "/en/story?anchor=ADropOfWildness"
+              }
+            ]
+          },
+          "group3ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "1XvVzFqBUKGUJrxCQ8ais5"
+                },
+                "content": "Products Family",
+                "targetPage": "/en/range?anchor=ProductsFamily"
+              },
+              {
+                "sys": {
+                  "id": "1ez506VDi6pUpxkJly5BIM"
+                },
+                "content": "Serving Suggestion",
+                "targetPage": "/en/range?anchor=ServingSuggestion"
+              },
+              {
+                "sys": {
+                  "id": "41y0XoJMR60MTEMWVRMMXk"
+                },
+                "content": "The Story Behind Our Bottle",
+                "targetPage": "/en/range?anchor=BottleConcept"
+              },
+              {
+                "sys": {
+                  "id": "7Iz9p2qK2WwxDRXwxK6mMZ"
+                },
+                "content": "Discover Your Wild Flavour",
+                "targetPage": "/en/range?anchor=DiscoverYourWildFlavour"
+              }
+            ]
+          },
+          "group4ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "2Fkvk6R45QkFkc80MWbNsc"
+                },
+                "content": "Global News",
+                "targetPage": "/en/localMarketActivity?anchor=GlobalNews"
+              },
+              {
+                "sys": {
+                  "id": "k18jPrvgrb0IdYTzzx0tC"
+                },
+                "content": "The Wild Escape",
+                "targetPage": "/en/localMarketActivity?anchor=TheWildEscape"
+              },
+              {
+                "sys": {
+                  "id": "1CdaN1kbFZSSZfydHjpErv"
+                },
+                "content": "Tales From The Wild",
+                "targetPage": "/en/localMarketActivity?anchor=TalesFromTheWild"
+              }
+            ]
+          },
+          "group5ItemsCollection": {
+            "items": [
+              {
+                "sys": {
+                  "id": "1kLFW0N719FThrNOV1MYHO"
+                },
+                "content": "Region Select & Global Store Map",
+                "targetPage": "/en/howToBuy?anchor=RegionSelect"
+              },
+              {
+                "sys": {
+                  "id": "3aaurDsTBz0m7gAwLhRLLk"
+                },
+                "content": "IRL Experiences",
+                "targetPage": "/en/howToBuy?anchor=IRLExperiences"
+              }
+            ]
+          },
+          "locationAndLanguageCollection": {
+            "items": [
+              {
+                "region": "CHINA MAINLAND",
+                "language": "SIMPLIFIED CHINESE",
+                "domain": "http://www.wildmoorwhisky.com.cn/",
+                "redirectPath": "/zh-CN/home",
+                "path": "zh-CN"
+              },
+              {
+                "region": "TAIWAN REGION",
+                "language": "TRADITIONAL CHINESE",
+                "domain": "",
+                "redirectPath": "/zh-TW/home",
+                "path": "zh-TW"
+              },
+              {
+                "region": "SINGAPORE",
+                "language": "ENGLISH",
+                "domain": "",
+                "redirectPath": "/en-SG/home",
+                "path": "en-SG"
+              },
+              {
+                "region": "UNITED KINGDOM",
+                "language": "ENGLISH",
+                "domain": "",
+                "redirectPath": "/en-GB/home",
+                "path": "en-GB"
+              },
+              {
+                "region": "GLOBAL",
+                "language": "ENGLISH",
+                "domain": "",
+                "redirectPath": "/en/home",
+                "path": "en"
+              }
+            ]
+          },
+          "logo": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/header_asset1/4749a6a07bb0bb5077ff995d7843b01e/header_image1.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/header_asset2/2586161d7abc49575d37cfb507498691/header_image2-m.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,291 @@
+{
+    "data": {
+        "seo": {
+            "items": [
+                {
+                    "title": "Stories Detail",
+                    "keyWords": "wildmoor,wildmoor near you",
+                    "description": "wildmoor description"
+                }
+            ]
+        },
+        "storiesDetailCollection": {
+            "items": [
+                {
+                    "pageName": "Bring the drinking occasion to life in a way",
+                    "storiesDetailComponentTitle": "Bring the drinking occasion to life in a way",
+                    "storiesDetailComponentName": "Name of KOL ",
+                    "storiesDetailComponentCareer": "Sailor | Professional traveler",
+                    "storiesDetailComponentBackgroundImage": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_1/bb03d917189eaaee13935e63d91b1e8f/Wildmoor_Black_Mountain_Landscape_2.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_localMarketActivity_2/89ae5bd2b25d5ab259089554a29c3035/Wildmoor_Black_Mountain_Landscape_2.png"
+                        }
+                    },
+                    "storiesDetailComponentAvatar": {
+                        "altText": null,
+                        "imagepc": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_3/67d653dcec998c2454f6e0d0335fb5a5/storiesDetail_image3.png"
+                        },
+                        "imagemobile": {
+                            "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_4/41ece6e7f62ce5516245ffccba1ccde9/avatar.png"
+                        }
+                    },
+                    "storiesDetailComponentDetailCollection": {
+                        "items": [
+                            {
+                                "__typename": "DataKolDetailMultipleContent",
+                                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailCarouselImage",
+                                "imagesCollection": {
+                                    "items": [
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_5/22c9cbab14b4634d8fccaafea3c309c1/storiesDetail_image5.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_6/95792fd9d9445adbda3ad99697f15f34/storiesDetail_image6.png"
+                                            }
+                                        },
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_7/4e9bb360f00f345c645c17b5b98fb80f/storiesDetail_image7.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_8/a7ba68dd5375e6af47117ff388209f36/storiesDetail_image8.png"
+                                            }
+                                        },
+                                        {
+                                            "altText": null,
+                                            "imagepc": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_9/62d1b59be9b23242fffdfb95c85d38b8/storiesDetail_image9.png"
+                                            },
+                                            "imagemobile": {
+                                                "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_10/2373e13832d08a19637f1a2d6e7d394f/kv-m.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailMultipleContent",
+                                "contentTitle": "DATA KOL Detail - Multiple Content - kNews1-2",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneImageContent1",
+                                "contentTitle": "Bring the drinking occasion",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_11/5e542a12eaee22b09b61cf5e53d81a10/pic-1.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_12/74f657b171345dd1cc0aeb85fc646224/storiesDetail_image12.png"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneVideo",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "The Wildmoor Wild Escape Experience includes a carefully curated stay within the Alladale estate lands, a 23,000-acre Wilderness Reserve, providing a luxury .",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    }
+                                },
+                                "title": "Bring the drinking occasion",
+                                "video": {
+                                    "video": {
+                                        "url": "/assets/contentful/zedtwknbsk02/7xDtDsVjIN0XbEzgtcB77n/eb93ee7c2fc30aa6ccb1651a1dd774be/video02.mp4"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneImage",
+                                "internalName": "Bring the drinking occasion",
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "/assets/contentful/zedtwknbsk02/6BKfQHLYCiwUKegpVWU7oJ/56b9a7267fcd7baafccc15a4f93bc8a4/kv-3.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "/assets/contentful/zedtwknbsk02/4M8SZc6Cm332C7i9mscDf1/3add082f40003602acc30beb89b9d3da/kv-3.png"
+                                    }
+                                }
+                            },
+                            {
+                                "__typename": "DataKolDetailOneImageContent2",
+                                "contentTitle": "Bring the drinking occasion",
+                                "contentText": {
+                                    "json": {
+                                        "data": {},
+                                        "content": [
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. \nBring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking. \nBring the drinking occasion to life in a way that gives us a place in culture and gets people talking. Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            },
+                                            {
+                                                "data": {},
+                                                "content": [
+                                                    {
+                                                        "data": {},
+                                                        "marks": [],
+                                                        "value": "Bring the drinking occasion to life in a way that gives us a place in culture and gets people talking.",
+                                                        "nodeType": "text"
+                                                    }
+                                                ],
+                                                "nodeType": "paragraph"
+                                            }
+                                        ],
+                                        "nodeType": "document"
+                                    },
+                                    "links": {
+                                        "entries": {
+                                            "inline": []
+                                        }
+                                    }
+                                },
+                                "image": {
+                                    "altText": null,
+                                    "imagepc": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_13/d3801bd20cb3ff89e8927c69606ff160/pic-3.png"
+                                    },
+                                    "imagemobile": {
+                                        "url": "/assets/contentful/zedtwknbsk02/asset_stories_detail_14/b3008582ab36d4041bd2c48af4de6933/storiesDetail_image14.png"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

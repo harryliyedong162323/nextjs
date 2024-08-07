@@ -1,0 +1,73 @@
+{
+  "data": {
+    "seo": {
+      "items": [
+        {
+          "title": "Wildmoor Whisky CN - AgeGate",
+          "keyWords": "WILDMOOR Dark Moorland 23 Year Old Blended Scotch Whisky,WILDMOOR Rugged Coast 30 Year Old Blended Scotch Whisky,WILDMOOR Black Mountain 40 Year Old Blended Scotch Whisky,WILDMOOR Waking Forest 23 Year Old Blended Scotch Whisky,WILDMOOR Tropical Coast 30 Year Old Blended Scotch Whisky",
+          "description": "WILDMOOR is a new and epic range of blended Scotch whiskies from William Grant & Sons, inspired by the Scottish wilderness."
+        }
+      ]
+    },
+    "ageGateComponent": {
+      "items": [
+        {
+          "title": "时光与你，渐入佳境",
+          "description1": "您必须年满 ",
+          "description2": "岁才能访问",
+          "confirmButton": "开始探索",
+          "acceptCookieContent": "单击“接受所有Cookies”，即表示您同意在您的设备上存储Cookie，以增强网站导航、分析网站使用情况并协助我们的营销工作。",
+          "acceptCookies": "接受所有Cookies",
+          "acceptCookieCookiesSettings": "Cookies 设置",
+          "monthChoose": "出生年月",
+          "promptContentCollection": {
+            "items": [
+              {
+                "content": "您必须启用Cookie功能才能使用本网站。有关使用和删除Cookie的更多信息，请访问 ",
+                "targetPage": null
+              },
+              {
+                "content": "www.aboutcookies.org",
+                "targetPage": "https://www.aboutcookies.org"
+              }
+            ]
+          },
+          "promptContentCollection1": {
+            "items": [
+              {
+                "content": " 进入本网站即表示您同意我们的 ",
+                "targetPage": null
+              },
+              {
+                "content": "条款和条件",
+                "targetPage": "/zh-CN/termsConditions"
+              },
+
+              {
+                "content": " 以及 ",
+                "targetPage": null
+              },
+              {
+                "content": "隐私和Cookies声明",
+                "targetPage": "/zh-CN/privacyPolicy"
+              },
+              {
+                "content": "。",
+                "targetPage": null
+              }
+            ]
+          },
+          "logoImage": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/ageGate/ageGate-pc.png"
+            },
+            "imagemobile": {
+              "url": "/assets/ageGate/ageGate-m.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

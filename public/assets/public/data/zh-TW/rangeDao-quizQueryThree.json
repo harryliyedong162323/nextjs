@@ -1,0 +1,132 @@
+{
+  "data": {
+    "dataQuizQ3Collection": {
+      "items": [
+        {
+          "id": 0,
+          "topicContent": "Q3. 當我們說到威士忌時",
+          "question1Id": 0,
+          "question1Content": "您通常會在哪種情況下享用威士忌？",
+          "option1AId": 0,
+          "option1AContent": "朋友聚會時",
+          "option1AValue": "何不與摯友，共飲遠方？",
+          "option1BId": 0,
+          "option1BContent": "用餐時",
+          "option1BValue": "談商論道，怎捨遠慕？",
+          "option1CId": 0,
+          "option1CContent": "獨自在家時",
+          "option1CValue": "每一杯遠慕，都是對獨處時光的尊重。",
+          "option1DId": 0,
+          "option1DContent": "於辦公室工作時",
+          "option1DValue": "每一個里程碑，都有遠慕。",
+          "option1EId": 0,
+          "option1EContent": "露營或戶外野餐時",
+          "option1EValue": "準備好了嗎？和遠慕「野」一下。",
+          "option1FId": 0,
+          "option1FContent": "紀念場合或慶祝時",
+          "option1FValue": "別忘了，與遠慕，共慶祝。",
+          "question2Id": 0,
+          "question2Content": "如果可以，您想在哪裡享用威士忌？",
+          "option2AId": 0,
+          "option2AValue": "A",
+          "option2AContent": "山巒之巔",
+          "option2BId": 0,
+          "option2BValue": "B",
+          "option2BContent": "陽光沙灘",
+          "option2CId": 0,
+          "option2CValue": "C",
+          "option2CContent": "捲風海岸",
+          "option2DId": 0,
+          "option2DValue": "D",
+          "option2DContent": "山谷遠行",
+          "option1AIcon": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_85/9a238419ca987ae2fe2e254e0d210223/range_image169.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_86/bc17ee0bc06f59ecc64b2e08fc0679fb/icon_friend.png"
+            }
+          },
+          "option1BIcon": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_87/c604e92e9040d3cf121bc1ee146baca7/icon_business_meal.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_88/9761690d673e75f0882a63fd5d596645/range_image172.png"
+            }
+          },
+          "option1CIcon": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_89/a30bab0f1e2b9cf1d34c6ac69a424323/range_image173.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_90/f91271f1ac6647ec125983835b3d7217/range_image174.png"
+            }
+          },
+          "option1DIcon": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_91/0485c02340c2f62259c01be2132c6c5d/icon_working.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_92/eb68c696183a81bc2bce1e6a4154e4ee/icon_working.png"
+            }
+          },
+          "option1EIcon": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_93/b874688544454a301e8d620d13501271/range_image177.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_94/14cb7fbb5c71b1f39f1e53535bad0cf3/range_image178.png"
+            }
+          },
+          "option1FIcon": {
+            "altText": null,
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_95/8b67704a63d5b5f88828d92363b884df/icon_special.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_96/f557db05c920beb8c1a9fcee9d4e5e30/icon_special.png"
+            }
+          },
+          "option2AImage": {
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_37/72c79764b86107078bdd2acd433ff462/range_image37.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_38/6009363bc998ff493e4f97dd23d7586c/range_image38.png"
+            }
+          },
+          "option2BImage": {
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_39/a52e60f5321c2f564d5cabecbe52822c/range_image39.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_40/25e0b0568e4dadc620e876877afd1651/range_image40.png"
+            }
+          },
+          "option2CImage": {
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_41/dca2f38517d4df50e77d668af62defa4/range_image41.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_42/aa4965f050874044ba5c9208f34cd182/range_image42.png"
+            }
+          },
+          "option2DImage": {
+            "imagepc": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_43/bf9f4dd6ee8f8218265bbbc4c504fff3/range_image43.png"
+            },
+            "imagemobile": {
+              "url": "/assets/contentful/zedtwknbsk02/asset_range_44/179b94da425aad4a4b91b82bf2530962/range_image44.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
